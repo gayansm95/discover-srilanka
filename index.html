@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Discover Sri Lanka</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="./index.html" class="navbar-brand p-0">
+                    <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Discover Sri Lanka</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="services.html" class="nav-item nav-link">Services</a>
+                        <a href="packages.html" class="nav-item nav-link">Packages</a>
+                        <a href="blog.html" class="nav-item nav-link">Blog</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
+                </div>
+            </nav>
+
+            <!-- Carousel Start -->
+            <div class="carousel-header">
+                <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+                        <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+                        <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img src="img/carousel-1.jpg" class="img-fluid" alt="Image">
+                            <div class="carousel-caption">
+                                <div class="p-3" style="max-width: 1000px;">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Ayubowan Sri Lanka!</h4>
+                                    <h2 class="display-2 text-capitalize text-white mb-4">Your Perfect Tour Awaits in the Wonder of Asia</h2>
+                                    <p class="mb-5 fs-5">A small island with a thousand unforgettable journeys, framed by golden beaches.</p>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="./gallery.html">Discover Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/carousel-2.jpg" class="img-fluid" alt="Image">
+                            <div class="carousel-caption">
+                                <div class="p-3" style="max-width: 900px;">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore Sri Lanka Beyond Borders!</h4>
+                                    <h1 class="display-2 text-capitalize text-white mb-4">Find Your Perfect Journey with US</h1>
+                                    <p class="mb-5 fs-5">Discover our best packages, premium services, and facilities for unforgettable travel experiences</p>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="./services.html">Discover Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/carousel-3.jpg" class="img-fluid" alt="Image">
+                            <div class="carousel-caption">
+                                <div class="p-3" style="max-width: 900px;">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 2px;">Discover Sri Lanka’s rich culture and ancient history</h4>
+                                    <h1 class="display-2 text-capitalize text-white mb-4">Answer the Call of Sri Lanka’s Magic!</h1>
+                                    <p class="mb-5 fs-5">Explore our blog and discover amazing destinations, tips, and unforgettable Sri Lanka experiences</p>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="./blog.html">Discover Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                        <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Carousel End -->
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- About Start -->
+        <div class="container-fluid about py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5">
+                        <div class="h-100">
+                            <img src="img/sri-lankan-travel-map.png" class="img-fluid w-100 h-100" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
+                        <h1 class="mb-4">Welcome to <span class="text-primary">Ayubowan Tours</span></h1>
+
+                        <h5 class="section-about-title pe-3">About Us</h5>
+                        <p class="mb-4">Ayubowan Tours is a trusted, family-run Sri Lanka tour operator creating authentic, 
+                            personalized journeys across the island. From golden beaches and lush hill country to wildlife 
+                            safaris and ancient heritage sites, we design unforgettable experiences rooted in local culture, 
+                            sustainability, and genuine Sri Lankan hospitality.</p>
+
+                        <h5 class="section-about-title pe-3">Our Vision</h5>
+                        <p class="mb-4">Our vision is to be a globally recognized Sri Lanka tour operator, delivering authentic 
+                            and sustainable travel experiences. We aim to protect nature, celebrate culture, empower local communities, 
+                            and inspire responsible travel while creating unforgettable journeys across Sri Lanka.</p>
+
+                        <h5 class="section-about-title pe-3">Our Mission</h5>    
+                        <p class="mb-4">Our mission is to deliver high-quality, responsible travel experiences in Sri Lanka through ethical, 
+                            eco-friendly tours that support local communities, protect nature, and celebrate culture—while providing 
+                            personalized service and unforgettable journeys for every traveler.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+        <!-- Services Start -->
+        <div class="container-fluid bg-light service py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                    <h5 class="section-title px-3">Searvices</h5>
+                    <h1 class="mb-0">Our Services</h1>
+                    <p class="mb-4">
+                        Discover our diverse Sri Lanka tour packages designed for every traveler. 
+                        From ancient UNESCO World Heritage sites and vibrant culture to wildlife safaris, 
+                        misty hill country, and golden beaches, each journey is carefully crafted for unforgettable experiences. 
+                        Please check out our services and start planning your Sri Lanka adventure today.
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                                    <div class="service-content text-end">
+                                        <a href="./pkg-own-tour.html"> 
+                                            <h5 class="mb-4">Create Your Own Tour</h5>
+                                        </a>    
+                                        <p class="mb-0">Every traveler is unique. We design personalized Sri Lanka journeys that match your style, interests, and dreams.</p>
+                                    </div>
+                                    <div class="service-icon p-4">
+                                        <i class="fa fa-globe fa-4x text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="service-content-inner d-flex align-items-center  bg-white border border-primary rounded p-4 pe-0">
+                                    <div class="service-content text-end">
+                                        <a href="./pkg-14-day-tour.html"> 
+                                            <h5 class="mb-4">14 Day Tour Package</h5>
+                                        </a>
+                                        <p class="mb-0">A perfectly paced 14-day Sri Lanka tour combining timeless culture, breathtaking landscapes, wildlife encounters, and coastal relaxation.</p>
+                                    </div>
+                                    <div class="service-icon p-4">
+                                        <i class="fa fa-hotel fa-4x text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                                    <div class="service-content text-end">
+                                        <a href="./pkg-kandy-day-tour.html"> 
+                                            <h5 class="mb-4">Kandy Day Tour</h5>
+                                        </a>
+                                        <p class="mb-0">Discover the cultural charm of Kandy in one day, visiting sacred temples, scenic lakes, royal heritage sites, and vibrant local markets.</p>
+                                    </div>
+                                    <div class="service-icon p-4">
+                                        <i class="fa fa-user fa-4x text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                                    <div class="service-content text-end">
+                                        <a href="./pkg-sri-lanka-cultural-trangle.html"> 
+                                            <h5 class="mb-4">Sri Lanka's "Cultural Triangle" Tour </h5>
+                                        </a>
+                                        <p class="mb-0">Step into Sri Lanka’s Cultural Triangle, a timeless region linking the ancient 
+                                            kingdoms of Anuradhapura, Polonnaruwa, and Kandy, enriched by UNESCO World Heritage sites, 
+                                            sacred Buddhist monuments, the legendary Sigiriya Rock Fortress, 
+                                            and the mystical Dambulla Cave Temples.
+                                        </p>
+                                    </div>
+                                    <div class="service-icon p-4">
+                                        <i class="fa fa-cog fa-4x text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                                    <div class="service-icon p-4">
+                                        <i class="fa fa-globe fa-4x text-primary"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="./pkg-11-day-tour.html"> 
+                                            <h5 class="mb-4">Sri Lanka Highlights - 11 Day Tour</h5>
+                                        </a>
+                                        <p class="mb-0">Explore Sri Lanka’s most iconic destinations in 11 days, from sun-kissed beaches and ancient wonders to misty mountains and wild safaris.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                                    <div class="service-icon p-4">
+                                        <i class="fa fa-hotel fa-4x text-primary"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="./pkg-kandy-sigiriya-dambulla-tour.html"> 
+                                            <h5 class="mb-4">Dambulla , Sigiriya & Kandy Tour</h5>
+                                        </a>
+                                        <p class="mb-0">Journey through Sri Lanka’s Cultural Triangle, discovering Dambulla’s cave temples, the majestic Sigiriya Rock, and the historic city of Kandy.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                                    <div class="service-icon p-4">
+                                        <i class="fa fa-user fa-4x text-primary"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="./pkg-discover-nothern-srilanka.html"> 
+                                            <h5 class="mb-4">Discover Northern Sri Lanka</h5>
+                                        </a>
+                                        <p class="mb-0">Discover North Sri Lanka’s cultural heritage, stunning beaches, 
+                                            and historic sites—an essential journey for every traveler seeking authentic experiences.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                                    <div class="service-icon p-4">
+                                        <i class="fa fa-cog fa-4x text-primary"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <a href="./pkg-heritage-horizon.html"> 
+                                            <h5 class="mb-4">Heritage & Horizon Tour</h5>
+                                        </a>
+                                        <p class="mb-0">Experience the perfect blend of rich cultural heritage and breathtaking beaches, 
+                                            offering an unforgettable, premium journey through east Sri Lanka.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="./packages.html" class="btn btn-primary rounded-pill py-2 px-4">Discover Our Packages</a> 
+                </div>
+            </div>
+        </div>
+        <!-- Services End -->
+
+        <!-- Blog Start -->
+        <div class="container-fluid blog py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                    <h5 class="section-title px-3">Our Blog</h5>
+                    <h1 class="mb-4">Popular Travel Blogs</h1>
+                    <p class="mb-0">Explore Sri Lanka’s hidden gems, stunning beaches, and vibrant culture! 
+                        Our travel blog shares tips, stories, and experiences to inspire unforgettable adventures.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <div class="blog-img-inner">
+                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-daladamaligawa.jpg" alt="Image">
+                                    <div class="blog-icon">
+                                        <a href="./kandy.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-content border border-top-0 rounded-bottom p-4">
+                                <a href="./blog-kandy.html" class="h4">Kandy</a>
+                                <p class="my-3">
+                                    Discover Kandy’s scenic lakes, historic temples, and vibrant culture a must-visit city blending heritage, 
+                                    nature, and unforgettable experiences in Sri Lanka.
+                                </p>
+                                <a href="./blog-kandy.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <div class="blog-img-inner">
+                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-sigiriya.jpg" alt="Image">
+                                    <div class="blog-icon">
+                                        <a href="./blog-dambulla.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-content border border-top-0 rounded-bottom p-4">
+                                <a href="#" class="h4">Dambulla</a>
+                                <p class="my-3">
+                                    Explore Dambulla’s ancient cave temples, rich history, and stunning landscapes 
+                                    an iconic destination blending culture, spirituality, and unforgettable Sri Lankan experiences.
+                                </p>
+                                <a href="./blog-dambulla.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <div class="blog-img-inner">
+                                    <img class="img-fluid w-100 rounded-top" src="img/blog-2.jpg" alt="Image">
+                                    <div class="blog-icon">
+                                        <a href="./blog-ella.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-content border border-top-0 rounded-bottom p-4">
+                                <a href="#" class="h4">Ella</a>
+                                <p class="my-3">
+                                    Experience Ella’s breathtaking mountain views, lush tea plantations, 
+                                    and serene waterfalls—perfect for nature lovers seeking adventure and tranquility in Sri Lanka.
+                                </p>
+                                <a href="./blog-ella.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <div class="blog-img-inner">
+                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-beach.webp" alt="Image">
+                                    <div class="blog-icon">
+                                        <a href="./blog-down-south.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-content border border-top-0 rounded-bottom p-4">
+                                <a href="#" class="h4">Golden Beaches</a>
+                                <p class="my-3">
+                                    Relax on Sri Lanka’s Golden Beaches with golden sands, turquoise waters, and stunning 
+                                    sunsets—an idyllic escape for sun, sea, and serenity.
+                                </p>
+                                <a href="./blog-down-south.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <div class="blog-img-inner">
+                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-safari.jpg" alt="Image">
+                                    <div class="blog-icon">
+                                        <a href="./blog-safari.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-content border border-top-0 rounded-bottom p-4">
+                                <a href="#" class="h4">Wild Safari</a>
+                                <p class="my-3">
+                                    Embark on a thrilling Sri Lankan safari, spotting elephants, leopards, and exotic 
+                                    wildlife amidst stunning national parks and natural beauty.
+                                </p>
+                                <a href="./blog-safari.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <div class="blog-img-inner">
+                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-nuwaraeliya.jpg" alt="Image">
+                                    <div class="blog-icon">
+                                        <a href="./blog-nuwara-eliya.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-content border border-top-0 rounded-bottom p-4">
+                                <a href="#" class="h4">Nuwara Eliya</a>
+                                <p class="my-3">
+                                    Discover Nuwara Eliya’s cool climate, lush tea plantations, and scenic landscapes 
+                                    Sri Lanka’s charming hill country for nature and relaxation.
+                                </p>
+                                <a href="./blog-nuwara-eliya.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <div class="blog-img-inner">
+                                    <img class="img-fluid w-100 rounded-top" src="img/anuradhapura-polonnaruwa-sigiriya-1024x576.jpg" alt="Image">
+                                    <div class="blog-icon">
+                                        <a href="./blog-cultural-triangle.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-content border border-top-0 rounded-bottom p-4">
+                                <a href="#" class="h4">Sri Lanka’s Cultural Triangle</a>
+                                <p class="my-3">
+                                    Explore Sri Lanka’s Cultural Triangle—ancient cities, historic temples, 
+                                    and UNESCO heritage sites offering a journey through rich history and tradition.
+                                </p>
+                                <a href="./blog-cultural-triangle.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <div class="blog-img-inner">
+                                    <img class="img-fluid w-100 rounded-top" src="img/jafna-blog-post.jpg" alt="Image">
+                                    <div class="blog-icon">
+                                        <a href="./blog-north-sri-lanka.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-content border border-top-0 rounded-bottom p-4">
+                                <a href="#" class="h4">Northern Sri Lanka</a>
+                                <p class="my-3">
+                                    Discover Northern Sri Lanka’s pristine beaches, historic temples, and vibrant 
+                                    culture—an offbeat destination rich in heritage and unforgettable experiences.
+                                </p>
+                                <a href="./blog-north-sri-lanka.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <div class="blog-img-inner">
+                                    <img class="img-fluid w-100 rounded-top" src="img/Arugam-Bay.jpg" alt="Image">
+                                    <div class="blog-icon">
+                                        <a href="./blog-eastern-beauty.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-content border border-top-0 rounded-bottom p-4">
+                                <a href="#" class="h4">Eastern Sri Lanka</a>
+                                <p class="my-3">
+                                    Unwind on Eastern Sri Lanka’s pristine beaches, sparkling turquoise waters,
+                                    and breathtaking landscapes—an idyllic paradise for sun, sea, and adventure.
+                                </p>
+                                <a href="./blog-eastern-beauty.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+
+        <!-- Contact Start -->
+        <div class="container-fluid contact bg-light py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                    <h5 class="section-title px-3">Contact Us</h5>
+                </div>
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-4">
+                        <div class="bg-white rounded p-4">
+                            <div class="text-center mb-4">
+                                <i class="fa fa-map-marker-alt fa-3x text-primary"></i>
+                                <h4 class="text-primary"><Address></Address></h4>
+                                <p class="mb-0">Peradeniya, <br> Kandy, Sri Lanka</p>
+                            </div>
+                            <div class="text-center mb-4">
+                                <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
+                                <h4 class="text-primary">Mobile</h4>
+                                <p class="mb-0">(+94)76 366 1600</p>
+                            </div>
+                           
+                            <div class="text-center">
+                                <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
+                                <h4 class="text-primary">Email</h4>
+                                <p class="mb-0">info.ayubowantours.lk@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <h2 class="mb-3">Contact For Any Inquiries</h2>
+                        <p class="mb-4">We’re here to help you design your dream holiday in Sri Lanka. 
+                            Whether you’re exploring our tours, creating a custom itinerary, or simply sharing your 
+                            travel ideas, our friendly team is ready to guide you every step of the way. 
+                            Let’s start with a conversation, reach out and begin your journey.</p>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control border-0" id="name" placeholder="Your Name">
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control border-0" id="email" placeholder="Your Email">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-12">
+                        <div class="rounded">
+                            <iframe class="rounded w-100" 
+                            style="height: 450px;" src="https://www.google.com/maps?q=Peradeniya,+Sri+Lanka&z=14&output=embed" 
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+        <!-- Subscribe Start -->
+        <div class="container-fluid subscribe py-5">
+            <div class="container text-center py-5">
+                <div class="mx-auto text-center" style="max-width: 900px;">
+                    <h5 class="subscribe-title px-3">Subscribe</h5>
+                    <h1 class="text-white mb-4">Our Newsletter</h1>
+                    <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, 
+                        insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
+                    </p>
+                    <div class="position-relative mx-auto">
+                        <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Subscribe End -->
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright text-body py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-end mb-md-0">
+                        <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Ayubowan Tours</a>, All right reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>
