@@ -22,6 +22,58 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <style>
+            /* WhatsApp Floating Button with Pulse Animation */
+            .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background-color: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 42px;
+            text-align: center;
+            line-height: 80px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            z-index: 1000;
+            animation: whatsapp-pulse 1.8s infinite;
+            text-decoration: none;
+            }
+
+            /* Hover effect */
+            .whatsapp-float:hover {
+            transform: scale(1.1);
+            transition: 0.3s ease;
+            }
+
+            /* Pulse animation */
+            @keyframes whatsapp-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+            }
+
+            /* Mobile responsive */
+            @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 70px;
+                height: 70px;
+                font-size: 38px;
+                line-height: 70px;
+                bottom: 15px;
+                right: 15px;
+            }
+            }
+        </style>
     </head>
 
     <body>
@@ -319,9 +371,12 @@
         </div>
         <!-- Copyright End -->
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
-
+        <!-- whatsapp button -->
+        <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
+            class="whatsapp-float"
+            target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
         
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
