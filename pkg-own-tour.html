@@ -205,7 +205,6 @@
         const selectedGrid = document.getElementById('selectedGrid');
         const dropPulse = document.getElementById('dropPulse');
 
-        /* Map coordinates */
         const placeMap = {
             Kandy: '7.2906,80.6337',
             Sigiriya: '7.9570,80.7603',
@@ -222,7 +221,6 @@
 
         let holdTimer = null;
 
-        /* Bind item */
         function bindItem(item) {
             item.draggable = true;
 
@@ -244,13 +242,13 @@
 
         document.querySelectorAll('.item').forEach(bindItem);
 
-        /* Desktop drop */
         [selectedGrid, availableGrid].forEach(grid => {
             grid.addEventListener('dragover', e => e.preventDefault());
             grid.addEventListener('drop', () => {
                 if (window.dragged && !grid.contains(window.dragged)) {
                     grid.appendChild(window.dragged);
                     updateUI();
+                    saveSelected();
                 }
             });
         });
@@ -259,9 +257,9 @@
             const target = item.parentElement.id === 'availableGrid' ? selectedGrid : availableGrid;
             target.appendChild(item);
             updateUI();
+            saveSelected();
         }
 
-        /* Update preview */
         function updateUI() {
             dropPulse.style.display = selectedGrid.children.length ? 'none' : 'block';
 
@@ -285,15 +283,32 @@
             });
         }
 
-        /* Format itinerary */
         function formatItinerary() {
             return [...selectedGrid.children].map((i, x) => `${x + 1}. ${i.dataset.id}`).join('\n');
+        }
+
+        /* Save selected items to localStorage */
+        function saveSelected() {
+            const selected = [...selectedGrid.children].map(i => i.dataset.id);
+            localStorage.setItem('selectedPlaces', JSON.stringify(selected));
+        }
+
+        /* Load selected items from localStorage */
+        window.onload = function () {
+            const stored = JSON.parse(localStorage.getItem('selectedPlaces') || '[]');
+            stored.forEach(id => {
+                const item = document.querySelector(`#availableGrid .item[data-id="${id}"]`);
+                if (item) selectedGrid.appendChild(item);
+            });
+            updateUI();
         }
 
         /* WhatsApp */
         document.getElementById('sendWhatsApp').onclick = () => {
             const n = name.value, p = phone.value, e = email.value, g = guests.value, a = arrival.value, d = departure.value;
             if (!n || !p || !a || !d || !selectedGrid.children.length) { alert('Please complete all details'); return; }
+
+            const selected = JSON.parse(localStorage.getItem('selectedPlaces') || '[]');
 
             const msg = `Ayubowan Tours Booking
 Name: ${n}
@@ -303,14 +318,15 @@ Guests: ${g}
 Arrival: ${a}
 Departure: ${d}
 
-Itinerary:
-${formatItinerary()}`;
+Selected Places:
+${selected.map((p, i) => `${i + 1}. ${p}`).join('\n')}`;
 
             window.open(`https://wa.me/94763661600?text=${encodeURIComponent(msg)}`);
         };
 
         /* Email */
         document.getElementById('sendEmail').onclick = () => {
+            const selected = JSON.parse(localStorage.getItem('selectedPlaces') || '[]');
             const subject = 'Ayubowan Tours Booking Request';
             const body = `Name: ${name.value}
 Phone: ${phone.value}
@@ -319,8 +335,8 @@ Guests: ${guests.value}
 Arrival: ${arrival.value}
 Departure: ${departure.value}
 
-Itinerary:
-${formatItinerary()}`;
+Selected Places:
+${selected.map((p, i) => `${i + 1}. ${p}`).join('\n')}`;
 
             window.location.href = `mailto:info@ayubowantours.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         };
