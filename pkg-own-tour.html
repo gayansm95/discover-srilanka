@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayubowan Tours - Create Your Tour</title>
+    <title>Ayubowan Tours – Create Your Tour</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,223 +19,129 @@
         h3 {
             text-align: center;
             color: #2c3e50;
-            margin-bottom: 20px;
+            margin-bottom: 15px
         }
 
-        /* Flex layout for boxes + traveler info */
         .flex-container {
             display: flex;
             gap: 20px;
             justify-content: center;
-            align-items: stretch;
             flex-wrap: wrap;
         }
 
-        /* Drag & Drop Boxes */
+        /* Boxes */
         .box-dragging {
-            flex: 1 1 300px;
-            max-width: 400px;
+            flex: 1 1 320px;
+            max-width: 420px;
             background: #fff;
             border: 2px dashed #bbb;
             border-radius: 10px;
             padding: 15px;
             position: relative;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
         }
 
-        .box-dragging.drag-over {
-            background: #eaf5ff;
-            border-color: #3498db;
-        }
-
-        /* Items Grid: 2 columns */
-        .box-dragging .items-grid {
+        /* Items grid */
+        .items-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 10px;
         }
 
-        /* Individual Item with subtle gradient */
+        /* Item */
         .item {
-            cursor: grab;
-            border: 1px solid #ccc;
             border-radius: 8px;
-            overflow: hidden;
+            padding: 6px;
+            background: linear-gradient(135deg, #ffffff, #eef3ff);
             text-align: center;
-            background: linear-gradient(135deg, #ffffff, #f0f4ff);
-            transition: 0.3s;
-            padding: 5px;
-        }
-
-        .item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            background: linear-gradient(135deg, #e0e7ff, #d0e0ff);
+            cursor: pointer;
+            transition: .25s;
+            user-select: none;
         }
 
         .item img {
             width: 100%;
-            height: 100px;
+            height: 90px;
             object-fit: cover;
             border-radius: 5px;
         }
 
-        /* Right Box Background */
-        #rightBox {
-            /*background-image: url('img/drag-and-box-icon.svg');*/
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 120px;
+        .item.drag-hold {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, .6), 0 10px 25px rgba(0, 0, 0, .3);
         }
 
-        #rightBox.has-items {
-            background-image: none;
-        }
-
-        /* Drop Pulse */
+        /* Drop hint */
         .drop-pulse {
             position: absolute;
-            top: 30%;
-            /* moved up to avoid overlap */
+            top: 20%;
             left: 0;
             right: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            pointer-events: none;
-        }
-
-        .drop-pulse span {
-            font-size: 20px;
+            text-align: center;
             font-weight: bold;
             color: #3498db;
-            opacity: 0.6;
             animation: pulse 1.5s infinite;
         }
 
         @keyframes pulse {
             0% {
-                transform: scale(1);
-                opacity: 0.4;
+                opacity: .4
             }
 
             50% {
-                transform: scale(1.1);
-                opacity: 0.8;
+                opacity: 1
             }
 
             100% {
-                transform: scale(1);
-                opacity: 0.4;
+                opacity: .4
             }
         }
 
-        /* Traveler Info Box aligned with drag & drop boxes */
+        /* Booking */
         .traveler-info {
-            flex: 1 1 300px;
-            max-width: 400px;
+            flex: 1 1 320px;
+            max-width: 420px;
             background: #fff;
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
         }
 
-        /* Stylish Mini Preview Cards with gradient */
+        /* Mini itinerary */
         #miniPreview {
+            margin-top: 15px;
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin-top: 15px;
-            max-height: 300px;
-            overflow-y: auto;
+            gap: 12px
         }
 
         .preview-card {
-            display: flex;
-            align-items: center;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-weight: 500;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
             color: #fff;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, .25);
+            transition: .3s;
         }
 
         .preview-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25), 0 0 15px rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px)
         }
 
-        .preview-card span.number {
-            background: rgba(255, 255, 255, 0.3);
-            color: #fff;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 10px;
-            font-size: 14px;
+        .preview-title {
+            font-weight: 600;
+            margin-bottom: 6px
         }
 
-        .preview-card span.icon {
-            margin-right: 10px;
-            font-size: 18px;
-            color: #fff;
+        /* Map */
+        .map-frame {
+            width: 100%;
+            height: 120px;
+            border: 0;
+            border-radius: 8px;
         }
 
-        /* Buttons */
-        button {
-            margin-top: 10px;
-        }
-
-        .text-center button {
-            margin: 5px;
-        }
-
-        /* WhatsApp Floating Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 70px;
-            height: 70px;
-            background: #25D366;
-            color: #fff;
-            border-radius: 50%;
-            font-size: 36px;
-            text-align: center;
-            line-height: 70px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-            text-decoration: none;
-            animation: whatsapp-pulse 1.8s infinite;
-        }
-
-        @keyframes whatsapp-pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        /* Responsive */
-        @media(max-width:1200px) {
-            .flex-container {
-                flex-direction: column;
-                align-items: center;
+        /* Mobile */
+        @media(max-width:768px) {
+            .items-grid {
+                grid-template-columns: 1fr
             }
         }
     </style>
@@ -243,200 +151,181 @@
 
     <h2>Create Your Own Tour</h2>
 
-    <div class="flex-container mb-4">
-        <!-- Available Places -->
-        <div class="box-dragging" id="leftBox">
+    <div class="flex-container">
+
+        <!-- AVAILABLE -->
+        <div class="box-dragging">
             <h3>Available Places</h3>
             <div class="items-grid" id="availableGrid">
-                <div class="item" data-id="Kandy"><img src="img/kandy-package-card.jpeg" alt="">
+                <div class="item" data-id="Kandy"><img src="img/kandy-package-card.jpeg">
                     <div>Kandy</div>
                 </div>
-                <div class="item" data-id="Sigiriya"><img src="img/kandy-dambulla-sirigiya-package-card.jpg" alt="">
-                    <div>Dambulla & Sigiriya</div>
+                <div class="item" data-id="Sigiriya"><img src="img/kandy-dambulla-sirigiya-package-card.jpg">
+                    <div>Sigiriya</div>
                 </div>
-                <div class="item" data-id="Ella"><img src="img/14-day-tour-srilanka-ella.jpg" alt="">
+                <div class="item" data-id="Ella"><img src="img/14-day-tour-srilanka-ella.jpg">
                     <div>Ella</div>
                 </div>
-                <div class="item" data-id="Yala"><img src="img/14-day-tour-srilanka-yala.jpg" alt="">
+                <div class="item" data-id="Yala"><img src="img/14-day-tour-srilanka-yala.jpg">
                     <div>Yala Safari</div>
                 </div>
             </div>
         </div>
 
-        <!-- Selected Places -->
-        <div class="box-dragging" id="rightBox">
+        <!-- SELECTED -->
+        <div class="box-dragging">
             <h3>Selected Places</h3>
-            <div class="drop-pulse"><span>Drop Here</span></div>
+            <div class="drop-pulse" id="dropPulse">Drop Here</div>
             <div class="items-grid" id="selectedGrid"></div>
         </div>
 
-        <!-- Traveler Info / Booking Form -->
+        <!-- BOOKING -->
         <div class="traveler-info">
-            <h3 class="text-center mb-3">Traveler Information & Booking</h3>
-            <div class="row g-3">
-                <div class="col-12"><input type="text" id="name" class="form-control" placeholder="Name"></div>
-                <div class="col-12"><input type="email" id="email" class="form-control" placeholder="Email"></div>
-                <div class="col-12"><input type="number" id="travelers" class="form-control"
-                        placeholder="Number of Travelers" value="1" min="1"></div>
-                <div class="col-12"><input type="text" id="phone" class="form-control" placeholder="Phone Number"></div>
-                <div class="col-12"><input type="text" id="notes" class="form-control" placeholder="Additional Notes">
-                </div>
-            </div>
+            <h3>Booking Details</h3>
 
-            <!-- Stylish Mini Preview -->
-            <div id="miniPreview"><em>No places selected yet</em></div>
+            <input class="form-control mb-2" id="name" placeholder="Customer Name">
+            <input class="form-control mb-2" id="phone" placeholder="Phone Number">
+            <input class="form-control mb-2" id="email" placeholder="Email Address">
+            <input class="form-control mb-2" id="guests" type="number" min="1" value="1" placeholder="Number of Guests">
+            <label class="mt-2">Arrival Date</label>
+            <input class="form-control mb-2" id="arrival" type="date">
+            <label>Departure Date</label>
+            <input class="form-control mb-2" id="departure" type="date">
 
-            <div class="mt-3 text-center">
-                <button id="sendWhatsApp" class="btn btn-success me-2">Send via WhatsApp</button>
-                <button id="sendEmail" class="btn btn-primary">Send via Email</button>
-                <button id="clearBtn" class="btn btn-secondary mt-2">Clear All</button>
-            </div>
+            <div id="miniPreview"><em>No places selected</em></div>
+
+            <button class="btn btn-success w-100 mt-3" id="sendWhatsApp">Send via WhatsApp</button>
+            <button class="btn btn-primary w-100 mt-2" id="sendEmail">Send via Email</button>
         </div>
+
     </div>
 
-    <a href="#" class="whatsapp-float" id="waFloat" target="_blank">💬</a>
-
     <script>
-        // Drag & Drop
-        let draggedItem = null;
-        document.querySelectorAll('.item').forEach(item => {
-            item.draggable = true;
-            item.addEventListener('dragstart', () => { draggedItem = item; item.classList.add('dragging'); });
-            item.addEventListener('dragend', () => { item.classList.remove('dragging'); draggedItem = null; });
-        });
-
         const availableGrid = document.getElementById('availableGrid');
         const selectedGrid = document.getElementById('selectedGrid');
-        const dropPulse = document.querySelector('#rightBox .drop-pulse');
+        const dropPulse = document.getElementById('dropPulse');
 
-        // Helper: Move item between grids
-        function moveItem(item, targetGrid) {
-            targetGrid.appendChild(item);
-            updatePulse();
-            updateMiniPreview();
-            saveToLocal();
-        }
+        /* Map coordinates */
+        const placeMap = {
+            Kandy: '7.2906,80.6337',
+            Sigiriya: '7.9570,80.7603',
+            Ella: '6.8667,81.0466',
+            Yala: '6.3667,81.5167'
+        };
 
-        // Enable drag & drop for both grids
-        [availableGrid, selectedGrid].forEach(grid => {
-            grid.parentElement.addEventListener('dragover', e => { e.preventDefault(); grid.parentElement.classList.add('drag-over'); });
-            grid.parentElement.addEventListener('dragleave', () => { grid.parentElement.classList.remove('drag-over'); });
-            grid.parentElement.addEventListener('drop', e => {
-                e.preventDefault();
-                grid.parentElement.classList.remove('drag-over');
-                if (!draggedItem) return;
-                if (grid.contains(draggedItem)) return; // Already here
-                moveItem(draggedItem, grid);
-            });
-        });
-
-        // Show/hide dropPulse
-        function updatePulse() {
-            dropPulse.style.display = selectedGrid.children.length > 0 ? 'none' : 'flex';
-        }
-
-        // Gradient colors for mini-preview cards
-        const gradientColors = [
+        const gradients = [
             'linear-gradient(90deg,#6a11cb,#2575fc)',
             'linear-gradient(90deg,#ff512f,#f09819)',
             'linear-gradient(90deg,#43e97b,#38f9d7)',
-            'linear-gradient(90deg,#ffafbd,#ffc3a0)',
-            'linear-gradient(90deg,#2193b0,#6dd5ed)',
-            'linear-gradient(90deg,#ee9ca7,#ffdde1)'
+            'linear-gradient(90deg,#2193b0,#6dd5ed)'
         ];
 
-        // Update Stylish Mini Preview
-        function updateMiniPreview() {
+        let holdTimer = null;
+
+        /* Bind item */
+        function bindItem(item) {
+            item.draggable = true;
+
+            item.onclick = () => moveItem(item);
+
+            item.addEventListener('touchstart', () => {
+                holdTimer = setTimeout(() => item.classList.add('drag-hold'), 400);
+            });
+            item.addEventListener('touchend', () => {
+                clearTimeout(holdTimer);
+                if (item.classList.contains('drag-hold')) {
+                    item.classList.remove('drag-hold');
+                    moveItem(item);
+                }
+            });
+
+            item.addEventListener('dragstart', () => window.dragged = item);
+        }
+
+        document.querySelectorAll('.item').forEach(bindItem);
+
+        /* Desktop drop */
+        [selectedGrid, availableGrid].forEach(grid => {
+            grid.addEventListener('dragover', e => e.preventDefault());
+            grid.addEventListener('drop', () => {
+                if (window.dragged && !grid.contains(window.dragged)) {
+                    grid.appendChild(window.dragged);
+                    updateUI();
+                }
+            });
+        });
+
+        function moveItem(item) {
+            const target = item.parentElement.id === 'availableGrid' ? selectedGrid : availableGrid;
+            target.appendChild(item);
+            updateUI();
+        }
+
+        /* Update preview */
+        function updateUI() {
+            dropPulse.style.display = selectedGrid.children.length ? 'none' : 'block';
+
             const preview = document.getElementById('miniPreview');
-            const items = Array.from(selectedGrid.children).map(i => i.dataset.id);
-            if (items.length === 0) { preview.innerHTML = '<em>No places selected yet</em>'; return; }
+            if (!selectedGrid.children.length) {
+                preview.innerHTML = '<em>No places selected</em>';
+                return;
+            }
+
             preview.innerHTML = '';
-            items.forEach((place, i) => {
+            [...selectedGrid.children].forEach((i, idx) => {
+                const place = i.dataset.id;
                 const card = document.createElement('div');
                 card.className = 'preview-card';
-                card.style.background = gradientColors[i % gradientColors.length];
-                card.innerHTML = `<span class="number">${i + 1}</span><span class="icon">📍</span>${place}`;
+                card.style.background = gradients[idx % gradients.length];
+                card.innerHTML = `
+        <div class="preview-title">${idx + 1}. ${place}</div>
+        <iframe class="map-frame"
+        src="https://maps.google.com/maps?q=${placeMap[place]}&z=9&output=embed"></iframe>`;
                 preview.appendChild(card);
             });
         }
 
-        // LocalStorage
-        function saveToLocal() {
-            const selected = Array.from(selectedGrid.children).map(i => i.dataset.id);
-            localStorage.setItem('selectedPlaces', JSON.stringify(selected));
-        }
-        window.onload = function () {
-            const stored = JSON.parse(localStorage.getItem('selectedPlaces') || '[]');
-            stored.forEach(id => {
-                const item = document.querySelector(`#availableGrid .item[data-id="${id}"]`);
-                if (item) selectedGrid.appendChild(item);
-            });
-            updatePulse();
-            updateMiniPreview();
+        /* Format itinerary */
+        function formatItinerary() {
+            return [...selectedGrid.children].map((i, x) => `${x + 1}. ${i.dataset.id}`).join('\n');
         }
 
-        // Clear All
-        document.getElementById('clearBtn').onclick = function () {
-            Array.from(selectedGrid.children).forEach(i => availableGrid.appendChild(i));
-            updatePulse();
-            updateMiniPreview();
-            localStorage.removeItem('selectedPlaces');
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('phone').value = '';
-            document.getElementById('travelers').value = 1;
-            document.getElementById('notes').value = '';
-        }
+        /* WhatsApp */
+        document.getElementById('sendWhatsApp').onclick = () => {
+            const n = name.value, p = phone.value, e = email.value, g = guests.value, a = arrival.value, d = departure.value;
+            if (!n || !p || !a || !d || !selectedGrid.children.length) { alert('Please complete all details'); return; }
 
-        // Format itinerary as numbered list
-        function formatItinerary(items) { return items.map((p, i) => `${i + 1}. ${p}`).join('\n'); }
+            const msg = `Ayubowan Tours Booking
+Name: ${n}
+Phone: ${p}
+Email: ${e}
+Guests: ${g}
+Arrival: ${a}
+Departure: ${d}
 
-        // WhatsApp Booking
-        document.getElementById('sendWhatsApp').onclick = function () {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const travelers = document.getElementById('travelers').value;
-            const notes = document.getElementById('notes').value;
-            const itinerary = Array.from(selectedGrid.children).map(i => i.dataset.id);
+Itinerary:
+${formatItinerary()}`;
 
-            if (!name || !phone || itinerary.length === 0) { alert('Please fill name, phone and select places.'); return; }
+            window.open(`https://wa.me/94763661600?text=${encodeURIComponent(msg)}`);
+        };
 
-            const waText = `Ayubowan Tours Booking:
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Travelers: ${travelers}
-Selected Places:
-${formatItinerary(itinerary)}
-Notes: ${notes}`;
+        /* Email */
+        document.getElementById('sendEmail').onclick = () => {
+            const subject = 'Ayubowan Tours Booking Request';
+            const body = `Name: ${name.value}
+Phone: ${phone.value}
+Email: ${email.value}
+Guests: ${guests.value}
+Arrival: ${arrival.value}
+Departure: ${departure.value}
 
-            window.open(`https://wa.me/94763661600?text=${encodeURIComponent(waText)}`, '_blank');
-        }
-
-        // Email Booking
-        document.getElementById('sendEmail').onclick = function () {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const travelers = document.getElementById('travelers').value;
-            const notes = document.getElementById('notes').value;
-            const itinerary = Array.from(selectedGrid.children).map(i => i.dataset.id);
-
-            if (!name || !email || itinerary.length === 0) { alert('Please fill name, email and select places.'); return; }
-
-            const subject = `Ayubowan Tours Booking - ${name}`;
-            const body = `Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Travelers: ${travelers}
-Selected Places:
-${formatItinerary(itinerary)}
-Notes: ${notes}`;
+Itinerary:
+${formatItinerary()}`;
 
             window.location.href = `mailto:info@ayubowantours.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        }
+        };
     </script>
+
 </body>
 
 </html>
