@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayubowan Tours – Create Your Tour</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,7 +17,7 @@
         h3 {
             text-align: center;
             color: #2c3e50;
-            margin-bottom: 15px
+            margin-bottom: 15px;
         }
 
         .flex-container {
@@ -29,7 +27,6 @@
             flex-wrap: wrap;
         }
 
-        /* Boxes */
         .box-dragging {
             flex: 1 1 320px;
             max-width: 420px;
@@ -40,14 +37,12 @@
             position: relative;
         }
 
-        /* Items grid */
         .items-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
         }
 
-        /* Item */
         .item {
             border-radius: 8px;
             padding: 6px;
@@ -70,7 +65,6 @@
             box-shadow: 0 0 0 3px rgba(52, 152, 219, .6), 0 10px 25px rgba(0, 0, 0, .3);
         }
 
-        /* Drop hint */
         .drop-pulse {
             position: absolute;
             top: 20%;
@@ -96,7 +90,6 @@
             }
         }
 
-        /* Booking */
         .traveler-info {
             flex: 1 1 320px;
             max-width: 420px;
@@ -105,12 +98,11 @@
             padding: 20px;
         }
 
-        /* Mini itinerary */
         #miniPreview {
             margin-top: 15px;
             display: flex;
             flex-direction: column;
-            gap: 12px
+            gap: 12px;
         }
 
         .preview-card {
@@ -122,15 +114,14 @@
         }
 
         .preview-card:hover {
-            transform: translateY(-4px)
+            transform: translateY(-4px);
         }
 
         .preview-title {
             font-weight: 600;
-            margin-bottom: 6px
+            margin-bottom: 6px;
         }
 
-        /* Map */
         .map-frame {
             width: 100%;
             height: 120px;
@@ -138,10 +129,24 @@
             border-radius: 8px;
         }
 
-        /* Mobile */
+        input.valid {
+            border: 2px solid #28a745 !important;
+        }
+
+        input.invalid {
+            border: 2px solid #dc3545 !important;
+        }
+
+        .validation-msg {
+            color: #dc3545;
+            font-size: 0.85rem;
+            display: none;
+            margin-bottom: 5px;
+        }
+
         @media(max-width:768px) {
             .items-grid {
-                grid-template-columns: 1fr
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -153,7 +158,7 @@
 
     <div class="flex-container">
 
-        <!-- AVAILABLE -->
+        <!-- Available Places -->
         <div class="box-dragging">
             <h3>Available Places</h3>
             <div class="items-grid" id="availableGrid">
@@ -172,30 +177,43 @@
             </div>
         </div>
 
-        <!-- SELECTED -->
+        <!-- Selected Places -->
         <div class="box-dragging">
             <h3>Selected Places</h3>
             <div class="drop-pulse" id="dropPulse">Drop Here</div>
             <div class="items-grid" id="selectedGrid"></div>
         </div>
 
-        <!-- BOOKING -->
+        <!-- Booking Form -->
         <div class="traveler-info">
             <h3>Booking Details</h3>
 
-            <input class="form-control mb-2" id="name" placeholder="Customer Name">
-            <input class="form-control mb-2" id="phone" placeholder="Phone Number">
-            <input class="form-control mb-2" id="email" placeholder="Email Address">
-            <input class="form-control mb-2" id="guests" type="number" min="1" value="1" placeholder="Number of Guests">
+            <input class="form-control mb-1" id="name" placeholder="Customer Name">
+            <div class="validation-msg" id="nameMsg">Please enter your name</div>
+
+            <input class="form-control mb-1" id="phone" placeholder="Phone Number">
+            <div class="validation-msg" id="phoneMsg">Enter a valid phone number (digits only, min 10)</div>
+
+            <input class="form-control mb-1" id="email" placeholder="Email Address">
+            <div class="validation-msg" id="emailMsg">Enter a valid email</div>
+
+            <input class="form-control mb-1" id="guests" type="number" min="1" value="1" placeholder="Number of Guests">
+            <div class="validation-msg" id="guestsMsg">Guests must be at least 1</div>
+
             <label class="mt-2">Arrival Date</label>
-            <input class="form-control mb-2" id="arrival" type="date">
+            <input class="form-control mb-1" id="arrival" type="date" required>
+            <div class="validation-msg" id="arrivalMsg">Please select arrival date</div>
+
             <label>Departure Date</label>
-            <input class="form-control mb-2" id="departure" type="date">
+            <input class="form-control mb-1" id="departure" type="date" required>
+            <div class="validation-msg" id="departureMsg">Please select departure date</div>
+
+            <div class="validation-msg" id="dateOrderMsg">Departure date must be after Arrival date</div>
 
             <div id="miniPreview"><em>No places selected</em></div>
 
-            <button class="btn btn-success w-100 mt-3" id="sendWhatsApp">Send via WhatsApp</button>
-            <button class="btn btn-primary w-100 mt-2" id="sendEmail">Send via Email</button>
+            <button class="btn btn-success w-100 mt-3" id="sendWhatsApp" disabled>Send via WhatsApp</button>
+            <button class="btn btn-primary w-100 mt-2" id="sendEmail" disabled>Send via Email</button>
         </div>
 
     </div>
@@ -219,8 +237,8 @@
             'linear-gradient(90deg,#2193b0,#6dd5ed)'
         ];
 
+        // --- Drag & Drop + Mobile Long Press ---
         let holdTimer = null;
-
         function bindItem(item) {
             item.draggable = true;
 
@@ -239,61 +257,31 @@
 
             item.addEventListener('dragstart', () => window.dragged = item);
         }
-
         document.querySelectorAll('.item').forEach(bindItem);
 
-        [selectedGrid, availableGrid].forEach(grid => {
+        // Desktop drag/drop
+        [availableGrid, selectedGrid].forEach(grid => {
             grid.addEventListener('dragover', e => e.preventDefault());
             grid.addEventListener('drop', () => {
                 if (window.dragged && !grid.contains(window.dragged)) {
                     grid.appendChild(window.dragged);
                     updateUI();
-                    saveSelected();
                 }
             });
         });
 
+        // Move item between grids
         function moveItem(item) {
             const target = item.parentElement.id === 'availableGrid' ? selectedGrid : availableGrid;
             target.appendChild(item);
             updateUI();
-            saveSelected();
         }
 
-        function updateUI() {
-            dropPulse.style.display = selectedGrid.children.length ? 'none' : 'block';
-
-            const preview = document.getElementById('miniPreview');
-            if (!selectedGrid.children.length) {
-                preview.innerHTML = '<em>No places selected</em>';
-                return;
-            }
-
-            preview.innerHTML = '';
-            [...selectedGrid.children].forEach((i, idx) => {
-                const place = i.dataset.id;
-                const card = document.createElement('div');
-                card.className = 'preview-card';
-                card.style.background = gradients[idx % gradients.length];
-                card.innerHTML = `
-        <div class="preview-title">${idx + 1}. ${place}</div>
-        <iframe class="map-frame"
-        src="https://maps.google.com/maps?q=${placeMap[place]}&z=9&output=embed"></iframe>`;
-                preview.appendChild(card);
-            });
-        }
-
-        function formatItinerary() {
-            return [...selectedGrid.children].map((i, x) => `${x + 1}. ${i.dataset.id}`).join('\n');
-        }
-
-        /* Save selected items to localStorage */
-        function saveSelected() {
+        // --- LocalStorage ---
+        function saveToLocal() {
             const selected = [...selectedGrid.children].map(i => i.dataset.id);
             localStorage.setItem('selectedPlaces', JSON.stringify(selected));
         }
-
-        /* Load selected items from localStorage */
         window.onload = function () {
             const stored = JSON.parse(localStorage.getItem('selectedPlaces') || '[]');
             stored.forEach(id => {
@@ -303,13 +291,90 @@
             updateUI();
         }
 
-        /* WhatsApp */
+        // --- Update preview ---
+        function updateUI() {
+            dropPulse.style.display = selectedGrid.children.length ? 'none' : 'block';
+            saveToLocal();
+            const preview = document.getElementById('miniPreview');
+            if (!selectedGrid.children.length) {
+                preview.innerHTML = '<em>No places selected</em>';
+                return;
+            }
+            preview.innerHTML = '';
+            [...selectedGrid.children].forEach((i, idx) => {
+                const place = i.dataset.id;
+                const card = document.createElement('div');
+                card.className = 'preview-card';
+                card.style.background = gradients[idx % gradients.length];
+                card.innerHTML = `
+            <div class="preview-title">${idx + 1}. ${place}</div>
+            <iframe class="map-frame" src="https://maps.google.com/maps?q=${placeMap[place]}&z=9&output=embed"></iframe>`;
+                preview.appendChild(card);
+            });
+            validateForm();
+        }
+
+        // --- Validation ---
+        const fields = [
+            { id: 'name', validator: v => v.trim() !== '', msg: 'nameMsg' },
+            { id: 'phone', validator: v => /^\d{10,15}$/.test(v), msg: 'phoneMsg' },
+            { id: 'email', validator: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), msg: 'emailMsg' },
+            { id: 'guests', validator: v => parseInt(v) >= 1, msg: 'guestsMsg' },
+            { id: 'arrival', validator: v => v !== '', msg: 'arrivalMsg' },
+            { id: 'departure', validator: v => v !== '', msg: 'departureMsg' }
+        ];
+
+        function validateForm() {
+            let valid = true;
+            fields.forEach(f => {
+                const field = document.getElementById(f.id);
+                const msg = document.getElementById(f.msg);
+                if (!f.validator(field.value)) {
+                    msg.style.display = 'block';
+                    field.classList.add('invalid');
+                    field.classList.remove('valid');
+                    valid = false;
+                } else {
+                    msg.style.display = 'none';
+                    field.classList.remove('invalid');
+                    field.classList.add('valid');
+                }
+            });
+
+            // Departure > Arrival
+            const arrivalVal = document.getElementById('arrival').value;
+            const departureVal = document.getElementById('departure').value;
+            const dateOrderMsg = document.getElementById('dateOrderMsg');
+            if (arrivalVal && departureVal && new Date(departureVal) <= new Date(arrivalVal)) {
+                dateOrderMsg.style.display = 'block';
+                document.getElementById('arrival').classList.add('invalid');
+                document.getElementById('departure').classList.add('invalid');
+                document.getElementById('arrival').classList.remove('valid');
+                document.getElementById('departure').classList.remove('valid');
+                valid = false;
+            } else dateOrderMsg.style.display = 'none';
+
+            if (!selectedGrid.children.length) valid = false;
+
+            document.getElementById('sendWhatsApp').disabled = !valid;
+            document.getElementById('sendEmail').disabled = !valid;
+        }
+
+        // Listen to input changes
+        fields.concat([{ id: 'arrival' }, { id: 'departure' }]).forEach(f => {
+            document.getElementById(f.id).addEventListener('input', validateForm);
+        });
+        selectedGrid.addEventListener('DOMSubtreeModified', validateForm);
+
+        // --- Format itinerary ---
+        function formatItinerary() {
+            return [...selectedGrid.children].map((i, x) => `${x + 1}. ${i.dataset.id}`).join('\n');
+        }
+
+        // --- WhatsApp ---
         document.getElementById('sendWhatsApp').onclick = () => {
             const n = name.value, p = phone.value, e = email.value, g = guests.value, a = arrival.value, d = departure.value;
-            if (!n || !p || !a || !d || !selectedGrid.children.length) { alert('Please complete all details'); return; }
-
-            const selected = JSON.parse(localStorage.getItem('selectedPlaces') || '[]');
-
+            const itinerary = formatItinerary();
             const msg = `Ayubowan Tours Booking
 Name: ${n}
 Phone: ${p}
@@ -318,15 +383,13 @@ Guests: ${g}
 Arrival: ${a}
 Departure: ${d}
 
-Selected Places:
-${selected.map((p, i) => `${i + 1}. ${p}`).join('\n')}`;
-
+Itinerary:
+${itinerary}`;
             window.open(`https://wa.me/94763661600?text=${encodeURIComponent(msg)}`);
         };
 
-        /* Email */
+        // --- Email ---
         document.getElementById('sendEmail').onclick = () => {
-            const selected = JSON.parse(localStorage.getItem('selectedPlaces') || '[]');
             const subject = 'Ayubowan Tours Booking Request';
             const body = `Name: ${name.value}
 Phone: ${phone.value}
@@ -335,13 +398,11 @@ Guests: ${guests.value}
 Arrival: ${arrival.value}
 Departure: ${departure.value}
 
-Selected Places:
-${selected.map((p, i) => `${i + 1}. ${p}`).join('\n')}`;
-
+Itinerary:
+${formatItinerary()}`;
             window.location.href = `mailto:info@ayubowantours.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         };
     </script>
-
 </body>
 
 </html>
