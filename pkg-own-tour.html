@@ -67,15 +67,15 @@
             box-shadow: 0 0 0 3px rgba(52, 152, 219, .6), 0 10px 25px rgba(0, 0, 0, .3);
         }
 
-        .drop-pulse {
+        #dropPulse {
             position: absolute;
-            top: 20%;
-            left: 0;
-            right: 0;
-            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             font-weight: bold;
             color: #3498db;
             animation: pulse 1.5s infinite;
+            pointer-events: none;
         }
 
         @keyframes pulse {
@@ -206,8 +206,8 @@
         <!-- SELECTED -->
         <div class="box-dragging">
             <h3>Selected Places</h3>
-            <div class="drop-pulse" id="dropPulse">Drop Here</div>
             <div class="items-grid" id="selectedGrid"></div>
+            <div id="dropPulse">Click to Create The Tour</div>
         </div>
 
         <!-- BOOKING -->
@@ -256,21 +256,10 @@
         const selectedGrid = document.getElementById('selectedGrid');
         const dropPulse = document.getElementById('dropPulse');
 
-        const placeMap = {
-            Kandy: '7.2906,80.6337',
-            Sigiriya: '7.9570,80.7603',
-            Ella: '6.8667,81.0466',
-            Yala: '6.3667,81.5167'
-        };
+        const placeMap = { Kandy: '7.2906,80.6337', Sigiriya: '7.9570,80.7603', Ella: '6.8667,81.0466', Yala: '6.3667,81.5167' };
+        const gradients = ['linear-gradient(90deg,#6a11cb,#2575fc)', 'linear-gradient(90deg,#ff512f,#f09819)', 'linear-gradient(90deg,#43e97b,#38f9d7)', 'linear-gradient(90deg,#2193b0,#6dd5ed)'];
 
-        const gradients = [
-            'linear-gradient(90deg,#6a11cb,#2575fc)',
-            'linear-gradient(90deg,#ff512f,#f09819)',
-            'linear-gradient(90deg,#43e97b,#38f9d7)',
-            'linear-gradient(90deg,#2193b0,#6dd5ed)'
-        ];
-
-        // Load selected from localStorage
+        // Load selected items from localStorage
         window.onload = function () {
             const stored = JSON.parse(localStorage.getItem('selectedPlaces') || '[]');
             stored.forEach(id => {
@@ -280,21 +269,12 @@
             updateUI();
         };
 
-        // Bind items
+        let holdTimer;
         function bindItem(item) {
             item.onclick = () => moveItem(item);
-
             item.addEventListener('touchstart', () => holdTimer = setTimeout(() => item.classList.add('drag-hold'), 400));
-            item.addEventListener('touchend', () => {
-                clearTimeout(holdTimer);
-                if (item.classList.contains('drag-hold')) {
-                    item.classList.remove('drag-hold');
-                    moveItem(item);
-                }
-            });
+            item.addEventListener('touchend', () => { clearTimeout(holdTimer); if (item.classList.contains('drag-hold')) { item.classList.remove('drag-hold'); moveItem(item); } });
         }
-
-        let holdTimer;
         document.querySelectorAll('.item').forEach(bindItem);
 
         function moveItem(item) {
@@ -307,33 +287,22 @@
         [selectedGrid, availableGrid].forEach(grid => {
             grid.addEventListener('dragover', e => e.preventDefault());
             grid.addEventListener('drop', () => {
-                if (window.dragged && !grid.contains(window.dragged)) {
-                    grid.appendChild(window.dragged);
-                    updateUI();
-                    saveToLocal();
-                }
+                if (window.dragged && !grid.contains(window.dragged)) { grid.appendChild(window.dragged); updateUI(); saveToLocal(); }
             });
         });
 
         function updateUI() {
             dropPulse.style.display = selectedGrid.children.length ? 'none' : 'block';
-
             const preview = document.getElementById('miniPreview');
-            if (!selectedGrid.children.length) {
-                preview.innerHTML = '<em>No places selected</em>';
-                return;
-            }
-
+            if (!selectedGrid.children.length) { preview.innerHTML = '<em>No places selected</em>'; validateForm(); return; }
             preview.innerHTML = '';
             [...selectedGrid.children].forEach((i, idx) => {
                 const place = i.dataset.id;
                 const card = document.createElement('div');
                 card.className = 'preview-card';
                 card.style.background = gradients[idx % gradients.length];
-                card.innerHTML = `
-        <div class="preview-title">${idx + 1}. ${place}</div>
-        <iframe class="map-frame"
-        src="https://maps.google.com/maps?q=${placeMap[place]}&z=9&output=embed"></iframe>`;
+                card.innerHTML = `<div class="preview-title">${idx + 1}. ${place}</div>
+                    <iframe class="map-frame" src="https://maps.google.com/maps?q=${placeMap[place]}&z=9&output=embed"></iframe>`;
                 preview.appendChild(card);
             });
             validateForm();
@@ -344,24 +313,12 @@
             localStorage.setItem('selectedPlaces', JSON.stringify(selected));
         }
 
-        function formatItinerary() {
-            return [...selectedGrid.children].map((i, x) => `${x + 1}. ${i.dataset.id}`).join('\n');
-        }
+        function formatItinerary() { return [...selectedGrid.children].map((i, x) => `${x + 1}. ${i.dataset.id}`).join('\n'); }
 
         // ---- Form Validation ----
         const fields = ['name', 'phone', 'email', 'guests', 'arrival', 'departure'];
-        const validationMessages = {
-            name: 'Name is required.',
-            phone: 'Enter valid phone number.',
-            email: 'Enter valid email.',
-            guests: 'Must have at least 1 guest.',
-            arrival: 'Arrival date is required.',
-            departure: 'Departure date must be after arrival date.'
-        };
-
         function validateForm() {
             let valid = true;
-
             const n = document.getElementById('name').value.trim();
             const p = document.getElementById('phone').value.trim();
             const e = document.getElementById('email').value.trim();
@@ -374,13 +331,13 @@
             if (!n) { nameEl.classList.add('invalid'); nameEl.classList.remove('valid'); document.getElementById('nameMsg').style.display = 'block'; valid = false; }
             else { nameEl.classList.remove('invalid'); nameEl.classList.add('valid'); document.getElementById('nameMsg').style.display = 'none'; }
 
-            // Phone regex
+            // Phone
             const phoneEl = document.getElementById('phone');
             const phoneRegex = /^[0-9]{7,15}$/;
             if (!p || !phoneRegex.test(p)) { phoneEl.classList.add('invalid'); phoneEl.classList.remove('valid'); document.getElementById('phoneMsg').style.display = 'block'; valid = false; }
             else { phoneEl.classList.remove('invalid'); phoneEl.classList.add('valid'); document.getElementById('phoneMsg').style.display = 'none'; }
 
-            // Email regex
+            // Email
             const emailEl = document.getElementById('email');
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!e || !emailRegex.test(e)) { emailEl.classList.add('invalid'); emailEl.classList.remove('valid'); document.getElementById('emailMsg').style.display = 'block'; valid = false; }
@@ -401,7 +358,7 @@
             if (!d || (a && d <= a)) { departureEl.classList.add('invalid'); departureEl.classList.remove('valid'); document.getElementById('departureMsg').style.display = 'block'; valid = false; }
             else { departureEl.classList.remove('invalid'); departureEl.classList.add('valid'); document.getElementById('departureMsg').style.display = 'none'; }
 
-            // Enable/disable buttons
+            // Enable buttons only if valid
             document.getElementById('sendWhatsApp').disabled = !valid || selectedGrid.children.length === 0;
             document.getElementById('sendEmail').disabled = !valid || selectedGrid.children.length === 0;
         }
@@ -418,7 +375,6 @@
             const d = document.getElementById('departure').value;
 
             const itinerary = formatItinerary();
-
             const msg = `Ayubowan Tours Booking
 Name: ${n}
 Phone: ${p}
@@ -430,17 +386,15 @@ Departure: ${d}
 Itinerary:
 ${itinerary}`;
 
+            // Open WhatsApp
             window.open(`https://wa.me/94763661600?text=${encodeURIComponent(msg)}`);
 
-            // Show popup
+            // Show popup after sending
             const popup = document.getElementById('popupOverlay');
             popup.style.display = 'flex';
         };
 
-        document.getElementById('popupOk').onclick = () => {
-            document.getElementById('popupOverlay').style.display = 'none';
-            location.reload();
-        };
+        document.getElementById('popupOk').onclick = () => { document.getElementById('popupOverlay').style.display = 'none'; location.reload(); };
 
         // ---- Email Send ----
         document.getElementById('sendEmail').onclick = () => {
@@ -464,7 +418,6 @@ ${formatItinerary()}`;
 
             window.location.href = `mailto:info@ayubowantours.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         };
-
     </script>
 
 </body>
