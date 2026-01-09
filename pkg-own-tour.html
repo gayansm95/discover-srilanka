@@ -110,6 +110,8 @@
             padding: 15px;
             max-width: 420px;
             flex: 1 1 320px;
+            position: relative;
+            min-height: 300px;
         }
 
         .items-grid {
@@ -128,6 +130,8 @@
             cursor: grab;
             transition: transform 0.2s, box-shadow 0.2s;
             user-select: none;
+            position: relative;
+            z-index: 2;
         }
 
         .item.dragging {
@@ -260,12 +264,115 @@
             height: 400px;
             z-index: -9999;
         }
+
+        /* Empty state messages */
+        .empty-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #666;
+            font-size: 1.2rem;
+            text-align: center;
+            width: 80%;
+            z-index: 1;
+            animation: fadeInOut 2s infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .empty-message i {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+
+        /* Enhanced styling for PDF */
+        .download-summary-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .download-summary-btn:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        /* Booking confirmation popup */
+        .popup-content {
+            padding: 20px;
+        }
+
+        .popup-icon {
+            font-size: 48px;
+            color: #4CAF50;
+            margin-bottom: 15px;
+            animation: pop 0.5s ease;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0);
+            }
+
+            70% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .summary-btn-container {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed #ddd;
+        }
+
+        /* Spinner styles */
+        #spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
+        #spinner.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Spinner Start -->
+    <!-- Spinner Start - Fixed to show/hide properly -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -302,11 +409,11 @@
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h3 class="text-white display-3 mb-4">Design Your Sri Lanka journey</h1>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="packages.html">Packages</a></li>
-                    <li class="breadcrumb-item active text-white">Design Your Sri Lanka journey</li>
-                </ol>
+            <h3 class="text-white display-3 mb-4">Design Your Sri Lanka journey</h3>
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="packages.html">Packages</a></li>
+                <li class="breadcrumb-item active text-white">Design Your Sri Lanka journey</li>
+            </ol>
         </div>
     </div>
     <!-- Header End -->
@@ -327,21 +434,26 @@
                 <div class="box">
                     <h3 class="text-center">Explore Destinations</h3>
                     <div class="items-grid" id="availableGrid">
-                        <div class="item" data-id="Kandy"><img src="img/kandy-package-card.jpeg">
+                        <div class="item" data-id="Kandy"><img src="img/kandy-package-card.jpeg" alt="Kandy">
                             <div>Kandy</div>
                         </div>
-                        <div class="item" data-id="Sigiriya"><img src="img/kandy-dambulla-sirigiya-package-card.jpg">
+                        <div class="item" data-id="Sigiriya"><img src="img/kandy-dambulla-sirigiya-package-card.jpg"
+                                alt="Sigiriya">
                             <div>Sigiriya</div>
                         </div>
-                        <div class="item" data-id="Ella"><img src="img/14-day-tour-srilanka-ella.jpg">
+                        <div class="item" data-id="Ella"><img src="img/14-day-tour-srilanka-ella.jpg" alt="Ella">
                             <div>Ella</div>
                         </div>
-                        <div class="item" data-id="Yala"><img src="img/14-day-tour-srilanka-yala.jpg">
+                        <div class="item" data-id="Yala"><img src="img/14-day-tour-srilanka-yala.jpg" alt="Yala Safari">
                             <div>Yala Safari</div>
                         </div>
-                        <div class="item" data-id="Galle"><img src="img/14-day-tour-srilanka-galle.jpg">
+                        <div class="item" data-id="Galle"><img src="img/14-day-tour-srilanka-galle.jpg" alt="Galle">
                             <div>Galle</div>
                         </div>
+                    </div>
+                    <div class="empty-message" id="availableEmptyMessage">
+                        <i class="fas fa-exclamation-circle"></i>
+                        No Options Available
                     </div>
                 </div>
 
@@ -349,6 +461,10 @@
                 <div class="box">
                     <h3 class="text-center">Your Selected Journey</h3>
                     <div class="items-grid" id="selectedGrid"></div>
+                    <div class="empty-message" id="selectedEmptyMessage">
+                        <i class="fas fa-mouse-pointer"></i>
+                        Click To Select Destinations
+                    </div>
                 </div>
 
                 <!-- Booking Details -->
@@ -388,10 +504,10 @@
                     </div>
 
                     <button class="btn btn-success w-100 mt-3" id="sendWhatsApp" disabled>
-                        <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp
+                        <i class="fa-brands fa-whatsapp"></i> Send Booking via WhatsApp
                     </button>
                     <button class="btn btn-primary w-100 mt-2" id="sendEmail" disabled>
-                        <i class="fa fa-envelope"></i> Send via Email
+                        <i class="fa fa-envelope"></i> Send Booking via Email
                     </button>
                     <button class="btn btn-info w-100 mt-2" id="generatePDF" disabled>
                         <i class="fa fa-file-pdf"></i> Download Travel Summary PDF
@@ -404,11 +520,29 @@
     <!-- Hidden map for PDF export -->
     <div id="mapForExport" class="hidden-for-export"></div>
 
+    <!-- Booking Confirmation Popup -->
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup-box">
-            <p>Thank you! Your booking request has been received.</p>
-            <p><small>Your booking data will be cleared in 5 seconds.</small></p>
-            <button class="btn btn-success" id="popupOk">OK</button>
+            <div class="popup-content">
+                <div class="popup-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h4>Booking Confirmed!</h4>
+                <p>Your booking request has been successfully submitted.</p>
+                <p><small>We will contact you shortly to finalize your tour details.</small></p>
+
+                <div class="summary-btn-container">
+                    <p>Download your booking summary:</p>
+                    <button class="btn download-summary-btn w-100" id="downloadSummaryPDF">
+                        <i class="fas fa-download"></i> Download Booking Summary PDF
+                    </button>
+                </div>
+
+                <div class="mt-3">
+                    <small class="text-muted">This popup will auto-close in <span id="countdown">5</span>
+                        seconds</small>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -452,376 +586,364 @@
     </a>
 
     <script>
-        // DOM Elements
-        const coords = {
-            Kandy: [7.2906, 80.6337],
-            Sigiriya: [7.9570, 80.7603],
-            Ella: [6.8667, 81.0466],
-            Yala: [6.3667, 81.5167],
-            Galle: [6.0535, 80.2210]
-        };
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Hide spinner immediately
+            const spinner = document.getElementById('spinner');
+            spinner.style.display = 'none';
 
-        const colors = ['#1abc9c', '#3498db', '#9b59b6', '#e67e22', '#e74c3c', '#f1c40f', '#2ecc71', '#34495e'];
+            // Initialize the application
+            initializeApp();
+        });
 
-        // Initialize main map
-        let map = L.map('map').setView(coords.Kandy, 7);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://openstreetmap.org">OSM</a> contributors'
-        }).addTo(map);
+        // Main initialization function
+        function initializeApp() {
+            // ==================== VARIABLES ====================
+            const coords = {
+                Kandy: [7.2906, 80.6337],
+                Sigiriya: [7.9570, 80.7603],
+                Ella: [6.8667, 81.0466],
+                Yala: [6.3667, 81.5167],
+                Galle: [6.0535, 80.2210]
+            };
 
-        let routeControl = null;
-        let markers = [];
+            const colors = ['#1abc9c', '#3498db', '#9b59b6', '#e67e22', '#e74c3c', '#f1c40f', '#2ecc71', '#34495e'];
 
-        // Initialize export map
-        let exportMap = null;
-        let exportRouteControl = null;
-        let exportMarkers = [];
+            // Get DOM elements
+            const availableGrid = document.getElementById('availableGrid');
+            const selectedGrid = document.getElementById('selectedGrid');
+            const sendWhatsApp = document.getElementById('sendWhatsApp');
+            const sendEmail = document.getElementById('sendEmail');
+            const generatePDF = document.getElementById('generatePDF');
+            const popupOverlay = document.getElementById('popupOverlay');
+            const downloadSummaryPDF = document.getElementById('downloadSummaryPDF');
+            const mapForExport = document.getElementById('mapForExport');
+            const availableEmptyMessage = document.getElementById('availableEmptyMessage');
+            const selectedEmptyMessage = document.getElementById('selectedEmptyMessage');
+            const countdownElement = document.getElementById('countdown');
 
-        // Get DOM elements
-        const availableGrid = document.getElementById('availableGrid');
-        const selectedGrid = document.getElementById('selectedGrid');
-        const sendWhatsApp = document.getElementById('sendWhatsApp');
-        const sendEmail = document.getElementById('sendEmail');
-        const generatePDF = document.getElementById('generatePDF');
-        const popupOverlay = document.getElementById('popupOverlay');
-        const popupOk = document.getElementById('popupOk');
-        const mapForExport = document.getElementById('mapForExport');
+            // Form inputs
+            const name = document.getElementById('name');
+            const phone = document.getElementById('phone');
+            const email = document.getElementById('email');
+            const adults = document.getElementById('adults');
+            const children = document.getElementById('children');
+            const arrival = document.getElementById('arrival');
+            const departure = document.getElementById('departure');
 
-        // Form inputs
-        const name = document.getElementById('name');
-        const phone = document.getElementById('phone');
-        const email = document.getElementById('email');
-        const adults = document.getElementById('adults');
-        const children = document.getElementById('children');
-        const arrival = document.getElementById('arrival');
-        const departure = document.getElementById('departure');
+            // State variables
+            let map = null;
+            let routeControl = null;
+            let markers = [];
+            let exportMap = null;
+            let exportRouteControl = null;
+            let exportMarkers = [];
+            let draggedItem = null;
+            let isBookingConfirmed = false;
+            let countdownTimer = null;
 
-        // ==================== DRAG AND DROP FUNCTIONALITY ====================
-        let draggedItem = null;
+            // ==================== INITIALIZE MAP ====================
+            function initializeMap() {
+                try {
+                    map = L.map('map').setView(coords.Kandy, 7);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://openstreetmap.org">OSM</a> contributors'
+                    }).addTo(map);
+                } catch (error) {
+                    console.error('Error initializing map:', error);
+                }
+            }
 
-        function setupDragAndDrop() {
-            const items = document.querySelectorAll('.item');
+            // ==================== EMPTY STATE MESSAGES ====================
+            function updateEmptyStates() {
+                // Available destinations empty state
+                if (availableGrid.children.length === 0) {
+                    availableEmptyMessage.style.display = 'block';
+                } else {
+                    availableEmptyMessage.style.display = 'none';
+                }
 
-            items.forEach(item => {
-                item.setAttribute('draggable', 'true');
+                // Selected destinations empty state
+                if (selectedGrid.children.length === 0) {
+                    selectedEmptyMessage.style.display = 'block';
+                } else {
+                    selectedEmptyMessage.style.display = 'none';
+                }
+            }
 
-                item.addEventListener('dragstart', function (e) {
-                    draggedItem = this;
-                    this.classList.add('dragging');
-                    e.dataTransfer.setData('text/plain', this.dataset.id);
-                });
+            // ==================== DRAG AND DROP FUNCTIONALITY ====================
+            function setupDragAndDrop() {
+                const items = document.querySelectorAll('.item');
 
-                item.addEventListener('dragend', function () {
-                    this.classList.remove('dragging');
-                    draggedItem = null;
-                });
-            });
+                items.forEach(item => {
+                    item.setAttribute('draggable', 'true');
 
-            [availableGrid, selectedGrid].forEach(container => {
-                container.addEventListener('dragover', function (e) {
-                    e.preventDefault();
-                    this.style.backgroundColor = '#f0f8ff';
-                });
+                    item.addEventListener('dragstart', function (e) {
+                        draggedItem = this;
+                        this.classList.add('dragging');
+                        e.dataTransfer.setData('text/plain', this.dataset.id);
+                    });
 
-                container.addEventListener('dragleave', function () {
-                    this.style.backgroundColor = '';
-                });
+                    item.addEventListener('dragend', function () {
+                        this.classList.remove('dragging');
+                        draggedItem = null;
+                        updateEmptyStates();
+                    });
 
-                container.addEventListener('drop', function (e) {
-                    e.preventDefault();
-                    this.style.backgroundColor = '';
+                    // Click functionality
+                    item.addEventListener('click', function (e) {
+                        if (e.target.classList.contains('dragging')) return;
 
-                    if (draggedItem && draggedItem.parentElement !== this) {
-                        this.appendChild(draggedItem);
+                        const target = this.parentElement.id === 'availableGrid' ? selectedGrid : availableGrid;
+                        target.appendChild(this);
                         saveToLocalStorage();
                         updateRouteMap();
                         validateForm();
-                    }
+                        updateEmptyStates();
+                    });
                 });
-            });
-        }
 
-        // Click functionality
-        function bindItem(item) {
-            item.onclick = (e) => {
-                if (e.target.classList.contains('dragging')) return;
+                [availableGrid, selectedGrid].forEach(container => {
+                    container.addEventListener('dragover', function (e) {
+                        e.preventDefault();
+                        this.style.backgroundColor = '#f0f8ff';
+                    });
 
-                const target = item.parentElement.id === 'availableGrid' ? selectedGrid : availableGrid;
-                target.appendChild(item);
-                saveToLocalStorage();
+                    container.addEventListener('dragleave', function () {
+                        this.style.backgroundColor = '';
+                    });
+
+                    container.addEventListener('drop', function (e) {
+                        e.preventDefault();
+                        this.style.backgroundColor = '';
+
+                        if (draggedItem && draggedItem.parentElement !== this) {
+                            this.appendChild(draggedItem);
+                            saveToLocalStorage();
+                            updateRouteMap();
+                            validateForm();
+                            updateEmptyStates();
+                        }
+                    });
+                });
+            }
+
+            // ==================== LOCAL STORAGE ====================
+            function saveToLocalStorage() {
+                const selectedItems = [...selectedGrid.children];
+                const selectedIds = selectedItems.map(item => item.dataset.id);
+                localStorage.setItem('selectedJourney', JSON.stringify(selectedIds));
+            }
+
+            function loadFromLocalStorage() {
+                try {
+                    const savedSelection = localStorage.getItem('selectedJourney');
+                    if (savedSelection) {
+                        const selectedIds = JSON.parse(savedSelection);
+                        selectedIds.forEach(id => {
+                            const item = document.querySelector(`.item[data-id="${id}"]`);
+                            if (item && item.parentElement && item.parentElement.id === 'availableGrid') {
+                                selectedGrid.appendChild(item);
+                            }
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error loading from localStorage:', error);
+                }
                 updateRouteMap();
                 validateForm();
-            };
-        }
+                updateEmptyStates();
+            }
 
-        // ==================== LOCAL STORAGE ====================
-        function saveToLocalStorage() {
-            const selectedItems = [...selectedGrid.children];
-            const selectedIds = selectedItems.map(item => item.dataset.id);
-            localStorage.setItem('selectedJourney', JSON.stringify(selectedIds));
-        }
+            function clearLocalStorageAndReload() {
+                // Clear all booking-related data
+                localStorage.removeItem('selectedJourney');
+                localStorage.removeItem('lastBooking');
 
-        function loadFromLocalStorage() {
-            const savedSelection = localStorage.getItem('selectedJourney');
-            if (savedSelection) {
-                const selectedIds = JSON.parse(savedSelection);
-                selectedIds.forEach(id => {
-                    const item = document.querySelector(`.item[data-id="${id}"]`);
-                    if (item && item.parentElement.id === 'availableGrid') {
-                        selectedGrid.appendChild(item);
-                    }
+                // Reset booking state
+                isBookingConfirmed = false;
+
+                // Reload page after short delay
+                setTimeout(() => {
+                    window.location.reload();
+                }, 300);
+            }
+
+            // ==================== MAP FUNCTIONALITY ====================
+            function createPinIcon(number) {
+                const color = colors[(number - 1) % colors.length];
+                return L.divIcon({
+                    html: `<div class="pin-icon" style="background:${color}">${number}</div>`,
+                    className: '',
+                    iconSize: [36, 46],
+                    iconAnchor: [18, 46]
                 });
             }
-            updateRouteMap();
-            validateForm();
-        }
 
-        function clearLocalStorageData() {
-            // Clear all booking-related data
-            localStorage.removeItem('selectedJourney');
-            localStorage.removeItem('lastBooking');
+            function updateRouteMap() {
+                // Clear existing markers and route
+                markers.forEach(m => {
+                    if (m && map) map.removeLayer(m);
+                });
+                markers = [];
+                if (routeControl && map) {
+                    map.removeControl(routeControl);
+                    routeControl = null;
+                }
 
-            // Reset form
-            name.value = '';
-            phone.value = '';
-            email.value = '';
-            adults.value = '';
-            children.value = '0';
-            arrival.value = '';
-            departure.value = '';
+                // If no items selected, show default view
+                if (selectedGrid.children.length < 1) {
+                    if (map) map.setView(coords.Kandy, 7);
+                    return;
+                }
 
-            // Reset selected items
-            const selectedItems = [...selectedGrid.children];
-            selectedItems.forEach(item => {
-                availableGrid.appendChild(item);
-            });
+                // Create waypoints from selected items
+                const waypoints = [...selectedGrid.children].map(i => L.latLng(coords[i.dataset.id]));
 
-            // Update map and validation
-            updateRouteMap();
-            validateForm();
-        }
+                // Add markers for each waypoint
+                waypoints.forEach((wp, i) => {
+                    const marker = L.marker(wp, { icon: createPinIcon(i + 1) }).addTo(map);
+                    markers.push(marker);
+                });
 
-        // ==================== MAP FUNCTIONALITY ====================
-        function createPinIcon(number) {
-            const color = colors[(number - 1) % colors.length];
-            return L.divIcon({
-                html: `<div class="pin-icon" style="background:${color}">${number}</div>`,
-                className: '',
-                iconSize: [36, 46],
-                iconAnchor: [18, 46]
-            });
-        }
+                // Add routing if more than one waypoint
+                if (waypoints.length > 1 && typeof L.Routing !== 'undefined') {
+                    try {
+                        routeControl = L.Routing.control({
+                            waypoints: waypoints,
+                            lineOptions: { styles: [{ color: 'blue', weight: 4 }] },
+                            createMarker: () => null,
+                            routeWhileDragging: false,
+                            addWaypoints: false,
+                            draggableWaypoints: false,
+                            show: false
+                        }).addTo(map);
+                    } catch (error) {
+                        console.error('Error adding routing control:', error);
+                    }
+                }
 
-        function updateRouteMap() {
-            // Clear existing markers and route
-            markers.forEach(m => map.removeLayer(m));
-            markers = [];
-            if (routeControl) {
-                map.removeControl(routeControl);
-                routeControl = null;
+                // Fit map to show all markers
+                if (markers.length > 0) {
+                    const group = new L.featureGroup(markers);
+                    map.fitBounds(group.getBounds().pad(0.2));
+                }
             }
 
-            // If no items selected, show default view
-            if (selectedGrid.children.length < 1) {
-                map.setView(coords.Kandy, 7);
-                return;
+            // ==================== FORM VALIDATION ====================
+            function showValidationMessage(id, show, message) {
+                const msgElement = document.getElementById(id);
+                if (msgElement) {
+                    msgElement.textContent = message;
+                    if (show) {
+                        msgElement.classList.add('show');
+                    } else {
+                        msgElement.classList.remove('show');
+                    }
+                }
             }
 
-            // Create waypoints from selected items
-            const waypoints = [...selectedGrid.children].map(i => L.latLng(coords[i.dataset.id]));
+            function validateField(fieldId, condition, msgId, errorMessage) {
+                const isValid = condition;
+                const field = document.getElementById(fieldId);
 
-            // Add markers for each waypoint
-            waypoints.forEach((wp, i) => {
-                const marker = L.marker(wp, { icon: createPinIcon(i + 1) }).addTo(map);
-                markers.push(marker);
-            });
+                if (field) {
+                    if (isValid) {
+                        field.classList.remove('invalid');
+                        field.classList.add('valid');
+                        showValidationMessage(msgId, false, '');
+                    } else {
+                        field.classList.remove('valid');
+                        field.classList.add('invalid');
+                        showValidationMessage(msgId, true, errorMessage);
+                    }
+                }
 
-            // Add routing if more than one waypoint
-            if (waypoints.length > 1) {
-                routeControl = L.Routing.control({
-                    waypoints: waypoints,
-                    lineOptions: { styles: [{ color: 'blue', weight: 4 }] },
-                    createMarker: () => null,
-                    routeWhileDragging: false,
-                    addWaypoints: false,
-                    draggableWaypoints: false,
-                    show: false
-                }).addTo(map);
+                return isValid;
             }
 
-            // Fit map to show all markers
-            const group = new L.featureGroup(markers);
-            map.fitBounds(group.getBounds().pad(0.2));
-        }
+            function validateForm() {
+                let isFormValid = true;
 
-        // Create export map for PDF
-        function createExportMap() {
-            if (exportMap) {
-                exportMap.remove();
+                // Validate name
+                isFormValid &= validateField(
+                    'name',
+                    name && name.value.trim() !== '',
+                    'nameMsg',
+                    'Please enter your full name'
+                );
+
+                // Validate phone (7-15 digits)
+                isFormValid &= validateField(
+                    'phone',
+                    phone && /^[0-9]{7,15}$/.test(phone.value),
+                    'phoneMsg',
+                    'Please enter a valid phone number (7-15 digits)'
+                );
+
+                // Validate email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                isFormValid &= validateField(
+                    'email',
+                    email && emailRegex.test(email.value),
+                    'emailMsg',
+                    'Please enter a valid email address'
+                );
+
+                // Validate adults
+                isFormValid &= validateField(
+                    'adults',
+                    adults && parseInt(adults.value) >= 1,
+                    'adultsMsg',
+                    'At least 1 adult is required'
+                );
+
+                // Validate arrival date
+                isFormValid &= validateField(
+                    'arrival',
+                    arrival && arrival.value !== '',
+                    'arrivalMsg',
+                    'Please select an arrival date'
+                );
+
+                // Validate departure date
+                let departureValid = false;
+                if (arrival && arrival.value !== '' && departure && departure.value !== '') {
+                    const arrivalDate = new Date(arrival.value);
+                    const departureDate = new Date(departure.value);
+                    departureValid = departureDate > arrivalDate;
+                }
+
+                isFormValid &= validateField(
+                    'departure',
+                    departureValid,
+                    'departureMsg',
+                    'Please select a departure date after arrival date'
+                );
+
+                // Check if at least one destination is selected
+                const hasDestinations = selectedGrid.children.length > 0;
+
+                // Enable/disable buttons (PDF button is disabled after booking)
+                const allValid = isFormValid && hasDestinations;
+                if (sendWhatsApp) sendWhatsApp.disabled = !allValid || isBookingConfirmed;
+                if (sendEmail) sendEmail.disabled = !allValid || isBookingConfirmed;
+                if (generatePDF) generatePDF.disabled = !allValid || isBookingConfirmed;
+
+                return allValid;
             }
 
-            exportMap = L.map(mapForExport, {
-                attributionControl: false,
-                zoomControl: false
-            }).setView(coords.Kandy, 7);
-
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(exportMap);
-
-            // Clear existing export markers
-            exportMarkers.forEach(m => exportMap.removeLayer(m));
-            exportMarkers = [];
-            if (exportRouteControl) {
-                exportMap.removeControl(exportRouteControl);
-                exportRouteControl = null;
+            // ==================== WHATSAPP MESSAGE ====================
+            function getSelectedDestinations() {
+                return [...selectedGrid.children].map((item, index) =>
+                    `${index + 1}. ${item.dataset.id}`
+                ).join('\n');
             }
 
-            if (selectedGrid.children.length < 1) {
-                exportMap.setView(coords.Kandy, 7);
-                return;
-            }
+            function createWhatsAppMessage() {
+                const destinations = getSelectedDestinations();
 
-            const waypoints = [...selectedGrid.children].map(i => L.latLng(coords[i.dataset.id]));
-
-            waypoints.forEach((wp, i) => {
-                const marker = L.marker(wp, {
-                    icon: L.divIcon({
-                        html: `<div style="background:${colors[i % colors.length]}; width:24px; height:32px; border-radius:50% 50% 50% 50%; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:12px; border:2px solid white; box-shadow:0 2px 5px rgba(0,0,0,0.3);">${i + 1}</div>`,
-                        iconSize: [24, 32],
-                        iconAnchor: [12, 32]
-                    })
-                }).addTo(exportMap);
-                exportMarkers.push(marker);
-            });
-
-            if (waypoints.length > 1) {
-                exportRouteControl = L.Routing.control({
-                    waypoints: waypoints,
-                    lineOptions: { styles: [{ color: 'blue', weight: 3 }] },
-                    createMarker: () => null,
-                    routeWhileDragging: false,
-                    addWaypoints: false,
-                    draggableWaypoints: false,
-                    show: false
-                }).addTo(exportMap);
-            }
-
-            const group = new L.featureGroup(exportMarkers);
-            exportMap.fitBounds(group.getBounds().pad(0.2));
-
-            // Give map time to render
-            return new Promise(resolve => setTimeout(resolve, 500));
-        }
-
-        // ==================== FORM VALIDATION ====================
-        function showValidationMessage(id, show, message) {
-            const msgElement = document.getElementById(id);
-            msgElement.textContent = message;
-            if (show) {
-                msgElement.classList.add('show');
-            } else {
-                msgElement.classList.remove('show');
-            }
-        }
-
-        function validateField(fieldId, condition, msgId, errorMessage) {
-            const isValid = condition;
-            const field = document.getElementById(fieldId);
-
-            if (isValid) {
-                field.classList.remove('invalid');
-                field.classList.add('valid');
-                showValidationMessage(msgId, false, '');
-            } else {
-                field.classList.remove('valid');
-                field.classList.add('invalid');
-                showValidationMessage(msgId, true, errorMessage);
-            }
-
-            return isValid;
-        }
-
-        function validateForm() {
-            let isFormValid = true;
-
-            // Validate name
-            isFormValid &= validateField(
-                'name',
-                name.value.trim() !== '',
-                'nameMsg',
-                'Please enter your full name'
-            );
-
-            // Validate phone (7-15 digits)
-            isFormValid &= validateField(
-                'phone',
-                /^[0-9]{7,15}$/.test(phone.value),
-                'phoneMsg',
-                'Please enter a valid phone number (7-15 digits)'
-            );
-
-            // Validate email
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            isFormValid &= validateField(
-                'email',
-                emailRegex.test(email.value),
-                'emailMsg',
-                'Please enter a valid email address'
-            );
-
-            // Validate adults
-            isFormValid &= validateField(
-                'adults',
-                adults.value >= 1,
-                'adultsMsg',
-                'At least 1 adult is required'
-            );
-
-            // Validate arrival date
-            isFormValid &= validateField(
-                'arrival',
-                arrival.value !== '',
-                'arrivalMsg',
-                'Please select an arrival date'
-            );
-
-            // Validate departure date
-            let departureValid = false;
-            if (arrival.value !== '' && departure.value !== '') {
-                const arrivalDate = new Date(arrival.value);
-                const departureDate = new Date(departure.value);
-                departureValid = departureDate > arrivalDate;
-            }
-
-            isFormValid &= validateField(
-                'departure',
-                departureValid,
-                'departureMsg',
-                'Please select a departure date after arrival date'
-            );
-
-            // Check if at least one destination is selected
-            const hasDestinations = selectedGrid.children.length > 0;
-
-            // Enable/disable buttons
-            const allValid = isFormValid && hasDestinations;
-            sendWhatsApp.disabled = !allValid;
-            sendEmail.disabled = !allValid;
-            generatePDF.disabled = !allValid;
-
-            return allValid;
-        }
-
-        // ==================== WHATSAPP MESSAGE ====================
-        function getSelectedDestinations() {
-            return [...selectedGrid.children].map((item, index) =>
-                `${index + 1}. ${item.dataset.id}`
-            ).join('\n');
-        }
-
-        function createWhatsAppMessage() {
-            const destinations = getSelectedDestinations();
-
-            return `🚀 *Ayubowan Tours - Booking Request* 🚀
+                return `🚀 *Ayubowan Tours - Booking Request* 🚀
 
 *Customer Details:*
 👤 *Name:* ${name.value.trim()}
@@ -838,112 +960,189 @@ ${destinations}
 *Total Destinations:* ${selectedGrid.children.length}
 
 I would like to book this tour. Please provide me with pricing and availability.`;
-        }
-
-        // ==================== PDF GENERATION WITH MAP ====================
-        async function generateTravelPDF() {
-            if (!validateForm()) return;
-
-            // Show loading state
-            const originalText = generatePDF.innerHTML;
-            generatePDF.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Generating PDF...';
-            generatePDF.disabled = true;
-
-            try {
-                // Create export map
-                await createExportMap();
-
-                // Capture map as image
-                const mapDataUrl = await html2canvas(mapForExport, {
-                    backgroundColor: '#ffffff',
-                    scale: 2, // Higher quality
-                    useCORS: true,
-                    logging: false
-                }).then(canvas => {
-                    return canvas.toDataURL('image/jpeg', 0.9);
-                });
-
-                // Generate PDF
-                const { jsPDF } = window.jspdf;
-                const doc = new jsPDF();
-
-                // Add logo/header
-                doc.setFontSize(20);
-                doc.setTextColor(40, 180, 99);
-                doc.text("Ayubowan Tours", 105, 15, { align: 'center' });
-
-                doc.setFontSize(16);
-                doc.setTextColor(0, 0, 0);
-                doc.text("Travel Summary", 105, 25, { align: 'center' });
-
-                // Line separator
-                doc.setDrawColor(200, 200, 200);
-                doc.line(10, 30, 200, 30);
-
-                // Customer Information
-                doc.setFontSize(12);
-                doc.setFont(undefined, 'bold');
-                doc.text("Customer Information:", 10, 40);
-
-                doc.setFont(undefined, 'normal');
-                doc.text(`Name: ${name.value.trim()}`, 10, 48);
-                doc.text(`Phone: ${phone.value}`, 10, 56);
-                doc.text(`Email: ${email.value}`, 10, 64);
-                doc.text(`Adults: ${adults.value}`, 10, 72);
-                doc.text(`Children: ${children.value || '0'}`, 10, 80);
-                doc.text(`Arrival: ${arrival.value}`, 10, 88);
-                doc.text(`Departure: ${departure.value}`, 10, 96);
-
-                // Travel Itinerary
-                doc.setFont(undefined, 'bold');
-                doc.text("Travel Itinerary:", 10, 110);
-
-                doc.setFont(undefined, 'normal');
-                const destinations = [...selectedGrid.children];
-                let yPos = 118;
-
-                destinations.forEach((item, index) => {
-                    doc.text(`${index + 1}. ${item.dataset.id}`, 15, yPos);
-                    yPos += 8;
-                });
-
-                // Add Route Map
-                doc.addPage();
-                doc.setFontSize(16);
-                doc.text("Route Map", 105, 20, { align: 'center' });
-
-                // Add map image
-                doc.addImage(mapDataUrl, 'JPEG', 10, 30, 190, 120);
-
-                // Add map legend
-                doc.setFontSize(10);
-                doc.setTextColor(100, 100, 100);
-                doc.text("Map shows your selected destinations with optimal route", 10, 155);
-
-                // Footer
-                doc.setFontSize(10);
-                doc.text(`Generated on: ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`, 10, 280);
-                doc.text("Thank you for choosing Ayubowan Tours!", 105, 290, { align: 'center' });
-
-                // Save PDF
-                const fileName = `Ayubowan_Tour_${name.value.replace(/\s+/g, '_')}_${Date.now()}.pdf`;
-                doc.save(fileName);
-
-            } catch (error) {
-                console.error('Error generating PDF:', error);
-                alert('Error generating PDF. Please try again.');
-            } finally {
-                // Restore button state
-                generatePDF.innerHTML = originalText;
-                generatePDF.disabled = false;
             }
-        }
 
-        // ==================== EMAIL FUNCTION ====================
-        function sendBookingEmail() {
-            const destinations = getSelectedDestinations();
-            const subject = `Booking Request - ${name.value.trim()} - Ayubowan Tours`;
-            const body = `Dear Ayubowan Tours Team,
+            // ==================== ATTRACTIVE PDF GENERATION ====================
+            async function generateAttractivePDF(button) {
+                if (!validateForm()) return;
+
+                // Show loading state if button exists
+                if (button) {
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Creating Beautiful PDF...';
+                    button.disabled = true;
+
+                    try {
+                        await generatePDFContent();
+                    } finally {
+                        // Restore button state
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+                    }
+                } else {
+                    await generatePDFContent();
+                }
+            }
+
+            async function generatePDFContent() {
+                try {
+                    // Generate PDF
+                    if (typeof window.jspdf === 'undefined') {
+                        throw new Error('PDF library not loaded');
+                    }
+
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF();
+
+                    // ===== PAGE 1: COVER PAGE =====
+                    // Background gradient
+                    doc.setFillColor(102, 126, 234);
+                    doc.rect(0, 0, 210, 297, 'F');
+
+                    // Logo/Header
+                    doc.setFontSize(32);
+                    doc.setTextColor(255, 255, 255);
+                    doc.text("Ayubowan Tours", 105, 40, { align: 'center' });
+
+                    // Subtitle
+                    doc.setFontSize(18);
+                    doc.text("Booking Summary", 105, 60, { align: 'center' });
+
+                    // Decorative line
+                    doc.setDrawColor(255, 255, 255);
+                    doc.setLineWidth(0.5);
+                    doc.line(60, 70, 150, 70);
+
+                    // Booking ID
+                    const bookingId = 'AYT' + Date.now().toString().slice(-8);
+                    doc.setFontSize(12);
+                    doc.text(`Booking ID: ${bookingId}`, 105, 85, { align: 'center' });
+
+                    // Customer name
+                    doc.setFontSize(24);
+                    doc.text(name.value.trim(), 105, 110, { align: 'center' });
+
+                    // Destination count
+                    doc.setFontSize(16);
+                    doc.text(`${selectedGrid.children.length} Amazing Destinations`, 105, 130, { align: 'center' });
+
+                    // Travel dates
+                    doc.setFontSize(14);
+                    doc.text(`${arrival.value} to ${departure.value}`, 105, 150, { align: 'center' });
+
+                    // Footer note
+                    doc.setFontSize(10);
+                    doc.text("Your Sri Lankan adventure awaits!", 105, 180, { align: 'center' });
+
+                    // Generated date
+                    doc.text(`Generated on: ${new Date().toLocaleDateString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    })}`, 105, 280, { align: 'center' });
+
+                    // ===== PAGE 2: DETAILS PAGE =====
+                    doc.addPage();
+
+                    // Page title
+                    doc.setFillColor(255, 255, 255);
+                    doc.setTextColor(0, 0, 0);
+                    doc.setFontSize(20);
+                    doc.text("Travel Details", 105, 20, { align: 'center' });
+
+                    // Section: Customer Information
+                    doc.setFontSize(16);
+                    doc.setTextColor(102, 126, 234);
+                    doc.text("👤 Customer Information", 10, 35);
+
+                    doc.setFontSize(12);
+                    doc.setTextColor(0, 0, 0);
+                    let yPos = 45;
+
+                    // Create info table
+                    const customerInfo = [
+                        ['Name:', name.value.trim()],
+                        ['Phone:', phone.value],
+                        ['Email:', email.value],
+                        ['Travelers:', `${adults.value} Adult(s), ${children.value || '0'} Child(ren)`],
+                        ['Dates:', `${arrival.value} to ${departure.value}`]
+                    ];
+
+                    customerInfo.forEach(([label, value]) => {
+                        doc.setFont(undefined, 'bold');
+                        doc.text(label, 15, yPos);
+                        doc.setFont(undefined, 'normal');
+                        doc.text(value, 50, yPos);
+                        yPos += 8;
+                    });
+
+                    // Section: Itinerary
+                    yPos += 10;
+                    doc.setFontSize(16);
+                    doc.setTextColor(102, 126, 234);
+                    doc.text("🗺️ Your Itinerary", 10, yPos);
+
+                    doc.setFontSize(12);
+                    doc.setTextColor(0, 0, 0);
+                    yPos += 10;
+
+                    const destinations = [...selectedGrid.children];
+                    destinations.forEach((item, index) => {
+                        doc.setFillColor(colors[index % colors.length]);
+                        doc.circle(18, yPos - 4, 3, 'F');
+                        doc.text(`${index + 1}. ${item.dataset.id}`, 25, yPos);
+                        yPos += 7;
+                    });
+
+                    // ===== PAGE 3: MAP DESCRIPTION =====
+                    doc.addPage();
+
+                    // Page title
+                    doc.setFontSize(20);
+                    doc.text("Your Travel Route", 105, 20, { align: 'center' });
+
+                    // Map description
+                    yPos = 40;
+                    doc.setFontSize(12);
+                    doc.text("Your selected destinations in Sri Lanka:", 10, yPos);
+
+                    yPos += 10;
+                    doc.setFontSize(10);
+                    doc.setTextColor(100, 100, 100);
+                    doc.text("📍 Route Highlights:", 10, yPos);
+
+                    yPos += 8;
+                    doc.text("• Blue line shows your travel route", 15, yPos);
+                    yPos += 5;
+                    doc.text("• Numbered pins indicate destinations in order", 15, yPos);
+                    yPos += 5;
+                    doc.text("• Optimal route calculated for your journey", 15, yPos);
+
+                    // Footer with contact info
+                    yPos = 280;
+                    doc.setFontSize(9);
+                    doc.text("Ayubowan Tours - Discover the Wonder of Sri Lanka", 105, yPos, { align: 'center' });
+                    yPos += 4;
+                    doc.text("📞 +94 76 366 1600 | ✉️ info@ayubowantours.com", 105, yPos, { align: 'center' });
+
+                    // ===== SAVE PDF =====
+                    const fileName = `Ayubowan_Tour_Booking_${name.value.replace(/\s+/g, '_')}_${Date.now()}.pdf`;
+                    doc.save(fileName);
+
+                } catch (error) {
+                    console.error('Error generating PDF:', error);
+                    alert('Error generating PDF. Please try again.');
+                }
+            }
+
+            // ==================== EMAIL FUNCTION ====================
+            function sendBookingEmail() {
+                const destinations = getSelectedDestinations();
+                const subject = `Booking Request - ${name.value.trim()} - Ayubowan Tours`;
+                const body = `Dear Ayubowan Tours Team,
 
 I would like to request a booking with the following details:
 
@@ -966,131 +1165,169 @@ Please contact me to discuss this booking request further.
 Best regards,
 ${name.value.trim()}`;
 
-            const encodedSubject = encodeURIComponent(subject);
-            const encodedBody = encodeURIComponent(body);
+                const encodedSubject = encodeURIComponent(subject);
+                const encodedBody = encodeURIComponent(body);
 
-            window.location.href = `mailto:info@ayubowantours.com?subject=${encodedSubject}&body=${encodedBody}`;
-        }
+                window.location.href = `mailto:info@ayubowantours.com?subject=${encodedSubject}&body=${encodedBody}`;
+            }
 
-        // ==================== BOOKING CONFIRMATION ====================
-        function showBookingConfirmation() {
-            popupOverlay.style.display = 'flex';
+            // ==================== BOOKING CONFIRMATION ====================
+            function showBookingConfirmation() {
+                isBookingConfirmed = true;
 
-            // Set timeout to clear localStorage after 5 seconds
-            setTimeout(() => {
-                if (popupOverlay.style.display === 'flex') {
-                    clearLocalStorageData();
-                    popupOverlay.style.display = 'none';
-                }
-            }, 5000);
-        }
+                // Disable form inputs
+                [name, phone, email, adults, children, arrival, departure].forEach(field => {
+                    if (field) field.disabled = true;
+                });
 
-        // ==================== EVENT LISTENERS ====================
-        function setupEventListeners() {
-            // Form input validation
-            [name, phone, email, adults, children, arrival, departure].forEach(field => {
-                field.addEventListener('input', validateForm);
-                field.addEventListener('change', validateForm);
-            });
+                // Disable booking buttons
+                if (sendWhatsApp) sendWhatsApp.disabled = true;
+                if (sendEmail) sendEmail.disabled = true;
+                if (generatePDF) generatePDF.disabled = true;
 
-            // Date validation constraints
-            const today = new Date().toISOString().split('T')[0];
-            arrival.min = today;
-            departure.min = today;
+                // Start countdown
+                let seconds = 5;
+                if (countdownElement) countdownElement.textContent = seconds;
 
-            arrival.addEventListener('change', function () {
-                if (this.value) {
-                    departure.min = this.value;
-                    if (departure.value && departure.value < this.value) {
-                        departure.value = '';
+                countdownTimer = setInterval(() => {
+                    seconds--;
+                    if (countdownElement) countdownElement.textContent = seconds;
+
+                    if (seconds <= 0) {
+                        clearInterval(countdownTimer);
+                        closePopupAndReset();
                     }
+                }, 1000);
+
+                // Show popup
+                if (popupOverlay) popupOverlay.style.display = 'flex';
+            }
+
+            function closePopupAndReset() {
+                clearInterval(countdownTimer);
+                if (popupOverlay) popupOverlay.style.display = 'none';
+                clearLocalStorageAndReload();
+            }
+
+            // ==================== EVENT LISTENERS ====================
+            function setupEventListeners() {
+                // Form input validation
+                [name, phone, email, adults, children, arrival, departure].forEach(field => {
+                    if (field) {
+                        field.addEventListener('input', validateForm);
+                        field.addEventListener('change', validateForm);
+                    }
+                });
+
+                // Date validation constraints
+                const today = new Date().toISOString().split('T')[0];
+                if (arrival) {
+                    arrival.min = today;
+                    arrival.addEventListener('change', function () {
+                        if (this.value && departure) {
+                            departure.min = this.value;
+                            if (departure.value && departure.value < this.value) {
+                                departure.value = '';
+                            }
+                        }
+                        validateForm();
+                    });
                 }
+
+                if (departure) {
+                    departure.min = today;
+                }
+
+                // WhatsApp booking button
+                if (sendWhatsApp) {
+                    sendWhatsApp.addEventListener('click', function () {
+                        if (!validateForm()) return;
+
+                        const message = createWhatsAppMessage();
+                        const encodedMessage = encodeURIComponent(message);
+                        const whatsappUrl = `https://wa.me/94763661600?text=${encodedMessage}`;
+
+                        // Save booking data
+                        const bookingData = {
+                            name: name.value.trim(),
+                            phone: phone.value,
+                            email: email.value,
+                            adults: adults.value,
+                            children: children.value || '0',
+                            arrival: arrival.value,
+                            departure: departure.value,
+                            destinations: [...selectedGrid.children].map(item => item.dataset.id),
+                            timestamp: new Date().toISOString()
+                        };
+                        localStorage.setItem('lastBooking', JSON.stringify(bookingData));
+
+                        // Open WhatsApp
+                        window.open(whatsappUrl, '_blank');
+
+                        // Show confirmation with download button
+                        setTimeout(() => {
+                            showBookingConfirmation();
+                        }, 500);
+                    });
+                }
+
+                // Email booking button
+                if (sendEmail) {
+                    sendEmail.addEventListener('click', function () {
+                        if (!validateForm()) return;
+                        sendBookingEmail();
+                    });
+                }
+
+                // Regular PDF button (disabled in form)
+                if (generatePDF) {
+                    generatePDF.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        if (!validateForm()) return;
+                        generateAttractivePDF(this);
+                    });
+                }
+
+                // Download summary PDF button (in popup)
+                if (downloadSummaryPDF) {
+                    downloadSummaryPDF.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        generateAttractivePDF(this);
+                    });
+                }
+
+                // Close popup when clicking outside
+                if (popupOverlay) {
+                    popupOverlay.addEventListener('click', function (e) {
+                        if (e.target === this) {
+                            closePopupAndReset();
+                        }
+                    });
+                }
+            }
+
+            // ==================== MAIN INITIALIZATION ====================
+            function initialize() {
+                // Initialize map
+                initializeMap();
+
+                // Setup drag and drop
+                setupDragAndDrop();
+
+                // Load saved data
+                loadFromLocalStorage();
+
+                // Setup event listeners
+                setupEventListeners();
+
+                // Initial validation and empty states
                 validateForm();
-            });
+                updateEmptyStates();
+            }
 
-            // WhatsApp button
-            sendWhatsApp.addEventListener('click', function () {
-                if (!validateForm()) return;
-
-                const message = createWhatsAppMessage();
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/94763661600?text=${encodedMessage}`;
-
-                // Save booking data
-                const bookingData = {
-                    name: name.value.trim(),
-                    phone: phone.value,
-                    email: email.value,
-                    adults: adults.value,
-                    children: children.value || '0',
-                    arrival: arrival.value,
-                    departure: departure.value,
-                    destinations: [...selectedGrid.children].map(item => item.dataset.id),
-                    timestamp: new Date().toISOString()
-                };
-                localStorage.setItem('lastBooking', JSON.stringify(bookingData));
-
-                // Open WhatsApp
-                window.open(whatsappUrl, '_blank');
-
-                // Show confirmation with auto-clear
-                setTimeout(() => {
-                    showBookingConfirmation();
-                }, 500);
-            });
-
-            // Email button
-            sendEmail.addEventListener('click', function () {
-                if (!validateForm()) return;
-                sendBookingEmail();
-            });
-
-            // PDF button
-            generatePDF.addEventListener('click', function () {
-                if (!validateForm()) return;
-                generateTravelPDF();
-            });
-
-            // Popup OK button
-            popupOk.addEventListener('click', function () {
-                clearLocalStorageData();
-                popupOverlay.style.display = 'none';
-            });
-
-            // Clear localStorage if popup is closed by clicking outside
-            popupOverlay.addEventListener('click', function (e) {
-                if (e.target === this) {
-                    clearLocalStorageData();
-                    this.style.display = 'none';
-                }
-            });
+            // Start initialization
+            initialize();
         }
-
-        // ==================== INITIALIZATION ====================
-        function initialize() {
-            // Setup drag and drop
-            document.querySelectorAll('.item').forEach(item => {
-                bindItem(item);
-            });
-            setupDragAndDrop();
-
-            // Load saved data
-            loadFromLocalStorage();
-
-            // Setup event listeners
-            setupEventListeners();
-
-            // Initial validation
-            validateForm();
-
-            // Hide spinner
-            setTimeout(() => {
-                document.getElementById('spinner').style.display = 'none';
-            }, 500);
-        }
-
-        // Start everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', initialize);
     </script>
 
     <!-- JavaScript Libraries -->
