@@ -38,7 +38,7 @@
             text-align: center;
             line-height: 80px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-            z-index: 1000;
+            z-index: 2000;
             animation: whatsapp-pulse 1.8s infinite;
             text-decoration: none;
             }
@@ -73,6 +73,530 @@
                 right: 15px;
             }
             }
+
+            /* Custom card styling */
+            .package-card {
+                background: white;
+                border: 2px solid #3498db;
+                border-radius: 15px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                height: 100%;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+            }
+
+            .package-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                border-color: #2980b9;
+            }
+
+            .package-image-container {
+                position: relative;
+                overflow: hidden;
+                height: 220px;
+            }
+
+            .package-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+                cursor: pointer;
+            }
+
+            .package-card:hover .package-image {
+                transform: scale(1.05);
+            }
+
+            .view-full-btn {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                background: rgba(255, 255, 255, 0.9);
+                border: none;
+                border-radius: 20px;
+                padding: 5px 15px;
+                font-size: 0.8rem;
+                color: #3498db;
+                display: none;
+                transition: all 0.3s ease;
+                z-index: 10;
+            }
+
+            .package-card:hover .view-full-btn {
+                display: block;
+            }
+
+            .view-full-btn:hover {
+                background: #3498db;
+                color: white;
+            }
+
+            .package-content {
+                padding: 20px;
+            }
+
+            .package-title {
+                color: #2c3e50;
+                font-weight: 600;
+                margin-bottom: 15px;
+                font-size: 1.5rem;
+            }
+
+            .package-itinerary {
+                background: #f8f9fa;
+                padding: 12px;
+                border-radius: 8px;
+                margin-bottom: 15px;
+                font-size: 0.9rem;
+            }
+
+            .package-itinerary i {
+                color: #3498db;
+                margin: 0 5px;
+            }
+
+            .package-description {
+                color: #666;
+                font-size: 0.95rem;
+                line-height: 1.5;
+                margin-bottom: 20px;
+                height: 72px;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+
+            .book-btn {
+                background: #3498db;
+                border: none;
+                padding: 10px 25px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                width: 100%;
+            }
+
+            .book-btn:hover {
+                background: #2980b9;
+                transform: scale(1.05);
+            }
+
+            /* Image Modal Styles */
+            .image-modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.95);
+                z-index: 2500;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .image-modal.active {
+                display: flex;
+                opacity: 1;
+                animation: fadeIn 0.3s ease;
+            }
+
+            .modal-image-container {
+                max-width: 95%;
+                max-height: 95%;
+                position: relative;
+            }
+
+            .modal-image {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            }
+
+            .close-modal-btn {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                background: rgba(255, 255, 255, 0.9);
+                border: none;
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                font-size: 22px;
+                color: #333;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 2501;
+            }
+
+            .close-modal-btn:hover {
+                background: #ff6b6b;
+                color: white;
+                transform: rotate(90deg);
+            }
+
+            /* Booking Modal Styles - EXTRA LARGE SIZE */
+            .booking-modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                z-index: 2500;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                padding: 20px;
+            }
+
+            .booking-modal.active {
+                display: flex;
+                opacity: 1;
+                animation: slideIn 0.5s ease;
+            }
+
+            .booking-modal-content {
+                background: white;
+                width: 98%;
+                max-width: 1400px; /* EXTRA LARGE - increased from 1200px */
+                max-height: 98vh; /* EXTRA LARGE - increased from 95vh */
+                border-radius: 25px; /* Larger border radius */
+                overflow: hidden;
+                position: relative;
+                transform: translateY(30px);
+                opacity: 0;
+                transition: all 0.5s ease;
+                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+            }
+
+            .booking-modal.active .booking-modal-content {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .booking-modal-header {
+                background: linear-gradient(135deg, #3498db, #2c3e50);
+                color: white;
+                padding: 35px 50px; /* Increased padding */
+                position: relative;
+            }
+
+            .booking-modal-title {
+                font-size: 2.5rem; /* Increased font size */
+                margin: 0;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .booking-modal-subtitle {
+                font-size: 1.3rem;
+                margin-top: 10px;
+                text-align: center;
+                opacity: 0.9;
+            }
+
+            .booking-modal-close {
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                background: rgba(255, 255, 255, 0.2);
+                border: none;
+                width: 55px; /* Increased size */
+                height: 55px; /* Increased size */
+                border-radius: 50%;
+                color: white;
+                font-size: 26px; /* Increased font size */
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .booking-modal-close:hover {
+                background: rgba(255, 255, 255, 0.3);
+                transform: rotate(90deg) scale(1.1);
+            }
+
+            .booking-modal-body {
+                padding: 50px; /* Increased padding */
+                overflow-y: auto;
+                max-height: calc(98vh - 200px); /* Adjusted for larger header */
+            }
+
+            .modal-itinerary {
+                background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                padding: 30px; /* Increased padding */
+                border-radius: 15px; /* Increased border radius */
+                margin-bottom: 40px; /* Increased margin */
+                font-size: 1.3rem; /* Increased font size */
+                line-height: 1.8;
+                text-align: center;
+                border-left: 5px solid #3498db;
+            }
+
+            .modal-itinerary i {
+                color: #3498db;
+                margin: 0 12px; /* Increased margin */
+                font-size: 1.4rem; /* Increased icon size */
+            }
+
+            .modal-description {
+                color: #555;
+                line-height: 1.9; /* Increased line height */
+                margin-bottom: 45px; /* Increased margin */
+                font-size: 1.2rem; /* Increased font size */
+                text-align: center;
+                padding: 0 40px;
+            }
+
+            .booking-form {
+                background: linear-gradient(135deg, #ffffff, #f8f9fa);
+                padding: 40px; /* Increased padding */
+                border-radius: 20px; /* Increased border radius */
+                border: 2px solid #e9ecef;
+            }
+
+            .form-section-title {
+                font-size: 1.5rem;
+                color: #2c3e50;
+                margin-bottom: 25px;
+                padding-bottom: 15px;
+                border-bottom: 3px solid #3498db;
+                font-weight: 600;
+            }
+
+            .form-label {
+                font-weight: 600;
+                color: #2c3e50;
+                margin-bottom: 12px; /* Increased margin */
+                font-size: 1.15rem; /* Increased font size */
+            }
+
+            .form-control {
+                border: 2px solid #d1d9e6;
+                border-radius: 12px; /* Increased border radius */
+                padding: 18px 25px; /* Increased padding */
+                transition: all 0.3s ease;
+                font-size: 1.1rem; /* Increased font size */
+                height: 55px; /* Increased height */
+            }
+
+            .form-control:focus {
+                border-color: #3498db;
+                box-shadow: 0 0 0 0.4rem rgba(52, 152, 219, 0.25); /* Enhanced shadow */
+                transform: translateY(-2px);
+            }
+
+            textarea.form-control {
+                height: 120px; /* Increased height */
+                resize: vertical;
+            }
+
+            select.form-control {
+                height: 55px; /* Increased height */
+                appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%233498db' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 20px center;
+                background-size: 16px;
+                padding-right: 50px;
+            }
+
+            .modal-booking-btn {
+                background: linear-gradient(135deg, #27ae60, #1e8449);
+                border: none;
+                padding: 22px 50px; /* Increased padding */
+                font-size: 1.4rem; /* Increased font size */
+                font-weight: 700;
+                color: white;
+                border-radius: 15px; /* Increased border radius */
+                transition: all 0.3s ease;
+                width: 100%;
+                margin-top: 40px; /* Increased margin */
+                letter-spacing: 0.5px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .modal-booking-btn:hover {
+                background: linear-gradient(135deg, #219653, #186a3b);
+                transform: translateY(-4px);
+                box-shadow: 0 15px 30px rgba(33, 150, 83, 0.5); /* Enhanced shadow */
+            }
+
+            .modal-booking-btn:active {
+                transform: translateY(-1px);
+            }
+
+            .modal-booking-btn i {
+                margin-right: 12px;
+                font-size: 1.5rem;
+            }
+
+            /* Two-column layout for larger screens */
+            @media (min-width: 992px) {
+                .booking-form .row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 0 -15px;
+                }
+                
+                .booking-form .col-md-6 {
+                    padding: 0 15px;
+                    width: 50%;
+                }
+                
+                .booking-form .col-12 {
+                    padding: 0 15px;
+                    width: 100%;
+                }
+            }
+
+            /* Animations */
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            @keyframes slideIn {
+                from { 
+                    opacity: 0;
+                    transform: translateY(-60px);
+                }
+                to { 
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Responsive grid */
+            @media (max-width: 768px) {
+                .package-description {
+                    height: auto;
+                    -webkit-line-clamp: 4;
+                }
+                
+                .booking-modal-content {
+                    width: 98%;
+                    max-height: 95vh;
+                    max-width: 98%;
+                    border-radius: 20px;
+                }
+                
+                .booking-modal-body {
+                    padding: 30px;
+                    max-height: calc(95vh - 150px);
+                }
+                
+                .booking-form {
+                    padding: 25px;
+                }
+                
+                .booking-modal-title {
+                    font-size: 2rem;
+                }
+                
+                .booking-modal-subtitle {
+                    font-size: 1.1rem;
+                }
+                
+                .booking-modal-close {
+                    width: 45px;
+                    height: 45px;
+                    font-size: 22px;
+                    top: 25px;
+                    right: 25px;
+                }
+                
+                .modal-itinerary {
+                    font-size: 1.1rem;
+                    padding: 20px;
+                    margin-bottom: 30px;
+                }
+                
+                .modal-description {
+                    font-size: 1.1rem;
+                    padding: 0 20px;
+                    margin-bottom: 30px;
+                }
+                
+                .form-label {
+                    font-size: 1rem;
+                }
+                
+                .form-control {
+                    padding: 15px 20px;
+                    font-size: 1rem;
+                    height: 50px;
+                }
+                
+                textarea.form-control {
+                    height: 100px;
+                }
+                
+                .modal-booking-btn {
+                    padding: 18px 30px;
+                    font-size: 1.2rem;
+                    margin-top: 30px;
+                }
+                
+                .booking-modal-header {
+                    padding: 25px 30px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .booking-modal-title {
+                    font-size: 1.7rem;
+                }
+                
+                .modal-itinerary {
+                    font-size: 1rem;
+                }
+                
+                .booking-modal-header {
+                    padding: 20px;
+                }
+                
+                .booking-modal-body {
+                    padding: 20px;
+                }
+                
+                .booking-form {
+                    padding: 20px;
+                }
+                
+                .modal-description {
+                    font-size: 1rem;
+                    padding: 0 10px;
+                }
+                
+                .booking-modal-close {
+                    width: 40px;
+                    height: 40px;
+                    font-size: 20px;
+                    top: 20px;
+                    right: 20px;
+                }
+            }
+
+            /* Spinner override */
+            #spinner {
+                z-index: 3000;
+            }
         </style>
     </head>
 
@@ -91,7 +615,6 @@
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="./index.html" class="navbar-brand p-0">
                     <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -124,164 +647,318 @@
         </div>
         <!-- Header End -->
 
-        <!-- About Start -->
-        <div class="container-fluid about py-5">
+        <!-- Packages Grid Start -->
+        <div class="container-fluid packages py-5">
             <div class="container py-5">
-                <div class="row g-5 align-items-center">
+                <div class="row g-4">
+                    <!-- Card 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="package-card" data-id="1" data-title="Private Itinerary - 01" 
+                             data-image="img/11-day-tour-option-1.png"
+                             data-itinerary="Arrival → Sigiriya → Polonnaruwa → Anuradhapura → Kandy → Nuwara Eliya → Departure"
+                             data-description="The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. This ancient complex consists of five caves adorned with over 150 Buddha statues and beautifully preserved wall paintings. Set on a rocky hill, the temple also offers panoramic views of the surrounding countryside.">
+                            <div class="package-image-container">
+                                <img src="img/11-day-tour-option-1.png" class="package-image" alt="Private Itinerary 01" onclick="viewFullImage('img/11-day-tour-option-1.png')">
+                                <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-1.png')">
+                                    <i class="fas fa-expand me-1"></i>View Full
+                                </button>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Private Itinerary - 01</h3>
+                                <div class="package-itinerary">
+                                    Arrival <i class="fa fa-arrow-right"></i> 
+                                    Sigiriya <i class="fa fa-arrow-right"></i> 
+                                    Polonnaruwa <i class="fa fa-arrow-right"></i> 
+                                    Anuradhapura <i class="fa fa-arrow-right"></i> 
+                                    Kandy <i class="fa fa-arrow-right"></i> 
+                                    Nuwara Eliya <i class="fa fa-arrow-right"></i> 
+                                    Departure
+                                </div>
+                                <p class="package-description">
+                                    The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. 
+                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
+                                    beautifully preserved wall paintings. Set on a rocky hill, 
+                                    the temple also offers panoramic views of the surrounding countryside.
+                                </p>
+                                <button class="btn btn-primary book-btn rounded-pill" onclick="openBookingModal(this)">
+                                    <i class="fa fa-calendar-check me-2"></i>Book My Tour
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-                    <div class="border border-primary rounded p-0 ps-0">
-                        <div class="container py-5">
-                            <div class="row g-5 ">
-                                <div class="col-lg-5">
-                                    <div class="h-100">
-                                        <img src="img/11-day-tour-option-1.png" class="img-fluid w-100 h-100" alt="">
-                                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="package-card" data-id="2" data-title="Private Itinerary - 02" 
+                             data-image="img/11-day-tour-option-2.png"
+                             data-itinerary="Arrival → Anuradhapura → Trincomalee → Sigiriya → Kandy → Nuwara Eliya → Galle → Departure"
+                             data-description="The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. This ancient complex consists of five caves adorned with over 150 Buddha statues and beautifully preserved wall paintings. Set on a rocky hill, the temple also offers panoramic views of the surrounding countryside.">
+                            <div class="package-image-container">
+                                <img src="img/11-day-tour-option-2.png" class="package-image" alt="Private Itinerary 02" onclick="viewFullImage('img/11-day-tour-option-2.png')">
+                                <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-2.png')">
+                                    <i class="fas fa-expand me-1"></i>View Full
+                                </button>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Private Itinerary - 02</h3>
+                                <div class="package-itinerary">
+                                    Arrival <i class="fa fa-arrow-right"></i> 
+                                    Anuradhapura <i class="fa fa-arrow-right"></i> 
+                                    Trincomalee <i class="fa fa-arrow-right"></i> 
+                                    Sigiriya <i class="fa fa-arrow-right"></i> 
+                                    Kandy <i class="fa fa-arrow-right"></i> 
+                                    Nuwara Eliya <i class="fa fa-arrow-right"></i> 
+                                    Galle <i class="fa fa-arrow-right"></i> 
+                                    Departure
                                 </div>
-                                <div class="col-lg-7">    
-                                    <h1 class="mb-4"><span class="text-primary">Private Itinerary - 01</span></h1>  
-                                    <p class="mb-4">
-                                        Arrival <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Sigiriya <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Polonnaruwa <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Anuradhapura <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Kandy <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Nuwara Eliya <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Depature
-                                    </p>  
-                                    <p class="mb-4">The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town’s most famous attraction. 
-                                        This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                        beautifully preserved wall paintings. Set on a rocky hill, 
-                                        the temple also offers panoramic views of the surrounding countryside. 
-                                        Visitors are advised to dress modestly and be prepared for a short climb to reach the caves. 
-                                    </p>
-                                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4">Book My Tour</a> 
-                                </div>
+                                <p class="package-description">
+                                    The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. 
+                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
+                                    beautifully preserved wall paintings. Set on a rocky hill, 
+                                    the temple also offers panoramic views of the surrounding countryside.
+                                </p>
+                                <button class="btn btn-primary book-btn rounded-pill" onclick="openBookingModal(this)">
+                                    <i class="fa fa-calendar-check me-2"></i>Book My Tour
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="border border-primary rounded p-0 ps-0">
-                        <div class="container py-5">
-                            <div class="row g-5">
-                                <div class="col-lg-5">
-                                    <div class="h-100">
-                                        <img src="img/11-day-tour-option-2.png" class="img-fluid w-100 h-100" alt="">
-                                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="package-card" data-id="3" data-title="Private Itinerary - 03" 
+                             data-image="img/11-day-tour-option-3.png"
+                             data-itinerary="Arrival → Galle → Yala National Park → Ella → Nuwara Eliya → Kandy → Departure"
+                             data-description="The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. This ancient complex consists of five caves adorned with over 150 Buddha statues and beautifully preserved wall paintings. Set on a rocky hill, the temple also offers panoramic views of the surrounding countryside.">
+                            <div class="package-image-container">
+                                <img src="img/11-day-tour-option-3.png" class="package-image" alt="Private Itinerary 03" onclick="viewFullImage('img/11-day-tour-option-3.png')">
+                                <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-3.png')">
+                                    <i class="fas fa-expand me-1"></i>View Full
+                                </button>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Private Itinerary - 03</h3>
+                                <div class="package-itinerary">
+                                    Arrival <i class="fa fa-arrow-right"></i> 
+                                    Galle <i class="fa fa-arrow-right"></i> 
+                                    Yala National Park <i class="fa fa-arrow-right"></i> 
+                                    Ella <i class="fa fa-arrow-right"></i> 
+                                    Nuwara Eliya <i class="fa fa-arrow-right"></i> 
+                                    Kandy <i class="fa fa-arrow-right"></i> 
+                                    Departure
                                 </div>
-                                <div class="col-lg-7">    
-                                    <h1 class="mb-4"><span class="text-primary">Private Itinerary - 02</span></h1>    
-                                    <p class="mb-4">
-                                        Arrival <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Anuradhapura <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Trincomalee <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Sigiriya <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Kandy <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Nuwara Eliya <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Galle <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Depature
-                                    </p>  
-                                    <p class="mb-4">The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town’s most famous attraction. 
-                                        This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                        beautifully preserved wall paintings. Set on a rocky hill, 
-                                        the temple also offers panoramic views of the surrounding countryside. 
-                                        Visitors are advised to dress modestly and be prepared for a short climb to reach the caves. 
-                                    </p>
-                                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4">Book My Tour</a> 
-                                </div>
+                                <p class="package-description">
+                                    The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. 
+                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
+                                    beautifully preserved wall paintings. Set on a rocky hill, 
+                                    the temple also offers panoramic views of the surrounding countryside.
+                                </p>
+                                <button class="btn btn-primary book-btn rounded-pill" onclick="openBookingModal(this)">
+                                    <i class="fa fa-calendar-check me-2"></i>Book My Tour
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="border border-primary rounded p-0 ps-0">
-                        <div class="container py-5">
-                            <div class="row g-5">
-                                <div class="col-lg-5">
-                                    <div class="h-100">
-                                        <img src="img/11-day-tour-option-3.png" class="img-fluid w-100 h-100" alt="">
-                                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="package-card" data-id="4" data-title="Private Itinerary - 04" 
+                             data-image="img/11-day-tour-option-4.png"
+                             data-itinerary="Arrival → Sigiriya → Kandy → Nuwara Eliya → Ella → Mirissa → Benthota → Departure"
+                             data-description="The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. This ancient complex consists of five caves adorned with over 150 Buddha statues and beautifully preserved wall paintings. Set on a rocky hill, the temple also offers panoramic views of the surrounding countryside.">
+                            <div class="package-image-container">
+                                <img src="img/11-day-tour-option-4.png" class="package-image" alt="Private Itinerary 04" onclick="viewFullImage('img/11-day-tour-option-4.png')">
+                                <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-4.png')">
+                                    <i class="fas fa-expand me-1"></i>View Full
+                                </button>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Private Itinerary - 04</h3>
+                                <div class="package-itinerary">
+                                    Arrival <i class="fa fa-arrow-right"></i> 
+                                    Sigiriya <i class="fa fa-arrow-right"></i> 
+                                    Kandy <i class="fa fa-arrow-right"></i> 
+                                    Nuwara Eliya <i class="fa fa-arrow-right"></i> 
+                                    Ella <i class="fa fa-arrow-right"></i> 
+                                    Mirissa <i class="fa fa-arrow-right"></i> 
+                                    Benthota <i class="fa fa-arrow-right"></i> 
+                                    Departure
                                 </div>
-                                <div class="col-lg-7">    
-                                    <h1 class="mb-4"><span class="text-primary">Private Itinerary - 03</span></h1>    
-                                    <p class="mb-4">
-                                        Arrival <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Galle <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Yala Natinal Park <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Ella <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Nuwara Eliya<i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Kandy <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Depature
-                                    </p>  
-                                    <p class="mb-4">The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town’s most famous attraction. 
-                                        This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                        beautifully preserved wall paintings. Set on a rocky hill, 
-                                        the temple also offers panoramic views of the surrounding countryside. 
-                                        Visitors are advised to dress modestly and be prepared for a short climb to reach the caves. 
-                                    </p>
-                                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4">Book My Tour</a> 
-                                </div>
+                                <p class="package-description">
+                                    The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. 
+                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
+                                    beautifully preserved wall paintings. Set on a rocky hill, 
+                                    the temple also offers panoramic views of the surrounding countryside.
+                                </p>
+                                <button class="btn btn-primary book-btn rounded-pill" onclick="openBookingModal(this)">
+                                    <i class="fa fa-calendar-check me-2"></i>Book My Tour
+                                </button>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="package-card" data-id="5" data-title="Private Itinerary - 05" 
+                             data-image="img/11-day-tour-option-5.png"
+                             data-itinerary="Arrival → Anuradhapura → Trincomalee → Sigiriya → Ella → Nuwara Eliya → Kandy → Departure"
+                             data-description="The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. This ancient complex consists of five caves adorned with over 150 Buddha statues and beautifully preserved wall paintings. Set on a rocky hill, the temple also offers panoramic views of the surrounding countryside.">
+                            <div class="package-image-container">
+                                <img src="img/11-day-tour-option-5.png" class="package-image" alt="Private Itinerary 05" onclick="viewFullImage('img/11-day-tour-option-5.png')">
+                                <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-5.png')">
+                                    <i class="fas fa-expand me-1"></i>View Full
+                                </button>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Private Itinerary - 05</h3>
+                                <div class="package-itinerary">
+                                    Arrival <i class="fa fa-arrow-right"></i> 
+                                    Anuradhapura <i class="fa fa-arrow-right"></i> 
+                                    Trincomalee <i class="fa fa-arrow-right"></i> 
+                                    Sigiriya <i class="fa fa-arrow-right"></i> 
+                                    Ella <i class="fa fa-arrow-right"></i> 
+                                    Nuwara Eliya <i class="fa fa-arrow-right"></i> 
+                                    Kandy <i class="fa fa-arrow-right"></i> 
+                                    Departure
+                                </div>
+                                <p class="package-description">
+                                    The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. 
+                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
+                                    beautifully preserved wall paintings. Set on a rocky hill, 
+                                    the temple also offers panoramic views of the surrounding countryside.
+                                </p>
+                                <button class="btn btn-primary book-btn rounded-pill" onclick="openBookingModal(this)">
+                                    <i class="fa fa-calendar-check me-2"></i>Book My Tour
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="package-card" data-id="6" data-title="Private Itinerary - 06" 
+                             data-image="img/11-day-tour-option-1.png"
+                             data-itinerary="Arrival → Colombo → Kandy → Ella → Yala → Galle → Departure"
+                             data-description="Experience the best of Sri Lanka with this comprehensive tour covering cultural, scenic, and wildlife highlights. Perfect for first-time visitors seeking a complete Sri Lankan experience with comfortable accommodations and expert guides.">
+                            <div class="package-image-container">
+                                <img src="img/11-day-tour-option-1.png" class="package-image" alt="Private Itinerary 06" onclick="viewFullImage('img/11-day-tour-option-1.png')">
+                                <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-1.png')">
+                                    <i class="fas fa-expand me-1"></i>View Full
+                                </button>
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">Private Itinerary - 06</h3>
+                                <div class="package-itinerary">
+                                    Arrival <i class="fa fa-arrow-right"></i> 
+                                    Colombo <i class="fa fa-arrow-right"></i> 
+                                    Kandy <i class="fa fa-arrow-right"></i> 
+                                    Ella <i class="fa fa-arrow-right"></i> 
+                                    Yala <i class="fa fa-arrow-right"></i> 
+                                    Galle <i class="fa fa-arrow-right"></i> 
+                                    Departure
+                                </div>
+                                <p class="package-description">
+                                    Experience the best of Sri Lanka with this comprehensive tour covering cultural, 
+                                    scenic, and wildlife highlights. Perfect for first-time visitors seeking a complete 
+                                    Sri Lankan experience with comfortable accommodations and expert guides.
+                                </p>
+                                <button class="btn btn-primary book-btn rounded-pill" onclick="openBookingModal(this)">
+                                    <i class="fa fa-calendar-check me-2"></i>Book My Tour
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Packages Grid End -->
+
+        <!-- Full Image Modal -->
+        <div class="image-modal" id="imageModal">
+            <div class="modal-image-container">
+                <img src="" alt="" class="modal-image" id="modalImage">
+                <button class="close-modal-btn" onclick="closeImageModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Booking Modal - NO IMAGE VERSION -->
+        <div class="booking-modal" id="bookingModal">
+            <div class="booking-modal-content">
+                <div class="booking-modal-header">
+                    <h3 class="booking-modal-title" id="modalTitle">Book Your Tour</h3>
+                    <p class="booking-modal-subtitle" id="modalSubtitle">Complete the form below to book your dream Sri Lanka adventure</p>
+                    <button class="booking-modal-close" onclick="closeBookingModal()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="booking-modal-body">
+                    <!-- Itinerary Section -->
+                    <div class="modal-itinerary" id="modalItinerary">
+                        <!-- Itinerary will be inserted here -->
                     </div>
                     
-                    <div class="border border-primary rounded p-0 ps-0">
-                        <div class="container py-5">
-                            <div class="row g-5">
-                                <div class="col-lg-5">
-                                    <div class="h-100">
-                                        <img src="img/11-day-tour-option-4.png" class="img-fluid w-100 h-100" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-7">    
-                                    <h1 class="mb-4"><span class="text-primary">Private Itinerary - 04</span></h1>    
-                                    <p class="mb-4">
-                                        Arrival <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Sigiriya <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Kandy <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Nuwara Eliya <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Ella<i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Mirissa <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Benthota <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Depature
-                                    </p>  
-                                    <p class="mb-4">The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town’s most famous attraction. 
-                                        This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                        beautifully preserved wall paintings. Set on a rocky hill, 
-                                        the temple also offers panoramic views of the surrounding countryside. 
-                                        Visitors are advised to dress modestly and be prepared for a short climb to reach the caves. 
-                                    </p>
-                                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4">Book My Tour</a> 
-                                </div>
+                    <!-- Description Section -->
+                    <p class="modal-description" id="modalDescription">
+                        <!-- Description will be inserted here -->
+                    </p>
+                    
+                    <!-- Booking Form -->
+                    <div class="booking-form">
+                        <h4 class="form-section-title">Your Information</h4>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" placeholder="Enter your email address" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Travel Date *</label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Number of Adults *</label>
+                                <select class="form-control" required>
+                                    <option value="">Select number of adults</option>
+                                    <option value="1">1 Adult</option>
+                                    <option value="2">2 Adults</option>
+                                    <option value="3">3 Adults</option>
+                                    <option value="4">4 Adults</option>
+                                    <option value="5">5 Adults</option>
+                                    <option value="6">6+ Adults</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Number of Children</label>
+                                <select class="form-control">
+                                    <option value="0">0 Children</option>
+                                    <option value="1">1 Child</option>
+                                    <option value="2">2 Children</option>
+                                    <option value="3">3 Children</option>
+                                    <option value="4">4+ Children</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Special Requirements</label>
+                                <textarea class="form-control" rows="4" placeholder="Any special requirements, dietary restrictions, or preferences..."></textarea>
                             </div>
                         </div>
-                    </div>
-                    <div class="border border-primary rounded p-0 ps-0">
-                        <div class="container py-5">
-                            <div class="row g-5">
-                                <div class="col-lg-5">
-                                    <div class="h-100">
-                                        <img src="img/11-day-tour-option-5.png" class="img-fluid w-100 h-100" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-7">    
-                                    <h1 class="mb-4"><span class="text-primary">Private Itinerary - 05</span></h1>    
-                                    <p class="mb-4">
-                                        Arrival <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Anuradhapura <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Trincomalee <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Sigiriya <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Ella<i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Nuwara Eliya <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Kandy <i class="fa fa-arrow-right text-primary me-2"></i> 
-                                        Depature
-                                    </p>  
-                                    <p class="mb-4">The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town’s most famous attraction. 
-                                        This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                        beautifully preserved wall paintings. Set on a rocky hill, 
-                                        the temple also offers panoramic views of the surrounding countryside. 
-                                        Visitors are advised to dress modestly and be prepared for a short climb to reach the caves. 
-                                    </p>
-                                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4">Book My Tour</a> 
-                                </div>
-                            </div>
-                        </div>
+                        
+                        <button class="modal-booking-btn" onclick="submitBooking()">
+                            <i class="fas fa-paper-plane me-2"></i>Submit Booking Request
+                        </button>
+                        
+                        <p class="text-center mt-3 text-muted">
+                            <small>By submitting this form, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></small>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -333,6 +1010,175 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <script>
+            // Hide spinner when page loads
+            window.addEventListener('load', function() {
+                document.getElementById('spinner').style.display = 'none';
+            });
+
+            // View Full Image Function
+            function viewFullImage(imageSrc) {
+                const modal = document.getElementById('imageModal');
+                const modalImage = document.getElementById('modalImage');
+                
+                modalImage.src = imageSrc;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Close Image Modal
+            function closeImageModal() {
+                const modal = document.getElementById('imageModal');
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            // Close modals on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeImageModal();
+                    closeBookingModal();
+                }
+            });
+
+            // Close image modal when clicking outside
+            document.getElementById('imageModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeImageModal();
+                }
+            });
+
+            // Open Booking Modal
+            function openBookingModal(button) {
+                const card = button.closest('.package-card');
+                const title = card.getAttribute('data-title');
+                const itinerary = card.getAttribute('data-itinerary');
+                const description = card.getAttribute('data-description');
+                
+                // Set modal content
+                document.getElementById('modalTitle').textContent = `Book ${title}`;
+                document.getElementById('modalSubtitle').textContent = 'Complete the form below to book your dream Sri Lanka adventure';
+                document.getElementById('modalItinerary').innerHTML = itinerary.replace(/→/g, '<i class="fa fa-arrow-right"></i>');
+                document.getElementById('modalDescription').textContent = description;
+                
+                // Show modal
+                const modal = document.getElementById('bookingModal');
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Set today's date as minimum for travel date
+                const today = new Date().toISOString().split('T')[0];
+                const dateInput = modal.querySelector('input[type="date"]');
+                dateInput.min = today;
+                
+                // Set default date to 30 days from today
+                const futureDate = new Date();
+                futureDate.setDate(futureDate.getDate() + 30);
+                dateInput.value = futureDate.toISOString().split('T')[0];
+            }
+
+            // Close Booking Modal
+            function closeBookingModal() {
+                const modal = document.getElementById('bookingModal');
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            // Close booking modal when clicking outside
+            document.getElementById('bookingModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeBookingModal();
+                }
+            });
+
+            // Submit Booking Function
+            function submitBooking() {
+                const form = document.querySelector('.booking-form');
+                const inputs = form.querySelectorAll('input[required], select[required]');
+                let isValid = true;
+                
+                // Simple validation
+                inputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        input.style.borderColor = 'red';
+                        input.style.backgroundColor = '#fff5f5';
+                        isValid = false;
+                    } else {
+                        input.style.borderColor = '#d1d9e6';
+                        input.style.backgroundColor = '';
+                    }
+                });
+                
+                if (!isValid) {
+                    alert('Please fill in all required fields marked with *.');
+                    return;
+                }
+                
+                // Get form data
+                const formData = {
+                    package: document.getElementById('modalTitle').textContent,
+                    name: form.querySelector('input[placeholder*="full name"]').value,
+                    email: form.querySelector('input[type="email"]').value,
+                    phone: form.querySelector('input[placeholder*="phone number"]').value,
+                    travelDate: form.querySelector('input[type="date"]').value,
+                    adults: form.querySelector('select').value,
+                    children: form.querySelectorAll('select')[1].value,
+                    requirements: form.querySelector('textarea').value
+                };
+                
+                // Create WhatsApp message
+                const message = `*Ayubowan Tours - Booking Request*\n\n` +
+                               `*Package:* ${formData.package}\n` +
+                               `*Name:* ${formData.name}\n` +
+                               `*Email:* ${formData.email}\n` +
+                               `*Phone:* ${formData.phone}\n` +
+                               `*Travel Date:* ${formData.travelDate}\n` +
+                               `*Adults:* ${formData.adults}\n` +
+                               `*Children:* ${formData.children}\n` +
+                               `*Special Requirements:* ${formData.requirements || 'None'}\n\n` +
+                               `I would like to book this tour. Please contact me with availability and pricing details.`;
+                
+                // Encode message for WhatsApp
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/94763661600?text=${encodedMessage}`;
+                
+                // Show loading state
+                const submitBtn = form.querySelector('.modal-booking-btn');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
+                submitBtn.disabled = true;
+                
+                // Simulate processing delay
+                setTimeout(() => {
+                    // Open WhatsApp
+                    window.open(whatsappUrl, '_blank');
+                    
+                    // Show success message
+                    alert('Booking request submitted successfully! You will now be redirected to WhatsApp to confirm your booking.');
+                    
+                    // Close modal and reset form
+                    closeBookingModal();
+                    form.reset();
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 1500);
+            }
+
+            // Add click event to all package images
+            document.querySelectorAll('.package-image').forEach(img => {
+                img.addEventListener('click', function(e) {
+                    // Don't trigger if clicking on view full button
+                    if (!e.target.classList.contains('view-full-btn')) {
+                        const card = this.closest('.package-card');
+                        const imageSrc = card.getAttribute('data-image');
+                        viewFullImage(imageSrc);
+                    }
+                });
+            });
+        </script>
     </body>
 
 </html>
