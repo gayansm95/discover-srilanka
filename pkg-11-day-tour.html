@@ -550,7 +550,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 2500;
             justify-content: center;
             align-items: center;
@@ -797,6 +797,82 @@
             font-size: 0.9rem;
         }
 
+        /* Confirmation Message Styles */
+        .confirmation-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            z-index: 3000;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            display: none;
+            animation: slideIn 0.5s ease;
+        }
+
+        .confirmation-message.active {
+            display: block;
+        }
+
+        .confirmation-icon {
+            font-size: 4rem;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+
+        .confirmation-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .confirmation-text {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-continue {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-continue:hover {
+            background: linear-gradient(135deg, #2980b9, #1c5d8a);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Overlay for confirmation */
+        .confirmation-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2999;
+            display: none;
+        }
+
+        .confirmation-overlay.active {
+            display: block;
+        }
+
         /* Two-column layout for larger screens */
         @media (min-width: 992px) {
             .booking-form .row {
@@ -830,12 +906,12 @@
         @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateY(-60px);
+                transform: translate(-50%, -60px);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translate(-50%, -50%);
             }
         }
 
@@ -930,6 +1006,14 @@
             .design-itinerary {
                 justify-content: center;
             }
+
+            .confirmation-message {
+                padding: 30px 20px;
+            }
+
+            .confirmation-title {
+                font-size: 1.7rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -978,6 +1062,14 @@
 
             .builder-actions {
                 flex-direction: column;
+            }
+
+            .confirmation-icon {
+                font-size: 3rem;
+            }
+
+            .confirmation-title {
+                font-size: 1.5rem;
             }
         }
 
@@ -1178,7 +1270,7 @@
                         data-description="Experience Sri Lanka's incredible biodiversity and scenic beauty. From wildlife safaris in Yala National Park to breathtaking train rides through tea plantations, this tour combines adventure with natural wonders.">
                         <div class="package-image-container">
                             <span class="package-badge"
-                                style="background: linear-gradient(135deg, #27ae60, #219653);">Wildlife</span>
+                                style="background: linear-gradient(135deg, #27ae60, #219653);">Beach + Wildlife</span>
                             <img src="img/11-day-tour-option-3.png" class="package-image" alt="Wildlife & Hill Country"
                                 onclick="viewFullImage('img/11-day-tour-option-3.png')">
                             <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-3.png')">
@@ -1545,6 +1637,24 @@
         </div>
     </div>
 
+    <!-- Confirmation Overlay -->
+    <div class="confirmation-overlay" id="confirmationOverlay"></div>
+
+    <!-- Confirmation Message -->
+    <div class="confirmation-message" id="confirmationMessage">
+        <div class="confirmation-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h3 class="confirmation-title">Booking Confirmed!</h3>
+        <p class="confirmation-text">
+            Thank you for your booking request! Your custom tour has been submitted successfully.
+            We will contact you shortly via WhatsApp to finalize the details.
+        </p>
+        <button class="btn-continue" onclick="completeReset()">
+            <i class="fas fa-redo me-2"></i>Continue
+        </button>
+    </div>
+
     <!-- Subscribe Start -->
     <div class="container-fluid subscribe py-5">
         <div class="container text-center py-5">
@@ -1885,7 +1995,10 @@
             isCustomTour = false;
 
             // Reset form fields
-            document.getElementById('bookingModal').querySelector('form').reset();
+            const form = document.querySelector('.booking-form');
+            if (form) {
+                form.reset();
+            }
         }
 
         // Close booking modal when clicking outside
@@ -1894,6 +2007,55 @@
                 closeBookingModal();
             }
         });
+
+        // Show confirmation message
+        function showConfirmation() {
+            document.getElementById('confirmationOverlay').classList.add('active');
+            document.getElementById('confirmationMessage').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Hide confirmation message
+        function hideConfirmation() {
+            document.getElementById('confirmationOverlay').classList.remove('active');
+            document.getElementById('confirmationMessage').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Complete reset process
+        function completeReset() {
+            // Hide confirmation message
+            hideConfirmation();
+
+            // Step 1: Clear all local storage
+            localStorage.removeItem('customTour');
+
+            // Step 2: Reset custom tour variables
+            customTourPlaces = [];
+            isCustomTour = false;
+
+            // Step 3: Reset booking form
+            const bookingForm = document.querySelector('.booking-form');
+            if (bookingForm) {
+                bookingForm.reset();
+            }
+
+            // Step 4: Update UI
+            updateCustomTourDisplay();
+
+            // Step 5: Reset available places UI
+            document.querySelectorAll('.place-tag').forEach(tag => {
+                tag.classList.remove('selected');
+            });
+
+            // Step 6: Reset booking modal content
+            document.getElementById('modalItinerary').style.display = 'block';
+            document.getElementById('modalDescription').style.display = 'block';
+            document.getElementById('customTourDisplay').classList.remove('active');
+
+            // Show success message
+            alert('✅ Your custom tour has been reset successfully! You can now design a new tour.');
+        }
 
         // Submit Booking Function
         function submitBooking() {
@@ -1971,22 +2133,44 @@
                 // Open WhatsApp
                 window.open(whatsappUrl, '_blank');
 
-                // Show success message
-                alert('Booking request submitted successfully! You will now be redirected to WhatsApp to confirm your booking.');
+                // Step 1: Clear all local storage
+                localStorage.removeItem('customTour');
 
-                // Close modal and reset form
+                // Step 2: Reset custom tour variables
+                customTourPlaces = [];
+                isCustomTour = false;
+
+                // Step 3: Close booking modal
                 closeBookingModal();
+
+                // Step 4: Reset booking form
                 form.reset();
 
-                // Clear custom tour if it was a custom tour booking
-                if (isCustomTour) {
-                    clearCustomTour();
-                    isCustomTour = false;
-                }
+                // Step 5: Update UI
+                updateCustomTourDisplay();
+
+                // Step 6: Reset available places UI
+                document.querySelectorAll('.place-tag').forEach(tag => {
+                    tag.classList.remove('selected');
+                });
+
+                // Step 7: Reset booking modal content
+                document.getElementById('modalItinerary').style.display = 'block';
+                document.getElementById('modalDescription').style.display = 'block';
+                document.getElementById('customTourDisplay').classList.remove('active');
+
+                // Step 8: Show confirmation message
+                showConfirmation();
 
                 // Reset button
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
+
+                // Show success message
+                setTimeout(() => {
+                    alert('✅ Booking submitted successfully! All data has been cleared. You can now design a new tour.');
+                }, 500);
+
             }, 1500);
         }
 
