@@ -107,24 +107,25 @@
             background: #fff;
             border: 2px dashed #bbb;
             border-radius: 10px;
-            padding: 15px;
+            padding: 20px;
             max-width: 420px;
-            flex: 1 1 320px;
+            flex: 1 1 400px;
             position: relative;
-            min-height: 300px;
+            min-height: 450px;
+            height: auto;
         }
 
         .items-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 12px;
             margin-top: 10px;
-            min-height: 200px;
+            min-height: 320px;
         }
 
         .item {
             background: linear-gradient(135deg, #fff, #eef3ff);
-            padding: 6px;
+            padding: 8px;
             border-radius: 8px;
             text-align: center;
             cursor: grab;
@@ -132,6 +133,10 @@
             user-select: none;
             position: relative;
             z-index: 2;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .item.dragging {
@@ -142,7 +147,7 @@
 
         .item img {
             width: 100%;
-            height: 90px;
+            height: 70px;
             object-fit: cover;
             border-radius: 5px;
         }
@@ -152,6 +157,9 @@
             border-radius: 10px;
             padding: 20px;
             border: 2px solid #3498db;
+            max-width: 420px;
+            flex: 1 1 400px;
+            min-height: 450px;
         }
 
         .invalid {
@@ -201,8 +209,10 @@
             padding: 25px;
             border-radius: 12px;
             text-align: center;
-            max-width: 400px;
+            max-width: 450px;
+            width: 90%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
         }
 
         .btn:disabled {
@@ -260,9 +270,10 @@
             position: fixed;
             top: -9999px;
             left: -9999px;
-            width: 600px;
-            height: 400px;
+            width: 800px;
+            height: 500px;
             z-index: -9999;
+            background: white;
         }
 
         /* Empty state messages */
@@ -303,6 +314,7 @@
             border: none;
             color: white;
             font-weight: bold;
+            padding: 10px 20px;
         }
 
         .download-summary-btn:hover {
@@ -341,6 +353,39 @@
             margin-top: 20px;
             padding-top: 20px;
             border-top: 1px dashed #ddd;
+            position: relative;
+        }
+
+        /* Close button for popup */
+        .popup-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .popup-close-btn:hover {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
         }
 
         /* Spinner styles */
@@ -367,12 +412,29 @@
             width: 3rem;
             height: 3rem;
         }
+
+        /* Form label styling */
+        label {
+            font-weight: 500;
+            color: #333;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Make all boxes equal height */
+        @media (min-width: 992px) {
+
+            .box,
+            .traveler-info {
+                min-height: 500px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Spinner Start - Fixed to show/hide properly -->
+    <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -386,7 +448,6 @@
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="./index.html" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
-                <!-- <img src="img/logo.png" alt="Logo"> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -509,9 +570,6 @@
                     <button class="btn btn-primary w-100 mt-2" id="sendEmail" disabled>
                         <i class="fa fa-envelope"></i> Send Booking via Email
                     </button>
-                    <button class="btn btn-info w-100 mt-2" id="generatePDF" disabled>
-                        <i class="fa fa-file-pdf"></i> Download Travel Summary PDF
-                    </button>
                 </div>
             </div>
         </div>
@@ -523,6 +581,9 @@
     <!-- Booking Confirmation Popup -->
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup-box">
+            <button class="popup-close-btn" id="popupCloseBtn">
+                <i class="fas fa-times"></i>
+            </button>
             <div class="popup-content">
                 <div class="popup-icon">
                     <i class="fas fa-check-circle"></i>
@@ -533,14 +594,11 @@
 
                 <div class="summary-btn-container">
                     <p>Download your booking summary:</p>
-                    <button class="btn download-summary-btn w-100" id="downloadSummaryPDF">
-                        <i class="fas fa-download"></i> Download Booking Summary PDF
-                    </button>
-                </div>
-
-                <div class="mt-3">
-                    <small class="text-muted">This popup will auto-close in <span id="countdown">5</span>
-                        seconds</small>
+                    <div class="btn-container">
+                        <button class="btn download-summary-btn" id="downloadSummaryPDF">
+                            <i class="fas fa-download"></i> Download PDF
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -614,13 +672,12 @@
             const selectedGrid = document.getElementById('selectedGrid');
             const sendWhatsApp = document.getElementById('sendWhatsApp');
             const sendEmail = document.getElementById('sendEmail');
-            const generatePDF = document.getElementById('generatePDF');
             const popupOverlay = document.getElementById('popupOverlay');
             const downloadSummaryPDF = document.getElementById('downloadSummaryPDF');
+            const popupCloseBtn = document.getElementById('popupCloseBtn');
             const mapForExport = document.getElementById('mapForExport');
             const availableEmptyMessage = document.getElementById('availableEmptyMessage');
             const selectedEmptyMessage = document.getElementById('selectedEmptyMessage');
-            const countdownElement = document.getElementById('countdown');
 
             // Form inputs
             const name = document.getElementById('name');
@@ -640,7 +697,6 @@
             let exportMarkers = [];
             let draggedItem = null;
             let isBookingConfirmed = false;
-            let countdownTimer = null;
 
             // ==================== INITIALIZE MAP ====================
             function initializeMap() {
@@ -924,11 +980,10 @@
                 // Check if at least one destination is selected
                 const hasDestinations = selectedGrid.children.length > 0;
 
-                // Enable/disable buttons (PDF button is disabled after booking)
+                // Enable/disable buttons
                 const allValid = isFormValid && hasDestinations;
                 if (sendWhatsApp) sendWhatsApp.disabled = !allValid || isBookingConfirmed;
                 if (sendEmail) sendEmail.disabled = !allValid || isBookingConfirmed;
-                if (generatePDF) generatePDF.disabled = !allValid || isBookingConfirmed;
 
                 return allValid;
             }
@@ -943,39 +998,35 @@
             function createWhatsAppMessage() {
                 const destinations = getSelectedDestinations();
 
-                return `🚀 *Ayubowan Tours - Booking Request* 🚀
+                return `*Ayubowan Tours - Booking Request*
 
 *Customer Details:*
-👤 *Name:* ${name.value.trim()}
-📞 *Phone:* ${phone.value}
-📧 *Email:* ${email.value}
-👥 *Adults:* ${adults.value}
-👶 *Children:* ${children.value}
-📅 *Arrival Date:* ${arrival.value}
-📅 *Departure Date:* ${departure.value}
+Name: ${name.value.trim()}
+Phone: ${phone.value}
+Email: ${email.value}
+Adults: ${adults.value}
+Children: ${children.value}
+Arrival Date: ${arrival.value}
+Departure Date: ${departure.value}
 
 *Selected Itinerary:*
 ${destinations}
 
-*Total Destinations:* ${selectedGrid.children.length}
+Total Destinations: ${selectedGrid.children.length}
 
 I would like to book this tour. Please provide me with pricing and availability.`;
             }
 
-            // ==================== ATTRACTIVE PDF GENERATION ====================
+            // ==================== FIXED PDF GENERATION ====================
             async function generateAttractivePDF(button) {
-                if (!validateForm()) return;
-
-                // Show loading state if button exists
                 if (button) {
                     const originalText = button.innerHTML;
-                    button.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Creating Beautiful PDF...';
+                    button.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Creating PDF...';
                     button.disabled = true;
 
                     try {
                         await generatePDFContent();
                     } finally {
-                        // Restore button state
                         button.innerHTML = originalText;
                         button.disabled = false;
                     }
@@ -986,6 +1037,11 @@ I would like to book this tour. Please provide me with pricing and availability.
 
             async function generatePDFContent() {
                 try {
+                    // Create export map if destinations selected
+                    if (selectedGrid.children.length > 0) {
+                        await createExportMap();
+                    }
+
                     // Generate PDF
                     if (typeof window.jspdf === 'undefined') {
                         throw new Error('PDF library not loaded');
@@ -995,147 +1051,196 @@ I would like to book this tour. Please provide me with pricing and availability.
                     const doc = new jsPDF();
 
                     // ===== PAGE 1: COVER PAGE =====
-                    // Background gradient
-                    doc.setFillColor(102, 126, 234);
-                    doc.rect(0, 0, 210, 297, 'F');
+                    // Background color
+                    doc.setFillColor(52, 152, 219);
+                    doc.rect(0, 0, 210, 50, 'F');
 
                     // Logo/Header
-                    doc.setFontSize(32);
+                    doc.setFontSize(24);
                     doc.setTextColor(255, 255, 255);
-                    doc.text("Ayubowan Tours", 105, 40, { align: 'center' });
+                    doc.text("Ayubowan Tours", 105, 25, { align: 'center' });
 
-                    // Subtitle
-                    doc.setFontSize(18);
-                    doc.text("Booking Summary", 105, 60, { align: 'center' });
-
-                    // Decorative line
-                    doc.setDrawColor(255, 255, 255);
-                    doc.setLineWidth(0.5);
-                    doc.line(60, 70, 150, 70);
+                    doc.setFontSize(16);
+                    doc.text("Booking Summary", 105, 40, { align: 'center' });
 
                     // Booking ID
-                    const bookingId = 'AYT' + Date.now().toString().slice(-8);
-                    doc.setFontSize(12);
-                    doc.text(`Booking ID: ${bookingId}`, 105, 85, { align: 'center' });
-
-                    // Customer name
-                    doc.setFontSize(24);
-                    doc.text(name.value.trim(), 105, 110, { align: 'center' });
-
-                    // Destination count
-                    doc.setFontSize(16);
-                    doc.text(`${selectedGrid.children.length} Amazing Destinations`, 105, 130, { align: 'center' });
-
-                    // Travel dates
-                    doc.setFontSize(14);
-                    doc.text(`${arrival.value} to ${departure.value}`, 105, 150, { align: 'center' });
-
-                    // Footer note
+                    const bookingId = 'AYT' + Date.now().toString().slice(-6);
                     doc.setFontSize(10);
-                    doc.text("Your Sri Lankan adventure awaits!", 105, 180, { align: 'center' });
+                    doc.text(`Booking ID: ${bookingId}`, 10, 60);
 
                     // Generated date
-                    doc.text(`Generated on: ${new Date().toLocaleDateString('en-US', {
-                        weekday: 'long',
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit'
-                    })}`, 105, 280, { align: 'center' });
+                    doc.text(`Date: ${new Date().toLocaleDateString()}`, 10, 65);
 
-                    // ===== PAGE 2: DETAILS PAGE =====
-                    doc.addPage();
-
-                    // Page title
-                    doc.setFillColor(255, 255, 255);
+                    // Customer Information Section
+                    doc.setFontSize(14);
                     doc.setTextColor(0, 0, 0);
-                    doc.setFontSize(20);
-                    doc.text("Travel Details", 105, 20, { align: 'center' });
-
-                    // Section: Customer Information
-                    doc.setFontSize(16);
-                    doc.setTextColor(102, 126, 234);
-                    doc.text("👤 Customer Information", 10, 35);
+                    doc.text("Customer Information", 10, 80);
 
                     doc.setFontSize(12);
-                    doc.setTextColor(0, 0, 0);
-                    let yPos = 45;
+                    doc.text(`Name: ${name.value.trim()}`, 10, 90);
+                    doc.text(`Phone: ${phone.value}`, 10, 98);
+                    doc.text(`Email: ${email.value}`, 10, 106);
+                    doc.text(`Adults: ${adults.value}`, 10, 114);
+                    doc.text(`Children: ${children.value || '0'}`, 10, 122);
+                    doc.text(`Arrival: ${arrival.value}`, 10, 130);
+                    doc.text(`Departure: ${departure.value}`, 10, 138);
 
-                    // Create info table
-                    const customerInfo = [
-                        ['Name:', name.value.trim()],
-                        ['Phone:', phone.value],
-                        ['Email:', email.value],
-                        ['Travelers:', `${adults.value} Adult(s), ${children.value || '0'} Child(ren)`],
-                        ['Dates:', `${arrival.value} to ${departure.value}`]
-                    ];
+                    // Itinerary Section
+                    doc.setFontSize(14);
+                    doc.text("Travel Itinerary", 10, 155);
 
-                    customerInfo.forEach(([label, value]) => {
-                        doc.setFont(undefined, 'bold');
-                        doc.text(label, 15, yPos);
-                        doc.setFont(undefined, 'normal');
-                        doc.text(value, 50, yPos);
+                    doc.setFontSize(12);
+                    const destinations = [...selectedGrid.children];
+                    let yPos = 165;
+
+                    destinations.forEach((item, index) => {
+                        doc.setFillColor(colors[index % colors.length]);
+                        doc.circle(15, yPos - 4, 3, 'F');
+                        doc.text(`${index + 1}. ${item.dataset.id}`, 22, yPos);
                         yPos += 8;
                     });
 
-                    // Section: Itinerary
-                    yPos += 10;
-                    doc.setFontSize(16);
-                    doc.setTextColor(102, 126, 234);
-                    doc.text("🗺️ Your Itinerary", 10, yPos);
+                    // ===== PAGE 2: MAP PAGE (if destinations selected) =====
+                    if (selectedGrid.children.length > 0) {
+                        doc.addPage();
 
-                    doc.setFontSize(12);
-                    doc.setTextColor(0, 0, 0);
-                    yPos += 10;
+                        // Page title
+                        doc.setFontSize(16);
+                        doc.setTextColor(52, 152, 219);
+                        doc.text("Travel Route Map", 105, 20, { align: 'center' });
 
-                    const destinations = [...selectedGrid.children];
-                    destinations.forEach((item, index) => {
-                        doc.setFillColor(colors[index % colors.length]);
-                        doc.circle(18, yPos - 4, 3, 'F');
-                        doc.text(`${index + 1}. ${item.dataset.id}`, 25, yPos);
-                        yPos += 7;
-                    });
+                        try {
+                            // Create a canvas to capture the export map
+                            const canvas = await html2canvas(mapForExport, {
+                                scale: 1,
+                                useCORS: true,
+                                backgroundColor: '#ffffff',
+                                logging: false
+                            });
 
-                    // ===== PAGE 3: MAP DESCRIPTION =====
-                    doc.addPage();
+                            // Convert canvas to data URL
+                            const mapImage = canvas.toDataURL('image/jpeg', 0.8);
 
-                    // Page title
-                    doc.setFontSize(20);
-                    doc.text("Your Travel Route", 105, 20, { align: 'center' });
+                            // Add map image to PDF
+                            doc.addImage(mapImage, 'JPEG', 10, 30, 190, 120);
 
-                    // Map description
-                    yPos = 40;
-                    doc.setFontSize(12);
-                    doc.text("Your selected destinations in Sri Lanka:", 10, yPos);
+                            // Map legend
+                            doc.setFontSize(10);
+                            doc.setTextColor(100, 100, 100);
+                            doc.text("Map Legend:", 10, 155);
+                            doc.text("• Blue line shows travel route", 15, 162);
+                            doc.text("• Numbered pins show destinations in order", 15, 169);
 
-                    yPos += 10;
-                    doc.setFontSize(10);
-                    doc.setTextColor(100, 100, 100);
-                    doc.text("📍 Route Highlights:", 10, yPos);
+                        } catch (mapError) {
+                            console.error('Error capturing map:', mapError);
+                            doc.setFontSize(12);
+                            doc.text("Map could not be generated", 105, 80, { align: 'center' });
+                            doc.text("Selected destinations:", 10, 100);
 
-                    yPos += 8;
-                    doc.text("• Blue line shows your travel route", 15, yPos);
-                    yPos += 5;
-                    doc.text("• Numbered pins indicate destinations in order", 15, yPos);
-                    yPos += 5;
-                    doc.text("• Optimal route calculated for your journey", 15, yPos);
+                            yPos = 110;
+                            destinations.forEach((item, index) => {
+                                doc.text(`${index + 1}. ${item.dataset.id}`, 15, yPos);
+                                yPos += 7;
+                            });
+                        }
+                    }
 
-                    // Footer with contact info
-                    yPos = 280;
+                    // Footer on last page
                     doc.setFontSize(9);
-                    doc.text("Ayubowan Tours - Discover the Wonder of Sri Lanka", 105, yPos, { align: 'center' });
-                    yPos += 4;
-                    doc.text("📞 +94 76 366 1600 | ✉️ info@ayubowantours.com", 105, yPos, { align: 'center' });
+                    doc.setTextColor(100, 100, 100);
+                    const lastPageY = doc.internal.pageSize.height - 10;
+                    doc.text("Thank you for choosing Ayubowan Tours!", 105, lastPageY - 5, { align: 'center' });
+                    doc.text("Contact: +94 76 366 1600 | info@ayubowantours.com", 105, lastPageY, { align: 'center' });
 
                     // ===== SAVE PDF =====
-                    const fileName = `Ayubowan_Tour_Booking_${name.value.replace(/\s+/g, '_')}_${Date.now()}.pdf`;
+                    const fileName = `Ayubowan_Tour_${name.value.replace(/\s+/g, '_')}.pdf`;
                     doc.save(fileName);
 
                 } catch (error) {
                     console.error('Error generating PDF:', error);
                     alert('Error generating PDF. Please try again.');
                 }
+            }
+
+            // Create export map for PDF
+            async function createExportMap() {
+                return new Promise((resolve) => {
+                    // Clear previous export map
+                    mapForExport.innerHTML = '';
+
+                    // Create new map container
+                    const mapContainer = document.createElement('div');
+                    mapContainer.style.width = '800px';
+                    mapContainer.style.height = '500px';
+                    mapContainer.style.background = 'white';
+                    mapForExport.appendChild(mapContainer);
+
+                    // Initialize map with a slight delay to ensure DOM is ready
+                    setTimeout(() => {
+                        try {
+                            exportMap = L.map(mapContainer).setView(coords.Kandy, 7);
+
+                            // Add tile layer
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                attribution: ''
+                            }).addTo(exportMap);
+
+                            // Clear existing export markers
+                            exportMarkers = [];
+                            if (exportRouteControl) {
+                                exportMap.removeControl(exportRouteControl);
+                                exportRouteControl = null;
+                            }
+
+                            if (selectedGrid.children.length < 1) {
+                                exportMap.setView(coords.Kandy, 7);
+                                resolve();
+                                return;
+                            }
+
+                            // Create waypoints
+                            const waypoints = [...selectedGrid.children].map(i => L.latLng(coords[i.dataset.id]));
+
+                            // Add markers
+                            waypoints.forEach((wp, i) => {
+                                const marker = L.marker(wp, {
+                                    icon: L.divIcon({
+                                        html: `<div style="background:${colors[i % colors.length]}; width:28px; height:36px; border-radius:50% 50% 50% 50%; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; font-size:14px; border:2px solid white; box-shadow:0 2px 6px rgba(0,0,0,0.3);">${i + 1}</div>`,
+                                        iconSize: [28, 36],
+                                        iconAnchor: [14, 36]
+                                    })
+                                }).addTo(exportMap);
+                                exportMarkers.push(marker);
+                            });
+
+                            // Add routing if more than one waypoint
+                            if (waypoints.length > 1 && typeof L.Routing !== 'undefined') {
+                                exportRouteControl = L.Routing.control({
+                                    waypoints: waypoints,
+                                    lineOptions: { styles: [{ color: '#3498db', weight: 3 }] },
+                                    createMarker: () => null,
+                                    routeWhileDragging: false,
+                                    addWaypoints: false,
+                                    draggableWaypoints: false,
+                                    show: false
+                                }).addTo(exportMap);
+                            }
+
+                            // Fit bounds
+                            if (exportMarkers.length > 0) {
+                                const group = new L.featureGroup(exportMarkers);
+                                exportMap.fitBounds(group.getBounds().pad(0.3));
+                            }
+
+                            // Give map time to render
+                            setTimeout(resolve, 800);
+
+                        } catch (error) {
+                            console.error('Error creating export map:', error);
+                            resolve();
+                        }
+                    }, 100);
+                });
             }
 
             // ==================== EMAIL FUNCTION ====================
@@ -1183,28 +1288,12 @@ ${name.value.trim()}`;
                 // Disable booking buttons
                 if (sendWhatsApp) sendWhatsApp.disabled = true;
                 if (sendEmail) sendEmail.disabled = true;
-                if (generatePDF) generatePDF.disabled = true;
-
-                // Start countdown
-                let seconds = 5;
-                if (countdownElement) countdownElement.textContent = seconds;
-
-                countdownTimer = setInterval(() => {
-                    seconds--;
-                    if (countdownElement) countdownElement.textContent = seconds;
-
-                    if (seconds <= 0) {
-                        clearInterval(countdownTimer);
-                        closePopupAndReset();
-                    }
-                }, 1000);
 
                 // Show popup
                 if (popupOverlay) popupOverlay.style.display = 'flex';
             }
 
             function closePopupAndReset() {
-                clearInterval(countdownTimer);
                 if (popupOverlay) popupOverlay.style.display = 'none';
                 clearLocalStorageAndReload();
             }
@@ -1279,20 +1368,19 @@ ${name.value.trim()}`;
                     });
                 }
 
-                // Regular PDF button (disabled in form)
-                if (generatePDF) {
-                    generatePDF.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        if (!validateForm()) return;
-                        generateAttractivePDF(this);
-                    });
-                }
-
                 // Download summary PDF button (in popup)
                 if (downloadSummaryPDF) {
                     downloadSummaryPDF.addEventListener('click', function (e) {
                         e.preventDefault();
                         generateAttractivePDF(this);
+                    });
+                }
+
+                // Close button for popup
+                if (popupCloseBtn) {
+                    popupCloseBtn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        closePopupAndReset();
                     });
                 }
 
