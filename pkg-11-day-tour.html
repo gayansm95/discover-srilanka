@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Ayubowan Tours</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+<head>
+    <meta charset="utf-8">
+    <title>Ayubowan Tours</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <style>
-            /* WhatsApp Floating Button with Pulse Animation */
-            .whatsapp-float {
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* WhatsApp Floating Button with Pulse Animation */
+        .whatsapp-float {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -41,29 +41,31 @@
             z-index: 2000;
             animation: whatsapp-pulse 1.8s infinite;
             text-decoration: none;
-            }
+        }
 
-            /* Hover effect */
-            .whatsapp-float:hover {
+        /* Hover effect */
+        .whatsapp-float:hover {
             transform: scale(1.1);
             transition: 0.3s ease;
-            }
+        }
 
-            /* Pulse animation */
-            @keyframes whatsapp-pulse {
+        /* Pulse animation */
+        @keyframes whatsapp-pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
+
             70% {
                 box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
             }
+
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
-            }
+        }
 
-            /* Mobile responsive */
-            @media (max-width: 768px) {
+        /* Mobile responsive */
+        @media (max-width: 768px) {
             .whatsapp-float {
                 width: 70px;
                 height: 70px;
@@ -72,1404 +74,1963 @@
                 bottom: 15px;
                 right: 15px;
             }
-            }
+        }
 
-            /* ENHANCED PACKAGE CARD STYLING */
-            .package-card {
-                background: white;
-                border-radius: 20px;
-                overflow: hidden;
-                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                height: 100%;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                border: 1px solid rgba(52, 152, 219, 0.1);
-                position: relative;
-            }
+        /* ENHANCED PACKAGE CARD STYLING */
+        .package-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+            position: relative;
+        }
 
-            .package-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-                border-color: #3498db;
-            }
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #3498db;
+        }
 
-            .package-card::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 5px;
-                height: 100%;
-                background: linear-gradient(to bottom, #3498db, #2ecc71);
-                z-index: 1;
-            }
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3498db, #2ecc71);
+            z-index: 1;
+        }
 
-            .package-image-container {
-                position: relative;
-                overflow: hidden;
-                height: 250px;
-                border-bottom: 3px solid #3498db;
-            }
+        .package-image-container {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+            border-bottom: 3px solid #3498db;
+        }
 
-            .package-image {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.7s ease;
-            }
+        .package-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
 
-            .package-card:hover .package-image {
-                transform: scale(1.08);
-            }
+        .package-card:hover .package-image {
+            transform: scale(1.08);
+        }
 
-            .package-badge {
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                background: linear-gradient(135deg, #3498db, #2980b9);
-                color: white;
-                padding: 8px 15px;
-                border-radius: 20px;
-                font-weight: 600;
-                font-size: 0.8rem;
-                z-index: 2;
-                box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
-            }
+        .package-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+        }
 
-            .view-full-btn {
-                position: absolute;
-                bottom: 15px;
-                right: 15px;
-                background: rgba(255, 255, 255, 0.95);
-                border: 2px solid #3498db;
-                border-radius: 25px;
-                padding: 8px 20px;
-                font-size: 0.85rem;
-                color: #3498db;
-                font-weight: 600;
+        .view-full-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #3498db;
+            border-radius: 25px;
+            padding: 8px 20px;
+            font-size: 0.85rem;
+            color: #3498db;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .package-card:hover .view-full-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .view-full-btn:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .package-content {
+            padding: 25px;
+            position: relative;
+        }
+
+        .package-title {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .package-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            border-radius: 2px;
+        }
+
+        .package-card:hover .package-title::after {
+            width: 80px;
+            transition: width 0.3s ease;
+        }
+
+        .package-itinerary {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+            border-left: 4px solid #3498db;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .package-itinerary i {
+            color: #3498db;
+            margin: 0 8px;
+            font-size: 0.9rem;
+        }
+
+        .itinerary-destinations {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .destination-tag {
+            background: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #3498db;
+            border: 1px solid #3498db;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .destination-tag:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .package-features {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .feature {
+            text-align: center;
+            flex: 1;
+        }
+
+        .feature i {
+            color: #3498db;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .feature span {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .package-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            height: 72px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            position: relative;
+        }
+
+        .package-description::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 20px;
+            background: linear-gradient(to right, transparent, white);
+        }
+
+        .book-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border: none;
+            padding: 14px 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+        }
+
+        .book-btn:hover {
+            background: linear-gradient(135deg, #2980b9, #1c5d8a);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+
+        /* CUSTOM TOUR BUILDER STYLES */
+        .custom-tour-card {
+            border: 2px dashed #3498db;
+            position: relative;
+            min-height: 600px;
+        }
+
+        .custom-tour-builder {
+            padding: 20px;
+        }
+
+        .builder-section {
+            margin-bottom: 25px;
+        }
+
+        .builder-section-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .builder-section-title i {
+            color: #3498db;
+        }
+
+        .available-places {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .place-tag {
+            background: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: #2c3e50;
+            border: 2px solid #3498db;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .place-tag:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .place-tag.selected {
+            background: #2ecc71;
+            border-color: #27ae60;
+            color: white;
+            pointer-events: none;
+        }
+
+        .place-tag i {
+            font-size: 0.8rem;
+        }
+
+        .design-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            min-height: 150px;
+            border: 2px solid #3498db;
+        }
+
+        .design-itinerary {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            min-height: 100px;
+        }
+
+        .design-place {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            color: #2c3e50;
+            border: 2px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .design-place i {
+            color: #e74c3c;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .design-place i:hover {
+            transform: scale(1.2);
+            color: #c0392b;
+        }
+
+        .design-place-connector {
+            color: #3498db;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .builder-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .btn-clear {
+            background: white;
+            border: 2px solid #e74c3c;
+            color: #e74c3c;
+            padding: 12px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            flex: 1;
+            border-radius: 10px;
+        }
+
+        .btn-clear:hover {
+            background: #e74c3c;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-design-book {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            flex: 1;
+            border-radius: 10px;
+        }
+
+        .btn-design-book:hover {
+            background: linear-gradient(135deg, #8e44ad, #7d3c98);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(155, 89, 182, 0.3);
+        }
+
+        .builder-instruction {
+            background: linear-gradient(135deg, #fff9e6, #ffeaa7);
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #7d6608;
+        }
+
+        .builder-instruction i {
+            color: #f39c12;
+            margin-right: 10px;
+        }
+
+        /* Image Modal Styles */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2500;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-modal.active {
+            display: flex;
+            opacity: 1;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-image-container {
+            max-width: 95%;
+            max-height: 95%;
+            position: relative;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .close-modal-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 22px;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2501;
+        }
+
+        .close-modal-btn:hover {
+            background: #ff6b6b;
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        /* Booking Modal Styles */
+        .booking-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2500;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .booking-modal.active {
+            display: flex;
+            opacity: 1;
+            animation: slideIn 0.5s ease;
+        }
+
+        .booking-modal-content {
+            background: white;
+            width: 98%;
+            max-width: 1400px;
+            max-height: 98vh;
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.5s ease;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .booking-modal.active .booking-modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .booking-modal-header {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 35px 50px;
+            position: relative;
+        }
+
+        .booking-modal-title {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .booking-modal-subtitle {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .booking-modal-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .booking-modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .booking-modal-body {
+            padding: 50px;
+            overflow-y: auto;
+            max-height: calc(98vh - 200px);
+        }
+
+        .modal-itinerary {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            text-align: center;
+            border-left: 5px solid #3498db;
+        }
+
+        .modal-itinerary i {
+            color: #3498db;
+            margin: 0 12px;
+            font-size: 1.4rem;
+        }
+
+        .modal-description {
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 45px;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 0 40px;
+        }
+
+        .booking-form {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #e9ecef;
+        }
+
+        .form-section-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+            font-weight: 600;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+        }
+
+        .form-control {
+            border: 2px solid #d1d9e6;
+            border-radius: 12px;
+            padding: 18px 25px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            height: 55px;
+        }
+
+        .form-control:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 0 0.4rem rgba(52, 152, 219, 0.25);
+            transform: translateY(-2px);
+        }
+
+        textarea.form-control {
+            height: 120px;
+            resize: vertical;
+        }
+
+        select.form-control {
+            height: 55px;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%233498db' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            background-size: 16px;
+            padding-right: 50px;
+        }
+
+        .modal-booking-btn {
+            background: linear-gradient(135deg, #27ae60, #1e8449);
+            border: none;
+            padding: 22px 50px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 40px;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal-booking-btn:hover {
+            background: linear-gradient(135deg, #219653, #186a3b);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(33, 150, 83, 0.5);
+        }
+
+        .modal-booking-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .modal-booking-btn i {
+            margin-right: 12px;
+            font-size: 1.5rem;
+        }
+
+        .custom-tour-itinerary-display {
+            background: linear-gradient(135deg, #e8f4fc, #d1e8ff);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 2px solid #3498db;
+            display: none;
+        }
+
+        .custom-tour-itinerary-display.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .custom-itinerary-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .custom-itinerary-title i {
+            color: #3498db;
+        }
+
+        .custom-itinerary-places {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .custom-itinerary-place {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            color: #2c3e50;
+            border: 2px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-itinerary-place i {
+            color: #3498db;
+            font-size: 0.9rem;
+        }
+
+        /* Two-column layout for larger screens */
+        @media (min-width: 992px) {
+            .booking-form .row {
                 display: flex;
-                align-items: center;
-                gap: 5px;
-                transition: all 0.3s ease;
-                z-index: 10;
-                opacity: 0;
-                transform: translateY(10px);
+                flex-wrap: wrap;
+                margin: 0 -15px;
             }
 
-            .package-card:hover .view-full-btn {
+            .booking-form .col-md-6 {
+                padding: 0 15px;
+                width: 50%;
+            }
+
+            .booking-form .col-12 {
+                padding: 0 15px;
+                width: 100%;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-60px);
+            }
+
+            to {
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
 
-            .view-full-btn:hover {
-                background: #3498db;
-                color: white;
-                transform: translateY(-2px);
-            }
-
-            .package-content {
-                padding: 25px;
-                position: relative;
-            }
-
-            .package-title {
-                color: #2c3e50;
-                font-weight: 700;
-                margin-bottom: 15px;
-                font-size: 1.6rem;
-                position: relative;
-                padding-bottom: 10px;
-            }
-
-            .package-title::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 50px;
-                height: 3px;
-                background: linear-gradient(to right, #3498db, #2ecc71);
-                border-radius: 2px;
-            }
-
-            .package-card:hover .package-title::after {
-                width: 80px;
-                transition: width 0.3s ease;
-            }
-
-            .package-itinerary {
-                background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-                padding: 20px;
-                border-radius: 12px;
-                margin-bottom: 20px;
-                font-size: 1rem;
-                line-height: 1.6;
-                border-left: 4px solid #3498db;
-                box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-            }
-
-            .package-itinerary i {
-                color: #3498db;
-                margin: 0 8px;
-                font-size: 0.9rem;
-            }
-
-            .itinerary-destinations {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-                margin-top: 10px;
-            }
-
-            .destination-tag {
-                background: white;
-                padding: 6px 15px;
-                border-radius: 20px;
-                font-size: 0.85rem;
-                color: #3498db;
-                border: 1px solid #3498db;
-                transition: all 0.3s ease;
-            }
-
-            .destination-tag:hover {
-                background: #3498db;
-                color: white;
-                transform: translateY(-2px);
-            }
-
-            .package-features {
-                display: flex;
-                justify-content: space-between;
-                margin: 20px 0;
-                padding: 15px 0;
-                border-top: 1px solid #eee;
-                border-bottom: 1px solid #eee;
-            }
-
-            .feature {
-                text-align: center;
-                flex: 1;
-            }
-
-            .feature i {
-                color: #3498db;
-                font-size: 1.5rem;
-                margin-bottom: 8px;
-            }
-
-            .feature span {
-                display: block;
-                font-size: 0.9rem;
-                color: #666;
-                font-weight: 600;
-            }
-
+        /* Responsive grid */
+        @media (max-width: 768px) {
             .package-description {
-                color: #666;
-                font-size: 0.95rem;
-                line-height: 1.6;
-                margin-bottom: 25px;
-                height: 72px;
-                overflow: hidden;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                position: relative;
-            }
-
-            .package-description::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                width: 60px;
-                height: 20px;
-                background: linear-gradient(to right, transparent, white);
-            }
-
-            .book-btn {
-                background: linear-gradient(135deg, #3498db, #2980b9);
-                border: none;
-                padding: 14px 25px;
-                font-weight: 600;
-                font-size: 1rem;
-                transition: all 0.3s ease;
-                width: 100%;
-                border-radius: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 10px;
-                box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
-            }
-
-            .book-btn:hover {
-                background: linear-gradient(135deg, #2980b9, #1c5d8a);
-                transform: translateY(-3px);
-                box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
-            }
-
-            /* Image Modal Styles */
-            .image-modal {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.95);
-                z-index: 2500;
-                justify-content: center;
-                align-items: center;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-
-            .image-modal.active {
-                display: flex;
-                opacity: 1;
-                animation: fadeIn 0.3s ease;
-            }
-
-            .modal-image-container {
-                max-width: 95%;
-                max-height: 95%;
-                position: relative;
-            }
-
-            .modal-image {
-                width: 100%;
                 height: auto;
-                border-radius: 10px;
-                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-            }
-
-            .close-modal-btn {
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                background: rgba(255, 255, 255, 0.9);
-                border: none;
-                width: 45px;
-                height: 45px;
-                border-radius: 50%;
-                font-size: 22px;
-                color: #333;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 2501;
-            }
-
-            .close-modal-btn:hover {
-                background: #ff6b6b;
-                color: white;
-                transform: rotate(90deg);
-            }
-
-            /* Booking Modal Styles - EXTRA LARGE SIZE */
-            .booking-modal {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.9);
-                z-index: 2500;
-                justify-content: center;
-                align-items: center;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-                padding: 20px;
-            }
-
-            .booking-modal.active {
-                display: flex;
-                opacity: 1;
-                animation: slideIn 0.5s ease;
+                -webkit-line-clamp: 4;
             }
 
             .booking-modal-content {
-                background: white;
                 width: 98%;
-                max-width: 1400px; /* EXTRA LARGE - increased from 1200px */
-                max-height: 98vh; /* EXTRA LARGE - increased from 95vh */
-                border-radius: 25px; /* Larger border radius */
-                overflow: hidden;
-                position: relative;
-                transform: translateY(30px);
-                opacity: 0;
-                transition: all 0.5s ease;
-                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-            }
-
-            .booking-modal.active .booking-modal-content {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            .booking-modal-header {
-                background: linear-gradient(135deg, #3498db, #2c3e50);
-                color: white;
-                padding: 35px 50px; /* Increased padding */
-                position: relative;
-            }
-
-            .booking-modal-title {
-                font-size: 2.5rem; /* Increased font size */
-                margin: 0;
-                font-weight: 700;
-                text-align: center;
-            }
-
-            .booking-modal-subtitle {
-                font-size: 1.3rem;
-                margin-top: 10px;
-                text-align: center;
-                opacity: 0.9;
-            }
-
-            .booking-modal-close {
-                position: absolute;
-                top: 30px;
-                right: 30px;
-                background: rgba(255, 255, 255, 0.2);
-                border: none;
-                width: 55px; /* Increased size */
-                height: 55px; /* Increased size */
-                border-radius: 50%;
-                color: white;
-                font-size: 26px; /* Increased font size */
-                cursor: pointer;
-                transition: all 0.3s ease;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .booking-modal-close:hover {
-                background: rgba(255, 255, 255, 0.3);
-                transform: rotate(90deg) scale(1.1);
+                max-height: 95vh;
+                max-width: 98%;
+                border-radius: 20px;
             }
 
             .booking-modal-body {
-                padding: 50px; /* Increased padding */
-                overflow-y: auto;
-                max-height: calc(98vh - 200px); /* Adjusted for larger header */
-            }
-
-            .modal-itinerary {
-                background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-                padding: 30px; /* Increased padding */
-                border-radius: 15px; /* Increased border radius */
-                margin-bottom: 40px; /* Increased margin */
-                font-size: 1.3rem; /* Increased font size */
-                line-height: 1.8;
-                text-align: center;
-                border-left: 5px solid #3498db;
-            }
-
-            .modal-itinerary i {
-                color: #3498db;
-                margin: 0 12px; /* Increased margin */
-                font-size: 1.4rem; /* Increased icon size */
-            }
-
-            .modal-description {
-                color: #555;
-                line-height: 1.9; /* Increased line height */
-                margin-bottom: 45px; /* Increased margin */
-                font-size: 1.2rem; /* Increased font size */
-                text-align: center;
-                padding: 0 40px;
+                padding: 30px;
+                max-height: calc(95vh - 150px);
             }
 
             .booking-form {
-                background: linear-gradient(135deg, #ffffff, #f8f9fa);
-                padding: 40px; /* Increased padding */
-                border-radius: 20px; /* Increased border radius */
-                border: 2px solid #e9ecef;
+                padding: 25px;
             }
 
-            .form-section-title {
-                font-size: 1.5rem;
-                color: #2c3e50;
-                margin-bottom: 25px;
-                padding-bottom: 15px;
-                border-bottom: 3px solid #3498db;
-                font-weight: 600;
+            .booking-modal-title {
+                font-size: 2rem;
+            }
+
+            .booking-modal-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .booking-modal-close {
+                width: 45px;
+                height: 45px;
+                font-size: 22px;
+                top: 25px;
+                right: 25px;
+            }
+
+            .modal-itinerary {
+                font-size: 1.1rem;
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+
+            .modal-description {
+                font-size: 1.1rem;
+                padding: 0 20px;
+                margin-bottom: 30px;
             }
 
             .form-label {
-                font-weight: 600;
-                color: #2c3e50;
-                margin-bottom: 12px; /* Increased margin */
-                font-size: 1.15rem; /* Increased font size */
+                font-size: 1rem;
             }
 
             .form-control {
-                border: 2px solid #d1d9e6;
-                border-radius: 12px; /* Increased border radius */
-                padding: 18px 25px; /* Increased padding */
-                transition: all 0.3s ease;
-                font-size: 1.1rem; /* Increased font size */
-                height: 55px; /* Increased height */
-            }
-
-            .form-control:focus {
-                border-color: #3498db;
-                box-shadow: 0 0 0 0.4rem rgba(52, 152, 219, 0.25); /* Enhanced shadow */
-                transform: translateY(-2px);
+                padding: 15px 20px;
+                font-size: 1rem;
+                height: 50px;
             }
 
             textarea.form-control {
-                height: 120px; /* Increased height */
-                resize: vertical;
-            }
-
-            select.form-control {
-                height: 55px; /* Increased height */
-                appearance: none;
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%233498db' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
-                background-repeat: no-repeat;
-                background-position: right 20px center;
-                background-size: 16px;
-                padding-right: 50px;
+                height: 100px;
             }
 
             .modal-booking-btn {
-                background: linear-gradient(135deg, #27ae60, #1e8449);
-                border: none;
-                padding: 22px 50px; /* Increased padding */
-                font-size: 1.4rem; /* Increased font size */
-                font-weight: 700;
-                color: white;
-                border-radius: 15px; /* Increased border radius */
-                transition: all 0.3s ease;
-                width: 100%;
-                margin-top: 40px; /* Increased margin */
-                letter-spacing: 0.5px;
-                position: relative;
-                overflow: hidden;
+                padding: 18px 30px;
+                font-size: 1.2rem;
+                margin-top: 30px;
             }
 
-            .modal-booking-btn:hover {
-                background: linear-gradient(135deg, #219653, #186a3b);
-                transform: translateY(-4px);
-                box-shadow: 0 15px 30px rgba(33, 150, 83, 0.5); /* Enhanced shadow */
+            .booking-modal-header {
+                padding: 25px 30px;
             }
 
-            .modal-booking-btn:active {
-                transform: translateY(-1px);
+            .package-features {
+                flex-wrap: wrap;
+                gap: 15px;
             }
 
-            .modal-booking-btn i {
-                margin-right: 12px;
-                font-size: 1.5rem;
+            .feature {
+                flex: 0 0 calc(50% - 15px);
             }
 
-            /* Two-column layout for larger screens */
-            @media (min-width: 992px) {
-                .booking-form .row {
-                    display: flex;
-                    flex-wrap: wrap;
-                    margin: 0 -15px;
-                }
-                
-                .booking-form .col-md-6 {
-                    padding: 0 15px;
-                    width: 50%;
-                }
-                
-                .booking-form .col-12 {
-                    padding: 0 15px;
-                    width: 100%;
-                }
+            .available-places {
+                justify-content: center;
             }
 
-            /* Animations */
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
+            .design-itinerary {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .booking-modal-title {
+                font-size: 1.7rem;
             }
 
-            @keyframes slideIn {
-                from { 
-                    opacity: 0;
-                    transform: translateY(-60px);
-                }
-                to { 
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+            .modal-itinerary {
+                font-size: 1rem;
             }
 
-            /* Responsive grid */
-            @media (max-width: 768px) {
-                .package-description {
-                    height: auto;
-                    -webkit-line-clamp: 4;
-                }
-                
-                .booking-modal-content {
-                    width: 98%;
-                    max-height: 95vh;
-                    max-width: 98%;
-                    border-radius: 20px;
-                }
-                
-                .booking-modal-body {
-                    padding: 30px;
-                    max-height: calc(95vh - 150px);
-                }
-                
-                .booking-form {
-                    padding: 25px;
-                }
-                
-                .booking-modal-title {
-                    font-size: 2rem;
-                }
-                
-                .booking-modal-subtitle {
-                    font-size: 1.1rem;
-                }
-                
-                .booking-modal-close {
-                    width: 45px;
-                    height: 45px;
-                    font-size: 22px;
-                    top: 25px;
-                    right: 25px;
-                }
-                
-                .modal-itinerary {
-                    font-size: 1.1rem;
-                    padding: 20px;
-                    margin-bottom: 30px;
-                }
-                
-                .modal-description {
-                    font-size: 1.1rem;
-                    padding: 0 20px;
-                    margin-bottom: 30px;
-                }
-                
-                .form-label {
-                    font-size: 1rem;
-                }
-                
-                .form-control {
-                    padding: 15px 20px;
-                    font-size: 1rem;
-                    height: 50px;
-                }
-                
-                textarea.form-control {
-                    height: 100px;
-                }
-                
-                .modal-booking-btn {
-                    padding: 18px 30px;
-                    font-size: 1.2rem;
-                    margin-top: 30px;
-                }
-                
-                .booking-modal-header {
-                    padding: 25px 30px;
-                }
-                
-                .package-features {
-                    flex-wrap: wrap;
-                    gap: 15px;
-                }
-                
-                .feature {
-                    flex: 0 0 calc(50% - 15px);
-                }
+            .booking-modal-header {
+                padding: 20px;
             }
 
-            @media (max-width: 576px) {
-                .booking-modal-title {
-                    font-size: 1.7rem;
-                }
-                
-                .modal-itinerary {
-                    font-size: 1rem;
-                }
-                
-                .booking-modal-header {
-                    padding: 20px;
-                }
-                
-                .booking-modal-body {
-                    padding: 20px;
-                }
-                
-                .booking-form {
-                    padding: 20px;
-                }
-                
-                .modal-description {
-                    font-size: 1rem;
-                    padding: 0 10px;
-                }
-                
-                .booking-modal-close {
-                    width: 40px;
-                    height: 40px;
-                    font-size: 20px;
-                    top: 20px;
-                    right: 20px;
-                }
-                
-                .package-badge {
-                    font-size: 0.7rem;
-                    padding: 6px 12px;
-                }
-                
-                .view-full-btn {
-                    padding: 6px 15px;
-                    font-size: 0.8rem;
-                }
+            .booking-modal-body {
+                padding: 20px;
             }
 
-            /* Spinner override */
-            #spinner {
-                z-index: 3000;
+            .booking-form {
+                padding: 20px;
             }
-        </style>
-    </head>
 
-    <body>
+            .modal-description {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
 
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+            .booking-modal-close {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                top: 20px;
+                right: 20px;
+            }
+
+            .package-badge {
+                font-size: 0.7rem;
+                padding: 6px 12px;
+            }
+
+            .view-full-btn {
+                padding: 6px 15px;
+                font-size: 0.8rem;
+            }
+
+            .builder-actions {
+                flex-direction: column;
+            }
+        }
+
+        /* Spinner override */
+        #spinner {
+            z-index: 3000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        <!-- Spinner End -->
+    </div>
+    <!-- Spinner End -->
 
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="./index.html" class="navbar-brand p-0">
-                    <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="services.html" class="nav-item nav-link">Services</a>
-                        <a href="packages.html" class="nav-item nav-link active">Packages</a>
-                        <a href="blog.html" class="nav-item nav-link">Blog</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
-                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="./index.html" class="navbar-brand p-0">
+                <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="services.html" class="nav-item nav-link">Services</a>
+                    <a href="packages.html" class="nav-item nav-link active">Packages</a>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-            </nav>
-        </div>
-        <!-- Navbar & Hero End -->
+                <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">Sri Lanka Highlights - 11 Day Tour</h1>
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h3 class="text-white display-3 mb-4">Sri Lanka Highlights - 11 Day Tour</h1>
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="packages.html">Packages</a></li>
                     <li class="breadcrumb-item active text-white">Sri Lanka Highlights - 11 Day Tour</li>
-                </ol>    
-            </div>
+                </ol>
         </div>
-        <!-- Header End -->
+    </div>
+    <!-- Header End -->
 
-        <!-- ENHANCED Packages Grid Start -->
-        <div class="container-fluid packages py-5">
-            <div class="container py-5">
-                <div class="text-center mb-5">
-                    <h2 class="display-5 mb-3">Choose Your Perfect Itinerary</h2>
-                    <p class="lead text-muted">Each 11-day tour is carefully crafted to showcase the best of Sri Lanka's diverse landscapes, rich culture, and unforgettable experiences.</p>
-                </div>
-                <div class="row g-4">
-                    <!-- Card 1 - Enhanced -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="package-card" data-id="1" data-title="Cultural Triangle Explorer" 
-                             data-image="img/11-day-tour-option-1.png"
-                             data-itinerary="Arrival → Sigiriya → Polonnaruwa → Anuradhapura → Kandy → Nuwara Eliya → Departure"
-                             data-description="Immerse yourself in Sri Lanka's ancient heritage with this cultural journey. Visit UNESCO World Heritage Sites, explore ancient kingdoms, and experience traditional Kandyan culture. Perfect for history enthusiasts and culture seekers.">
-                            <div class="package-image-container">
-                                <span class="package-badge">Most Popular</span>
-                                <img src="img/11-day-tour-option-1.png" class="package-image" alt="Cultural Triangle Explorer" onclick="viewFullImage('img/11-day-tour-option-1.png')">
-                                <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-1.png')">
-                                    <i class="fas fa-expand me-1"></i>View Full Map
-                                </button>
-                            </div>
-                            <div class="package-content">
-                                <h3 class="package-title">Cultural Triangle Explorer</h3>
-                                <div class="package-itinerary">
-                                    <i class="fas fa-map-marker-alt text-primary"></i>
-                                    Arrival <i class="fas fa-arrow-right text-primary"></i> 
-                                    Sigiriya <i class="fas fa-arrow-right text-primary"></i> 
-                                    Polonnaruwa <i class="fas fa-arrow-right text-primary"></i> 
-                                    Anuradhapura <i class="fas fa-arrow-right text-primary"></i> 
-                                    Kandy <i class="fas fa-arrow-right text-primary"></i> 
-                                    Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i> 
-                                    Departure
-                                </div>
-                                
-                                <div class="itinerary-destinations">
-                                    <span class="destination-tag">Sigiriya Rock</span>
-                                    <span class="destination-tag">Ancient Cities</span>
-                                    <span class="destination-tag">Kandy Culture</span>
-                                    <span class="destination-tag">Hill Country</span>
-                                </div>
-                                
-                                <div class="package-features">
-                                    <div class="feature">
-                                        <i class="fas fa-hotel"></i>
-                                        <span>10 Nights</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-car"></i>
-                                        <span>Private Transport</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-utensils"></i>
-                                        <span>Breakfast Included</span>
-                                    </div>
-                                </div>
-                                
-                                <p class="package-description">
-                                    Immerse yourself in Sri Lanka's ancient heritage with this cultural journey. Visit UNESCO World Heritage Sites, explore ancient kingdoms, and experience traditional Kandyan culture. Perfect for history enthusiasts and culture seekers.
-                                </p>
-                                <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
-                                    <i class="fa fa-calendar-check me-2"></i>View Package Details
-                                </button>
-                            </div>
+    <!-- ENHANCED Packages Grid Start -->
+    <div class="container-fluid packages py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-3">Choose Your Perfect Itinerary</h2>
+                <p class="lead text-muted">Each 11-day tour is carefully crafted to showcase the best of Sri Lanka's
+                    diverse landscapes, rich culture, and unforgettable experiences.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Card 1 - Enhanced -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card" data-id="1" data-title="Cultural Triangle Explorer"
+                        data-image="img/11-day-tour-option-1.png"
+                        data-itinerary="Arrival → Sigiriya → Polonnaruwa → Anuradhapura → Kandy → Nuwara Eliya → Departure"
+                        data-description="Immerse yourself in Sri Lanka's ancient heritage with this cultural journey. Visit UNESCO World Heritage Sites, explore ancient kingdoms, and experience traditional Kandyan culture. Perfect for history enthusiasts and culture seekers.">
+                        <div class="package-image-container">
+                            <span class="package-badge">Most Popular</span>
+                            <img src="img/11-day-tour-option-1.png" class="package-image"
+                                alt="Cultural Triangle Explorer"
+                                onclick="viewFullImage('img/11-day-tour-option-1.png')">
+                            <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-1.png')">
+                                <i class="fas fa-expand me-1"></i>View Full Map
+                            </button>
                         </div>
-                    </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Cultural Triangle Explorer</h3>
+                            <div class="package-itinerary">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                                Arrival <i class="fas fa-arrow-right text-primary"></i>
+                                Sigiriya <i class="fas fa-arrow-right text-primary"></i>
+                                Polonnaruwa <i class="fas fa-arrow-right text-primary"></i>
+                                Anuradhapura <i class="fas fa-arrow-right text-primary"></i>
+                                Kandy <i class="fas fa-arrow-right text-primary"></i>
+                                Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i>
+                                Departure
+                            </div>
 
-                    <!-- Card 2 - Enhanced -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="package-card" data-id="2" data-title="Beach & Heritage Combo" 
-                             data-image="img/11-day-tour-option-2.png"
-                             data-itinerary="Arrival → Anuradhapura → Trincomalee → Sigiriya → Kandy → Nuwara Eliya → Galle → Departure"
-                             data-description="Combine cultural exploration with beach relaxation. Discover ancient heritage sites, then unwind on pristine beaches. Experience the perfect balance of history, culture, and tropical paradise in one comprehensive tour.">
-                            <div class="package-image-container">
-                                <span class="package-badge" style="background: linear-gradient(135deg, #e67e22, #d35400);">Beach + Culture</span>
-                                <img src="img/11-day-tour-option-2.png" class="package-image" alt="Beach & Heritage Combo" onclick="viewFullImage('img/11-day-tour-option-2.png')">
-                                <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-2.png')">
-                                    <i class="fas fa-expand me-1"></i>View Full Map
-                                </button>
+                            <div class="itinerary-destinations">
+                                <span class="destination-tag" data-place="Sigiriya">Sigiriya Rock</span>
+                                <span class="destination-tag" data-place="Polonnaruwa">Polonnaruwa</span>
+                                <span class="destination-tag" data-place="Anuradhapura">Anuradhapura</span>
+                                <span class="destination-tag" data-place="Kandy">Kandy</span>
                             </div>
-                            <div class="package-content">
-                                <h3 class="package-title">Beach & Heritage Combo</h3>
-                                <div class="package-itinerary">
-                                    <i class="fas fa-map-marker-alt text-primary"></i>
-                                    Arrival <i class="fas fa-arrow-right text-primary"></i> 
-                                    Anuradhapura <i class="fas fa-arrow-right text-primary"></i> 
-                                    Trincomalee <i class="fas fa-arrow-right text-primary"></i> 
-                                    Sigiriya <i class="fas fa-arrow-right text-primary"></i> 
-                                    Kandy <i class="fas fa-arrow-right text-primary"></i> 
-                                    Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i> 
-                                    Galle <i class="fas fa-arrow-right text-primary"></i> 
-                                    Departure
-                                </div>
-                                
-                                <div class="itinerary-destinations">
-                                    <span class="destination-tag">Beach Time</span>
-                                    <span class="destination-tag">Ancient Cities</span>
-                                    <span class="destination-tag">Dutch Fort</span>
-                                    <span class="destination-tag">Hill Country</span>
-                                </div>
-                                
-                                <div class="package-features">
-                                    <div class="feature">
-                                        <i class="fas fa-hotel"></i>
-                                        <span>10 Nights</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-sun"></i>
-                                        <span>Beach Hotels</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-swimmer"></i>
-                                        <span>Water Activities</span>
-                                    </div>
-                                </div>
-                                
-                                <p class="package-description">
-                                    Combine cultural exploration with beach relaxation. Discover ancient heritage sites, then unwind on pristine beaches. Experience the perfect balance of history, culture, and tropical paradise in one comprehensive tour.
-                                </p>
-                                <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
-                                    <i class="fa fa-calendar-check me-2"></i>View Package Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Card 3 - Enhanced -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="package-card" data-id="3" data-title="Wildlife & Hill Country" 
-                             data-image="img/11-day-tour-option-3.png"
-                             data-itinerary="Arrival → Galle → Yala National Park → Ella → Nuwara Eliya → Kandy → Departure"
-                             data-description="Experience Sri Lanka's incredible biodiversity and scenic beauty. From wildlife safaris in Yala National Park to breathtaking train rides through tea plantations, this tour combines adventure with natural wonders.">
-                            <div class="package-image-container">
-                                <span class="package-badge" style="background: linear-gradient(135deg, #27ae60, #219653);">Wildlife</span>
-                                <img src="img/11-day-tour-option-3.png" class="package-image" alt="Wildlife & Hill Country" onclick="viewFullImage('img/11-day-tour-option-3.png')">
-                                <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-3.png')">
-                                    <i class="fas fa-expand me-1"></i>View Full Map
-                                </button>
+                            <div class="package-features">
+                                <div class="feature">
+                                    <i class="fas fa-hotel"></i>
+                                    <span>10 Nights</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-car"></i>
+                                    <span>Private Transport</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Breakfast Included</span>
+                                </div>
                             </div>
-                            <div class="package-content">
-                                <h3 class="package-title">Wildlife & Hill Country</h3>
-                                <div class="package-itinerary">
-                                    <i class="fas fa-map-marker-alt text-primary"></i>
-                                    Arrival <i class="fas fa-arrow-right text-primary"></i> 
-                                    Galle <i class="fas fa-arrow-right text-primary"></i> 
-                                    Yala National Park <i class="fas fa-arrow-right text-primary"></i> 
-                                    Ella <i class="fas fa-arrow-right text-primary"></i> 
-                                    Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i> 
-                                    Kandy <i class="fas fa-arrow-right text-primary"></i> 
-                                    Departure
-                                </div>
-                                
-                                <div class="itinerary-destinations">
-                                    <span class="destination-tag">Wildlife Safari</span>
-                                    <span class="destination-tag">Ella's Gap</span>
-                                    <span class="destination-tag">Tea Country</span>
-                                    <span class="destination-tag">Scenic Train</span>
-                                </div>
-                                
-                                <div class="package-features">
-                                    <div class="feature">
-                                        <i class="fas fa-camera"></i>
-                                        <span>Safari Tours</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-train"></i>
-                                        <span>Scenic Rides</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-leaf"></i>
-                                        <span>Tea Plantations</span>
-                                    </div>
-                                </div>
-                                
-                                <p class="package-description">
-                                    Experience Sri Lanka's incredible biodiversity and scenic beauty. From wildlife safaris in Yala National Park to breathtaking train rides through tea plantations, this tour combines adventure with natural wonders.
-                                </p>
-                                <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
-                                    <i class="fa fa-calendar-check me-2"></i>View Package Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Card 4 - Enhanced -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="package-card" data-id="4" data-title="Family Adventure Tour" 
-                             data-image="img/11-day-tour-option-4.png"
-                             data-itinerary="Arrival → Sigiriya → Kandy → Nuwara Eliya → Ella → Mirissa → Benthota → Departure"
-                             data-description="Perfect for families! This tour combines educational cultural experiences with fun activities and beach time. Child-friendly accommodations and flexible scheduling ensure an enjoyable experience for all ages.">
-                            <div class="package-image-container">
-                                <span class="package-badge" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">Family Friendly</span>
-                                <img src="img/11-day-tour-option-4.png" class="package-image" alt="Family Adventure Tour" onclick="viewFullImage('img/11-day-tour-option-4.png')">
-                                <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-4.png')">
-                                    <i class="fas fa-expand me-1"></i>View Full Map
-                                </button>
-                            </div>
-                            <div class="package-content">
-                                <h3 class="package-title">Family Adventure Tour</h3>
-                                <div class="package-itinerary">
-                                    <i class="fas fa-map-marker-alt text-primary"></i>
-                                    Arrival <i class="fas fa-arrow-right text-primary"></i> 
-                                    Sigiriya <i class="fas fa-arrow-right text-primary"></i> 
-                                    Kandy <i class="fas fa-arrow-right text-primary"></i> 
-                                    Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i> 
-                                    Ella <i class="fas fa-arrow-right text-primary"></i> 
-                                    Mirissa <i class="fas fa-arrow-right text-primary"></i> 
-                                    Benthota <i class="fas fa-arrow-right text-primary"></i> 
-                                    Departure
-                                </div>
-                                
-                                <div class="itinerary-destinations">
-                                    <span class="destination-tag">Kid Activities</span>
-                                    <span class="destination-tag">Beach Fun</span>
-                                    <span class="destination-tag">Cultural Shows</span>
-                                    <span class="destination-tag">Easy Hikes</span>
-                                </div>
-                                
-                                <div class="package-features">
-                                    <div class="feature">
-                                        <i class="fas fa-child"></i>
-                                        <span>Kid Friendly</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-home"></i>
-                                        <span>Family Rooms</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-swimming-pool"></i>
-                                        <span>Hotel Pools</span>
-                                    </div>
-                                </div>
-                                
-                                <p class="package-description">
-                                    Perfect for families! This tour combines educational cultural experiences with fun activities and beach time. Child-friendly accommodations and flexible scheduling ensure an enjoyable experience for all ages.
-                                </p>
-                                <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
-                                    <i class="fa fa-calendar-check me-2"></i>View Package Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 5 - Enhanced -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="package-card" data-id="5" data-title="Luxury Signature Tour" 
-                             data-image="img/11-day-tour-option-5.png"
-                             data-itinerary="Arrival → Anuradhapura → Trincomalee → Sigiriya → Ella → Nuwara Eliya → Kandy → Departure"
-                             data-description="Indulge in luxury with our premium signature tour. Stay at 5-star properties, enjoy exclusive experiences, private guides, and premium transportation. The ultimate Sri Lanka experience for discerning travelers.">
-                            <div class="package-image-container">
-                                <span class="package-badge" style="background: linear-gradient(135deg, #f39c12, #e67e22);">Premium</span>
-                                <img src="img/11-day-tour-option-5.png" class="package-image" alt="Luxury Signature Tour" onclick="viewFullImage('img/11-day-tour-option-5.png')">
-                                <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-5.png')">
-                                    <i class="fas fa-expand me-1"></i>View Full Map
-                                </button>
-                            </div>
-                            <div class="package-content">
-                                <h3 class="package-title">Luxury Signature Tour</h3>
-                                <div class="package-itinerary">
-                                    <i class="fas fa-map-marker-alt text-primary"></i>
-                                    Arrival <i class="fas fa-arrow-right text-primary"></i> 
-                                    Anuradhapura <i class="fas fa-arrow-right text-primary"></i> 
-                                    Trincomalee <i class="fas fa-arrow-right text-primary"></i> 
-                                    Sigiriya <i class="fas fa-arrow-right text-primary"></i> 
-                                    Ella <i class="fas fa-arrow-right text-primary"></i> 
-                                    Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i> 
-                                    Kandy <i class="fas fa-arrow-right text-primary"></i> 
-                                    Departure
-                                </div>
-                                
-                                <div class="itinerary-destinations">
-                                    <span class="destination-tag">5-Star Hotels</span>
-                                    <span class="destination-tag">Private Guide</span>
-                                    <span class="destination-tag">Luxury Transport</span>
-                                    <span class="destination-tag">Fine Dining</span>
-                                </div>
-                                
-                                <div class="package-features">
-                                    <div class="feature">
-                                        <i class="fas fa-star"></i>
-                                        <span>5-Star Hotels</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-user-tie"></i>
-                                        <span>Private Guide</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-car-side"></i>
-                                        <span>Luxury Van</span>
-                                    </div>
-                                </div>
-                                
-                                <p class="package-description">
-                                    Indulge in luxury with our premium signature tour. Stay at 5-star properties, enjoy exclusive experiences, private guides, and premium transportation. The ultimate Sri Lanka experience for discerning travelers.
-                                </p>
-                                <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
-                                    <i class="fa fa-calendar-check me-2"></i>View Package Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Custom Tour Card -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="package-card" style="border: 2px dashed #3498db;">
-                            <div class="package-image-container" style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1)); display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-plus-circle" style="font-size: 5rem; color: #3498db;"></i>
-                            </div>
-                            <div class="package-content">
-                                <h3 class="package-title">Customize Your Tour</h3>
-                                <div class="package-itinerary" style="border: 2px dashed #3498db; background: rgba(52, 152, 219, 0.05);">
-                                    <i class="fas fa-pencil-alt text-primary"></i>
-                                    Design Your Own Perfect Itinerary
-                                </div>
-                                
-                                <div class="itinerary-destinations">
-                                    <span class="destination-tag">Mix & Match</span>
-                                    <span class="destination-tag">Your Dates</span>
-                                    <span class="destination-tag">Your Budget</span>
-                                    <span class="destination-tag">Your Pace</span>
-                                </div>
-                                
-                                <div class="package-features">
-                                    <div class="feature">
-                                        <i class="fas fa-sliders-h"></i>
-                                        <span>Flexible</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-user-cog"></i>
-                                        <span>Personalized</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-headset"></i>
-                                        <span>Expert Help</span>
-                                    </div>
-                                </div>
-                                
-                                <p class="package-description">
-                                    Don't see exactly what you're looking for? Work with our travel experts to create a completely customized 11-day itinerary that matches your interests, budget, and travel style perfectly.
-                                </p>
-                                <button class="btn book-btn rounded-pill" onclick="openCustomTour()">
-                                    <i class="fas fa-pencil-alt me-2"></i>Design Your Tour
-                                </button>
-                            </div>
+                            <p class="package-description">
+                                Immerse yourself in Sri Lanka's ancient heritage with this cultural journey. Visit
+                                UNESCO World Heritage Sites, explore ancient kingdoms, and experience traditional
+                                Kandyan culture. Perfect for history enthusiasts and culture seekers.
+                            </p>
+                            <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
+                                <i class="fa fa-calendar-check me-2"></i>View Package Details
+                            </button>
                         </div>
                     </div>
                 </div>
+
+                <!-- Card 2 - Enhanced -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card" data-id="2" data-title="Beach & Heritage Combo"
+                        data-image="img/11-day-tour-option-2.png"
+                        data-itinerary="Arrival → Anuradhapura → Trincomalee → Sigiriya → Kandy → Nuwara Eliya → Galle → Departure"
+                        data-description="Combine cultural exploration with beach relaxation. Discover ancient heritage sites, then unwind on pristine beaches. Experience the perfect balance of history, culture, and tropical paradise in one comprehensive tour.">
+                        <div class="package-image-container">
+                            <span class="package-badge"
+                                style="background: linear-gradient(135deg, #e67e22, #d35400);">Beach + Culture</span>
+                            <img src="img/11-day-tour-option-2.png" class="package-image" alt="Beach & Heritage Combo"
+                                onclick="viewFullImage('img/11-day-tour-option-2.png')">
+                            <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-2.png')">
+                                <i class="fas fa-expand me-1"></i>View Full Map
+                            </button>
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Beach & Heritage Combo</h3>
+                            <div class="package-itinerary">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                                Arrival <i class="fas fa-arrow-right text-primary"></i>
+                                Anuradhapura <i class="fas fa-arrow-right text-primary"></i>
+                                Trincomalee <i class="fas fa-arrow-right text-primary"></i>
+                                Sigiriya <i class="fas fa-arrow-right text-primary"></i>
+                                Kandy <i class="fas fa-arrow-right text-primary"></i>
+                                Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i>
+                                Galle <i class="fas fa-arrow-right text-primary"></i>
+                                Departure
+                            </div>
+
+                            <div class="itinerary-destinations">
+                                <span class="destination-tag" data-place="Trincomalee">Trincomalee</span>
+                                <span class="destination-tag" data-place="Galle">Galle Fort</span>
+                                <span class="destination-tag" data-place="Nuwara Eliya">Hill Country</span>
+                                <span class="destination-tag" data-place="Beach">Beach Time</span>
+                            </div>
+
+                            <div class="package-features">
+                                <div class="feature">
+                                    <i class="fas fa-hotel"></i>
+                                    <span>10 Nights</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-sun"></i>
+                                    <span>Beach Hotels</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-swimmer"></i>
+                                    <span>Water Activities</span>
+                                </div>
+                            </div>
+
+                            <p class="package-description">
+                                Combine cultural exploration with beach relaxation. Discover ancient heritage sites,
+                                then unwind on pristine beaches. Experience the perfect balance of history, culture, and
+                                tropical paradise in one comprehensive tour.
+                            </p>
+                            <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
+                                <i class="fa fa-calendar-check me-2"></i>View Package Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 - Enhanced -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card" data-id="3" data-title="Wildlife & Hill Country"
+                        data-image="img/11-day-tour-option-3.png"
+                        data-itinerary="Arrival → Galle → Yala National Park → Ella → Nuwara Eliya → Kandy → Departure"
+                        data-description="Experience Sri Lanka's incredible biodiversity and scenic beauty. From wildlife safaris in Yala National Park to breathtaking train rides through tea plantations, this tour combines adventure with natural wonders.">
+                        <div class="package-image-container">
+                            <span class="package-badge"
+                                style="background: linear-gradient(135deg, #27ae60, #219653);">Wildlife</span>
+                            <img src="img/11-day-tour-option-3.png" class="package-image" alt="Wildlife & Hill Country"
+                                onclick="viewFullImage('img/11-day-tour-option-3.png')">
+                            <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-3.png')">
+                                <i class="fas fa-expand me-1"></i>View Full Map
+                            </button>
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Wildlife & Hill Country</h3>
+                            <div class="package-itinerary">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                                Arrival <i class="fas fa-arrow-right text-primary"></i>
+                                Galle <i class="fas fa-arrow-right text-primary"></i>
+                                Yala National Park <i class="fas fa-arrow-right text-primary"></i>
+                                Ella <i class="fas fa-arrow-right text-primary"></i>
+                                Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i>
+                                Kandy <i class="fas fa-arrow-right text-primary"></i>
+                                Departure
+                            </div>
+
+                            <div class="itinerary-destinations">
+                                <span class="destination-tag" data-place="Yala">Wildlife Safari</span>
+                                <span class="destination-tag" data-place="Ella">Ella's Gap</span>
+                                <span class="destination-tag" data-place="Tea">Tea Country</span>
+                                <span class="destination-tag" data-place="Train">Scenic Train</span>
+                            </div>
+
+                            <div class="package-features">
+                                <div class="feature">
+                                    <i class="fas fa-camera"></i>
+                                    <span>Safari Tours</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-train"></i>
+                                    <span>Scenic Rides</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Tea Plantations</span>
+                                </div>
+                            </div>
+
+                            <p class="package-description">
+                                Experience Sri Lanka's incredible biodiversity and scenic beauty. From wildlife safaris
+                                in Yala National Park to breathtaking train rides through tea plantations, this tour
+                                combines adventure with natural wonders.
+                            </p>
+                            <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
+                                <i class="fa fa-calendar-check me-2"></i>View Package Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 - Enhanced -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card" data-id="4" data-title="Family Adventure Tour"
+                        data-image="img/11-day-tour-option-4.png"
+                        data-itinerary="Arrival → Sigiriya → Kandy → Nuwara Eliya → Ella → Mirissa → Benthota → Departure"
+                        data-description="Perfect for families! This tour combines educational cultural experiences with fun activities and beach time. Child-friendly accommodations and flexible scheduling ensure an enjoyable experience for all ages.">
+                        <div class="package-image-container">
+                            <span class="package-badge"
+                                style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">Family Friendly</span>
+                            <img src="img/11-day-tour-option-4.png" class="package-image" alt="Family Adventure Tour"
+                                onclick="viewFullImage('img/11-day-tour-option-4.png')">
+                            <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-4.png')">
+                                <i class="fas fa-expand me-1"></i>View Full Map
+                            </button>
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Family Adventure Tour</h3>
+                            <div class="package-itinerary">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                                Arrival <i class="fas fa-arrow-right text-primary"></i>
+                                Sigiriya <i class="fas fa-arrow-right text-primary"></i>
+                                Kandy <i class="fas fa-arrow-right text-primary"></i>
+                                Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i>
+                                Ella <i class="fas fa-arrow-right text-primary"></i>
+                                Mirissa <i class="fas fa-arrow-right text-primary"></i>
+                                Benthota <i class="fas fa-arrow-right text-primary"></i>
+                                Departure
+                            </div>
+
+                            <div class="itinerary-destinations">
+                                <span class="destination-tag" data-place="Mirissa">Mirissa Beach</span>
+                                <span class="destination-tag" data-place="Benthota">Benthota</span>
+                                <span class="destination-tag" data-place="Family">Kid Activities</span>
+                                <span class="destination-tag" data-place="Easy">Easy Hikes</span>
+                            </div>
+
+                            <div class="package-features">
+                                <div class="feature">
+                                    <i class="fas fa-child"></i>
+                                    <span>Kid Friendly</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-home"></i>
+                                    <span>Family Rooms</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-swimming-pool"></i>
+                                    <span>Hotel Pools</span>
+                                </div>
+                            </div>
+
+                            <p class="package-description">
+                                Perfect for families! This tour combines educational cultural experiences with fun
+                                activities and beach time. Child-friendly accommodations and flexible scheduling ensure
+                                an enjoyable experience for all ages.
+                            </p>
+                            <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
+                                <i class="fa fa-calendar-check me-2"></i>View Package Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 - Enhanced -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card" data-id="5" data-title="Luxury Signature Tour"
+                        data-image="img/11-day-tour-option-5.png"
+                        data-itinerary="Arrival → Anuradhapura → Trincomalee → Sigiriya → Ella → Nuwara Eliya → Kandy → Departure"
+                        data-description="Indulge in luxury with our premium signature tour. Stay at 5-star properties, enjoy exclusive experiences, private guides, and premium transportation. The ultimate Sri Lanka experience for discerning travelers.">
+                        <div class="package-image-container">
+                            <span class="package-badge"
+                                style="background: linear-gradient(135deg, #f39c12, #e67e22);">Premium</span>
+                            <img src="img/11-day-tour-option-5.png" class="package-image" alt="Luxury Signature Tour"
+                                onclick="viewFullImage('img/11-day-tour-option-5.png')">
+                            <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-5.png')">
+                                <i class="fas fa-expand me-1"></i>View Full Map
+                            </button>
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Luxury Signature Tour</h3>
+                            <div class="package-itinerary">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                                Arrival <i class="fas fa-arrow-right text-primary"></i>
+                                Anuradhapura <i class="fas fa-arrow-right text-primary"></i>
+                                Trincomalee <i class="fas fa-arrow-right text-primary"></i>
+                                Sigiriya <i class="fas fa-arrow-right text-primary"></i>
+                                Ella <i class="fas fa-arrow-right text-primary"></i>
+                                Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i>
+                                Kandy <i class="fas fa-arrow-right text-primary"></i>
+                                Departure
+                            </div>
+
+                            <div class="itinerary-destinations">
+                                <span class="destination-tag" data-place="Luxury">5-Star Hotels</span>
+                                <span class="destination-tag" data-place="Private">Private Guide</span>
+                                <span class="destination-tag" data-place="Transport">Luxury Transport</span>
+                                <span class="destination-tag" data-place="Dining">Fine Dining</span>
+                            </div>
+
+                            <div class="package-features">
+                                <div class="feature">
+                                    <i class="fas fa-star"></i>
+                                    <span>5-Star Hotels</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>Private Guide</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-car-side"></i>
+                                    <span>Luxury Van</span>
+                                </div>
+                            </div>
+
+                            <p class="package-description">
+                                Indulge in luxury with our premium signature tour. Stay at 5-star properties, enjoy
+                                exclusive experiences, private guides, and premium transportation. The ultimate Sri
+                                Lanka experience for discerning travelers.
+                            </p>
+                            <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
+                                <i class="fa fa-calendar-check me-2"></i>View Package Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENHANCED Custom Tour Card -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card custom-tour-card">
+                        <div class="package-image-container"
+                            style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1)); display: flex; align-items: center; justify-content: center; height: 200px;">
+                            <i class="fas fa-pencil-ruler" style="font-size: 4rem; color: #3498db;"></i>
+                        </div>
+                        <div class="custom-tour-builder">
+                            <h3 class="package-title">Design Your Custom Tour</h3>
+
+                            <div class="builder-instruction">
+                                <i class="fas fa-lightbulb"></i>
+                                Click on places below to add them to your custom itinerary. Then click "Book My Custom
+                                Tour" to proceed.
+                            </div>
+
+                            <div class="builder-section">
+                                <div class="builder-section-title">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    Available Places
+                                </div>
+                                <div class="available-places" id="availablePlaces">
+                                    <!-- Places will be populated by JavaScript -->
+                                </div>
+                            </div>
+
+                            <div class="builder-section">
+                                <div class="builder-section-title">
+                                    <i class="fas fa-route"></i>
+                                    Your Custom Itinerary
+                                </div>
+                                <div class="design-section">
+                                    <div class="design-itinerary" id="designItinerary">
+                                        <div class="text-muted" style="text-align: center; width: 100%; padding: 30px;">
+                                            <i class="fas fa-map-pin"
+                                                style="font-size: 2rem; margin-bottom: 10px; color: #bdc3c7;"></i>
+                                            <p>No places selected yet. Click on places above to start building your
+                                                custom tour.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="builder-section">
+                                <div class="builder-actions">
+                                    <button class="btn btn-clear" onclick="clearCustomTour()">
+                                        <i class="fas fa-trash-alt me-2"></i>Clear All
+                                    </button>
+                                    <button class="btn btn-design-book" onclick="bookCustomTour()">
+                                        <i class="fas fa-calendar-check me-2"></i>Book My Custom Tour
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- ENHANCED Packages Grid End -->
+    </div>
+    <!-- ENHANCED Packages Grid End -->
 
-        <!-- Full Image Modal -->
-        <div class="image-modal" id="imageModal">
-            <div class="modal-image-container">
-                <img src="" alt="" class="modal-image" id="modalImage">
-                <button class="close-modal-btn" onclick="closeImageModal()">
+    <!-- Full Image Modal -->
+    <div class="image-modal" id="imageModal">
+        <div class="modal-image-container">
+            <img src="" alt="" class="modal-image" id="modalImage">
+            <button class="close-modal-btn" onclick="closeImageModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="booking-modal-content">
+            <div class="booking-modal-header">
+                <h3 class="booking-modal-title" id="modalTitle">Book Your Tour</h3>
+                <p class="booking-modal-subtitle" id="modalSubtitle">Complete the form below to book your dream Sri
+                    Lanka adventure</p>
+                <button class="booking-modal-close" onclick="closeBookingModal()">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-        </div>
-
-        <!-- Booking Modal - NO IMAGE VERSION -->
-        <div class="booking-modal" id="bookingModal">
-            <div class="booking-modal-content">
-                <div class="booking-modal-header">
-                    <h3 class="booking-modal-title" id="modalTitle">Book Your Tour</h3>
-                    <p class="booking-modal-subtitle" id="modalSubtitle">Complete the form below to book your dream Sri Lanka adventure</p>
-                    <button class="booking-modal-close" onclick="closeBookingModal()">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <div class="booking-modal-body">
-                    <!-- Itinerary Section -->
-                    <div class="modal-itinerary" id="modalItinerary">
-                        <!-- Itinerary will be inserted here -->
+            <div class="booking-modal-body">
+                <!-- Custom Itinerary Display -->
+                <div class="custom-tour-itinerary-display" id="customTourDisplay">
+                    <div class="custom-itinerary-title">
+                        <i class="fas fa-route"></i>
+                        Your Custom Itinerary
                     </div>
-                    
-                    <!-- Description Section -->
-                    <p class="modal-description" id="modalDescription">
-                        <!-- Description will be inserted here -->
-                    </p>
-                    
-                    <!-- Booking Form -->
-                    <div class="booking-form">
-                        <h4 class="form-section-title">Your Information</h4>
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <label class="form-label">Full Name *</label>
-                                <input type="text" class="form-control" placeholder="Enter your full name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Email Address *</label>
-                                <input type="email" class="form-control" placeholder="Enter your email address" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Phone Number *</label>
-                                <input type="tel" class="form-control" placeholder="Enter your phone number" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Travel Date *</label>
-                                <input type="date" class="form-control" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Number of Adults *</label>
-                                <select class="form-control" required>
-                                    <option value="">Select number of adults</option>
-                                    <option value="1">1 Adult</option>
-                                    <option value="2">2 Adults</option>
-                                    <option value="3">3 Adults</option>
-                                    <option value="4">4 Adults</option>
-                                    <option value="5">5 Adults</option>
-                                    <option value="6">6+ Adults</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Number of Children</label>
-                                <select class="form-control">
-                                    <option value="0">0 Children</option>
-                                    <option value="1">1 Child</option>
-                                    <option value="2">2 Children</option>
-                                    <option value="3">3 Children</option>
-                                    <option value="4">4+ Children</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Special Requirements</label>
-                                <textarea class="form-control" rows="4" placeholder="Any special requirements, dietary restrictions, or preferences..."></textarea>
-                            </div>
+                    <div class="custom-itinerary-places" id="customItineraryPlaces">
+                        <!-- Custom itinerary places will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Itinerary Section -->
+                <div class="modal-itinerary" id="modalItinerary">
+                    <!-- Itinerary will be inserted here -->
+                </div>
+
+                <!-- Description Section -->
+                <p class="modal-description" id="modalDescription">
+                    <!-- Description will be inserted here -->
+                </p>
+
+                <!-- Booking Form -->
+                <div class="booking-form">
+                    <h4 class="form-section-title">Your Information</h4>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <label class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="bookingName" placeholder="Enter your full name"
+                                required>
                         </div>
-                        
-                        <button class="modal-booking-btn" onclick="submitBooking()">
-                            <i class="fas fa-paper-plane me-2"></i>Submit Booking Request
-                        </button>
-                        
-                        <p class="text-center mt-3 text-muted">
-                            <small>By submitting this form, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></small>
-                        </p>
+                        <div class="col-md-6">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="bookingEmail"
+                                placeholder="Enter your email address" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-control" id="bookingPhone"
+                                placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Travel Date *</label>
+                            <input type="date" class="form-control" id="bookingDate" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Number of Adults *</label>
+                            <select class="form-control" id="bookingAdults" required>
+                                <option value="">Select number of adults</option>
+                                <option value="1">1 Adult</option>
+                                <option value="2">2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                                <option value="5">5 Adults</option>
+                                <option value="6">6+ Adults</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Number of Children</label>
+                            <select class="form-control" id="bookingChildren">
+                                <option value="0">0 Children</option>
+                                <option value="1">1 Child</option>
+                                <option value="2">2 Children</option>
+                                <option value="3">3 Children</option>
+                                <option value="4">4+ Children</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Tour Duration (Days)</label>
+                            <select class="form-control" id="bookingDuration">
+                                <option value="7">7 Days</option>
+                                <option value="10" selected>10 Days</option>
+                                <option value="11">11 Days</option>
+                                <option value="14">14 Days</option>
+                                <option value="custom">Custom Duration</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Accommodation Type</label>
+                            <select class="form-control" id="bookingAccommodation">
+                                <option value="standard">Standard (3 Star)</option>
+                                <option value="comfort" selected>Comfort (4 Star)</option>
+                                <option value="luxury">Luxury (5 Star)</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Special Requirements & Preferences</label>
+                            <textarea class="form-control" id="bookingRequirements" rows="4"
+                                placeholder="Any special requirements, dietary restrictions, or preferences..."></textarea>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Subscribe Start -->
-        <div class="container-fluid subscribe py-5">
-            <div class="container text-center py-5">
-                <div class="mx-auto text-center" style="max-width: 900px;">
-                    <h5 class="subscribe-title px-3">Subscribe</h5>
-                    <h1 class="text-white mb-4">Our Newsletter</h1>
-                    <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, 
-                        insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
+                    <button class="modal-booking-btn" onclick="submitBooking()">
+                        <i class="fas fa-paper-plane me-2"></i>Submit Booking Request
+                    </button>
+
+                    <p class="text-center mt-3 text-muted">
+                        <small>By submitting this form, you agree to our <a href="#">Terms & Conditions</a> and <a
+                                href="#">Privacy Policy</a></small>
                     </p>
-                    <div class="position-relative mx-auto">
-                        <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
-                    </div>
                 </div>
             </div>
         </div>
-        <!-- Subscribe End -->
-        
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright text-body py-4">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6 text-center text-md-end mb-md-0">
-                        <i class="fas fa-copyright me-2"></i><a class="text-white" href="./index.html">Ayubowan Tours</a>, All right reserved.
-                    </div>
+    </div>
+
+    <!-- Subscribe Start -->
+    <div class="container-fluid subscribe py-5">
+        <div class="container text-center py-5">
+            <div class="mx-auto text-center" style="max-width: 900px;">
+                <h5 class="subscribe-title px-3">Subscribe</h5>
+                <h1 class="text-white mb-4">Our Newsletter</h1>
+                <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals,
+                    insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
+                </p>
+                <div class="position-relative mx-auto">
+                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text"
+                        placeholder="Your email">
+                    <button type="button"
+                        class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
                 </div>
             </div>
         </div>
-        <!-- Copyright End -->
+    </div>
+    <!-- Subscribe End -->
 
-        <!-- whatsapp button -->
-        <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
-            class="whatsapp-float"
-            target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="./index.html">Ayubowan Tours</a>,
+                    All right reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+    <!-- whatsapp button -->
+    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
+        class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-        <script>
-            // Hide spinner when page loads
-            window.addEventListener('load', function() {
-                document.getElementById('spinner').style.display = 'none';
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        // Hide spinner when page loads
+        window.addEventListener('load', function () {
+            document.getElementById('spinner').style.display = 'none';
+            initializeCustomTourBuilder();
+        });
+
+        // Custom Tour Builder Data and Functions
+        const availablePlaces = [
+            { id: 1, name: "Sigiriya", icon: "fas fa-mountain", category: "Cultural" },
+            { id: 2, name: "Polonnaruwa", icon: "fas fa-archway", category: "Cultural" },
+            { id: 3, name: "Anuradhapura", icon: "fas fa-torii-gate", category: "Cultural" },
+            { id: 4, name: "Kandy", icon: "fas fa-temple", category: "Cultural" },
+            { id: 5, name: "Nuwara Eliya", icon: "fas fa-cloud", category: "Hill Country" },
+            { id: 6, name: "Trincomalee", icon: "fas fa-umbrella-beach", category: "Beach" },
+            { id: 7, name: "Galle", icon: "fas fa-fort", category: "Cultural" },
+            { id: 8, name: "Yala National Park", icon: "fas fa-paw", category: "Wildlife" },
+            { id: 9, name: "Ella", icon: "fas fa-hiking", category: "Hill Country" },
+            { id: 10, name: "Mirissa", icon: "fas fa-water", category: "Beach" },
+            { id: 11, name: "Benthota", icon: "fas fa-sun", category: "Beach" },
+            { id: 12, name: "Colombo", icon: "fas fa-city", category: "City" },
+            { id: 13, name: "Dambulla", icon: "fas fa-mosque", category: "Cultural" },
+            { id: 14, name: "Hikkaduwa", icon: "fas fa-fish", category: "Beach" },
+            { id: 15, name: "Adam's Peak", icon: "fas fa-mountain", category: "Adventure" }
+        ];
+
+        let customTourPlaces = [];
+        let isCustomTour = false;
+
+        // Initialize custom tour builder
+        function initializeCustomTourBuilder() {
+            const availablePlacesContainer = document.getElementById('availablePlaces');
+
+            // Clear existing content
+            availablePlacesContainer.innerHTML = '';
+
+            // Add all available places
+            availablePlaces.forEach(place => {
+                const placeElement = document.createElement('div');
+                placeElement.className = 'place-tag';
+                placeElement.innerHTML = `
+                        <i class="${place.icon}"></i>
+                        ${place.name}
+                    `;
+                placeElement.dataset.placeId = place.id;
+                placeElement.dataset.placeName = place.name;
+
+                placeElement.addEventListener('click', () => addPlaceToCustomTour(place.id, place.name, place.icon));
+
+                availablePlacesContainer.appendChild(placeElement);
             });
 
-            // View Full Image Function
-            function viewFullImage(imageSrc) {
-                const modal = document.getElementById('imageModal');
-                const modalImage = document.getElementById('modalImage');
-                
-                modalImage.src = imageSrc;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
+            // Load saved custom tour from localStorage
+            const savedTour = localStorage.getItem('customTour');
+            if (savedTour) {
+                customTourPlaces = JSON.parse(savedTour);
+                updateCustomTourDisplay();
+            }
+        }
+
+        // Add place to custom tour
+        function addPlaceToCustomTour(placeId, placeName, placeIcon) {
+            // Check if place is already in the tour
+            if (customTourPlaces.some(place => place.id === placeId)) {
+                return;
             }
 
-            // Close Image Modal
-            function closeImageModal() {
-                const modal = document.getElementById('imageModal');
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
+            // Add place to tour
+            customTourPlaces.push({
+                id: placeId,
+                name: placeName,
+                icon: placeIcon
+            });
+
+            // Update UI
+            updateCustomTourDisplay();
+
+            // Update available places UI
+            const placeElement = document.querySelector(`.place-tag[data-place-id="${placeId}"]`);
+            if (placeElement) {
+                placeElement.classList.add('selected');
             }
 
-            // Close modals on escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeImageModal();
-                    closeBookingModal();
+            // Save to localStorage
+            localStorage.setItem('customTour', JSON.stringify(customTourPlaces));
+        }
+
+        // Remove place from custom tour
+        function removePlaceFromCustomTour(placeId) {
+            customTourPlaces = customTourPlaces.filter(place => place.id !== placeId);
+
+            // Update UI
+            updateCustomTourDisplay();
+
+            // Update available places UI
+            const placeElement = document.querySelector(`.place-tag[data-place-id="${placeId}"]`);
+            if (placeElement) {
+                placeElement.classList.remove('selected');
+            }
+
+            // Save to localStorage
+            localStorage.setItem('customTour', JSON.stringify(customTourPlaces));
+        }
+
+        // Update custom tour display
+        function updateCustomTourDisplay() {
+            const designItinerary = document.getElementById('designItinerary');
+
+            if (customTourPlaces.length === 0) {
+                designItinerary.innerHTML = `
+                        <div class="text-muted" style="text-align: center; width: 100%; padding: 30px;">
+                            <i class="fas fa-map-pin" style="font-size: 2rem; margin-bottom: 10px; color: #bdc3c7;"></i>
+                            <p>No places selected yet. Click on places above to start building your custom tour.</p>
+                        </div>
+                    `;
+            } else {
+                designItinerary.innerHTML = '';
+
+                customTourPlaces.forEach((place, index) => {
+                    const placeElement = document.createElement('div');
+                    placeElement.className = 'design-place';
+                    placeElement.innerHTML = `
+                            <i class="${place.icon}"></i>
+                            <span>${place.name}</span>
+                            <i class="fas fa-times remove-place" data-place-id="${place.id}"></i>
+                        `;
+
+                    // Add remove event listener
+                    const removeBtn = placeElement.querySelector('.remove-place');
+                    removeBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        removePlaceFromCustomTour(place.id);
+                    });
+
+                    designItinerary.appendChild(placeElement);
+
+                    // Add arrow between places (except after last one)
+                    if (index < customTourPlaces.length - 1) {
+                        const arrowElement = document.createElement('div');
+                        arrowElement.className = 'design-place-connector';
+                        arrowElement.innerHTML = '<i class="fas fa-arrow-right"></i>';
+                        designItinerary.appendChild(arrowElement);
+                    }
+                });
+            }
+        }
+
+        // Clear custom tour
+        function clearCustomTour() {
+            if (confirm('Are you sure you want to clear your custom tour? This action cannot be undone.')) {
+                customTourPlaces = [];
+
+                // Clear localStorage
+                localStorage.removeItem('customTour');
+
+                // Update UI
+                updateCustomTourDisplay();
+
+                // Reset available places UI
+                document.querySelectorAll('.place-tag').forEach(tag => {
+                    tag.classList.remove('selected');
+                });
+            }
+        }
+
+        // Book custom tour
+        function bookCustomTour() {
+            if (customTourPlaces.length === 0) {
+                alert('Please add at least one place to your custom tour before booking.');
+                return;
+            }
+
+            isCustomTour = true;
+
+            // Update modal for custom tour
+            document.getElementById('modalTitle').textContent = 'Book Your Custom Tour';
+            document.getElementById('modalSubtitle').textContent = 'Complete the form below to book your personalized Sri Lanka adventure';
+
+            // Hide regular itinerary and description
+            document.getElementById('modalItinerary').style.display = 'none';
+            document.getElementById('modalDescription').style.display = 'none';
+
+            // Show custom itinerary display
+            const customTourDisplay = document.getElementById('customTourDisplay');
+            customTourDisplay.classList.add('active');
+
+            // Update custom itinerary display
+            const customItineraryPlaces = document.getElementById('customItineraryPlaces');
+            customItineraryPlaces.innerHTML = '';
+
+            customTourPlaces.forEach((place, index) => {
+                const placeElement = document.createElement('div');
+                placeElement.className = 'custom-itinerary-place';
+                placeElement.innerHTML = `
+                        <i class="${place.icon}"></i>
+                        <span>${place.name}</span>
+                    `;
+                customItineraryPlaces.appendChild(placeElement);
+
+                // Add arrow between places (except after last one)
+                if (index < customTourPlaces.length - 1) {
+                    const arrowElement = document.createElement('div');
+                    arrowElement.className = 'design-place-connector';
+                    arrowElement.innerHTML = '<i class="fas fa-arrow-right"></i>';
+                    customItineraryPlaces.appendChild(arrowElement);
                 }
             });
 
-            // Close image modal when clicking outside
-            document.getElementById('imageModal').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeImageModal();
-                }
-            });
+            // Show booking modal
+            openBookingModal(null, true);
+        }
 
-            // Open Booking Modal
-            function openBookingModal(button) {
+        // View Full Image Function
+        function viewFullImage(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+
+            modalImage.src = imageSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close Image Modal
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals on escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeImageModal();
+                closeBookingModal();
+            }
+        });
+
+        // Close image modal when clicking outside
+        document.getElementById('imageModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeImageModal();
+            }
+        });
+
+        // Open Booking Modal
+        function openBookingModal(button, isCustom = false) {
+            if (!isCustom) {
+                isCustomTour = false;
                 const card = button.closest('.package-card');
                 const title = card.getAttribute('data-title');
                 const itinerary = card.getAttribute('data-itinerary');
                 const description = card.getAttribute('data-description');
-                
+
                 // Set modal content
                 document.getElementById('modalTitle').textContent = `Book ${title}`;
                 document.getElementById('modalSubtitle').textContent = 'Complete the form below to book your dream Sri Lanka adventure';
                 document.getElementById('modalItinerary').innerHTML = itinerary.replace(/→/g, '<i class="fa fa-arrow-right"></i>');
                 document.getElementById('modalDescription').textContent = description;
-                
-                // Show modal
-                const modal = document.getElementById('bookingModal');
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                
-                // Set today's date as minimum for travel date
-                const today = new Date().toISOString().split('T')[0];
-                const dateInput = modal.querySelector('input[type="date"]');
-                dateInput.min = today;
-                
-                // Set default date to 30 days from today
-                const futureDate = new Date();
-                futureDate.setDate(futureDate.getDate() + 30);
-                dateInput.value = futureDate.toISOString().split('T')[0];
+
+                // Show regular itinerary and description
+                document.getElementById('modalItinerary').style.display = 'block';
+                document.getElementById('modalDescription').style.display = 'block';
+
+                // Hide custom itinerary display
+                document.getElementById('customTourDisplay').classList.remove('active');
             }
 
-            // Close Booking Modal
-            function closeBookingModal() {
-                const modal = document.getElementById('bookingModal');
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
+            // Show modal
+            const modal = document.getElementById('bookingModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
 
-            // Close booking modal when clicking outside
-            document.getElementById('bookingModal').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeBookingModal();
+            // Set today's date as minimum for travel date
+            const today = new Date().toISOString().split('T')[0];
+            const dateInput = modal.querySelector('input[type="date"]');
+            dateInput.min = today;
+
+            // Set default date to 30 days from today
+            const futureDate = new Date();
+            futureDate.setDate(futureDate.getDate() + 30);
+            dateInput.value = futureDate.toISOString().split('T')[0];
+        }
+
+        // Close Booking Modal
+        function closeBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            isCustomTour = false;
+
+            // Reset form fields
+            document.getElementById('bookingModal').querySelector('form').reset();
+        }
+
+        // Close booking modal when clicking outside
+        document.getElementById('bookingModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeBookingModal();
+            }
+        });
+
+        // Submit Booking Function
+        function submitBooking() {
+            const form = document.querySelector('.booking-form');
+            const inputs = form.querySelectorAll('input[required], select[required]');
+            let isValid = true;
+
+            // Simple validation
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.style.borderColor = 'red';
+                    input.style.backgroundColor = '#fff5f5';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = '#d1d9e6';
+                    input.style.backgroundColor = '';
                 }
             });
 
-            // Submit Booking Function
-            function submitBooking() {
-                const form = document.querySelector('.booking-form');
-                const inputs = form.querySelectorAll('input[required], select[required]');
-                let isValid = true;
-                
-                // Simple validation
-                inputs.forEach(input => {
-                    if (!input.value.trim()) {
-                        input.style.borderColor = 'red';
-                        input.style.backgroundColor = '#fff5f5';
-                        isValid = false;
-                    } else {
-                        input.style.borderColor = '#d1d9e6';
-                        input.style.backgroundColor = '';
-                    }
-                });
-                
-                if (!isValid) {
-                    alert('Please fill in all required fields marked with *.');
-                    return;
-                }
-                
-                // Get form data
-                const formData = {
-                    package: document.getElementById('modalTitle').textContent,
-                    name: form.querySelector('input[placeholder*="full name"]').value,
-                    email: form.querySelector('input[type="email"]').value,
-                    phone: form.querySelector('input[placeholder*="phone number"]').value,
-                    travelDate: form.querySelector('input[type="date"]').value,
-                    adults: form.querySelector('select').value,
-                    children: form.querySelectorAll('select')[1].value,
-                    requirements: form.querySelector('textarea').value
-                };
-                
-                // Create WhatsApp message
-                const message = `*Ayubowan Tours - Booking Request*\n\n` +
-                               `*Package:* ${formData.package}\n` +
-                               `*Name:* ${formData.name}\n` +
-                               `*Email:* ${formData.email}\n` +
-                               `*Phone:* ${formData.phone}\n` +
-                               `*Travel Date:* ${formData.travelDate}\n` +
-                               `*Adults:* ${formData.adults}\n` +
-                               `*Children:* ${formData.children}\n` +
-                               `*Special Requirements:* ${formData.requirements || 'None'}\n\n` +
-                               `I would like to book this tour. Please contact me with availability and pricing details.`;
-                
-                // Encode message for WhatsApp
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/94763661600?text=${encodedMessage}`;
-                
-                // Show loading state
-                const submitBtn = form.querySelector('.modal-booking-btn');
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
-                submitBtn.disabled = true;
-                
-                // Simulate processing delay
-                setTimeout(() => {
-                    // Open WhatsApp
-                    window.open(whatsappUrl, '_blank');
-                    
-                    // Show success message
-                    alert('Booking request submitted successfully! You will now be redirected to WhatsApp to confirm your booking.');
-                    
-                    // Close modal and reset form
-                    closeBookingModal();
-                    form.reset();
-                    
-                    // Reset button
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }, 1500);
+            if (!isValid) {
+                alert('Please fill in all required fields marked with *.');
+                return;
             }
 
-            // Add click event to all package images
-            document.querySelectorAll('.package-image').forEach(img => {
-                img.addEventListener('click', function(e) {
-                    // Don't trigger if clicking on view full button
-                    if (!e.target.classList.contains('view-full-btn')) {
-                        const card = this.closest('.package-card');
-                        const imageSrc = card.getAttribute('data-image');
-                        viewFullImage(imageSrc);
-                    }
-                });
-            });
+            // Get form data
+            const formData = {
+                package: document.getElementById('modalTitle').textContent,
+                name: document.getElementById('bookingName').value,
+                email: document.getElementById('bookingEmail').value,
+                phone: document.getElementById('bookingPhone').value,
+                travelDate: document.getElementById('bookingDate').value,
+                adults: document.getElementById('bookingAdults').value,
+                children: document.getElementById('bookingChildren').value,
+                duration: document.getElementById('bookingDuration').value,
+                accommodation: document.getElementById('bookingAccommodation').value,
+                requirements: document.getElementById('bookingRequirements').value
+            };
 
-            // Open custom tour modal
-            function openCustomTour() {
-                const message = "I'd like to create a custom 11-day Sri Lanka tour. Can we discuss my preferences and create a personalized itinerary?";
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/94763661600?text=${encodedMessage}`;
-                
+            // Create WhatsApp message
+            let message = `*Ayubowan Tours - Booking Request*\n\n`;
+            message += `*Package:* ${formData.package}\n`;
+            message += `*Name:* ${formData.name}\n`;
+            message += `*Email:* ${formData.email}\n`;
+            message += `*Phone:* ${formData.phone}\n`;
+            message += `*Travel Date:* ${formData.travelDate}\n`;
+            message += `*Adults:* ${formData.adults}\n`;
+            message += `*Children:* ${formData.children}\n`;
+            message += `*Duration:* ${formData.duration} Days\n`;
+            message += `*Accommodation:* ${formData.accommodation}\n`;
+
+            // Add custom itinerary if it's a custom tour
+            if (isCustomTour && customTourPlaces.length > 0) {
+                message += `*Custom Itinerary:* `;
+                const placeNames = customTourPlaces.map(place => place.name);
+                message += placeNames.join(' → ') + '\n';
+            } else if (!isCustomTour) {
+                message += `*Itinerary:* ${document.getElementById('modalItinerary').textContent}\n`;
+            }
+
+            message += `*Special Requirements:* ${formData.requirements || 'None'}\n\n`;
+            message += `I would like to book this tour. Please contact me with availability and pricing details.`;
+
+            // Encode message for WhatsApp
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/94763661600?text=${encodedMessage}`;
+
+            // Show loading state
+            const submitBtn = form.querySelector('.modal-booking-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
+            submitBtn.disabled = true;
+
+            // Simulate processing delay
+            setTimeout(() => {
+                // Open WhatsApp
                 window.open(whatsappUrl, '_blank');
-            }
 
-            // Add animation to cards on scroll
-            document.addEventListener('DOMContentLoaded', function() {
-                const cards = document.querySelectorAll('.package-card');
-                cards.forEach((card, index) => {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(30px)';
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, index * 100);
-                });
+                // Show success message
+                alert('Booking request submitted successfully! You will now be redirected to WhatsApp to confirm your booking.');
+
+                // Close modal and reset form
+                closeBookingModal();
+                form.reset();
+
+                // Clear custom tour if it was a custom tour booking
+                if (isCustomTour) {
+                    clearCustomTour();
+                    isCustomTour = false;
+                }
+
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        }
+
+        // Add click event to all package images
+        document.querySelectorAll('.package-image').forEach(img => {
+            img.addEventListener('click', function (e) {
+                // Don't trigger if clicking on view full button
+                if (!e.target.classList.contains('view-full-btn')) {
+                    const card = this.closest('.package-card');
+                    const imageSrc = card.getAttribute('data-image');
+                    viewFullImage(imageSrc);
+                }
             });
-        </script>
-    </body>
+        });
+
+        // Add animation to cards on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.package-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        // Destination tag click handler for existing tours
+        document.querySelectorAll('.destination-tag').forEach(tag => {
+            tag.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const placeName = this.getAttribute('data-place');
+                const place = availablePlaces.find(p => p.name === placeName || p.name.includes(placeName));
+
+                if (place) {
+                    addPlaceToCustomTour(place.id, place.name, place.icon);
+                    alert(`"${place.name}" has been added to your custom tour!`);
+                }
+            });
+        });
+    </script>
+</body>
 
 </html>
