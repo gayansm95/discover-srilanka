@@ -3,129 +3,64 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>Ayubowan Tours – Animated Premium Pins</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ayubowan Tours</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-    <title>Ayubowan Tours – Create Your Tour</title>
-
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Leaflet Routing Machine -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <style>
-        /* WhatsApp Floating Button with Pulse Animation */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 80px;
-            height: 80px;
-            background-color: #25D366;
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f7f9fc;
+        }
+
+        header,
+        footer {
+            background: #2c3e50;
             color: #fff;
-            border-radius: 50%;
-            font-size: 42px;
-            text-align: center;
-            line-height: 80px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-            z-index: 1000;
-            animation: whatsapp-pulse 1.8s infinite;
-            text-decoration: none;
         }
 
-        /* Hover effect */
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            transition: 0.3s ease;
-        }
-
-        /* Pulse animation */
-        @keyframes whatsapp-pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        /* Mobile responsive */
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 70px;
-                height: 70px;
-                font-size: 38px;
-                line-height: 70px;
-                bottom: 15px;
-                right: 15px;
-            }
-        }
-
-        h2,
-        h3 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 15px
-        }
-
-        .flex-container-dragging {
+        .flex-container {
             display: flex;
             gap: 20px;
-            justify-content: center;
             flex-wrap: wrap;
-            padding-bottom: 5%
+            justify-content: center;
+            margin: 30px 0;
         }
 
-        .box-dragging {
-            flex: 1 1 320px;
-            max-width: 420px;
+        .box {
             background: #fff;
             border: 2px dashed #bbb;
             border-radius: 10px;
             padding: 15px;
-            position: relative;
-            min-height: 250px;
-        }
-
-        .box-selected {
-            background: linear-gradient(135deg, #eef3ff, #ffffff);
-            border: 2px solid #3498db;
+            max-width: 420px;
+            flex: 1 1 320px;
         }
 
         .items-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
+            margin-top: 10px;
         }
 
         .item {
-            border-radius: 8px;
+            background: linear-gradient(135deg, #fff, #eef3ff);
             padding: 6px;
-            background: linear-gradient(135deg, #ffffff, #eef3ff);
+            border-radius: 8px;
             text-align: center;
             cursor: pointer;
-            transition: .25s;
-            user-select: none;
-            touch-action: manipulation;
         }
 
         .item img {
@@ -135,48 +70,11 @@
             border-radius: 5px;
         }
 
-        .item.drag-hold {
-            transform: scale(1.05);
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, .6), 0 10px 25px rgba(0, 0, 0, .3);
-        }
-
         .traveler-info {
-            flex: 1 1 320px;
-            max-width: 420px;
             background: #fff;
             border-radius: 10px;
             padding: 20px;
-        }
-
-        #miniPreview {
-            margin-top: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px
-        }
-
-        .preview-card {
-            padding: 10px;
-            color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, .25);
-            transition: .3s;
-        }
-
-        .preview-card:hover {
-            transform: translateY(-4px)
-        }
-
-        .preview-title {
-            font-weight: 600;
-            margin-bottom: 6px
-        }
-
-        .map-frame {
-            width: 100%;
-            height: 120px;
-            border: 0;
-            border-radius: 8px;
+            border: 2px solid #3498db;
         }
 
         .invalid {
@@ -193,17 +91,21 @@
             display: none;
         }
 
+        #map {
+            width: 100%;
+            height: 350px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
         .popup-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             background: rgba(0, 0, 0, 0.6);
             display: none;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
+            z-index: 999;
         }
 
         .popup-box {
@@ -214,20 +116,49 @@
             max-width: 400px;
         }
 
-        .popup-box button {
-            margin-top: 15px;
-        }
-
-        .no-options {
-            text-align: center;
-            color: #999;
+        /* Custom scalable animated pin */
+        .pin-icon {
+            position: relative;
+            width: 36px;
+            height: 46px;
+            border-radius: 50% 50% 50% 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             font-weight: bold;
-            margin-top: 10px;
+            font-size: 14px;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            animation: pulse 2s infinite ease-in-out;
         }
 
-        @media(max-width:768px) {
-            .items-grid {
-                grid-template-columns: 1fr
+        .pin-icon::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: inherit;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
             }
         }
     </style>
@@ -235,67 +166,26 @@
 
 <body>
 
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
+    <header class="py-3 text-center">
+        <h2><i class="fa fa-map-marker-alt"></i> Ayubowan Tours</h2>
+    </header>
 
-    <!-- Navbar & Hero Start -->
-    <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-            <a href="./index.html" class="navbar-brand p-0">
-                <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
-                <!-- <img src="img/logo.png" alt="Logo"> -->
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="services.html" class="nav-item nav-link">Services</a>
-                    <a href="packages.html" class="nav-item nav-link active">Packages</a>
-                    <a href="blog.html" class="nav-item nav-link">Blog</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                </div>
-                <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
-            </div>
-        </nav>
-    </div>
-    <!-- Navbar & Hero End -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb container">
+            <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="./packages.html">Packages</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Design Your Journey</li>
+        </ol>
+    </nav>
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb">
-        <div class="container text-center py-5" style="max-width: 900px;">
-            <h3 class="text-white display-3 mb-4">Design Your Sri Lanka Journey</h1>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="./packages.html">Packages</a></li>
-                    <li class="breadcrumb-item active text-white">Design Your Sri Lanka Journey</li>
-                </ol>
-        </div>
-    </div>
-    <!-- Header End -->
-    <div class="container-fluid service py-5">
-        <div class="mx-auto text-center mb-5" style="max-width: 1000px;">
-            <h5 class="section-title px-3">Design Your Sri Lanka Journey</h5>
-            <p class="mb-4">
-                Create your perfect Sri Lanka getaway with ease, simply click or drag destinations to
-                build your ideal journey. When you’re happy with your selection, fill in your travel details
-                and send your request via WhatsApp or email. Our expert team will carefully review your itinerary
-                and get in touch soon to plan the next exciting steps of your adventure.
-            </p>
-        </div>
+    <div class="container text-center">
+        <p>Select destinations to build your itinerary and see your route on the map!</p>
     </div>
 
-    <div class="flex-container-dragging">
-        <!-- AVAILABLE -->
-        <div class="box-dragging">
-            <h3>Explore Destinations</h3>
+    <div class="flex-container">
+        <!-- Available Places -->
+        <div class="box">
+            <h3 class="text-center">Explore Destinations</h3>
             <div class="items-grid" id="availableGrid">
                 <div class="item" data-id="Kandy"><img src="img/kandy-package-card.jpeg">
                     <div>Kandy</div>
@@ -309,331 +199,200 @@
                 <div class="item" data-id="Yala"><img src="img/14-day-tour-srilanka-yala.jpg">
                     <div>Yala Safari</div>
                 </div>
-                <div class="item" data-id="Dambulla"><img src="img/dambulla-cave-temple.jpg">
-                    <div>Dambulla Cave Temple</div>
-                </div>
-                <div class="item" data-id="Trincomalee"><img src="img/14-day-tour-srilanka-trinco.jpg">
-                    <div>Trincomalee</div>
-                </div>
-                <div class="item" data-id="Arugambay"><img src="img/Arugam-Bay.jpg">
-                    <div>Arugam-Bay</div>
-                </div>
-                <div class="item" data-id="Anuradhapura"><img src="img/anuradhapura.jpg">
-                    <div>Anuradhapura</div>
-                </div>
-                <div class="item" data-id="Polonnaruwa"><img src="img/anuradhapura-polonnaruwa-sigiriya-1024x576.jpg">
-                    <div>Polonnaruwa</div>
-                </div>
-                <div class="item" data-id="galle"><img src="img/14-day-tour-srilanka-galle.jpg">
+                <div class="item" data-id="Galle"><img src="img/14-day-tour-srilanka-galle.jpg">
                     <div>Galle</div>
                 </div>
-                <div class="item" data-id="downcoastbeachers"><img src="img/beachers.jpg">
-                    <div>Down coast beaches</div>
-                </div>
-                <div class="item" data-id="nuwaraeliya"><img src="img/14-day-tour-srilanka-nuwaraeliya.jpg">
-                    <div>Nuwara Eliya</div>
-                </div>
-                <div class="item" data-id="jaffna"><img src="img/jafna-blog-post.jpg">
-                    <div>Jaffna</div>
-                </div>
             </div>
-            <div id="noOptionsMsg" class="no-options" style="display:none;">No options available</div>
         </div>
 
-        <!-- SELECTED -->
-        <div class="box-dragging">
-            <h3>Your Selected Journey</h3>
+        <!-- Selected Places -->
+        <div class="box">
+            <h3 class="text-center">Your Selected Journey</h3>
             <div class="items-grid" id="selectedGrid"></div>
         </div>
 
-        <!-- BOOKING -->
-        <div class="traveler-info box-selected">
+        <!-- Booking Details -->
+        <div class="traveler-info">
             <h3>Complete Your Travel Details</h3>
-            <p class="mb-4" style="color: #3498db;">
-                Share your details to confirm your journey and begin planning.
-            </p>
-
-            <input class="form-control mb-1" id="name" placeholder="Customer Name">
-            <div class="validation-message" id="nameMsg">Name is required.</div>
+            <input class="form-control mb-1" id="name" placeholder="Full Name">
+            <div class="validation-message" id="nameMsg">Name is required</div>
 
             <input class="form-control mb-1" id="phone" placeholder="Phone Number">
-            <div class="validation-message" id="phoneMsg">Enter valid phone number.</div>
+            <div class="validation-message" id="phoneMsg">Enter valid phone</div>
 
             <input class="form-control mb-1" id="email" placeholder="Email Address">
-            <div class="validation-message" id="emailMsg">Enter valid email.</div>
+            <div class="validation-message" id="emailMsg">Enter valid email</div>
 
-            <input class="form-control mb-1" id="audits" type="auditsCount" min="2" placeholder="Number of Audits">
-            <div class="validation-message" id="guestsMsg">Must have at least 2 guests.</div>
+            <input class="form-control mb-1" type="number" id="adults" min="1" placeholder="Number of Adults">
+            <div class="validation-message" id="adultsMsg">At least 1 adult required</div>
 
-            <input class="form-control mb-1" id="childs" type="childCount" min="0" placeholder="Number of Childs">
+            <input class="form-control mb-1" type="number" id="children" min="0" placeholder="Number of Children">
 
             <label class="mt-2">Arrival Date</label>
-            <input class="form-control mb-1" id="arrival" type="date">
-            <div class="validation-message" id="arrivalMsg">Arrival date is required.</div>
+            <input class="form-control mb-1" type="date" id="arrival">
+            <div class="validation-message" id="arrivalMsg">Arrival date required</div>
 
             <label>Departure Date</label>
-            <input class="form-control mb-1" id="departure" type="date">
-            <div class="validation-message" id="departureMsg">Departure date must be after arrival date.</div>
+            <input class="form-control mb-1" type="date" id="departure">
+            <div class="validation-message" id="departureMsg">Departure date must be after arrival</div>
 
-            <div id="miniPreview"><em>No places selected</em></div>
+            <!-- Map -->
+            <div id="map"></div>
 
-            <button class="btn btn-success w-100 mt-3" id="sendWhatsApp" disabled>Send via WhatsApp</button>
-            <button class="btn btn-primary w-100 mt-2" id="sendEmail" disabled>Send via Email</button>
-        </div>
-
-    </div>
-
-    <!-- Subscribe Start -->
-    <div class="container-fluid subscribe py-5">
-        <div class="container text-center py-5">
-            <div class="mx-auto text-center" style="max-width: 900px;">
-                <h5 class="subscribe-title px-3">Subscribe</h5>
-                <h1 class="text-white mb-4">Our Newsletter</h1>
-                <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals,
-                    insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
-                </p>
-                <div class="position-relative mx-auto">
-                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text"
-                        placeholder="Your email">
-                    <button type="button"
-                        class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
-                </div>
-            </div>
+            <button class="btn btn-success w-100 mt-3" id="sendWhatsApp" disabled><i class="fa-brands fa-whatsapp"></i>
+                Send via WhatsApp</button>
+            <button class="btn btn-primary w-100 mt-2" id="sendEmail" disabled><i class="fa fa-envelope"></i> Send via
+                Email</button>
+            <button class="btn btn-info w-100 mt-2" id="generatePDF"><i class="fa fa-file-pdf"></i> Download Travel
+                Summary PDF</button>
         </div>
     </div>
-    <!-- Subscribe End -->
 
-    <!-- Copyright Start -->
-    <div class="container-fluid copyright text-body py-4">
-        <div class="container">
-            <div class="row g-4 align-items-center">
-                <div class="col-md-6 text-center text-md-end mb-md-0">
-                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="./index.html">Ayubowan Tours</a>,
-                    All right reserved.
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Copyright End -->
+    <footer class="py-3 text-center">
+        <p>© Ayubowan Tours – All Rights Reserved</p>
+    </footer>
 
-    <!-- whatsapp button -->
-    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
-        class="whatsapp-float" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Popup -->
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup-box">
-            <p>Thank you connecting with Ayubowan Tours! We received your booking request & our team will get back to
-                you soon.</p>
+            <p>Thank you! Your booking request has been received.</p>
             <button class="btn btn-success" id="popupOk">OK</button>
         </div>
     </div>
 
     <script>
-        const availableGrid = document.getElementById('availableGrid');
-        const selectedGrid = document.getElementById('selectedGrid');
-        const noOptionsMsg = document.getElementById('noOptionsMsg');
+        const coords = {
+            Kandy: [7.2906, 80.6337],
+            Sigiriya: [7.9570, 80.7603],
+            Ella: [6.8667, 81.0466],
+            Yala: [6.3667, 81.5167],
+            Galle: [6.0535, 80.2210]
+        };
 
-        const placeMap = { Kandy: '7.2906,80.6337', Sigiriya: '7.9570,80.7603', Ella: '6.8667,81.0466', Yala: '6.3667,81.5167' };
-        const gradients = ['linear-gradient(90deg,#6a11cb,#2575fc)', 'linear-gradient(90deg,#ff512f,#f09819)', 'linear-gradient(90deg,#43e97b,#38f9d7)', 'linear-gradient(90deg,#2193b0,#6dd5ed)'];
+        const colors = ['#1abc9c', '#3498db', '#9b59b6', '#e67e22', '#e74c3c', '#f1c40f', '#2ecc71', '#34495e'];
 
-        let dragged = null;
-        let holdTimer = null;
+        let map = L.map('map').setView(coords.Kandy, 7);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://openstreetmap.org">OSM</a> contributors' }).addTo(map);
+
+        let routeControl = null;
+        let markers = [];
+
+        const availableGrid = document.getElementById('availableGrid'),
+            selectedGrid = document.getElementById('selectedGrid');
 
         function bindItem(item) {
-            item.draggable = true;
-
-            // Click to move (desktop fallback)
-            item.onclick = () => moveItem(item);
-
-            // Drag
-            item.addEventListener('dragstart', () => dragged = item);
-
-            // Touch support
-            item.addEventListener('touchstart', (e) => {
-                holdTimer = setTimeout(() => item.classList.add('drag-hold'), 400);
-            });
-
-            item.addEventListener('touchend', (e) => {
-                clearTimeout(holdTimer);
-                if (item.classList.contains('drag-hold')) {
-                    item.classList.remove('drag-hold');
-                    moveItem(item);
-                }
-            });
+            item.onclick = () => {
+                const target = item.parentElement.id === 'availableGrid' ? selectedGrid : availableGrid;
+                target.appendChild(item);
+                updateRouteMap();
+                validate();
+            };
         }
-
         document.querySelectorAll('.item').forEach(bindItem);
 
-        [selectedGrid, availableGrid].forEach(grid => {
-            grid.addEventListener('dragover', e => e.preventDefault());
-            grid.addEventListener('drop', () => {
-                if (dragged && !grid.contains(dragged)) {
-                    grid.appendChild(dragged);
-                    dragged = null;
-                    updateUI();
-                }
+        function createPinIcon(number) {
+            const color = colors[(number - 1) % colors.length];
+            return L.divIcon({
+                html: `<div class="pin-icon" style="background:${color}">${number}</div>`,
+                className: '',
+                iconSize: [36, 46],
+                iconAnchor: [18, 46]
             });
-        });
-
-        function moveItem(item) {
-            const target = item.parentElement.id === 'availableGrid' ? selectedGrid : availableGrid;
-            target.appendChild(item);
-            updateUI();
         }
 
-        function updateUI() {
-            const preview = document.getElementById('miniPreview');
-            if (!selectedGrid.children.length) { preview.innerHTML = '<em>No places selected</em>'; }
-            else {
-                preview.innerHTML = '';
-                [...selectedGrid.children].forEach((i, idx) => {
-                    const place = i.dataset.id;
-                    const card = document.createElement('div');
-                    card.className = 'preview-card';
-                    card.style.background = gradients[idx % gradients.length];
-                    card.innerHTML = `<div class="preview-title">${idx + 1}. ${place}</div>
-                        <iframe class="map-frame" src="https://maps.google.com/maps?q=${placeMap[place]}&z=9&output=embed"></iframe>`;
-                    preview.appendChild(card);
-                });
+        function updateRouteMap() {
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+            if (routeControl) { map.removeControl(routeControl); routeControl = null; }
+
+            if (selectedGrid.children.length < 1) {
+                map.setView(coords.Kandy, 7);
+                return;
             }
 
-            // No options message
-            noOptionsMsg.style.display = availableGrid.children.length === 0 ? 'block' : 'none';
+            const waypoints = [...selectedGrid.children].map(i => L.latLng(coords[i.dataset.id]));
 
-            validateForm();
+            waypoints.forEach((wp, i) => {
+                const marker = L.marker(wp, { icon: createPinIcon(i + 1) }).addTo(map);
+                markers.push(marker);
+            });
+
+            if (waypoints.length > 1) {
+                routeControl = L.Routing.control({
+                    waypoints: waypoints,
+                    lineOptions: { styles: [{ color: 'blue', weight: 4 }] },
+                    createMarker: () => null,
+                    routeWhileDragging: false,
+                    addWaypoints: false,
+                    draggableWaypoints: false,
+                    show: false
+                }).addTo(map);
+            }
+
+            const group = new L.featureGroup(markers);
+            map.fitBounds(group.getBounds().pad(0.2));
         }
 
-        function formatItinerary() { return [...selectedGrid.children].map((i, x) => `${x + 1}. ${i.dataset.id}`).join('\n'); }
+        // Validation & Booking
+        function toggle(id, cond, msg) { const el = document.getElementById(id); el.classList.toggle('invalid', !cond); el.classList.toggle('valid', cond); document.getElementById(msg).style.display = cond ? 'none' : 'block'; return cond; }
+        function validate() {
+            let ok = true;
+            ok &= toggle('name', name.value.trim() !== '', 'nameMsg');
+            ok &= toggle('phone', /^[0-9]{7,15}$/.test(phone.value), 'phoneMsg');
+            ok &= toggle('email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value), 'emailMsg');
+            ok &= toggle('adults', adults.value >= 1, 'adultsMsg');
+            ok &= toggle('arrival', arrival.value, 'arrivalMsg');
+            ok &= toggle('departure', departure.value > arrival.value, 'departureMsg');
 
-        const fields = ['name', 'phone', 'email', 'guests', 'childs', 'arrival', 'departure'];
-        function validateForm() {
-            let valid = true;
-            const n = document.getElementById('name').value.trim();
-            const p = document.getElementById('phone').value.trim();
-            const e = document.getElementById('email').value.trim();
-            const g = document.getElementById('audits').value;
-            const c = document.getElementById('childs').value;
-            const a = document.getElementById('arrival').value;
-            const d = document.getElementById('departure').value;
-
-            // Name
-            const nameEl = document.getElementById('name');
-            if (!n) { nameEl.classList.add('invalid'); nameEl.classList.remove('valid'); document.getElementById('nameMsg').style.display = 'block'; valid = false; }
-            else { nameEl.classList.remove('invalid'); nameEl.classList.add('valid'); document.getElementById('nameMsg').style.display = 'none'; }
-
-            // Phone
-            const phoneEl = document.getElementById('phone');
-            const phoneRegex = /^[0-9]{7,15}$/;
-            if (!p || !phoneRegex.test(p)) { phoneEl.classList.add('invalid'); phoneEl.classList.remove('valid'); document.getElementById('phoneMsg').style.display = 'block'; valid = false; }
-            else { phoneEl.classList.remove('invalid'); phoneEl.classList.add('valid'); document.getElementById('phoneMsg').style.display = 'none'; }
-
-            // Email
-            const emailEl = document.getElementById('email');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!e || !emailRegex.test(e)) { emailEl.classList.add('invalid'); emailEl.classList.remove('valid'); document.getElementById('emailMsg').style.display = 'block'; valid = false; }
-            else { emailEl.classList.remove('invalid'); emailEl.classList.add('valid'); document.getElementById('emailMsg').style.display = 'none'; }
-
-            // Guests
-            const guestsEl = document.getElementById('audits');
-            if (!g || g < 1) { guestsEl.classList.add('invalid'); guestsEl.classList.remove('valid'); document.getElementById('guestsMsg').style.display = 'block'; valid = false; }
-            else { guestsEl.classList.remove('invalid'); guestsEl.classList.add('valid'); document.getElementById('guestsMsg').style.display = 'none'; }
-
-            // Childs
-            const childsEL = document.getElementById('childs');
-            if (!g || g < 1) { childsEL.classList.add('invalid'); childsEL.classList.remove('valid'); document.getElementById('guestsMsg').style.display = 'block'; valid = false; }
-            else { childsEL.classList.remove('invalid'); childsEL.classList.add('valid'); document.getElementById('guestsMsg').style.display = 'none'; }
-
-            // Arrival
-            const arrivalEl = document.getElementById('arrival');
-            if (!a) { arrivalEl.classList.add('invalid'); arrivalEl.classList.remove('valid'); document.getElementById('arrivalMsg').style.display = 'block'; valid = false; }
-            else { arrivalEl.classList.remove('invalid'); arrivalEl.classList.add('valid'); document.getElementById('arrivalMsg').style.display = 'none'; }
-
-            // Departure
-            const departureEl = document.getElementById('departure');
-            if (!d || (a && d <= a)) { departureEl.classList.add('invalid'); departureEl.classList.remove('valid'); document.getElementById('departureMsg').style.display = 'block'; valid = false; }
-            else { departureEl.classList.remove('invalid'); departureEl.classList.add('valid'); document.getElementById('departureMsg').style.display = 'none'; }
-
-            document.getElementById('sendWhatsApp').disabled = !valid || selectedGrid.children.length === 0;
-            document.getElementById('sendEmail').disabled = !valid || selectedGrid.children.length === 0;
+            sendWhatsApp.disabled = !ok || !selectedGrid.children.length;
+            sendEmail.disabled = !ok || !selectedGrid.children.length;
+            generatePDF.disabled = !ok || !selectedGrid.children.length;
+            return ok;
         }
+        ['name', 'phone', 'email', 'adults', 'children', 'arrival', 'departure'].forEach(id => document.getElementById(id).addEventListener('input', validate));
 
-        fields.forEach(f => document.getElementById(f).addEventListener('input', validateForm));
-
-        // WhatsApp send
-        document.getElementById('sendWhatsApp').onclick = () => {
-            const n = document.getElementById('name').value.trim();
-            const p = document.getElementById('phone').value.trim();
-            const e = document.getElementById('email').value.trim();
-            const g = document.getElementById('audits').value;
-            const c = document.getElementById('childs').value;
-            const a = document.getElementById('arrival').value;
-            const d = document.getElementById('departure').value;
-
-            const itinerary = formatItinerary();
+        sendWhatsApp.onclick = () => {
+            if (!validate()) return;
             const msg = `Ayubowan Tours Booking
-Name: ${n}
-Phone: ${p}
-Email: ${e}
-Guests: ${g}
-Childs: ${c}
-Arrival: ${a}
-Departure: ${d}
+Name: ${name.value}
+Phone: ${phone.value}
+Email: ${email.value}
+Adults: ${adults.value}
+Children: ${children.value}
+Arrival: ${arrival.value}
+Departure: ${departure.value}
 
 Itinerary:
-${itinerary}`;
-
-            const waWindow = window.open(`https://wa.me/94763661600?text=${encodeURIComponent(msg)}`);
-
-            // Poll to detect if WhatsApp window opened, then show popup
-            const checkPopup = setInterval(() => {
-                if (waWindow.closed || waWindow.location.href !== 'about:blank') {
-                    clearInterval(checkPopup);
-                    document.getElementById('popupOverlay').style.display = 'flex';
-                }
-            }, 500);
+${[...selectedGrid.children].map((i, x) => `${x + 1}. ${i.dataset.id}`).join('\n')}`;
+            window.open(`https://wa.me/94763661600?text=${encodeURIComponent(msg)}`, '_blank');
+            setTimeout(() => popupOverlay.style.display = 'flex', 800);
         };
 
-        document.getElementById('popupOk').onclick = () => { document.getElementById('popupOverlay').style.display = 'none'; location.reload(); };
-
-        // Email Send
-        document.getElementById('sendEmail').onclick = () => {
-            const n = document.getElementById('name').value.trim();
-            const p = document.getElementById('phone').value.trim();
-            const e = document.getElementById('email').value.trim();
-            const g = document.getElementById('audits').value;
-            const c = document.getElementById('child').value;
-            const a = document.getElementById('arrival').value;
-            const d = document.getElementById('departure').value;
-
-            const subject = 'Ayubowan Tours Booking Request';
-            const body = `Name: ${n}
-Phone: ${p}
-Email: ${e}
-Guests: ${g}
-Childs: ${c}
-Arrival: ${a}
-Departure: ${d}
-
-Itinerary:
-${formatItinerary()}`;
-
-            window.location.href = `mailto:info@ayubowantours.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        sendEmail.onclick = () => {
+            if (!validate()) return;
+            const body = [...selectedGrid.children].map((i, x) => `${x + 1}. ${i.dataset.id}`).join('\n');
+            location.href = `mailto:info@ayubowantours.com?subject=Booking Request&body=${encodeURIComponent(body)}`;
         };
 
+        generatePDF.onclick = () => {
+            if (!validate()) return;
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.setFontSize(16);
+            doc.text("Ayubowan Tours - Travel Summary", 10, 20);
+            doc.setFontSize(12);
+            doc.text(`Name: ${name.value}`, 10, 30);
+            doc.text(`Phone: ${phone.value}`, 10, 37);
+            doc.text(`Email: ${email.value}`, 10, 44);
+            doc.text(`Adults: ${adults.value}  Children: ${children.value}`, 10, 51);
+            doc.text(`Arrival: ${arrival.value}  Departure: ${departure.value}`, 10, 58);
+            doc.text("Itinerary:", 10, 68);
+            [...selectedGrid.children].forEach((i, x) => doc.text(`${x + 1}. ${i.dataset.id}`, 12, 76 + x * 7));
+            doc.save("Travel_Summary.pdf");
+        };
 
+        popupOk.onclick = () => location.reload();
     </script>
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
 
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
 </body>
 
 </html>
