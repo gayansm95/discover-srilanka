@@ -122,7 +122,15 @@
             padding: 6px;
             border-radius: 8px;
             text-align: center;
-            cursor: pointer;
+            cursor: grab;
+            transition: transform 0.2s, box-shadow 0.2s;
+            user-select: none;
+        }
+
+        .item.dragging {
+            opacity: 0.7;
+            transform: scale(1.05);
+            cursor: grabbing;
         }
 
         .item img {
@@ -279,7 +287,7 @@
             <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">Design Your Sri Lanka Journey</h5>
                 <p class="mb-0">Create your perfect Sri Lanka getaway with ease, simply click or drag destinations to
-                    build your ideal journey. When you’re happy with your selection, fill in your travel details
+                    build your ideal journey. When you're happy with your selection, fill in your travel details
                     and send your request via WhatsApp or email. Our expert team will carefully review your itinerary
                     and get in touch soon to plan the next exciting steps of your adventure.
                 </p>
@@ -319,7 +327,7 @@
                     <h3>Complete Your Travel Details</h3>
                     <p class="mb-4" style="color: #3498db;">
                         Share your details to confirm your journey and begin planning.
-                    </p>    
+                    </p>
 
                     <input class="form-control mb-1" id="name" placeholder="Full Name">
                     <div class="validation-message" id="nameMsg">Name is required</div>
@@ -427,15 +435,96 @@
         const availableGrid = document.getElementById('availableGrid'),
             selectedGrid = document.getElementById('selectedGrid');
 
+        // Initialize from localStorage
+        function loadFromLocalStorage() {
+            const savedSelection = localStorage.getItem('selectedJourney');
+            if (savedSelection) {
+                const selectedIds = JSON.parse(savedSelection);
+                selectedIds.forEach(id => {
+                    const item = document.querySelector(`.item[data-id="${id}"]`);
+                    if (item && item.parentElement.id === 'availableGrid') {
+                        selectedGrid.appendChild(item);
+                    }
+                });
+            }
+            updateRouteMap();
+            validate();
+        }
+
+        // Save to localStorage
+        function saveToLocalStorage() {
+            const selectedItems = [...selectedGrid.children];
+            const selectedIds = selectedItems.map(item => item.dataset.id);
+            localStorage.setItem('selectedJourney', JSON.stringify(selectedIds));
+        }
+
+        // Drag and drop functionality
+        let draggedItem = null;
+
+        function setupDragAndDrop() {
+            const items = document.querySelectorAll('.item');
+
+            items.forEach(item => {
+                item.setAttribute('draggable', 'true');
+
+                item.addEventListener('dragstart', function (e) {
+                    draggedItem = this;
+                    this.classList.add('dragging');
+                    e.dataTransfer.setData('text/plain', this.dataset.id);
+                });
+
+                item.addEventListener('dragend', function () {
+                    this.classList.remove('dragging');
+                    draggedItem = null;
+                });
+            });
+
+            [availableGrid, selectedGrid].forEach(container => {
+                container.addEventListener('dragover', function (e) {
+                    e.preventDefault();
+                    this.style.backgroundColor = '#f0f8ff';
+                });
+
+                container.addEventListener('dragleave', function () {
+                    this.style.backgroundColor = '';
+                });
+
+                container.addEventListener('drop', function (e) {
+                    e.preventDefault();
+                    this.style.backgroundColor = '';
+
+                    if (draggedItem && draggedItem.parentElement !== this) {
+                        this.appendChild(draggedItem);
+                        saveToLocalStorage();
+                        updateRouteMap();
+                        validate();
+                    }
+                });
+            });
+        }
+
+        // Click functionality
         function bindItem(item) {
-            item.onclick = () => {
+            item.onclick = (e) => {
+                // Prevent triggering click when dragging
+                if (e.target.classList.contains('dragging')) return;
+
                 const target = item.parentElement.id === 'availableGrid' ? selectedGrid : availableGrid;
                 target.appendChild(item);
+                saveToLocalStorage();
                 updateRouteMap();
                 validate();
             };
         }
-        document.querySelectorAll('.item').forEach(bindItem);
+
+        // Initialize both click and drag
+        function initializeItems() {
+            document.querySelectorAll('.item').forEach(item => {
+                bindItem(item);
+            });
+            setupDragAndDrop();
+            loadFromLocalStorage();
+        }
 
         function createPinIcon(number) {
             const color = colors[(number - 1) % colors.length];
@@ -481,7 +570,14 @@
         }
 
         // Validation & Booking
-        function toggle(id, cond, msg) { const el = document.getElementById(id); el.classList.toggle('invalid', !cond); el.classList.toggle('valid', cond); document.getElementById(msg).style.display = cond ? 'none' : 'block'; return cond; }
+        function toggle(id, cond, msg) {
+            const el = document.getElementById(id);
+            el.classList.toggle('invalid', !cond);
+            el.classList.toggle('valid', cond);
+            document.getElementById(msg).style.display = cond ? 'none' : 'block';
+            return cond;
+        }
+
         function validate() {
             let ok = true;
             ok &= toggle('name', name.value.trim() !== '', 'nameMsg');
@@ -496,57 +592,154 @@
             generatePDF.disabled = !ok || !selectedGrid.children.length;
             return ok;
         }
-        ['name', 'phone', 'email', 'adults', 'children', 'arrival', 'departure'].forEach(id => document.getElementById(id).addEventListener('input', validate));
 
+        // Form input event listeners
+        ['name', 'phone', 'email', 'adults', 'children', 'arrival', 'departure'].forEach(id =>
+            document.getElementById(id).addEventListener('input', validate)
+        );
+
+        // Get selected items as formatted string
+        function getSelectedItems() {
+            return [...selectedGrid.children].map((item, index) =>
+                `${index + 1}. ${item.dataset.id}`
+            ).join('\n');
+        }
+
+        // WhatsApp booking function
         sendWhatsApp.onclick = () => {
             if (!validate()) return;
-            const msg = `Ayubowan Tours Booking
+
+            const selectedItems = getSelectedItems();
+            const message = `🚀 *Ayubowan Tours - Booking Request* 🚀
+
+*Customer Details:*
+👤 *Name:* ${name.value}
+📞 *Phone:* ${phone.value}
+📧 *Email:* ${email.value}
+👥 *Adults:* ${adults.value}
+👶 *Children:* ${children.value}
+📅 *Arrival Date:* ${arrival.value}
+📅 *Departure Date:* ${departure.value}
+
+*Selected Itinerary:*
+${selectedItems}
+
+Total Destinations: ${selectedGrid.children.length}
+
+I would like to book this tour. Please provide me with pricing and availability.`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/94763661600?text=${encodedMessage}`, '_blank');
+
+            // Save booking to localStorage
+            const bookingData = {
+                name: name.value,
+                phone: phone.value,
+                email: email.value,
+                adults: adults.value,
+                children: children.value,
+                arrival: arrival.value,
+                departure: departure.value,
+                selectedItems: [...selectedGrid.children].map(item => item.dataset.id),
+                timestamp: new Date().toISOString()
+            };
+            localStorage.setItem('lastBooking', JSON.stringify(bookingData));
+
+            setTimeout(() => popupOverlay.style.display = 'flex', 800);
+        };
+
+        // Email booking function
+        sendEmail.onclick = () => {
+            if (!validate()) return;
+
+            const selectedItems = getSelectedItems();
+            const subject = `Booking Request - ${name.value}`;
+            const body = `Ayubowan Tours Booking Request
+
+Customer Information:
 Name: ${name.value}
 Phone: ${phone.value}
 Email: ${email.value}
 Adults: ${adults.value}
 Children: ${children.value}
-Arrival: ${arrival.value}
-Departure: ${departure.value}
+Arrival Date: ${arrival.value}
+Departure Date: ${departure.value}
 
-Itinerary:
-${[...selectedGrid.children].map((i, x) => `${x + 1}. ${i.dataset.id}`).join('\n')}`;
-            window.open(`https://wa.me/94763661600?text=${encodeURIComponent(msg)}`, '_blank');
-            setTimeout(() => popupOverlay.style.display = 'flex', 800);
+Selected Itinerary:
+${selectedItems}
+
+Please contact me to discuss this booking request.`;
+
+            location.href = `mailto:info@ayubowantours.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         };
 
-        sendEmail.onclick = () => {
-            if (!validate()) return;
-            const body = [...selectedGrid.children].map((i, x) => `${x + 1}. ${i.dataset.id}`).join('\n');
-            location.href = `mailto:info@ayubowantours.com?subject=Booking Request&body=${encodeURIComponent(body)}`;
-        };
-
+        // PDF generation function
         generatePDF.onclick = () => {
             if (!validate()) return;
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
+
+            // Header
+            doc.setFontSize(20);
+            doc.setTextColor(40, 180, 99);
+            doc.text("Ayubowan Tours", 105, 20, null, null, 'center');
+
             doc.setFontSize(16);
-            doc.text("Ayubowan Tours - Travel Summary", 10, 20);
+            doc.setTextColor(0, 0, 0);
+            doc.text("Travel Summary", 105, 30, null, null, 'center');
+
+            // Customer Details
             doc.setFontSize(12);
-            doc.text(`Name: ${name.value}`, 10, 30);
-            doc.text(`Phone: ${phone.value}`, 10, 37);
-            doc.text(`Email: ${email.value}`, 10, 44);
-            doc.text(`Adults: ${adults.value}  Children: ${children.value}`, 10, 51);
-            doc.text(`Arrival: ${arrival.value}  Departure: ${departure.value}`, 10, 58);
-            doc.text("Itinerary:", 10, 68);
-            [...selectedGrid.children].forEach((i, x) => doc.text(`${x + 1}. ${i.dataset.id}`, 12, 76 + x * 7));
-            doc.save("Travel_Summary.pdf");
+            doc.text(`Customer Name: ${name.value}`, 10, 45);
+            doc.text(`Phone: ${phone.value}`, 10, 52);
+            doc.text(`Email: ${email.value}`, 10, 59);
+            doc.text(`Travelers: ${adults.value} Adult(s), ${children.value} Child(ren)`, 10, 66);
+            doc.text(`Arrival: ${arrival.value}`, 10, 73);
+            doc.text(`Departure: ${departure.value}`, 10, 80);
+
+            // Itinerary
+            doc.setFontSize(14);
+            doc.text("Selected Itinerary:", 10, 90);
+
+            doc.setFontSize(12);
+            [...selectedGrid.children].forEach((item, index) => {
+                doc.text(`${index + 1}. ${item.dataset.id}`, 15, 100 + (index * 7));
+            });
+
+            // Footer
+            doc.setFontSize(10);
+            doc.setTextColor(100, 100, 100);
+            doc.text("Generated on: " + new Date().toLocaleDateString(), 10, 280);
+            doc.text("Thank you for choosing Ayubowan Tours!", 105, 290, null, null, 'center');
+
+            doc.save("Ayubowan_Tours_Travel_Summary.pdf");
         };
 
-        popupOk.onclick = () => location.reload();
+        // Popup functionality
+        popupOk.onclick = () => {
+            popupOverlay.style.display = 'none';
+            location.reload();
+        };
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            initializeItems();
+
+            // Set minimum date for arrival to today
+            const today = new Date().toISOString().split('T')[0];
+            arrival.min = today;
+            departure.min = today;
+
+            // Update departure min when arrival changes
+            arrival.addEventListener('change', function () {
+                departure.min = this.value;
+                if (departure.value < this.value) {
+                    departure.value = '';
+                }
+                validate();
+            });
+        });
     </script>
-    <!-- whatsapp button -->
-    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
-        class="whatsapp-float" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
