@@ -74,114 +74,238 @@
             }
             }
 
-            /* Custom card styling */
+            /* ENHANCED PACKAGE CARD STYLING */
             .package-card {
                 background: white;
-                border: 2px solid #3498db;
-                border-radius: 15px;
+                border-radius: 20px;
                 overflow: hidden;
-                transition: all 0.3s ease;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 height: 100%;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-                cursor: pointer;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(52, 152, 219, 0.1);
+                position: relative;
             }
 
             .package-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-                border-color: #2980b9;
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+                border-color: #3498db;
+            }
+
+            .package-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 5px;
+                height: 100%;
+                background: linear-gradient(to bottom, #3498db, #2ecc71);
+                z-index: 1;
             }
 
             .package-image-container {
                 position: relative;
                 overflow: hidden;
-                height: 220px;
+                height: 250px;
+                border-bottom: 3px solid #3498db;
             }
 
             .package-image {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                transition: transform 0.5s ease;
-                cursor: pointer;
+                transition: transform 0.7s ease;
             }
 
             .package-card:hover .package-image {
-                transform: scale(1.05);
+                transform: scale(1.08);
+            }
+
+            .package-badge {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                background: linear-gradient(135deg, #3498db, #2980b9);
+                color: white;
+                padding: 8px 15px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.8rem;
+                z-index: 2;
+                box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
             }
 
             .view-full-btn {
                 position: absolute;
-                bottom: 10px;
-                right: 10px;
-                background: rgba(255, 255, 255, 0.9);
-                border: none;
-                border-radius: 20px;
-                padding: 5px 15px;
-                font-size: 0.8rem;
+                bottom: 15px;
+                right: 15px;
+                background: rgba(255, 255, 255, 0.95);
+                border: 2px solid #3498db;
+                border-radius: 25px;
+                padding: 8px 20px;
+                font-size: 0.85rem;
                 color: #3498db;
-                display: none;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 5px;
                 transition: all 0.3s ease;
                 z-index: 10;
+                opacity: 0;
+                transform: translateY(10px);
             }
 
             .package-card:hover .view-full-btn {
-                display: block;
+                opacity: 1;
+                transform: translateY(0);
             }
 
             .view-full-btn:hover {
                 background: #3498db;
                 color: white;
+                transform: translateY(-2px);
             }
 
             .package-content {
-                padding: 20px;
+                padding: 25px;
+                position: relative;
             }
 
             .package-title {
                 color: #2c3e50;
-                font-weight: 600;
+                font-weight: 700;
                 margin-bottom: 15px;
-                font-size: 1.5rem;
+                font-size: 1.6rem;
+                position: relative;
+                padding-bottom: 10px;
+            }
+
+            .package-title::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background: linear-gradient(to right, #3498db, #2ecc71);
+                border-radius: 2px;
+            }
+
+            .package-card:hover .package-title::after {
+                width: 80px;
+                transition: width 0.3s ease;
             }
 
             .package-itinerary {
-                background: #f8f9fa;
-                padding: 12px;
-                border-radius: 8px;
-                margin-bottom: 15px;
-                font-size: 0.9rem;
+                background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                padding: 20px;
+                border-radius: 12px;
+                margin-bottom: 20px;
+                font-size: 1rem;
+                line-height: 1.6;
+                border-left: 4px solid #3498db;
+                box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
             }
 
             .package-itinerary i {
                 color: #3498db;
-                margin: 0 5px;
+                margin: 0 8px;
+                font-size: 0.9rem;
+            }
+
+            .itinerary-destinations {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .destination-tag {
+                background: white;
+                padding: 6px 15px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                color: #3498db;
+                border: 1px solid #3498db;
+                transition: all 0.3s ease;
+            }
+
+            .destination-tag:hover {
+                background: #3498db;
+                color: white;
+                transform: translateY(-2px);
+            }
+
+            .package-features {
+                display: flex;
+                justify-content: space-between;
+                margin: 20px 0;
+                padding: 15px 0;
+                border-top: 1px solid #eee;
+                border-bottom: 1px solid #eee;
+            }
+
+            .feature {
+                text-align: center;
+                flex: 1;
+            }
+
+            .feature i {
+                color: #3498db;
+                font-size: 1.5rem;
+                margin-bottom: 8px;
+            }
+
+            .feature span {
+                display: block;
+                font-size: 0.9rem;
+                color: #666;
+                font-weight: 600;
             }
 
             .package-description {
                 color: #666;
                 font-size: 0.95rem;
-                line-height: 1.5;
-                margin-bottom: 20px;
+                line-height: 1.6;
+                margin-bottom: 25px;
                 height: 72px;
                 overflow: hidden;
                 display: -webkit-box;
                 -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;
+                position: relative;
+            }
+
+            .package-description::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 60px;
+                height: 20px;
+                background: linear-gradient(to right, transparent, white);
             }
 
             .book-btn {
-                background: #3498db;
+                background: linear-gradient(135deg, #3498db, #2980b9);
                 border: none;
-                padding: 10px 25px;
-                font-weight: 500;
+                padding: 14px 25px;
+                font-weight: 600;
+                font-size: 1rem;
                 transition: all 0.3s ease;
                 width: 100%;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
             }
 
             .book-btn:hover {
-                background: #2980b9;
-                transform: scale(1.05);
+                background: linear-gradient(135deg, #2980b9, #1c5d8a);
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
             }
 
             /* Image Modal Styles */
@@ -556,6 +680,15 @@
                 .booking-modal-header {
                     padding: 25px 30px;
                 }
+                
+                .package-features {
+                    flex-wrap: wrap;
+                    gap: 15px;
+                }
+                
+                .feature {
+                    flex: 0 0 calc(50% - 15px);
+                }
             }
 
             @media (max-width: 576px) {
@@ -590,6 +723,16 @@
                     font-size: 20px;
                     top: 20px;
                     right: 20px;
+                }
+                
+                .package-badge {
+                    font-size: 0.7rem;
+                    padding: 6px 12px;
+                }
+                
+                .view-full-btn {
+                    padding: 6px 15px;
+                    font-size: 0.8rem;
                 }
             }
 
@@ -647,223 +790,347 @@
         </div>
         <!-- Header End -->
 
-        <!-- Packages Grid Start -->
+        <!-- ENHANCED Packages Grid Start -->
         <div class="container-fluid packages py-5">
             <div class="container py-5">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 mb-3">Choose Your Perfect Itinerary</h2>
+                    <p class="lead text-muted">Each 11-day tour is carefully crafted to showcase the best of Sri Lanka's diverse landscapes, rich culture, and unforgettable experiences.</p>
+                </div>
                 <div class="row g-4">
-                    <!-- Card 1 -->
+                    <!-- Card 1 - Enhanced -->
                     <div class="col-lg-4 col-md-6">
-                        <div class="package-card" data-id="1" data-title="Private Itinerary - 01" 
+                        <div class="package-card" data-id="1" data-title="Cultural Triangle Explorer" 
                              data-image="img/11-day-tour-option-1.png"
                              data-itinerary="Arrival → Sigiriya → Polonnaruwa → Anuradhapura → Kandy → Nuwara Eliya → Departure"
-                             data-description="The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. This ancient complex consists of five caves adorned with over 150 Buddha statues and beautifully preserved wall paintings. Set on a rocky hill, the temple also offers panoramic views of the surrounding countryside.">
+                             data-description="Immerse yourself in Sri Lanka's ancient heritage with this cultural journey. Visit UNESCO World Heritage Sites, explore ancient kingdoms, and experience traditional Kandyan culture. Perfect for history enthusiasts and culture seekers.">
                             <div class="package-image-container">
-                                <img src="img/11-day-tour-option-1.png" class="package-image" alt="Private Itinerary 01" onclick="viewFullImage('img/11-day-tour-option-1.png')">
+                                <span class="package-badge">Most Popular</span>
+                                <img src="img/11-day-tour-option-1.png" class="package-image" alt="Cultural Triangle Explorer" onclick="viewFullImage('img/11-day-tour-option-1.png')">
                                 <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-1.png')">
-                                    <i class="fas fa-expand me-1"></i>View Full
+                                    <i class="fas fa-expand me-1"></i>View Full Map
                                 </button>
                             </div>
                             <div class="package-content">
-                                <h3 class="package-title">Private Itinerary - 01</h3>
+                                <h3 class="package-title">Cultural Triangle Explorer</h3>
                                 <div class="package-itinerary">
-                                    Arrival <i class="fa fa-arrow-right"></i> 
-                                    Sigiriya <i class="fa fa-arrow-right"></i> 
-                                    Polonnaruwa <i class="fa fa-arrow-right"></i> 
-                                    Anuradhapura <i class="fa fa-arrow-right"></i> 
-                                    Kandy <i class="fa fa-arrow-right"></i> 
-                                    Nuwara Eliya <i class="fa fa-arrow-right"></i> 
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                    Arrival <i class="fas fa-arrow-right text-primary"></i> 
+                                    Sigiriya <i class="fas fa-arrow-right text-primary"></i> 
+                                    Polonnaruwa <i class="fas fa-arrow-right text-primary"></i> 
+                                    Anuradhapura <i class="fas fa-arrow-right text-primary"></i> 
+                                    Kandy <i class="fas fa-arrow-right text-primary"></i> 
+                                    Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i> 
                                     Departure
                                 </div>
+                                
+                                <div class="itinerary-destinations">
+                                    <span class="destination-tag">Sigiriya Rock</span>
+                                    <span class="destination-tag">Ancient Cities</span>
+                                    <span class="destination-tag">Kandy Culture</span>
+                                    <span class="destination-tag">Hill Country</span>
+                                </div>
+                                
+                                <div class="package-features">
+                                    <div class="feature">
+                                        <i class="fas fa-hotel"></i>
+                                        <span>10 Nights</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-car"></i>
+                                        <span>Private Transport</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-utensils"></i>
+                                        <span>Breakfast Included</span>
+                                    </div>
+                                </div>
+                                
                                 <p class="package-description">
-                                    The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. 
-                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                    beautifully preserved wall paintings. Set on a rocky hill, 
-                                    the temple also offers panoramic views of the surrounding countryside.
+                                    Immerse yourself in Sri Lanka's ancient heritage with this cultural journey. Visit UNESCO World Heritage Sites, explore ancient kingdoms, and experience traditional Kandyan culture. Perfect for history enthusiasts and culture seekers.
                                 </p>
-                                <button class="btn btn-primary book-btn rounded-pill" onclick="openBookingModal(this)">
-                                    <i class="fa fa-calendar-check me-2"></i>Book My Tour
+                                <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
+                                    <i class="fa fa-calendar-check me-2"></i>View Package Details
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
+                    <!-- Card 2 - Enhanced -->
                     <div class="col-lg-4 col-md-6">
-                        <div class="package-card" data-id="2" data-title="Private Itinerary - 02" 
+                        <div class="package-card" data-id="2" data-title="Beach & Heritage Combo" 
                              data-image="img/11-day-tour-option-2.png"
                              data-itinerary="Arrival → Anuradhapura → Trincomalee → Sigiriya → Kandy → Nuwara Eliya → Galle → Departure"
-                             data-description="The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. This ancient complex consists of five caves adorned with over 150 Buddha statues and beautifully preserved wall paintings. Set on a rocky hill, the temple also offers panoramic views of the surrounding countryside.">
+                             data-description="Combine cultural exploration with beach relaxation. Discover ancient heritage sites, then unwind on pristine beaches. Experience the perfect balance of history, culture, and tropical paradise in one comprehensive tour.">
                             <div class="package-image-container">
-                                <img src="img/11-day-tour-option-2.png" class="package-image" alt="Private Itinerary 02" onclick="viewFullImage('img/11-day-tour-option-2.png')">
+                                <span class="package-badge" style="background: linear-gradient(135deg, #e67e22, #d35400);">Beach + Culture</span>
+                                <img src="img/11-day-tour-option-2.png" class="package-image" alt="Beach & Heritage Combo" onclick="viewFullImage('img/11-day-tour-option-2.png')">
                                 <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-2.png')">
-                                    <i class="fas fa-expand me-1"></i>View Full
+                                    <i class="fas fa-expand me-1"></i>View Full Map
                                 </button>
                             </div>
                             <div class="package-content">
-                                <h3 class="package-title">Private Itinerary - 02</h3>
+                                <h3 class="package-title">Beach & Heritage Combo</h3>
                                 <div class="package-itinerary">
-                                    Arrival <i class="fa fa-arrow-right"></i> 
-                                    Anuradhapura <i class="fa fa-arrow-right"></i> 
-                                    Trincomalee <i class="fa fa-arrow-right"></i> 
-                                    Sigiriya <i class="fa fa-arrow-right"></i> 
-                                    Kandy <i class="fa fa-arrow-right"></i> 
-                                    Nuwara Eliya <i class="fa fa-arrow-right"></i> 
-                                    Galle <i class="fa fa-arrow-right"></i> 
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                    Arrival <i class="fas fa-arrow-right text-primary"></i> 
+                                    Anuradhapura <i class="fas fa-arrow-right text-primary"></i> 
+                                    Trincomalee <i class="fas fa-arrow-right text-primary"></i> 
+                                    Sigiriya <i class="fas fa-arrow-right text-primary"></i> 
+                                    Kandy <i class="fas fa-arrow-right text-primary"></i> 
+                                    Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i> 
+                                    Galle <i class="fas fa-arrow-right text-primary"></i> 
                                     Departure
                                 </div>
+                                
+                                <div class="itinerary-destinations">
+                                    <span class="destination-tag">Beach Time</span>
+                                    <span class="destination-tag">Ancient Cities</span>
+                                    <span class="destination-tag">Dutch Fort</span>
+                                    <span class="destination-tag">Hill Country</span>
+                                </div>
+                                
+                                <div class="package-features">
+                                    <div class="feature">
+                                        <i class="fas fa-hotel"></i>
+                                        <span>10 Nights</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-sun"></i>
+                                        <span>Beach Hotels</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-swimmer"></i>
+                                        <span>Water Activities</span>
+                                    </div>
+                                </div>
+                                
                                 <p class="package-description">
-                                    The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. 
-                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                    beautifully preserved wall paintings. Set on a rocky hill, 
-                                    the temple also offers panoramic views of the surrounding countryside.
+                                    Combine cultural exploration with beach relaxation. Discover ancient heritage sites, then unwind on pristine beaches. Experience the perfect balance of history, culture, and tropical paradise in one comprehensive tour.
                                 </p>
-                                <button class="btn btn-primary book-btn rounded-pill" onclick="openBookingModal(this)">
-                                    <i class="fa fa-calendar-check me-2"></i>Book My Tour
+                                <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
+                                    <i class="fa fa-calendar-check me-2"></i>View Package Details
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
+                    <!-- Card 3 - Enhanced -->
                     <div class="col-lg-4 col-md-6">
-                        <div class="package-card" data-id="3" data-title="Private Itinerary - 03" 
+                        <div class="package-card" data-id="3" data-title="Wildlife & Hill Country" 
                              data-image="img/11-day-tour-option-3.png"
                              data-itinerary="Arrival → Galle → Yala National Park → Ella → Nuwara Eliya → Kandy → Departure"
-                             data-description="The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. This ancient complex consists of five caves adorned with over 150 Buddha statues and beautifully preserved wall paintings. Set on a rocky hill, the temple also offers panoramic views of the surrounding countryside.">
+                             data-description="Experience Sri Lanka's incredible biodiversity and scenic beauty. From wildlife safaris in Yala National Park to breathtaking train rides through tea plantations, this tour combines adventure with natural wonders.">
                             <div class="package-image-container">
-                                <img src="img/11-day-tour-option-3.png" class="package-image" alt="Private Itinerary 03" onclick="viewFullImage('img/11-day-tour-option-3.png')">
+                                <span class="package-badge" style="background: linear-gradient(135deg, #27ae60, #219653);">Wildlife</span>
+                                <img src="img/11-day-tour-option-3.png" class="package-image" alt="Wildlife & Hill Country" onclick="viewFullImage('img/11-day-tour-option-3.png')">
                                 <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-3.png')">
-                                    <i class="fas fa-expand me-1"></i>View Full
+                                    <i class="fas fa-expand me-1"></i>View Full Map
                                 </button>
                             </div>
                             <div class="package-content">
-                                <h3 class="package-title">Private Itinerary - 03</h3>
+                                <h3 class="package-title">Wildlife & Hill Country</h3>
                                 <div class="package-itinerary">
-                                    Arrival <i class="fa fa-arrow-right"></i> 
-                                    Galle <i class="fa fa-arrow-right"></i> 
-                                    Yala National Park <i class="fa fa-arrow-right"></i> 
-                                    Ella <i class="fa fa-arrow-right"></i> 
-                                    Nuwara Eliya <i class="fa fa-arrow-right"></i> 
-                                    Kandy <i class="fa fa-arrow-right"></i> 
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                    Arrival <i class="fas fa-arrow-right text-primary"></i> 
+                                    Galle <i class="fas fa-arrow-right text-primary"></i> 
+                                    Yala National Park <i class="fas fa-arrow-right text-primary"></i> 
+                                    Ella <i class="fas fa-arrow-right text-primary"></i> 
+                                    Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i> 
+                                    Kandy <i class="fas fa-arrow-right text-primary"></i> 
                                     Departure
                                 </div>
+                                
+                                <div class="itinerary-destinations">
+                                    <span class="destination-tag">Wildlife Safari</span>
+                                    <span class="destination-tag">Ella's Gap</span>
+                                    <span class="destination-tag">Tea Country</span>
+                                    <span class="destination-tag">Scenic Train</span>
+                                </div>
+                                
+                                <div class="package-features">
+                                    <div class="feature">
+                                        <i class="fas fa-camera"></i>
+                                        <span>Safari Tours</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-train"></i>
+                                        <span>Scenic Rides</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-leaf"></i>
+                                        <span>Tea Plantations</span>
+                                    </div>
+                                </div>
+                                
                                 <p class="package-description">
-                                    The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. 
-                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                    beautifully preserved wall paintings. Set on a rocky hill, 
-                                    the temple also offers panoramic views of the surrounding countryside.
+                                    Experience Sri Lanka's incredible biodiversity and scenic beauty. From wildlife safaris in Yala National Park to breathtaking train rides through tea plantations, this tour combines adventure with natural wonders.
                                 </p>
-                                <button class="btn btn-primary book-btn rounded-pill" onclick="openBookingModal(this)">
-                                    <i class="fa fa-calendar-check me-2"></i>Book My Tour
+                                <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
+                                    <i class="fa fa-calendar-check me-2"></i>View Package Details
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 4 -->
+                    <!-- Card 4 - Enhanced -->
                     <div class="col-lg-4 col-md-6">
-                        <div class="package-card" data-id="4" data-title="Private Itinerary - 04" 
+                        <div class="package-card" data-id="4" data-title="Family Adventure Tour" 
                              data-image="img/11-day-tour-option-4.png"
                              data-itinerary="Arrival → Sigiriya → Kandy → Nuwara Eliya → Ella → Mirissa → Benthota → Departure"
-                             data-description="The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. This ancient complex consists of five caves adorned with over 150 Buddha statues and beautifully preserved wall paintings. Set on a rocky hill, the temple also offers panoramic views of the surrounding countryside.">
+                             data-description="Perfect for families! This tour combines educational cultural experiences with fun activities and beach time. Child-friendly accommodations and flexible scheduling ensure an enjoyable experience for all ages.">
                             <div class="package-image-container">
-                                <img src="img/11-day-tour-option-4.png" class="package-image" alt="Private Itinerary 04" onclick="viewFullImage('img/11-day-tour-option-4.png')">
+                                <span class="package-badge" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">Family Friendly</span>
+                                <img src="img/11-day-tour-option-4.png" class="package-image" alt="Family Adventure Tour" onclick="viewFullImage('img/11-day-tour-option-4.png')">
                                 <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-4.png')">
-                                    <i class="fas fa-expand me-1"></i>View Full
+                                    <i class="fas fa-expand me-1"></i>View Full Map
                                 </button>
                             </div>
                             <div class="package-content">
-                                <h3 class="package-title">Private Itinerary - 04</h3>
+                                <h3 class="package-title">Family Adventure Tour</h3>
                                 <div class="package-itinerary">
-                                    Arrival <i class="fa fa-arrow-right"></i> 
-                                    Sigiriya <i class="fa fa-arrow-right"></i> 
-                                    Kandy <i class="fa fa-arrow-right"></i> 
-                                    Nuwara Eliya <i class="fa fa-arrow-right"></i> 
-                                    Ella <i class="fa fa-arrow-right"></i> 
-                                    Mirissa <i class="fa fa-arrow-right"></i> 
-                                    Benthota <i class="fa fa-arrow-right"></i> 
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                    Arrival <i class="fas fa-arrow-right text-primary"></i> 
+                                    Sigiriya <i class="fas fa-arrow-right text-primary"></i> 
+                                    Kandy <i class="fas fa-arrow-right text-primary"></i> 
+                                    Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i> 
+                                    Ella <i class="fas fa-arrow-right text-primary"></i> 
+                                    Mirissa <i class="fas fa-arrow-right text-primary"></i> 
+                                    Benthota <i class="fas fa-arrow-right text-primary"></i> 
                                     Departure
                                 </div>
+                                
+                                <div class="itinerary-destinations">
+                                    <span class="destination-tag">Kid Activities</span>
+                                    <span class="destination-tag">Beach Fun</span>
+                                    <span class="destination-tag">Cultural Shows</span>
+                                    <span class="destination-tag">Easy Hikes</span>
+                                </div>
+                                
+                                <div class="package-features">
+                                    <div class="feature">
+                                        <i class="fas fa-child"></i>
+                                        <span>Kid Friendly</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-home"></i>
+                                        <span>Family Rooms</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-swimming-pool"></i>
+                                        <span>Hotel Pools</span>
+                                    </div>
+                                </div>
+                                
                                 <p class="package-description">
-                                    The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. 
-                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                    beautifully preserved wall paintings. Set on a rocky hill, 
-                                    the temple also offers panoramic views of the surrounding countryside.
+                                    Perfect for families! This tour combines educational cultural experiences with fun activities and beach time. Child-friendly accommodations and flexible scheduling ensure an enjoyable experience for all ages.
                                 </p>
-                                <button class="btn btn-primary book-btn rounded-pill" onclick="openBookingModal(this)">
-                                    <i class="fa fa-calendar-check me-2"></i>Book My Tour
+                                <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
+                                    <i class="fa fa-calendar-check me-2"></i>View Package Details
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 5 -->
+                    <!-- Card 5 - Enhanced -->
                     <div class="col-lg-4 col-md-6">
-                        <div class="package-card" data-id="5" data-title="Private Itinerary - 05" 
+                        <div class="package-card" data-id="5" data-title="Luxury Signature Tour" 
                              data-image="img/11-day-tour-option-5.png"
                              data-itinerary="Arrival → Anuradhapura → Trincomalee → Sigiriya → Ella → Nuwara Eliya → Kandy → Departure"
-                             data-description="The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. This ancient complex consists of five caves adorned with over 150 Buddha statues and beautifully preserved wall paintings. Set on a rocky hill, the temple also offers panoramic views of the surrounding countryside.">
+                             data-description="Indulge in luxury with our premium signature tour. Stay at 5-star properties, enjoy exclusive experiences, private guides, and premium transportation. The ultimate Sri Lanka experience for discerning travelers.">
                             <div class="package-image-container">
-                                <img src="img/11-day-tour-option-5.png" class="package-image" alt="Private Itinerary 05" onclick="viewFullImage('img/11-day-tour-option-5.png')">
+                                <span class="package-badge" style="background: linear-gradient(135deg, #f39c12, #e67e22);">Premium</span>
+                                <img src="img/11-day-tour-option-5.png" class="package-image" alt="Luxury Signature Tour" onclick="viewFullImage('img/11-day-tour-option-5.png')">
                                 <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-5.png')">
-                                    <i class="fas fa-expand me-1"></i>View Full
+                                    <i class="fas fa-expand me-1"></i>View Full Map
                                 </button>
                             </div>
                             <div class="package-content">
-                                <h3 class="package-title">Private Itinerary - 05</h3>
+                                <h3 class="package-title">Luxury Signature Tour</h3>
                                 <div class="package-itinerary">
-                                    Arrival <i class="fa fa-arrow-right"></i> 
-                                    Anuradhapura <i class="fa fa-arrow-right"></i> 
-                                    Trincomalee <i class="fa fa-arrow-right"></i> 
-                                    Sigiriya <i class="fa fa-arrow-right"></i> 
-                                    Ella <i class="fa fa-arrow-right"></i> 
-                                    Nuwara Eliya <i class="fa fa-arrow-right"></i> 
-                                    Kandy <i class="fa fa-arrow-right"></i> 
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                    Arrival <i class="fas fa-arrow-right text-primary"></i> 
+                                    Anuradhapura <i class="fas fa-arrow-right text-primary"></i> 
+                                    Trincomalee <i class="fas fa-arrow-right text-primary"></i> 
+                                    Sigiriya <i class="fas fa-arrow-right text-primary"></i> 
+                                    Ella <i class="fas fa-arrow-right text-primary"></i> 
+                                    Nuwara Eliya <i class="fas fa-arrow-right text-primary"></i> 
+                                    Kandy <i class="fas fa-arrow-right text-primary"></i> 
                                     Departure
                                 </div>
+                                
+                                <div class="itinerary-destinations">
+                                    <span class="destination-tag">5-Star Hotels</span>
+                                    <span class="destination-tag">Private Guide</span>
+                                    <span class="destination-tag">Luxury Transport</span>
+                                    <span class="destination-tag">Fine Dining</span>
+                                </div>
+                                
+                                <div class="package-features">
+                                    <div class="feature">
+                                        <i class="fas fa-star"></i>
+                                        <span>5-Star Hotels</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-user-tie"></i>
+                                        <span>Private Guide</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-car-side"></i>
+                                        <span>Luxury Van</span>
+                                    </div>
+                                </div>
+                                
                                 <p class="package-description">
-                                    The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town's most famous attraction. 
-                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                    beautifully preserved wall paintings. Set on a rocky hill, 
-                                    the temple also offers panoramic views of the surrounding countryside.
+                                    Indulge in luxury with our premium signature tour. Stay at 5-star properties, enjoy exclusive experiences, private guides, and premium transportation. The ultimate Sri Lanka experience for discerning travelers.
                                 </p>
-                                <button class="btn btn-primary book-btn rounded-pill" onclick="openBookingModal(this)">
-                                    <i class="fa fa-calendar-check me-2"></i>Book My Tour
+                                <button class="btn book-btn rounded-pill" onclick="openBookingModal(this)">
+                                    <i class="fa fa-calendar-check me-2"></i>View Package Details
                                 </button>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Card 6 -->
+                    
+                    <!-- Custom Tour Card -->
                     <div class="col-lg-4 col-md-6">
-                        <div class="package-card" data-id="6" data-title="Private Itinerary - 06" 
-                             data-image="img/11-day-tour-option-1.png"
-                             data-itinerary="Arrival → Colombo → Kandy → Ella → Yala → Galle → Departure"
-                             data-description="Experience the best of Sri Lanka with this comprehensive tour covering cultural, scenic, and wildlife highlights. Perfect for first-time visitors seeking a complete Sri Lankan experience with comfortable accommodations and expert guides.">
-                            <div class="package-image-container">
-                                <img src="img/11-day-tour-option-1.png" class="package-image" alt="Private Itinerary 06" onclick="viewFullImage('img/11-day-tour-option-1.png')">
-                                <button class="view-full-btn" onclick="viewFullImage('img/11-day-tour-option-1.png')">
-                                    <i class="fas fa-expand me-1"></i>View Full
-                                </button>
+                        <div class="package-card" style="border: 2px dashed #3498db;">
+                            <div class="package-image-container" style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1)); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-plus-circle" style="font-size: 5rem; color: #3498db;"></i>
                             </div>
                             <div class="package-content">
-                                <h3 class="package-title">Private Itinerary - 06</h3>
-                                <div class="package-itinerary">
-                                    Arrival <i class="fa fa-arrow-right"></i> 
-                                    Colombo <i class="fa fa-arrow-right"></i> 
-                                    Kandy <i class="fa fa-arrow-right"></i> 
-                                    Ella <i class="fa fa-arrow-right"></i> 
-                                    Yala <i class="fa fa-arrow-right"></i> 
-                                    Galle <i class="fa fa-arrow-right"></i> 
-                                    Departure
+                                <h3 class="package-title">Customize Your Tour</h3>
+                                <div class="package-itinerary" style="border: 2px dashed #3498db; background: rgba(52, 152, 219, 0.05);">
+                                    <i class="fas fa-pencil-alt text-primary"></i>
+                                    Design Your Own Perfect Itinerary
                                 </div>
+                                
+                                <div class="itinerary-destinations">
+                                    <span class="destination-tag">Mix & Match</span>
+                                    <span class="destination-tag">Your Dates</span>
+                                    <span class="destination-tag">Your Budget</span>
+                                    <span class="destination-tag">Your Pace</span>
+                                </div>
+                                
+                                <div class="package-features">
+                                    <div class="feature">
+                                        <i class="fas fa-sliders-h"></i>
+                                        <span>Flexible</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-user-cog"></i>
+                                        <span>Personalized</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-headset"></i>
+                                        <span>Expert Help</span>
+                                    </div>
+                                </div>
+                                
                                 <p class="package-description">
-                                    Experience the best of Sri Lanka with this comprehensive tour covering cultural, 
-                                    scenic, and wildlife highlights. Perfect for first-time visitors seeking a complete 
-                                    Sri Lankan experience with comfortable accommodations and expert guides.
+                                    Don't see exactly what you're looking for? Work with our travel experts to create a completely customized 11-day itinerary that matches your interests, budget, and travel style perfectly.
                                 </p>
-                                <button class="btn btn-primary book-btn rounded-pill" onclick="openBookingModal(this)">
-                                    <i class="fa fa-calendar-check me-2"></i>Book My Tour
+                                <button class="btn book-btn rounded-pill" onclick="openCustomTour()">
+                                    <i class="fas fa-pencil-alt me-2"></i>Design Your Tour
                                 </button>
                             </div>
                         </div>
@@ -871,7 +1138,7 @@
                 </div>
             </div>
         </div>
-        <!-- Packages Grid End -->
+        <!-- ENHANCED Packages Grid End -->
 
         <!-- Full Image Modal -->
         <div class="image-modal" id="imageModal">
@@ -1176,6 +1443,30 @@
                         const imageSrc = card.getAttribute('data-image');
                         viewFullImage(imageSrc);
                     }
+                });
+            });
+
+            // Open custom tour modal
+            function openCustomTour() {
+                const message = "I'd like to create a custom 11-day Sri Lanka tour. Can we discuss my preferences and create a personalized itinerary?";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/94763661600?text=${encodedMessage}`;
+                
+                window.open(whatsappUrl, '_blank');
+            }
+
+            // Add animation to cards on scroll
+            document.addEventListener('DOMContentLoaded', function() {
+                const cards = document.querySelectorAll('.package-card');
+                cards.forEach((card, index) => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(30px)';
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
                 });
             });
         </script>
