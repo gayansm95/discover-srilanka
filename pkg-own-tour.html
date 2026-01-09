@@ -115,6 +115,7 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
             margin-top: 10px;
+            min-height: 200px;
         }
 
         .item {
@@ -159,6 +160,11 @@
             font-size: 0.8rem;
             color: red;
             display: none;
+            margin-bottom: 5px;
+        }
+
+        .validation-message.show {
+            display: block;
         }
 
         #map {
@@ -184,6 +190,11 @@
             border-radius: 12px;
             text-align: center;
             max-width: 400px;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
         /* Custom scalable animated pin */
@@ -327,43 +338,43 @@
                     <h3>Complete Your Travel Details</h3>
                     <p class="mb-4" style="color: #3498db;">
                         Share your details to confirm your journey and begin planning.
-                    </p>
+                    </p>    
 
-                    <input class="form-control mb-1" id="name" placeholder="Full Name">
-                    <div class="validation-message" id="nameMsg">Name is required</div>
+                    <input class="form-control mb-1" id="name" placeholder="Full Name *">
+                    <div class="validation-message" id="nameMsg">Please enter your full name</div>
 
-                    <input class="form-control mb-1" id="phone" placeholder="Phone Number">
-                    <div class="validation-message" id="phoneMsg">Enter valid phone</div>
+                    <input class="form-control mb-1" id="phone" placeholder="Phone Number *">
+                    <div class="validation-message" id="phoneMsg">Please enter a valid phone number (7-15 digits)</div>
 
-                    <input class="form-control mb-1" id="email" placeholder="Email Address">
-                    <div class="validation-message" id="emailMsg">Enter valid email</div>
+                    <input class="form-control mb-1" id="email" placeholder="Email Address *">
+                    <div class="validation-message" id="emailMsg">Please enter a valid email address</div>
 
-                    <input class="form-control mb-1" type="number" id="adults" min="1" placeholder="Number of Adults">
-                    <div class="validation-message" id="adultsMsg">At least 1 adult required</div>
+                    <input class="form-control mb-1" type="number" id="adults" min="1" placeholder="Number of Adults *">
+                    <div class="validation-message" id="adultsMsg">At least 1 adult is required</div>
 
-                    <input class="form-control mb-1" type="number" id="children" min="0"
+                    <input class="form-control mb-1" type="number" id="children" min="0" value="0"
                         placeholder="Number of Children">
 
-                    <label class="mt-2">Arrival Date</label>
+                    <label class="mt-2">Arrival Date *</label>
                     <input class="form-control mb-1" type="date" id="arrival">
-                    <div class="validation-message" id="arrivalMsg">Arrival date required</div>
+                    <div class="validation-message" id="arrivalMsg">Please select an arrival date</div>
 
-                    <label>Departure Date</label>
+                    <label>Departure Date *</label>
                     <input class="form-control mb-1" type="date" id="departure">
-                    <div class="validation-message" id="departureMsg">Departure date must be after arrival</div>
+                    <div class="validation-message" id="departureMsg">Please select a departure date after arrival date</div>
 
                     <!-- Map -->
                     <div id="map"></div>
 
-                    <button class="btn btn-success w-100 mt-3" id="sendWhatsApp" disabled><i
-                            class="fa-brands fa-whatsapp"></i>
-                        Send via WhatsApp</button>
-                    <button class="btn btn-primary w-100 mt-2" id="sendEmail" disabled><i class="fa fa-envelope"></i>
-                        Send via
-                        Email</button>
-                    <button class="btn btn-info w-100 mt-2" id="generatePDF"><i class="fa fa-file-pdf"></i> Download
-                        Travel
-                        Summary PDF</button>
+                    <button class="btn btn-success w-100 mt-3" id="sendWhatsApp" disabled>
+                        <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp
+                    </button>
+                    <button class="btn btn-primary w-100 mt-2" id="sendEmail" disabled>
+                        <i class="fa fa-envelope"></i> Send via Email
+                    </button>
+                    <button class="btn btn-info w-100 mt-2" id="generatePDF" disabled>
+                        <i class="fa fa-file-pdf"></i> Download Travel Summary PDF
+                    </button>
                 </div>
             </div>
         </div>
@@ -416,6 +427,7 @@
     </a>
 
     <script>
+        // DOM Elements
         const coords = {
             Kandy: [7.2906, 80.6337],
             Sigiriya: [7.9570, 80.7603],
@@ -426,16 +438,98 @@
 
         const colors = ['#1abc9c', '#3498db', '#9b59b6', '#e67e22', '#e74c3c', '#f1c40f', '#2ecc71', '#34495e'];
 
+        // Initialize map
         let map = L.map('map').setView(coords.Kandy, 7);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://openstreetmap.org">OSM</a> contributors' }).addTo(map);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+            attribution: '&copy; <a href="https://openstreetmap.org">OSM</a> contributors' 
+        }).addTo(map);
 
         let routeControl = null;
         let markers = [];
 
-        const availableGrid = document.getElementById('availableGrid'),
-            selectedGrid = document.getElementById('selectedGrid');
+        // Get DOM elements
+        const availableGrid = document.getElementById('availableGrid');
+        const selectedGrid = document.getElementById('selectedGrid');
+        const sendWhatsApp = document.getElementById('sendWhatsApp');
+        const sendEmail = document.getElementById('sendEmail');
+        const generatePDF = document.getElementById('generatePDF');
+        const popupOverlay = document.getElementById('popupOverlay');
+        const popupOk = document.getElementById('popupOk');
 
-        // Initialize from localStorage
+        // Form inputs
+        const name = document.getElementById('name');
+        const phone = document.getElementById('phone');
+        const email = document.getElementById('email');
+        const adults = document.getElementById('adults');
+        const children = document.getElementById('children');
+        const arrival = document.getElementById('arrival');
+        const departure = document.getElementById('departure');
+
+        // ==================== DRAG AND DROP FUNCTIONALITY ====================
+        let draggedItem = null;
+
+        function setupDragAndDrop() {
+            const items = document.querySelectorAll('.item');
+            
+            items.forEach(item => {
+                item.setAttribute('draggable', 'true');
+                
+                item.addEventListener('dragstart', function(e) {
+                    draggedItem = this;
+                    this.classList.add('dragging');
+                    e.dataTransfer.setData('text/plain', this.dataset.id);
+                });
+                
+                item.addEventListener('dragend', function() {
+                    this.classList.remove('dragging');
+                    draggedItem = null;
+                });
+            });
+
+            [availableGrid, selectedGrid].forEach(container => {
+                container.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    this.style.backgroundColor = '#f0f8ff';
+                });
+                
+                container.addEventListener('dragleave', function() {
+                    this.style.backgroundColor = '';
+                });
+                
+                container.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    this.style.backgroundColor = '';
+                    
+                    if (draggedItem && draggedItem.parentElement !== this) {
+                        this.appendChild(draggedItem);
+                        saveToLocalStorage();
+                        updateRouteMap();
+                        validateForm();
+                    }
+                });
+            });
+        }
+
+        // Click functionality
+        function bindItem(item) {
+            item.onclick = (e) => {
+                if (e.target.classList.contains('dragging')) return;
+                
+                const target = item.parentElement.id === 'availableGrid' ? selectedGrid : availableGrid;
+                target.appendChild(item);
+                saveToLocalStorage();
+                updateRouteMap();
+                validateForm();
+            };
+        }
+        
+        // ==================== LOCAL STORAGE ====================
+        function saveToLocalStorage() {
+            const selectedItems = [...selectedGrid.children];
+            const selectedIds = selectedItems.map(item => item.dataset.id);
+            localStorage.setItem('selectedJourney', JSON.stringify(selectedIds));
+        }
+
         function loadFromLocalStorage() {
             const savedSelection = localStorage.getItem('selectedJourney');
             if (savedSelection) {
@@ -448,84 +542,10 @@
                 });
             }
             updateRouteMap();
-            validate();
+            validateForm();
         }
 
-        // Save to localStorage
-        function saveToLocalStorage() {
-            const selectedItems = [...selectedGrid.children];
-            const selectedIds = selectedItems.map(item => item.dataset.id);
-            localStorage.setItem('selectedJourney', JSON.stringify(selectedIds));
-        }
-
-        // Drag and drop functionality
-        let draggedItem = null;
-
-        function setupDragAndDrop() {
-            const items = document.querySelectorAll('.item');
-
-            items.forEach(item => {
-                item.setAttribute('draggable', 'true');
-
-                item.addEventListener('dragstart', function (e) {
-                    draggedItem = this;
-                    this.classList.add('dragging');
-                    e.dataTransfer.setData('text/plain', this.dataset.id);
-                });
-
-                item.addEventListener('dragend', function () {
-                    this.classList.remove('dragging');
-                    draggedItem = null;
-                });
-            });
-
-            [availableGrid, selectedGrid].forEach(container => {
-                container.addEventListener('dragover', function (e) {
-                    e.preventDefault();
-                    this.style.backgroundColor = '#f0f8ff';
-                });
-
-                container.addEventListener('dragleave', function () {
-                    this.style.backgroundColor = '';
-                });
-
-                container.addEventListener('drop', function (e) {
-                    e.preventDefault();
-                    this.style.backgroundColor = '';
-
-                    if (draggedItem && draggedItem.parentElement !== this) {
-                        this.appendChild(draggedItem);
-                        saveToLocalStorage();
-                        updateRouteMap();
-                        validate();
-                    }
-                });
-            });
-        }
-
-        // Click functionality
-        function bindItem(item) {
-            item.onclick = (e) => {
-                // Prevent triggering click when dragging
-                if (e.target.classList.contains('dragging')) return;
-
-                const target = item.parentElement.id === 'availableGrid' ? selectedGrid : availableGrid;
-                target.appendChild(item);
-                saveToLocalStorage();
-                updateRouteMap();
-                validate();
-            };
-        }
-
-        // Initialize both click and drag
-        function initializeItems() {
-            document.querySelectorAll('.item').forEach(item => {
-                bindItem(item);
-            });
-            setupDragAndDrop();
-            loadFromLocalStorage();
-        }
-
+        // ==================== MAP FUNCTIONALITY ====================
         function createPinIcon(number) {
             const color = colors[(number - 1) % colors.length];
             return L.divIcon({
@@ -537,22 +557,30 @@
         }
 
         function updateRouteMap() {
+            // Clear existing markers and route
             markers.forEach(m => map.removeLayer(m));
             markers = [];
-            if (routeControl) { map.removeControl(routeControl); routeControl = null; }
+            if (routeControl) { 
+                map.removeControl(routeControl); 
+                routeControl = null; 
+            }
 
+            // If no items selected, show default view
             if (selectedGrid.children.length < 1) {
                 map.setView(coords.Kandy, 7);
                 return;
             }
 
+            // Create waypoints from selected items
             const waypoints = [...selectedGrid.children].map(i => L.latLng(coords[i.dataset.id]));
 
+            // Add markers for each waypoint
             waypoints.forEach((wp, i) => {
                 const marker = L.marker(wp, { icon: createPinIcon(i + 1) }).addTo(map);
                 markers.push(marker);
             });
 
+            // Add routing if more than one waypoint
             if (waypoints.length > 1) {
                 routeControl = L.Routing.control({
                     waypoints: waypoints,
@@ -565,55 +593,124 @@
                 }).addTo(map);
             }
 
+            // Fit map to show all markers
             const group = new L.featureGroup(markers);
             map.fitBounds(group.getBounds().pad(0.2));
         }
 
-        // Validation & Booking
-        function toggle(id, cond, msg) {
-            const el = document.getElementById(id);
-            el.classList.toggle('invalid', !cond);
-            el.classList.toggle('valid', cond);
-            document.getElementById(msg).style.display = cond ? 'none' : 'block';
-            return cond;
+        // ==================== FORM VALIDATION ====================
+        function showValidationMessage(id, show, message) {
+            const msgElement = document.getElementById(id);
+            msgElement.textContent = message;
+            if (show) {
+                msgElement.classList.add('show');
+            } else {
+                msgElement.classList.remove('show');
+            }
         }
 
-        function validate() {
-            let ok = true;
-            ok &= toggle('name', name.value.trim() !== '', 'nameMsg');
-            ok &= toggle('phone', /^[0-9]{7,15}$/.test(phone.value), 'phoneMsg');
-            ok &= toggle('email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value), 'emailMsg');
-            ok &= toggle('adults', adults.value >= 1, 'adultsMsg');
-            ok &= toggle('arrival', arrival.value, 'arrivalMsg');
-            ok &= toggle('departure', departure.value > arrival.value, 'departureMsg');
-
-            sendWhatsApp.disabled = !ok || !selectedGrid.children.length;
-            sendEmail.disabled = !ok || !selectedGrid.children.length;
-            generatePDF.disabled = !ok || !selectedGrid.children.length;
-            return ok;
+        function validateField(fieldId, condition, msgId, errorMessage) {
+            const isValid = condition;
+            const field = document.getElementById(fieldId);
+            
+            if (isValid) {
+                field.classList.remove('invalid');
+                field.classList.add('valid');
+                showValidationMessage(msgId, false, '');
+            } else {
+                field.classList.remove('valid');
+                field.classList.add('invalid');
+                showValidationMessage(msgId, true, errorMessage);
+            }
+            
+            return isValid;
         }
 
-        // Form input event listeners
-        ['name', 'phone', 'email', 'adults', 'children', 'arrival', 'departure'].forEach(id =>
-            document.getElementById(id).addEventListener('input', validate)
-        );
+        function validateForm() {
+            let isFormValid = true;
+            
+            // Validate name
+            isFormValid &= validateField(
+                'name', 
+                name.value.trim() !== '', 
+                'nameMsg', 
+                'Please enter your full name'
+            );
+            
+            // Validate phone (7-15 digits)
+            isFormValid &= validateField(
+                'phone', 
+                /^[0-9]{7,15}$/.test(phone.value), 
+                'phoneMsg', 
+                'Please enter a valid phone number (7-15 digits)'
+            );
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            isFormValid &= validateField(
+                'email', 
+                emailRegex.test(email.value), 
+                'emailMsg', 
+                'Please enter a valid email address'
+            );
+            
+            // Validate adults
+            isFormValid &= validateField(
+                'adults', 
+                adults.value >= 1, 
+                'adultsMsg', 
+                'At least 1 adult is required'
+            );
+            
+            // Validate arrival date
+            isFormValid &= validateField(
+                'arrival', 
+                arrival.value !== '', 
+                'arrivalMsg', 
+                'Please select an arrival date'
+            );
+            
+            // Validate departure date
+            let departureValid = false;
+            if (arrival.value !== '' && departure.value !== '') {
+                const arrivalDate = new Date(arrival.value);
+                const departureDate = new Date(departure.value);
+                departureValid = departureDate > arrivalDate;
+            }
+            
+            isFormValid &= validateField(
+                'departure', 
+                departureValid, 
+                'departureMsg', 
+                'Please select a departure date after arrival date'
+            );
+            
+            // Check if at least one destination is selected
+            const hasDestinations = selectedGrid.children.length > 0;
+            
+            // Enable/disable buttons
+            const allValid = isFormValid && hasDestinations;
+            sendWhatsApp.disabled = !allValid;
+            sendEmail.disabled = !allValid;
+            generatePDF.disabled = !allValid;
+            
+            return allValid;
+        }
 
-        // Get selected items as formatted string
-        function getSelectedItems() {
-            return [...selectedGrid.children].map((item, index) =>
+        // ==================== WHATSAPP MESSAGE ====================
+        function getSelectedDestinations() {
+            return [...selectedGrid.children].map((item, index) => 
                 `${index + 1}. ${item.dataset.id}`
             ).join('\n');
         }
 
-        // WhatsApp booking function
-        sendWhatsApp.onclick = () => {
-            if (!validate()) return;
-
-            const selectedItems = getSelectedItems();
-            const message = `🚀 *Ayubowan Tours - Booking Request* 🚀
+        function createWhatsAppMessage() {
+            const destinations = getSelectedDestinations();
+            
+            return `🚀 *Ayubowan Tours - Booking Request* 🚀
 
 *Customer Details:*
-👤 *Name:* ${name.value}
+👤 *Name:* ${name.value.trim()}
 📞 *Phone:* ${phone.value}
 📧 *Email:* ${email.value}
 👥 *Adults:* ${adults.value}
@@ -622,130 +719,205 @@
 📅 *Departure Date:* ${departure.value}
 
 *Selected Itinerary:*
-${selectedItems}
+${destinations}
 
-Total Destinations: ${selectedGrid.children.length}
+*Total Destinations:* ${selectedGrid.children.length}
 
 I would like to book this tour. Please provide me with pricing and availability.`;
+        }
 
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/94763661600?text=${encodedMessage}`, '_blank');
-
-            // Save booking to localStorage
-            const bookingData = {
-                name: name.value,
-                phone: phone.value,
-                email: email.value,
-                adults: adults.value,
-                children: children.value,
-                arrival: arrival.value,
-                departure: departure.value,
-                selectedItems: [...selectedGrid.children].map(item => item.dataset.id),
-                timestamp: new Date().toISOString()
-            };
-            localStorage.setItem('lastBooking', JSON.stringify(bookingData));
-
-            setTimeout(() => popupOverlay.style.display = 'flex', 800);
-        };
-
-        // Email booking function
-        sendEmail.onclick = () => {
-            if (!validate()) return;
-
-            const selectedItems = getSelectedItems();
-            const subject = `Booking Request - ${name.value}`;
-            const body = `Ayubowan Tours Booking Request
-
-Customer Information:
-Name: ${name.value}
-Phone: ${phone.value}
-Email: ${email.value}
-Adults: ${adults.value}
-Children: ${children.value}
-Arrival Date: ${arrival.value}
-Departure Date: ${departure.value}
-
-Selected Itinerary:
-${selectedItems}
-
-Please contact me to discuss this booking request.`;
-
-            location.href = `mailto:info@ayubowantours.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        };
-
-        // PDF generation function
-        generatePDF.onclick = () => {
-            if (!validate()) return;
+        // ==================== PDF GENERATION ====================
+        function generateTravelPDF() {
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
-
-            // Header
+            
+            // Add logo/header
             doc.setFontSize(20);
             doc.setTextColor(40, 180, 99);
-            doc.text("Ayubowan Tours", 105, 20, null, null, 'center');
-
+            doc.text("Ayubowan Tours", 105, 20, { align: 'center' });
+            
             doc.setFontSize(16);
             doc.setTextColor(0, 0, 0);
-            doc.text("Travel Summary", 105, 30, null, null, 'center');
-
-            // Customer Details
+            doc.text("Travel Summary", 105, 30, { align: 'center' });
+            
+            // Line separator
+            doc.setDrawColor(200, 200, 200);
+            doc.line(10, 35, 200, 35);
+            
+            // Customer Information
             doc.setFontSize(12);
-            doc.text(`Customer Name: ${name.value}`, 10, 45);
-            doc.text(`Phone: ${phone.value}`, 10, 52);
-            doc.text(`Email: ${email.value}`, 10, 59);
-            doc.text(`Travelers: ${adults.value} Adult(s), ${children.value} Child(ren)`, 10, 66);
-            doc.text(`Arrival: ${arrival.value}`, 10, 73);
-            doc.text(`Departure: ${departure.value}`, 10, 80);
-
-            // Itinerary
-            doc.setFontSize(14);
-            doc.text("Selected Itinerary:", 10, 90);
-
-            doc.setFontSize(12);
-            [...selectedGrid.children].forEach((item, index) => {
-                doc.text(`${index + 1}. ${item.dataset.id}`, 15, 100 + (index * 7));
+            doc.setFont(undefined, 'bold');
+            doc.text("Customer Information:", 10, 45);
+            
+            doc.setFont(undefined, 'normal');
+            doc.text(`Name: ${name.value.trim()}`, 10, 52);
+            doc.text(`Phone: ${phone.value}`, 10, 59);
+            doc.text(`Email: ${email.value}`, 10, 66);
+            doc.text(`Adults: ${adults.value}`, 10, 73);
+            doc.text(`Children: ${children.value || '0'}`, 10, 80);
+            doc.text(`Arrival: ${arrival.value}`, 10, 87);
+            doc.text(`Departure: ${departure.value}`, 10, 94);
+            
+            // Travel Itinerary
+            doc.setFont(undefined, 'bold');
+            doc.text("Travel Itinerary:", 10, 105);
+            
+            doc.setFont(undefined, 'normal');
+            const destinations = [...selectedGrid.children];
+            let yPos = 112;
+            
+            destinations.forEach((item, index) => {
+                doc.text(`${index + 1}. ${item.dataset.id}`, 15, yPos);
+                yPos += 7;
             });
-
+            
             // Footer
             doc.setFontSize(10);
             doc.setTextColor(100, 100, 100);
-            doc.text("Generated on: " + new Date().toLocaleDateString(), 10, 280);
-            doc.text("Thank you for choosing Ayubowan Tours!", 105, 290, null, null, 'center');
+            doc.text(`Generated on: ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`, 10, 280);
+            doc.text("Thank you for choosing Ayubowan Tours!", 105, 290, { align: 'center' });
+            
+            // Save PDF
+            doc.save(`Ayubowan_Tour_${name.value.replace(/\s+/g, '_')}_${Date.now()}.pdf`);
+        }
 
-            doc.save("Ayubowan_Tours_Travel_Summary.pdf");
-        };
+        // ==================== EMAIL FUNCTION ====================
+        function sendBookingEmail() {
+            const destinations = getSelectedDestinations();
+            const subject = `Booking Request - ${name.value.trim()} - Ayubowan Tours`;
+            const body = `Dear Ayubowan Tours Team,
 
-        // Popup functionality
-        popupOk.onclick = () => {
-            popupOverlay.style.display = 'none';
-            location.reload();
-        };
+I would like to request a booking with the following details:
 
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function () {
-            initializeItems();
+CUSTOMER INFORMATION:
+- Name: ${name.value.trim()}
+- Phone: ${phone.value}
+- Email: ${email.value}
+- Adults: ${adults.value}
+- Children: ${children.value || '0'}
+- Arrival Date: ${arrival.value}
+- Departure Date: ${departure.value}
 
-            // Set minimum date for arrival to today
+SELECTED DESTINATIONS:
+${destinations}
+
+Total Destinations: ${selectedGrid.children.length}
+
+Please contact me to discuss this booking request further.
+
+Best regards,
+${name.value.trim()}`;
+
+            const encodedSubject = encodeURIComponent(subject);
+            const encodedBody = encodeURIComponent(body);
+            
+            window.location.href = `mailto:info@ayubowantours.com?subject=${encodedSubject}&body=${encodedBody}`;
+        }
+
+        // ==================== EVENT LISTENERS ====================
+        function setupEventListeners() {
+            // Form input validation
+            [name, phone, email, adults, children, arrival, departure].forEach(field => {
+                field.addEventListener('input', validateForm);
+                field.addEventListener('change', validateForm);
+            });
+            
+            // Date validation constraints
             const today = new Date().toISOString().split('T')[0];
             arrival.min = today;
             departure.min = today;
-
-            // Update departure min when arrival changes
-            arrival.addEventListener('change', function () {
-                departure.min = this.value;
-                if (departure.value < this.value) {
-                    departure.value = '';
+            
+            arrival.addEventListener('change', function() {
+                if (this.value) {
+                    departure.min = this.value;
+                    if (departure.value && departure.value < this.value) {
+                        departure.value = '';
+                    }
                 }
-                validate();
+                validateForm();
             });
-        });
+            
+            // WhatsApp button
+            sendWhatsApp.addEventListener('click', function() {
+                if (!validateForm()) return;
+                
+                const message = createWhatsAppMessage();
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/94763661600?text=${encodedMessage}`;
+                
+                // Save booking data
+                const bookingData = {
+                    name: name.value.trim(),
+                    phone: phone.value,
+                    email: email.value,
+                    adults: adults.value,
+                    children: children.value || '0',
+                    arrival: arrival.value,
+                    departure: departure.value,
+                    destinations: [...selectedGrid.children].map(item => item.dataset.id),
+                    timestamp: new Date().toISOString()
+                };
+                localStorage.setItem('lastBooking', JSON.stringify(bookingData));
+                
+                // Open WhatsApp
+                window.open(whatsappUrl, '_blank');
+                
+                // Show confirmation
+                setTimeout(() => {
+                    popupOverlay.style.display = 'flex';
+                }, 500);
+            });
+            
+            // Email button
+            sendEmail.addEventListener('click', function() {
+                if (!validateForm()) return;
+                sendBookingEmail();
+            });
+            
+            // PDF button
+            generatePDF.addEventListener('click', function() {
+                if (!validateForm()) return;
+                generateTravelPDF();
+            });
+            
+            // Popup OK button
+            popupOk.addEventListener('click', function() {
+                popupOverlay.style.display = 'none';
+            });
+        }
+
+        // ==================== INITIALIZATION ====================
+        function initialize() {
+            // Setup drag and drop
+            document.querySelectorAll('.item').forEach(item => {
+                bindItem(item);
+            });
+            setupDragAndDrop();
+            
+            // Load saved data
+            loadFromLocalStorage();
+            
+            // Setup event listeners
+            setupEventListeners();
+            
+            // Initial validation
+            validateForm();
+            
+            // Hide spinner
+            setTimeout(() => {
+                document.getElementById('spinner').style.display = 'none';
+            }, 500);
+        }
+
+        // Start everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initialize);
     </script>
+
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
-
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
