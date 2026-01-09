@@ -92,7 +92,6 @@
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            padding-top: 5%;
             padding-bottom: 5%
         }
 
@@ -273,20 +272,30 @@
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h3 class="text-white display-3 mb-4">Package Customization</h1>
+            <h3 class="text-white display-3 mb-4">Design Your Sri Lanka Journey</h1>
                 <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active text-white">Create My Own Package</li>
+                    <li class="breadcrumb-item"><a href="./packages.html">Packages</a></li>
+                    <li class="breadcrumb-item active text-white">Design Your Sri Lanka Journey</li>
                 </ol>
         </div>
     </div>
     <!-- Header End -->
+    <div class="container-fluid service py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 1000px;">
+            <h5 class="section-title px-3">Design Your Sri Lanka Journey</h5>
+            <p class="mb-4">
+                Create your perfect Sri Lanka getaway with ease, simply click or drag destinations to
+                build your ideal journey. When you’re happy with your selection, fill in your travel details
+                and send your request via WhatsApp or email. Our expert team will carefully review your itinerary
+                and get in touch soon to plan the next exciting steps of your adventure.
+            </p>
+        </div>
+    </div>
 
     <div class="flex-container-dragging">
-
         <!-- AVAILABLE -->
         <div class="box-dragging">
-            <h3>Available Places</h3>
+            <h3>Explore Destinations</h3>
             <div class="items-grid" id="availableGrid">
                 <div class="item" data-id="Kandy"><img src="img/kandy-package-card.jpeg">
                     <div>Kandy</div>
@@ -300,19 +309,49 @@
                 <div class="item" data-id="Yala"><img src="img/14-day-tour-srilanka-yala.jpg">
                     <div>Yala Safari</div>
                 </div>
+                <div class="item" data-id="Dambulla"><img src="img/dambulla-cave-temple.jpg">
+                    <div>Dambulla Cave Temple</div>
+                </div>
+                <div class="item" data-id="Trincomalee"><img src="img/14-day-tour-srilanka-trinco.jpg">
+                    <div>Trincomalee</div>
+                </div>
+                <div class="item" data-id="Arugambay"><img src="img/Arugam-Bay.jpg">
+                    <div>Arugam-Bay</div>
+                </div>
+                <div class="item" data-id="Anuradhapura"><img src="img/anuradhapura.jpg">
+                    <div>Anuradhapura</div>
+                </div>
+                <div class="item" data-id="Polonnaruwa"><img src="img/anuradhapura-polonnaruwa-sigiriya-1024x576.jpg">
+                    <div>Polonnaruwa</div>
+                </div>
+                <div class="item" data-id="galle"><img src="img/14-day-tour-srilanka-galle.jpg">
+                    <div>Galle</div>
+                </div>
+                <div class="item" data-id="downcoastbeachers"><img src="img/beachers.jpg">
+                    <div>Down coast beaches</div>
+                </div>
+                <div class="item" data-id="nuwaraeliya"><img src="img/14-day-tour-srilanka-nuwaraeliya.jpg">
+                    <div>Nuwara Eliya</div>
+                </div>
+                <div class="item" data-id="jaffna"><img src="img/jafna-blog-post.jpg">
+                    <div>Jaffna</div>
+                </div>
             </div>
             <div id="noOptionsMsg" class="no-options" style="display:none;">No options available</div>
         </div>
 
         <!-- SELECTED -->
         <div class="box-dragging">
-            <h3>Selected Places</h3>
+            <h3>Your Selected Journey</h3>
             <div class="items-grid" id="selectedGrid"></div>
         </div>
 
         <!-- BOOKING -->
         <div class="traveler-info box-selected">
-            <h3>Booking Details</h3>
+            <h3>Complete Your Travel Details</h3>
+            <p class="mb-4" style="color: #3498db;">
+                Share your details to confirm your journey and begin planning.
+            </p>
 
             <input class="form-control mb-1" id="name" placeholder="Customer Name">
             <div class="validation-message" id="nameMsg">Name is required.</div>
@@ -323,8 +362,10 @@
             <input class="form-control mb-1" id="email" placeholder="Email Address">
             <div class="validation-message" id="emailMsg">Enter valid email.</div>
 
-            <input class="form-control mb-1" id="guests" type="number" min="1" value="1" placeholder="Number of Guests">
-            <div class="validation-message" id="guestsMsg">Must have at least 1 guest.</div>
+            <input class="form-control mb-1" id="audits" type="auditsCount" min="2" placeholder="Number of Audits">
+            <div class="validation-message" id="guestsMsg">Must have at least 2 guests.</div>
+
+            <input class="form-control mb-1" id="childs" type="childCount" min="0" placeholder="Number of Childs">
 
             <label class="mt-2">Arrival Date</label>
             <input class="form-control mb-1" id="arrival" type="date">
@@ -467,13 +508,14 @@
 
         function formatItinerary() { return [...selectedGrid.children].map((i, x) => `${x + 1}. ${i.dataset.id}`).join('\n'); }
 
-        const fields = ['name', 'phone', 'email', 'guests', 'arrival', 'departure'];
+        const fields = ['name', 'phone', 'email', 'guests', 'childs', 'arrival', 'departure'];
         function validateForm() {
             let valid = true;
             const n = document.getElementById('name').value.trim();
             const p = document.getElementById('phone').value.trim();
             const e = document.getElementById('email').value.trim();
-            const g = document.getElementById('guests').value;
+            const g = document.getElementById('audits').value;
+            const c = document.getElementById('childs').value;
             const a = document.getElementById('arrival').value;
             const d = document.getElementById('departure').value;
 
@@ -495,9 +537,14 @@
             else { emailEl.classList.remove('invalid'); emailEl.classList.add('valid'); document.getElementById('emailMsg').style.display = 'none'; }
 
             // Guests
-            const guestsEl = document.getElementById('guests');
+            const guestsEl = document.getElementById('audits');
             if (!g || g < 1) { guestsEl.classList.add('invalid'); guestsEl.classList.remove('valid'); document.getElementById('guestsMsg').style.display = 'block'; valid = false; }
             else { guestsEl.classList.remove('invalid'); guestsEl.classList.add('valid'); document.getElementById('guestsMsg').style.display = 'none'; }
+
+            // Childs
+            const childsEL = document.getElementById('childs');
+            if (!g || g < 1) { childsEL.classList.add('invalid'); childsEL.classList.remove('valid'); document.getElementById('guestsMsg').style.display = 'block'; valid = false; }
+            else { childsEL.classList.remove('invalid'); childsEL.classList.add('valid'); document.getElementById('guestsMsg').style.display = 'none'; }
 
             // Arrival
             const arrivalEl = document.getElementById('arrival');
@@ -520,7 +567,8 @@
             const n = document.getElementById('name').value.trim();
             const p = document.getElementById('phone').value.trim();
             const e = document.getElementById('email').value.trim();
-            const g = document.getElementById('guests').value;
+            const g = document.getElementById('audits').value;
+            const c = document.getElementById('childs').value;
             const a = document.getElementById('arrival').value;
             const d = document.getElementById('departure').value;
 
@@ -530,6 +578,7 @@ Name: ${n}
 Phone: ${p}
 Email: ${e}
 Guests: ${g}
+Childs: ${c}
 Arrival: ${a}
 Departure: ${d}
 
@@ -554,7 +603,8 @@ ${itinerary}`;
             const n = document.getElementById('name').value.trim();
             const p = document.getElementById('phone').value.trim();
             const e = document.getElementById('email').value.trim();
-            const g = document.getElementById('guests').value;
+            const g = document.getElementById('audits').value;
+            const c = document.getElementById('child').value;
             const a = document.getElementById('arrival').value;
             const d = document.getElementById('departure').value;
 
@@ -563,6 +613,7 @@ ${itinerary}`;
 Phone: ${p}
 Email: ${e}
 Guests: ${g}
+Childs: ${c}
 Arrival: ${a}
 Departure: ${d}
 
