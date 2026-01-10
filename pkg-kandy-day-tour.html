@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Ayubowan Tours</title>
+        <title>Ayubowan Tours - Kandy Day Tour</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -11,7 +11,7 @@
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
         <!-- Icon Font Stylesheet -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
@@ -73,6 +73,611 @@
                 right: 15px;
             }
             }
+
+            /* ENHANCED TOUR SECTION STYLES */
+            .enhanced-tour-section {
+                position: relative;
+                padding: 60px 0;
+                background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%);
+            }
+
+            .tour-timeline-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                position: relative;
+                padding: 0 15px;
+            }
+
+            .section-header {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            .section-title {
+                font-size: 2.8rem;
+                font-weight: 800;
+                color: #1a365d;
+                margin-bottom: 15px;
+                position: relative;
+                display: inline-block;
+            }
+
+            .section-title:after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(135deg, #f39c12, #e74c3c);
+                border-radius: 2px;
+            }
+
+            .section-subtitle {
+                font-size: 1.2rem;
+                color: #666;
+                max-width: 700px;
+                margin: 0 auto;
+                line-height: 1.6;
+            }
+
+            /* OVERVIEW SECTION */
+            .overview-section {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+                margin-bottom: 50px;
+            }
+
+            .overview-header {
+                background: linear-gradient(135deg, #9b59b6, #8e44ad);
+                color: white;
+                padding: 25px 30px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .overview-header:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+            }
+
+            .overview-main-title {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-bottom: 8px;
+                color: white;
+            }
+
+            .tour-highlight {
+                display: inline-block;
+                background: rgba(243, 156, 18, 0.9);
+                color: white;
+                padding: 6px 18px;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                margin-top: 12px;
+                border: 2px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .overview-content {
+                padding: 40px;
+            }
+
+            .overview-image-section {
+                position: relative;
+                height: 300px;
+                overflow: hidden;
+                border-radius: 15px;
+                margin-bottom: 30px;
+            }
+
+            .overview-main-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.7s ease;
+            }
+
+            .overview-image-section:hover .overview-main-image {
+                transform: scale(1.05);
+            }
+
+            .image-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+                padding: 20px;
+                color: white;
+            }
+
+            .image-caption {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            /* DAY PLAN TIMELINE */
+            .day-plan-section {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+                margin-bottom: 50px;
+            }
+
+            .day-plan-header {
+                background: linear-gradient(135deg, #3498db, #2980b9);
+                color: white;
+                padding: 25px 30px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .day-plan-header:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+            }
+
+            .day-plan-title {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-bottom: 8px;
+                color: white;
+            }
+
+            .day-plan-content {
+                padding: 40px;
+            }
+
+            /* ENHANCED TIME SCHEDULE */
+            .enhanced-schedule-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 25px;
+                margin-top: 20px;
+            }
+
+            .enhanced-time-slot {
+                background: white;
+                border-radius: 15px;
+                padding: 25px;
+                transition: all 0.3s ease;
+                border: 1px solid #eaeaea;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .enhanced-time-slot:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 6px;
+                background: linear-gradient(to bottom, #3498db, #2ecc71);
+            }
+
+            .enhanced-time-slot:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(52, 152, 219, 0.1);
+                border-color: #3498db;
+            }
+
+            .time-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 15px;
+            }
+
+            .time-badge-enhanced {
+                background: linear-gradient(135deg, #3498db, #2980b9);
+                color: white;
+                padding: 8px 18px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.95rem;
+                box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+            }
+
+            .activity-icon {
+                width: 45px;
+                height: 45px;
+                background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                color: #3498db;
+            }
+
+            .slot-title-enhanced {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: #2c3e50;
+                margin-bottom: 12px;
+                line-height: 1.4;
+            }
+
+            .slot-desc-enhanced {
+                color: #666;
+                line-height: 1.6;
+                margin-bottom: 15px;
+                font-size: 0.95rem;
+            }
+
+            .activity-highlights {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 15px;
+            }
+
+            .highlight-tag {
+                background: #e8f4fc;
+                color: #2980b9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 500;
+                border: 1px solid #d1e8ff;
+                transition: all 0.3s ease;
+            }
+
+            .highlight-tag:hover {
+                background: #3498db;
+                color: white;
+                transform: translateY(-2px);
+            }
+
+            /* PRICE SECTION */
+            .price-section-enhanced {
+                background: linear-gradient(135deg, #1a365d, #2c3e50);
+                color: white;
+                border-radius: 25px;
+                padding: 60px 40px;
+                margin: 70px auto;
+                position: relative;
+                overflow: hidden;
+                max-width: 1000px;
+                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+            }
+
+            .price-section-enhanced:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+                background-size: cover;
+            }
+
+            .price-header-enhanced {
+                text-align: center;
+                margin-bottom: 50px;
+                position: relative;
+                z-index: 2;
+            }
+
+            .price-title-enhanced {
+                font-size: 2.8rem;
+                font-weight: 800;
+                margin-bottom: 15px;
+                background: linear-gradient(135deg, #fff, #f39c12);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .price-amount-enhanced {
+                font-size: 4rem;
+                font-weight: 900;
+                color: #f39c12;
+                margin: 20px 0;
+                text-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+            }
+
+            .price-subtitle-enhanced {
+                font-size: 1.2rem;
+                opacity: 0.9;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .inclusion-grid-enhanced {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 30px;
+                margin: 50px 0;
+                position: relative;
+                z-index: 2;
+            }
+
+            .inclusion-item-enhanced {
+                background: rgba(255, 255, 255, 0.08);
+                backdrop-filter: blur(10px);
+                border-radius: 15px;
+                padding: 30px 25px;
+                text-align: center;
+                transition: all 0.4s ease;
+                border: 1px solid rgba(255, 255, 255, 0.15);
+            }
+
+            .inclusion-item-enhanced:hover {
+                transform: translateY(-10px);
+                background: rgba(255, 255, 255, 0.12);
+                border-color: rgba(243, 156, 18, 0.3);
+            }
+
+            .inclusion-icon-enhanced {
+                font-size: 2.5rem;
+                color: #2ecc71;
+                margin-bottom: 20px;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .inclusion-item-enhanced h5 {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                color: white;
+            }
+
+            .inclusion-text-enhanced {
+                font-size: 0.95rem;
+                opacity: 0.9;
+                line-height: 1.5;
+            }
+
+            /* BOOKING CTA */
+            .booking-cta-enhanced {
+                background: linear-gradient(135deg, #ffffff, #f8f9fa);
+                border-radius: 25px;
+                padding: 60px 40px;
+                margin: 70px auto;
+                text-align: center;
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                max-width: 1000px;
+            }
+
+            .cta-title-enhanced {
+                font-size: 2.5rem;
+                color: #1a365d;
+                margin-bottom: 20px;
+                font-weight: 800;
+            }
+
+            .cta-subtitle {
+                font-size: 1.2rem;
+                color: #666;
+                max-width: 700px;
+                margin: 0 auto 40px;
+                line-height: 1.6;
+            }
+
+            .cta-buttons-enhanced {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 30px;
+            }
+
+            .btn-cta-enhanced {
+                padding: 18px 40px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                border-radius: 50px;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                text-decoration: none;
+                min-width: 220px;
+                justify-content: center;
+            }
+
+            .btn-cta-primary {
+                background: linear-gradient(135deg, #25D366, #128C7E);
+                color: white;
+                border: none;
+                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            }
+
+            .btn-cta-primary:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+                color: white;
+            }
+
+            .btn-cta-secondary {
+                background: white;
+                color: #3498db;
+                border: 2px solid #3498db;
+                box-shadow: 0 5px 20px rgba(52, 152, 219, 0.15);
+            }
+
+            .btn-cta-secondary:hover {
+                background: #3498db;
+                color: white;
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(52, 152, 219, 0.25);
+            }
+
+            /* RESPONSIVE DESIGN */
+            @media (max-width: 1200px) {
+                .tour-timeline-container {
+                    padding: 0 20px;
+                }
+            }
+
+            @media (max-width: 992px) {
+                .section-title {
+                    font-size: 2.3rem;
+                }
+                
+                .enhanced-schedule-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                }
+                
+                .price-title-enhanced {
+                    font-size: 2.3rem;
+                }
+                
+                .price-amount-enhanced {
+                    font-size: 3.2rem;
+                }
+                
+                .overview-image-section {
+                    height: 250px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .overview-content, .day-plan-content {
+                    padding: 30px;
+                }
+                
+                .overview-header, .day-plan-header {
+                    padding: 20px;
+                }
+                
+                .overview-main-title, .day-plan-title {
+                    font-size: 1.5rem;
+                }
+                
+                .overview-image-section {
+                    height: 220px;
+                }
+                
+                .enhanced-schedule-grid {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+                
+                .price-section-enhanced {
+                    padding: 40px 25px;
+                    margin: 50px 0;
+                }
+                
+                .inclusion-grid-enhanced {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 20px;
+                }
+                
+                .booking-cta-enhanced {
+                    padding: 40px 25px;
+                    margin: 50px 0;
+                }
+                
+                .cta-title-enhanced {
+                    font-size: 2rem;
+                }
+                
+                .cta-buttons-enhanced {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .btn-cta-enhanced {
+                    width: 100%;
+                    max-width: 300px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .section-title {
+                    font-size: 1.9rem;
+                }
+                
+                .section-subtitle {
+                    font-size: 1rem;
+                }
+                
+                .overview-image-section {
+                    height: 200px;
+                }
+                
+                .time-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+                
+                .inclusion-grid-enhanced {
+                    grid-template-columns: 1fr;
+                }
+                
+                .price-title-enhanced {
+                    font-size: 1.9rem;
+                }
+                
+                .price-amount-enhanced {
+                    font-size: 2.8rem;
+                }
+                
+                .btn-cta-enhanced {
+                    padding: 16px 30px;
+                    font-size: 1rem;
+                }
+            }
+
+            /* ANIMATIONS */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .overview-section, .day-plan-section {
+                animation: fadeInUp 0.6s ease forwards;
+                opacity: 0;
+            }
+
+            /* CUSTOM SCROLLBAR */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, #3498db, #2ecc71);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(135deg, #2ecc71, #3498db);
+            }
         </style>
     </head>
 
@@ -91,7 +696,6 @@
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="./index.html" class="navbar-brand p-0">
                     <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -105,7 +709,7 @@
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
+                    <a href="#booking" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
                 </div>
             </nav>
         </div>
@@ -124,78 +728,329 @@
         </div>
         <!-- Header End -->
 
-        <!-- About Start -->
-        <div class="container-fluid about py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="container py-5">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-5">
-                                <div class="h-100">
-                                    <img src="img/pkg-kandy-overview.jpg" class="img-fluid w-100 h-100" alt="">
+        <!-- ENHANCED TOUR SECTION START -->
+        <div class="container-fluid enhanced-tour-section">
+            <div class="tour-timeline-container">
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h2 class="section-title">Kandy Day Tour Experience</h2>
+                    <p class="section-subtitle">Explore the cultural heart of Sri Lanka - a UNESCO World Heritage City filled with ancient temples, royal gardens, and breathtaking views in just one unforgettable day.</p>
+                </div>
+
+                <!-- Overview Section -->
+                <div class="overview-section">
+                    <div class="overview-header">
+                        <h3 class="overview-main-title">Eight Hours Around Kandy – Day Tour</h3>
+                        <span class="tour-highlight">UNESCO World Heritage City</span>
+                    </div>
+                    
+                    <div class="overview-content">
+                        <div class="overview-image-section">
+                            <img src="img/pkg-kandy-overview.jpg" class="overview-main-image" alt="Kandy Overview">
+                            <div class="image-overlay">
+                                <p class="image-caption">Sri Dalada Maligawa - Temple of the Sacred Tooth Relic</p>
+                            </div>
+                        </div>
+                        
+                        <p class="mb-4">Kandy, a UNESCO World Heritage City, is the cultural heart of Sri Lanka and the capital of 
+                            the Central Province. It is one of the island's most beloved destinations, welcoming both local and 
+                            international visitors. At the center of its charm stands the Sri Dalada Maligawa, the sacred Temple 
+                            of the Tooth Relic of Lord Buddha. Renowned for its magnificent architecture, ornate decorative walls, 
+                            golden roof, intricate woodwork, and fascinating museums, the temple offers a deeply spiritual experience. 
+                            Daily poojas (religious services) held in the morning, midday, and evening add to its serene and timeless atmosphere.</p>
+                        
+                        <div class="overview-image-section">
+                            <img src="img/pkg-kandy-overview2.jpg" class="overview-main-image" alt="Kandy Cultural Experience">
+                            <div class="image-overlay">
+                                <p class="image-caption">Traditional Kandyan Dance Performance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day Plan Section -->
+                <div class="day-plan-section">
+                    <div class="day-plan-header">
+                        <h3 class="day-plan-title">Your Day Plan in Kandy</h3>
+                        <span class="tour-highlight" style="background: rgba(52, 152, 219, 0.9);">8-Hour Comprehensive Tour</span>
+                    </div>
+                    
+                    <div class="day-plan-content">
+                        <h4 class="mb-4" style="color: #2c3e50; font-size: 1.4rem; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-clock text-primary"></i> Tour Schedule with Timeframes
+                        </h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Hotel Pickup</h5>
+                                <p class="slot-desc-enhanced">We'll pick you up from your hotel in Colombo or surrounding areas to begin your Kandy adventure.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">10:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-temple"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Dalada Maligawa Visit</h5>
+                                <p class="slot-desc-enhanced">Visit the sacred Temple of the Tooth Relic, witness the ancient rituals, and explore the temple museums.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">UNESCO Site</span>
+                                    <span class="highlight-tag">Sacred Temple</span>
                                 </div>
                             </div>
-                            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                                <h1 class="mb-4"><span class="text-primary">Eighth Hours around Kandy – Day Tour</span></h1>    
-                                <p class="mb-4">Kandy, a UNESCO World Heritage City, is the cultural heart of Sri Lanka and the capital of 
-                                    the Central Province. It is one of the island’s most beloved destinations, welcoming both local and 
-                                    international visitors. At the center of its charm stands the Sri Dalada Maligawa, the sacred Temple 
-                                    of the Tooth Relic of Lord Buddha. Renowned for its magnificent architecture, ornate decorative walls, 
-                                    golden roof, intricate woodwork, and fascinating museums, the temple offers a deeply spiritual experience. 
-                                    Daily poojas (religious services) held in the morning, midday, and evening add to its serene and timeless atmosphere. </p>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">11:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Kandy Lake Walk</h5>
+                                <p class="slot-desc-enhanced">Take a peaceful walk around the beautiful Kandy Lake, enjoying views of the temple and surrounding hills.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">12:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-binoculars"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Arthur's Seat Viewpoint</h5>
+                                <p class="slot-desc-enhanced">Visit this famous viewpoint for panoramic views of Kandy city and the surrounding mountains.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Panoramic Views</span>
+                                    <span class="highlight-tag">Photography</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">12:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Delicious Lunch</h5>
+                                <p class="slot-desc-enhanced">Enjoy authentic Sri Lankan cuisine at a carefully selected local restaurant.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">02:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-leaf"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Peradeniya Royal Botanical Garden</h5>
+                                <p class="slot-desc-enhanced">Explore one of Asia's finest botanical gardens with exotic plants, orchids, and giant trees.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Botanical Garden</span>
+                                    <span class="highlight-tag">Nature Walk</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">03:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-tower"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Ambuluwawa Tower</h5>
+                                <p class="slot-desc-enhanced">Climb the iconic tower for breathtaking 360-degree views of the central highlands.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Mountain Views</span>
+                                    <span class="highlight-tag">Adventure</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-landmark"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">British Garrison Cemetery</h5>
+                                <p class="slot-desc-enhanced">Visit this historic cemetery with graves dating back to the British colonial period.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">05:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-music"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Kandy Cultural Dance Show</h5>
+                                <p class="slot-desc-enhanced">Watch traditional Kandyan dance performances with vibrant costumes and drumming.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Cultural Show</span>
+                                    <span class="highlight-tag">Traditional Dance</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">05:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-coffee"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Evening Tea</h5>
+                                <p class="slot-desc-enhanced">Relax with a cup of Ceylon tea while enjoying the cool evening breeze.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">06:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-pagoda"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Nelligala International Buddhist Center</h5>
+                                <p class="slot-desc-enhanced">Visit this modern Buddhist center with stunning architecture and peaceful atmosphere.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Return Journey</h5>
+                                <p class="slot-desc-enhanced">Comfortable drive back to your hotel, concluding your Kandy day tour.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5 pt-4 border-top">
+                            <div class="alert alert-info border-0">
+                                <i class="fas fa-info-circle me-2"></i>
+                                <strong>Special Note:</strong> Esala Dalada Perahera festival viewing available only during August season. Additional charge of $60 per person applies for festival viewing.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Price Section -->
+                <div class="price-section-enhanced" id="booking">
+                    <div class="price-header-enhanced">
+                        <h2 class="price-title-enhanced">Tour Package Price</h2>
+                        <div class="price-amount-enhanced">USD 60</div>
+                        <p class="price-subtitle-enhanced">Per Person • Minimum Two Persons Required • All Inclusive Day Tour</p>
+                    </div>
+
+                    <div class="inclusion-grid-enhanced">
+                        <div class="inclusion-item-enhanced">
+                            <div class="inclusion-icon-enhanced"><i class="fas fa-utensils"></i></div>
+                            <h5>Delicious Lunch</h5>
+                            <p class="inclusion-text-enhanced">Authentic Sri Lankan cuisine experience</p>
+                        </div>
+                        <div class="inclusion-item-enhanced">
+                            <div class="inclusion-icon-enhanced"><i class="fas fa-ticket-alt"></i></div>
+                            <h5>All Entrance Fees</h5>
+                            <p class="inclusion-text-enhanced">Including Dalada Maligawa, Botanical Garden, Ambuluwawa</p>
+                        </div>
+                        <div class="inclusion-item-enhanced">
+                            <div class="inclusion-icon-enhanced"><i class="fas fa-music"></i></div>
+                            <h5>Cultural Dance Show</h5>
+                            <p class="inclusion-text-enhanced">Traditional Kandyan dance performance tickets</p>
+                        </div>
+                        <div class="inclusion-item-enhanced">
+                            <div class="inclusion-icon-enhanced"><i class="fas fa-car"></i></div>
+                            <h5>Private Transport</h5>
+                            <p class="inclusion-text-enhanced">Air-conditioned vehicle with professional driver</p>
+                        </div>
+                        <div class="inclusion-item-enhanced">
+                            <div class="inclusion-icon-enhanced"><i class="fas fa-user-tie"></i></div>
+                            <h5>English Speaking Guide</h5>
+                            <p class="inclusion-text-enhanced">Knowledgeable driver/guide throughout the tour</p>
+                        </div>
+                        <div class="inclusion-item-enhanced">
+                            <div class="inclusion-icon-enhanced"><i class="fas fa-road"></i></div>
+                            <h5>All Road Charges</h5>
+                            <p class="inclusion-text-enhanced">Tolls and parking fees included</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <a href="https://wa.me/94763661600?text=Hi!%20I%20would%20like%20to%20book%20the%20Kandy%20Day%20Tour%20for%20USD%2060%20per%20person."
+                            target="_blank" class="btn-cta-enhanced btn-cta-primary">
+                            <i class="fab fa-whatsapp me-2"></i>Book Now on WhatsApp
+                        </a>
+                        <p class="mt-4 text-light opacity-85">Flexible booking • Same-day confirmation available</p>
+                    </div>
+                </div>
+
+                <!-- Booking CTA -->
+                <div class="booking-cta-enhanced">
+                    <h2 class="cta-title-enhanced">Ready to Explore Kandy?</h2>
+                    <p class="cta-subtitle">Book your Kandy day tour today and experience the cultural heart of Sri Lanka. Limited spots available for each day!</p>
+
+                    <div class="cta-buttons-enhanced">
+                        <a href="tel:+94763661600" class="btn-cta-enhanced btn-cta-primary">
+                            <i class="fas fa-phone-alt me-2"></i>Call to Book Now
+                        </a>
+                        <a href="mailto:info@ayubowantours.com?subject=Kandy Day Tour Inquiry" class="btn-cta-enhanced btn-cta-secondary">
+                            <i class="fas fa-envelope me-2"></i>Send Email Inquiry
+                        </a>
+                        <a href="./booking.html" class="btn-cta-enhanced btn-cta-secondary">
+                            <i class="fas fa-calendar-alt me-2"></i>Book Through Website
+                        </a>
+                    </div>
+
+                    <div class="mt-5 pt-4 border-top">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary rounded-circle p-3 me-3">
+                                        <i class="fas fa-check text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Instant Confirmation</h6>
+                                        <p class="small text-muted mb-0">Get confirmed within minutes of booking</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-success rounded-circle p-3 me-3">
+                                        <i class="fas fa-shield-alt text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Flexible Cancellation</h6>
+                                        <p class="small text-muted mb-0">Free cancellation up to 24 hours before</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-warning rounded-circle p-3 me-3">
+                                        <i class="fas fa-headset text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">24/7 Support</h6>
+                                        <p class="small text-muted mb-0">Dedicated support throughout your tour</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="container py-5">
-                        <div class="row g-5">
-                            <div class="col-lg-5">
-                                <div class="h-100">
-                                    <img src="img/pkg-kandy-overview2.jpg" class="img-fluid w-100 h-100" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                                <h1 class="mb-4"><span class="text-primary">Day Plan</span></h1>
-                                <p class="mb-4">• Dalada Maligawa visit.</p>
-                                <p class="mb-4">• Walk Kandy Lake Round.</p>
-                                <p class="mb-4">• Kandy View point ( Arthur’s seat).</p>
-                                <p class="mb-4">• British Garrison Cemetery.</p>
-                                <p class="mb-4">• Kandy Cultural Dancing Show (If Aviailable).</p>
-                                <p class="mb-4">• Peradeniya Royal Botanical Garden.</p>
-                                <p class="mb-4">• Ambuluwawa Tower.</p>
-                                <p class="mb-4">• Nelligala International Buddhist Center.</p>
-                                <p class="mb-4">• Esala Dalada Perahera (Only Augest Session & Additinally will charge $60 per person).</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border border-primary rounded p-0 ps-0">
-                        <div class="container py-5">
-                            <div class="row g-5 ">
-                                <div class="service-content">
-                                    <h1 class="mb-4"><span class="text-primary">Include in the Price</span></h1>
-                                    <p class="mb-0">• Delicious Lunch</p>
-                                    <p class="mb-0">• Dalada Maligawa Entrance Fees</p>
-                                    <p class="mb-0">• Royal Botanical Garden Entrance Fees</p>
-                                    <p class="mb-0">• Ambuluwawa Entrance Fees</p>
-                                    <p class="mb-0">• Evening Tea</p>
-                                    <p class="mb-0">• Cultural Dance Entrance fees</p>
-                                    <p class="mb-0">• Transport in an Air Conditioned vehicle</p>
-                                    <p class="mb-0">• English-speaking driver</p>
-                                    <p class="mb-0">• Road Tolls and parking fees</p>
-                                    <br><br>
-                                    <p class="mb-4"><span class="text-primary">USD 60 Per Person</span>( Minimum Two Persons In a Tour)</p>
-                                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4">Book My Tour</a> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
+        <!-- ENHANCED TOUR SECTION END -->
 
         <!-- Subscribe Start -->
         <div class="container-fluid subscribe py-5">
@@ -243,6 +1098,100 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <script>
+            // Hide spinner when page loads
+            window.addEventListener('load', function () {
+                document.getElementById('spinner').style.display = 'none';
+                initializeEnhancedAnimations();
+            });
+
+            // Initialize enhanced animations
+            function initializeEnhancedAnimations() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+
+                // Observe all enhanced sections
+                document.querySelectorAll('.overview-section, .day-plan-section, .price-section-enhanced, .booking-cta-enhanced').forEach(section => {
+                    observer.observe(section);
+                });
+            }
+
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Enhanced hover effects for time slots
+            document.querySelectorAll('.enhanced-time-slot').forEach(slot => {
+                slot.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                slot.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Enhanced hover effects for sections
+            document.querySelectorAll('.overview-section, .day-plan-section').forEach(section => {
+                section.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.12)';
+                });
+
+                section.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.08)';
+                });
+            });
+
+            // WhatsApp booking function
+            function bookOnWhatsApp() {
+                const message = "Hi! I would like to book the Kandy Day Tour for USD 60 per person.";
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/94763661600?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+            }
+
+            // Add click event to WhatsApp booking button
+            document.querySelector('.btn-cta-primary').addEventListener('click', function (e) {
+                if (this.href.includes('whatsapp')) {
+                    e.preventDefault();
+                    bookOnWhatsApp();
+                }
+            });
+
+            // Initialize all sections with staggered animation
+            setTimeout(() => {
+                const sections = document.querySelectorAll('.overview-section, .day-plan-section');
+                sections.forEach((section, index) => {
+                    section.style.animationDelay = `${index * 0.2}s`;
+                });
+            }, 100);
+        </script>
     </body>
 
 </html>
