@@ -3,10 +3,10 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Ayubowan Tours</title>
+        <title>Ayubowan Tours | Wild Safari - Sri Lanka's Wildlife Adventure</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+        <meta content="Sri Lanka Safari, Yala National Park, Udawalawa, Habarana, Leopard Spotting, Elephant Safari, Wildlife Tours" name="keywords">
+        <meta content="Experience Sri Lanka's incredible wildlife safaris. Track leopards in Yala, watch elephants in Udawalawa, and explore jungle trails in Habarana's wilderness." name="description">
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,55 +23,946 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        
+        <!-- Enhanced Safari Styles -->
         <style>
             /* WhatsApp Floating Button with Pulse Animation */
             .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 80px;
-            height: 80px;
-            background-color: #25D366;
-            color: #fff;
-            border-radius: 50%;
-            font-size: 42px;
-            text-align: center;
-            line-height: 80px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-            z-index: 1000;
-            animation: whatsapp-pulse 1.8s infinite;
-            text-decoration: none;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 80px;
+                height: 80px;
+                background-color: #25D366;
+                color: #fff;
+                border-radius: 50%;
+                font-size: 42px;
+                text-align: center;
+                line-height: 80px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+                z-index: 1000;
+                animation: whatsapp-pulse 1.8s infinite;
+                text-decoration: none;
             }
 
             /* Hover effect */
             .whatsapp-float:hover {
-            transform: scale(1.1);
-            transition: 0.3s ease;
+                transform: scale(1.1);
+                transition: 0.3s ease;
             }
 
             /* Pulse animation */
             @keyframes whatsapp-pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
+                0% {
+                    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+                }
+                70% {
+                    box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
+                }
+                100% {
+                    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+                }
             }
 
             /* Mobile responsive */
             @media (max-width: 768px) {
-            .whatsapp-float {
+                .whatsapp-float {
+                    width: 70px;
+                    height: 70px;
+                    font-size: 38px;
+                    line-height: 70px;
+                    bottom: 15px;
+                    right: 15px;
+                }
+            }
+
+            /* ENHANCED SAFARI STYLES */
+            .blog-hero {
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/safari main.jpeg');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                height: 450px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                margin-bottom: 50px;
+                border-radius: 0 0 30px 30px;
+            }
+
+            .blog-hero-content {
+                color: white;
+                text-align: center;
+                z-index: 2;
+                padding: 0 20px;
+            }
+
+            .blog-hero-title {
+                font-size: 4rem;
+                font-weight: 700;
+                margin-bottom: 15px;
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            }
+
+            .blog-hero-subtitle {
+                font-size: 1.4rem;
+                opacity: 0.95;
+                max-width: 800px;
+                margin: 0 auto;
+                font-weight: 300;
+            }
+
+            /* Safari Theme */
+            .safari-hero {
+                background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(101, 67, 33, 0.1));
+                border-radius: 20px;
+                padding: 50px;
+                margin: 40px 0;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .safari-hero:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+                background-size: cover;
+            }
+
+            /* Destination Cards - Enhanced */
+            .destination-card-enhanced {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+                margin-bottom: 60px;
+                transition: all 0.4s ease;
+                border: 1px solid #eaeaea;
+            }
+
+            .destination-card-enhanced:hover {
+                transform: translateY(-12px);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            }
+
+            .destination-image-container {
+                position: relative;
+                height: 400px;
+                overflow: hidden;
+            }
+
+            .destination-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s ease;
+            }
+
+            .destination-image-container:hover .destination-image {
+                transform: scale(1.08);
+            }
+
+            .destination-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+                padding: 40px;
+                color: white;
+            }
+
+            .safari-badge {
+                background: linear-gradient(135deg, #8B4513, #654321);
+                color: white;
+                padding: 8px 20px;
+                border-radius: 30px;
+                font-weight: 600;
+                font-size: 0.9rem;
+                display: inline-block;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .destination-title {
+                font-size: 2.2rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+                color: white;
+            }
+
+            .destination-subtitle {
+                font-size: 1.2rem;
+                opacity: 0.95;
+                font-weight: 300;
+            }
+
+            .destination-content-enhanced {
+                padding: 50px;
+            }
+
+            .destination-description {
+                color: #555;
+                line-height: 1.9;
+                margin-bottom: 30px;
+                font-size: 1.1rem;
+            }
+
+            /* Safari Features Grid */
+            .safari-features {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 20px;
+                margin: 30px 0;
+            }
+
+            .feature-item {
+                text-align: center;
+                padding: 20px;
+                background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                border-radius: 15px;
+                transition: all 0.3s ease;
+            }
+
+            .feature-item:hover {
+                transform: translateY(-5px);
+                background: linear-gradient(135deg, #8B4513, #654321);
+                color: white;
+            }
+
+            .feature-item:hover .feature-icon {
+                color: white;
+            }
+
+            .feature-icon {
+                font-size: 2rem;
+                color: #8B4513;
+                margin-bottom: 15px;
+                display: block;
+            }
+
+            .feature-text {
+                font-weight: 600;
+                font-size: 0.95rem;
+            }
+
+            /* Highlights Section */
+            .highlights-section {
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #8B4513;
+            }
+
+            .highlight-title {
+                font-size: 1.8rem;
+                color: #2c3e50;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .highlight-title i {
+                color: #8B4513;
+                font-size: 1.5rem;
+            }
+
+            .highlight-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 25px;
+            }
+
+            .highlight-item {
+                text-align: center;
+                padding: 25px;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+                transition: all 0.3s ease;
+            }
+
+            .highlight-item:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            }
+
+            .highlight-icon {
                 width: 70px;
                 height: 70px;
-                font-size: 38px;
-                line-height: 70px;
-                bottom: 15px;
-                right: 15px;
+                background: linear-gradient(135deg, #8B4513, #654321);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+                font-size: 1.8rem;
+                color: white;
             }
+
+            .highlight-text {
+                font-size: 1rem;
+                color: #555;
+                font-weight: 600;
+                line-height: 1.5;
+            }
+
+            /* Travel Tips Section */
+            .travel-tips {
+                background: linear-gradient(135deg, #fff8e1, #ffecb3);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #ff9800;
+            }
+
+            .tips-title {
+                font-size: 1.8rem;
+                color: #e65100;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .tips-title i {
+                color: #ff9800;
+                font-size: 1.5rem;
+            }
+
+            .tips-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+            }
+
+            .tip-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                background: white;
+                padding: 25px;
+                border-radius: 15px;
+                transition: all 0.3s ease;
+            }
+
+            .tip-item:hover {
+                transform: translateX(5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+
+            .tip-icon {
+                width: 50px;
+                height: 50px;
+                background: #8B4513;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.3rem;
+                flex-shrink: 0;
+            }
+
+            .tip-content h5 {
+                color: #2c3e50;
+                margin-bottom: 10px;
+                font-size: 1.2rem;
+            }
+
+            .tip-content p {
+                color: #666;
+                font-size: 1rem;
+                margin-bottom: 0;
+                line-height: 1.6;
+            }
+
+            /* Wildlife Section */
+            .wildlife-section {
+                background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #4caf50;
+            }
+
+            .wildlife-title {
+                font-size: 1.8rem;
+                color: #2e7d32;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .wildlife-title i {
+                color: #4caf50;
+                font-size: 1.5rem;
+            }
+
+            /* Best Time to Visit */
+            .season-guide {
+                background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #ff9800;
+            }
+
+            .season-title {
+                font-size: 1.8rem;
+                color: #2c3e50;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .season-title i {
+                color: #ff9800;
+                font-size: 1.5rem;
+            }
+
+            .season-months {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .month-card {
+                background: white;
+                padding: 25px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+                transition: all 0.3s ease;
+            }
+
+            .month-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            }
+
+            .month-name {
+                font-weight: 700;
+                color: #2c3e50;
+                margin-bottom: 15px;
+                font-size: 1.1rem;
+            }
+
+            .month-status {
+                font-size: 0.95rem;
+                padding: 8px 20px;
+                border-radius: 25px;
+                font-weight: 600;
+                display: inline-block;
+            }
+
+            .status-best {
+                background: linear-gradient(135deg, #4caf50, #2e7d32);
+                color: white;
+            }
+
+            .status-good {
+                background: linear-gradient(135deg, #ff9800, #f57c00);
+                color: white;
+            }
+
+            .status-fair {
+                background: linear-gradient(135deg, #2196f3, #1976d2);
+                color: white;
+            }
+
+            .status-low {
+                background: linear-gradient(135deg, #9e9e9e, #757575);
+                color: white;
+            }
+
+            /* Booking CTA Enhanced */
+            .booking-cta-enhanced {
+                background: linear-gradient(135deg, #3e2723, #5d4037);
+                color: white;
+                border-radius: 25px;
+                padding: 60px 50px;
+                text-align: center;
+                margin: 80px 0;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .booking-cta-enhanced:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+                background-size: cover;
+            }
+
+            .cta-title-enhanced {
+                font-size: 2.8rem;
+                margin-bottom: 20px;
+                color: white;
+                position: relative;
+                z-index: 2;
+                font-weight: 700;
+            }
+
+            .cta-description {
+                font-size: 1.2rem;
+                opacity: 0.95;
+                max-width: 800px;
+                margin: 0 auto 40px;
+                position: relative;
+                z-index: 2;
+                line-height: 1.8;
+                font-weight: 300;
+            }
+
+            .cta-buttons {
+                display: flex;
+                gap: 25px;
+                justify-content: center;
+                flex-wrap: wrap;
+                position: relative;
+                z-index: 2;
+            }
+
+            .btn-cta {
+                padding: 18px 45px;
+                font-size: 1.2rem;
+                font-weight: 700;
+                border-radius: 60px;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 15px;
+                text-decoration: none;
+                letter-spacing: 0.5px;
+            }
+
+            .btn-cta-primary {
+                background: linear-gradient(135deg, #25D366, #128C7E);
+                color: white;
+                border: none;
+                box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+            }
+
+            .btn-cta-primary:hover {
+                transform: translateY(-5px) scale(1.05);
+                box-shadow: 0 20px 40px rgba(37, 211, 102, 0.6);
+                color: white;
+            }
+
+            .btn-cta-secondary {
+                background: white;
+                color: #3e2723;
+                border: 2px solid white;
+                box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+            }
+
+            .btn-cta-secondary:hover {
+                background: transparent;
+                color: white;
+                transform: translateY(-5px) scale(1.05);
+                box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
+            }
+
+            /* Map Section */
+            .map-section {
+                background: white;
+                border-radius: 20px;
+                padding: 50px;
+                margin: 50px 0;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .map-title {
+                font-size: 2.2rem;
+                color: #2c3e50;
+                margin-bottom: 30px;
+                font-weight: 700;
+            }
+
+            .map-container {
+                background: linear-gradient(135deg, #8B4513, #654321);
+                height: 350px;
+                border-radius: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.8rem;
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 30px;
+            }
+
+            .map-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            /* Photo Gallery */
+            .photo-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+                margin: 50px 0;
+            }
+
+            .photo-item {
+                border-radius: 15px;
+                overflow: hidden;
+                height: 250px;
+                position: relative;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+
+            .gallery-photo {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.6s ease;
+            }
+
+            .photo-item:hover .gallery-photo {
+                transform: scale(1.1);
+            }
+
+            .photo-caption {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+                color: white;
+                padding: 20px;
+                transform: translateY(100%);
+                transition: transform 0.4s ease;
+            }
+
+            .photo-item:hover .photo-caption {
+                transform: translateY(0);
+            }
+
+            /* Safari Specific Styles */
+            .leopard-section {
+                background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #ff9800;
+            }
+
+            .leopard-title {
+                font-size: 1.8rem;
+                color: #e65100;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .leopard-title i {
+                color: #ff9800;
+                font-size: 1.5rem;
+            }
+
+            .elephant-section {
+                background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #9c27b0;
+            }
+
+            .elephant-title {
+                font-size: 1.8rem;
+                color: #7b1fa2;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .elephant-title i {
+                color: #9c27b0;
+                font-size: 1.5rem;
+            }
+
+            /* Safari Gear Section */
+            .gear-section {
+                background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #2196f3;
+            }
+
+            .gear-title {
+                font-size: 1.8rem;
+                color: #1565c0;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .gear-title i {
+                color: #2196f3;
+                font-size: 1.5rem;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 1200px) {
+                .blog-hero-title {
+                    font-size: 3.5rem;
+                }
+                
+                .destination-image-container {
+                    height: 350px;
+                }
+            }
+
+            @media (max-width: 992px) {
+                .blog-hero-title {
+                    font-size: 3rem;
+                }
+                
+                .blog-hero {
+                    height: 400px;
+                }
+                
+                .destination-image-container {
+                    height: 300px;
+                }
+                
+                .destination-content-enhanced {
+                    padding: 40px;
+                }
+                
+                .cta-title-enhanced {
+                    font-size: 2.4rem;
+                }
+                
+                .highlight-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .blog-hero {
+                    height: 350px;
+                }
+                
+                .blog-hero-title {
+                    font-size: 2.5rem;
+                }
+                
+                .blog-hero-subtitle {
+                    font-size: 1.2rem;
+                }
+                
+                .destination-image-container {
+                    height: 250px;
+                }
+                
+                .destination-title {
+                    font-size: 1.8rem;
+                }
+                
+                .highlight-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .tips-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .cta-buttons {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .btn-cta {
+                    width: 100%;
+                    max-width: 350px;
+                    justify-content: center;
+                }
+                
+                .season-months {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .photo-gallery {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 576px) {
+                .blog-hero-title {
+                    font-size: 2.2rem;
+                }
+                
+                .blog-hero-subtitle {
+                    font-size: 1.1rem;
+                }
+                
+                .destination-image-container {
+                    height: 220px;
+                }
+                
+                .destination-content-enhanced {
+                    padding: 30px;
+                }
+                
+                .cta-title-enhanced {
+                    font-size: 2rem;
+                }
+                
+                .season-months {
+                    grid-template-columns: 1fr;
+                }
+                
+                .photo-gallery {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            /* Animations */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(40px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes safariAnimation {
+                0% {
+                    background-position: 0 0;
+                }
+                100% {
+                    background-position: 1000px 0;
+                }
+            }
+
+            .destination-card-enhanced, .highlight-item, .tip-item {
+                animation: fadeInUp 0.7s ease forwards;
+                opacity: 0;
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, #8B4513, #654321);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(135deg, #654321, #8B4513);
+            }
+
+            /* Safari Pattern Background */
+            .safari-bg {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .safari-bg:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100px;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(139,69,19,0.1)"/></svg>');
+                background-size: 1200px 100px;
+                animation: safariAnimation 20s linear infinite;
+                z-index: 1;
+            }
+
+            /* Animal Rating System */
+            .animal-rating {
+                display: flex;
+                gap: 10px;
+                margin: 15px 0;
+            }
+
+            .rating-star {
+                color: #ff9800;
+                font-size: 1.2rem;
+            }
+
+            /* Interactive Elements */
+            .interactive-map {
+                position: relative;
+                height: 400px;
+                background: linear-gradient(135deg, #a1887f, #8d6e63);
+                border-radius: 20px;
+                overflow: hidden;
+            }
+
+            .safari-marker {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background: #8B4513;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            }
+
+            .safari-marker:hover {
+                transform: scale(1.2);
+                background: #654321;
+            }
+
+            /* Temperature Display */
+            .temp-display {
+                font-size: 2rem;
+                font-weight: bold;
+                color: #8B4513;
+                display: flex;
+                align-items: center;
+                gap: 10px;
             }
         </style>
     </head>
@@ -91,7 +982,6 @@
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="./index.html" class="navbar-brand p-0">
                     <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -111,133 +1001,533 @@
         </div>
         <!-- Navbar & Hero End -->
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">Wild Safari</h1>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
-                    <li class="breadcrumb-item active text-white">Wild Safari</li>
-                </ol>    
+        <!-- Blog Hero Section -->
+        <div class="blog-hero safari-bg">
+            <div class="container">
+                <div class="blog-hero-content">
+                    <h1 class="blog-hero-title">Wild Safari</h1>
+                    <p class="blog-hero-subtitle">Sri Lanka's Ultimate Wildlife Adventure - Where Wilderness Comes Alive</p>
+                </div>
             </div>
         </div>
-        <!-- Header End -->
 
-        <!-- About Start -->
-        <div class="container-fluid about py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/safari main.jpeg" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Sri Lankan Wildlife Safari Experience: <span class="text-primary">A Journey into the Wild</span></h1>    
-                        <p class="mb-4">Sri Lanka is one of the best wildlife destinations in Asia, 
-                            offering foreign travelers a rare chance to experience rich biodiversity within a compact island. 
-                            From dense jungles to open grasslands, Sri Lanka’s national parks provide unforgettable safari 
-                            adventures where nature thrives in its purest form. Among the most popular safari destinations 
-                            are Yala National Park, Udawalawa National Park, and Habarana Safari, 
-                            each offering a unique wildlife experience. </p>
+        <!-- ENHANCED SAFARI CONTENT START -->
+        <div class="container py-5">
+            <!-- Introduction Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/safari main.jpeg" alt="Sri Lanka Wildlife Safari" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="safari-badge">Top 3 Safari Destinations</div>
+                        <h2 class="destination-title">Sri Lanka's Wildlife Kingdom</h2>
+                        <p class="destination-subtitle">Asia's Premier Wildlife Destination - 26 National Parks Await</p>
                     </div>
                 </div>
-            </div>
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/tiger-fight.jpg" class="img-fluid w-100 h-100" alt="">
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Welcome to Sri Lanka's incredible wildlife kingdom, where 26 national parks and 61 wildlife sanctuaries protect some of Asia's most diverse and accessible wildlife experiences. Despite being just 65,610 square kilometers in size, Sri Lanka boasts one of the highest rates of biological endemism in the world, making it a true biodiversity hotspot. From dense tropical rainforests and dry zone jungles to coastal wetlands and montane forests, the island's varied ecosystems support an extraordinary array of wildlife that has captivated nature enthusiasts for centuries.
+                    </p>
+                    <p class="destination-description">
+                        Sri Lanka's wildlife safaris offer more than just animal sightings—they provide immersive journeys into ancient ecosystems where the rhythm of nature continues undisturbed. The island is home to 123 mammal species (including 16 endemic), 227 bird species (with 26 endemic), 178 reptile species (with 92 endemic), and an incredible array of amphibians, fish, and invertebrates. What makes Sri Lanka truly special for wildlife tourism is the accessibility of these encounters—within just a few hours' drive from major cities, you can find yourself tracking leopards, observing elephant herds, or spotting rare endemic birds in their natural habitats.
+                    </p>
+
+                    <!-- Safari Highlights -->
+                    <div class="highlights-section">
+                        <h3 class="highlight-title"><i class="fas fa-paw"></i> Why Sri Lanka for Wildlife Safaris?</h3>
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #8B4513, #654321);">
+                                    <i class="fas fa-cat"></i>
+                                </div>
+                                <p class="highlight-text">World's Highest Leopard Density<br>Yala National Park</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #795548, #5d4037);">
+                                    <i class="fas fa-elephant"></i>
+                                </div>
+                                <p class="highlight-text">Asian Elephant Gatherings<br>Udawalawa & Minneriya</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #4caf50, #2e7d32);">
+                                    <i class="fas fa-dove"></i>
+                                </div>
+                                <p class="highlight-text">Birdwatcher's Paradise<br>433 Species Recorded</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #ff9800, #f57c00);">
+                                    <i class="fas fa-tree"></i>
+                                </div>
+                                <p class="highlight-text">Diverse Ecosystems<br>Rainforest to Dry Zone</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Yala National Park <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Yala National Park is Sri Lanka’s most famous wildlife reserve and is 
-                            renowned for having one of the highest leopard densities in the world. 
-                            A safari through Yala takes travelers across diverse landscapes including forests, 
-                            lagoons, and rocky plains. In addition to leopards, visitors may spot elephants, 
-                            sloth bears, crocodiles, deer, wild boar, and a wide variety of bird species. 
-                            Yala is ideal for travelers seeking thrilling wildlife encounters combined with dramatic natural scenery.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/udawalawa safari.jpg" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Udawalawa National Park <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Udawalawa National Park is best known for its large population of Asian elephants. 
-                            The open grasslands and wide reservoirs make wildlife viewing easier, 
-                            offering excellent opportunities for photography. Safaris here are calm and rewarding, e
-                            specially for travelers eager to observe elephants in their natural habitat. 
-                            Udawalawa is also home to water buffalo, jackals, crocodiles, and many bird species, 
-                            making it a favorite for nature lovers and families. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/yala-slider1.jpg" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Habarana Safari <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Located near Sri Lanka’s Cultural Triangle, Habarana Safari offers a unique 
-                            blend of wildlife and rural landscapes. Elephant sightings are common, 
-                            particularly around lakes and forest edges. The area is famous for seasonal 
-                            elephant gatherings and peaceful jungle safaris. Habarana is perfect for 
-                            travelers who want to combine wildlife exploration with visits to 
-                            ancient sites such as Sigiriya and Polonnaruwa. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="container-fluid bg-light service py-5">
-                <div class="container py-5">
-                    <div class="row g-4">
-                        <div class="col-lg-12">
-                            <div class="row g-4">
-                                <div class="col-12">
-                                    <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                                        <div class="service-icon p-4">
-                                            <i class="fa fa-globe fa-4x text-primary"></i>
-                                        </div>
-                                        <div class="service-content">
-                                            <p class="mb-0">Sri Lanka offers an exceptional safari experience without long travel distances. 
-                                                Foreign travelers can enjoy guided jeep safaris led by experienced naturalists, 
-                                                ensuring safety and educational value. The country’s commitment to 
-                                                wildlife conservation and eco-tourism allows visitors to experience nature responsibly.
-                                                The dry season, generally from May to September, is ideal for wildlife safaris, as animals gather around water sources. 
-                                                Early morning and late afternoon safaris provide the best chances for sightings.</p>
-                                            <p class="mb-0">
-                                                A wildlife safari in Sri Lanka is more than just animal spotting it is an immersive 
-                                                journey into untouched nature, vibrant ecosystems, and ancient landscapes. 
-                                                Whether tracking leopards in Yala, watching elephants roam freely in Udawalawa, 
-                                                or exploring jungle trails in Habarana, Sri Lanka promises a safari experience that 
-                                                will stay with you forever.
-                                                Book Your safari experience in here </p>
-                                        </div>
-                                        <div>
-                                            <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
-                                        </div>
-                                    </div>
+
+                    <!-- Safari Tips -->
+                    <div class="travel-tips">
+                        <h3 class="tips-title"><i class="fas fa-binoculars"></i> Safari Preparation Guide</h3>
+                        <div class="tips-grid">
+                            <div class="tip-item">
+                                <div class="tip-icon" style="background: #8B4513;">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Best Safari Times</h5>
+                                    <p>Early morning (6-9 AM) and late afternoon (3-6 PM) offer best wildlife activity and lighting. Animals are most active during these cooler hours.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon" style="background: #795548;">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Photography Equipment</h5>
+                                    <p>Bring telephoto lens (200-400mm), bean bag for stability, dust protection, and spare batteries. Early morning light is ideal for photography.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon" style="background: #4caf50;">
+                                    <i class="fas fa-tshirt"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Clothing & Gear</h5>
+                                    <p>Neutral colors (khaki, olive, brown), hat, sunscreen, insect repellent, and binoculars. Layer clothing for changing temperatures.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon" style="background: #ff9800;">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Safari Safety</h5>
+                                    <p>Stay in vehicle at all times, follow guide instructions, maintain silence near animals, and keep safe distance from wildlife.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Yala National Park Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/tiger-fight.jpg" alt="Yala National Park Leopard" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="safari-badge" style="background: linear-gradient(135deg, #ff9800, #f57c00);">Leopard Capital</div>
+                        <h2 class="destination-title">Yala National Park</h2>
+                        <p class="destination-subtitle">Sri Lanka's Premier Wildlife Reserve - Home of the Leopard</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Yala National Park stands as Sri Lanka's most celebrated wildlife destination and one of Asia's finest safari experiences. Spanning 979 square kilometers across the southeast coast, Yala boasts the world's highest density of leopards, making it the ultimate destination for big cat enthusiasts. But Yala offers much more than just leopard sightings—its diverse ecosystems encompass everything from monsoon forests and freshwater lakes to coastal lagoons and rocky outcrops, creating a rich tapestry of habitats that support an incredible variety of wildlife.
+                    </p>
+                    <p class="destination-description">
+                        Yala is divided into five blocks, with Block 1 being the most visited and offering the best leopard sightings. The park's leopards have become remarkably accustomed to vehicles, allowing for unprecedented viewing opportunities and photographic moments. Beyond leopards, Yala supports healthy populations of Asian elephants, sloth bears, crocodiles, spotted deer, wild boar, and over 200 bird species. The coastal section features stunning beaches where elephants sometimes roam, and ancient rock formations that tell stories of civilizations dating back to 3rd century BC. A safari in Yala is as much about the dramatic landscapes as it is about the wildlife encounters.
+                    </p>
+
+                    <!-- Leopard Focus -->
+                    <div class="leopard-section">
+                        <h3 class="leopard-title"><i class="fas fa-cat"></i> The Leopard Experience</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-search text-warning me-2"></i> Spotting Techniques</h5>
+                                <ul>
+                                    <li><strong>Best Locations:</strong> Rock outcrops, waterholes, and jungle tracks in Block 1</li>
+                                    <li><strong>Best Times:</strong> Early morning (6-8 AM) and late afternoon (4-6 PM)</li>
+                                    <li><strong>Signs to Watch:</strong> Alarm calls from monkeys and deer</li>
+                                    <li><strong>Patience Required:</strong> Leopards are masters of camouflage</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-camera text-primary me-2"></i> Photography Tips</h5>
+                                <ul>
+                                    <li><strong>Equipment:</strong> 300mm+ lens, bean bag for stability</li>
+                                    <li><strong>Lighting:</strong> Golden hour provides best conditions</li>
+                                    <li><strong>Composition:</strong> Include habitat context in shots</li>
+                                    <li><strong>Behavior:</strong> Capture leopards on rocks or near water</li>
+                                </ul>
+                                <div class="alert alert-warning mt-3">
+                                    <i class="fas fa-lightbulb me-2"></i>
+                                    <strong>Pro Tip:</strong> Book multiple safaris - leopard sightings increase dramatically with more time in the park.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Park Features -->
+                    <div class="safari-features">
+                        <div class="feature-item">
+                            <i class="fas fa-cat feature-icon"></i>
+                            <div class="feature-text">Leopard Spotting</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-elephant feature-icon"></i>
+                            <div class="feature-text">Elephant Herds</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-bear feature-icon"></i>
+                            <div class="feature-text">Sloth Bears</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-dove feature-icon"></i>
+                            <div class="feature-text">Bird Watching</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-water feature-icon"></i>
+                            <div class="feature-text">Coastal Lagoons</div>
+                        </div>
+                    </div>
+
+                    <!-- Photo Gallery -->
+                    <div class="photo-gallery">
+                        <div class="photo-item">
+                            <img src="img/yala-leopard.jpg" alt="Yala Leopard" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Regal Leopard Sighting</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/yala-elephants.jpg" alt="Yala Elephants" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Elephant Herd at Waterhole</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/yala-birds.jpg" alt="Yala Birds" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Peacock Display</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/yala-landscape.jpg" alt="Yala Landscape" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Dramatic Park Landscapes</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Udawalawa National Park Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/udawalawa safari.jpg" alt="Udawalawa Elephants" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="safari-badge" style="background: linear-gradient(135deg, #795548, #5d4037);">Elephant Kingdom</div>
+                        <h2 class="destination-title">Udawalawa National Park</h2>
+                        <p class="destination-subtitle">Sri Lanka's Elephant Sanctuary - Open Plains & Water Reservoirs</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Udawalawa National Park offers one of Sri Lanka's most reliable and rewarding elephant watching experiences. Created in 1972 to protect the catchment area of the Udawalawa Reservoir and provide sanctuary for displaced wildlife, this 308-square-kilometer park has become famous for its substantial elephant population and excellent viewing conditions. Unlike dense jungle parks, Udawalawa features open grasslands, scrub jungle, and the massive reservoir, creating perfect visibility for wildlife observation and photography.
+                    </p>
+                    <p class="destination-description">
+                        The park is home to approximately 600 elephants, and sightings are virtually guaranteed year-round. The elephants of Udawalawa are particularly visible around the reservoir edges, where they come to drink, bathe, and socialize. The park's open terrain allows visitors to observe entire family groups—matriarchs leading their herds, playful calves, and impressive bulls—going about their daily routines. Beyond elephants, Udawalawa supports water buffalo, spotted deer, sambar, wild boar, jackals, and the occasional leopard. The reservoir itself attracts numerous water birds, making it an excellent destination for birdwatchers as well.
+                    </p>
+
+                    <!-- Elephant Experience -->
+                    <div class="elephant-section">
+                        <h3 class="elephant-title"><i class="fas fa-elephant"></i> Elephant Behavior & Observation</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-users text-primary me-2"></i> Social Structures</h5>
+                                <p>Elephants in Udawalawa live in complex matriarchal family groups. Observations typically include:</p>
+                                <ul>
+                                    <li><strong>Family Units:</strong> Led by experienced matriarchs</li>
+                                    <li><strong>Bachelor Groups:</strong> Young males learning independence</li>
+                                    <li><strong>Maternal Behavior:</strong> Mothers protecting calves</li>
+                                    <li><strong>Social Interactions:</strong> Greeting rituals and play</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-water text-info me-2"></i> Waterhole Activities</h5>
+                                <p>The reservoir edges provide the best viewing opportunities:</p>
+                                <ul>
+                                    <li><strong>Drinking:</strong> Morning and evening visits</li>
+                                    <li><strong>Bathing:</strong> Cooling off in shallow water</li>
+                                    <li><strong>Mud Bathing:</strong> Sun protection and skin care</li>
+                                    <li><strong>Socializing:</strong> Herd interactions at water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Udawalawa Features -->
+                    <div class="wildlife-section">
+                        <h3 class="wildlife-title"><i class="fas fa-eye"></i> Udawalawa Safari Experience</h3>
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #795548, #5d4037); margin: 0 auto 15px;">
+                                    <i class="fas fa-percentage"></i>
+                                </div>
+                                <h6>Sighting Success Rate</h6>
+                                <p><strong>Elephants:</strong> 95% chance per safari<br>
+                                <strong>Best Time:</strong> Early morning (6-9 AM)<br>
+                                <strong>Peak Season:</strong> Dry months (May-September)</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #4caf50, #2e7d32); margin: 0 auto 15px;">
+                                    <i class="fas fa-dove"></i>
+                                </div>
+                                <h6>Bird Watching</h6>
+                                <p><strong>Species:</strong> 210+ recorded<br>
+                                <strong>Highlights:</strong> Fish eagles, kingfishers<br>
+                                <strong>Best Areas:</strong> Reservoir edges, dead trees</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #ff9800, #f57c00); margin: 0 auto 15px;">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <h6>Photography</h6>
+                                <p><strong>Conditions:</strong> Open terrain, good light<br>
+                                <strong>Best Shots:</strong> Silhouettes at sunrise/sunset<br>
+                                <strong>Equipment:</strong> 70-200mm lens ideal</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conservation Aspect -->
+                    <div class="travel-tips">
+                        <h3 class="tips-title"><i class="fas fa-hands-helping"></i> Conservation & Responsible Tourism</h3>
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <p>Udawalawa plays a crucial role in Sri Lanka's elephant conservation. The adjacent Elephant Transit Home rehabilitates orphaned elephants before releasing them back into the park. Visitors can observe feeding times (9 AM, 12 PM, 3 PM, 6 PM) and learn about conservation efforts.</p>
+                                <div class="alert alert-success mt-3">
+                                    <i class="fas fa-leaf me-2"></i>
+                                    <strong>Responsible Viewing:</strong> Maintain safe distance, avoid flash photography, and follow guide instructions to minimize disturbance to wildlife.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <div class="highlight-icon" style="background: linear-gradient(135deg, #4caf50, #2e7d32); margin: 0 auto 15px;">
+                                        <i class="fas fa-seedling"></i>
+                                    </div>
+                                    <h6>Eco-Tourism</h6>
+                                    <p>Park fees support conservation and local communities. Choose eco-friendly accommodations and responsible tour operators.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Habarana Safari Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/yala-slider1.jpg" alt="Habarana Safari" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="safari-badge" style="background: linear-gradient(135deg, #4caf50, #2e7d32);">Cultural Triangle Gateway</div>
+                        <h2 class="destination-title">Habarana Safari</h2>
+                        <p class="destination-subtitle">Wildlife Meets Ancient History - Minneriya & Kaudulla National Parks</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Habarana serves as the perfect gateway to Sri Lanka's Cultural Triangle and some of the island's most spectacular seasonal wildlife events. Located in the heart of the dry zone, Habarana offers access to three incredible national parks—Minneriya, Kaudulla, and Hurulu—each famous for the annual "Elephant Gathering," one of Asia's greatest wildlife spectacles. Between July and November, hundreds of elephants congregate around the ancient reservoirs of these parks, creating unforgettable viewing opportunities amidst historical landscapes.
+                    </p>
+                    <p class="destination-description">
+                        What makes Habarana safaris unique is their combination of wildlife and cultural heritage. Within easy reach are ancient cities like Sigiriya, Polonnaruwa, and Dambulla, allowing visitors to experience both Sri Lanka's natural and historical wonders in a single trip. The safari experience here varies dramatically with the seasons—dry months bring incredible elephant concentrations at water sources, while the green season offers lush landscapes and excellent bird watching. The open jeep safaris traverse forest trails, grassland plains, and lake edges, providing diverse wildlife viewing opportunities in relatively compact areas.
+                    </p>
+
+                    <!-- The Gathering Experience -->
+                    <div class="leopard-section">
+                        <h3 class="leopard-title"><i class="fas fa-users"></i> The Elephant Gathering</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-calendar-alt text-primary me-2"></i> Seasonal Phenomenon</h5>
+                                <p><strong>Peak Season:</strong> August to October<br>
+                                <strong>Location:</strong> Minneriya & Kaudulla National Parks<br>
+                                <strong>Numbers:</strong> 200-300 elephants daily<br>
+                                <strong>Best Viewing:</strong> Late afternoon (3-6 PM)</p>
+                                <p>The gathering occurs as elephants from surrounding forests converge on the ancient reservoirs during the dry season. This natural phenomenon creates one of the largest Asian elephant concentrations in the world.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-map-marked-alt text-success me-2"></i> Park Comparison</h5>
+                                <ul>
+                                    <li><strong>Minneriya:</strong> Largest gatherings, open plains</li>
+                                    <li><strong>Kaudulla:</strong> Younger park, excellent photography</li>
+                                    <li><strong>Hurulu:</strong> Forest environment, fewer tourists</li>
+                                    <li><strong>Best Choice:</strong> Depends on season and elephant movements</li>
+                                </ul>
+                                <div class="alert alert-info mt-3">
+                                    <i class="fas fa-lightbulb me-2"></i>
+                                    <strong>Local Knowledge:</strong> Experienced guides know which park offers best viewing each day based on recent elephant movements.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cultural Connection -->
+                    <div class="highlights-section">
+                        <h3 class="highlight-title"><i class="fas fa-landmark"></i> Wildlife & Culture Combination</h3>
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2); margin: 0 auto 15px;">
+                                    <i class="fas fa-fort-awesome"></i>
+                                </div>
+                                <h6>Sigiriya Lion Rock</h6>
+                                <p>Morning safari, afternoon climb to the ancient rock fortress with panoramic views over elephant habitat.</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #ff9800, #f57c00); margin: 0 auto 15px;">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <h6>Polonnaruwa Ancient City</h6>
+                                <p>Full-day combination: morning wildlife safari, afternoon exploring 12th-century ruins by bicycle.</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #2196f3, #1976d2); margin: 0 auto 15px;">
+                                    <i class="fas fa-mountain"></i>
+                                </div>
+                                <h6>Dambulla Cave Temple</h6>
+                                <p>Evening safari followed by sunrise visit to golden cave temple with panoramic views.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Safari Options -->
+                    <div class="travel-tips">
+                        <h3 class="tips-title"><i class="fas fa-route"></i> Habarana Safari Options</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-sun text-warning me-2"></i> Safari Types</h5>
+                                <ul>
+                                    <li><strong>Morning Safari:</strong> 5:30 AM - 9:30 AM (best for general wildlife)</li>
+                                    <li><strong>Afternoon Safari:</strong> 2:30 PM - 6:30 PM (best for elephant gatherings)</li>
+                                    <li><strong>Full Day:</strong> Combines multiple parks with picnic lunch</li>
+                                    <li><strong>Night Safari:</strong> Special permit required (different wildlife)</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-hotel text-primary me-2"></i> Accommodation & Access</h5>
+                                <ul>
+                                    <li><strong>Location:</strong> 4-5 hours from Colombo</li>
+                                    <li><strong>Accommodation:</strong> Jungle lodges to luxury resorts</li>
+                                    <li><strong>Best Base:</strong> Habarana town or nearby eco-lodges</li>
+                                    <li><strong>Combination:</strong> Perfect with Cultural Triangle tour</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Safari Gear & Preparation -->
+            <div class="gear-section">
+                <h3 class="gear-title"><i class="fas fa-hiking"></i> Safari Preparation & Essential Gear</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-camera text-primary me-2"></i> Photography Equipment</h5>
+                        <ul>
+                            <li><strong>Camera:</strong> DSLR or mirrorless with weather sealing</li>
+                            <li><strong>Lenses:</strong> 70-200mm f/2.8 and 100-400mm zoom</li>
+                            <li><strong>Support:</strong> Bean bag (provided by most jeeps)</li>
+                            <li><strong>Accessories:</strong> Lens cleaning kit, dust protection, spare batteries</li>
+                            <li><strong>Settings:</strong> Fast shutter speed (1/500s+), continuous focus mode</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-suitcase text-success me-2"></i> What to Pack</h5>
+                        <ul>
+                            <li><strong>Clothing:</strong> Neutral colors, lightweight, long sleeves</li>
+                            <li><strong>Footwear:</strong> Closed shoes, socks</li>
+                            <li><strong>Protection:</strong> Sunscreen, hat, sunglasses</li>
+                            <li><strong>Comfort:</strong> Water bottle, snacks, small backpack</li>
+                            <li><strong>Essentials:</strong> Binoculars, field guide, notebook</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="alert alert-warning mt-4">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <strong>Important:</strong> No plastic bags allowed in national parks. Use reusable containers. Respect park rules - stay in vehicle, no feeding animals, maintain silence near wildlife.
+                </div>
+            </div>
+
+            <!-- Best Time to Visit -->
+            <div class="season-guide">
+                <h3 class="season-title"><i class="fas fa-calendar-check"></i> Best Time for Wildlife Safaris</h3>
+                <div class="season-months">
+                    <div class="month-card">
+                        <div class="month-name">Yala National Park</div>
+                        <div class="month-status status-best">Feb - Jul</div>
+                        <small class="d-block mt-2">Dry season</small>
+                        <small class="text-muted">Best for leopard spotting</small>
+                    </div>
+                    <div class="month-card">
+                        <div class="month-name">Udawalawa Park</div>
+                        <div class="month-status status-good">Year-Round</div>
+                        <small class="d-block mt-2">Consistent sightings</small>
+                        <small class="text-muted">Elephants always present</small>
+                    </div>
+                    <div class="month-card">
+                        <div class="month-name">Habarana Gathering</div>
+                        <div class="month-status status-best">Aug - Oct</div>
+                        <small class="d-block mt-2">Peak elephant season</small>
+                        <small class="text-muted">200-300 elephants daily</small>
+                    </div>
+                    <div class="month-card">
+                        <div class="month-name">General Wildlife</div>
+                        <div class="month-status status-good">May - Sep</div>
+                        <small class="d-block mt-2">Dry months</small>
+                        <small class="text-muted">Animals at water sources</small>
+                    </div>
+                </div>
+                <p class="mt-4 text-center"><i class="fas fa-info-circle me-2"></i><strong>Note:</strong> Each park has different optimal seasons. Our experts can recommend the best safari combination based on your travel dates.</p>
+            </div>
+
+            <!-- Wildlife Map -->
+            <div class="map-section">
+                <h3 class="map-title">Sri Lanka's Wildlife Safari Map</h3>
+                <div class="map-container">
+                    <div class="map-overlay">
+                        <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+                        <h4>26 National Parks Network</h4>
+                        <p>From Yala to Wilpattu - Discover Sri Lanka's Wildlife Sanctuaries</p>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <h5><i class="fas fa-car text-primary me-2"></i>Access from Colombo</h5>
+                        <p>Yala: 5-6 hours | Udawalawa: 4 hours | Habarana: 4-5 hours. Comfortable air-conditioned vehicles with experienced drivers.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5><i class="fas fa-hotel text-success me-2"></i>Safari Accommodation</h5>
+                        <p>Range from luxury jungle lodges and tented camps to eco-friendly resorts near park entrances.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5><i class="fas fa-user text-warning me-2"></i>Guided Experiences</h5>
+                        <p>Expert naturalist guides with tracking knowledge and wildlife behavior understanding enhance safari experiences.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5><i class="fas fa-leaf text-info me-2"></i>Conservation Focus</h5>
+                        <p>Park fees support wildlife conservation and local communities. Responsible tourism practices encouraged.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Booking CTA -->
+            <div class="booking-cta-enhanced safari-bg">
+                <h2 class="cta-title-enhanced">Ready for Your Wildlife Adventure?</h2>
+                <p class="cta-description">
+                    Let us craft your perfect Sri Lankan safari experience. From tracking leopards in Yala and observing elephant herds in Udawalawa to witnessing the spectacular Elephant Gathering in Habarana, our expert guides and carefully curated safari packages ensure unforgettable wildlife encounters in Sri Lanka's magnificent national parks.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/94763661600?text=Hi%20Ayubowan%20Tours!%20I'd%20like%20to%20book%20a%20wildlife%20safari%20in%20Sri%20Lanka" class="btn-cta btn-cta-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Booking
+                    </a>
+                    <a href="./booking.html" class="btn-cta btn-cta-secondary">
+                        <i class="fas fa-calendar-check"></i> Book Online Now
+                    </a>
+                </div>
+                <p class="mt-4 mb-0" style="opacity: 0.9; font-size: 1rem;">
+                    <i class="fas fa-phone-alt me-2"></i> Call us: +94 76 366 1600 | 
+                    <i class="fas fa-envelope ms-3 me-2"></i> info@ayubowantours.com |
+                    <i class="fas fa-clock ms-3 me-2"></i> 24/7 Support Available
+                </p>
+            </div>
         </div>
+        <!-- ENHANCED SAFARI CONTENT END -->
 
         <!-- Subscribe Start -->
         <div class="container-fluid subscribe py-5">
@@ -256,94 +1546,6 @@
             </div>
         </div>
         <!-- Subscribe End -->
-
-        <!-- Footer Start -->
-        <!--<div class="container-fluid footer py-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Get In Touch</h4>
-                            <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-share fa-2x text-white me-2"></i>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Company</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Support</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Contact</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <div class="row gy-3 gx-2 mb-4">
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">Arabic</option>
-                                                <option value="2">German</option>
-                                                <option value="3">Greek</option>
-                                                <option value="3">New York</option>
-                                            </select>
-                                            <label for="select1">English</label>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">USD</option>
-                                                <option value="2">EUR</option>
-                                                <option value="3">INR</option>
-                                                <option value="3">GBP</option>
-                                            </select>
-                                            <label for="select1">$</label>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <h4 class="text-white mb-3">Payments</h4>
-                            <div class="footer-bank-card">
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
-                                <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Footer End -->
         
         <!-- Copyright Start -->
         <div class="container-fluid copyright text-body py-4">
@@ -357,22 +1559,189 @@
         </div>
         <!-- Copyright End -->
 
-        <!-- whatsapp button -->
-        <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
-            class="whatsapp-float"
-            target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/94763661600?text=Hi%20Ayubowan%20Tours!%20I'm%20interested%20in%20Sri%20Lanka%20wildlife%20safaris" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
         </a>
-        
+
         <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
         <script src="lib/easing/easing.min.js"></script>
         <script src="lib/waypoints/waypoints.min.js"></script>
-        
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-    </body>
 
+        <!-- Enhanced Safari Scripts -->
+        <script>
+            // Scroll animations
+            document.addEventListener('DOMContentLoaded', function() {
+                // Animate elements on scroll
+                const animateOnScroll = function() {
+                    const elements = document.querySelectorAll('.destination-card-enhanced, .highlight-item, .tip-item, .month-card');
+                    
+                    elements.forEach(element => {
+                        const elementPosition = element.getBoundingClientRect().top;
+                        const screenPosition = window.innerHeight / 1.2;
+                        
+                        if (elementPosition < screenPosition) {
+                            element.style.animationDelay = (Math.random() * 0.3) + 's';
+                            element.style.opacity = '1';
+                        }
+                    });
+                };
+
+                // Initial animation
+                setTimeout(animateOnScroll, 100);
+
+                // Scroll event listener
+                window.addEventListener('scroll', animateOnScroll);
+
+                // Interactive safari selection
+                const safariCards = document.querySelectorAll('.destination-card-enhanced');
+                safariCards.forEach(card => {
+                    card.addEventListener('click', function(e) {
+                        if (!e.target.closest('a')) {
+                            const title = this.querySelector('.destination-title').textContent;
+                            console.log(`Selected safari destination: ${title}`);
+                        }
+                    });
+                });
+
+                // Seasonal highlights
+                const monthCards = document.querySelectorAll('.month-card');
+                monthCards.forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.transform = 'scale(1.05)';
+                    });
+                    card.addEventListener('mouseleave', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                });
+
+                // Image lazy loading
+                const images = document.querySelectorAll('.destination-image, .gallery-photo');
+                images.forEach(img => {
+                    img.addEventListener('load', function() {
+                        this.style.opacity = '1';
+                        this.style.transition = 'opacity 0.6s ease';
+                    });
+                    img.style.opacity = '0';
+                });
+
+                // Wildlife facts display
+                const featureItems = document.querySelectorAll('.feature-item');
+                featureItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        const featureText = this.querySelector('.feature-text').textContent;
+                        const facts = {
+                            'Leopard Spotting': 'Yala has the world\'s highest leopard density with about 1 leopard per square kilometer.',
+                            'Elephant Herds': 'Sri Lanka has about 6,000 wild elephants, the highest density in Asia.',
+                            'Sloth Bears': 'These nocturnal bears are most active at dawn and dusk.',
+                            'Bird Watching': 'Sri Lanka has 33 endemic bird species found nowhere else.',
+                            'Coastal Lagoons': 'Yala\'s coastal section features beautiful lagoons visited by migratory birds.'
+                        };
+                        
+                        if (facts[featureText]) {
+                            alert(`${featureText}:\n\n${facts[featureText]}`);
+                        }
+                    });
+                });
+            });
+
+            // Spinner removal
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    document.getElementById('spinner').style.display = 'none';
+                }, 500);
+            });
+
+            // Safari sighting simulation
+            function simulateSightings() {
+                const parks = {
+                    'Yala National Park': {
+                        leopard: Math.random() > 0.4,
+                        elephant: Math.random() > 0.6,
+                        bear: Math.random() > 0.8,
+                        birds: true
+                    },
+                    'Udawalawa National Park': {
+                        elephant: true,
+                        buffalo: Math.random() > 0.5,
+                        deer: true,
+                        birds: true
+                    },
+                    'Habarana Area': {
+                        elephant: Math.random() > 0.3,
+                        deer: true,
+                        birds: true,
+                        gathering: (new Date().getMonth() >= 7 && new Date().getMonth() <= 10)
+                    }
+                };
+                
+                console.log('Simulated sightings for today:', parks);
+                return parks;
+            }
+
+            // Update sightings every hour
+            setInterval(simulateSightings, 3600000);
+            simulateSightings(); // Initial call
+
+            // Animal activity tracker
+            function getAnimalActivity() {
+                const hour = new Date().getHours();
+                let activity;
+                
+                if (hour >= 5 && hour <= 9) {
+                    activity = 'High - Morning feeding and movement';
+                } else if (hour > 9 && hour <= 14) {
+                    activity = 'Low - Resting in shade';
+                } else if (hour > 14 && hour <= 18) {
+                    activity = 'High - Evening activity';
+                } else {
+                    activity = 'Variable - Nocturnal species active';
+                }
+                
+                console.log(`Current animal activity (${hour}:00): ${activity}`);
+                return activity;
+            }
+
+            // Update activity hourly
+            setInterval(getAnimalActivity, 3600000);
+            getAnimalActivity(); // Initial call
+
+            // Safari timing calculator
+            function calculateBestSafariTimes() {
+                const now = new Date();
+                const nextMorning = new Date(now);
+                nextMorning.setHours(5, 30, 0, 0);
+                if (nextMorning < now) {
+                    nextMorning.setDate(nextMorning.getDate() + 1);
+                }
+                
+                const nextEvening = new Date(now);
+                nextEvening.setHours(15, 0, 0, 0);
+                if (nextEvening < now) {
+                    nextEvening.setDate(nextEvening.getDate() + 1);
+                }
+                
+                const timeUntilMorning = Math.floor((nextMorning - now) / (1000 * 60 * 60));
+                const timeUntilEvening = Math.floor((nextEvening - now) / (1000 * 60 * 60));
+                
+                console.log(`Next morning safari in ${timeUntilMorning} hours`);
+                console.log(`Next evening safari in ${timeUntilEvening} hours`);
+                
+                return { morning: timeUntilMorning, evening: timeUntilEvening };
+            }
+
+            // Calculate safari times
+            calculateBestSafariTimes();
+        </script>
+    </body>
 </html>

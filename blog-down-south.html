@@ -3,10 +3,10 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Ayubowan Tours</title>
+        <title>Ayubowan Tours | Golden Beaches - Sri Lanka's Coastal Paradise</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+        <meta content="Sri Lanka Beaches, Unawatuna, Hikkaduwa, Mirissa, Hiriketiya, Arugam Bay, Surfing, Whale Watching" name="keywords">
+        <meta content="Discover Sri Lanka's golden beaches - from surfing paradises to tranquil bays. Experience Unawatuna, Mirissa, Hikkaduwa, Hiriketiya, and Arugam Bay's coastal magic." name="description">
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,55 +23,913 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        
+        <!-- Enhanced Blog Styles -->
         <style>
             /* WhatsApp Floating Button with Pulse Animation */
             .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 80px;
-            height: 80px;
-            background-color: #25D366;
-            color: #fff;
-            border-radius: 50%;
-            font-size: 42px;
-            text-align: center;
-            line-height: 80px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-            z-index: 1000;
-            animation: whatsapp-pulse 1.8s infinite;
-            text-decoration: none;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 80px;
+                height: 80px;
+                background-color: #25D366;
+                color: #fff;
+                border-radius: 50%;
+                font-size: 42px;
+                text-align: center;
+                line-height: 80px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+                z-index: 1000;
+                animation: whatsapp-pulse 1.8s infinite;
+                text-decoration: none;
             }
 
             /* Hover effect */
             .whatsapp-float:hover {
-            transform: scale(1.1);
-            transition: 0.3s ease;
+                transform: scale(1.1);
+                transition: 0.3s ease;
             }
 
             /* Pulse animation */
             @keyframes whatsapp-pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
+                0% {
+                    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+                }
+                70% {
+                    box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
+                }
+                100% {
+                    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+                }
             }
 
             /* Mobile responsive */
             @media (max-width: 768px) {
-            .whatsapp-float {
+                .whatsapp-float {
+                    width: 70px;
+                    height: 70px;
+                    font-size: 38px;
+                    line-height: 70px;
+                    bottom: 15px;
+                    right: 15px;
+                }
+            }
+
+            /* ENHANCED BLOG CONTENT STYLES */
+            .blog-hero {
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/beachers.jpg');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                height: 450px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                margin-bottom: 50px;
+                border-radius: 0 0 30px 30px;
+            }
+
+            .blog-hero-content {
+                color: white;
+                text-align: center;
+                z-index: 2;
+                padding: 0 20px;
+            }
+
+            .blog-hero-title {
+                font-size: 4rem;
+                font-weight: 700;
+                margin-bottom: 15px;
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            }
+
+            .blog-hero-subtitle {
+                font-size: 1.4rem;
+                opacity: 0.95;
+                max-width: 800px;
+                margin: 0 auto;
+                font-weight: 300;
+            }
+
+            /* Beach Paradise Section */
+            .beach-hero {
+                background: linear-gradient(135deg, rgba(255, 204, 0, 0.1), rgba(255, 153, 0, 0.1));
+                border-radius: 20px;
+                padding: 50px;
+                margin: 40px 0;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .beach-hero:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+                background-size: cover;
+            }
+
+            /* Destination Cards - Enhanced */
+            .destination-card-enhanced {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+                margin-bottom: 60px;
+                transition: all 0.4s ease;
+                border: 1px solid #eaeaea;
+            }
+
+            .destination-card-enhanced:hover {
+                transform: translateY(-12px);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            }
+
+            .destination-image-container {
+                position: relative;
+                height: 400px;
+                overflow: hidden;
+            }
+
+            .destination-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s ease;
+            }
+
+            .destination-image-container:hover .destination-image {
+                transform: scale(1.08);
+            }
+
+            .destination-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+                padding: 40px;
+                color: white;
+            }
+
+            .beach-badge {
+                background: linear-gradient(135deg, #FFD700, #FFA500);
+                color: #333;
+                padding: 8px 20px;
+                border-radius: 30px;
+                font-weight: 600;
+                font-size: 0.9rem;
+                display: inline-block;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .destination-title {
+                font-size: 2.2rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+                color: white;
+            }
+
+            .destination-subtitle {
+                font-size: 1.2rem;
+                opacity: 0.95;
+                font-weight: 300;
+            }
+
+            .destination-content-enhanced {
+                padding: 50px;
+            }
+
+            .destination-description {
+                color: #555;
+                line-height: 1.9;
+                margin-bottom: 30px;
+                font-size: 1.1rem;
+            }
+
+            /* Beach Features Grid */
+            .beach-features {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 20px;
+                margin: 30px 0;
+            }
+
+            .feature-item {
+                text-align: center;
+                padding: 20px;
+                background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                border-radius: 15px;
+                transition: all 0.3s ease;
+            }
+
+            .feature-item:hover {
+                transform: translateY(-5px);
+                background: linear-gradient(135deg, #FFD700, #FFA500);
+                color: white;
+            }
+
+            .feature-item:hover .feature-icon {
+                color: white;
+            }
+
+            .feature-icon {
+                font-size: 2rem;
+                color: #FFA500;
+                margin-bottom: 15px;
+                display: block;
+            }
+
+            .feature-text {
+                font-weight: 600;
+                font-size: 0.95rem;
+            }
+
+            /* Highlights Section */
+            .highlights-section {
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #FFD700;
+            }
+
+            .highlight-title {
+                font-size: 1.8rem;
+                color: #2c3e50;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .highlight-title i {
+                color: #FFA500;
+                font-size: 1.5rem;
+            }
+
+            .highlight-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 25px;
+            }
+
+            .highlight-item {
+                text-align: center;
+                padding: 25px;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+                transition: all 0.3s ease;
+            }
+
+            .highlight-item:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            }
+
+            .highlight-icon {
                 width: 70px;
                 height: 70px;
-                font-size: 38px;
-                line-height: 70px;
-                bottom: 15px;
-                right: 15px;
+                background: linear-gradient(135deg, #FFD700, #FFA500);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+                font-size: 1.8rem;
+                color: white;
             }
+
+            .highlight-text {
+                font-size: 1rem;
+                color: #555;
+                font-weight: 600;
+                line-height: 1.5;
+            }
+
+            /* Travel Tips Section */
+            .travel-tips {
+                background: linear-gradient(135deg, #fff9e6, #ffeaa7);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #f39c12;
+            }
+
+            .tips-title {
+                font-size: 1.8rem;
+                color: #d35400;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .tips-title i {
+                color: #f39c12;
+                font-size: 1.5rem;
+            }
+
+            .tips-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+            }
+
+            .tip-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                background: white;
+                padding: 25px;
+                border-radius: 15px;
+                transition: all 0.3s ease;
+            }
+
+            .tip-item:hover {
+                transform: translateX(5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+
+            .tip-icon {
+                width: 50px;
+                height: 50px;
+                background: #FFD700;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.3rem;
+                flex-shrink: 0;
+            }
+
+            .tip-content h5 {
+                color: #2c3e50;
+                margin-bottom: 10px;
+                font-size: 1.2rem;
+            }
+
+            .tip-content p {
+                color: #666;
+                font-size: 1rem;
+                margin-bottom: 0;
+                line-height: 1.6;
+            }
+
+            /* Beach Comparison */
+            .beach-comparison {
+                background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #2196f3;
+            }
+
+            .comparison-title {
+                font-size: 1.8rem;
+                color: #1565c0;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .comparison-title i {
+                color: #2196f3;
+                font-size: 1.5rem;
+            }
+
+            /* Best Time to Visit */
+            .season-guide {
+                background: linear-gradient(135deg, #e8f6f3, #d1f2eb);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #1abc9c;
+            }
+
+            .season-title {
+                font-size: 1.8rem;
+                color: #2c3e50;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .season-title i {
+                color: #1abc9c;
+                font-size: 1.5rem;
+            }
+
+            .season-months {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .month-card {
+                background: white;
+                padding: 25px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+                transition: all 0.3s ease;
+            }
+
+            .month-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            }
+
+            .month-name {
+                font-weight: 700;
+                color: #2c3e50;
+                margin-bottom: 15px;
+                font-size: 1.1rem;
+            }
+
+            .month-status {
+                font-size: 0.95rem;
+                padding: 8px 20px;
+                border-radius: 25px;
+                font-weight: 600;
+                display: inline-block;
+            }
+
+            .status-best {
+                background: linear-gradient(135deg, #2ecc71, #27ae60);
+                color: white;
+            }
+
+            .status-good {
+                background: linear-gradient(135deg, #3498db, #2980b9);
+                color: white;
+            }
+
+            .status-fair {
+                background: linear-gradient(135deg, #f39c12, #e67e22);
+                color: white;
+            }
+
+            .status-low {
+                background: linear-gradient(135deg, #e74c3c, #c0392b);
+                color: white;
+            }
+
+            /* Booking CTA Enhanced */
+            .booking-cta-enhanced {
+                background: linear-gradient(135deg, #0c2461, #1e3799);
+                color: white;
+                border-radius: 25px;
+                padding: 60px 50px;
+                text-align: center;
+                margin: 80px 0;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .booking-cta-enhanced:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+                background-size: cover;
+            }
+
+            .cta-title-enhanced {
+                font-size: 2.8rem;
+                margin-bottom: 20px;
+                color: white;
+                position: relative;
+                z-index: 2;
+                font-weight: 700;
+            }
+
+            .cta-description {
+                font-size: 1.2rem;
+                opacity: 0.95;
+                max-width: 800px;
+                margin: 0 auto 40px;
+                position: relative;
+                z-index: 2;
+                line-height: 1.8;
+                font-weight: 300;
+            }
+
+            .cta-buttons {
+                display: flex;
+                gap: 25px;
+                justify-content: center;
+                flex-wrap: wrap;
+                position: relative;
+                z-index: 2;
+            }
+
+            .btn-cta {
+                padding: 18px 45px;
+                font-size: 1.2rem;
+                font-weight: 700;
+                border-radius: 60px;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 15px;
+                text-decoration: none;
+                letter-spacing: 0.5px;
+            }
+
+            .btn-cta-primary {
+                background: linear-gradient(135deg, #25D366, #128C7E);
+                color: white;
+                border: none;
+                box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+            }
+
+            .btn-cta-primary:hover {
+                transform: translateY(-5px) scale(1.05);
+                box-shadow: 0 20px 40px rgba(37, 211, 102, 0.6);
+                color: white;
+            }
+
+            .btn-cta-secondary {
+                background: white;
+                color: #0c2461;
+                border: 2px solid white;
+                box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+            }
+
+            .btn-cta-secondary:hover {
+                background: transparent;
+                color: white;
+                transform: translateY(-5px) scale(1.05);
+                box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
+            }
+
+            /* Map Section */
+            .map-section {
+                background: white;
+                border-radius: 20px;
+                padding: 50px;
+                margin: 50px 0;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .map-title {
+                font-size: 2.2rem;
+                color: #2c3e50;
+                margin-bottom: 30px;
+                font-weight: 700;
+            }
+
+            .map-container {
+                background: linear-gradient(135deg, #4a69bd, #1e3799);
+                height: 350px;
+                border-radius: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.8rem;
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 30px;
+            }
+
+            .map-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            /* Photo Gallery */
+            .photo-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+                margin: 50px 0;
+            }
+
+            .photo-item {
+                border-radius: 15px;
+                overflow: hidden;
+                height: 250px;
+                position: relative;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+
+            .gallery-photo {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.6s ease;
+            }
+
+            .photo-item:hover .gallery-photo {
+                transform: scale(1.1);
+            }
+
+            .photo-caption {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+                color: white;
+                padding: 20px;
+                transform: translateY(100%);
+                transition: transform 0.4s ease;
+            }
+
+            .photo-item:hover .photo-caption {
+                transform: translateY(0);
+            }
+
+            /* Beach Specific Styles */
+            .surf-section {
+                background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #2196f3;
+            }
+
+            .surf-title {
+                font-size: 1.8rem;
+                color: #1565c0;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .surf-title i {
+                color: #2196f3;
+                font-size: 1.5rem;
+            }
+
+            .whale-section {
+                background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #00bcd4;
+            }
+
+            .whale-title {
+                font-size: 1.8rem;
+                color: #00838f;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .whale-title i {
+                color: #00bcd4;
+                font-size: 1.5rem;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 1200px) {
+                .blog-hero-title {
+                    font-size: 3.5rem;
+                }
+                
+                .destination-image-container {
+                    height: 350px;
+                }
+            }
+
+            @media (max-width: 992px) {
+                .blog-hero-title {
+                    font-size: 3rem;
+                }
+                
+                .blog-hero {
+                    height: 400px;
+                }
+                
+                .destination-image-container {
+                    height: 300px;
+                }
+                
+                .destination-content-enhanced {
+                    padding: 40px;
+                }
+                
+                .cta-title-enhanced {
+                    font-size: 2.4rem;
+                }
+                
+                .highlight-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .blog-hero {
+                    height: 350px;
+                }
+                
+                .blog-hero-title {
+                    font-size: 2.5rem;
+                }
+                
+                .blog-hero-subtitle {
+                    font-size: 1.2rem;
+                }
+                
+                .destination-image-container {
+                    height: 250px;
+                }
+                
+                .destination-title {
+                    font-size: 1.8rem;
+                }
+                
+                .highlight-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .tips-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .cta-buttons {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .btn-cta {
+                    width: 100%;
+                    max-width: 350px;
+                    justify-content: center;
+                }
+                
+                .season-months {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .photo-gallery {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 576px) {
+                .blog-hero-title {
+                    font-size: 2.2rem;
+                }
+                
+                .blog-hero-subtitle {
+                    font-size: 1.1rem;
+                }
+                
+                .destination-image-container {
+                    height: 220px;
+                }
+                
+                .destination-content-enhanced {
+                    padding: 30px;
+                }
+                
+                .cta-title-enhanced {
+                    font-size: 2rem;
+                }
+                
+                .season-months {
+                    grid-template-columns: 1fr;
+                }
+                
+                .photo-gallery {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            /* Animations */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(40px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes waveAnimation {
+                0% {
+                    background-position: 0 0;
+                }
+                100% {
+                    background-position: 1000px 0;
+                }
+            }
+
+            .destination-card-enhanced, .highlight-item, .tip-item {
+                animation: fadeInUp 0.7s ease forwards;
+                opacity: 0;
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, #FFD700, #FFA500);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(135deg, #FFA500, #FF8C00);
+            }
+
+            /* Wave Pattern Background */
+            .wave-bg {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .wave-bg:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100px;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(255,215,0,0.1)"/></svg>');
+                background-size: 1200px 100px;
+                animation: waveAnimation 20s linear infinite;
+                z-index: 1;
+            }
+
+            /* Beach Rating System */
+            .beach-rating {
+                display: flex;
+                gap: 10px;
+                margin: 15px 0;
+            }
+
+            .rating-star {
+                color: #FFD700;
+                font-size: 1.2rem;
+            }
+
+            /* Interactive Elements */
+            .interactive-map {
+                position: relative;
+                height: 400px;
+                background: linear-gradient(135deg, #87CEEB, #4682B4);
+                border-radius: 20px;
+                overflow: hidden;
+            }
+
+            .beach-marker {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background: #FFD700;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #333;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            }
+
+            .beach-marker:hover {
+                transform: scale(1.2);
+                background: #FFA500;
             }
         </style>
     </head>
@@ -91,7 +949,6 @@
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="./index.html" class="navbar-brand p-0">
                     <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -111,161 +968,591 @@
         </div>
         <!-- Navbar & Hero End -->
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">Golden Beachers</h1>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
-                    <li class="breadcrumb-item active text-white">Golden Beachers</li>
-                </ol>    
+        <!-- Blog Hero Section -->
+        <div class="blog-hero wave-bg">
+            <div class="container">
+                <div class="blog-hero-content">
+                    <h1 class="blog-hero-title">Golden Beaches</h1>
+                    <p class="blog-hero-subtitle">Sri Lanka's Coastal Paradise - Where Turquoise Waters Meet Golden Sands</p>
+                </div>
             </div>
         </div>
-        <!-- Header End -->
 
-        <!-- About Start -->
-        <div class="container-fluid about py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/beachers.jpg" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">A Tropical Paradise for Foreign Travelers, <span class="text-primary">Golden Beaches of Sri Lanka.</span></h1>    
-                        <p class="mb-4">Sri Lanka, often called the Pearl of the Indian Ocean, 
-                            is famous for its breathtaking coastline lined with golden beaches, swaying palm trees, 
-                            and warm turquoise waters. Whether you are seeking relaxation, adventure, surfing, or cultural charm, 
-                            Sri Lanka’s beaches offer something for every traveler. Among the most loved coastal 
-                            destinations are Unawatuna, Hikkaduwa, Mirissa Coconut Hills, Hiriketiya Beach, and Arugam Bay beach 
-                            with its own unique character and beauty. </p>
+        <!-- ENHANCED BLOG CONTENT START -->
+        <div class="container py-5">
+            <!-- Introduction Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/beachers.jpg" alt="Sri Lanka Golden Beaches" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="beach-badge">Top 5 Beach Destinations</div>
+                        <h2 class="destination-title">Sri Lanka's Golden Coastline</h2>
+                        <p class="destination-subtitle">Pearl of the Indian Ocean - 1,340km of Tropical Paradise</p>
                     </div>
                 </div>
-            </div>
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/unawatuna.jpg" class="img-fluid w-100 h-100" alt="">
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Welcome to Sri Lanka's sun-kissed coastline, where golden sands meet turquoise waters in a breathtaking display of tropical beauty. Stretching over 1,340 kilometers around the island, Sri Lanka's beaches offer more than just stunning scenery—they provide gateways to adventure, relaxation, culture, and unforgettable memories. From the vibrant surfing culture of Arugam Bay to the tranquil bays of Hiriketiya, each beach tells its own unique story.
+                    </p>
+                    <p class="destination-description">
+                        Sri Lanka's coastal regions are blessed with year-round sunshine, warm waters averaging 27°C (81°F), and diverse marine ecosystems. Whether you're seeking world-class surfing, romantic sunsets, vibrant nightlife, or peaceful yoga retreats, the island's beaches cater to every traveler's dream. The coastal culture here is a beautiful blend of traditional fishing communities, colonial influences, and modern tourism infrastructure, creating a unique experience that stays with you long after you've left.
+                    </p>
+
+                    <!-- Beach Highlights -->
+                    <div class="highlights-section">
+                        <h3 class="highlight-title"><i class="fas fa-umbrella-beach"></i> Why Choose Sri Lanka's Beaches?</h3>
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <p class="highlight-text">Year-Round Sunshine<br>300+ Sunny Days Annually</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #2196f3, #1976d2);">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <p class="highlight-text">Warm Turquoise Waters<br>Perfect for Swimming & Water Sports</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #4caf50, #2e7d32);">
+                                    <i class="fas fa-fish"></i>
+                                </div>
+                                <p class="highlight-text">Rich Marine Life<br>Sea Turtles, Coral Reefs & Whales</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2);">
+                                    <i class="fas fa-cocktail"></i>
+                                </div>
+                                <p class="highlight-text">Vibrant Beach Culture<br>Cafés, Bars & Nightlife</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Unawatuna Beach <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Located near the historic city of Galle, Unawatuna is one of the most popular beaches in Sri Lanka. 
-                            Its calm waters make it ideal for swimming and snorkeling, especially for travelers who prefer a relaxed beach experience. 
-                            The beach is surrounded by beach cafés, boutique hotels, and yoga retreats,
-                            creating a welcoming atmosphere for foreign visitors. Nearby attractions like the 
-                            Galle Fort add cultural value to your stay. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/hikkaduwa6.jpg" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Hikkaduwa Beach <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Hikkaduwa is famous for its vibrant energy and coral reefs. 
-                            It is a hotspot for snorkeling and diving, where travelers can spot colorful fish and sea turtles. 
-                            The town also offers lively nightlife, beach parties, and a variety of restaurants serving both 
-                            local and international cuisine. Hikkaduwa is perfect for travelers who enjoy a mix of beach fun and social life. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/mirissa-coco-hills.JPG" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Mirissa Coconut Hills <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Mirissa Coconut Hills is one of the most iconic and Instagram-worthy locations in Sri Lanka. 
-                            A short walk from Mirissa Beach, this hill covered with tall coconut palms offers 
-                            stunning views of the Indian Ocean, especially during sunrise and sunset. 
-                            Mirissa itself is known for whale watching, peaceful beaches, and laid-back vibes, 
-                            making it a favorite among nature lovers and photographers. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/hirikatiya.JPG" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Hiriketiya Beach <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Hidden in a horseshoe-shaped bay, Hiriketiya Beach is a small 
-                            yet charming destination ideal for surfers and digital nomads. 
-                            The beach has gentle waves suitable for beginners and a relaxed, bohemian atmosphere. 
-                            With cozy cafés, eco-friendly accommodations, and friendly locals, 
-                            Hiriketiya offers a more intimate and authentic Sri Lankan beach experience.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/Main-point-arugam-bay-surfing.jpg" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Arugam Bay <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Located on the east coast, Arugam Bay is internationally recognized as 
-                            one of the best surfing destinations in Asia. During the surfing season, 
-                            travelers from around the world gather here to enjoy world-class waves. 
-                            Beyond surfing, Arugam Bay offers beautiful sunsets, lagoon safaris, and a peaceful 
-                            coastal lifestyle that attracts adventure seekers and long-term travelers alike.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid bg-light service py-5">
-                <div class="container py-5">
-                    <div class="row g-4">
-                        <div class="col-lg-12">
-                            <div class="row g-4">
-                                <div class="col-12">
-                                    <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                                        <div class="service-icon p-4">
-                                            <i class="fa fa-globe fa-4x text-primary"></i>
-                                        </div>
-                                        <div class="service-content">
-                                            <p class="mb-0">Sri Lanka’s beaches are not just about natural beauty—they offer rich culture, 
-                                                delicious food, friendly hospitality, and affordable travel experiences. 
-                                                From luxury resorts to budget-friendly guesthouses, 
-                                                foreign travelers can find comfort at every level.</p>
-                                            <p class="mb-0">
-                                                Whether you are planning a relaxing holiday, a surfing adventure, or a scenic coastal journey, 
-                                                the golden beaches of Sri Lanka promise unforgettable memories under the tropical sun.
-                                                Book Your Beach tour in here </p>
-                                        </div>
-                                        <div>
-                                            <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
-                                        </div>
-                                    </div>
+
+                    <!-- Travel Tips -->
+                    <div class="travel-tips">
+                        <h3 class="tips-title"><i class="fas fa-sun"></i> Beach Travel Essentials</h3>
+                        <div class="tips-grid">
+                            <div class="tip-item">
+                                <div class="tip-icon" style="background: #FFD700;">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Sun Protection</h5>
+                                    <p>Sri Lanka is near the equator - use SPF 50+ sunscreen, wear hats, and seek shade between 11 AM - 3 PM when the sun is strongest.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon" style="background: #2196f3;">
+                                    <i class="fas fa-swimmer"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Water Safety</h5>
+                                    <p>Always swim where lifeguards are present. Be aware of strong currents, especially during monsoon seasons.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon" style="background: #4caf50;">
+                                    <i class="fas fa-tshirt"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Beachwear Etiquette</h5>
+                                    <p>While swimwear is fine on the beach, cover up when visiting towns, temples, or local villages as a sign of respect.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon" style="background: #9c27b0;">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Photography Tips</h5>
+                                    <p>Golden hour (6-7 AM & 5-6 PM) provides the best light. Protect your camera from sand and salt water.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Subscribe Start -->
+            <!-- Unawatuna Beach Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/unawatuna.jpg" alt="Unawatuna Beach" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="beach-badge">Family Friendly</div>
+                        <h2 class="destination-title">Unawatuna Beach</h2>
+                        <p class="destination-subtitle">Galle's Serene Bay - Perfect for Swimming & Snorkeling</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Nestled in a sheltered bay just 5 kilometers south of Galle Fort, Unawatuna is arguably Sri Lanka's most beloved beach destination. The name translates to "fell down" in Sinhala, referring to a legend from the Ramayana epic where the god Hanuman dropped healing herbs here. Today, this crescent-shaped bay offers calm, turquoise waters protected by a coral reef, making it ideal for swimming, snorkeling, and family vacations.
+                    </p>
+                    <p class="destination-description">
+                        Unawatuna has mastered the art of balancing tourism with tranquility. The beachfront is lined with charming cafés, boutique hotels, and yoga studios, while the water remains remarkably peaceful. The reef about 100 meters offshore creates a natural swimming pool effect, where even novice swimmers can enjoy the warm Indian Ocean safely. As sunset approaches, the beach transforms into a magical scene with fire performers, live music, and spectacular views of the sun dipping below the horizon.
+                    </p>
+
+                    <!-- Beach Features -->
+                    <div class="beach-features">
+                        <div class="feature-item">
+                            <i class="fas fa-swimming-pool feature-icon"></i>
+                            <div class="feature-text">Calm Waters</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mask feature-icon"></i>
+                            <div class="feature-text">Snorkeling</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-utensils feature-icon"></i>
+                            <div class="feature-text">Beach Dining</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-fort-awesome feature-icon"></i>
+                            <div class="feature-text">Near Galle Fort</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-sunset feature-icon"></i>
+                            <div class="feature-text">Sunset Views</div>
+                        </div>
+                    </div>
+
+                    <!-- Galle Fort Connection -->
+                    <div class="highlights-section">
+                        <h3 class="highlight-title"><i class="fas fa-landmark"></i> Galle Fort Experience</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-history text-primary me-2"></i> Historical Significance</h5>
+                                <p>Just 10 minutes away, the 16th-century Galle Fort (UNESCO World Heritage) offers colonial architecture, boutique shopping, and fine dining within ancient ramparts.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-map-signs text-success me-2"></i> Day Trips</h5>
+                                <p>Combine beach relaxation with cultural exploration. Visit the fort in the morning, enjoy lunch at a rooftop restaurant, then return to Unawatuna for sunset.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo Gallery -->
+                    <div class="photo-gallery">
+                        <div class="photo-item">
+                            <img src="img/unawatuna-sunset.jpg" alt="Unawatuna Sunset" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Magical Sunsets</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/unawatuna-cafe.jpg" alt="Beach Cafe" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Beachfront Dining</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/unawatuna-snorkeling.jpg" alt="Snorkeling" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Coral Reef Exploration</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/galle-fort.jpg" alt="Galle Fort" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Nearby Galle Fort</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hikkaduwa Beach Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/hikkaduwa6.jpg" alt="Hikkaduwa Beach" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="beach-badge" style="background: linear-gradient(135deg, #2196f3, #1976d2);">Coral Paradise</div>
+                        <h2 class="destination-title">Hikkaduwa Beach</h2>
+                        <p class="destination-subtitle">Sri Lanka's Vibrant Coastal Hub - Diving & Nightlife</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Hikkaduwa is where Sri Lanka's beach culture comes alive in full color. Located 100 kilometers south of Colombo, this lively coastal town has been a favorite among travelers since the 1960s. What sets Hikkaduwa apart is its magnificent coral reef, just 50-100 meters offshore, creating a natural marine sanctuary teeming with tropical fish, sea turtles, and colorful corals. The Hikkaduwa Marine Sanctuary protects this underwater wonderland, making it one of Sri Lanka's premier snorkeling and diving destinations.
+                    </p>
+                    <p class="destination-description">
+                        Beyond the underwater attractions, Hikkaduwa offers a vibrant atmosphere that caters to all types of travelers. The main beach road is lined with restaurants serving everything from fresh seafood to international cuisine, bars with live music, and shops selling beachwear and souvenirs. As night falls, Hikkaduwa transforms with beach parties, fire dancing shows, and a social scene that attracts travelers from around the world. Yet, just a few kilometers north or south of the main strip, you can find peaceful stretches of beach perfect for relaxation.
+                    </p>
+
+                    <!-- Diving & Marine Life -->
+                    <div class="surf-section">
+                        <h3 class="surf-title"><i class="fas fa-water"></i> Underwater Wonderland</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-fish text-info me-2"></i> Marine Sanctuary</h5>
+                                <p>The Hikkaduwa Marine Sanctuary spans 45 hectares, protecting coral gardens home to over 60 coral species and numerous tropical fish. Glass-bottom boat tours offer stunning views without getting wet.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-turtle text-success me-2"></i> Turtle Encounters</h5>
+                                <p>Green and hawksbill turtles are regular visitors. Responsible snorkeling tours allow you to observe these gentle creatures in their natural habitat. The Hikkaduwa Turtle Hatchery nearby protects endangered nests.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nightlife & Culture -->
+                    <div class="travel-tips">
+                        <h3 class="tips-title"><i class="fas fa-moon"></i> Hikkaduwa After Dark</h3>
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2); margin: 0 auto 15px;">
+                                    <i class="fas fa-music"></i>
+                                </div>
+                                <h6>Live Music & Parties</h6>
+                                <p>Beach bars with reggae, electronic, and traditional Sri Lankan music create a festive atmosphere most nights.</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #f44336, #d32f2f); margin: 0 auto 15px;">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <h6>Fire Performances</h6>
+                                <p>Nightly fire dancing shows on the beach - a mesmerizing display of skill and tradition.</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #FF9800, #F57C00); margin: 0 auto 15px;">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <h6>Seafood Feasts</h6>
+                                <p>Freshly caught seafood grilled on the beach - lobster, prawns, and fish cooked to perfection.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mirissa Coconut Hills Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/mirissa-coco-hills.JPG" alt="Mirissa Coconut Hills" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="beach-badge" style="background: linear-gradient(135deg, #4caf50, #2e7d32);">Instagram Famous</div>
+                        <h2 class="destination-title">Mirissa & Coconut Hill</h2>
+                        <p class="destination-subtitle">Whale Watching Capital & Iconic Photography Spot</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Mirissa is where nature's grandeur meets coastal charm. This picturesque fishing village turned tourist hotspot is renowned for two things: being Sri Lanka's whale watching capital and home to the iconic Coconut Hill viewpoint. The hill, covered in perfectly aligned coconut palms, offers one of the most photographed views in Sri Lanka, especially during sunrise when the first light paints the sky in hues of orange and pink.
+                    </p>
+                    <p class="destination-description">
+                        The real magic of Mirissa happens offshore. From November to April, the deep waters off Mirissa become a playground for blue whales (the largest animals on Earth), sperm whales, dolphins, and occasionally orcas. Whale watching tours depart daily, offering a 90% sighting rate during peak season. Back on land, Mirissa Beach itself is a tranquil crescent of golden sand lined with palm trees, beach bars, and restaurants serving fresh seafood. The atmosphere is laid-back yet sophisticated, attracting couples, families, and digital nomads seeking both adventure and relaxation.
+                    </p>
+
+                    <!-- Whale Watching Experience -->
+                    <div class="whale-section">
+                        <h3 class="whale-title"><i class="fas fa-whale"></i> Whale Watching Adventures</h3>
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5><i class="fas fa-calendar-alt text-primary me-2"></i> Season & Sightings</h5>
+                                <p><strong>Best Season:</strong> November to April<br>
+                                <strong>Common Sightings:</strong> Blue Whales (up to 30m), Sperm Whales, Spinner Dolphins<br>
+                                <strong>Tour Duration:</strong> 3-5 hours (early morning departures)<br>
+                                <strong>Success Rate:</strong> 90% during peak season</p>
+                                <div class="alert alert-info mt-3">
+                                    <i class="fas fa-lightbulb me-2"></i>
+                                    <strong>Pro Tip:</strong> Book with responsible operators who maintain distance from whales. Morning tours have calmer seas and better lighting for photography.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <div class="highlight-icon" style="background: linear-gradient(135deg, #2196f3, #1976d2); margin: 0 auto 15px;">
+                                        <i class="fas fa-binoculars"></i>
+                                    </div>
+                                    <h6>Tour Experience</h6>
+                                    <p>Includes breakfast, guide, and insurance. Boats have seating, shade, and bathrooms. Motion sickness tablets recommended.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coconut Hill Experience -->
+                    <div class="experience-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0;">
+                        <div class="experience-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                            <div class="experience-content" style="padding: 25px;">
+                                <h4 class="experience-title" style="font-size: 1.3rem; color: #2c3e50; margin-bottom: 10px;"><i class="fas fa-camera text-success me-2"></i> Photography Tips</h4>
+                                <p class="experience-desc" style="color: #666; font-size: 0.95rem; line-height: 1.6;">Arrive before sunrise (5:30 AM) for golden hour. Use wide-angle lenses for landscape shots. The hill gets crowded by 7 AM, so come early for the best spots.</p>
+                            </div>
+                        </div>
+                        <div class="experience-card">
+                            <div class="experience-content">
+                                <h4 class="experience-title"><i class="fas fa-hiking text-warning me-2"></i> Access & Timing</h4>
+                                <p class="experience-desc">10-minute walk from Mirissa Beach. Wear proper shoes for the short climb. Best visited at sunrise (6-7 AM) or sunset (5-6 PM) for optimal lighting.</p>
+                            </div>
+                        </div>
+                        <div class="experience-card">
+                            <div class="experience-content">
+                                <h4 class="experience-title"><i class="fas fa-palette text-danger me-2"></i> The View</h4>
+                                <p class="experience-desc">360° panoramic views of Mirissa Bay, fishing boats, and endless ocean. The symmetrical coconut palms create perfect natural framing for photos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Beach Activities -->
+                    <div class="beach-features">
+                        <div class="feature-item">
+                            <i class="fas fa-whale feature-icon"></i>
+                            <div class="feature-text">Whale Watching</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-swimmer feature-icon"></i>
+                            <div class="feature-text">Swimming</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-camera feature-icon"></i>
+                            <div class="feature-text">Photography</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-utensils feature-icon"></i>
+                            <div class="feature-text">Seafood Dining</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-sunset feature-icon"></i>
+                            <div class="feature-text">Sunset Views</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hiriketiya Beach Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/hirikatiya.JPG" alt="Hiriketiya Beach" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="beach-badge" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2);">Bohemian Paradise</div>
+                        <h2 class="destination-title">Hiriketiya Beach</h2>
+                        <p class="destination-subtitle">Sri Lanka's Hidden Gem - Surfing & Yoga Retreat</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Tucked away in a perfect horseshoe bay on Sri Lanka's south coast, Hiriketiya (affectionately called "Hiri" by regulars) is the island's best-kept secret that's rapidly becoming a favorite among discerning travelers. This small but stunning bay offers something increasingly rare: an authentic, laid-back beach experience untouched by mass tourism. The beach's natural shape creates gentle waves perfect for beginner surfers, while the surrounding jungle-clad hills provide a lush, green backdrop.
+                    </p>
+                    <p class="destination-description">
+                        What truly sets Hiriketiya apart is its community vibe. This isn't a resort town—it's a gathering place for surfers, digital nomads, yoga enthusiasts, and travelers seeking connection. The beach is lined with eco-conscious cafes serving smoothie bowls and vegan delights, boutique shops selling handmade crafts, and yoga shalas offering daily classes. As the sun sets, the beach comes alive with acoustic music sessions, bonfires, and travelers from around the world sharing stories under the stars.
+                    </p>
+
+                    <!-- Surfing & Yoga -->
+                    <div class="highlights-section">
+                        <h3 class="highlight-title"><i class="fas fa-surfing"></i> Surf & Yoga Paradise</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-surfing text-primary me-2"></i> Surfing Conditions</h5>
+                                <ul>
+                                    <li><strong>Wave Type:</strong> Gentle, rolling waves perfect for beginners</li>
+                                    <li><strong>Best Time:</strong> April to October for consistent swell</li>
+                                    <li><strong>Surf Schools:</strong> Multiple schools offering board rental and lessons</li>
+                                    <li><strong>Crowd Level:</strong> Much less crowded than other surf spots</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-spa text-success me-2"></i> Wellness Scene</h5>
+                                <ul>
+                                    <li><strong>Yoga Studios:</strong> Daily classes from sunrise to sunset</li>
+                                    <li><strong>Meditation:</strong> Guided sessions on the beach</li>
+                                    <li><strong>Healthy Eating:</strong> Vegan and vegetarian cafes</li>
+                                    <li><strong>Massage:</strong> Beachside Ayurvedic treatments</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Digital Nomad Scene -->
+                    <div class="travel-tips">
+                        <h3 class="tips-title"><i class="fas fa-laptop"></i> Digital Nomad Haven</h3>
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <p>Hiriketiya has become a hub for remote workers seeking the perfect work-life balance. With reliable WiFi at most cafes, comfortable co-working spaces, and a community of like-minded individuals, it's easy to see why many digital nomads extend their stay for months.</p>
+                                <div class="alert alert-success mt-3">
+                                    <i class="fas fa-wifi me-2"></i>
+                                    <strong>Work & Play:</strong> Many cafes offer free WiFi, power outlets, and delicious coffee. The laid-back atmosphere makes it easy to transition from work to sunset surf sessions.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <div class="highlight-icon" style="background: linear-gradient(135deg, #2196f3, #1976d2); margin: 0 auto 15px;">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <h6>Community Events</h6>
+                                    <p>Weekly gatherings, skill-sharing sessions, and community dinners create a welcoming atmosphere for solo travelers.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arugam Bay Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/Main-point-arugam-bay-surfing.jpg" alt="Arugam Bay Surfing" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="beach-badge" style="background: linear-gradient(135deg, #2196f3, #1976d2);">Surf Capital</div>
+                        <h2 class="destination-title">Arugam Bay</h2>
+                        <p class="destination-subtitle">Asia's Premier Surf Destination - East Coast Paradise</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Welcome to Arugam Bay, where the Indian Ocean delivers some of the world's most perfect right-hand point breaks. Located on Sri Lanka's less-developed east coast, "A-Bay" has earned its reputation as one of Asia's top surfing destinations, attracting wave riders from across the globe from May to October. But there's more to Arugam Bay than just surfing—this laid-back village offers a unique cultural experience, proximity to national parks, and some of Sri Lanka's most spectacular sunrises.
+                    </p>
+                    <p class="destination-description">
+                        The main point break at Arugam Bay is legendary among surfers, producing long, clean waves that can hold size from 2 to 8 feet. But the area offers multiple breaks suitable for all levels, from beginner-friendly Baby Point to challenging peaks at Whiskey Point and Pottuvil Point. Beyond the surf, Arugam Bay is gateway to some of Sri Lanka's wildest landscapes. Nearby Kumana National Park offers incredible birdwatching and leopard sightings, while the traditional fishing villages provide glimpses into a way of life that has remained unchanged for generations.
+                    </p>
+
+                    <!-- Surfing Guide -->
+                    <div class="surf-section">
+                        <h3 class="surf-title"><i class="fas fa-surfing"></i> Arugam Bay Surf Guide</h3>
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #2196f3, #1976d2); margin: 0 auto 15px;">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <h6>Season & Conditions</h6>
+                                <p><strong>Best Season:</strong> May to October<br>
+                                <strong>Water Temp:</strong> 28-30°C (wetsuit optional)<br>
+                                <strong>Swell Direction:</strong> South/Southwest<br>
+                                <strong>Wave Quality:</strong> Consistent right-handers</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #4caf50, #2e7d32); margin: 0 auto 15px;">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <h6>Breakdown of Breaks</h6>
+                                <p><strong>Main Point:</strong> World-class right (intermediate-advanced)<br>
+                                <strong>Baby Point:</strong> Gentle waves (beginners)<br>
+                                <strong>Whiskey Point:</strong> Powerful right (advanced)<br>
+                                <strong>Pottuvil Point:</strong> Long rides (all levels)</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #FF9800, #F57C00); margin: 0 auto 15px;">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <h6>Surf Services</h6>
+                                <p><strong>Surf Schools:</strong> Multiple options for lessons<br>
+                                <strong>Board Rental:</strong> Shortboards to longboards<br>
+                                <strong>Repair Shops:</strong> On-site ding repair<br>
+                                <strong>Photography:</strong> Surf photo services available</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Beyond Surfing -->
+                    <div class="beach-comparison">
+                        <h3 class="comparison-title"><i class="fas fa-paw"></i> Beyond the Waves</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-tree text-success me-2"></i> Kumana National Park</h5>
+                                <p>Just 30km from Arugam Bay, Kumana (Yala East) offers incredible wildlife viewing without the crowds of more famous parks. Spot leopards, elephants, crocodiles, and over 200 bird species including spectacular migratory flocks.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-anchor text-primary me-2"></i> Lagoon Safaris</h5>
+                                <p>Pottuvil Lagoon offers serene boat tours through mangrove forests, home to monitor lizards, water birds, and traditional fishing communities. Sunset tours are particularly magical.</p>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-fish text-info me-2"></i> Fishing Culture</h5>
+                                <p>Witness traditional stilt fishermen at sunrise—a UNESCO-recognized practice unique to Sri Lanka's east coast. Learn about their sustainable fishing methods passed down through generations.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-utensils text-warning me-2"></i> Local Cuisine</h5>
+                                <p>Sample authentic Sri Lankan cuisine with an eastern twist—spicy crab curry, fresh seafood, and traditional hoppers. The east coast has its own distinctive culinary traditions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Time to Visit -->
+            <div class="season-guide">
+                <h3 class="season-title"><i class="fas fa-calendar-alt"></i> Best Time to Visit Each Beach</h3>
+                <div class="season-months">
+                    <div class="month-card">
+                        <div class="month-name">West Coast<br>Dec - Mar</div>
+                        <div class="month-status status-best">Peak Season</div>
+                        <small class="d-block mt-2">Unawatuna, Hikkaduwa, Mirissa</small>
+                        <small class="text-muted">Dry season, calm seas</small>
+                    </div>
+                    <div class="month-card">
+                        <div class="month-name">East Coast<br>May - Oct</div>
+                        <div class="month-status status-best">Peak Season</div>
+                        <small class="d-block mt-2">Arugam Bay, Pasikudah</small>
+                        <small class="text-muted">Best for surfing</small>
+                    </div>
+                    <div class="month-card">
+                        <div class="month-name">Year-Round<br>All Seasons</div>
+                        <div class="month-status status-good">Good</div>
+                        <small class="d-block mt-2">Hiriketiya, Tangalle</small>
+                        <small class="text-muted">Sheltered bays</small>
+                    </div>
+                    <div class="month-card">
+                        <div class="month-name">Shoulder<br>Apr & Nov</div>
+                        <div class="month-status status-fair">Fair</div>
+                        <small class="d-block mt-2">All beaches</small>
+                        <small class="text-muted">Fewer crowds, good deals</small>
+                    </div>
+                </div>
+                <p class="mt-4 text-center"><i class="fas fa-info-circle me-2"></i><strong>Pro Tip:</strong> Sri Lanka has two monsoon seasons affecting different coasts at different times, meaning there's always a perfect beach somewhere on the island!</p>
+            </div>
+
+            <!-- Interactive Map -->
+            <div class="map-section">
+                <h3 class="map-title">Sri Lanka's Beach Paradise Map</h3>
+                <div class="map-container">
+                    <div class="map-overlay">
+                        <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+                        <h4>1,340km of Coastline</h4>
+                        <p>From Kalpitiya to Hambantota - Discover Your Perfect Beach</p>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <h5><i class="fas fa-plane text-primary me-2"></i>Access from Colombo</h5>
+                        <p>Bandaranaike International Airport (CMB) is 1-3 hours from most west coast beaches.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5><i class="fas fa-car text-success me-2"></i>Coastal Highway</h5>
+                        <p>Southern Expressway connects Colombo to Galle in 1.5 hours, making beaches easily accessible.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5><i class="fas fa-train text-warning me-2"></i>Scenic Rail Journeys</h5>
+                        <p>Coastal train routes offer stunning ocean views, particularly the Colombo-Galle line.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5><i class="fas fa-ship text-info me-2"></i>Domestic Flights</h5>
+                        <p>Daily flights connect Colombo to Hambantota (near east coast beaches) in 45 minutes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Booking CTA -->
+            <div class="booking-cta-enhanced wave-bg">
+                <h2 class="cta-title-enhanced">Ready for Your Beach Paradise?</h2>
+                <p class="cta-description">
+                    Let us craft your perfect Sri Lankan beach holiday. Whether you're seeking surf adventures in Arugam Bay, romantic sunsets in Mirissa, family fun in Unawatuna, or digital nomad life in Hiriketiya, our expert team will create an unforgettable coastal experience tailored just for you.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/94763661600?text=Hi%20Ayubowan%20Tours!%20I'd%20like%20to%20book%20a%20beach%20tour%20in%20Sri%20Lanka" class="btn-cta btn-cta-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Booking
+                    </a>
+                    <a href="./booking.html" class="btn-cta btn-cta-secondary">
+                        <i class="fas fa-calendar-check"></i> Book Online Now
+                    </a>
+                </div>
+                <p class="mt-4 mb-0" style="opacity: 0.9; font-size: 1rem;">
+                    <i class="fas fa-phone-alt me-2"></i> Call us: +94 76 366 1600 | 
+                    <i class="fas fa-envelope ms-3 me-2"></i> info@ayubowantours.com |
+                    <i class="fas fa-clock ms-3 me-2"></i> 24/7 Support Available
+                </p>
+            </div>
+        </div>
+        <!-- ENHANCED BLOG CONTENT END -->
+
+        <!-- Subscribe Start (Original - Keep as is) -->
         <div class="container-fluid subscribe py-5">
             <div class="container text-center py-5">
                 <div class="mx-auto text-center" style="max-width: 900px;">
@@ -282,96 +1569,8 @@
             </div>
         </div>
         <!-- Subscribe End -->
-
-        <!-- Footer Start -->
-        <!--<div class="container-fluid footer py-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Get In Touch</h4>
-                            <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-share fa-2x text-white me-2"></i>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Company</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Support</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Contact</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <div class="row gy-3 gx-2 mb-4">
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">Arabic</option>
-                                                <option value="2">German</option>
-                                                <option value="3">Greek</option>
-                                                <option value="3">New York</option>
-                                            </select>
-                                            <label for="select1">English</label>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">USD</option>
-                                                <option value="2">EUR</option>
-                                                <option value="3">INR</option>
-                                                <option value="3">GBP</option>
-                                            </select>
-                                            <label for="select1">$</label>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <h4 class="text-white mb-3">Payments</h4>
-                            <div class="footer-bank-card">
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
-                                <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Footer End -->
         
-        <!-- Copyright Start -->
+        <!-- Copyright Start (Original - Keep as is) -->
         <div class="container-fluid copyright text-body py-4">
             <div class="container">
                 <div class="row g-4 align-items-center">
@@ -383,22 +1582,193 @@
         </div>
         <!-- Copyright End -->
 
-        <!-- whatsapp button -->
-        <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
-            class="whatsapp-float"
-            target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/94763661600?text=Hi%20Ayubowan%20Tours!%20I'm%20interested%20in%20Sri%20Lanka%20beach%20tours" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
         </a>
-        
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
         <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
         <script src="lib/easing/easing.min.js"></script>
         <script src="lib/waypoints/waypoints.min.js"></script>
-        
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-    </body>
 
+        <!-- Enhanced Beach Scripts -->
+        <script>
+            // Scroll animations
+            document.addEventListener('DOMContentLoaded', function() {
+                // Animate elements on scroll
+                const animateOnScroll = function() {
+                    const elements = document.querySelectorAll('.destination-card-enhanced, .highlight-item, .tip-item, .month-card');
+                    
+                    elements.forEach(element => {
+                        const elementPosition = element.getBoundingClientRect().top;
+                        const screenPosition = window.innerHeight / 1.2;
+                        
+                        if (elementPosition < screenPosition) {
+                            element.style.animationDelay = (Math.random() * 0.3) + 's';
+                            element.style.opacity = '1';
+                        }
+                    });
+                };
+
+                // Initial animation
+                setTimeout(animateOnScroll, 100);
+
+                // Scroll event listener
+                window.addEventListener('scroll', animateOnScroll);
+
+                // Smooth scroll for back to top
+                document.querySelector('.back-to-top').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+
+                // WhatsApp button animation on hover
+                const whatsappBtn = document.querySelector('.whatsapp-float');
+                whatsappBtn.addEventListener('mouseenter', function() {
+                    this.style.animation = 'none';
+                    setTimeout(() => {
+                        this.style.animation = 'whatsapp-pulse 1.8s infinite';
+                    }, 50);
+                });
+
+                // Interactive beach selection
+                const beachCards = document.querySelectorAll('.destination-card-enhanced');
+                beachCards.forEach(card => {
+                    card.addEventListener('click', function(e) {
+                        if (!e.target.closest('a')) {
+                            const title = this.querySelector('.destination-title').textContent;
+                            console.log(`Selected beach: ${title}`);
+                        }
+                    });
+                });
+
+                // Seasonal highlights
+                const monthCards = document.querySelectorAll('.month-card');
+                monthCards.forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.transform = 'scale(1.05)';
+                    });
+                    card.addEventListener('mouseleave', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                });
+
+                // Image lazy loading
+                const images = document.querySelectorAll('.destination-image, .gallery-photo');
+                images.forEach(img => {
+                    img.addEventListener('load', function() {
+                        this.style.opacity = '1';
+                        this.style.transition = 'opacity 0.6s ease';
+                    });
+                    img.style.opacity = '0';
+                });
+
+                // Beach comparison interactive
+                const features = document.querySelectorAll('.feature-item');
+                features.forEach(feature => {
+                    feature.addEventListener('click', function() {
+                        const featureText = this.querySelector('.feature-text').textContent;
+                        alert(`This beach offers excellent ${featureText.toLowerCase()} opportunities!`);
+                    });
+                });
+            });
+
+            // Spinner removal
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    document.getElementById('spinner').style.display = 'none';
+                }, 500);
+            });
+
+            // Wave animation for beach sections
+            function createWaveEffect() {
+                const waveElements = document.querySelectorAll('.wave-bg');
+                waveElements.forEach(wave => {
+                    if (!wave.dataset.waveInitialized) {
+                        const waveCount = 3;
+                        for (let i = 0; i < waveCount; i++) {
+                            const waveLayer = document.createElement('div');
+                            waveLayer.style.position = 'absolute';
+                            waveLayer.style.bottom = '0';
+                            waveLayer.style.left = '0';
+                            waveLayer.style.right = '0';
+                            waveLayer.style.height = `${100 - (i * 20)}px`;
+                            waveLayer.style.background = `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(255,255,255,${0.05 - (i * 0.01)})"/></svg>')`;
+                            waveLayer.style.backgroundSize = '1200px 100px';
+                            waveLayer.style.animation = `waveAnimation ${20 + (i * 5)}s linear infinite`;
+                            waveLayer.style.zIndex = '1';
+                            waveLayer.style.opacity = '0.5';
+                            wave.appendChild(waveLayer);
+                        }
+                        wave.dataset.waveInitialized = 'true';
+                    }
+                });
+            }
+
+            // Initialize wave effects
+            setTimeout(createWaveEffect, 1000);
+
+            // Beach temperature simulation
+            function updateBeachTemps() {
+                const beaches = [
+                    { name: 'Unawatuna', temp: 28 + Math.random() * 3 },
+                    { name: 'Hikkaduwa', temp: 29 + Math.random() * 3 },
+                    { name: 'Mirissa', temp: 28 + Math.random() * 3 },
+                    { name: 'Hiriketiya', temp: 27 + Math.random() * 3 },
+                    { name: 'Arugam Bay', temp: 30 + Math.random() * 3 }
+                ];
+                
+                console.log('Current beach temperatures:');
+                beaches.forEach(beach => {
+                    console.log(`${beach.name}: ${beach.temp.toFixed(1)}°C`);
+                });
+            }
+
+            // Update temperatures every 5 minutes
+            setInterval(updateBeachTemps, 300000);
+            updateBeachTemps(); // Initial call
+
+            // Surf conditions tracker
+            function getSurfConditions() {
+                const conditions = {
+                    'Arugam Bay': {
+                        height: (3 + Math.random() * 2).toFixed(1),
+                        period: (8 + Math.random() * 4).toFixed(0),
+                        quality: ['Fair', 'Good', 'Very Good', 'Excellent'][Math.floor(Math.random() * 4)]
+                    },
+                    'Hikkaduwa': {
+                        height: (1 + Math.random() * 1.5).toFixed(1),
+                        period: (6 + Math.random() * 3).toFixed(0),
+                        quality: ['Poor', 'Fair', 'Good'][Math.floor(Math.random() * 3)]
+                    },
+                    'Hiriketiya': {
+                        height: (1.5 + Math.random() * 1).toFixed(1),
+                        period: (7 + Math.random() * 3).toFixed(0),
+                        quality: ['Fair', 'Good', 'Very Good'][Math.floor(Math.random() * 3)]
+                    }
+                };
+                
+                return conditions;
+            }
+
+            // Display surf conditions
+            console.log('Surf Conditions:', getSurfConditions());
+        </script>
+    </body>
 </html>

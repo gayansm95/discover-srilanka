@@ -3,10 +3,10 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Ayubowan Tours</title>
+        <title>Ayubowan Tours | Dambulla - Gateway to Sri Lanka's Cultural Triangle</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+        <meta content="Dambulla Sri Lanka, Sigiriya Rock Fortress, Dambulla Cave Temple, Golden Temple, Hot Air Ballooning, Cultural Triangle" name="keywords">
+        <meta content="Explore Dambulla, the gateway to Sri Lanka's Cultural Triangle. Discover ancient cave temples, iconic Sigiriya fortress, and unforgettable hot air balloon adventures." name="description">
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +23,8 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        
+        <!-- Enhanced Blog Styles -->
         <style>
             /* WhatsApp Floating Button with Pulse Animation */
             .whatsapp-float {
@@ -73,6 +75,673 @@
                 right: 15px;
             }
             }
+
+            /* ENHANCED BLOG CONTENT STYLES */
+            .blog-hero {
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/sigiriya-attractions.jpg');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                height: 400px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                margin-bottom: 50px;
+                border-radius: 0 0 30px 30px;
+            }
+
+            .blog-hero-content {
+                color: white;
+                text-align: center;
+                z-index: 2;
+                padding: 0 20px;
+            }
+
+            .blog-hero-title {
+                font-size: 3.5rem;
+                font-weight: 700;
+                margin-bottom: 15px;
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            }
+
+            .blog-hero-subtitle {
+                font-size: 1.3rem;
+                opacity: 0.9;
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+            /* Destination Cards - Enhanced */
+            .destination-card-enhanced {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+                margin-bottom: 50px;
+                transition: all 0.3s ease;
+                border: 1px solid #eaeaea;
+            }
+
+            .destination-card-enhanced:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            }
+
+            .destination-image-container {
+                position: relative;
+                height: 350px;
+                overflow: hidden;
+            }
+
+            .destination-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.7s ease;
+            }
+
+            .destination-image-container:hover .destination-image {
+                transform: scale(1.05);
+            }
+
+            .destination-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+                padding: 30px;
+                color: white;
+            }
+
+            .destination-title {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-bottom: 5px;
+                color: white;
+            }
+
+            .destination-subtitle {
+                font-size: 1.1rem;
+                opacity: 0.9;
+            }
+
+            .destination-content-enhanced {
+                padding: 40px;
+            }
+
+            .destination-description {
+                color: #555;
+                line-height: 1.8;
+                margin-bottom: 25px;
+                font-size: 1.05rem;
+            }
+
+            /* Highlights Section */
+            .highlights-section {
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                border-radius: 15px;
+                padding: 30px;
+                margin: 30px 0;
+            }
+
+            .highlight-title {
+                font-size: 1.5rem;
+                color: #2c3e50;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .highlight-title i {
+                color: #e74c3c;
+            }
+
+            .highlight-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .highlight-item {
+                text-align: center;
+                padding: 20px;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                transition: all 0.3s ease;
+            }
+
+            .highlight-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .highlight-icon {
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, #3498db, #2ecc71);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 15px;
+                font-size: 1.5rem;
+                color: white;
+            }
+
+            .highlight-text {
+                font-size: 0.95rem;
+                color: #555;
+                font-weight: 500;
+            }
+
+            /* Travel Tips Section */
+            .travel-tips {
+                background: linear-gradient(135deg, #fff9e6, #ffeaa7);
+                border-radius: 15px;
+                padding: 30px;
+                margin: 30px 0;
+                border-left: 5px solid #f39c12;
+            }
+
+            .tips-title {
+                font-size: 1.5rem;
+                color: #d35400;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .tips-title i {
+                color: #f39c12;
+            }
+
+            .tips-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .tip-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .tip-icon {
+                width: 40px;
+                height: 40px;
+                background: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #f39c12;
+                font-size: 1.2rem;
+                flex-shrink: 0;
+            }
+
+            .tip-content h5 {
+                color: #2c3e50;
+                margin-bottom: 5px;
+                font-size: 1.1rem;
+            }
+
+            .tip-content p {
+                color: #666;
+                font-size: 0.95rem;
+                margin-bottom: 0;
+            }
+
+            /* Cultural Experience Grid */
+            .culture-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin: 40px 0;
+            }
+
+            .culture-card {
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+                transition: all 0.3s ease;
+            }
+
+            .culture-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            }
+
+            .culture-image {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            .culture-content {
+                padding: 25px;
+            }
+
+            .culture-title {
+                font-size: 1.3rem;
+                color: #2c3e50;
+                margin-bottom: 10px;
+            }
+
+            .culture-desc {
+                color: #666;
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            /* Booking CTA Enhanced */
+            .booking-cta-enhanced {
+                background: linear-gradient(135deg, #2c3e50, #1a252f);
+                color: white;
+                border-radius: 20px;
+                padding: 50px 40px;
+                text-align: center;
+                margin: 60px 0;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .booking-cta-enhanced:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+                background-size: cover;
+            }
+
+            .cta-title-enhanced {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+                color: white;
+                position: relative;
+                z-index: 2;
+            }
+
+            .cta-description {
+                font-size: 1.1rem;
+                opacity: 0.9;
+                max-width: 700px;
+                margin: 0 auto 30px;
+                position: relative;
+                z-index: 2;
+                line-height: 1.6;
+            }
+
+            .cta-buttons {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+                position: relative;
+                z-index: 2;
+            }
+
+            .btn-cta {
+                padding: 15px 35px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                border-radius: 50px;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                text-decoration: none;
+            }
+
+            .btn-cta-primary {
+                background: linear-gradient(135deg, #25D366, #128C7E);
+                color: white;
+                border: none;
+                box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            }
+
+            .btn-cta-primary:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+                color: white;
+            }
+
+            .btn-cta-secondary {
+                background: white;
+                color: #3498db;
+                border: 2px solid #3498db;
+                box-shadow: 0 5px 15px rgba(52, 152, 219, 0.15);
+            }
+
+            .btn-cta-secondary:hover {
+                background: #3498db;
+                color: white;
+                transform: translateY(-3px);
+                box-shadow: 0 15px 30px rgba(52, 152, 219, 0.25);
+            }
+
+            /* Best Time to Visit */
+            .season-guide {
+                background: linear-gradient(135deg, #e8f4fc, #d1e8ff);
+                border-radius: 15px;
+                padding: 30px;
+                margin: 40px 0;
+                border-left: 5px solid #3498db;
+            }
+
+            .season-title {
+                font-size: 1.5rem;
+                color: #2c3e50;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .season-title i {
+                color: #3498db;
+            }
+
+            .season-months {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .month-card {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                min-width: 120px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                transition: all 0.3s ease;
+            }
+
+            .month-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .month-name {
+                font-weight: 600;
+                color: #2c3e50;
+                margin-bottom: 10px;
+            }
+
+            .month-status {
+                font-size: 0.9rem;
+                padding: 5px 15px;
+                border-radius: 20px;
+                font-weight: 500;
+            }
+
+            .status-best {
+                background: #2ecc71;
+                color: white;
+            }
+
+            .status-good {
+                background: #3498db;
+                color: white;
+            }
+
+            .status-fair {
+                background: #f39c12;
+                color: white;
+            }
+
+            .status-low {
+                background: #e74c3c;
+                color: white;
+            }
+
+            /* Map Section */
+            .map-section {
+                background: white;
+                border-radius: 15px;
+                padding: 40px;
+                margin: 40px 0;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                text-align: center;
+            }
+
+            .map-title {
+                font-size: 1.8rem;
+                color: #2c3e50;
+                margin-bottom: 20px;
+            }
+
+            .map-container {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                height: 300px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.5rem;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .map-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            /* Photo Gallery */
+            .photo-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                margin: 40px 0;
+            }
+
+            .photo-item {
+                border-radius: 10px;
+                overflow: hidden;
+                height: 200px;
+                position: relative;
+            }
+
+            .gallery-photo {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+
+            .photo-item:hover .gallery-photo {
+                transform: scale(1.1);
+            }
+
+            .photo-caption {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                padding: 15px;
+                transform: translateY(100%);
+                transition: transform 0.3s ease;
+            }
+
+            .photo-item:hover .photo-caption {
+                transform: translateY(0);
+            }
+
+            /* Adventure Activities */
+            .adventure-section {
+                background: linear-gradient(135deg, #e8f6f3, #d1f2eb);
+                border-radius: 15px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 5px solid #1abc9c;
+            }
+
+            .adventure-title {
+                font-size: 1.5rem;
+                color: #2c3e50;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .adventure-title i {
+                color: #1abc9c;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 992px) {
+                .blog-hero-title {
+                    font-size: 2.8rem;
+                }
+                
+                .destination-image-container {
+                    height: 300px;
+                }
+                
+                .destination-content-enhanced {
+                    padding: 30px;
+                }
+                
+                .cta-title-enhanced {
+                    font-size: 1.8rem;
+                }
+                
+                .culture-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .blog-hero {
+                    height: 300px;
+                }
+                
+                .blog-hero-title {
+                    font-size: 2.2rem;
+                }
+                
+                .blog-hero-subtitle {
+                    font-size: 1.1rem;
+                }
+                
+                .destination-image-container {
+                    height: 250px;
+                }
+                
+                .destination-title {
+                    font-size: 1.5rem;
+                }
+                
+                .highlight-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .tips-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .cta-buttons {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .btn-cta {
+                    width: 100%;
+                    max-width: 300px;
+                    justify-content: center;
+                }
+                
+                .month-card {
+                    min-width: 100px;
+                    padding: 15px;
+                }
+                
+                .photo-gallery {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 576px) {
+                .blog-hero-title {
+                    font-size: 1.8rem;
+                }
+                
+                .destination-image-container {
+                    height: 200px;
+                }
+                
+                .destination-content-enhanced {
+                    padding: 20px;
+                }
+                
+                .cta-title-enhanced {
+                    font-size: 1.6rem;
+                }
+                
+                .photo-gallery {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            /* Animations */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .destination-card-enhanced, .highlight-item, .culture-card {
+                animation: fadeInUp 0.6s ease forwards;
+                opacity: 0;
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, #3498db, #2ecc71);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(135deg, #2ecc71, #3498db);
+            }
         </style>
     </head>
 
@@ -111,138 +780,311 @@
         </div>
         <!-- Navbar & Hero End -->
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">Dambulla</h1>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
-                    <li class="breadcrumb-item active text-white">Dambulla</li>
-                </ol>    
+        <!-- Blog Hero Section -->
+        <div class="blog-hero">
+            <div class="container">
+                <div class="blog-hero-content">
+                    <h1 class="blog-hero-title">Dambulla</h1>
+                    <p class="blog-hero-subtitle">Gateway to Sri Lanka's Cultural Triangle - Where Ancient Wonders Meet Adventure</p>
+                </div>
             </div>
         </div>
-        <!-- Header End -->
 
-        <!-- About Start -->
-        <div class="container-fluid about py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="container py-5">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-5">
-                                <div class="h-100">
-                                    <img src="img/sigiriya-attractions.jpg" class="img-fluid w-100 h-100" alt="">
+        <!-- ENHANCED BLOG CONTENT START -->
+        <div class="container py-5">
+            <!-- Introduction Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/sigiriya-attractions.jpg" alt="Dambulla Cultural Triangle" class="destination-image">
+                    <div class="destination-overlay">
+                        <h2 class="destination-title">Dambulla - The Cultural Crossroads</h2>
+                        <p class="destination-subtitle">Heart of Sri Lanka's Ancient Heritage</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Located in the heart of Sri Lanka's Cultural Triangle, Dambulla is a fascinating destination that blends ancient history, culture, and nature. Well known for its cave temples and strategic central location, Dambulla serves as the perfect base for foreign travelers who want to explore Sri Lanka's rich heritage while enjoying scenic landscapes and authentic local experiences.
+                    </p>
+                    <p class="destination-description">
+                        Situated just 148 kilometers northeast of Colombo, Dambulla offers a perfect introduction to Sri Lanka's ancient civilizations. This UNESCO World Heritage city connects three of Sri Lanka's most significant historical sites - Sigiriya, Polonnaruwa, and Anuradhapura - making it the ultimate cultural crossroads for travelers seeking to immerse themselves in the island's glorious past.
+                    </p>
+
+                    <!-- Highlights Section -->
+                    <div class="highlights-section">
+                        <h3 class="highlight-title"><i class="fas fa-star"></i> Why Choose Dambulla?</h3>
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <p class="highlight-text">Perfect Central Location<br>Cultural Triangle Base</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-landmark"></i>
+                                </div>
+                                <p class="highlight-text">UNESCO Heritage Sites<br>Ancient Cave Temples</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-mountain"></i>
+                                </div>
+                                <p class="highlight-text">Iconic Sigiriya Rock<br>Natural Wonder</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-hot-air-balloon"></i>
+                                </div>
+                                <p class="highlight-text">Adventure Activities<br>Hot Air Ballooning</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Travel Tips -->
+                    <div class="travel-tips">
+                        <h3 class="tips-title"><i class="fas fa-lightbulb"></i> Traveler's Tips</h3>
+                        <div class="tips-grid">
+                            <div class="tip-item">
+                                <div class="tip-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Best Time to Visit</h5>
+                                    <p>December to March for clear skies. Early mornings (6-9 AM) are best for temple visits and Sigiriya climb.</p>
                                 </div>
                             </div>
-                            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                                <h1 class="mb-4">Must-Visit Places for Foreign Travelers in Sri Lanka :  <span class="text-primary">Dambulla</span></h1>    
-                                <p class="mb-4">Located in the heart of Sri Lanka’s Cultural Triangle, Dambulla is a 
-                                    fascinating destination that blends ancient history, culture, and nature. 
-                                    Well known for its cave temples and central location, Dambulla is an ideal 
-                                    base for foreign travelers who want to explore Sri Lanka’s rich heritage 
-                                    while enjoying scenic landscapes and authentic local experiences. </p>
+                            <div class="tip-item">
+                                <div class="tip-icon">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Weather Preparedness</h5>
+                                    <p>Carry water, hats, and sunscreen. The dry zone can get very hot during midday.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon">
+                                    <i class="fas fa-hiking"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Physical Preparation</h5>
+                                    <p>Sigiriya involves 1200 steps. Wear comfortable walking shoes and take breaks.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Photography</h5>
+                                    <p>Sunrise and sunset provide the best light for photography at Sigiriya and cave temples.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sigiriya Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/sigiriya.jpeg" alt="Sigiriya Rock Fortress" class="destination-image">
+                    <div class="destination-overlay">
+                        <h2 class="destination-title">Sigiriya Rock Fortress</h2>
+                        <p class="destination-subtitle">The Eighth Wonder of the World</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Rising dramatically 200 meters (660 feet) from the central plains of Sri Lanka, Sigiriya is one of the country's most iconic and unforgettable travel destinations. Known as the "Eighth Wonder of the World," this ancient rock fortress masterfully blends history, architecture, art, and nature into a single breathtaking experience that should be on every traveler's Sri Lanka itinerary.
+                    </p>
+                    <p class="destination-description">
+                        Sigiriya dates back to the 5th century AD, during the reign of King Kashyapa. Seeking protection and showcasing his power, the king transformed this massive rock into an impregnable royal citadel. The summit once held a magnificent palace with sophisticated water gardens, while the base featured elaborate landscaped gardens, moats, and fountains—some of the oldest and most sophisticated in the world. After the king's death, Sigiriya became a Buddhist monastery, preserving its spiritual importance for centuries. Today, it proudly stands as a UNESCO World Heritage Site, telling stories carved in stone and painted on walls.
+                    </p>
+
+                    <!-- Cultural Experience Grid -->
+                    <div class="culture-grid">
+                        <div class="culture-card">
+                            <img src="img/sigiriya.jpeg" alt="Sigiriya Frescoes" class="culture-image">
+                            <div class="culture-content">
+                                <h4 class="culture-title">Sigiriya Frescoes</h4>
+                                <p class="culture-desc">Vibrant paintings of celestial maidens that have retained their color and grace for over 1,500 years, depicting the artistic excellence of ancient Sri Lanka.</p>
+                            </div>
+                        </div>
+                        <div class="culture-card">
+                            <img src="img/sigiriya.jpeg" alt="Mirror Wall" class="culture-image">
+                            <div class="culture-content">
+                                <h4 class="culture-title">Mirror Wall</h4>
+                                <p class="culture-desc">Once polished so finely that the king could see his reflection, this wall now bears ancient graffiti and poems written by visitors over centuries.</p>
+                            </div>
+                        </div>
+                        <div class="culture-card">
+                            <img src="img/sigiriya.jpeg" alt="Lion's Paw Entrance" class="culture-image">
+                            <div class="culture-content">
+                                <h4 class="culture-title">Lion's Paw Entrance</h4>
+                                <p class="culture-desc">The dramatic entrance featuring massive lion paws from which the rock gets its name ("Sinhagiri" - Lion Rock), adding to the site's mystery and grandeur.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visitor Information -->
+                    <div class="highlights-section">
+                        <h3 class="highlight-title"><i class="fas fa-info-circle"></i> Sigiriya Experience</h3>
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                    <i class="fas fa-walking"></i>
+                                </div>
+                                <p class="highlight-text">1,200 Steps to Summit<br>1-2 Hours Climb</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <p class="highlight-text">Best Time: 6-9 AM<br>Avoid Midday Heat</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <p class="highlight-text">Photography Allowed<br>Sunrise/Sunset Best</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <p class="highlight-text">360° Panoramic Views<br>See 4 Provinces</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Adventure Activities -->
+                    <div class="adventure-section">
+                        <h3 class="adventure-title"><i class="fas fa-hiking"></i> Climbing Experience</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-arrow-up text-success me-2"></i> The Ascent</h5>
+                                <p>The climb is divided into sections: lush gardens at the base, frescoes halfway up, the lion platform, and final stairway to the summit palace ruins.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-mountain text-warning me-2"></i> Summit Rewards</h5>
+                                <p>From the top, enjoy panoramic views stretching across four Sri Lankan provinces—a truly breathtaking reward for your climb.</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="alert alert-info">
+                                <i class="fas fa-lightbulb me-2"></i>
+                                <strong>Pro Tip:</strong> Start your climb at 6 AM to avoid crowds and heat. Bring 2 liters of water per person and wear proper hiking shoes with good grip.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dambulla Cave Temple Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/dambulla-cave-temple.jpg" alt="Dambulla Cave Temple" class="destination-image">
+                    <div class="destination-overlay">
+                        <h2 class="destination-title">Dambulla Cave Temple</h2>
+                        <p class="destination-subtitle">Golden Temple of Dambulla - UNESCO World Heritage</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        The Dambulla Cave Temple, also known as the Golden Temple of Dambulla, is a UNESCO World Heritage Site and the town's most famous attraction. This remarkable complex consists of five caves carved into a massive granite rock that towers 160 meters above the surrounding plains. For over 22 centuries, this sacred site has served as a living Buddhist monastery, making it one of the most ancient and best-preserved cave temple complexes in Sri Lanka.
+                    </p>
+                                        <!-- Continue from where you left off -->
+
+                    <p class="destination-description">
+                        with magnificent murals covering an area of approximately 2,100 square meters. The paintings and sculptures are masterpieces of Sri Lankan Buddhist art, depicting the life of the Buddha, important events from Buddhist history, and the island's royal heritage.
+                    </p>
+
+                    <!-- Photo Gallery -->
+                    <div class="photo-gallery">
+                        <div class="photo-item">
+                            <img src="img/cave-interior.jpg" alt="Cave Interior" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Golden Buddha Statues</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/cave-paintings.jpg" alt="Ancient Paintings" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Ancient Murals</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/golden-buddha.jpg" alt="Golden Buddha" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Golden Temple Exterior</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/temple-view.jpg" alt="Temple View" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Panoramic View</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cave Details -->
+                    <div class="highlights-section">
+                        <h3 class="highlight-title"><i class="fas fa-door-open"></i> The Five Sacred Caves</h3>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="highlight-item">
+                                    <div class="highlight-icon" style="background: linear-gradient(135deg, #f1c40f, #f39c12);">
+                                        <span class="font-weight-bold">1</span>
+                                    </div>
+                                    <h5>Devaraja Viharaya</h5>
+                                    <p class="highlight-text">"Cave of the Divine King" - Features a 14-meter long reclining Buddha</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="highlight-item">
+                                    <div class="highlight-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                                        <span class="font-weight-bold">2</span>
+                                    </div>
+                                    <h5>Maha Raja Viharaya</h5>
+                                    <p class="highlight-text">"Cave of the Great King" - Largest cave with 56 statues</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="highlight-item">
+                                    <div class="highlight-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                        <span class="font-weight-bold">3</span>
+                                    </div>
+                                    <h5>Maha Alut Viharaya</h5>
+                                    <p class="highlight-text">"Great New Temple" - Ceiling paintings of 1,500 Buddha images</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
-                    <div class="container py-5">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-5">
-                                <div class="h-100">
-                                    <img src="img/sigiriya.jpeg" class="img-fluid w-100 h-100" alt="">
+                    <!-- Temple Etiquette -->
+                    <div class="travel-tips">
+                        <h3 class="tips-title"><i class="fas fa-hands-praying"></i> Temple Etiquette</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="tip-item">
+                                    <div class="tip-icon" style="background: #e74c3c;">
+                                        <i class="fas fa-ban"></i>
+                                    </div>
+                                    <div class="tip-content">
+                                        <h5>Dress Code</h5>
+                                        <p>Shoulders and knees must be covered. No shorts or sleeveless tops. Sarongs available for rent.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                                <h1 class="mb-4">Sigiriya <span class="text-primary"></span></h1>    
-                                <p class="mb-4">Rising dramatically from the central plains of Sri Lanka, 
-                                    "Sigiriya" is one of the country’s most iconic and unforgettable travel destinations. 
-                                    Known as the "Eighth Wonder of the World", 
-                                    this ancient rock fortress blends history, architecture, art, and nature into a single breathtaking experience making 
-                                    it a must-visit for every traveler exploring Sri Lanka. </p>
-                                    
-                                <p class="mb-4">Sigiriya dates back to the 5th century AD, during the reign of "King Kashyapa". 
-                                    Seeking protection and power, the king transformed this massive rock into a royal citadel. 
-                                    The summit once held a magnificent palace, while the base featured landscaped gardens, moats, and f
-                                    ountains—some of the oldest in the world. After the king’s death, Sigiriya became a Buddhist monastery, 
-                                    preserving its spiritual importance for centuries. 
-                                    Today, it proudly stands as a "UNESCO World Heritage Site", telling stories carved in stone. </p>
-                                    
-                                <p class="mb-4">One of Sigiriya’s most famous attractions is the "Sigiriya Frescoes", 
-                                    vibrant paintings of celestial maidens that still retain their color and grace. 
-                                    Visitors also pass through the "Mirror Wall", once polished so finely that the king could see his reflection. 
-                                    The dramatic "Lion’s Paw entrance", from which the rock gets its name, adds to the site’s mystery. 
-                                    At the top, travelers are rewarded with panoramic views of forests, lakes, and villages an unforgettable sight at sunrise or sunset. </p>
-                                    
-                                <p class="mb-4">Sigiriya is more than a historical site; it is a journey through time, creativity, 
-                                    and human ambition. From engineering marvels to artistic beauty, every step tells a story.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container py-5">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-5">
-                                <div class="h-100">
-                                    <img src="img/dambulla-cave-temple.jpg" class="img-fluid w-100 h-100" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                                <h1 class="mb-4">Dambulla Cave Temple (Golden Temple of Dambulla) <span class="text-primary"></span></h1>    
-                                <p class="mb-4">The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town’s most famous attraction. 
-                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                    beautifully preserved wall paintings. Set on a rocky hill, 
-                                    the temple also offers panoramic views of the surrounding countryside. 
-                                    Visitors are advised to dress modestly and be prepared for a short climb to reach the caves. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container py-5">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-5">
-                                <div class="h-100">
-                                    <img src="img/405dbcb1-a2d1-4bf0-9e67-36cdd8d70270_hot-air-ballooning-day-tour.png" class="img-fluid w-100 h-100" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                                <h1 class="mb-4">Hot air ballooning in Dambulla <span class="text-primary"></span></h1>    
-                                <p class="mb-4">The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town’s most famous attraction. 
-                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                    beautifully preserved wall paintings. Set on a rocky hill, 
-                                    the temple also offers panoramic views of the surrounding countryside. 
-                                    Visitors are advised to dress modestly and be prepared for a short climb to reach the caves. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container-fluid bg-light service py-5">
-                        <div class="container py-5">
-                            <div class="row g-4">
-                                <div class="col-lg-12">
-                                    <div class="row g-4">
-                                        <div class="col-12">
-                                            <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                                                <div class="service-icon p-4">
-                                                    <i class="fa fa-globe fa-4x text-primary"></i>
-                                                </div>
-                                                <div class="service-content">
-                                                    <p class="mb-0">Dambulla offers foreign travelers a perfect balance of culture, 
-                                                        history, and accessibility. With a range of accommodations from budget guesthouses 
-                                                        to comfortable hotels, along with friendly locals and central transport links, 
-                                                        it’s an excellent stop on any Sri Lanka itinerary.</p>
-                                                    <p class="mb-0">Visit cultural sites early in the morning or late afternoon to avoid heat, 
-                                                        and always carry water and sun protection.</p>   
-                                                    <p class="mb-0">Dambulla is more than just a stopover—it’s a destination that reveals the depth of Sri Lanka’s 
-                                                        heritage and invites travelers to slow down and explore its timeless beauty.Book Your Dambulla tour in here</p> 
-                                                </div>
-                                                <div>
-                                                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="tip-item">
+                                    <div class="tip-icon" style="background: #2ecc71;">
+                                        <i class="fas fa-shoe-prints"></i>
+                                    </div>
+                                    <div class="tip-content">
+                                        <h5>Footwear</h5>
+                                        <p>Shoes must be removed before entering caves. Bring socks for hot surfaces.</p>
                                     </div>
                                 </div>
                             </div>
@@ -250,9 +1092,143 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Subscribe Start -->
+            <!-- Adventure Activities Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/hot-air-balloon.jpg" alt="Hot Air Ballooning" class="destination-image">
+                    <div class="destination-overlay">
+                        <h2 class="destination-title">Adventure & Experiences</h2>
+                        <p class="destination-subtitle">Beyond Ancient Wonders</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        While Dambulla is famous for its ancient heritage, it also offers thrilling adventures and authentic local experiences that make your visit truly unforgettable. From sunrise hot air balloon rides over Sigiriya to authentic village tours, there's something for every type of traveler.
+                    </p>
+
+                    <!-- Hot Air Ballooning -->
+                    <div class="adventure-section">
+                        <h3 class="adventure-title"><i class="fas fa-hot-air-balloon"></i> Hot Air Ballooning Over Sigiriya</h3>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <p>Experience Sigiriya from a completely different perspective! A sunrise hot air balloon ride offers breathtaking aerial views of the ancient rock fortress, surrounding forests, and rural landscapes. This is undoubtedly one of the most magical experiences in Sri Lanka.</p>
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item bg-transparent"><i class="fas fa-sun text-warning me-2"></i>Sunrise flights (5:30 AM - 7:30 AM)</li>
+                                    <li class="list-group-item bg-transparent"><i class="fas fa-clock text-primary me-2"></i>45-60 minute flight duration</li>
+                                    <li class="list-group-item bg-transparent"><i class="fas fa-users text-success me-2"></i>Small groups (8-12 people)</li>
+                                    <li class="list-group-item bg-transparent"><i class="fas fa-champagne-glasses text-danger me-2"></i>Champagne breakfast included</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="alert alert-success">
+                                    <h6><i class="fas fa-lightbulb me-2"></i>Best Experience</h6>
+                                    <p class="mb-0">Book for December-March for clearest skies. Photography is spectacular during golden hour.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Local Experiences -->
+                    <div class="culture-grid">
+                        <div class="culture-card">
+                            <img src="img/village-tour.jpg" alt="Village Tour" class="culture-image">
+                            <div class="culture-content">
+                                <h4 class="culture-title">Village Tours</h4>
+                                <p class="culture-desc">Experience traditional Sri Lankan life with bullock cart rides, pottery demonstrations, and authentic home-cooked meals.</p>
+                            </div>
+                        </div>
+                        <div class="culture-card">
+                            <img src="img/spice-garden.jpg" alt="Spice Garden" class="culture-image">
+                            <div class="culture-content">
+                                <h4 class="culture-title">Spice Gardens</h4>
+                                <p class="culture-desc">Learn about Sri Lanka's famous spices and their medicinal uses in beautifully maintained organic gardens.</p>
+                            </div>
+                        </div>
+                        <div class="culture-card">
+                            <img src="img/wildlife-safari.jpg" alt="Wildlife Safari" class="culture-image">
+                            <div class="culture-content">
+                                <h4 class="culture-title">Minneriya Safari</h4>
+                                <p class="culture-desc">Visit Minneriya National Park to witness "The Gathering" - hundreds of wild elephants congregating.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Best Time to Visit -->
+                    <div class="season-guide">
+                        <h3 class="season-title"><i class="fas fa-calendar-alt"></i> Best Time to Visit Dambulla</h3>
+                        <div class="season-months">
+                            <div class="month-card">
+                                <div class="month-name">Dec-Mar</div>
+                                <div class="month-status status-best">Best Season</div>
+                                <small>Dry, pleasant weather</small>
+                            </div>
+                            <div class="month-card">
+                                <div class="month-name">Apr-Sep</div>
+                                <div class="month-status status-good">Good</div>
+                                <small>Hot but manageable</small>
+                            </div>
+                            <div class="month-card">
+                                <div class="month-name">Oct-Nov</div>
+                                <div class="month-status status-fair">Fair</div>
+                                <small>Some rainfall</small>
+                            </div>
+                        </div>
+                        <p class="mt-3 text-center"><small><i class="fas fa-info-circle me-2"></i>Early mornings (6-9 AM) are ideal for sightseeing year-round</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map & Location -->
+            <div class="map-section">
+                <h3 class="map-title">Dambulla Location & Access</h3>
+                <div class="map-container">
+                    <div class="map-overlay">
+                        <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+                        <h4>Central Cultural Triangle</h4>
+                        <p>148km from Colombo | 72km from Kandy</p>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-car text-primary me-2"></i>By Road</h5>
+                        <p>3 hours from Colombo via the A6 and A9 highways. Well-connected by bus and private transport.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-train text-success me-2"></i>By Train</h5>
+                        <p>Nearest station is Habarana (20km away), connected to Colombo and major cities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking CTA -->
+            <div class="booking-cta-enhanced">
+                <h2 class="cta-title-enhanced">Ready to Explore Dambulla?</h2>
+                <p class="cta-description">
+                    Let us craft your perfect Cultural Triangle adventure. Our expert guides, comfortable transportation, and carefully curated experiences ensure you discover the best of Dambulla, Sigiriya, and beyond.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/94771234567?text=Hi%20Ayubowan%20Tours!%20I'd%20like%20to%20book%20a%20Dambulla%20tour" class="btn-cta btn-cta-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Book on WhatsApp
+                    </a>
+                    <a href="./booking.html" class="btn-cta btn-cta-secondary">
+                        <i class="fas fa-calendar-check"></i> Book Online Now
+                    </a>
+                </div>
+                <p class="mt-4 mb-0" style="opacity: 0.8; font-size: 0.9rem;">
+                    <i class="fas fa-phone-alt me-2"></i> Call us: +94 77 123 4567 | 
+                    <i class="fas fa-envelope ms-3 me-2"></i> info@ayubowantours.com
+                </p>
+            </div>
+        </div>
+        <!-- ENHANCED BLOG CONTENT END -->
+
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/94771234567?text=Hi%20Ayubowan%20Tours!%20I'm%20interested%20in%20Dambulla%20tours" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+<!-- Subscribe Start (Original - Keep as is) -->
         <div class="container-fluid subscribe py-5">
             <div class="container text-center py-5">
                 <div class="mx-auto text-center" style="max-width: 900px;">
@@ -269,96 +1245,8 @@
             </div>
         </div>
         <!-- Subscribe End -->
-
-        <!-- Footer Start -->
-        <!--<div class="container-fluid footer py-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Get In Touch</h4>
-                            <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-share fa-2x text-white me-2"></i>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Company</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Support</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Contact</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <div class="row gy-3 gx-2 mb-4">
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">Arabic</option>
-                                                <option value="2">German</option>
-                                                <option value="3">Greek</option>
-                                                <option value="3">New York</option>
-                                            </select>
-                                            <label for="select1">English</label>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">USD</option>
-                                                <option value="2">EUR</option>
-                                                <option value="3">INR</option>
-                                                <option value="3">GBP</option>
-                                            </select>
-                                            <label for="select1">$</label>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <h4 class="text-white mb-3">Payments</h4>
-                            <div class="footer-bank-card">
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
-                                <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Footer End -->
         
-        <!-- Copyright Start -->
+        <!-- Copyright Start (Original - Keep as is) -->
         <div class="container-fluid copyright text-body py-4">
             <div class="container">
                 <div class="row g-4 align-items-center">
@@ -370,22 +1258,97 @@
         </div>
         <!-- Copyright End -->
 
-        <!-- whatsapp button -->
-        <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
-            class="whatsapp-float"
-            target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
         <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
         <script src="lib/easing/easing.min.js"></script>
         <script src="lib/waypoints/waypoints.min.js"></script>
-        
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-    </body>
 
+        <!-- Enhanced Blog Scripts -->
+        <script>
+            // Scroll animations
+            document.addEventListener('DOMContentLoaded', function() {
+                // Animate elements on scroll
+                const animateOnScroll = function() {
+                    const elements = document.querySelectorAll('.destination-card-enhanced, .highlight-item, .culture-card');
+                    
+                    elements.forEach(element => {
+                        const elementPosition = element.getBoundingClientRect().top;
+                        const screenPosition = window.innerHeight / 1.2;
+                        
+                        if (elementPosition < screenPosition) {
+                            element.style.animationDelay = (Math.random() * 0.3) + 's';
+                            element.style.opacity = '1';
+                        }
+                    });
+                };
+
+                // Initial animation
+                setTimeout(animateOnScroll, 100);
+
+                // Scroll event listener
+                window.addEventListener('scroll', animateOnScroll);
+
+                // Smooth scroll for back to top
+                document.querySelector('.back-to-top').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+
+                // WhatsApp button animation on hover
+                const whatsappBtn = document.querySelector('.whatsapp-float');
+                whatsappBtn.addEventListener('mouseenter', function() {
+                    this.style.animation = 'none';
+                    setTimeout(() => {
+                        this.style.animation = 'whatsapp-pulse 1.8s infinite';
+                    }, 50);
+                });
+
+                // Form submission handling
+                const ctaButtons = document.querySelectorAll('.btn-cta');
+                ctaButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        if (this.href.includes('wa.me')) {
+                            // Track WhatsApp clicks
+                            console.log('WhatsApp booking initiated');
+                        } else {
+                            // Track online booking clicks
+                            console.log('Online booking initiated');
+                        }
+                    });
+                });
+
+                // Add loading animation to images
+                const images = document.querySelectorAll('.destination-image, .gallery-photo');
+                images.forEach(img => {
+                    img.addEventListener('load', function() {
+                        this.style.opacity = '1';
+                        this.style.transition = 'opacity 0.5s ease';
+                    });
+                    img.style.opacity = '0';
+                });
+            });
+
+            // Spinner removal
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    document.getElementById('spinner').style.display = 'none';
+                }, 500);
+            });
+        </script>
+    </body>
 </html>

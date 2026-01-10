@@ -3,10 +3,10 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Ayubowan Tours</title>
+        <title>Ayubowan Tours | Nuwara Eliya - Sri Lanka's Little England</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+        <meta content="Nuwara Eliya, Gregory Lake, Tea Plantations, Horton Plains, Hakgala Garden, Hill Country, Sri Lanka Little England" name="keywords">
+        <meta content="Discover Nuwara Eliya - Sri Lanka's 'Little England' with colonial charm, tea estates, and cool mountain climate. Experience misty hills, waterfalls, and breathtaking views." name="description">
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,55 +23,947 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        
+        <!-- Enhanced Blog Styles -->
         <style>
             /* WhatsApp Floating Button with Pulse Animation */
             .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 80px;
-            height: 80px;
-            background-color: #25D366;
-            color: #fff;
-            border-radius: 50%;
-            font-size: 42px;
-            text-align: center;
-            line-height: 80px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-            z-index: 1000;
-            animation: whatsapp-pulse 1.8s infinite;
-            text-decoration: none;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 80px;
+                height: 80px;
+                background-color: #25D366;
+                color: #fff;
+                border-radius: 50%;
+                font-size: 42px;
+                text-align: center;
+                line-height: 80px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+                z-index: 1000;
+                animation: whatsapp-pulse 1.8s infinite;
+                text-decoration: none;
             }
 
             /* Hover effect */
             .whatsapp-float:hover {
-            transform: scale(1.1);
-            transition: 0.3s ease;
+                transform: scale(1.1);
+                transition: 0.3s ease;
             }
 
             /* Pulse animation */
             @keyframes whatsapp-pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
+                0% {
+                    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+                }
+                70% {
+                    box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
+                }
+                100% {
+                    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+                }
             }
 
             /* Mobile responsive */
             @media (max-width: 768px) {
-            .whatsapp-float {
+                .whatsapp-float {
+                    width: 70px;
+                    height: 70px;
+                    font-size: 38px;
+                    line-height: 70px;
+                    bottom: 15px;
+                    right: 15px;
+                }
+            }
+
+            /* ENHANCED BLOG CONTENT STYLES */
+            .blog-hero {
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/Nuwara_Eliya_Gregory_Lake.jpg');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                height: 450px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                margin-bottom: 50px;
+                border-radius: 0 0 30px 30px;
+            }
+
+            .blog-hero-content {
+                color: white;
+                text-align: center;
+                z-index: 2;
+                padding: 0 20px;
+            }
+
+            .blog-hero-title {
+                font-size: 4rem;
+                font-weight: 700;
+                margin-bottom: 15px;
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            }
+
+            .blog-hero-subtitle {
+                font-size: 1.4rem;
+                opacity: 0.95;
+                max-width: 800px;
+                margin: 0 auto;
+                font-weight: 300;
+            }
+
+            /* Hill Country Theme */
+            .hill-hero {
+                background: linear-gradient(135deg, rgba(46, 125, 50, 0.1), rgba(27, 94, 32, 0.1));
+                border-radius: 20px;
+                padding: 50px;
+                margin: 40px 0;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hill-hero:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+                background-size: cover;
+            }
+
+            /* Destination Cards - Enhanced */
+            .destination-card-enhanced {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+                margin-bottom: 60px;
+                transition: all 0.4s ease;
+                border: 1px solid #eaeaea;
+            }
+
+            .destination-card-enhanced:hover {
+                transform: translateY(-12px);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            }
+
+            .destination-image-container {
+                position: relative;
+                height: 400px;
+                overflow: hidden;
+            }
+
+            .destination-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s ease;
+            }
+
+            .destination-image-container:hover .destination-image {
+                transform: scale(1.08);
+            }
+
+            .destination-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+                padding: 40px;
+                color: white;
+            }
+
+            .hill-badge {
+                background: linear-gradient(135deg, #2e7d32, #1b5e20);
+                color: white;
+                padding: 8px 20px;
+                border-radius: 30px;
+                font-weight: 600;
+                font-size: 0.9rem;
+                display: inline-block;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .destination-title {
+                font-size: 2.2rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+                color: white;
+            }
+
+            .destination-subtitle {
+                font-size: 1.2rem;
+                opacity: 0.95;
+                font-weight: 300;
+            }
+
+            .destination-content-enhanced {
+                padding: 50px;
+            }
+
+            .destination-description {
+                color: #555;
+                line-height: 1.9;
+                margin-bottom: 30px;
+                font-size: 1.1rem;
+            }
+
+            /* Hill Features Grid */
+            .hill-features {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 20px;
+                margin: 30px 0;
+            }
+
+            .feature-item {
+                text-align: center;
+                padding: 20px;
+                background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                border-radius: 15px;
+                transition: all 0.3s ease;
+            }
+
+            .feature-item:hover {
+                transform: translateY(-5px);
+                background: linear-gradient(135deg, #2e7d32, #1b5e20);
+                color: white;
+            }
+
+            .feature-item:hover .feature-icon {
+                color: white;
+            }
+
+            .feature-icon {
+                font-size: 2rem;
+                color: #2e7d32;
+                margin-bottom: 15px;
+                display: block;
+            }
+
+            .feature-text {
+                font-weight: 600;
+                font-size: 0.95rem;
+            }
+
+            /* Highlights Section */
+            .highlights-section {
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #2e7d32;
+            }
+
+            .highlight-title {
+                font-size: 1.8rem;
+                color: #2c3e50;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .highlight-title i {
+                color: #2e7d32;
+                font-size: 1.5rem;
+            }
+
+            .highlight-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 25px;
+            }
+
+            .highlight-item {
+                text-align: center;
+                padding: 25px;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+                transition: all 0.3s ease;
+            }
+
+            .highlight-item:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            }
+
+            .highlight-icon {
                 width: 70px;
                 height: 70px;
-                font-size: 38px;
-                line-height: 70px;
-                bottom: 15px;
-                right: 15px;
+                background: linear-gradient(135deg, #2e7d32, #1b5e20);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+                font-size: 1.8rem;
+                color: white;
             }
+
+            .highlight-text {
+                font-size: 1rem;
+                color: #555;
+                font-weight: 600;
+                line-height: 1.5;
+            }
+
+            /* Travel Tips Section */
+            .travel-tips {
+                background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #2e7d32;
+            }
+
+            .tips-title {
+                font-size: 1.8rem;
+                color: #1b5e20;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .tips-title i {
+                color: #2e7d32;
+                font-size: 1.5rem;
+            }
+
+            .tips-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+            }
+
+            .tip-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                background: white;
+                padding: 25px;
+                border-radius: 15px;
+                transition: all 0.3s ease;
+            }
+
+            .tip-item:hover {
+                transform: translateX(5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+
+            .tip-icon {
+                width: 50px;
+                height: 50px;
+                background: #2e7d32;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.3rem;
+                flex-shrink: 0;
+            }
+
+            .tip-content h5 {
+                color: #2c3e50;
+                margin-bottom: 10px;
+                font-size: 1.2rem;
+            }
+
+            .tip-content p {
+                color: #666;
+                font-size: 1rem;
+                margin-bottom: 0;
+                line-height: 1.6;
+            }
+
+            /* Tea Experience Section */
+            .tea-section {
+                background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #ff9800;
+            }
+
+            .tea-title {
+                font-size: 1.8rem;
+                color: #e65100;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .tea-title i {
+                color: #ff9800;
+                font-size: 1.5rem;
+            }
+
+            /* Best Time to Visit */
+            .season-guide {
+                background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #1976d2;
+            }
+
+            .season-title {
+                font-size: 1.8rem;
+                color: #2c3e50;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .season-title i {
+                color: #1976d2;
+                font-size: 1.5rem;
+            }
+
+            .season-months {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .month-card {
+                background: white;
+                padding: 25px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+                transition: all 0.3s ease;
+            }
+
+            .month-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            }
+
+            .month-name {
+                font-weight: 700;
+                color: #2c3e50;
+                margin-bottom: 15px;
+                font-size: 1.1rem;
+            }
+
+            .month-status {
+                font-size: 0.95rem;
+                padding: 8px 20px;
+                border-radius: 25px;
+                font-weight: 600;
+                display: inline-block;
+            }
+
+            .status-best {
+                background: linear-gradient(135deg, #2e7d32, #1b5e20);
+                color: white;
+            }
+
+            .status-good {
+                background: linear-gradient(135deg, #1976d2, #1565c0);
+                color: white;
+            }
+
+            .status-fair {
+                background: linear-gradient(135deg, #ff9800, #f57c00);
+                color: white;
+            }
+
+            .status-low {
+                background: linear-gradient(135deg, #e53935, #c62828);
+                color: white;
+            }
+
+            /* Booking CTA Enhanced */
+            .booking-cta-enhanced {
+                background: linear-gradient(135deg, #1b5e20, #2e7d32);
+                color: white;
+                border-radius: 25px;
+                padding: 60px 50px;
+                text-align: center;
+                margin: 80px 0;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .booking-cta-enhanced:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+                background-size: cover;
+            }
+
+            .cta-title-enhanced {
+                font-size: 2.8rem;
+                margin-bottom: 20px;
+                color: white;
+                position: relative;
+                z-index: 2;
+                font-weight: 700;
+            }
+
+            .cta-description {
+                font-size: 1.2rem;
+                opacity: 0.95;
+                max-width: 800px;
+                margin: 0 auto 40px;
+                position: relative;
+                z-index: 2;
+                line-height: 1.8;
+                font-weight: 300;
+            }
+
+            .cta-buttons {
+                display: flex;
+                gap: 25px;
+                justify-content: center;
+                flex-wrap: wrap;
+                position: relative;
+                z-index: 2;
+            }
+
+            .btn-cta {
+                padding: 18px 45px;
+                font-size: 1.2rem;
+                font-weight: 700;
+                border-radius: 60px;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 15px;
+                text-decoration: none;
+                letter-spacing: 0.5px;
+            }
+
+            .btn-cta-primary {
+                background: linear-gradient(135deg, #25D366, #128C7E);
+                color: white;
+                border: none;
+                box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+            }
+
+            .btn-cta-primary:hover {
+                transform: translateY(-5px) scale(1.05);
+                box-shadow: 0 20px 40px rgba(37, 211, 102, 0.6);
+                color: white;
+            }
+
+            .btn-cta-secondary {
+                background: white;
+                color: #1b5e20;
+                border: 2px solid white;
+                box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+            }
+
+            .btn-cta-secondary:hover {
+                background: transparent;
+                color: white;
+                transform: translateY(-5px) scale(1.05);
+                box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
+            }
+
+            /* Map Section */
+            .map-section {
+                background: white;
+                border-radius: 20px;
+                padding: 50px;
+                margin: 50px 0;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .map-title {
+                font-size: 2.2rem;
+                color: #2c3e50;
+                margin-bottom: 30px;
+                font-weight: 700;
+            }
+
+            .map-container {
+                background: linear-gradient(135deg, #388e3c, #2e7d32);
+                height: 350px;
+                border-radius: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.8rem;
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 30px;
+            }
+
+            .map-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            /* Photo Gallery */
+            .photo-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+                margin: 50px 0;
+            }
+
+            .photo-item {
+                border-radius: 15px;
+                overflow: hidden;
+                height: 250px;
+                position: relative;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+
+            .gallery-photo {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.6s ease;
+            }
+
+            .photo-item:hover .gallery-photo {
+                transform: scale(1.1);
+            }
+
+            .photo-caption {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+                color: white;
+                padding: 20px;
+                transform: translateY(100%);
+                transition: transform 0.4s ease;
+            }
+
+            .photo-item:hover .photo-caption {
+                transform: translateY(0);
+            }
+
+            /* Hill Country Specific Styles */
+            .hiking-section {
+                background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #2e7d32;
+            }
+
+            .hiking-title {
+                font-size: 1.8rem;
+                color: #1b5e20;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .hiking-title i {
+                color: #2e7d32;
+                font-size: 1.5rem;
+            }
+
+            .colonial-section {
+                background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #7b1fa2;
+            }
+
+            .colonial-title {
+                font-size: 1.8rem;
+                color: #4a148c;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .colonial-title i {
+                color: #7b1fa2;
+                font-size: 1.5rem;
+            }
+
+            /* Climate Info */
+            .climate-section {
+                background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+                border-radius: 20px;
+                padding: 40px;
+                margin: 40px 0;
+                border-left: 6px solid #0288d1;
+            }
+
+            .climate-title {
+                font-size: 1.8rem;
+                color: #01579b;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .climate-title i {
+                color: #0288d1;
+                font-size: 1.5rem;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 1200px) {
+                .blog-hero-title {
+                    font-size: 3.5rem;
+                }
+                
+                .destination-image-container {
+                    height: 350px;
+                }
+            }
+
+            @media (max-width: 992px) {
+                .blog-hero-title {
+                    font-size: 3rem;
+                }
+                
+                .blog-hero {
+                    height: 400px;
+                }
+                
+                .destination-image-container {
+                    height: 300px;
+                }
+                
+                .destination-content-enhanced {
+                    padding: 40px;
+                }
+                
+                .cta-title-enhanced {
+                    font-size: 2.4rem;
+                }
+                
+                .highlight-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .blog-hero {
+                    height: 350px;
+                }
+                
+                .blog-hero-title {
+                    font-size: 2.5rem;
+                }
+                
+                .blog-hero-subtitle {
+                    font-size: 1.2rem;
+                }
+                
+                .destination-image-container {
+                    height: 250px;
+                }
+                
+                .destination-title {
+                    font-size: 1.8rem;
+                }
+                
+                .highlight-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .tips-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .cta-buttons {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .btn-cta {
+                    width: 100%;
+                    max-width: 350px;
+                    justify-content: center;
+                }
+                
+                .season-months {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .photo-gallery {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 576px) {
+                .blog-hero-title {
+                    font-size: 2.2rem;
+                }
+                
+                .blog-hero-subtitle {
+                    font-size: 1.1rem;
+                }
+                
+                .destination-image-container {
+                    height: 220px;
+                }
+                
+                .destination-content-enhanced {
+                    padding: 30px;
+                }
+                
+                .cta-title-enhanced {
+                    font-size: 2rem;
+                }
+                
+                .season-months {
+                    grid-template-columns: 1fr;
+                }
+                
+                .photo-gallery {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            /* Animations */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(40px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes mistAnimation {
+                0% {
+                    background-position: 0 0;
+                }
+                100% {
+                    background-position: 1000px 0;
+                }
+            }
+
+            .destination-card-enhanced, .highlight-item, .tip-item {
+                animation: fadeInUp 0.7s ease forwards;
+                opacity: 0;
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, #2e7d32, #1b5e20);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(135deg, #1b5e20, #2e7d32);
+            }
+
+            /* Mist Pattern Background */
+            .mist-bg {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .mist-bg:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(255,255,255,0.1)"/></svg>');
+                background-size: 1200px 100px;
+                animation: mistAnimation 30s linear infinite;
+                opacity: 0.3;
+                z-index: 1;
+            }
+
+            /* Hill Rating System */
+            .hill-rating {
+                display: flex;
+                gap: 10px;
+                margin: 15px 0;
+            }
+
+            .rating-star {
+                color: #ff9800;
+                font-size: 1.2rem;
+            }
+
+            /* Interactive Elements */
+            .interactive-map {
+                position: relative;
+                height: 400px;
+                background: linear-gradient(135deg, #a5d6a7, #81c784);
+                border-radius: 20px;
+                overflow: hidden;
+            }
+
+            .hill-marker {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background: #2e7d32;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+            }
+
+            .hill-marker:hover {
+                transform: scale(1.2);
+                background: #1b5e20;
+            }
+
+            /* Temperature Display */
+            .temp-display {
+                font-size: 2rem;
+                font-weight: bold;
+                color: #2e7d32;
+                display: flex;
+                align-items: center;
+                gap: 10px;
             }
         </style>
     </head>
@@ -91,7 +983,6 @@
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="./index.html" class="navbar-brand p-0">
                     <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -111,149 +1002,655 @@
         </div>
         <!-- Navbar & Hero End -->
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">Nuwara Eliya</h1>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
-                    <li class="breadcrumb-item active text-white">Nuwara Eliya</li>
-                </ol>    
+        <!-- Blog Hero Section -->
+        <div class="blog-hero mist-bg">
+            <div class="container">
+                <div class="blog-hero-content">
+                    <h1 class="blog-hero-title">Nuwara Eliya</h1>
+                    <p class="blog-hero-subtitle">Sri Lanka's Little England - Where Misty Hills Meet Colonial Charm</p>
+                </div>
             </div>
         </div>
-        <!-- Header End -->
 
-        <!-- About Start -->
-        <div class="container-fluid about py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/Nuwara_Eliya_Gregory_Lake.jpg" class="img-fluid w-100 h-100" alt="">
-                        </div>
+        <!-- ENHANCED BLOG CONTENT START -->
+        <div class="container py-5">
+            <!-- Introduction Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/Nuwara_Eliya_Gregory_Lake.jpg" alt="Nuwara Eliya Hill Country" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="hill-badge">Hill Country Capital</div>
+                        <h2 class="destination-title">Nuwara Eliya - Little England</h2>
+                        <p class="destination-subtitle">Sri Lanka's Hill Station Paradise - 1,868m Above Sea Level</p>
                     </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Sri Lanka's Little England : <span class="text-primary">Nuwara Eliya </span></h1>    
-                        <p class="mb-4">Nuwara Eliya, often called “Little England,” is a charming hill-country 
-                            town in Sri Lanka that attracts many foreign travelers with its cool climate, 
-                            misty mountains, tea plantations, and colonial charm. Here are the top places to visit 
-                            in Nuwara Eliya that are especially popular with international visitors. </p>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Welcome to Nuwara Eliya, Sri Lanka's most enchanting hill station and the heart of the country's tea country. Perched at an elevation of 1,868 meters (6,128 feet) in the central highlands, this picturesque town offers a refreshing escape from Sri Lanka's tropical heat with its cool climate, misty mountains, and lush green landscapes. Known affectionately as "Little England," Nuwara Eliya preserves the charming legacy of British colonial rule through its Tudor-style architecture, manicured gardens, and afternoon tea traditions.
+                    </p>
+                    <p class="destination-description">
+                        Founded in the 1840s by British colonialists seeking respite from the coastal heat, Nuwara Eliya quickly became the favored hill station of the colonial elite. Today, it offers visitors a unique blend of natural beauty, colonial history, and authentic Sri Lankan hospitality. The town's climate hovers between 10-20°C (50-68°F) year-round, creating perfect conditions for the surrounding tea plantations that produce some of the world's finest Ceylon tea. Whether you're exploring mist-shrouded mountains, strolling through botanical gardens, or sipping freshly brewed tea overlooking endless emerald hills, Nuwara Eliya promises an unforgettable experience.
+                    </p>
 
-                        <h1 class="mb-4">Gregory Lake <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Gregory Lake is one of the main attractions in Nuwara Eliya. Surrounded by green hills, 
-                            it’s perfect for relaxing walks, boat rides, and enjoying the cool weather. 
-                            Foreign travelers often enjoy picnics, cycling, and photography here, especially in the evening. </p>    
-                    </div>
-                </div>
-            </div>
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/tea-factory.jpg" class="img-fluid w-100 h-100" alt="">
+                    <!-- Hill Country Highlights -->
+                    <div class="highlights-section">
+                        <h3 class="highlight-title"><i class="fas fa-mountain"></i> Why Nuwara Eliya Captivates Travelers</h3>
+                        <div class="highlight-grid">
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #2e7d32, #1b5e20);">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <p class="highlight-text">World's Finest Tea<br>Ceylon Tea Heartland</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #1976d2, #1565c0);">
+                                    <i class="fas fa-temperature-low"></i>
+                                </div>
+                                <p class="highlight-text">Cool Mountain Climate<br>10-20°C Year-Round</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #7b1fa2, #6a1b9a);">
+                                    <i class="fas fa-landmark"></i>
+                                </div>
+                                <p class="highlight-text">Colonial Heritage<br>Tudor Architecture</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #ff9800, #f57c00);">
+                                    <i class="fas fa-hiking"></i>
+                                </div>
+                                <p class="highlight-text">Spectacular Hikes<br>World's End & Waterfalls</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Tea Plantations & Tea Factories <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Nuwara Eliya is at the heart of Sri Lanka’s tea country. 
-                            Visiting a tea plantation or tea factory allows travelers to see how world-famous Ceylon tea is produced. 
-                            Guided tours usually end with a fresh tea tasting and scenic views of endless green hills. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/travel-hakgala-botanical-garden.webp" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Hakgala Botanical Garden <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Located a short drive from town, Hakgala Botanical Garden is one of the 
-                            highest-altitude botanical gardens in Sri Lanka. It is home to roses, orchids, 
-                            ferns, and exotic plants. The peaceful setting makes it ideal for nature lovers and leisurely walks. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/horton-plains-national-park.webp" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Horton Plains National Park <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Horton Plains is a UNESCO World Heritage Site and a must-visit for adventurous travelers. 
-                            The park is famous for World’s End, a dramatic cliff with breathtaking views, and Baker’s Falls. 
-                            The early-morning hike through misty grasslands is a memorable experience for foreign visitors. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/victoria-park-nuwara-eliya.jpg" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Victoria Park <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Located in the town center, Victoria Park is a beautifully maintained park ideal for relaxing. 
-                            It’s popular among bird watchers and travelers who want a peaceful break after sightseeing. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/Nuwara-Eliya-City-Tour-1200x630-1.jpg" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                        <h1 class="mb-4">Nuwara Eliya Town & Colonial Architecture <span class="text-primary"></span></h1>    
-                        <p class="mb-4">Walking around Nuwara Eliya town itself is a unique experience. 
-                            Colonial-era buildings, the old post office, and traditional English-style 
-                            houses give the town its distinctive charm. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid bg-light service py-5">
-                <div class="container py-5">
-                    <div class="row g-4">
-                        <div class="col-lg-12">
-                            <div class="row g-4">
-                                <div class="col-12">
-                                    <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                                        <div class="service-icon p-4">
-                                            <i class="fa fa-globe fa-4x text-primary"></i>
-                                        </div>
-                                        <div class="service-content">
-                                            <p class="mb-0">Nuwara Eliya is an ideal destination for travelers looking to escape the 
-                                                tropical heat and experience a different side of Sri Lanka—one filled with misty hills, 
-                                                fresh air, and timeless beauty.Book Your Nuwara Eliya tour in here </p>
-                                        </div>
-                                        <div>
-                                            <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
-                                        </div>
-                                    </div>
+
+                    <!-- Travel Tips -->
+                    <div class="travel-tips">
+                        <h3 class="tips-title"><i class="fas fa-snowflake"></i> Hill Country Travel Essentials</h3>
+                        <div class="tips-grid">
+                            <div class="tip-item">
+                                <div class="tip-icon" style="background: #2e7d32;">
+                                    <i class="fas fa-thermometer-half"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Climate Preparation</h5>
+                                    <p>Pack warm clothing - temperatures drop to 10°C (50°F) at night. Even in daytime, layers are essential as weather changes rapidly in the hills.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon" style="background: #1976d2;">
+                                    <i class="fas fa-cloud-rain"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Rain Gear</h5>
+                                    <p>Nuwara Eliya receives frequent showers. Waterproof jackets and sturdy, waterproof shoes are essential for exploring.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon" style="background: #7b1fa2;">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Sun Protection</h5>
+                                    <p>Despite the cool climate, UV levels remain high at this altitude. Use sunscreen and wear sunglasses.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon" style="background: #ff9800;">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <div class="tip-content">
+                                    <h5>Photography Tips</h5>
+                                    <p>Early mornings (6-8 AM) offer the clearest views before clouds roll in. Golden hour creates magical light on tea plantations.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Subscribe Start -->
+            <!-- Gregory Lake Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/Nuwara_Eliya_Gregory_Lake.jpg" alt="Gregory Lake Nuwara Eliya" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="hill-badge">Scenic Centerpiece</div>
+                        <h2 class="destination-title">Gregory Lake</h2>
+                        <p class="destination-subtitle">Nuwara Eliya's Picturesque Heart - 91.2 Hectares of Tranquility</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Gregory Lake stands as the beautiful centerpiece of Nuwara Eliya, offering both natural beauty and recreational activities in a serene setting. Created in 1873 by Governor Sir William Gregory, this expansive 91.2-hectare lake was originally designed as a reservoir but has evolved into the town's most beloved leisure spot. Surrounded by misty hills and lush greenery, the lake provides a perfect backdrop for relaxation, photography, and gentle outdoor activities.
+                    </p>
+                    <p class="destination-description">
+                        The lake's perimeter features a well-maintained walking and cycling path that offers changing perspectives of the water and surrounding mountains. Early mornings are particularly magical when mist rises from the lake's surface, creating ethereal scenes that photographers cherish. As the day progresses, the lake comes alive with activities - from paddle boating and swan-shaped pedal boats to horse riding along the shores. The eastern shore features charming cafes and restaurants where you can enjoy hot drinks while watching the sunset paint the mountains in hues of orange and purple.
+                    </p>
+
+                    <!-- Lake Activities -->
+                    <div class="hill-features">
+                        <div class="feature-item">
+                            <i class="fas fa-ship feature-icon"></i>
+                            <div class="feature-text">Boat Rides</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-biking feature-icon"></i>
+                            <div class="feature-text">Cycling</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-horse feature-icon"></i>
+                            <div class="feature-text">Horse Riding</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-camera feature-icon"></i>
+                            <div class="feature-text">Photography</div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-utensils feature-icon"></i>
+                            <div class="feature-text">Lakeside Dining</div>
+                        </div>
+                    </div>
+
+                    <!-- Lake Experience -->
+                    <div class="hiking-section">
+                        <h3 class="hiking-title"><i class="fas fa-water"></i> Gregory Lake Experience</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-clock text-primary me-2"></i> Best Times to Visit</h5>
+                                <ul>
+                                    <li><strong>Morning (6-9 AM):</strong> Misty atmosphere, best for photography</li>
+                                    <li><strong>Afternoon (2-4 PM):</strong> Clear views, ideal for activities</li>
+                                    <li><strong>Sunset (5-6 PM):</strong> Golden hour, romantic atmosphere</li>
+                                    <li><strong>Weekends:</strong> Lively with local families and events</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-map-signs text-success me-2"></i> Lake Circuit</h5>
+                                <p>The 4km walking path circles the entire lake, offering changing perspectives. Allow 60-90 minutes for a complete circuit. Several viewpoints along the way provide perfect photo opportunities.</p>
+                                <div class="alert alert-info mt-3">
+                                    <i class="fas fa-lightbulb me-2"></i>
+                                    <strong>Pro Tip:</strong> Rent bicycles near the entrance for a more enjoyable lake circuit. Morning rentals are freshest and offer the best views.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo Gallery -->
+                    <div class="photo-gallery">
+                        <div class="photo-item">
+                            <img src="img/gregory-lake-morning.jpg" alt="Gregory Lake Morning" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Misty Morning Magic</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/gregory-lake-boats.jpg" alt="Lake Boats" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Paddle Boat Adventures</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/gregory-lake-sunset.jpg" alt="Lake Sunset" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Spectacular Sunsets</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/gregory-lake-path.jpg" alt="Lakeside Path" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Scenic Walking Path</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tea Plantations Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/tea-factory.jpg" alt="Tea Plantations Nuwara Eliya" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="hill-badge" style="background: linear-gradient(135deg, #ff9800, #f57c00);">Ceylon Tea Heartland</div>
+                        <h2 class="destination-title">Tea Plantations & Factories</h2>
+                        <p class="destination-subtitle">World's Finest Ceylon Tea - From Leaf to Cup</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Nuwara Eliya sits at the heart of Sri Lanka's famed tea country, where the perfect combination of altitude, climate, and soil produces some of the world's most exquisite teas. The surrounding hills are carpeted in meticulously manicured tea bushes that create a stunning patchwork of green across the landscape. Visiting a working tea plantation and factory is not just a tour—it's an immersive journey into the art, science, and tradition of Ceylon tea production that has shaped Sri Lanka's economy and culture for over 150 years.
+                    </p>
+                    <p class="destination-description">
+                        The tea experience begins in the fields, where you can observe skilled tea pluckers (mostly women) deftly harvesting the "two leaves and a bud" that make the finest teas. Each plucker typically collects 18-20kg of green leaves per day. From there, the leaves travel to nearby factories where they undergo withering, rolling, fermenting, drying, and sorting processes that transform them into the familiar black, green, or white teas. Most factories offer guided tours that explain each step, culminating in a tasting session where you can appreciate the nuanced flavors of different tea grades and varieties.
+                    </p>
+
+                    <!-- Tea Experience -->
+                    <div class="tea-section">
+                        <h3 class="tea-title"><i class="fas fa-leaf"></i> The Ceylon Tea Experience</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-industry text-warning me-2"></i> Factory Tours</h5>
+                                <p>Working factories like Pedro Tea Estate and Mackwoods Labookellie offer comprehensive tours showing the complete tea-making process from fresh leaf to packaged product. Tours typically last 45-60 minutes and conclude with tea tasting.</p>
+                                <ul class="mt-3">
+                                    <li><strong>Pedro Tea Estate:</strong> One of Nuwara Eliya's oldest factories</li>
+                                    <li><strong>Mackwoods Labookellie:</strong> Famous for its hilltop location</li>
+                                    <li><strong>Bluefield Tea Gardens:</strong> Spectacular panoramic views</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-shopping-bag text-success me-2"></i> Tea Shopping</h5>
+                                <p>Factory shops offer fresh tea at wholesale prices. Look for:</p>
+                                <ul>
+                                    <li><strong>Orange Pekoe (OP):</strong> Long, thin leaves - light flavor</li>
+                                    <li><strong>Broken Orange Pekoe (BOP):</strong> Stronger, fuller flavor</li>
+                                    <li><strong>Silver Tips:</strong> Premium white tea - delicate flavor</li>
+                                    <li><strong>Green Tea:</strong> Unfermented - high antioxidants</li>
+                                </ul>
+                                <div class="alert alert-warning mt-3">
+                                    <i class="fas fa-tag me-2"></i>
+                                    <strong>Buying Tip:</strong> Purchase directly from factory shops for freshest tea and best prices. Ask for vacuum-sealed packs for longer shelf life.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tea Culture -->
+                    <div class="highlights-section">
+                        <h3 class="highlight-title"><i class="fas fa-history"></i> Tea Culture & History</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-book text-primary me-2"></i> Historical Significance</h5>
+                                <p>Tea was introduced to Sri Lanka in 1867 by Scottish planter James Taylor, replacing failed coffee plantations. The cool climate of Nuwara Eliya proved perfect for high-quality tea production, leading to the region's nickname "Tea Country."</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-users text-success me-2"></i> Cultural Impact</h5>
+                                <p>Tea plantations brought Tamil workers from South India, creating a unique cultural mosaic. The industry remains central to Sri Lanka's economy, with tea being the country's largest export commodity after garments.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo Gallery -->
+                    <div class="photo-gallery">
+                        <div class="photo-item">
+                            <img src="img/tea-pluckers.jpg" alt="Tea Pluckers" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Skilled Tea Pluckers</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/tea-plantation-view.jpg" alt="Tea Plantation View" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Endless Green Hills</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/tea-factory-interior.jpg" alt="Tea Factory" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Traditional Processing</small>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/tea-tasting.jpg" alt="Tea Tasting" class="gallery-photo">
+                            <div class="photo-caption">
+                                <small>Tea Tasting Session</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hakgala Botanical Garden Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/travel-hakgala-botanical-garden.webp" alt="Hakgala Botanical Garden" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="hill-badge" style="background: linear-gradient(135deg, #2196f3, #1976d2);">Floral Paradise</div>
+                        <h2 class="destination-title">Hakgala Botanical Garden</h2>
+                        <p class="destination-subtitle">Sri Lanka's High-Altitude Floral Wonderland</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Nestled on the slopes of the Hakgala Rock, 10 kilometers from Nuwara Eliya, Hakgala Botanical Garden offers a breathtaking display of temperate flora at one of Asia's highest botanical gardens (1,700 meters above sea level). Established in 1861 as a cinchona plantation (for quinine production) and later converted to a research garden, Hakgala spans 28 hectares and showcases an extraordinary collection of plants from around the world, perfectly adapted to the cool mountain climate.
+                    </p>
+                    <p class="destination-description">
+                        The garden is organized into several specialized sections, each offering unique botanical treasures. The Rose Garden alone features over 100 varieties of roses that bloom spectacularly from March to May. The Fernery displays ancient fern species in a misty, shaded environment, while the Orchid House presents delicate epiphytic orchids from Sri Lanka's cloud forests. Perhaps most impressive is the garden's collection of temperate plants rarely seen in tropical countries - from English oaks and Japanese maples to Himalayan rhododendrons and Australian eucalypts. The well-maintained paths wind through these diverse collections, offering surprises at every turn.
+                    </p>
+
+                    <!-- Garden Highlights -->
+                    <div class="hiking-section">
+                        <h3 class="hiking-title"><i class="fas fa-seedling"></i> Garden Highlights</h3>
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #e91e63, #c2185b); margin: 0 auto 15px;">
+                                    <i class="fas fa-rose"></i>
+                                </div>
+                                <h6>Rose Garden</h6>
+                                <p>Over 100 rose varieties including hybrid teas, floribundas, and climbing roses. Peak bloom: March-May.</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #4caf50, #2e7d32); margin: 0 auto 15px;">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <h6>Fernery</h6>
+                                <p>Ancient fern species in a misty environment, including tree ferns and delicate maidenhair ferns.</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2); margin: 0 auto 15px;">
+                                    <i class="fas fa-spa"></i>
+                                </div>
+                                <h6>Orchid House</h6>
+                                <p>Rare epiphytic orchids from Sri Lanka's cloud forests, including endemic species found nowhere else.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visiting Information -->
+                    <div class="travel-tips">
+                        <h3 class="tips-title"><i class="fas fa-info-circle"></i> Visiting Information</h3>
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5><i class="fas fa-clock text-primary me-2"></i> Best Time to Visit</h5>
+                                <p><strong>Flowering Seasons:</strong><br>
+                                • Roses: March to May (peak bloom)<br>
+                                • Annual Flowers: Year-round with seasonal changes<br>
+                                • Temperate Plants: Spring (March-April) and Autumn (October-November)</p>
+                                <p><strong>Daily Timing:</strong> Arrive early (8-10 AM) for best light and fewer crowds. Morning mist creates magical atmosphere.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <div class="highlight-icon" style="background: linear-gradient(135deg, #ff9800, #f57c00); margin: 0 auto 15px;">
+                                        <i class="fas fa-walking"></i>
+                                    </div>
+                                    <h6>Walking Tour</h6>
+                                    <p>Allow 2-3 hours for a complete tour. Comfortable walking shoes essential. The garden involves gentle slopes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Horton Plains Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/horton-plains-national-park.webp" alt="Horton Plains National Park" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="hill-badge" style="background: linear-gradient(135deg, #ff5722, #e64a19);">UNESCO Heritage</div>
+                        <h2 class="destination-title">Horton Plains National Park</h2>
+                        <p class="destination-subtitle">World's End & Baker's Falls - Wilderness Adventure</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        Horton Plains National Park offers one of Sri Lanka's most dramatic and unforgettable wilderness experiences. Located 32 kilometers from Nuwara Eliya at an altitude of 2,100-2,300 meters, this UNESCO World Heritage Site protects a unique ecosystem of montane grasslands and cloud forests that feels worlds away from tropical Sri Lanka. The park's most famous features are World's End - a sheer cliff dropping 880 meters (2,887 feet) with breathtaking views - and the beautiful Baker's Falls, but the entire park is a wonderland for nature lovers and hikers.
+                    </p>
+                    <p class="destination-description">
+                        The 9.5-kilometer circular hiking trail through Horton Plains takes you through diverse landscapes that change dramatically with elevation and weather. One moment you're walking through open grasslands where sambar deer graze, the next you're entering mystical cloud forests draped in moss and lichens. The trail is well-marked and moderately challenging, with the highlight being the sudden appearance of World's End, where the plains drop away to reveal panoramic views stretching all the way to the southern coast on clear days. Early mornings (6-9 AM) offer the best chance of clear views before clouds roll in, making sunrise visits particularly magical.
+                    </p>
+
+                    <!-- Hiking Guide -->
+                    <div class="hiking-section">
+                        <h3 class="hiking-title"><i class="fas fa-hiking"></i> Horton Plains Hiking Guide</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-route text-primary me-2"></i> Trail Information</h5>
+                                <ul>
+                                    <li><strong>Distance:</strong> 9.5km circular trail</li>
+                                    <li><strong>Duration:</strong> 3-4 hours at moderate pace</li>
+                                    <li><strong>Difficulty:</strong> Moderate (some uphill sections)</li>
+                                    <li><strong>Elevation:</strong> 2,100-2,300 meters</li>
+                                    <li><strong>Trail Highlights:</strong> World's End, Baker's Falls, Mini World's End</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-binoculars text-success me-2"></i> Wildlife Spotting</h5>
+                                <ul>
+                                    <li><strong>Sambar Deer:</strong> Commonly seen in grasslands</li>
+                                    <li><strong>Purple-faced Langur:</strong> Endemic monkey species</li>
+                                    <li><strong>Birdlife:</strong> Over 20 endemic species including Sri Lanka whistling thrush</li>
+                                    <li><strong>Leopards:</strong> Rare but present (usually avoid humans)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="alert alert-warning mt-4">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <strong>Important:</strong> No plastic is allowed in the park. Bring reusable water bottles. Stay on marked trails and maintain safe distance from cliff edges. Weather changes rapidly - carry rain gear even on sunny days.
+                        </div>
+                    </div>
+
+                    <!-- World's End Experience -->
+                    <div class="experience-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0;">
+                        <div class="experience-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                            <div class="experience-content" style="padding: 25px;">
+                                <h4 class="experience-title" style="font-size: 1.3rem; color: #2c3e50; margin-bottom: 10px;"><i class="fas fa-mountain text-danger me-2"></i> World's End</h4>
+                                <p class="experience-desc" style="color: #666; font-size: 0.95rem; line-height: 1.6;">Arrive before 9 AM for clear views. The 880m drop offers breathtaking panoramas stretching to the southern coast on clear days. The cliff edge is unfenced - maintain safe distance.</p>
+                            </div>
+                        </div>
+                        <div class="experience-card">
+                            <div class="experience-content">
+                                <h4 class="experience-title"><i class="fas fa-water text-info me-2"></i> Baker's Falls</h4>
+                                <p class="experience-desc">A beautiful 20-meter waterfall named after explorer Sir Samuel Baker. The viewing platform offers perfect photo opportunities. The area around the falls is often misty and magical.</p>
+                            </div>
+                        </div>
+                        <div class="experience-card">
+                            <div class="experience-content">
+                                <h4 class="experience-title"><i class="fas fa-tree text-success me-2"></i> Cloud Forest</h4>
+                                <p class="experience-desc">Mystical forests draped in moss, lichens, and epiphytes. The trail through this section feels like entering another world, with ancient trees and unique microclimate.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Victoria Park & Colonial Architecture Section -->
+            <div class="destination-card-enhanced">
+                <div class="destination-image-container">
+                    <img src="img/victoria-park-nuwara-eliya.jpg" alt="Victoria Park Nuwara Eliya" class="destination-image">
+                    <div class="destination-overlay">
+                        <div class="hill-badge" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2);">Victorian Elegance</div>
+                        <h2 class="destination-title">Victoria Park & Colonial Heritage</h2>
+                        <p class="destination-subtitle">Nuwara Eliya's Timeless English Charm</p>
+                    </div>
+                </div>
+                <div class="destination-content-enhanced">
+                    <p class="destination-description">
+                        At the very heart of Nuwara Eliya lies Victoria Park, a beautifully maintained 27-acre garden that perfectly embodies the town's "Little England" nickname. Established in 1897 to commemorate Queen Victoria's Diamond Jubilee, the park offers a serene escape with its manicured lawns, colorful flower beds, and mature trees that change with the seasons. But Victoria Park is just one element of Nuwara Eliya's rich colonial heritage - the entire town is a living museum of British colonial architecture and traditions that transport visitors back to a bygone era.
+                    </p>
+                    <p class="destination-description">
+                        A stroll through Nuwara Eliya town reveals charming Tudor-style buildings with half-timbered facades, steep gabled roofs, and stone foundations that would look perfectly at home in the English countryside. The iconic Nuwara Eliya Post Office with its clock tower, the hilltop Grand Hotel that once hosted British aristocracy, and the quaint St. Andrew's Hotel all preserve the architectural legacy of the colonial period. Beyond architecture, the town maintains English traditions like afternoon tea, lawn bowling, and horse racing at the Nuwara Eliya Race Course (Asia's highest race track). This unique blend of Sri Lankan warmth and English tradition creates an experience found nowhere else on the island.
+                    </p>
+
+                    <!-- Colonial Architecture Tour -->
+                    <div class="colonial-section">
+                        <h3 class="colonial-title"><i class="fas fa-landmark"></i> Colonial Architecture Tour</h3>
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2); margin: 0 auto 15px;">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h6>Post Office</h6>
+                                <p>The iconic red-brick post office with clock tower is Nuwara Eliya's most photographed building. Still functioning with original features.</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #795548, #5d4037); margin: 0 auto 15px;">
+                                    <i class="fas fa-hotel"></i>
+                                </div>
+                                <h6>Grand Hotel</h6>
+                                <p>Built in 1891, this hilltop mansion offers afternoon tea in elegant surroundings. The garden views are spectacular.</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="highlight-icon" style="background: linear-gradient(135deg, #607d8b, #455a64); margin: 0 auto 15px;">
+                                    <i class="fas fa-church"></i>
+                                </div>
+                                <h6>St. Andrew's Hotel</h6>
+                                <p>Former Scottish church converted to hotel. Maintains original stained glass and architectural details.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Victoria Park Details -->
+                    <div class="highlights-section">
+                        <h3 class="highlight-title"><i class="fas fa-tree"></i> Victoria Park Experience</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-feather-alt text-success me-2"></i> Bird Watching</h5>
+                                <p>Victoria Park is a birdwatcher's paradise with over 30 species regularly spotted. The park's varied habitats attract both resident and migratory birds. Early mornings offer the best birding opportunities.</p>
+                                <ul>
+                                    <li><strong>Indian Pitta:</strong> Colorful ground bird (winter visitor)</li>
+                                    <li><strong>Yellow-eared Bulbul:</strong> Endemic to Sri Lanka</li>
+                                    <li><strong>Kashmir Flycatcher:</strong> Winter migrant from Himalayas</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-camera text-primary me-2"></i> Photography Spots</h5>
+                                <p>The park offers numerous photographic opportunities throughout the year:</p>
+                                <ul>
+                                    <li><strong>Spring (March-May):</strong> Rhododendron blooms</li>
+                                    <li><strong>Summer (June-August):</strong> Lush green foliage</li>
+                                    <li><strong>Autumn (Sep-Nov):</strong> Changing leaf colors</li>
+                                    <li><strong>Winter (Dec-Feb):</strong> Misty atmospheric shots</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- English Traditions -->
+                    <div class="travel-tips">
+                        <h3 class="tips-title"><i class="fas fa-mug-hot"></i> English Traditions in Nuwara Eliya</h3>
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <p>Nuwara Eliya maintains several English traditions that enhance its unique character:</p>
+                                <ul>
+                                    <li><strong>Afternoon Tea:</strong> Served daily at Grand Hotel and other colonial establishments</li>
+                                    <li><strong>Horse Racing:</strong> Season at Nuwara Eliya Race Course (March-April)</li>
+                                    <li><strong>Lawn Bowling:</strong> Available at select hotels</li>
+                                    <li><strong>Gardening Culture:</strong> Annual flower shows and competitions</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <div class="highlight-icon" style="background: linear-gradient(135deg, #ff9800, #f57c00); margin: 0 auto 15px;">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <h6>Seasonal Events</h6>
+                                    <p>The Nuwara Eliya Season (March-April) features horse racing, flower shows, and cultural events celebrating the town's heritage.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Climate & Best Time to Visit -->
+            <div class="climate-section">
+                <h3 class="climate-title"><i class="fas fa-cloud-sun"></i> Nuwara Eliya Climate Guide</h3>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-thermometer-half text-primary me-2"></i> Temperature Range</h5>
+                        <div class="temp-display">
+                            <i class="fas fa-temperature-low"></i>
+                            <span>10°C - 20°C (50°F - 68°F)</span>
+                        </div>
+                        <p class="mt-3">Nuwara Eliya maintains a cool temperate climate year-round due to its high elevation. Nights can be chilly, dropping to 10°C (50°F), while daytime temperatures rarely exceed 20°C (68°F). The town receives moderate rainfall throughout the year, with heavier rains during the southwest monsoon (May-July).</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-umbrella text-info me-2"></i> Rainfall Patterns</h5>
+                        <ul>
+                            <li><strong>Dry Season:</strong> January to March (best for hiking)</li>
+                            <li><strong>Inter-monsoon:</strong> April (occasional showers)</li>
+                            <li><strong>Southwest Monsoon:</strong> May to July (heavier rain)</li>
+                            <li><strong>Second Dry Season:</strong> August to September</li>
+                            <li><strong>Northeast Monsoon:</strong> October to December (light rain)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Time to Visit -->
+            <div class="season-guide">
+                <h3 class="season-title"><i class="fas fa-calendar-check"></i> Best Time to Visit Nuwara Eliya</h3>
+                <div class="season-months">
+                    <div class="month-card">
+                        <div class="month-name">Jan - Mar</div>
+                        <div class="month-status status-best">Peak Season</div>
+                        <small class="d-block mt-2">Dry, clear days</small>
+                        <small class="text-muted">Best for hiking & views</small>
+                    </div>
+                    <div class="month-card">
+                        <div class="month-name">Apr - May</div>
+                        <div class="month-status status-good">Good</div>
+                        <small class="d-block mt-2">Flower blooms</small>
+                        <small class="text-muted">Nuwara Eliya Season</small>
+                    </div>
+                    <div class="month-card">
+                        <div class="month-name">Jun - Sep</div>
+                        <div class="month-status status-fair">Fair</div>
+                        <small class="d-block mt-2">More rainfall</small>
+                        <small class="text-muted">Lush green landscapes</small>
+                    </div>
+                    <div class="month-card">
+                        <div class="month-name">Oct - Dec</div>
+                        <div class="month-status status-good">Good</div>
+                        <small class="d-block mt-2">Cool & pleasant</small>
+                        <small class="text-muted">Christmas atmosphere</small>
+                    </div>
+                </div>
+                <p class="mt-4 text-center"><i class="fas fa-info-circle me-2"></i><strong>Pro Tip:</strong> March-April offers the perfect combination of dry weather and the Nuwara Eliya Season events including horse racing and flower shows.</p>
+            </div>
+
+            <!-- Interactive Map -->
+            <div class="map-section">
+                <h3 class="map-title">Nuwara Eliya Hill Country Map</h3>
+                <div class="map-container">
+                    <div class="map-overlay">
+                        <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+                        <h4>Heart of Hill Country</h4>
+                        <p>Elevation: 1,868m (6,128ft) | Distance from Colombo: 180km</p>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <h5><i class="fas fa-car text-primary me-2"></i>By Road</h5>
+                        <p>4-5 hours from Colombo via A7 highway. Scenic mountain roads with tea plantation views.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5><i class="fas fa-train text-success me-2"></i>By Train</h5>
+                        <p>Nanu Oya station (8km from town) on the Colombo-Badulla line. One of world's most scenic rail journeys.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5><i class="fas fa-bus text-warning me-2"></i>By Bus</h5>
+                        <p>Regular buses from Colombo, Kandy, and Ella. Comfortable air-conditioned coaches available.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5><i class="fas fa-plane text-info me-2"></i>Domestic Flights</h5>
+                        <p>Closest airport: Bandaranaike International (CMB). Helicopter transfers available for premium tours.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Booking CTA -->
+            <div class="booking-cta-enhanced mist-bg">
+                <h2 class="cta-title-enhanced">Ready for Your Hill Country Escape?</h2>
+                <p class="cta-description">
+                    Let us create your perfect Nuwara Eliya experience. From tea plantation tours and colonial heritage walks to adventurous hikes in Horton Plains, our expert guides will show you the very best of Sri Lanka's Little England. Experience cool mountain air, breathtaking views, and timeless charm in the heart of tea country.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/94763661600?text=Hi%20Ayubowan%20Tours!%20I'd%20like%20to%20book%20a%20Nuwara%20Eliya%20tour" class="btn-cta btn-cta-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Booking
+                    </a>
+                    <a href="./booking.html" class="btn-cta btn-cta-secondary">
+                        <i class="fas fa-calendar-check"></i> Book Online Now
+                    </a>
+                </div>
+                <p class="mt-4 mb-0" style="opacity: 0.9; font-size: 1rem;">
+                    <i class="fas fa-phone-alt me-2"></i> Call us: +94 76 366 1600 | 
+                    <i class="fas fa-envelope ms-3 me-2"></i> info@ayubowantours.com |
+                    <i class="fas fa-clock ms-3 me-2"></i> 24/7 Support Available
+                </p>
+            </div>
+        </div>
+        <!-- ENHANCED BLOG CONTENT END -->
+
+ <!-- Subscribe Start (Original - Keep as is) -->
         <div class="container-fluid subscribe py-5">
             <div class="container text-center py-5">
                 <div class="mx-auto text-center" style="max-width: 900px;">
@@ -270,96 +1667,8 @@
             </div>
         </div>
         <!-- Subscribe End -->
-
-        <!-- Footer Start -->
-        <!--<div class="container-fluid footer py-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Get In Touch</h4>
-                            <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-share fa-2x text-white me-2"></i>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Company</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Support</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Contact</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <div class="row gy-3 gx-2 mb-4">
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">Arabic</option>
-                                                <option value="2">German</option>
-                                                <option value="3">Greek</option>
-                                                <option value="3">New York</option>
-                                            </select>
-                                            <label for="select1">English</label>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">USD</option>
-                                                <option value="2">EUR</option>
-                                                <option value="3">INR</option>
-                                                <option value="3">GBP</option>
-                                            </select>
-                                            <label for="select1">$</label>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <h4 class="text-white mb-3">Payments</h4>
-                            <div class="footer-bank-card">
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
-                                <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Footer End -->
         
-        <!-- Copyright Start -->
+        <!-- Copyright Start (Original - Keep as is) -->
         <div class="container-fluid copyright text-body py-4">
             <div class="container">
                 <div class="row g-4 align-items-center">
@@ -371,22 +1680,223 @@
         </div>
         <!-- Copyright End -->
 
-        <!-- whatsapp button -->
-        <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
-            class="whatsapp-float"
-            target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/94763661600?text=Hi%20Ayubowan%20Tours!%20I'm%20interested%20in%20Nuwara%20Eliya%20tours" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
         </a>
-        
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
         <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
         <script src="lib/easing/easing.min.js"></script>
         <script src="lib/waypoints/waypoints.min.js"></script>
-        
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-    </body>
 
+        <!-- Enhanced Nuwara Eliya Scripts -->
+        <script>
+            // Scroll animations
+            document.addEventListener('DOMContentLoaded', function() {
+                // Animate elements on scroll
+                const animateOnScroll = function() {
+                    const elements = document.querySelectorAll('.destination-card-enhanced, .highlight-item, .tip-item, .month-card');
+                    
+                    elements.forEach(element => {
+                        const elementPosition = element.getBoundingClientRect().top;
+                        const screenPosition = window.innerHeight / 1.2;
+                        
+                        if (elementPosition < screenPosition) {
+                            element.style.animationDelay = (Math.random() * 0.3) + 's';
+                            element.style.opacity = '1';
+                        }
+                    });
+                };
+
+                // Initial animation
+                setTimeout(animateOnScroll, 100);
+
+                // Scroll event listener
+                window.addEventListener('scroll', animateOnScroll);
+
+                // Smooth scroll for back to top
+                document.querySelector('.back-to-top').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+
+                // WhatsApp button animation on hover
+                const whatsappBtn = document.querySelector('.whatsapp-float');
+                whatsappBtn.addEventListener('mouseenter', function() {
+                    this.style.animation = 'none';
+                    setTimeout(() => {
+                        this.style.animation = 'whatsapp-pulse 1.8s infinite';
+                    }, 50);
+                });
+
+                // Interactive hill country selection
+                const hillCards = document.querySelectorAll('.destination-card-enhanced');
+                hillCards.forEach(card => {
+                    card.addEventListener('click', function(e) {
+                        if (!e.target.closest('a')) {
+                            const title = this.querySelector('.destination-title').textContent;
+                            console.log(`Selected attraction: ${title}`);
+                        }
+                    });
+                });
+
+                // Temperature simulation
+                function updateTemperature() {
+                    const tempDisplay = document.querySelector('.temp-display span');
+                    if (tempDisplay) {
+                        const baseTemp = 15; // Average temperature
+                        const hour = new Date().getHours();
+                        // Simulate daily temperature variation
+                        const variation = Math.sin((hour - 6) * Math.PI / 12) * 5;
+                        const currentTemp = Math.round(baseTemp + variation);
+                        tempDisplay.textContent = `${currentTemp}°C`;
+                        
+                        // Update color based on temperature
+                        if (currentTemp < 12) {
+                            tempDisplay.style.color = '#2196f3'; // Blue for cold
+                        } else if (currentTemp > 18) {
+                            tempDisplay.style.color = '#ff9800'; // Orange for warm
+                        } else {
+                            tempDisplay.style.color = '#2e7d32'; // Green for pleasant
+                        }
+                    }
+                }
+
+                // Update temperature every minute
+                setInterval(updateTemperature, 60000);
+                updateTemperature(); // Initial call
+
+                // Seasonal highlights
+                const monthCards = document.querySelectorAll('.month-card');
+                monthCards.forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.transform = 'scale(1.05)';
+                    });
+                    card.addEventListener('mouseleave', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                });
+
+                // Image lazy loading
+                const images = document.querySelectorAll('.destination-image, .gallery-photo');
+                images.forEach(img => {
+                    img.addEventListener('load', function() {
+                        this.style.opacity = '1';
+                        this.style.transition = 'opacity 0.6s ease';
+                    });
+                    img.style.opacity = '0';
+                });
+
+                // Tea tasting simulation
+                const teaFeatures = document.querySelectorAll('.feature-item');
+                teaFeatures.forEach(feature => {
+                    feature.addEventListener('click', function() {
+                        const featureText = this.querySelector('.feature-text').textContent;
+                        if (featureText.includes('Tea')) {
+                            alert(`Experience authentic Ceylon tea tasting in Nuwara Eliya's tea estates!`);
+                        }
+                    });
+                });
+            });
+
+            // Spinner removal
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    document.getElementById('spinner').style.display = 'none';
+                }, 500);
+            });
+
+            // Mist animation for hill sections
+            function createMistEffect() {
+                const mistElements = document.querySelectorAll('.mist-bg');
+                mistElements.forEach(mist => {
+                    if (!mist.dataset.mistInitialized) {
+                        const mistCount = 2;
+                        for (let i = 0; i < mistCount; i++) {
+                            const mistLayer = document.createElement('div');
+                            mistLayer.style.position = 'absolute';
+                            mistLayer.style.top = '0';
+                            mistLayer.style.left = '0';
+                            mistLayer.style.right = '0';
+                            mistLayer.style.bottom = '0';
+                            mistLayer.style.background = `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(255,255,255,${0.1 - (i * 0.03)})"/></svg>')`;
+                            mistLayer.style.backgroundSize = '1200px 100px';
+                            mistLayer.style.animation = `mistAnimation ${30 + (i * 10)}s linear infinite`;
+                            mistLayer.style.zIndex = '1';
+                            mistLayer.style.opacity = '0.4';
+                            mist.appendChild(mistLayer);
+                        }
+                        mist.dataset.mistInitialized = 'true';
+                    }
+                });
+            }
+
+            // Initialize mist effects
+            setTimeout(createMistEffect, 1000);
+
+            // Hill country weather simulation
+            function updateWeatherConditions() {
+                const conditions = {
+                    'Gregory Lake': {
+                        visibility: ['Clear', 'Misty', 'Partly Cloudy'][Math.floor(Math.random() * 3)],
+                        wind: (5 + Math.random() * 10).toFixed(1)
+                    },
+                    'Horton Plains': {
+                        visibility: ['Clear', 'Cloudy', 'Very Misty'][Math.floor(Math.random() * 3)],
+                        temperature: (10 + Math.random() * 8).toFixed(1)
+                    },
+                    'Tea Plantations': {
+                        conditions: ['Perfect', 'Good', 'Rain Possible'][Math.floor(Math.random() * 3)],
+                        humidity: (70 + Math.random() * 20).toFixed(0)
+                    }
+                };
+                
+                console.log('Current conditions:', conditions);
+                return conditions;
+            }
+
+            // Update weather every 5 minutes
+            setInterval(updateWeatherConditions, 300000);
+            updateWeatherConditions(); // Initial call
+
+            // World's End visibility tracker
+            function getWorldsEndVisibility() {
+                const hour = new Date().getHours();
+                let visibility;
+                
+                if (hour >= 6 && hour <= 9) {
+                    visibility = 'Excellent - Morning clear views';
+                } else if (hour > 9 && hour <= 12) {
+                    visibility = 'Good - Some clouds possible';
+                } else if (hour > 12 && hour <= 15) {
+                    visibility = 'Fair - Increasing clouds';
+                } else {
+                    visibility = 'Poor - Likely cloudy';
+                }
+                
+                console.log(`World's End visibility (${hour}:00): ${visibility}`);
+                return visibility;
+            }
+
+            // Update visibility hourly
+            setInterval(getWorldsEndVisibility, 3600000);
+            getWorldsEndVisibility(); // Initial call
+        </script>
+    </body>
 </html>
