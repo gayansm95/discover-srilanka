@@ -3,15 +3,15 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Ayubowan Tours</title>
+        <title>Ayubowan Tours - Ancient Cities & Beaches: Anuradhapura & Trincomalee</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
-        <meta content="" name="description">
+        <meta content="5-day cultural and beach tour exploring Sri Lanka's ancient capital Anuradhapura and pristine beaches of Trincomalee" name="description">
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
         <!-- Icon Font Stylesheet -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
@@ -73,6 +73,1059 @@
                 right: 15px;
             }
             }
+
+            /* ENHANCED TOUR SECTION STYLES */
+            .enhanced-tour-section {
+                position: relative;
+                padding: 60px 0;
+                background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%);
+            }
+
+            .tour-timeline-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                position: relative;
+                padding: 0 15px;
+            }
+
+            .section-header {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            .section-title {
+                font-size: 2.8rem;
+                font-weight: 800;
+                color: #1a365d;
+                margin-bottom: 15px;
+                position: relative;
+                display: inline-block;
+            }
+
+            .section-title:after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(135deg, #f39c12, #e74c3c);
+                border-radius: 2px;
+            }
+
+            .section-subtitle {
+                font-size: 1.2rem;
+                color: #666;
+                max-width: 700px;
+                margin: 0 auto;
+                line-height: 1.6;
+            }
+
+            /* OVERVIEW SECTION */
+            .overview-section {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+                margin-bottom: 50px;
+            }
+
+            .overview-header {
+                background: linear-gradient(135deg, #9b59b6, #8e44ad);
+                color: white;
+                padding: 25px 30px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .overview-header:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+            }
+
+            .overview-main-title {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-bottom: 8px;
+                color: white;
+            }
+
+            .tour-highlight {
+                display: inline-block;
+                background: rgba(243, 156, 18, 0.9);
+                color: white;
+                padding: 6px 18px;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                margin-top: 12px;
+                border: 2px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .overview-content {
+                padding: 40px;
+            }
+
+            .overview-image-section {
+                position: relative;
+                height: 300px;
+                overflow: hidden;
+                border-radius: 15px;
+                margin-bottom: 30px;
+            }
+
+            .overview-main-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.7s ease;
+            }
+
+            .overview-image-section:hover .overview-main-image {
+                transform: scale(1.05);
+            }
+
+            .image-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+                padding: 20px;
+                color: white;
+            }
+
+            .image-caption {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            /* DAY CARDS */
+            .day-card-section {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+                margin-bottom: 40px;
+            }
+
+            .day-card-header {
+                background: linear-gradient(135deg, #3498db, #2980b9);
+                color: white;
+                padding: 25px 30px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .day-card-header:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+            }
+
+            .day-number-circle {
+                position: absolute;
+                right: 30px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 70px;
+                height: 70px;
+                background: rgba(255, 255, 255, 0.15);
+                border: 3px solid rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                font-weight: bold;
+                backdrop-filter: blur(5px);
+            }
+
+            .day-main-title {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-bottom: 8px;
+                color: white;
+            }
+
+            .day-location {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 1.1rem;
+                opacity: 0.9;
+            }
+
+            .day-location i {
+                color: #f39c12;
+            }
+
+            .day-highlight {
+                display: inline-block;
+                background: rgba(243, 156, 18, 0.9);
+                color: white;
+                padding: 6px 18px;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                margin-top: 12px;
+                border: 2px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .day-content-wrapper {
+                padding: 40px;
+            }
+
+            .day-image-section {
+                position: relative;
+                height: 250px;
+                overflow: hidden;
+                border-radius: 15px;
+                margin-bottom: 30px;
+            }
+
+            .day-main-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.7s ease;
+            }
+
+            .day-image-section:hover .day-main-image {
+                transform: scale(1.05);
+            }
+
+            /* ENHANCED TIME SCHEDULE */
+            .enhanced-schedule-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 25px;
+                margin-top: 20px;
+            }
+
+            .enhanced-time-slot {
+                background: white;
+                border-radius: 15px;
+                padding: 25px;
+                transition: all 0.3s ease;
+                border: 1px solid #eaeaea;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .enhanced-time-slot:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 6px;
+                background: linear-gradient(to bottom, #3498db, #2ecc71);
+            }
+
+            .enhanced-time-slot:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(52, 152, 219, 0.1);
+                border-color: #3498db;
+            }
+
+            .time-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 15px;
+            }
+
+            .time-badge-enhanced {
+                background: linear-gradient(135deg, #3498db, #2980b9);
+                color: white;
+                padding: 8px 18px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.95rem;
+                box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+            }
+
+            .activity-icon {
+                width: 45px;
+                height: 45px;
+                background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                color: #3498db;
+            }
+
+            .slot-title-enhanced {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: #2c3e50;
+                margin-bottom: 12px;
+                line-height: 1.4;
+            }
+
+            .slot-desc-enhanced {
+                color: #666;
+                line-height: 1.6;
+                margin-bottom: 15px;
+                font-size: 0.95rem;
+            }
+
+            .activity-highlights {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 15px;
+            }
+
+            .highlight-tag {
+                background: #e8f4fc;
+                color: #2980b9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 500;
+                border: 1px solid #d1e8ff;
+                transition: all 0.3s ease;
+            }
+
+            .highlight-tag:hover {
+                background: #3498db;
+                color: white;
+                transform: translateY(-2px);
+            }
+
+            /* EXPERIENCE HIGHLIGHTS */
+            .experience-highlights {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 25px;
+                margin: 40px 0;
+            }
+
+            .experience-card {
+                background: white;
+                border-radius: 15px;
+                padding: 25px;
+                text-align: center;
+                transition: all 0.3s ease;
+                border: 1px solid #eaeaea;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            }
+
+            .experience-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+                border-color: #9b59b6;
+            }
+
+            .experience-icon {
+                width: 70px;
+                height: 70px;
+                background: linear-gradient(135deg, #9b59b6, #8e44ad);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+                font-size: 1.8rem;
+                color: white;
+            }
+
+            .experience-title {
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: #2c3e50;
+                margin-bottom: 10px;
+            }
+
+            .experience-desc {
+                color: #666;
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+
+            /* DESTINATION GRID */
+            .destination-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+                margin: 40px 0;
+            }
+
+            .destination-card {
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                transition: all 0.3s ease;
+            }
+
+            .destination-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            }
+
+            .destination-image {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            .destination-content {
+                padding: 20px;
+            }
+
+            .destination-title {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: #2c3e50;
+                margin-bottom: 10px;
+            }
+
+            .destination-desc {
+                color: #666;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin-bottom: 15px;
+            }
+
+            .destination-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .destination-tag {
+                background: #e8f4fc;
+                color: #2980b9;
+                padding: 4px 10px;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                font-weight: 500;
+            }
+
+            /* DAY INFO PANELS */
+            .day-info-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+                margin-top: 35px;
+                padding-top: 25px;
+                border-top: 2px solid #f0f0f0;
+            }
+
+            .info-card {
+                background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                border-radius: 15px;
+                padding: 25px;
+                transition: all 0.3s ease;
+            }
+
+            .info-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .info-card.accommodation {
+                background: linear-gradient(135deg, #fff9e6, #ffeaa7);
+                border-left: 5px solid #f39c12;
+            }
+
+            .info-card.travel {
+                background: linear-gradient(135deg, #e8f4fc, #d1e8ff);
+                border-left: 5px solid #3498db;
+            }
+
+            .info-card-title {
+                font-size: 1.2rem;
+                color: #2c3e50;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .info-card-title i {
+                color: #f39c12;
+            }
+
+            .info-card.travel .info-card-title i {
+                color: #3498db;
+            }
+
+            .info-grid-enhanced {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            .info-item-enhanced {
+                text-align: center;
+            }
+
+            .info-icon-circle {
+                width: 50px;
+                height: 50px;
+                background: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 12px;
+                font-size: 1.3rem;
+                color: #f39c12;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            }
+
+            .info-card.travel .info-icon-circle {
+                color: #3498db;
+            }
+
+            .info-label-enhanced {
+                font-size: 0.9rem;
+                color: #666;
+                margin-bottom: 5px;
+            }
+
+            .info-value-enhanced {
+                font-weight: 700;
+                color: #2c3e50;
+                font-size: 1rem;
+            }
+
+            /* QUICK FACTS ENHANCED */
+            .quick-facts-enhanced {
+                background: linear-gradient(135deg, #2c3e50, #1a252f);
+                color: white;
+                border-radius: 15px;
+                padding: 25px;
+                margin-top: 30px;
+            }
+
+            .facts-title {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+                color: white;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .facts-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .fact-item-enhanced {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .fact-icon-circle {
+                width: 45px;
+                height: 45px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                color: #f39c12;
+            }
+
+            .fact-text {
+                font-size: 0.95rem;
+            }
+
+            /* PRICE SECTION - ENHANCED */
+            .price-section-enhanced {
+                background: linear-gradient(135deg, #1a365d, #2c3e50);
+                color: white;
+                border-radius: 25px;
+                padding: 60px 40px;
+                margin: 70px auto;
+                position: relative;
+                overflow: hidden;
+                max-width: 1000px;
+                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+            }
+
+            .price-section-enhanced:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+                background-size: cover;
+            }
+
+            .price-header-enhanced {
+                text-align: center;
+                margin-bottom: 50px;
+                position: relative;
+                z-index: 2;
+            }
+
+            .price-title-enhanced {
+                font-size: 2.8rem;
+                font-weight: 800;
+                margin-bottom: 15px;
+                background: linear-gradient(135deg, #fff, #f39c12);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .price-amount-enhanced {
+                font-size: 4rem;
+                font-weight: 900;
+                color: #f39c12;
+                margin: 20px 0;
+                text-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+            }
+
+            .price-subtitle-enhanced {
+                font-size: 1.2rem;
+                opacity: 0.9;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .inclusion-grid-enhanced {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 30px;
+                margin: 50px 0;
+                position: relative;
+                z-index: 2;
+            }
+
+            .inclusion-item-enhanced {
+                background: rgba(255, 255, 255, 0.08);
+                backdrop-filter: blur(10px);
+                border-radius: 15px;
+                padding: 30px 25px;
+                text-align: center;
+                transition: all 0.4s ease;
+                border: 1px solid rgba(255, 255, 255, 0.15);
+            }
+
+            .inclusion-item-enhanced:hover {
+                transform: translateY(-10px);
+                background: rgba(255, 255, 255, 0.12);
+                border-color: rgba(243, 156, 18, 0.3);
+            }
+
+            .inclusion-icon-enhanced {
+                font-size: 2.5rem;
+                color: #2ecc71;
+                margin-bottom: 20px;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .inclusion-item-enhanced h5 {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                color: white;
+            }
+
+            .inclusion-text-enhanced {
+                font-size: 0.95rem;
+                opacity: 0.9;
+                line-height: 1.5;
+            }
+
+            /* BOOKING CTA ENHANCED */
+            .booking-cta-enhanced {
+                background: linear-gradient(135deg, #ffffff, #f8f9fa);
+                border-radius: 25px;
+                padding: 60px 40px;
+                margin: 70px auto;
+                text-align: center;
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                max-width: 1000px;
+            }
+
+            .cta-title-enhanced {
+                font-size: 2.5rem;
+                color: #1a365d;
+                margin-bottom: 20px;
+                font-weight: 800;
+            }
+
+            .cta-subtitle {
+                font-size: 1.2rem;
+                color: #666;
+                max-width: 700px;
+                margin: 0 auto 40px;
+                line-height: 1.6;
+            }
+
+            .cta-buttons-enhanced {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 30px;
+            }
+
+            .btn-cta-enhanced {
+                padding: 18px 40px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                border-radius: 50px;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                text-decoration: none;
+                min-width: 220px;
+                justify-content: center;
+            }
+
+            .btn-cta-primary {
+                background: linear-gradient(135deg, #25D366, #128C7E);
+                color: white;
+                border: none;
+                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            }
+
+            .btn-cta-primary:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+                color: white;
+            }
+
+            .btn-cta-secondary {
+                background: white;
+                color: #3498db;
+                border: 2px solid #3498db;
+                box-shadow: 0 5px 20px rgba(52, 152, 219, 0.15);
+            }
+
+            .btn-cta-secondary:hover {
+                background: #3498db;
+                color: white;
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(52, 152, 219, 0.25);
+            }
+
+            .btn-cta-tertiary {
+                background: linear-gradient(135deg, #f39c12, #e67e22);
+                color: white;
+                border: none;
+                box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+            }
+
+            .btn-cta-tertiary:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(243, 156, 18, 0.4);
+                color: white;
+            }
+
+            /* DAY COLOR THEMES */
+            .day-1 .day-card-header { background: linear-gradient(135deg, #3498db, #2980b9); }
+            .day-2 .day-card-header { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+            .day-3 .day-card-header { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+            .day-4 .day-card-header { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+            .day-5 .day-card-header { background: linear-gradient(135deg, #f39c12, #d35400); }
+
+            /* RESPONSIVE DESIGN */
+            @media (max-width: 1200px) {
+                .tour-timeline-container {
+                    padding: 0 20px;
+                }
+            }
+
+            @media (max-width: 992px) {
+                .section-title {
+                    font-size: 2.3rem;
+                }
+                
+                .enhanced-schedule-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                }
+                
+                .info-grid-enhanced {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .day-number-circle {
+                    width: 60px;
+                    height: 60px;
+                    font-size: 1.7rem;
+                }
+                
+                .price-title-enhanced {
+                    font-size: 2.3rem;
+                }
+                
+                .price-amount-enhanced {
+                    font-size: 3.2rem;
+                }
+                
+                .overview-image-section, .day-image-section {
+                    height: 250px;
+                }
+                
+                .experience-highlights, .destination-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .overview-content, .day-content-wrapper {
+                    padding: 30px;
+                }
+                
+                .overview-header, .day-card-header {
+                    padding: 20px;
+                }
+                
+                .overview-main-title, .day-main-title {
+                    font-size: 1.5rem;
+                }
+                
+                .day-number-circle {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 1.5rem;
+                    right: 20px;
+                }
+                
+                .overview-image-section, .day-image-section {
+                    height: 220px;
+                }
+                
+                .enhanced-schedule-grid {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+                
+                .experience-highlights, .destination-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .day-info-container {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+                
+                .price-section-enhanced {
+                    padding: 40px 25px;
+                    margin: 50px 0;
+                }
+                
+                .inclusion-grid-enhanced {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 20px;
+                }
+                
+                .booking-cta-enhanced {
+                    padding: 40px 25px;
+                    margin: 50px 0;
+                }
+                
+                .cta-title-enhanced {
+                    font-size: 2rem;
+                }
+                
+                .cta-buttons-enhanced {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .btn-cta-enhanced {
+                    width: 100%;
+                    max-width: 300px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .section-title {
+                    font-size: 1.9rem;
+                }
+                
+                .section-subtitle {
+                    font-size: 1rem;
+                }
+                
+                .overview-image-section, .day-image-section {
+                    height: 200px;
+                }
+                
+                .time-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+                
+                .info-grid-enhanced {
+                    grid-template-columns: 1fr;
+                }
+                
+                .inclusion-grid-enhanced {
+                    grid-template-columns: 1fr;
+                }
+                
+                .price-title-enhanced {
+                    font-size: 1.9rem;
+                }
+                
+                .price-amount-enhanced {
+                    font-size: 2.8rem;
+                }
+                
+                .btn-cta-enhanced {
+                    padding: 16px 30px;
+                    font-size: 1rem;
+                }
+            }
+
+            /* ANIMATIONS */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .overview-section, .day-card-section, .destination-card, .experience-card {
+                animation: fadeInUp 0.6s ease forwards;
+                opacity: 0;
+            }
+
+            /* CUSTOM SCROLLBAR */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, #3498db, #2ecc71);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(135deg, #2ecc71, #3498db);
+            }
+
+            /* Progress indicator */
+            .day-progress {
+                position: fixed;
+                right: 30px;
+                top: 50%;
+                transform: translateY(-50%);
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                z-index: 100;
+            }
+            
+            .day-progress-item {
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background: #ddd;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+            
+            .day-progress-item.active {
+                background: #3498db;
+                transform: scale(1.3);
+            }
+            
+            .day-progress-item:hover:after {
+                content: attr(data-day);
+                position: absolute;
+                right: 25px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #3498db;
+                color: white;
+                padding: 5px 12px;
+                border-radius: 4px;
+                font-size: 0.8rem;
+                white-space: nowrap;
+            }
+            
+            @media (max-width: 768px) {
+                .day-progress {
+                    display: none;
+                }
+            }
+
+            /* MAP PREVIEW */
+            .map-preview {
+                width: 100%;
+                height: 300px;
+                border-radius: 15px;
+                overflow: hidden;
+                margin: 30px 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.5rem;
+                position: relative;
+            }
+
+            .map-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .route-highlight {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 1rem;
+                background: rgba(255, 255, 255, 0.2);
+                padding: 10px 20px;
+                border-radius: 20px;
+                backdrop-filter: blur(5px);
+            }
         </style>
     </head>
 
@@ -91,7 +1144,6 @@
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="./index.html" class="navbar-brand p-0">
                     <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -105,7 +1157,7 @@
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
+                    <a href="#booking" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
                 </div>
             </nav>
         </div>
@@ -114,145 +1166,1407 @@
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">Heritage & Horizon Tour</h1>
+                <h3 class="text-white display-3 mb-4">Ancient Cities & Beaches: Anuradhapura & Trincomalee</h1>
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="packages.html">Packages</a></li>
-                    <li class="breadcrumb-item active text-white">Heritage & Horizon Tour</li>
+                    <li class="breadcrumb-item active text-white">Anuradhapura & Trincomalee</li>
                 </ol>    
             </div>
         </div>
         <!-- Header End -->
 
-        <!-- About Start -->
-        <div class="container-fluid about py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="container py-5">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-5">
-                                <div class="h-100">
-                                    <img src="img/sigiriya-attractions.jpg" class="img-fluid w-100 h-100" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                                <h1 class="mb-4">Must-Visit Places for Foreign Travelers in Sri Lanka :  <span class="text-primary">Dambulla</span></h1>    
-                                <p class="mb-4">Located in the heart of Sri Lanka’s Cultural Triangle, Dambulla is a 
-                                    fascinating destination that blends ancient history, culture, and nature. 
-                                    Well known for its cave temples and central location, Dambulla is an ideal 
-                                    base for foreign travelers who want to explore Sri Lanka’s rich heritage 
-                                    while enjoying scenic landscapes and authentic local experiences. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- ENHANCED TOUR SECTION START -->
+        <div class="container-fluid enhanced-tour-section">
+            <div class="tour-timeline-container">
+                <!-- Progress Indicator -->
+                <div class="day-progress">
+                    <div class="day-progress-item active" data-day="Day 1"></div>
+                    <div class="day-progress-item" data-day="Day 2"></div>
+                    <div class="day-progress-item" data-day="Day 3"></div>
+                    <div class="day-progress-item" data-day="Day 4"></div>
+                    <div class="day-progress-item" data-day="Day 5"></div>
+                    <div class="day-progress-item" data-day="Price"></div>
+                    <div class="day-progress-item" data-day="Booking"></div>
+                </div>
 
+                <!-- SECTION HEADER -->
+                <div class="section-header">
+                    <h1 class="section-title">Sacred Cities & Pristine Beaches</h1>
+                    <p class="section-subtitle">A 5-day cultural and coastal journey exploring Sri Lanka's ancient capital Anuradhapura and the breathtaking beaches of Trincomalee</p>
+                </div>
 
-                    <div class="container py-5">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-5">
-                                <div class="h-100">
-                                    <img src="img/sigiriya.jpeg" class="img-fluid w-100 h-100" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                                <h1 class="mb-4">Sigiriya <span class="text-primary"></span></h1>    
-                                <p class="mb-4">Rising dramatically from the central plains of Sri Lanka, 
-                                    "Sigiriya" is one of the country’s most iconic and unforgettable travel destinations. 
-                                    Known as the "Eighth Wonder of the World", 
-                                    this ancient rock fortress blends history, architecture, art, and nature into a single breathtaking experience making 
-                                    it a must-visit for every traveler exploring Sri Lanka. </p>
-                                    
-                                <p class="mb-4">Sigiriya dates back to the 5th century AD, during the reign of "King Kashyapa". 
-                                    Seeking protection and power, the king transformed this massive rock into a royal citadel. 
-                                    The summit once held a magnificent palace, while the base featured landscaped gardens, moats, and f
-                                    ountains—some of the oldest in the world. After the king’s death, Sigiriya became a Buddhist monastery, 
-                                    preserving its spiritual importance for centuries. 
-                                    Today, it proudly stands as a "UNESCO World Heritage Site", telling stories carved in stone. </p>
-                                    
-                                <p class="mb-4">One of Sigiriya’s most famous attractions is the "Sigiriya Frescoes", 
-                                    vibrant paintings of celestial maidens that still retain their color and grace. 
-                                    Visitors also pass through the "Mirror Wall", once polished so finely that the king could see his reflection. 
-                                    The dramatic "Lion’s Paw entrance", from which the rock gets its name, adds to the site’s mystery. 
-                                    At the top, travelers are rewarded with panoramic views of forests, lakes, and villages an unforgettable sight at sunrise or sunset. </p>
-                                    
-                                <p class="mb-4">Sigiriya is more than a historical site; it is a journey through time, creativity, 
-                                    and human ambition. From engineering marvels to artistic beauty, every step tells a story.</p>
+                <!-- TOUR OVERVIEW SECTION -->
+                <div class="overview-section">
+                    <div class="overview-header">
+                        <h2 class="overview-main-title">Tour Overview</h2>
+                        <p>From ancient Buddhist wonders to tropical beach paradise</p>
+                        <span class="tour-highlight">⭐ Best of Culture & Nature</span>
+                    </div>
+                    <div class="overview-content">
+                        <div class="overview-image-section">
+                            <img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Anuradhapura Ancient City" class="overview-main-image">
+                            <div class="image-overlay">
+                                <p class="image-caption">Discover Sri Lanka's spiritual heart at Anuradhapura and unwind on Trincomalee's golden beaches</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="container py-5">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-5">
-                                <div class="h-100">
-                                    <img src="img/dambulla-cave-temple.jpg" class="img-fluid w-100 h-100" alt="">
+                        
+                        <!-- MAP PREVIEW -->
+                        <div class="map-preview">
+                            <div class="map-overlay">
+                                <h3 style="color: white; margin-bottom: 10px;">Tour Route Map</h3>
+                                <div class="route-highlight">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Colombo → Anuradhapura → Trincomalee → Colombo</span>
                                 </div>
-                            </div>
-                            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                                <h1 class="mb-4">Dambulla Cave Temple (Golden Temple of Dambulla) <span class="text-primary"></span></h1>    
-                                <p class="mb-4">The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town’s most famous attraction. 
-                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                    beautifully preserved wall paintings. Set on a rocky hill, 
-                                    the temple also offers panoramic views of the surrounding countryside. 
-                                    Visitors are advised to dress modestly and be prepared for a short climb to reach the caves. </p>
-                                </div>
+                                <p style="font-size: 1rem; text-align: center; max-width: 500px;">
+                                    Journey through cultural heritage sites and coastal paradise in this perfect blend of history and relaxation
+                                </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="container py-5">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-5">
-                                <div class="h-100">
-                                    <img src="img/405dbcb1-a2d1-4bf0-9e67-36cdd8d70270_hot-air-ballooning-day-tour.png" class="img-fluid w-100 h-100" alt="">
-                                </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h3 style="color: #1a365d; margin-bottom: 20px;">About This Tour</h3>
+                                <p style="color: #555; line-height: 1.8; margin-bottom: 25px;">
+                                    Embark on an unforgettable 5-day journey that combines the spiritual essence of Sri Lanka's ancient kingdoms with the tropical beauty of its northeastern coastline. This tour offers a perfect balance between cultural immersion and beach relaxation.
+                                </p>
+                                <p style="color: #555; line-height: 1.8;">
+                                    Explore the UNESCO World Heritage Site of Anuradhapura, one of the oldest continuously inhabited cities in the world and the cradle of Sri Lankan Buddhism. Then, unwind in Trincomalee, home to some of Sri Lanka's most beautiful beaches, pristine coral reefs, and rich maritime history.
+                                </p>
                             </div>
-                            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8))">    
-                                <h1 class="mb-4">Hot air ballooning in Dambulla <span class="text-primary"></span></h1>    
-                                <p class="mb-4">The Dambulla Cave Temple, a UNESCO World Heritage Site, is the town’s most famous attraction. 
-                                    This ancient complex consists of five caves adorned with over 150 Buddha statues and 
-                                    beautifully preserved wall paintings. Set on a rocky hill, 
-                                    the temple also offers panoramic views of the surrounding countryside. 
-                                    Visitors are advised to dress modestly and be prepared for a short climb to reach the caves. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container-fluid bg-light service py-5">
-                        <div class="container py-5">
-                            <div class="row g-4">
-                                <div class="col-lg-12">
-                                    <div class="row g-4">
-                                        <div class="col-12">
-                                            <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                                                <div class="service-icon p-4">
-                                                    <i class="fa fa-globe fa-4x text-primary"></i>
-                                                </div>
-                                                <div class="service-content">
-                                                    <p class="mb-0">Dambulla offers foreign travelers a perfect balance of culture, 
-                                                        history, and accessibility. With a range of accommodations from budget guesthouses 
-                                                        to comfortable hotels, along with friendly locals and central transport links, 
-                                                        it’s an excellent stop on any Sri Lanka itinerary.</p>
-                                                    <p class="mb-0">Visit cultural sites early in the morning or late afternoon to avoid heat, 
-                                                        and always carry water and sun protection.</p>   
-                                                    <p class="mb-0">Dambulla is more than just a stopover—it’s a destination that reveals the depth of Sri Lanka’s 
-                                                        heritage and invites travelers to slow down and explore its timeless beauty.Book Your Dambulla tour in here</p> 
-                                                </div>
-                                                <div>
-                                                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
-                                                </div>
+                            <div class="col-lg-4">
+                                <div class="quick-facts-enhanced">
+                                    <h4 class="facts-title"><i class="fas fa-info-circle"></i> Quick Facts</h4>
+                                    <div class="facts-grid">
+                                        <div class="fact-item-enhanced">
+                                            <div class="fact-icon-circle">
+                                                <i class="fas fa-calendar-alt"></i>
+                                            </div>
+                                            <div class="fact-text">
+                                                <strong>Duration:</strong> 5 Days<br>
+                                                <small>4 Nights</small>
+                                            </div>
+                                        </div>
+                                        <div class="fact-item-enhanced">
+                                            <div class="fact-icon-circle">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div class="fact-text">
+                                                <strong>Group Size:</strong> 2-10<br>
+                                                <small>Small group experience</small>
+                                            </div>
+                                        </div>
+                                        <div class="fact-item-enhanced">
+                                            <div class="fact-icon-circle">
+                                                <i class="fas fa-tachometer-alt"></i>
+                                            </div>
+                                            <div class="fact-text">
+                                                <strong>Difficulty:</strong> Easy<br>
+                                                <small>Light walking & relaxing</small>
+                                            </div>
+                                        </div>
+                                        <div class="fact-item-enhanced">
+                                            <div class="fact-icon-circle">
+                                                <i class="fas fa-sun"></i>
+                                            </div>
+                                            <div class="fact-text">
+                                                <strong>Best Season:</strong> Year-round<br>
+                                                <small>April-Oct for whales</small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- EXPERIENCE HIGHLIGHTS -->
+                        <div class="experience-highlights">
+                            <div class="experience-card">
+                                <div class="experience-icon">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <h4 class="experience-title">Ancient Wonders</h4>
+                                <p class="experience-desc">Explore 2,500-year-old stupas, palaces, and monasteries at Anuradhapura UNESCO site</p>
+                            </div>
+                            <div class="experience-card">
+                                <div class="experience-icon">
+                                    <i class="fas fa-umbrella-beach"></i>
+                                </div>
+                                <h4 class="experience-title">Beach Paradise</h4>
+                                <p class="experience-desc">Relax on pristine beaches of Trincomalee, swim in crystal clear waters at Nilaveli & Uppuveli</p>
+                            </div>
+                            <div class="experience-card">
+                                <div class="experience-icon">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <h4 class="experience-title">Marine Adventures</h4>
+                                <p class="experience-desc">Snorkel at Pigeon Island National Park, whale watching (seasonal), and coral reef exploration</p>
+                            </div>
+                            <div class="experience-card">
+                                <div class="experience-icon">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <h4 class="experience-title">Cultural Immersion</h4>
+                                <p class="experience-desc">Participate in traditional rituals, visit local villages, and experience authentic Sri Lankan hospitality</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 1 -->
+                <div class="day-card-section day-1" id="day1">
+                    <div class="day-card-header">
+                        <h2 class="day-main-title">Day 1: Colombo to Anuradhapura - Arrival & Sacred City Introduction</h2>
+                        <div class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Colombo → Anuradhapura (210 km)</span>
+                        </div>
+                        <span class="day-highlight">🏛️ Ancient Capital Arrival</span>
+                        <div class="day-number-circle">01</div>
+                    </div>
+                    <div class="day-content-wrapper">
+                        <!-- DAY 1 IMAGE -->
+                        <div class="day-image-section">
+                            <img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Anuradhapura Ruins" class="day-main-image">
+                            <div class="image-overlay">
+                                <p class="image-caption">The sacred Sri Maha Bodhi tree - one of the oldest living trees in recorded history</p>
+                            </div>
+                        </div>
+
+                        <!-- ENHANCED SCHEDULE FOR DAY 1 -->
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Departure from Colombo</h4>
+                                <p class="slot-desc-enhanced">Morning pick-up from your Colombo hotel. Begin scenic journey north towards the Cultural Triangle. Stop for traditional Sri Lankan breakfast en route.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Hotel Pickup</span>
+                                    <span class="highlight-tag">Scenic Drive</span>
+                                    <span class="highlight-tag">Breakfast Stop</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">11:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Hotel Check-in & Freshen Up</h4>
+                                <p class="slot-desc-enhanced">Arrive in Anuradhapura and check into your heritage hotel. Enjoy welcome drink and brief orientation about the ancient city's significance.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Welcome Drink</span>
+                                    <span class="highlight-tag">Hotel Check-in</span>
+                                    <span class="highlight-tag">Tour Briefing</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">01:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Traditional Lunch</h4>
+                                <p class="slot-desc-enhanced">Enjoy authentic Sri Lankan lunch featuring rice and curry, with specialities from the North Central province. Vegetarian options available.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Local Cuisine</span>
+                                    <span class="highlight-tag">Cultural Dining</span>
+                                    <span class="highlight-tag">Vegetarian Options</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">03:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-tree"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Sri Maha Bodhi Sacred Tree</h4>
+                                <p class="slot-desc-enhanced">Visit the sacred Sri Maha Bodhi tree, grown from a cutting of the original Bodhi tree under which Buddha attained enlightenment in India.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">UNESCO Site</span>
+                                    <span class="highlight-tag">Spiritual Experience</span>
+                                    <span class="highlight-tag">Historical</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-archway"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Ruwanwelisaya Stupa</h4>
+                                <p class="slot-desc-enhanced">Explore the magnificent Ruwanwelisaya stupa, one of the tallest ancient monuments in the world, built in 140 BC by King Dutugemunu.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Ancient Architecture</span>
+                                    <span class="highlight-tag">Photography</span>
+                                    <span class="highlight-tag">Sunset Views</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-drumstick-bite"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Cultural Dinner Experience</h4>
+                                <p class="slot-desc-enhanced">Enjoy dinner at a traditional restaurant with cultural dance performances. Taste local specialties and learn about ancient Sinhalese cuisine.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Cultural Show</span>
+                                    <span class="highlight-tag">Traditional Dinner</span>
+                                    <span class="highlight-tag">Evening Entertainment</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DESTINATION HIGHLIGHTS DAY 1 -->
+                        <div class="destination-grid">
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sri Maha Bodhi" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Sri Maha Bodhi</h5>
+                                    <p class="destination-desc">The oldest living human-planted tree in the world with recorded history dating back to 288 BC, a cutting from the original Bodhi tree.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Sacred Tree</span>
+                                        <span class="destination-tag">UNESCO</span>
+                                        <span class="destination-tag">Historical</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ruwanwelisaya" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Ruwanwelisaya Stupa</h5>
+                                    <p class="destination-desc">One of the tallest ancient stupas in the world, standing at 103 meters with magnificent white dome, built in 140 BC.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Ancient</span>
+                                        <span class="destination-tag">Architecture</span>
+                                        <span class="destination-tag">Buddhist</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Anuradhapura City" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Anuradhapura Ancient City</h5>
+                                    <p class="destination-desc">One of the oldest continuously inhabited cities in the world, capital of Sri Lanka from 4th century BC to 11th century AD.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">UNESCO</span>
+                                        <span class="destination-tag">Historical</span>
+                                        <span class="destination-tag">Cultural</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DAY 1 INFO PANELS -->
+                        <div class="day-info-container">
+                            <div class="info-card accommodation">
+                                <h4 class="info-card-title"><i class="fas fa-hotel"></i> Accommodation</h4>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-bed"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Hotel</div>
+                                        <div class="info-value-enhanced">Heritage Hotel Anuradhapura</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Rating</div>
+                                        <div class="info-value-enhanced">4★ Heritage</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-wifi"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Amenities</div>
+                                        <div class="info-value-enhanced">WiFi, Pool, AC</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-card travel">
+                                <h4 class="info-card-title"><i class="fas fa-bus"></i> Travel Details</h4>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-road"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Distance</div>
+                                        <div class="info-value-enhanced">210 km</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Travel Time</div>
+                                        <div class="info-value-enhanced">4-5 hours</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-car"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Transport</div>
+                                        <div class="info-value-enhanced">AC Luxury Van</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 2 -->
+                <div class="day-card-section day-2" id="day2">
+                    <div class="day-card-header">
+                        <h2 class="day-main-title">Day 2: Anuradhapura Exploration - Ancient Kingdoms & Engineering Marvels</h2>
+                        <div class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Anuradhapura Archaeological Site</span>
+                        </div>
+                        <span class="day-highlight">🏺 Full Day Heritage Exploration</span>
+                        <div class="day-number-circle">02</div>
+                    </div>
+                    <div class="day-content-wrapper">
+                        <!-- DAY 2 IMAGE -->
+                        <div class="day-image-section">
+                            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Anuradhapura Stupas" class="day-main-image">
+                            <div class="image-overlay">
+                                <p class="image-caption">The majestic Jetavanaramaya Stupa - once the third tallest structure in the ancient world</p>
+                            </div>
+                        </div>
+
+                        <!-- ENHANCED SCHEDULE FOR DAY 2 -->
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-archway"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Jetavanaramaya Stupa</h4>
+                                <p class="slot-desc-enhanced">Visit Jetavanaramaya, once the third tallest structure in the ancient world after Egyptian pyramids. Marvel at ancient engineering.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Ancient Wonder</span>
+                                    <span class="highlight-tag">Architecture</span>
+                                    <span class="highlight-tag">Historical</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">09:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Ancient Reservoir Systems</h4>
+                                <p class="slot-desc-enhanced">Explore the Tissa Wewa and Basawakkulama tanks - marvels of ancient hydraulic engineering that sustained the kingdom for centuries.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Engineering Marvel</span>
+                                    <span class="highlight-tag">Water Management</span>
+                                    <span class="highlight-tag">Scenic Views</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">11:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-monument"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Abhayagiri Monastery Complex</h4>
+                                <p class="slot-desc-enhanced">Explore the extensive Abhayagiri monastery complex, once home to 5,000 monks. See the Samadhi Buddha statue and moonstones.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Monastic Complex</span>
+                                    <span class="highlight-tag">Archaeology</span>
+                                    <span class="highlight-tag">Cultural Heritage</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">01:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Picnic Lunch by Ancient Tank</h4>
+                                <p class="slot-desc-enhanced">Enjoy a picnic lunch with local specialties by the Tissa Wewa tank. Relax in the shade of ancient trees with beautiful water views.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Picnic Lunch</span>
+                                    <span class="highlight-tag">Scenic Location</span>
+                                    <span class="highlight-tag">Local Flavors</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">03:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-gem"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Isurumuniya Rock Temple</h4>
+                                <p class="slot-desc-enhanced">Visit Isurumuniya, famous for its rock carvings including the "Lovers" sculpture. Enjoy panoramic views of the ancient city.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Rock Carvings</span>
+                                    <span class="highlight-tag">Panoramic Views</span>
+                                    <span class="highlight-tag">Photo Opportunity</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">05:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Sunset at Mihintale</h4>
+                                <p class="slot-desc-enhanced">Climb Mihintale rock for spectacular sunset views. This is where Buddhism was introduced to Sri Lanka in 247 BC.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Sunset Viewing</span>
+                                    <span class="highlight-tag">Spiritual Site</span>
+                                    <span class="highlight-tag">Photography</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DESTINATION HIGHLIGHTS DAY 2 -->
+                        <div class="destination-grid">
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jetavanaramaya" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Jetavanaramaya Stupa</h5>
+                                    <p class="destination-desc">Once stood at 122 meters, making it the third tallest structure in ancient world. Built in 3rd century AD by King Mahasena.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Ancient Wonder</span>
+                                        <span class="destination-tag">Architecture</span>
+                                        <span class="destination-tag">Historical</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Abhayagiri Monastery" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Abhayagiri Monastery</h5>
+                                    <p class="destination-desc">Vast monastic complex that was an international center of Buddhist learning, housing thousands of monks from around Asia.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Monastery</span>
+                                        <span class="destination-tag">Learning Center</span>
+                                        <span class="destination-tag">Archaeology</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mihintale" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Mihintale</h5>
+                                    <p class="destination-desc">The cradle of Buddhism in Sri Lanka, where Mahinda Thera met King Devanampiya Tissa in 247 BC to introduce Buddhism.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Spiritual</span>
+                                        <span class="destination-tag">Historical</span>
+                                        <span class="destination-tag">Sunset Views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DAY 2 INFO PANELS -->
+                        <div class="day-info-container">
+                            <div class="info-card">
+                                <h4 class="info-card-title"><i class="fas fa-walking"></i> Activity Level</h4>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-shoe-prints"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Walking</div>
+                                        <div class="info-value-enhanced">Moderate</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-mountain"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Climbing</div>
+                                        <div class="info-value-enhanced">Light (Mihintale)</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-sun"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Sun Protection</div>
+                                        <div class="info-value-enhanced">Essential</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-card travel">
+                                <h4 class="info-card-title"><i class="fas fa-compass"></i> Exploration Tips</h4>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Photography</div>
+                                        <div class="info-value-enhanced">Best in Morning</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-water"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Hydration</div>
+                                        <div class="info-value-enhanced">Water Provided</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-hat-cowboy"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Attire</div>
+                                        <div class="info-value-enhanced">Covered Shoulders</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 3 -->
+                <div class="day-card-section day-3" id="day3">
+                    <div class="day-card-header">
+                        <h2 class="day-main-title">Day 3: Anuradhapura to Trincomalee - Journey to the East Coast</h2>
+                        <div class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Anuradhapura → Trincomalee (130 km)</span>
+                        </div>
+                        <span class="day-highlight">🌊 Coastal Transition Day</span>
+                        <div class="day-number-circle">03</div>
+                    </div>
+                    <div class="day-content-wrapper">
+                        <!-- DAY 3 IMAGE -->
+                        <div class="day-image-section">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Trincomalee Beach" class="day-main-image">
+                            <div class="image-overlay">
+                                <p class="image-caption">Welcome to Trincomalee - where golden beaches meet turquoise waters</p>
+                            </div>
+                        </div>
+
+                        <!-- ENHANCED SCHEDULE FOR DAY 3 -->
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Departure to Trincomalee</h4>
+                                <p class="slot-desc-enhanced">Check out from hotel after breakfast. Begin scenic drive east towards the coast, passing through rural landscapes and traditional villages.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Scenic Drive</span>
+                                    <span class="highlight-tag">Countryside Views</span>
+                                    <span class="highlight-tag">Village Life</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">10:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-fort-awesome"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Ritigala Forest Monastery</h4>
+                                <p class="slot-desc-enhanced">Visit Ritigala, an ancient forest monastery with mysterious ruins. Enjoy a nature walk through this archaeological reserve.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Forest Monastery</span>
+                                    <span class="highlight-tag">Nature Walk</span>
+                                    <span class="highlight-tag">Archaeology</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">01:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-fish"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Seafood Lunch in Kantalai</h4>
+                                <p class="slot-desc-enhanced">Stop at Kantalai for authentic seafood lunch featuring fresh catch from Trincomalee harbor. Try local specialties like crab curry.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Fresh Seafood</span>
+                                    <span class="highlight-tag">Local Restaurant</span>
+                                    <span class="highlight-tag">Coastal Cuisine</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">03:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Beach Resort Check-in</h4>
+                                <p class="slot-desc-enhanced">Arrive in Trincomalee and check into your beachfront resort. Enjoy welcome cocktail with panoramic ocean views.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Beach Resort</span>
+                                    <span class="highlight-tag">Ocean Views</span>
+                                    <span class="highlight-tag">Welcome Drink</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Nilaveli Beach Relaxation</h4>
+                                <p class="slot-desc-enhanced">First taste of Trincomalee's famous beaches. Relax on the golden sands of Nilaveli, swim in crystal clear waters, or simply unwind.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Beach Time</span>
+                                    <span class="highlight-tag">Swimming</span>
+                                    <span class="highlight-tag">Relaxation</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Beachfront Dinner with Sunset</h4>
+                                <p class="slot-desc-enhanced">Enjoy romantic dinner on the beach as the sun sets over the Indian Ocean. Fresh seafood barbecue under the stars.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Beach Dinner</span>
+                                    <span class="highlight-tag">Sunset Views</span>
+                                    <span class="highlight-tag">Seafood BBQ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DESTINATION HIGHLIGHTS DAY 3 -->
+                        <div class="destination-grid">
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ritigala" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Ritigala Forest Monastery</h5>
+                                    <p class="destination-desc">Ancient Buddhist monastery complex in a dense forest, known for its mysterious ruins and natural medicinal garden.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Forest</span>
+                                        <span class="destination-tag">Monastery</span>
+                                        <span class="destination-tag">Archaeology</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nilaveli Beach" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Nilaveli Beach</h5>
+                                    <p class="destination-desc">One of Sri Lanka's most beautiful beaches with golden sand stretching 4km, crystal clear waters, and coral reefs offshore.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Beach</span>
+                                        <span class="destination-tag">Swimming</span>
+                                        <span class="destination-tag">Relaxation</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Trincomalee Harbor" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Trincomalee</h5>
+                                    <p class="destination-desc">Natural deep-water harbor city with Portuguese, Dutch, and British colonial history, beautiful beaches, and rich marine life.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Harbor</span>
+                                        <span class="destination-tag">Colonial History</span>
+                                        <span class="destination-tag">Marine Life</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DAY 3 INFO PANELS -->
+                        <div class="day-info-container">
+                            <div class="info-card accommodation">
+                                <h4 class="info-card-title"><i class="fas fa-hotel"></i> Accommodation</h4>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-bed"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Resort</div>
+                                        <div class="info-value-enhanced">Nilaveli Beach Hotel</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Rating</div>
+                                        <div class="info-value-enhanced">4★ Beachfront</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-swimming-pool"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Amenities</div>
+                                        <div class="info-value-enhanced">Pool, Spa, Beach</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-card travel">
+                                <h4 class="info-card-title"><i class="fas fa-bus"></i> Travel Details</h4>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-road"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Distance</div>
+                                        <div class="info-value-enhanced">130 km</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Travel Time</div>
+                                        <div class="info-value-enhanced">3 hours</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-car"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Highlights</div>
+                                        <div class="info-value-enhanced">Forest & Coast</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 4 -->
+                <div class="day-card-section day-4" id="day4">
+                    <div class="day-card-header">
+                        <h2 class="day-main-title">Day 4: Trincomalee Exploration - Beaches, Whales & Temples</h2>
+                        <div class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Trincomalee & Pigeon Island</span>
+                        </div>
+                        <span class="day-highlight">🐋 Marine Adventures Day</span>
+                        <div class="day-number-circle">04</div>
+                    </div>
+                    <div class="day-content-wrapper">
+                        <!-- DAY 4 IMAGE -->
+                        <div class="day-image-section">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Pigeon Island Snorkeling" class="day-main-image">
+                            <div class="image-overlay">
+                                <p class="image-caption">Coral gardens of Pigeon Island National Park - Sri Lanka's only marine national park</p>
+                            </div>
+                        </div>
+
+                        <!-- ENHANCED SCHEDULE FOR DAY 4 -->
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">06:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-whale"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Whale Watching Excursion (Seasonal)</h4>
+                                <p class="slot-desc-enhanced">Early morning whale watching tour (Apr-Oct). Spot blue whales, sperm whales, and dolphins in the deep waters off Trincomalee.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Whale Watching</span>
+                                    <span class="highlight-tag">Marine Life</span>
+                                    <span class="highlight-tag">Seasonal Activity</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">09:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-ship"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Boat to Pigeon Island</h4>
+                                <p class="slot-desc-enhanced">Take a boat to Pigeon Island National Park, Sri Lanka's only marine national park with two islands and coral reefs.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Boat Trip</span>
+                                    <span class="highlight-tag">National Park</span>
+                                    <span class="highlight-tag">Island Visit</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">10:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-swimmer"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Snorkeling & Coral Viewing</h4>
+                                <p class="slot-desc-enhanced">Snorkel in the crystal clear waters to see colorful coral reefs and tropical fish. Equipment and guidance provided.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Snorkeling</span>
+                                    <span class="highlight-tag">Coral Reefs</span>
+                                    <span class="highlight-tag">Marine Life</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">12:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Beachside Seafood Lunch</h4>
+                                <p class="slot-desc-enhanced">Return to mainland for beachside lunch featuring the day's fresh catch. Enjoy grilled fish, prawns, and local specialties.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Fresh Seafood</span>
+                                    <span class="highlight-tag">Beach Dining</span>
+                                    <span class="highlight-tag">Local Flavors</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">03:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-temple"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Koneswaram Temple Visit</h4>
+                                <p class="slot-desc-enhanced">Visit the iconic Koneswaram Temple, perched on Swami Rock cliff. One of Sri Lanka's most important Hindu temples with panoramic ocean views.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Hindu Temple</span>
+                                    <span class="highlight-tag">Cliff Views</span>
+                                    <span class="highlight-tag">Cultural Site</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">05:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-cocktail"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Sunset Cruise in Trincomalee Harbor</h4>
+                                <p class="slot-desc-enhanced">Evening harbor cruise to see the sunset over one of the world's largest natural harbors. Enjoy cocktails and canapés on board.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Harbor Cruise</span>
+                                    <span class="highlight-tag">Sunset Views</span>
+                                    <span class="highlight-tag">Cocktails</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DESTINATION HIGHLIGHTS DAY 4 -->
+                        <div class="destination-grid">
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pigeon Island" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Pigeon Island National Park</h5>
+                                    <p class="destination-desc">Sri Lanka's only marine national park with two islands, coral reefs, and rich marine biodiversity perfect for snorkeling.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Marine Park</span>
+                                        <span class="destination-tag">Snorkeling</span>
+                                        <span class="destination-tag">Coral Reefs</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Koneswaram Temple" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Koneswaram Temple</h5>
+                                    <p class="destination-desc">Ancient Hindu temple complex on Swami Rock cliff, dating back to 400 BC, with spectacular views of Trincomalee harbor.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Hindu Temple</span>
+                                        <span class="destination-tag">Cliff Location</span>
+                                        <span class="destination-tag">Panoramic Views</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Whale Watching" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Trincomalee Whale Watching</h5>
+                                    <p class="destination-desc">One of the best places in the world to see blue whales (Apr-Oct) and other marine life including dolphins and sperm whales.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Whale Watching</span>
+                                        <span class="destination-tag">Marine Life</span>
+                                        <span class="destination-tag">Seasonal</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DAY 4 INFO PANELS -->
+                        <div class="day-info-container">
+                            <div class="info-card">
+                                <h4 class="info-card-title"><i class="fas fa-water"></i> Marine Activities</h4>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-swimmer"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Snorkeling</div>
+                                        <div class="info-value-enhanced">Equipment Provided</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-life-ring"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Safety</div>
+                                        <div class="info-value-enhanced">Guides & Life Jackets</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Underwater Cam</div>
+                                        <div class="info-value-enhanced">Available for Rent</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-card travel">
+                                <h4 class="info-card-title"><i class="fas fa-whale"></i> Whale Watching Info</h4>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-calendar"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Season</div>
+                                        <div class="info-value-enhanced">April - October</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-percentage"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Sighting Chance</div>
+                                        <div class="info-value-enhanced">90% in Season</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-pills"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Sea Sickness</div>
+                                        <div class="info-value-enhanced">Pills Available</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 5 -->
+                <div class="day-card-section day-5" id="day5">
+                    <div class="day-card-header">
+                        <h2 class="day-main-title">Day 5: Beach Relaxation & Return to Colombo</h2>
+                        <div class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Trincomalee → Colombo (260 km)</span>
+                        </div>
+                        <span class="day-highlight">🏖️ Final Beach Morning & Return</span>
+                        <div class="day-number-circle">05</div>
+                    </div>
+                    <div class="day-content-wrapper">
+                        <!-- DAY 5 IMAGE -->
+                        <div class="day-image-section">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Uppuveli Beach" class="day-main-image">
+                            <div class="image-overlay">
+                                <p class="image-caption">Morning serenity at Uppuveli Beach - the perfect farewell to Sri Lanka's east coast</p>
+                            </div>
+                        </div>
+
+                        <!-- ENHANCED SCHEDULE FOR DAY 5 -->
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Sunrise Beach Walk</h4>
+                                <p class="slot-desc-enhanced">Optional early morning walk along Uppuveli Beach to witness spectacular sunrise over the Indian Ocean. Perfect photography opportunity.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Sunrise</span>
+                                    <span class="highlight-tag">Beach Walk</span>
+                                    <span class="highlight-tag">Photography</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Beachfront Breakfast</h4>
+                                <p class="slot-desc-enhanced">Enjoy final breakfast at the resort with ocean views. Feast on tropical fruits, fresh juices, and Sri Lankan breakfast specialties.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Ocean Views</span>
+                                    <span class="highlight-tag">Breakfast Buffet</span>
+                                    <span class="highlight-tag">Tropical Fruits</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">10:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Final Beach Relaxation</h4>
+                                <p class="slot-desc-enhanced">Last opportunity to enjoy Trincomalee's beautiful beaches. Swim, sunbathe, or simply relax by the ocean before departure.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Beach Time</span>
+                                    <span class="highlight-tag">Swimming</span>
+                                    <span class="highlight-tag">Relaxation</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">12:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-suitcase"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Check-out & Departure</h4>
+                                <p class="slot-desc-enhanced">Check out from resort and begin journey back to Colombo. Stop for lunch en route at a local restaurant.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Hotel Check-out</span>
+                                    <span class="highlight-tag">Journey Begins</span>
+                                    <span class="highlight-tag">Lunch Stop</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">02:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-store"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Traditional Craft Shopping</h4>
+                                <p class="slot-desc-enhanced">Stop at a traditional craft village to purchase souvenirs - handloom textiles, wood carvings, brassware, and spices.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Souvenir Shopping</span>
+                                    <span class="highlight-tag">Local Crafts</span>
+                                    <span class="highlight-tag">Handicrafts</span>
+                                </div>
+                            </div>
+
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">06:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                </div>
+                                <h4 class="slot-title-enhanced">Arrival in Colombo & Farewell</h4>
+                                <p class="slot-desc-enhanced">Arrive back in Colombo. Transfer to your hotel or airport. Farewell ceremony with traditional gifts and photo memories.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Tour Concludes</span>
+                                    <span class="highlight-tag">Hotel/Airport Drop</span>
+                                    <span class="highlight-tag">Farewell</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DESTINATION HIGHLIGHTS DAY 5 -->
+                        <div class="destination-grid">
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Uppuveli Beach" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Uppuveli Beach</h5>
+                                    <p class="destination-desc">Pristine beach north of Trincomalee with soft golden sand, calm turquoise waters, and excellent swimming conditions.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Beach</span>
+                                        <span class="destination-tag">Swimming</span>
+                                        <span class="destination-tag">Relaxation</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Traditional Crafts" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Traditional Craft Villages</h5>
+                                    <p class="destination-desc">Visit villages specializing in traditional crafts - handloom weaving, wood carving, brass work, and pottery making.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Handicrafts</span>
+                                        <span class="destination-tag">Shopping</span>
+                                        <span class="destination-tag">Cultural</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Return Journey" class="destination-image">
+                                <div class="destination-content">
+                                    <h5 class="destination-title">Scenic Return Journey</h5>
+                                    <p class="destination-desc">Travel through rural Sri Lanka, passing paddy fields, coconut plantations, and traditional villages on return to Colombo.</p>
+                                    <div class="destination-tags">
+                                        <span class="destination-tag">Countryside</span>
+                                        <span class="destination-tag">Scenic Drive</span>
+                                        <span class="destination-tag">Rural Life</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DAY 5 INFO PANELS -->
+                        <div class="day-info-container">
+                            <div class="info-card">
+                                <h4 class="info-card-title"><i class="fas fa-suitcase"></i> Tour Concludes</h4>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Arrival Time</div>
+                                        <div class="info-value-enhanced">6:00 PM approx</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Drop-off Options</div>
+                                        <div class="info-value-enhanced">Hotel/Airport</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-gift"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Farewell Gift</div>
+                                        <div class="info-value-enhanced">Cultural Souvenir</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-card travel">
+                                <h4 class="info-card-title"><i class="fas fa-road"></i> Journey Details</h4>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-route"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Total Distance</div>
+                                        <div class="info-value-enhanced">260 km</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Travel Time</div>
+                                        <div class="info-value-enhanced">6-7 hours</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-car"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Vehicle</div>
+                                        <div class="info-value-enhanced">AC Luxury Van</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRICE SECTION ENHANCED -->
+                <div class="price-section-enhanced" id="price">
+                    <div class="price-header-enhanced">
+                        <h2 class="price-title-enhanced">Tour Package</h2>
+                        <p class="price-subtitle-enhanced">All-inclusive 5-day cultural and beach experience with expert guides, comfortable accommodations, and authentic local experiences</p>
+                        <div class="price-amount-enhanced">$899<span style="font-size: 1.5rem;">/person</span></div>
+                        <p style="opacity: 0.9; font-size: 1.1rem;">* Minimum 2 persons. Single supplement available</p>
+                    </div>
+
+                    <div class="inclusion-grid-enhanced">
+                        <div class="inclusion-item-enhanced">
+                            <div class="inclusion-icon-enhanced">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h5>What's Included</h5>
+                            <p class="inclusion-text-enhanced">
+                                • 4 nights accommodation<br>
+                                • All meals as per itinerary<br>
+                                • All transfers & transportation<br>
+                                • Expert English-speaking guide<br>
+                                • All entrance fees & activities<br>
+                                • Pigeon Island boat & snorkeling<br>
+                                • Whale watching (in season)<br>
+                                • Bottled water throughout
+                            </p>
+                        </div>
+
+                        <div class="inclusion-item-enhanced">
+                            <div class="inclusion-icon-enhanced">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                            <h5>Not Included</h5>
+                            <p class="inclusion-text-enhanced">
+                                • International flights<br>
+                                • Travel insurance<br>
+                                • Personal expenses<br>
+                                • Alcoholic beverages<br>
+                                • Tips for guides/drivers<br>
+                                • Visa fees if applicable<br>
+                                • Optional activities<br>
+                                • Souvenirs & shopping
+                            </p>
+                        </div>
+
+                        <div class="inclusion-item-enhanced">
+                            <div class="inclusion-icon-enhanced">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h5>Special Features</h5>
+                            <p class="inclusion-text-enhanced">
+                                • Small group (max 10 persons)<br>
+                                • Cultural & beach combination<br>
+                                • Authentic local dining<br>
+                                • UNESCO World Heritage Sites<br>
+                                • Marine national park visit<br>
+                                • Souvenir gift pack<br>
+                                • 24/7 support<br>
+                                • Flexible booking options
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 40px;">
+                        <div style="display: inline-flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);">
+                                <small style="opacity: 0.8;">Child Policy</small>
+                                <div style="font-weight: 600;">Under 12: 40% off</div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);">
+                                <small style="opacity: 0.8;">Single Supplement</small>
+                                <div style="font-weight: 600;">+ $250</div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);">
+                                <small style="opacity: 0.8;">Seasonal Rate</small>
+                                <div style="font-weight: 600;">Peak: + 20%</div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);">
+                                <small style="opacity: 0.8;">Whale Season</small>
+                                <div style="font-weight: 600;">Apr-Oct: + $50</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOOKING CTA ENHANCED -->
+                <div class="booking-cta-enhanced" id="booking">
+                    <h2 class="cta-title-enhanced">Ready for Your Ancient Cities & Beaches Adventure?</h2>
+                    <p class="cta-subtitle">Book now to experience the perfect blend of Sri Lanka's cultural heritage and coastal beauty. Limited spaces available for this comprehensive 5-day journey.</p>
+                    
+                    <div class="cta-buttons-enhanced">
+                        <a href="https://wa.me/94771234567?text=Hi!%20I'm%20interested%20in%20booking%20the%20Anuradhapura%20%26%20Trincomalee%20tour" class="btn-cta-enhanced btn-cta-primary" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Book on WhatsApp
+                        </a>
+                        <a href="tel:+94112345678" class="btn-cta-enhanced btn-cta-secondary">
+                            <i class="fas fa-phone-alt"></i> Call to Book
+                        </a>
+                        <a href="#contact-form" class="btn-cta-enhanced btn-cta-tertiary">
+                            <i class="fas fa-envelope"></i> Email Inquiry
+                        </a>
+                    </div>
+
+                    <div style="margin-top: 40px; padding: 25px; background: #f8f9fa; border-radius: 15px;">
+                        <h4 style="color: #1a365d; margin-bottom: 15px;"><i class="fas fa-shield-alt"></i> Booking Assurance</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                            <div style="text-align: center;">
+                                <div style="color: #2ecc71; font-size: 2rem; margin-bottom: 10px;">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div style="font-weight: 600; color: #2c3e50;">Secure Payment</div>
+                                <small style="color: #666;">SSL encrypted transactions</small>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="color: #3498db; font-size: 2rem; margin-bottom: 10px;">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div style="font-weight: 600; color: #2c3e50;">Flexible Dates</div>
+                                <small style="color: #666;">Free date changes up to 30 days</small>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="color: #e74c3c; font-size: 2rem; margin-bottom: 10px;">
+                                    <i class="fas fa-hand-holding-usd"></i>
+                                </div>
+                                <div style="font-weight: 600; color: #2c3e50;">Best Price Guarantee</div>
+                                <small style="color: #666;">Find cheaper? We'll match it!</small>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="color: #9b59b6; font-size: 2rem; margin-bottom: 10px;">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div style="font-weight: 600; color: #2c3e50;">24/7 Support</div>
+                                <small style="color: #666;">Dedicated travel concierge</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ADDITIONAL TOUR OPTIONS -->
+                    <div style="margin-top: 40px; padding-top: 30px; border-top: 2px solid #eaeaea;">
+                        <h4 style="color: #1a365d; margin-bottom: 20px; text-align: center;">Customize Your Experience</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                            <div style="background: white; padding: 15px 25px; border-radius: 10px; border: 1px solid #eaeaea; min-width: 200px; text-align: center;">
+                                <div style="color: #f39c12; font-size: 1.5rem; margin-bottom: 10px;">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div style="font-weight: 600; color: #2c3e50;">Extend Your Stay</div>
+                                <small style="color: #666;">Add extra beach days</small>
+                            </div>
+                            <div style="background: white; padding: 15px 25px; border-radius: 10px; border: 1px solid #eaeaea; min-width: 200px; text-align: center;">
+                                <div style="color: #3498db; font-size: 1.5rem; margin-bottom: 10px;">
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <div style="font-weight: 600; color: #2c3e50;">Private Tour</div>
+                                <small style="color: #666;">Custom itinerary available</small>
+                            </div>
+                            <div style="background: white; padding: 15px 25px; border-radius: 10px; border: 1px solid #eaeaea; min-width: 200px; text-align: center;">
+                                <div style="color: #2ecc71; font-size: 1.5rem; margin-bottom: 10px;">
+                                    <i class="fas fa-spa"></i>
+                                </div>
+                                <div style="font-weight: 600; color: #2c3e50;">Wellness Add-ons</div>
+                                <small style="color: #666;">Yoga, spa, meditation</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- ENHANCED TOUR SECTION END -->
 
-        <!-- Subscribe Start -->
+         <!-- Subscribe Start -->
         <div class="container-fluid subscribe py-5">
             <div class="container text-center py-5">
                 <div class="mx-auto text-center" style="max-width: 900px;">
@@ -270,94 +2584,11 @@
         </div>
         <!-- Subscribe End -->
 
-        <!-- Footer Start -->
-        <!--<div class="container-fluid footer py-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Get In Touch</h4>
-                            <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-share fa-2x text-white me-2"></i>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Company</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Support</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Contact</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <div class="row gy-3 gx-2 mb-4">
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">Arabic</option>
-                                                <option value="2">German</option>
-                                                <option value="3">Greek</option>
-                                                <option value="3">New York</option>
-                                            </select>
-                                            <label for="select1">English</label>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">USD</option>
-                                                <option value="2">EUR</option>
-                                                <option value="3">INR</option>
-                                                <option value="3">GBP</option>
-                                            </select>
-                                            <label for="select1">$</label>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <h4 class="text-white mb-3">Payments</h4>
-                            <div class="footer-bank-card">
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
-                                <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Footer End -->
-        
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/94771234567?text=Hi!%20I'm%20interested%20in%20the%20Anuradhapura%20%26%20Trincomalee%20tour" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
         <!-- Copyright Start -->
         <div class="container-fluid copyright text-body py-4">
             <div class="container">
@@ -370,22 +2601,141 @@
         </div>
         <!-- Copyright End -->
 
-        <!-- whatsapp button -->
-        <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
-            class="whatsapp-float"
-            target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
         
-
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-    </body>
 
+        <!-- Custom Tour Script -->
+        <script>
+            // Spinner
+            var spinner = function () {
+                setTimeout(function () {
+                    if ($('#spinner').length > 0) {
+                        $('#spinner').removeClass('show');
+                    }
+                }, 1000);
+            };
+            spinner();
+
+            // Day Progress Indicator
+            $(document).ready(function() {
+                // Progress indicator click
+                $('.day-progress-item').click(function() {
+                    var day = $(this).data('day');
+                    if (day === 'Day 1') {
+                        $('html, body').animate({ scrollTop: $('#day1').offset().top - 80 }, 1000);
+                    } else if (day === 'Day 2') {
+                        $('html, body').animate({ scrollTop: $('#day2').offset().top - 80 }, 1000);
+                    } else if (day === 'Day 3') {
+                        $('html, body').animate({ scrollTop: $('#day3').offset().top - 80 }, 1000);
+                    } else if (day === 'Day 4') {
+                        $('html, body').animate({ scrollTop: $('#day4').offset().top - 80 }, 1000);
+                    } else if (day === 'Day 5') {
+                        $('html, body').animate({ scrollTop: $('#day5').offset().top - 80 }, 1000);
+                    } else if (day === 'Price') {
+                        $('html, body').animate({ scrollTop: $('#price').offset().top - 80 }, 1000);
+                    } else if (day === 'Booking') {
+                        $('html, body').animate({ scrollTop: $('#booking').offset().top - 80 }, 1000);
+                    }
+                });
+
+                // Update active progress item on scroll
+                $(window).scroll(function() {
+                    var scrollPos = $(document).scrollTop();
+                    var day1Pos = $('#day1').offset().top;
+                    var day2Pos = $('#day2').offset().top;
+                    var day3Pos = $('#day3').offset().top;
+                    var day4Pos = $('#day4').offset().top;
+                    var day5Pos = $('#day5').offset().top;
+                    var pricePos = $('#price').offset().top;
+                    var bookingPos = $('#booking').offset().top;
+
+                    $('.day-progress-item').removeClass('active');
+
+                    if (scrollPos < day2Pos - 300) {
+                        $('.day-progress-item[data-day="Day 1"]').addClass('active');
+                    } else if (scrollPos < day3Pos - 300) {
+                        $('.day-progress-item[data-day="Day 2"]').addClass('active');
+                    } else if (scrollPos < day4Pos - 300) {
+                        $('.day-progress-item[data-day="Day 3"]').addClass('active');
+                    } else if (scrollPos < day5Pos - 300) {
+                        $('.day-progress-item[data-day="Day 4"]').addClass('active');
+                    } else if (scrollPos < pricePos - 300) {
+                        $('.day-progress-item[data-day="Day 5"]').addClass('active');
+                    } else if (scrollPos < bookingPos - 300) {
+                        $('.day-progress-item[data-day="Price"]').addClass('active');
+                    } else {
+                        $('.day-progress-item[data-day="Booking"]').addClass('active');
+                    }
+                });
+
+                // Smooth scroll for internal links
+                $('a[href^="#"]').on('click', function(event) {
+                    if (this.hash !== "") {
+                        event.preventDefault();
+                        var hash = this.hash;
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top - 80
+                        }, 800);
+                    }
+                });
+
+                // Image hover effect enhancement
+                $('.overview-image-section, .day-image-section, .destination-card').hover(
+                    function() {
+                        $(this).find('img').css('transform', 'scale(1.05)');
+                    },
+                    function() {
+                        $(this).find('img').css('transform', 'scale(1)');
+                    }
+                );
+
+                // Animation on scroll
+                function animateOnScroll() {
+                    $('.overview-section, .day-card-section, .destination-card, .experience-card').each(function() {
+                        var elementTop = $(this).offset().top;
+                        var elementBottom = elementTop + $(this).outerHeight();
+                        var viewportTop = $(window).scrollTop();
+                        var viewportBottom = viewportTop + $(window).height();
+                        
+                        if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                            $(this).css('animation', 'fadeInUp 0.6s ease forwards');
+                        }
+                    });
+                }
+
+                $(window).scroll(animateOnScroll);
+                animateOnScroll(); // Initial call
+            });
+
+            // WhatsApp message enhancement
+            document.querySelector('.whatsapp-float').addEventListener('click', function(e) {
+                // Optional: Add tracking or confirmation
+                console.log('WhatsApp booking initiated');
+            });
+
+            // Whale watching season check
+            function checkWhaleSeason() {
+                const today = new Date();
+                const month = today.getMonth() + 1; // January is 0
+                const whaleSeasonElement = document.querySelector('.whale-season-info');
+                
+                if (whaleSeasonElement) {
+                    if (month >= 4 && month <= 10) {
+                        whaleSeasonElement.innerHTML = '<i class="fas fa-check-circle"></i> Currently in whale watching season (April-October)';
+                        whaleSeasonElement.style.color = '#2ecc71';
+                    } else {
+                        whaleSeasonElement.innerHTML = '<i class="fas fa-info-circle"></i> Whale watching available April-October only';
+                        whaleSeasonElement.style.color = '#e74c3c';
+                    }
+                }
+            }
+            
+            // Call function when page loads
+            window.addEventListener('load', checkWhaleSeason);
+        </script>
+    </body>
 </html>

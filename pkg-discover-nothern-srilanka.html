@@ -1,0 +1,2282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ayubowan Tours - Jaffna Cultural Experience</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* WhatsApp Floating Button with Pulse Animation */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background-color: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 42px;
+            text-align: center;
+            line-height: 80px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            z-index: 1000;
+            animation: whatsapp-pulse 1.8s infinite;
+            text-decoration: none;
+        }
+
+        /* Hover effect */
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            transition: 0.3s ease;
+        }
+
+        /* Pulse animation */
+        @keyframes whatsapp-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 70px;
+                height: 70px;
+                font-size: 38px;
+                line-height: 70px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        /* ENHANCED TOUR SECTION STYLES */
+        .enhanced-tour-section {
+            position: relative;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%);
+        }
+
+        .tour-timeline-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 15px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a365d;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* OVERVIEW SECTION */
+        .overview-section {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            margin-bottom: 50px;
+        }
+
+        .overview-header {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            color: white;
+            padding: 25px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .overview-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .overview-main-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .tour-highlight {
+            display: inline-block;
+            background: rgba(243, 156, 18, 0.9);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .overview-content {
+            padding: 40px;
+        }
+
+        .overview-image-section {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .overview-main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .overview-image-section:hover .overview-main-image {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 20px;
+            color: white;
+        }
+
+        .image-caption {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* DAY CARDS */
+        .day-card-section {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+
+        .day-card-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 25px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day-card-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .day-number-circle {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            backdrop-filter: blur(5px);
+        }
+
+        .day-main-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .day-location {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .day-location i {
+            color: #f39c12;
+        }
+
+        .day-highlight {
+            display: inline-block;
+            background: rgba(243, 156, 18, 0.9);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .day-content-wrapper {
+            padding: 40px;
+        }
+
+        .day-image-section {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .day-main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .day-image-section:hover .day-main-image {
+            transform: scale(1.05);
+        }
+
+        /* ENHANCED TIME SCHEDULE */
+        .enhanced-schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .enhanced-time-slot {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid #eaeaea;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enhanced-time-slot:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: linear-gradient(to bottom, #3498db, #2ecc71);
+        }
+
+        .enhanced-time-slot:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.1);
+            border-color: #3498db;
+        }
+
+        .time-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .time-badge-enhanced {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+        }
+
+        .activity-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #3498db;
+        }
+
+        .slot-title-enhanced {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .slot-desc-enhanced {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .activity-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .highlight-tag {
+            background: #e8f4fc;
+            color: #2980b9;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #d1e8ff;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-tag:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* EXPERIENCE HIGHLIGHTS */
+        .experience-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .experience-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: #9b59b6;
+        }
+
+        .experience-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .experience-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* DESTINATION GRID */
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .destination-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .destination-content {
+            padding: 20px;
+        }
+
+        .destination-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .destination-desc {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .destination-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .destination-tag {
+            background: #e8f4fc;
+            color: #2980b9;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* DAY INFO PANELS */
+        .day-info-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card.accommodation {
+            background: linear-gradient(135deg, #fff9e6, #ffeaa7);
+            border-left: 5px solid #f39c12;
+        }
+
+        .info-card.travel {
+            background: linear-gradient(135deg, #e8f4fc, #d1e8ff);
+            border-left: 5px solid #3498db;
+        }
+
+        .info-card-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card-title i {
+            color: #f39c12;
+        }
+
+        .info-card.travel .info-card-title i {
+            color: #3498db;
+        }
+
+        .info-grid-enhanced {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .info-item-enhanced {
+            text-align: center;
+        }
+
+        .info-icon-circle {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 1.3rem;
+            color: #f39c12;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-card.travel .info-icon-circle {
+            color: #3498db;
+        }
+
+        .info-label-enhanced {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .info-value-enhanced {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+
+        /* QUICK FACTS ENHANCED */
+        .quick-facts-enhanced {
+            background: linear-gradient(135deg, #2c3e50, #1a252f);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .facts-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .fact-item-enhanced {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .fact-icon-circle {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #f39c12;
+        }
+
+        .fact-text {
+            font-size: 0.95rem;
+        }
+
+        /* PRICE SECTION - ENHANCED */
+        .price-section-enhanced {
+            background: linear-gradient(135deg, #1a365d, #2c3e50);
+            color: white;
+            border-radius: 25px;
+            padding: 60px 40px;
+            margin: 70px auto;
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .price-section-enhanced:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: cover;
+        }
+
+        .price-header-enhanced {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .price-title-enhanced {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #fff, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .price-amount-enhanced {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #f39c12;
+            margin: 20px 0;
+            text-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        .price-subtitle-enhanced {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .inclusion-grid-enhanced {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .inclusion-item-enhanced {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .inclusion-item-enhanced:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(243, 156, 18, 0.3);
+        }
+
+        .inclusion-icon-enhanced {
+            font-size: 2.5rem;
+            color: #2ecc71;
+            margin-bottom: 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inclusion-item-enhanced h5 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .inclusion-text-enhanced {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* BOOKING CTA ENHANCED */
+        .booking-cta-enhanced {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 25px;
+            padding: 60px 40px;
+            margin: 70px auto;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            max-width: 1000px;
+        }
+
+        .cta-title-enhanced {
+            font-size: 2.5rem;
+            color: #1a365d;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons-enhanced {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn-cta-enhanced {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            min-width: 220px;
+            justify-content: center;
+        }
+
+        .btn-cta-primary {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-cta-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+            color: white;
+        }
+
+        .btn-cta-secondary {
+            background: white;
+            color: #3498db;
+            border: 2px solid #3498db;
+            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.15);
+        }
+
+        .btn-cta-secondary:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.25);
+        }
+
+        .btn-cta-tertiary {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            border: none;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+        }
+
+        .btn-cta-tertiary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(243, 156, 18, 0.4);
+            color: white;
+        }
+
+        /* DAY COLOR THEMES */
+        .day-1 .day-card-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .day-2 .day-card-header {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        }
+
+        .day-3 .day-card-header {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1200px) {
+            .tour-timeline-container {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.3rem;
+            }
+
+            .enhanced-schedule-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+
+            .info-grid-enhanced {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .day-number-circle {
+                width: 60px;
+                height: 60px;
+                font-size: 1.7rem;
+            }
+
+            .price-title-enhanced {
+                font-size: 2.3rem;
+            }
+
+            .price-amount-enhanced {
+                font-size: 3.2rem;
+            }
+
+            .overview-image-section,
+            .day-image-section {
+                height: 250px;
+            }
+
+            .experience-highlights,
+            .destination-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .overview-content,
+            .day-content-wrapper {
+                padding: 30px;
+            }
+
+            .overview-header,
+            .day-card-header {
+                padding: 20px;
+            }
+
+            .overview-main-title,
+            .day-main-title {
+                font-size: 1.5rem;
+            }
+
+            .day-number-circle {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                right: 20px;
+            }
+
+            .overview-image-section,
+            .day-image-section {
+                height: 220px;
+            }
+
+            .enhanced-schedule-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .experience-highlights,
+            .destination-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .day-info-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .price-section-enhanced {
+                padding: 40px 25px;
+                margin: 50px 0;
+            }
+
+            .inclusion-grid-enhanced {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .booking-cta-enhanced {
+                padding: 40px 25px;
+                margin: 50px 0;
+            }
+
+            .cta-title-enhanced {
+                font-size: 2rem;
+            }
+
+            .cta-buttons-enhanced {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-cta-enhanced {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.9rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .overview-image-section,
+            .day-image-section {
+                height: 200px;
+            }
+
+            .time-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .info-grid-enhanced {
+                grid-template-columns: 1fr;
+            }
+
+            .inclusion-grid-enhanced {
+                grid-template-columns: 1fr;
+            }
+
+            .price-title-enhanced {
+                font-size: 1.9rem;
+            }
+
+            .price-amount-enhanced {
+                font-size: 2.8rem;
+            }
+
+            .btn-cta-enhanced {
+                padding: 16px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .overview-section,
+        .day-card-section,
+        .destination-card,
+        .experience-card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        /* CUSTOM SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #2ecc71, #3498db);
+        }
+
+        /* Progress indicator */
+        .day-progress {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .day-progress-item {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .day-progress-item.active {
+            background: #3498db;
+            transform: scale(1.3);
+        }
+
+        .day-progress-item:hover:after {
+            content: attr(data-day);
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .day-progress {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="./index.html" class="navbar-brand p-0">
+                <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="services.html" class="nav-item nav-link">Services</a>
+                    <a href="packages.html" class="nav-item nav-link active">Packages</a>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="#booking" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h3 class="text-white display-3 mb-4">Jaffna Cultural Experience</h1>
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="packages.html">Packages</a></li>
+                    <li class="breadcrumb-item active text-white">Jaffna Cultural Experience</li>
+                </ol>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- ENHANCED TOUR SECTION START -->
+    <div class="container-fluid enhanced-tour-section">
+        <div class="tour-timeline-container">
+            <!-- Progress Indicator -->
+            <div class="day-progress">
+                <div class="day-progress-item active" data-day="Day 1"></div>
+                <div class="day-progress-item" data-day="Day 2"></div>
+                <div class="day-progress-item" data-day="Day 3"></div>
+                <div class="day-progress-item" data-day="Price"></div>
+                <div class="day-progress-item" data-day="Booking"></div>
+            </div>
+
+            <!-- SECTION HEADER -->
+            <div class="section-header">
+                <h1 class="section-title">Jaffna Cultural Journey</h1>
+                <p class="section-subtitle">A 3-day immersive cultural exploration of Northern Sri Lanka's hidden gems,
+                    ancient temples, and unique Tamil heritage.</p>
+            </div>
+
+            <!-- TOUR OVERVIEW SECTION -->
+            <div class="overview-section">
+                <div class="overview-header">
+                    <h2 class="overview-main-title">Tour Overview</h2>
+                    <p>Experience the authentic culture of Jaffna Peninsula</p>
+                    <span class="tour-highlight">⭐ Premium Cultural Experience</span>
+                </div>
+                <div class="overview-content">
+                    <div class="overview-image-section">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            alt="Jaffna Cultural Landscape" class="overview-main-image">
+                        <div class="image-overlay">
+                            <p class="image-caption">Discover the unique blend of Tamil culture and colonial heritage in
+                                Northern Sri Lanka</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h3 style="color: #1a365d; margin-bottom: 20px;">About This Tour</h3>
+                            <p style="color: #555; line-height: 1.8; margin-bottom: 25px;">
+                                Embark on a captivating 3-day journey to Jaffna, the cultural heartland of Sri Lanka's
+                                Tamil community. This carefully curated tour offers an authentic experience of Northern
+                                Sri Lanka's rich heritage, from ancient Hindu temples to colonial-era architecture and
+                                vibrant local markets.
+                            </p>
+                            <p style="color: #555; line-height: 1.8;">
+                                You'll explore the iconic Nallur Kandaswamy Temple, witness the serene beauty of the
+                                Jaffna Peninsula's coastal landscapes, taste authentic Jaffna cuisine, and interact with
+                                local communities to gain deeper insights into Tamil culture and traditions.
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="quick-facts-enhanced">
+                                <h4 class="facts-title"><i class="fas fa-info-circle"></i> Quick Facts</h4>
+                                <div class="facts-grid">
+                                    <div class="fact-item-enhanced">
+                                        <div class="fact-icon-circle">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </div>
+                                        <div class="fact-text">
+                                            <strong>Duration:</strong> 3 Days<br>
+                                            <small>2 Nights</small>
+                                        </div>
+                                    </div>
+                                    <div class="fact-item-enhanced">
+                                        <div class="fact-icon-circle">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="fact-text">
+                                            <strong>Group Size:</strong> 2-12<br>
+                                            <small>Private available</small>
+                                        </div>
+                                    </div>
+                                    <div class="fact-item-enhanced">
+                                        <div class="fact-icon-circle">
+                                            <i class="fas fa-tachometer-alt"></i>
+                                        </div>
+                                        <div class="fact-text">
+                                            <strong>Difficulty:</strong> Easy<br>
+                                            <small>Moderate walking</small>
+                                        </div>
+                                    </div>
+                                    <div class="fact-item-enhanced">
+                                        <div class="fact-icon-circle">
+                                            <i class="fas fa-sun"></i>
+                                        </div>
+                                        <div class="fact-text">
+                                            <strong>Best Season:</strong> Year-round<br>
+                                            <small>Cooler months preferred</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EXPERIENCE HIGHLIGHTS -->
+                    <div class="experience-highlights">
+                        <div class="experience-card">
+                            <div class="experience-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h4 class="experience-title">Temple Exploration</h4>
+                            <p class="experience-desc">Visit ancient Hindu temples including the famous Nallur
+                                Kandaswamy Temple and Nagadeepa Purana Vihara</p>
+                        </div>
+                        <div class="experience-card">
+                            <div class="experience-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h4 class="experience-title">Culinary Journey</h4>
+                            <p class="experience-desc">Taste authentic Jaffna cuisine - from spicy crab curry to
+                                traditional sweets like palmyra delicacies</p>
+                        </div>
+                        <div class="experience-card">
+                            <div class="experience-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h4 class="experience-title">Local Interactions</h4>
+                            <p class="experience-desc">Meet local artisans, fishermen, and farmers to understand their
+                                way of life and traditions</p>
+                        </div>
+                        <div class="experience-card">
+                            <div class="experience-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <h4 class="experience-title">Historical Insights</h4>
+                            <p class="experience-desc">Explore colonial architecture and learn about Jaffna's rich
+                                history from our expert guides</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 1 -->
+            <div class="day-card-section day-1" id="day1">
+                <div class="day-card-header">
+                    <h2 class="day-main-title">Day 1: Colombo to Jaffna - Cultural Introduction</h2>
+                    <div class="day-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Colombo → Jaffna (Travel Day)</span>
+                    </div>
+                    <span class="day-highlight">✈️ Scenic Flight & Temple Visit</span>
+                    <div class="day-number-circle">01</div>
+                </div>
+                <div class="day-content-wrapper">
+                    <!-- DAY 1 IMAGE -->
+                    <div class="day-image-section">
+                        <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            alt="Jaffna Temple" class="day-main-image">
+                        <div class="image-overlay">
+                            <p class="image-caption">Evening prayers at Nallur Kandaswamy Temple - A spiritual
+                                experience</p>
+                        </div>
+                    </div>
+
+                    <!-- ENHANCED SCHEDULE FOR DAY 1 -->
+                    <div class="enhanced-schedule-grid">
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">05:30 AM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-plane"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Morning Flight to Jaffna</h4>
+                            <p class="slot-desc-enhanced">Early morning pick-up from your Colombo hotel. Transfer to
+                                Colombo airport for a scenic 1-hour flight to Jaffna. Enjoy aerial views of Sri Lanka's
+                                landscapes.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Airport Transfer</span>
+                                <span class="highlight-tag">Scenic Flight</span>
+                                <span class="highlight-tag">Meet & Greet</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">08:00 AM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-hotel"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Hotel Check-in & Breakfast</h4>
+                            <p class="slot-desc-enhanced">Arrive in Jaffna and transfer to your heritage hotel. Check-in
+                                followed by traditional Jaffna breakfast featuring string hoppers, coconut sambal, and
+                                spicy curry.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Hotel Check-in</span>
+                                <span class="highlight-tag">Local Breakfast</span>
+                                <span class="highlight-tag">Briefing Session</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">10:00 AM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Jaffna Fort Exploration</h4>
+                            <p class="slot-desc-enhanced">Visit the historic Jaffna Fort built by the Portuguese in
+                                1618. Learn about its colonial history and enjoy panoramic views of the Jaffna
+                                Peninsula.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Historical Site</span>
+                                <span class="highlight-tag">Photo Opportunity</span>
+                                <span class="highlight-tag">Guided Tour</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">01:00 PM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Traditional Lunch Experience</h4>
+                            <p class="slot-desc-enhanced">Enjoy an authentic Jaffna lunch at a local restaurant. Savor
+                                signature dishes like Jaffna crab curry, brinjal moju, and palmyra fruit preparations.
+                            </p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Local Cuisine</span>
+                                <span class="highlight-tag">Cooking Demo</span>
+                                <span class="highlight-tag">Spice Introduction</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">03:00 PM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Jaffna Market Visit</h4>
+                            <p class="slot-desc-enhanced">Explore the vibrant Jaffna Market. Experience the colors,
+                                smells, and sounds of local life. Shop for spices, traditional handicrafts, and fresh
+                                produce.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Local Market</span>
+                                <span class="highlight-tag">Shopping</span>
+                                <span class="highlight-tag">Cultural Immersion</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">06:00 PM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-pray"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Nallur Temple Evening Ceremony</h4>
+                            <p class="slot-desc-enhanced">Witness the spectacular evening pooja (prayer ceremony) at
+                                Nallur Kandaswamy Temple. Experience the devotion, music, and rituals of Hindu worship.
+                            </p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Religious Ceremony</span>
+                                <span class="highlight-tag">Cultural Experience</span>
+                                <span class="highlight-tag">Photography</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DESTINATION HIGHLIGHTS DAY 1 -->
+                    <div class="destination-grid">
+                        <div class="destination-card">
+                            <img src="https://images.unsplash.com/photo-1593693399741-2d8c0d8d8b8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Jaffna Fort" class="destination-image">
+                            <div class="destination-content">
+                                <h5 class="destination-title">Jaffna Fort</h5>
+                                <p class="destination-desc">17th-century Portuguese fort showcasing colonial
+                                    architecture with moats and ramparts overlooking the Jaffna lagoon.</p>
+                                <div class="destination-tags">
+                                    <span class="destination-tag">Historical</span>
+                                    <span class="destination-tag">Architecture</span>
+                                    <span class="destination-tag">Scenic Views</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="destination-card">
+                            <img src="https://images.unsplash.com/photo-1585506936724-e2136e5f844d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Nallur Temple" class="destination-image">
+                            <div class="destination-content">
+                                <h5 class="destination-title">Nallur Kandaswamy Temple</h5>
+                                <p class="destination-desc">One of Sri Lanka's most significant Hindu temples dedicated
+                                    to Lord Murugan, known for its grand architecture and rituals.</p>
+                                <div class="destination-tags">
+                                    <span class="destination-tag">Religious</span>
+                                    <span class="destination-tag">Architecture</span>
+                                    <span class="destination-tag">Cultural</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="destination-card">
+                            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Jaffna Market" class="destination-image">
+                            <div class="destination-content">
+                                <h5 class="destination-title">Jaffna Market</h5>
+                                <p class="destination-desc">Vibrant local market offering fresh produce, traditional
+                                    handicrafts, spices, and a glimpse into daily Jaffna life.</p>
+                                <div class="destination-tags">
+                                    <span class="destination-tag">Shopping</span>
+                                    <span class="destination-tag">Local Life</span>
+                                    <span class="destination-tag">Food</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 1 INFO PANELS -->
+                    <div class="day-info-container">
+                        <div class="info-card accommodation">
+                            <h4 class="info-card-title"><i class="fas fa-hotel"></i> Accommodation</h4>
+                            <div class="info-grid-enhanced">
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-bed"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Hotel</div>
+                                    <div class="info-value-enhanced">The Heritage Jaffna</div>
+                                </div>
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Rating</div>
+                                    <div class="info-value-enhanced">4★ Heritage</div>
+                                </div>
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-wifi"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Amenities</div>
+                                    <div class="info-value-enhanced">WiFi, AC, Pool</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-card travel">
+                            <h4 class="info-card-title"><i class="fas fa-bus"></i> Travel Details</h4>
+                            <div class="info-grid-enhanced">
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-road"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Distance</div>
+                                    <div class="info-value-enhanced">400 km</div>
+                                </div>
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Travel Time</div>
+                                    <div class="info-value-enhanced">1 hr flight</div>
+                                </div>
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Transport</div>
+                                    <div class="info-value-enhanced">Flight + AC Van</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 2 -->
+            <div class="day-card-section day-2" id="day2">
+                <div class="day-card-header">
+                    <h2 class="day-main-title">Day 2: Island Exploration & Cultural Immersion</h2>
+                    <div class="day-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Delft Island & Nagadeepa Temple</span>
+                    </div>
+                    <span class="day-highlight">🛥️ Island Hopping & Wildlife</span>
+                    <div class="day-number-circle">02</div>
+                </div>
+                <div class="day-content-wrapper">
+                    <!-- DAY 2 IMAGE -->
+                    <div class="day-image-section">
+                        <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            alt="Delft Island" class="day-main-image">
+                        <div class="image-overlay">
+                            <p class="image-caption">Wild horses roaming freely on Delft Island - A unique Sri Lankan
+                                experience</p>
+                        </div>
+                    </div>
+
+                    <!-- ENHANCED SCHEDULE FOR DAY 2 -->
+                    <div class="enhanced-schedule-grid">
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">07:00 AM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-ship"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Boat to Delft Island</h4>
+                            <p class="slot-desc-enhanced">Early morning boat ride from Kurikkaduwan harbor to Delft
+                                Island. Enjoy the sea breeze and spot dolphins if lucky during the 1-hour journey.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Boat Ride</span>
+                                <span class="highlight-tag">Dolphin Spotting</span>
+                                <span class="highlight-tag">Island Transfer</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">09:00 AM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-horse"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Wild Horses & Baobab Trees</h4>
+                            <p class="slot-desc-enhanced">Explore Delft Island's unique attractions - herds of wild
+                                horses, ancient Baobab trees brought by Arab traders, and coral stone houses.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Wildlife</span>
+                                <span class="highlight-tag">Photography</span>
+                                <span class="highlight-tag">Nature Walk</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">11:30 AM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Island-style Picnic Lunch</h4>
+                            <p class="slot-desc-enhanced">Enjoy a picnic lunch on the island featuring fresh seafood,
+                                tropical fruits, and local specialties prepared by island communities.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Picnic</span>
+                                <span class="highlight-tag">Seafood</span>
+                                <span class="highlight-tag">Local Interaction</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">01:30 PM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-ship"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Boat to Nagadeepa Island</h4>
+                            <p class="slot-desc-enhanced">Short boat ride to Nagadeepa Island, one of Sri Lanka's most
+                                sacred Buddhist sites mentioned in ancient chronicles.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Boat Transfer</span>
+                                <span class="highlight-tag">Island Hopping</span>
+                                <span class="highlight-tag">Scenic Views</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">02:30 PM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-pagoda"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Nagadeepa Purana Vihara</h4>
+                            <p class="slot-desc-enhanced">Visit this ancient Buddhist temple believed to have been
+                                visited by Lord Buddha. See the sacred stupa and enjoy panoramic island views.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Buddhist Temple</span>
+                                <span class="highlight-tag">Pilgrimage Site</span>
+                                <span class="highlight-tag">Historical</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">05:00 PM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Sunset at Keerimalai Springs</h4>
+                            <p class="slot-desc-enhanced">Return to mainland and visit Keerimalai natural springs. Watch
+                                the spectacular sunset over the Indian Ocean from this sacred site.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Sunset Viewing</span>
+                                <span class="highlight-tag">Natural Springs</span>
+                                <span class="highlight-tag">Photography</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DESTINATION HIGHLIGHTS DAY 2 -->
+                    <div class="destination-grid">
+                        <div class="destination-card">
+                            <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Delft Island Horses" class="destination-image">
+                            <div class="destination-content">
+                                <h5 class="destination-title">Delft Island</h5>
+                                <p class="destination-desc">Remote island with wild horses, ancient Baobab trees, Dutch
+                                    ruins, and pristine beaches - a step back in time.</p>
+                                <div class="destination-tags">
+                                    <span class="destination-tag">Wildlife</span>
+                                    <span class="destination-tag">Historical</span>
+                                    <span class="destination-tag">Island</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="destination-card">
+                            <img src="https://images.unsplash.com/photo-1536152471326-642d7bb4eb4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Nagadeepa Temple" class="destination-image">
+                            <div class="destination-content">
+                                <h5 class="destination-title">Nagadeepa Temple</h5>
+                                <p class="destination-desc">One of Sri Lanka's 16 holiest Buddhist sites on a small
+                                    island, featuring ancient stupas and serene atmosphere.</p>
+                                <div class="destination-tags">
+                                    <span class="destination-tag">Buddhist</span>
+                                    <span class="destination-tag">Pilgrimage</span>
+                                    <span class="destination-tag">Island</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="destination-card">
+                            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Keerimalai Springs" class="destination-image">
+                            <div class="destination-content">
+                                <h5 class="destination-title">Keerimalai Springs</h5>
+                                <p class="destination-desc">Natural freshwater springs by the sea with mythological
+                                    significance and stunning sunset views.</p>
+                                <div class="destination-tags">
+                                    <span class="destination-tag">Natural</span>
+                                    <span class="destination-tag">Sacred Site</span>
+                                    <span class="destination-tag">Sunset</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 2 INFO PANELS -->
+                    <div class="day-info-container">
+                        <div class="info-card accommodation">
+                            <h4 class="info-card-title"><i class="fas fa-hotel"></i> Accommodation</h4>
+                            <div class="info-grid-enhanced">
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-bed"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Hotel</div>
+                                    <div class="info-value-enhanced">The Heritage Jaffna</div>
+                                </div>
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Special</div>
+                                    <div class="info-value-enhanced">Sea View Room</div>
+                                </div>
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Experience</div>
+                                    <div class="info-value-enhanced">Cultural Night</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-card travel">
+                            <h4 class="info-card-title"><i class="fas fa-ship"></i> Travel Details</h4>
+                            <div class="info-grid-enhanced">
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-anchor"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Boat Trips</div>
+                                    <div class="info-value-enhanced">2 Island Tours</div>
+                                </div>
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-walking"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Activity Level</div>
+                                    <div class="info-value-enhanced">Moderate</div>
+                                </div>
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Best Time</div>
+                                    <div class="info-value-enhanced">Morning Start</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 3 -->
+            <div class="day-card-section day-3" id="day3">
+                <div class="day-card-header">
+                    <h2 class="day-main-title">Day 3: Cultural Heritage & Return Journey</h2>
+                    <div class="day-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jaffna → Colombo (via Anuradhapura)</span>
+                    </div>
+                    <span class="day-highlight">🏛️ UNESCO Sites & Local Crafts</span>
+                    <div class="day-number-circle">03</div>
+                </div>
+                <div class="day-content-wrapper">
+                    <!-- DAY 3 IMAGE -->
+                    <div class="day-image-section">
+                        <img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            alt="Anuradhapura" class="day-main-image">
+                        <div class="image-overlay">
+                            <p class="image-caption">Sacred Bodhi Tree in Anuradhapura - One of the world's oldest
+                                living trees</p>
+                        </div>
+                    </div>
+
+                    <!-- ENHANCED SCHEDULE FOR DAY 3 -->
+                    <div class="enhanced-schedule-grid">
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">07:00 AM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Departure to Anuradhapura</h4>
+                            <p class="slot-desc-enhanced">Check out from hotel and begin scenic drive to Anuradhapura.
+                                Stop for traditional breakfast at a local eatery en route.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Road Trip</span>
+                                <span class="highlight-tag">Scenic Drive</span>
+                                <span class="highlight-tag">Local Breakfast</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">10:00 AM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-tree"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Sri Maha Bodhi Sacred Tree</h4>
+                            <p class="slot-desc-enhanced">Visit the sacred Sri Maha Bodhi tree - a sapling from the
+                                original Bodhi tree under which Buddha attained enlightenment.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">UNESCO Site</span>
+                                <span class="highlight-tag">Buddhist Pilgrimage</span>
+                                <span class="highlight-tag">Historical</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">11:30 AM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-archway"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Ruwanwelisaya Stupa</h4>
+                            <p class="slot-desc-enhanced">Explore the magnificent Ruwanwelisaya stupa, one of the
+                                world's tallest ancient monuments and an architectural marvel.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Ancient Architecture</span>
+                                <span class="highlight-tag">Photography</span>
+                                <span class="highlight-tag">Cultural Heritage</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">01:00 PM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Farewell Lunch in Anuradhapura</h4>
+                            <p class="slot-desc-enhanced">Enjoy a traditional Sri Lankan buffet lunch featuring
+                                specialties from both Sinhalese and Tamil culinary traditions.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Fusion Cuisine</span>
+                                <span class="highlight-tag">Cultural Exchange</span>
+                                <span class="highlight-tag">Farewell Meal</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">02:30 PM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Local Craft Village Visit</h4>
+                            <p class="slot-desc-enhanced">Visit a traditional craft village. See artisans creating
+                                brassware, wood carvings, and handloom textiles. Opportunity for souvenir shopping.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Handicrafts</span>
+                                <span class="highlight-tag">Shopping</span>
+                                <span class="highlight-tag">Artisan Meet</span>
+                            </div>
+                        </div>
+
+                        <div class="enhanced-time-slot">
+                            <div class="time-header">
+                                <span class="time-badge-enhanced">04:00 PM</span>
+                                <div class="activity-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                            </div>
+                            <h4 class="slot-title-enhanced">Return Journey to Colombo</h4>
+                            <p class="slot-desc-enhanced">Begin return journey to Colombo. Relax in air-conditioned
+                                comfort with refreshments provided en route.</p>
+                            <div class="activity-highlights">
+                                <span class="highlight-tag">Comfortable Travel</span>
+                                <span class="highlight-tag">Refreshments</span>
+                                <span class="highlight-tag">Scenic Route</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DESTINATION HIGHLIGHTS DAY 3 -->
+                    <div class="destination-grid">
+                        <div class="destination-card">
+                            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Sri Maha Bodhi" class="destination-image">
+                            <div class="destination-content">
+                                <h5 class="destination-title">Sri Maha Bodhi</h5>
+                                <p class="destination-desc">The oldest living human-planted tree in the world with
+                                    recorded history dating back to 288 BC.</p>
+                                <div class="destination-tags">
+                                    <span class="destination-tag">Sacred Tree</span>
+                                    <span class="destination-tag">UNESCO</span>
+                                    <span class="destination-tag">Historical</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="destination-card">
+                            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Ruwanwelisaya" class="destination-image">
+                            <div class="destination-content">
+                                <h5 class="destination-title">Ruwanwelisaya Stupa</h5>
+                                <p class="destination-desc">One of the tallest ancient stupas in the world, standing at
+                                    103 meters with magnificent white dome.</p>
+                                <div class="destination-tags">
+                                    <span class="destination-tag">Ancient</span>
+                                    <span class="destination-tag">Architecture</span>
+                                    <span class="destination-tag">Buddhist</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="destination-card">
+                            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Craft Village" class="destination-image">
+                            <div class="destination-content">
+                                <h5 class="destination-title">Traditional Craft Village</h5>
+                                <p class="destination-desc">Witness generations-old crafting traditions including brass
+                                    work, wood carving, and handloom weaving.</p>
+                                <div class="destination-tags">
+                                    <span class="destination-tag">Handicrafts</span>
+                                    <span class="destination-tag">Cultural</span>
+                                    <span class="destination-tag">Shopping</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 3 INFO PANELS -->
+                    <div class="day-info-container">
+                        <div class="info-card">
+                            <h4 class="info-card-title"><i class="fas fa-suitcase"></i> Tour Concludes</h4>
+                            <div class="info-grid-enhanced">
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Arrival Time</div>
+                                    <div class="info-value-enhanced">7:00 PM approx</div>
+                                </div>
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Drop-off</div>
+                                    <div class="info-value-enhanced">Your Hotel</div>
+                                </div>
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-gift"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Souvenir</div>
+                                    <div class="info-value-enhanced">Cultural Gift Pack</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-card travel">
+                            <h4 class="info-card-title"><i class="fas fa-road"></i> Journey Details</h4>
+                            <div class="info-grid-enhanced">
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-route"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Total Distance</div>
+                                    <div class="info-value-enhanced">450 km</div>
+                                </div>
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Travel Time</div>
+                                    <div class="info-value-enhanced">5-6 hours</div>
+                                </div>
+                                <div class="info-item-enhanced">
+                                    <div class="info-icon-circle">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <div class="info-label-enhanced">Vehicle</div>
+                                    <div class="info-value-enhanced">AC Luxury Van</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRICE SECTION ENHANCED -->
+            <div class="price-section-enhanced" id="price">
+                <div class="price-header-enhanced">
+                    <h2 class="price-title-enhanced">Tour Package</h2>
+                    <p class="price-subtitle-enhanced">All-inclusive premium cultural experience with expert guides,
+                        comfortable accommodations, and authentic local experiences</p>
+                    <div class="price-amount-enhanced">$599<span style="font-size: 1.5rem;">/person</span></div>
+                    <p style="opacity: 0.9; font-size: 1.1rem;">* Minimum 2 persons. Single supplement available</p>
+                </div>
+
+                <div class="inclusion-grid-enhanced">
+                    <div class="inclusion-item-enhanced">
+                        <div class="inclusion-icon-enhanced">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h5>What's Included</h5>
+                        <p class="inclusion-text-enhanced">
+                            • All accommodations (2 nights)<br>
+                            • All meals as per itinerary<br>
+                            • Domestic flights (Colombo-Jaffna)<br>
+                            • All transfers & transportation<br>
+                            • Expert English-speaking guide<br>
+                            • All entrance fees & activities<br>
+                            • Boat trips to islands<br>
+                            • Bottled water throughout
+                        </p>
+                    </div>
+
+                    <div class="inclusion-item-enhanced">
+                        <div class="inclusion-icon-enhanced">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                        <h5>Not Included</h5>
+                        <p class="inclusion-text-enhanced">
+                            • International flights<br>
+                            • Travel insurance<br>
+                            • Personal expenses<br>
+                            • Alcoholic beverages<br>
+                            • Tips for guides/drivers<br>
+                            • Visa fees if applicable<br>
+                            • Optional activities<br>
+                            • Souvenirs & shopping
+                        </p>
+                    </div>
+
+                    <div class="inclusion-item-enhanced">
+                        <div class="inclusion-icon-enhanced">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h5>Special Features</h5>
+                        <p class="inclusion-text-enhanced">
+                            • Small group (max 12 persons)<br>
+                            • Cultural immersion activities<br>
+                            • Authentic local dining<br>
+                            • Traditional welcome ceremony<br>
+                            • Photography assistance<br>
+                            • Souvenir gift pack<br>
+                            • 24/7 support<br>
+                            • Flexible booking options
+                        </p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <div style="display: inline-flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                        <div
+                            style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);">
+                            <small style="opacity: 0.8;">Child Policy</small>
+                            <div style="font-weight: 600;">Under 12: 50% off</div>
+                        </div>
+                        <div
+                            style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);">
+                            <small style="opacity: 0.8;">Single Supplement</small>
+                            <div style="font-weight: 600;">+ $150</div>
+                        </div>
+                        <div
+                            style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);">
+                            <small style="opacity: 0.8;">Seasonal Rate</small>
+                            <div style="font-weight: 600;">Peak: + 15%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOKING CTA ENHANCED -->
+            <div class="booking-cta-enhanced" id="booking">
+                <h2 class="cta-title-enhanced">Ready for Your Jaffna Adventure?</h2>
+                <p class="cta-subtitle">Book now to secure your spot on this unforgettable cultural journey. Limited
+                    spaces available for an intimate group experience.</p>
+
+                <div class="cta-buttons-enhanced">
+                    <a href="https://wa.me/94771234567?text=Hi!%20I'm%20interested%20in%20booking%20the%20Jaffna%20Cultural%20Experience%20tour"
+                        class="btn-cta-enhanced btn-cta-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Book on WhatsApp
+                    </a>
+                    <a href="tel:+94112345678" class="btn-cta-enhanced btn-cta-secondary">
+                        <i class="fas fa-phone-alt"></i> Call to Book
+                    </a>
+                    <a href="#contact-form" class="btn-cta-enhanced btn-cta-tertiary">
+                        <i class="fas fa-envelope"></i> Email Inquiry
+                    </a>
+                </div>
+
+                <div style="margin-top: 40px; padding: 25px; background: #f8f9fa; border-radius: 15px;">
+                    <h4 style="color: #1a365d; margin-bottom: 15px;"><i class="fas fa-shield-alt"></i> Booking Assurance
+                    </h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                        <div style="text-align: center;">
+                            <div style="color: #2ecc71; font-size: 2rem; margin-bottom: 10px;">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div style="font-weight: 600; color: #2c3e50;">Secure Payment</div>
+                            <small style="color: #666;">SSL encrypted transactions</small>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="color: #3498db; font-size: 2rem; margin-bottom: 10px;">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div style="font-weight: 600; color: #2c3e50;">Flexible Dates</div>
+                            <small style="color: #666;">Free date changes up to 30 days</small>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="color: #e74c3c; font-size: 2rem; margin-bottom: 10px;">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div style="font-weight: 600; color: #2c3e50;">Best Price Guarantee</div>
+                            <small style="color: #666;">Find cheaper? We'll match it!</small>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="color: #9b59b6; font-size: 2rem; margin-bottom: 10px;">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div style="font-weight: 600; color: #2c3e50;">24/7 Support</div>
+                            <small style="color: #666;">Dedicated travel concierge</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ENHANCED TOUR SECTION END -->
+
+     <!-- Subscribe Start -->
+        <div class="container-fluid subscribe py-5">
+            <div class="container text-center py-5">
+                <div class="mx-auto text-center" style="max-width: 900px;">
+                    <h5 class="subscribe-title px-3">Subscribe</h5>
+                    <h1 class="text-white mb-4">Our Newsletter</h1>
+                    <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, 
+                        insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
+                    </p>
+                    <div class="position-relative mx-auto">
+                        <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Subscribe End -->
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/94771234567?text=Hi!%20I'm%20interested%20in%20the%20Jaffna%20Cultural%20Experience%20tour"
+        class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="./index.html">Ayubowan Tours</a>,
+                    All right reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Custom Tour Script -->
+    <script>
+        // Spinner
+        var spinner = function () {
+            setTimeout(function () {
+                if ($('#spinner').length > 0) {
+                    $('#spinner').removeClass('show');
+                }
+            }, 1000);
+        };
+        spinner();
+
+        // Day Progress Indicator
+        $(document).ready(function () {
+            // Progress indicator click
+            $('.day-progress-item').click(function () {
+                var day = $(this).data('day');
+                if (day === 'Day 1') {
+                    $('html, body').animate({ scrollTop: $('#day1').offset().top - 80 }, 1000);
+                } else if (day === 'Day 2') {
+                    $('html, body').animate({ scrollTop: $('#day2').offset().top - 80 }, 1000);
+                } else if (day === 'Day 3') {
+                    $('html, body').animate({ scrollTop: $('#day3').offset().top - 80 }, 1000);
+                } else if (day === 'Price') {
+                    $('html, body').animate({ scrollTop: $('#price').offset().top - 80 }, 1000);
+                } else if (day === 'Booking') {
+                    $('html, body').animate({ scrollTop: $('#booking').offset().top - 80 }, 1000);
+                }
+            });
+
+            // Update active progress item on scroll
+            $(window).scroll(function () {
+                var scrollPos = $(document).scrollTop();
+                var day1Pos = $('#day1').offset().top;
+                var day2Pos = $('#day2').offset().top;
+                var day3Pos = $('#day3').offset().top;
+                var pricePos = $('#price').offset().top;
+                var bookingPos = $('#booking').offset().top;
+
+                $('.day-progress-item').removeClass('active');
+
+                if (scrollPos < day2Pos - 300) {
+                    $('.day-progress-item[data-day="Day 1"]').addClass('active');
+                } else if (scrollPos < day3Pos - 300) {
+                    $('.day-progress-item[data-day="Day 2"]').addClass('active');
+                } else if (scrollPos < pricePos - 300) {
+                    $('.day-progress-item[data-day="Day 3"]').addClass('active');
+                } else if (scrollPos < bookingPos - 300) {
+                    $('.day-progress-item[data-day="Price"]').addClass('active');
+                } else {
+                    $('.day-progress-item[data-day="Booking"]').addClass('active');
+                }
+            });
+
+            // Smooth scroll for internal links
+            $('a[href^="#"]').on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top - 80
+                    }, 800);
+                }
+            });
+
+            // Image hover effect enhancement
+            $('.overview-image-section, .day-image-section, .destination-card').hover(
+                function () {
+                    $(this).find('img').css('transform', 'scale(1.05)');
+                },
+                function () {
+                    $(this).find('img').css('transform', 'scale(1)');
+                }
+            );
+
+            // Animation on scroll
+            function animateOnScroll() {
+                $('.overview-section, .day-card-section, .destination-card, .experience-card').each(function () {
+                    var elementTop = $(this).offset().top;
+                    var elementBottom = elementTop + $(this).outerHeight();
+                    var viewportTop = $(window).scrollTop();
+                    var viewportBottom = viewportTop + $(window).height();
+
+                    if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                        $(this).css('animation', 'fadeInUp 0.6s ease forwards');
+                    }
+                });
+            }
+
+            $(window).scroll(animateOnScroll);
+            animateOnScroll(); // Initial call
+        });
+
+        // WhatsApp message enhancement
+        document.querySelector('.whatsapp-float').addEventListener('click', function (e) {
+            // Optional: Add tracking or confirmation
+            console.log('WhatsApp booking initiated');
+        });
+    </script>
+</body>
+
+</html>
