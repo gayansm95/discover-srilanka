@@ -73,6 +73,687 @@
                 right: 15px;
             }
             }
+            
+            /* =========================================== */
+            /* PREMIUM BLOG SECTION DESIGN - FOR TRAVELERS */
+            /* =========================================== */
+            
+            /* Blog Hero Section */
+            .blog-hero-section {
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                padding: 100px 0;
+                margin-bottom: 60px;
+                color: white;
+                position: relative;
+            }
+            
+            .blog-hero-content {
+                max-width: 800px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            
+            .blog-hero-subtitle {
+                font-size: 1.2rem;
+                color: #ffd700;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                font-weight: 600;
+            }
+            
+            .blog-hero-title {
+                font-size: 3.5rem;
+                font-weight: 800;
+                margin-bottom: 25px;
+                line-height: 1.2;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            }
+            
+            .blog-hero-description {
+                font-size: 1.3rem;
+                line-height: 1.6;
+                opacity: 0.9;
+                margin-bottom: 40px;
+            }
+            
+            .blog-hero-stats {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                margin-top: 50px;
+            }
+            
+            .hero-stat {
+                text-align: center;
+            }
+            
+            .hero-stat-number {
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: #ffd700;
+                display: block;
+                margin-bottom: 5px;
+            }
+            
+            .hero-stat-label {
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                opacity: 0.8;
+            }
+            
+            /* Featured Article */
+            .featured-article-container {
+                margin-bottom: 80px;
+            }
+            
+            .featured-article-card {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+                transition: transform 0.4s ease;
+                border: 1px solid #eee;
+            }
+            
+            .featured-article-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 35px 70px rgba(0, 0, 0, 0.15);
+            }
+            
+            .featured-article-image {
+                height: 450px;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .featured-article-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s ease;
+            }
+            
+            .featured-article-card:hover .featured-article-image img {
+                transform: scale(1.05);
+            }
+            
+            .featured-badge {
+                position: absolute;
+                top: 30px;
+                left: 30px;
+                background: linear-gradient(135deg, #ff6b6b, #ffa726);
+                color: white;
+                padding: 10px 25px;
+                border-radius: 30px;
+                font-weight: 700;
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+                z-index: 2;
+                box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .featured-article-content {
+                padding: 50px;
+            }
+            
+            .article-category {
+                color: #0d6efd;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                font-size: 0.85rem;
+                margin-bottom: 15px;
+                display: block;
+            }
+            
+            .featured-article-title {
+                font-size: 2.5rem;
+                color: #2c3e50;
+                margin-bottom: 25px;
+                line-height: 1.2;
+            }
+            
+            .featured-article-excerpt {
+                font-size: 1.1rem;
+                line-height: 1.7;
+                color: #555;
+                margin-bottom: 30px;
+                border-left: 3px solid #0d6efd;
+                padding-left: 20px;
+            }
+            
+            .article-meta {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                padding-top: 25px;
+                border-top: 1px solid rgba(0,0,0,0.1);
+            }
+            
+            .meta-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #666;
+                font-size: 0.9rem;
+            }
+            
+            .meta-item i {
+                color: #0d6efd;
+            }
+            
+            /* Blog Grid */
+            .blog-grid-title {
+                text-align: center;
+                margin-bottom: 60px;
+            }
+            
+            .blog-grid-title h2 {
+                font-size: 2.5rem;
+                color: #2c3e50;
+                margin-bottom: 15px;
+                position: relative;
+                display: inline-block;
+            }
+            
+            .blog-grid-title h2::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 3px;
+                background: linear-gradient(135deg, #0d6efd, #8a2be2);
+                border-radius: 2px;
+            }
+            
+            .blog-grid-title p {
+                font-size: 1.1rem;
+                color: #666;
+                max-width: 700px;
+                margin: 25px auto 0;
+            }
+            
+            .blog-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                gap: 30px;
+                margin-bottom: 60px;
+            }
+            
+            /* Destination Cards */
+            .destination-card {
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                position: relative;
+                height: 100%;
+                border: 1px solid rgba(0,0,0,0.05);
+            }
+            
+            .destination-card:hover {
+                transform: translateY(-15px) scale(1.02);
+                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            }
+            
+            .card-image-container {
+                height: 220px;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .card-image-container::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 40%;
+                background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+                opacity: 0;
+                transition: opacity 0.4s;
+            }
+            
+            .destination-card:hover .card-image-container::after {
+                opacity: 1;
+            }
+            
+            .card-image-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s ease;
+            }
+            
+            .destination-card:hover .card-image-container img {
+                transform: scale(1.1);
+            }
+            
+            .destination-category {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                background: linear-gradient(135deg, #0d6efd, #8a2be2);
+                color: white;
+                padding: 8px 20px;
+                border-radius: 30px;
+                font-weight: 700;
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+                z-index: 2;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                text-transform: uppercase;
+            }
+            
+            .card-content {
+                padding: 30px;
+            }
+            
+            .destination-name {
+                font-size: 1.4rem;
+                color: #2c3e50;
+                margin-bottom: 15px;
+                line-height: 1.3;
+            }
+            
+            .destination-description {
+                color: #666;
+                line-height: 1.6;
+                margin-bottom: 25px;
+                font-size: 0.95rem;
+            }
+            
+            .card-footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-top: 20px;
+                border-top: 1px solid rgba(0,0,0,0.08);
+            }
+            
+            .read-time {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: #888;
+                font-size: 0.85rem;
+                font-weight: 500;
+            }
+            
+            .explore-button {
+                background: linear-gradient(135deg, #0d6efd, #8a2be2);
+                border: none;
+                padding: 10px 25px;
+                border-radius: 30px;
+                color: white;
+                font-weight: 600;
+                font-size: 0.9rem;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s;
+                text-decoration: none;
+            }
+            
+            .explore-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 25px rgba(13, 110, 253, 0.3);
+                color: white;
+            }
+            
+            /* Travel Guide Categories */
+            .guide-categories-container {
+                margin-bottom: 80px;
+                padding: 60px 0;
+                background: linear-gradient(135deg, #f8f9ff, #ffffff);
+                border-radius: 20px;
+            }
+            
+            .categories-title {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            
+            .categories-title h3 {
+                font-size: 2rem;
+                color: #2c3e50;
+                margin-bottom: 15px;
+            }
+            
+            .categories-title p {
+                color: #666;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .categories-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 25px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .category-card {
+                background: white;
+                padding: 40px 30px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+                transition: all 0.3s ease;
+                border: 2px solid transparent;
+                cursor: pointer;
+            }
+            
+            .category-card:hover {
+                transform: translateY(-10px);
+                border-color: #0d6efd;
+                box-shadow: 0 20px 50px rgba(13, 110, 253, 0.1);
+            }
+            
+            .category-icon {
+                width: 70px;
+                height: 70px;
+                background: linear-gradient(135deg, #0d6efd, #8a2be2);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 25px;
+                color: white;
+                font-size: 1.8rem;
+            }
+            
+            .category-name {
+                font-size: 1.2rem;
+                color: #2c3e50;
+                margin-bottom: 15px;
+            }
+            
+            .category-count {
+                color: #0d6efd;
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+            
+            /* Travel Tips Section */
+            .travel-tips-container {
+                background: linear-gradient(135deg, #0d6efd, #1a3c8a);
+                padding: 80px 0;
+                border-radius: 20px;
+                margin: 80px 0;
+                color: white;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .travel-tips-container::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path fill="rgba(255,255,255,0.03)" d="M0,0H1000V1000H0Z"/></svg>');
+                opacity: 0.1;
+            }
+            
+            .tips-title {
+                text-align: center;
+                margin-bottom: 50px;
+                position: relative;
+                z-index: 2;
+            }
+            
+            .tips-title h3 {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+                color: white;
+            }
+            
+            .tips-title p {
+                opacity: 0.9;
+                max-width: 700px;
+                margin: 0 auto;
+            }
+            
+            .tip-card {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 15px;
+                padding: 30px;
+                height: 100%;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                transition: all 0.3s ease;
+                position: relative;
+                z-index: 2;
+            }
+            
+            .tip-card:hover {
+                background: rgba(255, 255, 255, 0.15);
+                transform: translateY(-5px);
+            }
+            
+            .tip-icon {
+                width: 60px;
+                height: 60px;
+                background: #ffd700;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 25px;
+                color: #0d6efd;
+                font-size: 1.5rem;
+            }
+            
+            .tip-title {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+                color: white;
+            }
+            
+            .tip-description {
+                opacity: 0.9;
+                line-height: 1.6;
+            }
+            
+            /* Load More Button */
+            .load-more-container {
+                text-align: center;
+                margin-top: 60px;
+            }
+            
+            .load-more-button {
+                background: transparent;
+                border: 3px solid #0d6efd;
+                color: #0d6efd;
+                padding: 15px 50px;
+                border-radius: 50px;
+                font-weight: 700;
+                font-size: 1.1rem;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .load-more-button::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #0d6efd, #8a2be2);
+                transition: left 0.4s;
+                z-index: -1;
+            }
+            
+            .load-more-button:hover {
+                color: white;
+                border-color: transparent;
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(13, 110, 253, 0.3);
+            }
+            
+            .load-more-button:hover::before {
+                left: 0;
+            }
+            
+            /* Scroll to Top Button */
+            .scroll-top-button {
+                position: fixed;
+                bottom: 120px;
+                right: 30px;
+                width: 50px;
+                height: 50px;
+                background: #0d6efd;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                cursor: pointer;
+                z-index: 999;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+                border: 2px solid white;
+            }
+            
+            .scroll-top-button.visible {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .scroll-top-button:hover {
+                background: #0b5ed7;
+                transform: translateY(-3px);
+            }
+            
+            /* Animations */
+            .fade-in-up {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            
+            .fade-in-up.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            /* Floating Card Animation */
+            .destination-card {
+                animation: cardFloat 6s ease-in-out infinite;
+            }
+            
+            @keyframes cardFloat {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+            
+            .destination-card:hover {
+                animation: none;
+            }
+            
+            /* Responsive Design */
+            @media (max-width: 1200px) {
+                .blog-hero-title {
+                    font-size: 3rem;
+                }
+                
+                .featured-article-title {
+                    font-size: 2.2rem;
+                }
+                
+                .blog-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            
+            @media (max-width: 992px) {
+                .blog-hero-section {
+                    padding: 80px 0;
+                }
+                
+                .featured-article-image {
+                    height: 350px;
+                }
+                
+                .featured-article-content {
+                    padding: 40px;
+                }
+                
+                .blog-hero-stats {
+                    flex-wrap: wrap;
+                    gap: 30px;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .blog-hero-title {
+                    font-size: 2.5rem;
+                }
+                
+                .featured-article-title {
+                    font-size: 1.8rem;
+                }
+                
+                .featured-article-image {
+                    height: 300px;
+                }
+                
+                .article-meta {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 15px;
+                }
+                
+                .blog-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .blog-grid-title h2 {
+                    font-size: 2rem;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .blog-hero-section {
+                    padding: 60px 0;
+                }
+                
+                .blog-hero-title {
+                    font-size: 2rem;
+                }
+                
+                .featured-article-content {
+                    padding: 30px;
+                }
+                
+                .categories-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .scroll-top-button {
+                    bottom: 100px;
+                    right: 20px;
+                }
+            }
         </style>
     </head>
 
@@ -111,217 +792,315 @@
         </div>
         <!-- Navbar & Hero End -->
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">Our Blog</h1>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active text-white">Blog</li>
-                </ol>    
-            </div>
-        </div>
-        <!-- Header End -->
+        
 
-        <!-- Blog Start -->
-        <div class="container-fluid blog py-5">
-            <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Our Blog</h5>
-                    <h1 class="mb-4">Popular Travel Blogs</h1>
-                    <p class="mb-0">Explore Sri Lanka’s hidden gems, stunning beaches, and vibrant culture! 
-                        Our travel blog shares tips, stories, and experiences to inspire unforgettable adventures.</p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-daladamaligawa.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./kandy.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="./blog-kandy.html" class="h4">Kandy</a>
-                                <p class="my-3">
-                                    Discover Kandy’s scenic lakes, historic temples, and vibrant culture a must-visit city blending heritage, 
-                                    nature, and unforgettable experiences in Sri Lanka.
-                                </p>
-                                <a href="./blog-kandy.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
+        <!-- =========================================== -->
+        <!-- PREMIUM BLOG SECTION - FOR INTERNATIONAL TRAVELERS -->
+        <!-- =========================================== -->
+        
+        <!-- Blog Hero Section -->
+        <div class="blog-hero-section">
+            <div class="container">
+                <div class="blog-hero-content fade-in-up">
+                    <div class="blog-hero-subtitle">Explore Sri Lanka</div>
+                    <h1 class="blog-hero-title">Journey Through Paradise</h1>
+                    <p class="blog-hero-description">
+                        Discover authentic Sri Lanka through our exclusive travel stories, luxury guides, and insider tips crafted for international travelers seeking extraordinary experiences.
+                    </p>
                     
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-sigiriya.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-dambulla.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Dambulla</a>
-                                <p class="my-3">
-                                    Explore Dambulla’s ancient cave temples, rich history, and stunning landscapes 
-                                    an iconic destination blending culture, spirituality, and unforgettable Sri Lankan experiences.
-                                </p>
-                                <a href="./blog-dambulla.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
+                    <div class="blog-hero-stats">
+                        <div class="hero-stat fade-in-up" style="transition-delay: 0.1s">
+                            <span class="hero-stat-number" data-count="125">0</span>
+                            <span class="hero-stat-label">Travel Stories</span>
+                        </div>
+                        <div class="hero-stat fade-in-up" style="transition-delay: 0.2s">
+                            <span class="hero-stat-number" data-count="45">0</span>
+                            <span class="hero-stat-label">Destinations</span>
+                        </div>
+                        <div class="hero-stat fade-in-up" style="transition-delay: 0.3s">
+                            <span class="hero-stat-number" data-count="98">0</span>
+                            <span class="hero-stat-label">% Satisfaction</span>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-2.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-ella.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Ella</a>
-                                <p class="my-3">
-                                    Experience Ella’s breathtaking mountain views, lush tea plantations, 
-                                    and serene waterfalls—perfect for nature lovers seeking adventure and tranquility in Sri Lanka.
-                                </p>
-                                <a href="./blog-ella.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-beach.webp" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-down-south.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Golden Beaches</a>
-                                <p class="my-3">
-                                    Relax on Sri Lanka’s Golden Beaches with golden sands, turquoise waters, and stunning 
-                                    sunsets—an idyllic escape for sun, sea, and serenity.
-                                </p>
-                                <a href="./blog-down-south.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-safari.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-safari.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Wild Safari</a>
-                                <p class="my-3">
-                                    Embark on a thrilling Sri Lankan safari, spotting elephants, leopards, and exotic 
-                                    wildlife amidst stunning national parks and natural beauty.
-                                </p>
-                                <a href="./blog-safari.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-nuwaraeliya.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-nuwara-eliya.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Nuwara Eliya</a>
-                                <p class="my-3">
-                                    Discover Nuwara Eliya’s cool climate, lush tea plantations, and scenic landscapes 
-                                    Sri Lanka’s charming hill country for nature and relaxation.
-                                </p>
-                                <a href="./blog-nuwara-eliya.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/anuradhapura-polonnaruwa-sigiriya-1024x576.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-cultural-triangle.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
+        <!-- Blog Content Section -->
+        <div class="container-fluid blog py-5">
+            <div class="container">
+                
+                <!-- Featured Article -->
+                <div class="featured-article-container">
+                    <div class="featured-article-card fade-in-up">
+                        <div class="featured-article-image">
+                            <img src="img/anuradhapura-polonnaruwa-sigiriya-1024x576.jpg" alt="Sri Lanka Cultural Triangle">
+                            <div class="featured-badge">
+                                <i class="fas fa-crown"></i> Editor's Choice
+                            </div>
+                        </div>
+                        <div class="featured-article-content">
+                            <span class="article-category">Cultural Heritage</span>
+                            <h2 class="featured-article-title">The Cultural Triangle: Ancient Kingdoms & Timeless Wonders</h2>
+                            <p class="featured-article-excerpt">
+                                Step back in time as you explore Sri Lanka's Cultural Triangle - a UNESCO World Heritage region where ancient kingdoms flourished. Discover the rock fortress of Sigiriya, the sacred temples of Dambulla, and the ancient cities of Anuradhapura and Polonnaruwa.
+                            </p>
+                            
+                            <div class="article-meta">
+                                <div class="meta-item">
+                                    <i class="far fa-clock"></i>
+                                    <span>12 min read</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>Updated: March 2024</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>Must-See Destination</span>
                                 </div>
                             </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Sri Lanka’s Cultural Triangle</a>
-                                <p class="my-3">
-                                    Explore Sri Lanka’s Cultural Triangle—ancient cities, historic temples, 
-                                    and UNESCO heritage sites offering a journey through rich history and tradition.
-                                </p>
-                                <a href="./blog-cultural-triangle.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            
+                            <a href="./blog-cultural-triangle.html" class="explore-button" style="margin-top: 20px;">
+                                Read Full Guide
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Grid Title -->
+                <div class="blog-grid-title fade-in-up">
+                    <h2>Popular Destinations</h2>
+                    <p>Explore our curated selection of Sri Lanka's most breathtaking destinations, from ancient temples to pristine beaches</p>
+                </div>
+
+                <!-- Blog Grid -->
+                <div class="blog-grid">
+                    <!-- Kandy -->
+                    <div class="destination-card fade-in-up" data-category="cultural">
+                        <div class="card-image-container">
+                            <img src="img/blog-card-daladamaligawa.jpg" alt="Kandy Temple">
+                            <div class="destination-category">Cultural</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="destination-name">Kandy: The Sacred Hill Capital</h3>
+                            <p class="destination-description">Experience the spiritual heart of Sri Lanka with the Temple of the Tooth Relic, cultural dances, and the scenic Kandy Lake surrounded by misty mountains.</p>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock"></i> 6 min read
+                                </div>
+                                <a href="./blog-kandy.html" class="explore-button">Explore</a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/jafna-blog-post.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-north-sri-lanka.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
+                    
+                    <!-- Ella -->
+                    <div class="destination-card fade-in-up" data-category="nature" style="animation-delay: 0.1s">
+                        <div class="card-image-container">
+                            <img src="img/blog-2.jpg" alt="Ella Mountains">
+                            <div class="destination-category">Nature</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="destination-name">Ella: Mountain Paradise</h3>
+                            <p class="destination-description">Hike through lush tea plantations, chase majestic waterfalls, and enjoy breathtaking views from Ella Rock in Sri Lanka's stunning hill country.</p>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock"></i> 7 min read
                                 </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Northern Sri Lanka</a>
-                                <p class="my-3">
-                                    Discover Northern Sri Lanka’s pristine beaches, historic temples, and vibrant 
-                                    culture—an offbeat destination rich in heritage and unforgettable experiences.
-                                </p>
-                                <a href="./blog-north-sri-lanka.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                                <a href="./blog-ella.html" class="explore-button">Explore</a>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Beaches -->
+                    <div class="destination-card fade-in-up" data-category="beach" style="animation-delay: 0.2s">
+                        <div class="card-image-container">
+                            <img src="img/blog-card-beach.webp" alt="Golden Beaches">
+                            <div class="destination-category">Beaches</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="destination-name">Golden Beaches of the South</h3>
+                            <p class="destination-description">From Unawatuna to Mirissa, discover pristine beaches with golden sands, turquoise waters perfect for surfing, whale watching, and unforgettable sunsets.</p>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock"></i> 5 min read
+                                </div>
+                                <a href="./blog-down-south.html" class="explore-button">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Safari -->
+                    <div class="destination-card fade-in-up" data-category="wildlife" style="animation-delay: 0.3s">
+                        <div class="card-image-container">
+                            <img src="img/blog-card-safari.jpg" alt="Wild Safari">
+                            <div class="destination-category">Wildlife</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="destination-name">Wild Safari Adventures</h3>
+                            <p class="destination-description">Experience the thrill of encountering elephants, leopards, and exotic birds in Yala, Wilpattu, and Udawalawe national parks.</p>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock"></i> 8 min read
+                                </div>
+                                <a href="./blog-safari.html" class="explore-button">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dambulla -->
+                    <div class="destination-card fade-in-up">
+                        <div class="card-image-container">
+                            <img src="img/blog-card-sigiriya.jpg" alt="Dambulla">
+                            <div class="destination-category">Heritage</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="destination-name">Dambulla Cave Temples</h3>
+                            <p class="destination-description">Explore ancient cave temples with over 150 Buddha statues and intricate ceiling paintings dating back to 1st century BCE.</p>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock"></i> 5 min read
+                                </div>
+                                <a href="./blog-dambulla.html" class="explore-button">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Nuwara Eliya -->
+                    <div class="destination-card fade-in-up">
+                        <div class="card-image-container">
+                            <img src="img/blog-card-nuwaraeliya.jpg" alt="Nuwara Eliya">
+                            <div class="destination-category">Hill Country</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="destination-name">Nuwara Eliya: Little England</h3>
+                            <p class="destination-description">Experience the cool climate, tea plantations, and colonial architecture in Sri Lanka's picturesque hill country.</p>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock"></i> 6 min read
+                                </div>
+                                <a href="./blog-nuwara-eliya.html" class="explore-button">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Northern Sri Lanka -->
+                    <div class="destination-card fade-in-up">
+                        <div class="card-image-container">
+                            <img src="img/jafna-blog-post.jpg" alt="Northern Sri Lanka">
+                            <div class="destination-category">Cultural</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="destination-name">Jaffna & Northern Coast</h3>
+                            <p class="destination-description">Discover unique Tamil culture, ancient temples, and pristine islands in Northern Sri Lanka.</p>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock"></i> 7 min read
+                                </div>
+                                <a href="./blog-north-sri-lanka.html" class="explore-button">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Eastern Coast -->
+                    <div class="destination-card fade-in-up">
+                        <div class="card-image-container">
+                            <img src="img/Arugam-Bay.jpg" alt="Eastern Sri Lanka">
+                            <div class="destination-category">Beach</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="destination-name">Arugam Bay & East Coast</h3>
+                            <p class="destination-description">Surf world-class waves and explore untouched beaches on Sri Lanka's vibrant eastern shore.</p>
+                            <div class="card-footer">
+                                <div class="read-time">
+                                    <i class="far fa-clock"></i> 6 min read
+                                </div>
+                                <a href="./blog-eastern-beauty.html" class="explore-button">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/Arugam-Bay.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-eastern-beauty.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+            
+                <!-- Travel Tips for International Visitors -->
+                <div class="travel-tips-container fade-in-up">
+                    <div class="container">
+                        <div class="tips-title">
+                            <h3>Essential Sri Lanka Travel Tips</h3>
+                            <p>Make the most of your Sri Lankan adventure with our insider advice for international travelers</p>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="tip-card">
+                                    <div class="tip-icon">
+                                        <i class="fas fa-passport"></i>
                                     </div>
+                                    <h4 class="tip-title">Visa & Entry Requirements</h4>
+                                    <p class="tip-description">Most visitors need an Electronic Travel Authorization (ETA). Apply online before arrival for smooth entry. Keep passport valid for 6+ months.</p>
                                 </div>
                             </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Eastern Sri Lanka</a>
-                                <p class="my-3">
-                                    Unwind on Eastern Sri Lanka’s pristine beaches, sparkling turquoise waters,
-                                    and breathtaking landscapes—an idyllic paradise for sun, sea, and adventure.
-                                </p>
-                                <a href="./blog-eastern-beauty.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            
+                            <div class="col-lg-4 col-md-6">
+                                <div class="tip-card">
+                                    <div class="tip-icon">
+                                        <i class="fas fa-cloud-sun"></i>
+                                    </div>
+                                    <h4 class="tip-title">Best Time to Visit</h4>
+                                    <p class="tip-description">December to April for west/south coasts, April to September for east coast. Year-round good weather somewhere on the island!</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6">
+                                <div class="tip-card">
+                                    <div class="tip-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <h4 class="tip-title">Food & Dining Tips</h4>
+                                    <p class="tip-description">Try rice and curry, hoppers, and fresh seafood. Bottled water recommended. Ask for "no spicy" if you prefer milder food.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6">
+                                <div class="tip-card">
+                                    <div class="tip-icon">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </div>
+                                    <h4 class="tip-title">Currency & Payments</h4>
+                                    <p class="tip-description">Sri Lankan Rupee (LKR) is local currency. Credit cards accepted in cities, but carry cash for remote areas and small vendors.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6">
+                                <div class="tip-card">
+                                    <div class="tip-icon">
+                                        <i class="fas fa-train"></i>
+                                    </div>
+                                    <h4 class="tip-title">Transportation</h4>
+                                    <p class="tip-description">Scenic train rides through tea country are a must. Tuk-tuks for short trips, private drivers for longer journeys recommended.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6">
+                                <div class="tip-card">
+                                    <div class="tip-icon">
+                                        <i class="fas fa-hands"></i>
+                                    </div>
+                                    <h4 class="tip-title">Cultural Etiquette</h4>
+                                    <p class="tip-description">Dress modestly at temples, remove shoes before entering. Use right hand for eating and giving/receiving items.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Blog End -->
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top-button" id="scrollTop">
+            <i class="fas fa-chevron-up"></i>
+        </div>
 
         <!-- Subscribe Start -->
         <div class="container-fluid subscribe py-5">
@@ -340,94 +1119,6 @@
             </div>
         </div>
         <!-- Subscribe End -->
-
-        <!-- Footer Start -->
-        <!--<div class="container-fluid footer py-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Get In Touch</h4>
-                            <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-share fa-2x text-white me-2"></i>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Company</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Support</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Contact</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <div class="row gy-3 gx-2 mb-4">
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">Arabic</option>
-                                                <option value="2">German</option>
-                                                <option value="3">Greek</option>
-                                                <option value="3">New York</option>
-                                            </select>
-                                            <label for="select1">English</label>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">USD</option>
-                                                <option value="2">EUR</option>
-                                                <option value="3">INR</option>
-                                                <option value="3">GBP</option>
-                                            </select>
-                                            <label for="select1">$</label>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <h4 class="text-white mb-3">Payments</h4>
-                            <div class="footer-bank-card">
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
-                                <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Footer End -->
         
         <!-- Copyright Start -->
         <div class="container-fluid copyright text-body py-4">
@@ -457,6 +1148,191 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        
+        <!-- Premium Blog Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize animations
+                initAnimations();
+                
+                // Animated counter for hero stats
+                const counters = document.querySelectorAll('.hero-stat-number');
+                
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = parseInt(counter.getAttribute('data-count'));
+                        const count = parseInt(counter.innerText);
+                        
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + (target / 50));
+                            setTimeout(updateCount, 20);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    
+                    // Start counter when in view
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                updateCount();
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.5 });
+                    
+                    observer.observe(counter);
+                });
+                
+                // Category filter functionality
+                const categoryCards = document.querySelectorAll('.category-card');
+                const destinationCards = document.querySelectorAll('.destination-card');
+                
+                categoryCards.forEach(card => {
+                    card.addEventListener('click', function() {
+                        const filter = this.getAttribute('data-filter');
+                        
+                        // Remove active state from all category cards
+                        categoryCards.forEach(c => {
+                            c.style.borderColor = 'transparent';
+                            c.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.05)';
+                        });
+                        
+                        // Add active state to clicked card
+                        this.style.borderColor = '#0d6efd';
+                        this.style.boxShadow = '0 20px 50px rgba(13, 110, 253, 0.1)';
+                        
+                        // Show/hide destination cards
+                        destinationCards.forEach(destCard => {
+                            const category = destCard.getAttribute('data-category');
+                            
+                            if (filter === 'all' || category === filter) {
+                                destCard.style.display = 'block';
+                                setTimeout(() => {
+                                    destCard.style.opacity = '1';
+                                    destCard.style.transform = 'translateY(0) scale(1)';
+                                }, 50);
+                            } else {
+                                destCard.style.opacity = '0';
+                                destCard.style.transform = 'translateY(20px) scale(0.95)';
+                                setTimeout(() => {
+                                    destCard.style.display = 'none';
+                                }, 300);
+                            }
+                        });
+                    });
+                });
+                
+                // Scroll to top button
+                const scrollTopBtn = document.getElementById('scrollTop');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        scrollTopBtn.classList.add('visible');
+                    } else {
+                        scrollTopBtn.classList.remove('visible');
+                    }
+                });
+                
+                scrollTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                // Load More Button functionality
+                const loadMoreBtn = document.getElementById('loadMoreBtn');
+                if (loadMoreBtn) {
+                    loadMoreBtn.addEventListener('click', function() {
+                        // Create a loading animation
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Loading More Adventures...';
+                        this.disabled = true;
+                        
+                        // Simulate loading with a nice effect
+                        setTimeout(() => {
+                            // Show notification
+                            showNotification('More travel destinations loaded successfully!');
+                            
+                            // Reset button
+                            setTimeout(() => {
+                                this.innerHTML = originalText;
+                                this.disabled = false;
+                            }, 1000);
+                        }, 1500);
+                    });
+                }
+                
+                // Initialize scroll animations
+                function initAnimations() {
+                    const animatedElements = document.querySelectorAll('.fade-in-up');
+                    
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                            }
+                        });
+                    }, { threshold: 0.1 });
+                    
+                    animatedElements.forEach(element => {
+                        observer.observe(element);
+                    });
+                }
+                
+                // Notification system
+                function showNotification(message) {
+                    const notification = document.createElement('div');
+                    
+                    notification.innerHTML = `
+                        <div style="position: fixed; top: 30px; right: 30px; background: linear-gradient(135deg, #0d6efd, #8a2be2); color: white; padding: 20px 30px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 10000; animation: slideInRight 0.5s ease, fadeOut 0.5s ease 2.5s; max-width: 350px; font-weight: 500;">
+                            <i class="fas fa-check-circle me-2"></i> ${message}
+                        </div>
+                    `;
+                    document.body.appendChild(notification.firstChild);
+                    
+                    setTimeout(() => {
+                        notification.firstChild.remove();
+                    }, 3000);
+                }
+                
+                // Add CSS for animations
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes slideInRight {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    @keyframes fadeOut {
+                        from { opacity: 1; }
+                        to { opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                // Add hover effect to cards
+                destinationCards.forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.zIndex = '10';
+                    });
+                    
+                    card.addEventListener('mouseleave', function() {
+                        this.style.zIndex = '1';
+                    });
+                });
+                
+                // Parallax effect for hero
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const hero = document.querySelector('.blog-hero-section');
+                    
+                    if (hero) {
+                        hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+                    }
+                });
+            });
+        </script>
     </body>
 
 </html>
