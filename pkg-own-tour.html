@@ -429,6 +429,55 @@
                 min-height: 500px;
             }
         }
+
+        .builder-section-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .builder-section-title i {
+            color: #3498db;
+        }
+
+        .available-places {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .design-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            min-height: 150px;
+            border: 2px solid #3498db;
+        }
+
+        .design-itinerary {
+            justify-content: center;
+        }
+
+        .builder-instruction {
+            background: linear-gradient(135deg, #fff9e6, #ffeaa7);
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #7d6608;
+        }
+
+        .builder-instruction i {
+            color: #f39c12;
+            margin-right: 10px;
+        }
     </style>
 </head>
 
@@ -481,19 +530,27 @@
 
     <div class="container-fluid blog py-5">
         <div>
-            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <div class="mx-auto text-center mb-10" style="max-width: 900px;">
                 <h5 class="section-title px-3">Design Your Sri Lanka Journey</h5>
-                <p class="mb-0">Create your perfect Sri Lanka getaway with ease, simply click or drag destinations to
+                <div class="builder-instruction">
+                    <i class="fas fa-lightbulb"></i>
+                    Create your perfect Sri Lanka getaway with ease, simply click or drag destinations to
                     build your ideal journey. When you're happy with your selection, fill in your travel details
                     and send your request via WhatsApp or email. Our expert team will carefully review your itinerary
                     and get in touch soon to plan the next exciting steps of your adventure.
-                </p>
+                </div>
             </div>
 
             <div class="flex-container">
                 <!-- Available Places -->
                 <div class="box">
-                    <h3 class="text-center">Explore Destinations</h3>
+                    <div class="builder-section text-center">
+                        <div class="builder-section-title">
+                            <i class="fas fa-map-marked-alt"></i>
+                            Explore Destinations
+                        </div>
+                        <div class="available-places" id="availablePlaces"></div>
+                    </div>
                     <div class="items-grid" id="availableGrid">
                         <div class="item" data-id="Kandy"><img src="img/kandy-package-card.jpeg" alt="Kandy">
                             <div>Kandy</div>
@@ -520,17 +577,28 @@
 
                 <!-- Selected Places -->
                 <div class="box">
-                    <h3 class="text-center">Your Selected Journey</h3>
+                    <div class="builder-section text-center">
+                        <div class="builder-section-title">
+                            <i class="fas fa-route"></i>
+                            Your Custom Itinerary
+                        </div>
+                        <div class="available-places" id="availablePlaces"></div>
+                    </div>
                     <div class="items-grid" id="selectedGrid"></div>
                     <div class="empty-message" id="selectedEmptyMessage">
                         <i class="fas fa-mouse-pointer"></i>
-                        Click To Select Destinations
+                            No places selected yet. Click on places above to start building your custom tour.
                     </div>
                 </div>
 
                 <!-- Booking Details -->
                 <div class="traveler-info">
-                    <h3>Complete Your Travel Details</h3>
+                    <div class="builder-section text-center">
+                        <div class="builder-section-title">
+                            Complete Your Booking
+                        </div>
+                        <div class="available-places" id="availablePlaces"></div>
+                    </div>
                     <p class="mb-4" style="color: #3498db;">
                         Share your details to confirm your journey and begin planning.
                     </p>

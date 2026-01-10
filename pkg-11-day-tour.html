@@ -634,6 +634,140 @@
             max-height: calc(98vh - 200px);
         }
 
+        /* Day by Day Itinerary Styles */
+        .day-itinerary-section {
+            background: linear-gradient(135deg, #ffffff, #f9f9f9);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 2px solid #e9ecef;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .day-itinerary-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .day-itinerary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .day-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .day-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(52, 152, 219, 0.15);
+            border-color: #3498db;
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .day-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .day-title {
+            font-size: 1.2rem;
+            margin: 10px 0 0 0;
+            font-weight: 600;
+        }
+
+        .day-content {
+            padding: 25px;
+        }
+
+        .time-slot {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .time-slot:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .time {
+            min-width: 80px;
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-right: 15px;
+            border: 1px solid #e9ecef;
+            font-size: 0.95rem;
+        }
+
+        .activity {
+            flex: 1;
+        }
+
+        .activity-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .activity-title i {
+            color: #3498db;
+        }
+
+        .activity-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .activity-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .activity-icon {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .activity-icon i {
+            color: #27ae60;
+        }
+
         .modal-itinerary {
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             padding: 30px;
@@ -890,6 +1024,10 @@
                 padding: 0 15px;
                 width: 100%;
             }
+
+            .day-itinerary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* Animations */
@@ -952,6 +1090,33 @@
                 font-size: 22px;
                 top: 25px;
                 right: 25px;
+            }
+
+            .day-itinerary-section {
+                padding: 25px;
+            }
+
+            .day-itinerary-title {
+                font-size: 1.5rem;
+            }
+
+            .day-itinerary-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .day-content {
+                padding: 20px;
+            }
+
+            .time-slot {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .time {
+                margin-right: 0;
+                margin-bottom: 10px;
             }
 
             .modal-itinerary {
@@ -1035,6 +1200,18 @@
 
             .booking-form {
                 padding: 20px;
+            }
+
+            .day-itinerary-section {
+                padding: 20px;
+            }
+
+            .day-header {
+                padding: 15px;
+            }
+
+            .day-number {
+                font-size: 2rem;
             }
 
             .modal-description {
@@ -1544,6 +1721,14 @@
                     </div>
                 </div>
 
+                <!-- Day by Day Itinerary Section -->
+                <div class="day-itinerary-section" id="dayItinerarySection">
+                    <h3 class="day-itinerary-title">11-Day Tour Detailed Itinerary</h3>
+                    <div class="day-itinerary-grid" id="dayItineraryGrid">
+                        <!-- Day cards will be populated by JavaScript -->
+                    </div>
+                </div>
+
                 <!-- Itinerary Section -->
                 <div class="modal-itinerary" id="modalItinerary">
                     <!-- Itinerary will be inserted here -->
@@ -1603,8 +1788,8 @@
                             <label class="form-label">Tour Duration (Days)</label>
                             <select class="form-control" id="bookingDuration">
                                 <option value="7">7 Days</option>
-                                <option value="10" selected>10 Days</option>
-                                <option value="11">11 Days</option>
+                                <option value="10">10 Days</option>
+                                <option value="11" selected>11 Days</option>
                                 <option value="14">14 Days</option>
                                 <option value="custom">Custom Duration</option>
                             </select>
@@ -1705,6 +1890,178 @@
     <script src="js/main.js"></script>
 
     <script>
+        // Day by Day Itinerary Data
+        const dayByDayItinerary = {
+            "Cultural Triangle Explorer": [
+                {
+                    day: 1,
+                    title: "Arrival in Colombo",
+                    activities: [
+                        { time: "14:00", title: "Airport Pickup", desc: "Meet & greet at Bandaranaike International Airport", icon: "fas fa-plane" },
+                        { time: "15:30", title: "Transfer to Hotel", desc: "Scenic drive to Colombo city hotel", icon: "fas fa-car" },
+                        { time: "17:00", title: "Hotel Check-in", desc: "Relax and refresh at your hotel", icon: "fas fa-hotel" },
+                        { time: "19:00", title: "Welcome Dinner", desc: "Traditional Sri Lankan welcome dinner", icon: "fas fa-utensils" }
+                    ]
+                },
+                {
+                    day: 2,
+                    title: "Colombo → Dambulla",
+                    activities: [
+                        { time: "08:00", title: "Breakfast", desc: "Hotel breakfast", icon: "fas fa-coffee" },
+                        { time: "09:00", title: "Colombo City Tour", desc: "Visit Gangaramaya Temple and Independence Square", icon: "fas fa-landmark" },
+                        { time: "12:00", title: "Lunch", desc: "Local restaurant experience", icon: "fas fa-utensils" },
+                        { time: "13:30", title: "Travel to Dambulla", desc: "Scenic drive through countryside", icon: "fas fa-car" },
+                        { time: "17:00", title: "Hotel Check-in", desc: "Check-in at Dambulla hotel", icon: "fas fa-hotel" },
+                        { time: "19:00", title: "Dinner", desc: "Hotel dinner with local cuisine", icon: "fas fa-drumstick-bite" }
+                    ]
+                },
+                {
+                    day: 3,
+                    title: "Sigiriya Rock Fortress",
+                    activities: [
+                        { time: "06:00", title: "Early Breakfast", desc: "Quick breakfast for early start", icon: "fas fa-coffee" },
+                        { time: "07:00", title: "Sigiriya Visit", desc: "Explore the ancient rock fortress", icon: "fas fa-mountain" },
+                        { time: "11:00", title: "Local Village Tour", desc: "Experience traditional village life", icon: "fas fa-home" },
+                        { time: "13:00", title: "Lunch", desc: "Traditional rice and curry", icon: "fas fa-utensils" },
+                        { time: "15:00", title: "Dambulla Cave Temple", desc: "Visit UNESCO World Heritage site", icon: "fas fa-temple" },
+                        { time: "18:00", title: "Return to Hotel", desc: "Relax at hotel", icon: "fas fa-hotel" }
+                    ]
+                },
+                {
+                    day: 4,
+                    title: "Polonnaruwa Ancient City",
+                    activities: [
+                        { time: "08:00", title: "Breakfast", desc: "Hotel breakfast", icon: "fas fa-coffee" },
+                        { time: "09:00", title: "Travel to Polonnaruwa", desc: "Short drive to ancient city", icon: "fas fa-car" },
+                        { time: "10:00", title: "Polonnaruwa Ruins", desc: "Explore ancient kingdom ruins", icon: "fas fa-archway" },
+                        { time: "13:00", title: "Lunch", desc: "Local restaurant near ruins", icon: "fas fa-utensils" },
+                        { time: "14:30", title: "Museum Visit", desc: "Archaeological museum tour", icon: "fas fa-landmark" },
+                        { time: "16:00", title: "Return to Hotel", desc: "Back to Dambulla hotel", icon: "fas fa-car" }
+                    ]
+                },
+                {
+                    day: 5,
+                    title: "Anuradhapura Sacred City",
+                    activities: [
+                        { time: "07:00", title: "Breakfast", desc: "Early hotel breakfast", icon: "fas fa-coffee" },
+                        { time: "08:00", title: "Travel to Anuradhapura", desc: "Drive to ancient capital", icon: "fas fa-car" },
+                        { time: "09:30", title: "Sacred City Tour", desc: "Visit Sri Maha Bodhi and Ruwanwelisaya", icon: "fas fa-torii-gate" },
+                        { time: "12:30", title: "Lunch", desc: "Traditional Sri Lankan meal", icon: "fas fa-utensils" },
+                        { time: "14:00", title: "Isurumuniya Temple", desc: "Visit rock temple and museum", icon: "fas fa-temple" },
+                        { time: "16:30", title: "Return Journey", desc: "Back to Dambulla hotel", icon: "fas fa-car" }
+                    ]
+                },
+                {
+                    day: 6,
+                    title: "Dambulla → Kandy",
+                    activities: [
+                        { time: "08:00", title: "Breakfast", desc: "Hotel breakfast", icon: "fas fa-coffee" },
+                        { time: "09:00", title: "Travel to Kandy", desc: "Scenic drive through hills", icon: "fas fa-car" },
+                        { time: "12:00", title: "Lunch Enroute", desc: "Stop at local restaurant", icon: "fas fa-utensils" },
+                        { time: "14:00", title: "Hotel Check-in", desc: "Check-in at Kandy hotel", icon: "fas fa-hotel" },
+                        { time: "15:30", title: "Royal Botanical Gardens", desc: "Explore Peradeniya Gardens", icon: "fas fa-leaf" },
+                        { time: "18:00", title: "Cultural Show", desc: "Traditional Kandyan dance performance", icon: "fas fa-music" }
+                    ]
+                },
+                {
+                    day: 7,
+                    title: "Kandy Exploration",
+                    activities: [
+                        { time: "07:00", title: "Breakfast", desc: "Hotel breakfast", icon: "fas fa-coffee" },
+                        { time: "08:30", title: "Temple of the Tooth", desc: "Visit Sri Dalada Maligawa", icon: "fas fa-temple" },
+                        { time: "11:00", title: "Kandy Market", desc: "Explore local markets and bazaars", icon: "fas fa-shopping-bag" },
+                        { time: "13:00", title: "Lunch", desc: "Kandy specialty lunch", icon: "fas fa-utensils" },
+                        { time: "14:30", title: "Tea Museum", desc: "Learn about Ceylon tea history", icon: "fas fa-mug-hot" },
+                        { time: "16:30", title: "Lake Walk", desc: "Leisurely walk around Kandy Lake", icon: "fas fa-walking" }
+                    ]
+                },
+                {
+                    day: 8,
+                    title: "Kandy → Nuwara Eliya",
+                    activities: [
+                        { time: "08:00", title: "Breakfast", desc: "Hotel breakfast", icon: "fas fa-coffee" },
+                        { time: "09:00", title: "Scenic Train Ride", desc: "Famous Kandy to Nanu Oya train journey", icon: "fas fa-train" },
+                        { time: "12:00", title: "Arrive Nuwara Eliya", desc: "Transfer to hotel", icon: "fas fa-hotel" },
+                        { time: "13:00", title: "Lunch", desc: "Hotel lunch", icon: "fas fa-utensils" },
+                        { time: "14:30", title: "Tea Plantation", desc: "Visit tea factory and plantation", icon: "fas fa-leaf" },
+                        { time: "16:30", title: "City Tour", desc: "Explore 'Little England' town", icon: "fas fa-city" }
+                    ]
+                },
+                {
+                    day: 9,
+                    title: "Nuwara Eliya Highlights",
+                    activities: [
+                        { time: "07:00", title: "Breakfast", desc: "Hotel breakfast", icon: "fas fa-coffee" },
+                        { time: "08:30", title: "Horton Plains", desc: "Early morning hike to World's End", icon: "fas fa-hiking" },
+                        { time: "12:00", title: "Picnic Lunch", desc: "Scenic picnic lunch at Horton Plains", icon: "fas fa-basket-shopping" },
+                        { time: "14:00", title: "Gregory Lake", desc: "Boat ride and lakeside activities", icon: "fas fa-water" },
+                        { time: "16:00", title: "Golf Course", desc: "Visit Nuwara Eliya Golf Club", icon: "fas fa-golf-ball" },
+                        { time: "18:00", title: "Evening Tea", desc: "Traditional English high tea experience", icon: "fas fa-mug-hot" }
+                    ]
+                },
+                {
+                    day: 10,
+                    title: "Nuwara Eliya → Colombo",
+                    activities: [
+                        { time: "08:00", title: "Breakfast", desc: "Hotel breakfast", icon: "fas fa-coffee" },
+                        { time: "09:00", title: "Travel to Colombo", desc: "Scenic drive through hill country", icon: "fas fa-car" },
+                        { time: "12:30", title: "Lunch Enroute", desc: "Stop at local restaurant", icon: "fas fa-utensils" },
+                        { time: "15:00", title: "Arrive Colombo", desc: "Check-in at Colombo hotel", icon: "fas fa-hotel" },
+                        { time: "16:00", title: "Shopping", desc: "Visit Odel and local shopping malls", icon: "fas fa-shopping-bag" },
+                        { time: "19:00", title: "Farewell Dinner", desc: "Special farewell dinner at fine restaurant", icon: "fas fa-utensils" }
+                    ]
+                },
+                {
+                    day: 11,
+                    title: "Departure",
+                    activities: [
+                        { time: "07:00", title: "Breakfast", desc: "Final hotel breakfast", icon: "fas fa-coffee" },
+                        { time: "09:00", title: "Free Time", desc: "Last minute shopping or relaxation", icon: "fas fa-shopping-bag" },
+                        { time: "11:00", title: "Check-out", desc: "Hotel check-out procedures", icon: "fas fa-hotel" },
+                        { time: "12:00", title: "Airport Transfer", desc: "Transfer to Bandaranaike International Airport", icon: "fas fa-plane" },
+                        { time: "14:00", title: "Departure", desc: "Flight check-in and departure", icon: "fas fa-plane-departure" }
+                    ]
+                }
+            ],
+            "Beach & Heritage Combo": [
+                {
+                    day: 1,
+                    title: "Arrival in Colombo",
+                    activities: [
+                        { time: "14:00", title: "Airport Pickup", desc: "Welcome at Bandaranaike International Airport", icon: "fas fa-plane" },
+                        { time: "15:30", title: "Transfer to Hotel", desc: "Direct transfer to beachfront hotel", icon: "fas fa-car" },
+                        { time: "17:00", title: "Beach Relaxation", desc: "Evening at Negombo beach", icon: "fas fa-umbrella-beach" },
+                        { time: "19:00", title: "Welcome Dinner", desc: "Seafood dinner by the beach", icon: "fas fa-utensils" }
+                    ]
+                },
+                {
+                    day: 2,
+                    title: "Colombo → Anuradhapura",
+                    activities: [
+                        { time: "08:00", title: "Breakfast", desc: "Beachside breakfast", icon: "fas fa-coffee" },
+                        { time: "09:00", title: "Travel to Anuradhapura", desc: "Drive to ancient capital", icon: "fas fa-car" },
+                        { time: "12:30", title: "Lunch Enroute", desc: "Traditional rice and curry", icon: "fas fa-utensils" },
+                        { time: "14:00", title: "Hotel Check-in", desc: "Check-in at Anuradhapura hotel", icon: "fas fa-hotel" },
+                        { time: "15:00", title: "Evening Temple Tour", desc: "Visit sacred sites in evening light", icon: "fas fa-temple" }
+                    ]
+                },
+                // Additional days for Beach & Heritage Combo...
+            ],
+            "Wildlife & Hill Country": [
+                {
+                    day: 1,
+                    title: "Arrival → Galle",
+                    activities: [
+                        { time: "14:00", title: "Airport Pickup", desc: "Welcome at Bandaranaike International Airport", icon: "fas fa-plane" },
+                        { time: "15:30", title: "Travel to Galle", desc: "Coastal drive to Galle", icon: "fas fa-car" },
+                        { time: "18:00", title: "Hotel Check-in", desc: "Check-in at Galle hotel", icon: "fas fa-hotel" },
+                        { time: "19:00", title: "Sunset at Fort", desc: "Evening walk in Galle Fort", icon: "fas fa-sun" }
+                    ]
+                },
+                // Additional days for Wildlife & Hill Country...
+            ]
+        };
+
         // Hide spinner when page loads
         window.addEventListener('load', function () {
             document.getElementById('spinner').style.display = 'none';
@@ -1732,6 +2089,7 @@
 
         let customTourPlaces = [];
         let isCustomTour = false;
+        let currentPackage = "";
 
         // Initialize custom tour builder
         function initializeCustomTourBuilder() {
@@ -1745,9 +2103,9 @@
                 const placeElement = document.createElement('div');
                 placeElement.className = 'place-tag';
                 placeElement.innerHTML = `
-                        <i class="${place.icon}"></i>
-                        ${place.name}
-                    `;
+                    <i class="${place.icon}"></i>
+                    ${place.name}
+                `;
                 placeElement.dataset.placeId = place.id;
                 placeElement.dataset.placeName = place.name;
 
@@ -1814,11 +2172,11 @@
 
             if (customTourPlaces.length === 0) {
                 designItinerary.innerHTML = `
-                        <div class="text-muted" style="text-align: center; width: 100%; padding: 30px;">
-                            <i class="fas fa-map-pin" style="font-size: 2rem; margin-bottom: 10px; color: #bdc3c7;"></i>
-                            <p>No places selected yet. Click on places above to start building your custom tour.</p>
-                        </div>
-                    `;
+                    <div class="text-muted" style="text-align: center; width: 100%; padding: 30px;">
+                        <i class="fas fa-map-pin" style="font-size: 2rem; margin-bottom: 10px; color: #bdc3c7;"></i>
+                        <p>No places selected yet. Click on places above to start building your custom tour.</p>
+                    </div>
+                `;
             } else {
                 designItinerary.innerHTML = '';
 
@@ -1826,10 +2184,10 @@
                     const placeElement = document.createElement('div');
                     placeElement.className = 'design-place';
                     placeElement.innerHTML = `
-                            <i class="${place.icon}"></i>
-                            <span>${place.name}</span>
-                            <i class="fas fa-times remove-place" data-place-id="${place.id}"></i>
-                        `;
+                        <i class="${place.icon}"></i>
+                        <span>${place.name}</span>
+                        <i class="fas fa-times remove-place" data-place-id="${place.id}"></i>
+                    `;
 
                     // Add remove event listener
                     const removeBtn = placeElement.querySelector('.remove-place');
@@ -1877,6 +2235,7 @@
             }
 
             isCustomTour = true;
+            currentPackage = "Custom Tour";
 
             // Update modal for custom tour
             document.getElementById('modalTitle').textContent = 'Book Your Custom Tour';
@@ -1898,9 +2257,9 @@
                 const placeElement = document.createElement('div');
                 placeElement.className = 'custom-itinerary-place';
                 placeElement.innerHTML = `
-                        <i class="${place.icon}"></i>
-                        <span>${place.name}</span>
-                    `;
+                    <i class="${place.icon}"></i>
+                    <span>${place.name}</span>
+                `;
                 customItineraryPlaces.appendChild(placeElement);
 
                 // Add arrow between places (except after last one)
@@ -1912,8 +2271,112 @@
                 }
             });
 
+            // Generate custom day itinerary
+            generateCustomDayItinerary();
+
             // Show booking modal
             openBookingModal(null, true);
+        }
+
+        // Generate custom day itinerary
+        function generateCustomDayItinerary() {
+            const dayItineraryGrid = document.getElementById('dayItineraryGrid');
+            dayItineraryGrid.innerHTML = '';
+
+            // Create 11 days for custom tour
+            for (let i = 1; i <= 11; i++) {
+                const dayCard = document.createElement('div');
+                dayCard.className = 'day-card';
+
+                // Determine day title based on custom places
+                let dayTitle = "Custom Activities";
+                if (i === 1) dayTitle = "Arrival & Welcome";
+                else if (i === 11) dayTitle = "Departure";
+                else if (i <= customTourPlaces.length + 1) {
+                    dayTitle = `Explore ${customTourPlaces[i - 2]?.name || "Destination"}`;
+                }
+
+                dayCard.innerHTML = `
+                    <div class="day-header">
+                        <h4 class="day-number">Day ${i}</h4>
+                        <p class="day-title">${dayTitle}</p>
+                    </div>
+                    <div class="day-content">
+                        <div class="time-slot">
+                            <div class="time">08:00</div>
+                            <div class="activity">
+                                <h5 class="activity-title"><i class="fas fa-coffee"></i> Breakfast</h5>
+                                <p class="activity-desc">Hotel breakfast with local specialties</p>
+                            </div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time">09:30</div>
+                            <div class="activity">
+                                <h5 class="activity-title"><i class="fas fa-car"></i> Morning Activities</h5>
+                                <p class="activity-desc">Guided tour and exploration based on your custom itinerary</p>
+                                <div class="activity-icons">
+                                    <div class="activity-icon"><i class="fas fa-camera"></i> Photography</div>
+                                    <div class="activity-icon"><i class="fas fa-hiking"></i> Exploration</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time">13:00</div>
+                            <div class="activity">
+                                <h5 class="activity-title"><i class="fas fa-utensils"></i> Lunch</h5>
+                                <p class="activity-desc">Local cuisine at recommended restaurants</p>
+                            </div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time">15:00</div>
+                            <div class="activity">
+                                <h5 class="activity-title"><i class="fas fa-compass"></i> Afternoon Tour</h5>
+                                <p class="activity-desc">Continued exploration and cultural experiences</p>
+                            </div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time">19:00</div>
+                            <div class="activity">
+                                <h5 class="activity-title"><i class="fas fa-moon"></i> Evening</h5>
+                                <p class="activity-desc">Dinner and relaxation at hotel</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                dayItineraryGrid.appendChild(dayCard);
+            }
+        }
+
+        // Generate day itinerary for pre-made packages
+        function generateDayItinerary(packageName) {
+            const dayItineraryGrid = document.getElementById('dayItineraryGrid');
+            dayItineraryGrid.innerHTML = '';
+
+            const itinerary = dayByDayItinerary[packageName] || dayByDayItinerary["Cultural Triangle Explorer"];
+
+            itinerary.forEach(day => {
+                const dayCard = document.createElement('div');
+                dayCard.className = 'day-card';
+
+                dayCard.innerHTML = `
+                    <div class="day-header">
+                        <h4 class="day-number">Day ${day.day}</h4>
+                        <p class="day-title">${day.title}</p>
+                    </div>
+                    <div class="day-content">
+                        ${day.activities.map(activity => `
+                            <div class="time-slot">
+                                <div class="time">${activity.time}</div>
+                                <div class="activity">
+                                    <h5 class="activity-title"><i class="${activity.icon}"></i> ${activity.title}</h5>
+                                    <p class="activity-desc">${activity.desc}</p>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                dayItineraryGrid.appendChild(dayCard);
+            });
         }
 
         // View Full Image Function
@@ -1954,6 +2417,7 @@
                 isCustomTour = false;
                 const card = button.closest('.package-card');
                 const title = card.getAttribute('data-title');
+                currentPackage = title;
                 const itinerary = card.getAttribute('data-itinerary');
                 const description = card.getAttribute('data-description');
 
@@ -1969,6 +2433,9 @@
 
                 // Hide custom itinerary display
                 document.getElementById('customTourDisplay').classList.remove('active');
+
+                // Generate day itinerary
+                generateDayItinerary(title);
             }
 
             // Show modal
@@ -1993,6 +2460,7 @@
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
             isCustomTour = false;
+            currentPackage = "";
 
             // Reset form fields
             const form = document.querySelector('.booking-form');
@@ -2033,6 +2501,7 @@
             // Step 2: Reset custom tour variables
             customTourPlaces = [];
             isCustomTour = false;
+            currentPackage = "";
 
             // Step 3: Reset booking form
             const bookingForm = document.querySelector('.booking-form');
@@ -2082,7 +2551,7 @@
 
             // Get form data
             const formData = {
-                package: document.getElementById('modalTitle').textContent,
+                package: currentPackage || document.getElementById('modalTitle').textContent,
                 name: document.getElementById('bookingName').value,
                 email: document.getElementById('bookingEmail').value,
                 phone: document.getElementById('bookingPhone').value,
@@ -2115,8 +2584,18 @@
                 message += `*Itinerary:* ${document.getElementById('modalItinerary').textContent}\n`;
             }
 
+            // Add day-by-day itinerary summary
+            message += `*Tour Includes:* 11-Day detailed itinerary with guided tours, accommodation, meals as specified, transportation, and entrance fees\n\n`;
+
+            // Include first 3 days as sample
+            message += `*Sample Itinerary:*\n`;
+            message += `Day 1: Airport pickup, hotel transfer, welcome dinner\n`;
+            message += `Day 2: Colombo city tour, travel to cultural sites\n`;
+            message += `Day 3: Sigiriya Rock Fortress exploration\n`;
+            message += `... Full 11-day detailed itinerary provided\n\n`;
+
             message += `*Special Requirements:* ${formData.requirements || 'None'}\n\n`;
-            message += `I would like to book this tour. Please contact me with availability and pricing details.`;
+            message += `I would like to book this 11-day tour. Please contact me with availability and pricing details.`;
 
             // Encode message for WhatsApp
             const encodedMessage = encodeURIComponent(message);
@@ -2139,6 +2618,7 @@
                 // Step 2: Reset custom tour variables
                 customTourPlaces = [];
                 isCustomTour = false;
+                currentPackage = "";
 
                 // Step 3: Close booking modal
                 closeBookingModal();
