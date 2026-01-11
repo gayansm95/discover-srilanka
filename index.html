@@ -74,6 +74,211 @@
                 right: 15px;
             }
             }
+
+            /* ================= BLOG ENHANCEMENT ================= */
+
+                   body {
+            font-family: 'Roboto', sans-serif;
+            background: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h4 {
+            font-family: 'Jost', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ================= HEADER ================= */
+        header {
+            padding: 20px 0;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        header .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: #0d6efd;
+        }
+
+        /* ================= SERVICES SECTION ================= */
+        .services-section {
+            background: #ffffff;
+            padding: 80px 0;
+        }
+
+        .services-section h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .services-section p.subtitle {
+            color: #555;
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.88);
+            backdrop-filter: blur(12px);
+            border-radius: 22px;
+            padding: 30px 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,.08);
+            text-align: center;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            opacity: 0;
+            transform: translateY(60px);
+            will-change: transform, opacity;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 40px 80px rgba(0,0,0,.12);
+        }
+
+        .service-card i {
+            font-size: 50px;
+            color: #0d6efd;
+            margin-bottom: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .service-card h4 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ================= BLOG SECTION ================= */
+        .blog-cinematic {
+            background: #ffffff;
+            position: relative;
+        }
+
+        .blog-editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .blog-editorial-card {
+            position: relative;
+            height: 420px;
+            border-radius: 22px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 30px 60px rgba(0,0,0,.12);
+            transform: translateY(60px);
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+
+        .blog-editorial-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.15);
+            transition: transform 1.8s ease;
+            will-change: transform;
+        }
+
+        .blog-editorial-card:hover img {
+            transform: scale(1.28);
+        }
+
+        .blog-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(0,0,0,0.1) 0%,
+                rgba(0,0,0,0.75) 70%
+            );
+            z-index: 1;
+        }
+
+        .blog-glass {
+            position: absolute;
+            bottom: 0;
+            margin: 20px;
+            padding: 22px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.88);
+            backdrop-filter: blur(14px);
+            z-index: 2;
+            transform: translateY(40px);
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+
+        .blog-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            font-size: 12px;
+            border-radius: 40px;
+            background: linear-gradient(135deg, #0d6efd, #00b4ff);
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .blog-glass h4 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #000;
+        }
+
+        .blog-meta {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .blog-read-more {
+            color: #0d6efd;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: .4px;
+        }
+
+        .blog-read-more i {
+            margin-left: 6px;
+            transition: transform .3s ease;
+        }
+
+        .blog-read-more:hover i {
+            transform: translateX(6px);
+        }
+
+        .blog-featured {
+            grid-column: span 2;
+            height: 480px;
+        }
+
+        @media (max-width: 991px) {
+            .blog-featured {
+                grid-column: span 1;
+            }
+        }
         </style>
     </head>
 
@@ -346,203 +551,125 @@
         <!-- Services End -->
 
         <!-- Blog Start -->
-        <div class="container-fluid blog py-5">
-            <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Our Blog</h5>
-                    <h1 class="mb-4">Popular Travel Blogs</h1>
-                    <p class="mb-0">Explore Sri Lanka’s hidden gems, stunning beaches, and vibrant culture! 
-                        Our travel blog shares tips, stories, and experiences to inspire unforgettable adventures.</p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-daladamaligawa.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./kandy.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="./blog-kandy.html" class="h4">Kandy</a>
-                                <p class="my-3">
-                                    Discover Kandy’s scenic lakes, historic temples, and vibrant culture a must-visit city blending heritage, 
-                                    nature, and unforgettable experiences in Sri Lanka.
-                                </p>
-                                <a href="./blog-kandy.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+       
+<!-- ================= BLOG SECTION ================= -->
+<section class="container-fluid blog-cinematic py-5">
+    <div class="container py-5">
 
-                    
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-sigiriya.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-dambulla.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Dambulla</a>
-                                <p class="my-3">
-                                    Explore Dambulla’s ancient cave temples, rich history, and stunning landscapes 
-                                    an iconic destination blending culture, spirituality, and unforgettable Sri Lankan experiences.
-                                </p>
-                                <a href="./blog-dambulla.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-2.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-ella.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Ella</a>
-                                <p class="my-3">
-                                    Experience Ella’s breathtaking mountain views, lush tea plantations, 
-                                    and serene waterfalls—perfect for nature lovers seeking adventure and tranquility in Sri Lanka.
-                                </p>
-                                <a href="./blog-ella.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-beach.webp" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-down-south.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Golden Beaches</a>
-                                <p class="my-3">
-                                    Relax on Sri Lanka’s Golden Beaches with golden sands, turquoise waters, and stunning 
-                                    sunsets—an idyllic escape for sun, sea, and serenity.
-                                </p>
-                                <a href="./blog-down-south.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-safari.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-safari.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Wild Safari</a>
-                                <p class="my-3">
-                                    Embark on a thrilling Sri Lankan safari, spotting elephants, leopards, and exotic 
-                                    wildlife amidst stunning national parks and natural beauty.
-                                </p>
-                                <a href="./blog-safari.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-card-nuwaraeliya.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-nuwara-eliya.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Nuwara Eliya</a>
-                                <p class="my-3">
-                                    Discover Nuwara Eliya’s cool climate, lush tea plantations, and scenic landscapes 
-                                    Sri Lanka’s charming hill country for nature and relaxation.
-                                </p>
-                                <a href="./blog-nuwara-eliya.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/anuradhapura-polonnaruwa-sigiriya-1024x576.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-cultural-triangle.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Sri Lanka’s Cultural Triangle</a>
-                                <p class="my-3">
-                                    Explore Sri Lanka’s Cultural Triangle—ancient cities, historic temples, 
-                                    and UNESCO heritage sites offering a journey through rich history and tradition.
-                                </p>
-                                <a href="./blog-cultural-triangle.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/jafna-blog-post.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-north-sri-lanka.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Northern Sri Lanka</a>
-                                <p class="my-3">
-                                    Discover Northern Sri Lanka’s pristine beaches, historic temples, and vibrant 
-                                    culture—an offbeat destination rich in heritage and unforgettable experiences.
-                                </p>
-                                <a href="./blog-north-sri-lanka.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/Arugam-Bay.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="./blog-eastern-beauty.html" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <a href="#" class="h4">Eastern Sri Lanka</a>
-                                <p class="my-3">
-                                    Unwind on Eastern Sri Lanka’s pristine beaches, sparkling turquoise waters,
-                                    and breathtaking landscapes—an idyllic paradise for sun, sea, and adventure.
-                                </p>
-                                <a href="./blog-eastern-beauty.html" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="text-center mb-5">
+            <h5 class="text-primary">Travel Journal</h5>
+            <h1 class="mb-3">Stories That Move You</h1>
+            <p class="text-muted">
+                Culture, nature, wildlife & unforgettable journeys across Sri Lanka
+            </p>
         </div>
+
+        <div class="blog-editorial-grid">
+
+            <a href="./blog-cultural-triangle.html" class="blog-editorial-card blog-featured">
+                <img src="img/anuradhapura-polonnaruwa-sigiriya-1024x576.jpg" alt="">
+                <div class="blog-gradient"></div>
+                <div class="blog-glass">
+                    <span class="blog-tag">Heritage</span>
+                    <h4>Sri Lanka’s Cultural Triangle</h4>
+                    <div class="blog-meta">Ancient kingdoms & UNESCO wonders</div>
+                    <span class="blog-read-more">Explore Story <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="./blog-kandy.html" class="blog-editorial-card">
+                <img src="img/blog-card-daladamaligawa.jpg">
+                <div class="blog-gradient"></div>
+                <div class="blog-glass">
+                    <span class="blog-tag">Culture</span>
+                    <h4>Kandy</h4>
+                    <div class="blog-meta">Sacred city of traditions</div>
+                    <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="./blog-dambulla.html" class="blog-editorial-card">
+                <img src="img/blog-card-sigiriya.jpg">
+                <div class="blog-gradient"></div>
+                <div class="blog-glass">
+                    <span class="blog-tag">History</span>
+                    <h4>Dambulla</h4>
+                    <div class="blog-meta">Cave temples & ancient art</div>
+                    <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="./blog-ella.html" class="blog-editorial-card">
+                <img src="img/blog-2.jpg">
+                <div class="blog-gradient"></div>
+                <div class="blog-glass">
+                    <span class="blog-tag">Nature</span>
+                    <h4>Ella</h4>
+                    <div class="blog-meta">Tea hills & misty peaks</div>
+                    <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="./blog-down-south.html" class="blog-editorial-card">
+                <img src="img/blog-card-beach.webp">
+                <div class="blog-gradient"></div>
+                <div class="blog-glass">
+                    <span class="blog-tag">Beach</span>
+                    <h4>Golden Beaches</h4>
+                    <div class="blog-meta">Sun, sand & turquoise seas</div>
+                    <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="./blog-safari.html" class="blog-editorial-card">
+                <img src="img/blog-card-safari.jpg">
+                <div class="blog-gradient"></div>
+                <div class="blog-glass">
+                    <span class="blog-tag">Wildlife</span>
+                    <h4>Wild Safaris</h4>
+                    <div class="blog-meta">Leopards & elephants</div>
+                    <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="./blog-nuwara-eliya.html" class="blog-editorial-card">
+                <img src="img/blog-card-nuwaraeliya.jpg">
+                <div class="blog-gradient"></div>
+                <div class="blog-glass">
+                    <span class="blog-tag">Hill Country</span>
+                    <h4>Nuwara Eliya</h4>
+                    <div class="blog-meta">Tea estates & cool climate</div>
+                    <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="./blog-north-sri-lanka.html" class="blog-editorial-card">
+                <img src="img/jafna-blog-post.jpg">
+                <div class="blog-gradient"></div>
+                <div class="blog-glass">
+                    <span class="blog-tag">Culture</span>
+                    <h4>Northern Sri Lanka</h4>
+                    <div class="blog-meta">Jaffna & heritage</div>
+                    <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="./blog-eastern-beauty.html" class="blog-editorial-card">
+                <img src="img/Arugam-Bay.jpg">
+                <div class="blog-gradient"></div>
+                <div class="blog-glass">
+                    <span class="blog-tag">Adventure</span>
+                    <h4>Eastern Sri Lanka</h4>
+                    <div class="blog-meta">Surf & untouched beaches</div>
+                    <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
         <!-- Blog End -->
 
 
@@ -670,5 +797,36 @@
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
     </body>
+    <!-- GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".blog-editorial-card", {
+        scrollTrigger: {
+            trigger: ".blog-editorial-grid",
+            start: "top 80%"
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1.4,
+        stagger: 0.18,
+        ease: "power4.out"
+    });
+
+    gsap.to(".blog-glass", {
+        scrollTrigger: {
+            trigger: ".blog-editorial-grid",
+            start: "top 80%"
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        stagger: 0.2,
+        ease: "power3.out"
+    });
+</script>
 
 </html>
