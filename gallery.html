@@ -38,7 +38,7 @@
             text-align: center;
             line-height: 80px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-            z-index: 1000;
+            z-index: 1001;
             animation: whatsapp-pulse 1.8s infinite;
             text-decoration: none;
         }
@@ -76,6 +76,1005 @@
             }
         }
 
+        /* ================= AI POWERED CHAT BOT ================= */
+        .ai-chatbot-container {
+            position: fixed;
+            bottom: 110px;
+            right: 20px;
+            z-index: 1002;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* AI Chatbot Toggle Button */
+        .ai-chatbot-toggle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            position: relative;
+            animation: aiBotFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes aiBotFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .ai-chatbot-toggle:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+        }
+
+        .ai-chatbot-toggle i {
+            font-size: 32px;
+            color: white;
+        }
+
+        .ai-chatbot-notification {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 50%;
+            color: white;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            animation: aiNotificationPulse 2s infinite;
+        }
+
+        @keyframes aiNotificationPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(245, 87, 108, 0.7);
+            }
+
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 10px rgba(245, 87, 108, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(245, 87, 108, 0);
+            }
+        }
+
+        /* AI Chatbot Window */
+        .ai-chatbot-window {
+            position: absolute;
+            bottom: 85px;
+            right: 0;
+            width: 380px;
+            height: 550px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px) scale(0.9);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-chatbot-window.active {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* AI Chatbot Header */
+        .ai-chatbot-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .ai-chatbot-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ai-chatbot-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .ai-chatbot-title h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .ai-chatbot-title p {
+            margin: 3px 0 0 0;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .ai-chatbot-status {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11px;
+        }
+
+        .ai-status-dot {
+            width: 8px;
+            height: 8px;
+            background: #4cd137;
+            border-radius: 50%;
+            animation: aiStatusPulse 2s infinite;
+        }
+
+        @keyframes aiStatusPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(76, 209, 55, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 5px rgba(76, 209, 55, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(76, 209, 55, 0);
+            }
+        }
+
+        .ai-chatbot-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .ai-chatbot-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        /* AI Chatbot Messages Area */
+        .ai-chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* AI Message Bubbles with Enhanced Styling */
+        .ai-message {
+            max-width: 85%;
+            padding: 16px;
+            border-radius: 20px;
+            line-height: 1.5;
+            position: relative;
+            animation: aiMessageSlideIn 0.3s ease-out;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        @keyframes aiMessageSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .ai-bot-message {
+            align-self: flex-start;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            border-top-left-radius: 5px;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            color: #333;
+            position: relative;
+        }
+
+        .ai-bot-message::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #f8f9ff;
+        }
+
+        .ai-user-message {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-top-right-radius: 5px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .ai-message-time {
+            font-size: 11px;
+            opacity: 0.7;
+            margin-top: 8px;
+            text-align: right;
+        }
+
+        .ai-bot-message .ai-message-time {
+            color: #666;
+        }
+
+        .ai-user-message .ai-message-time {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Enhanced AI Typing Indicator */
+        .ai-typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 12px 16px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            border-radius: 18px;
+            border-top-left-radius: 5px;
+            align-self: flex-start;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            max-width: 80px;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .ai-typing-dot {
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            animation: aiTypingBounce 1.4s infinite ease-in-out;
+        }
+
+        .ai-typing-dot:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .ai-typing-dot:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        .ai-typing-dot:nth-child(3) {
+            animation-delay: 0s;
+        }
+
+        @keyframes aiTypingBounce {
+
+            0%,
+            60%,
+            100% {
+                transform: translateY(0);
+            }
+
+            30% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* Attractive Message Components */
+        .ai-message-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .ai-message-header i {
+            color: #667eea;
+            font-size: 16px;
+        }
+
+        .ai-message-header h4 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .ai-message-content {
+            margin-bottom: 12px;
+        }
+
+        .ai-highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-left: 4px solid #667eea;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        .ai-tip-box {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 152, 0, 0.1) 100%);
+            border-left: 4px solid #ffc107;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .ai-tip-box::before {
+            content: '💡';
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+        }
+
+        .ai-feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .ai-feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+            border-color: #667eea;
+        }
+
+        .ai-feature-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .ai-feature-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .ai-feature-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .ai-feature-desc {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .ai-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin: 2px;
+        }
+
+        .ai-destination-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 10px 0;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .ai-destination-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .ai-destination-image {
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-destination-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .ai-destination-content {
+            padding: 15px;
+        }
+
+        .ai-destination-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        .ai-destination-desc {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .ai-destination-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .ai-tag {
+            padding: 3px 8px;
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            border-radius: 15px;
+            font-size: 11px;
+        }
+
+        /* Quick Action Buttons */
+        .ai-quick-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .ai-action-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .ai-action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .ai-action-btn.secondary {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        }
+
+        /* Smart Hint Box */
+        .ai-smart-hint {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 152, 0, 0.1) 100%);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .ai-smart-hint::before {
+            content: '✨';
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+
+        .ai-hint-title {
+            font-weight: 600;
+            color: #ff9800;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .ai-hint-text {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .ai-hint-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .ai-hint-suggestion {
+            padding: 6px 12px;
+            background: rgba(255, 193, 7, 0.2);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            color: #ff9800;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .ai-hint-suggestion:hover {
+            background: rgba(255, 193, 7, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Attractive Lists */
+        .ai-attractive-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .ai-list-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .ai-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .ai-list-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        .ai-list-content {
+            flex: 1;
+        }
+
+        .ai-list-title {
+            font-weight: 500;
+            color: #333;
+            font-size: 13px;
+        }
+
+        .ai-list-desc {
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* AI Quick Reply Buttons */
+        .ai-quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .ai-quick-reply {
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .ai-quick-reply:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* AI Chatbot Input Area */
+        .ai-chatbot-input {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            position: relative;
+        }
+
+        .ai-chatbot-input input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+            padding-right: 50px;
+        }
+
+        .ai-chatbot-input input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .ai-chatbot-send {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            position: absolute;
+            right: 25px;
+        }
+
+        .ai-chatbot-send:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .ai-chatbot-send:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* AI Welcome Message */
+        .ai-welcome-message {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .ai-welcome-message h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .ai-welcome-message p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* AI Chatbot Suggestions */
+        .ai-chatbot-suggestions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .ai-suggestion-item {
+            background: white;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ai-suggestion-item:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+            border-color: #667eea;
+        }
+
+        .ai-suggestion-item i {
+            font-size: 20px;
+            color: #667eea;
+        }
+
+        .ai-suggestion-item span {
+            font-size: 13px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Message with delay typing effect */
+        .ai-typing-message {
+            position: relative;
+            min-height: 20px;
+        }
+
+        .ai-typing-text {
+            opacity: 0;
+            animation: aiTypewriter 0.5s steps(40, end) forwards;
+        }
+
+        @keyframes aiTypewriter {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Quick Suggestions */
+        .ai-quick-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .ai-quick-suggestion {
+            padding: 6px 12px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 15px;
+            font-size: 12px;
+            color: #667eea;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .ai-quick-suggestion:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-1px);
+        }
+
+        /* Redirect Cards */
+        .ai-redirect-card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #667eea;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ai-redirect-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .ai-redirect-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .ai-redirect-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .ai-redirect-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        .ai-redirect-text {
+            flex: 1;
+        }
+
+        .ai-redirect-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        .ai-redirect-desc {
+            color: #666;
+            font-size: 13px;
+        }
+
+        .ai-redirect-arrow {
+            color: #667eea;
+            font-size: 18px;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .ai-redirect-card:hover .ai-redirect-arrow {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
+        /* Progress Bar */
+        .ai-progress-container {
+            margin: 15px 0;
+        }
+
+        .ai-progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .ai-progress-bar {
+            height: 6px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .ai-progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 3px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Responsive Design for AI Chatbot */
+        @media (max-width: 768px) {
+            .ai-chatbot-container {
+                bottom: 100px;
+                right: 15px;
+            }
+
+            .ai-chatbot-window {
+                width: 320px;
+                height: 500px;
+                right: -50px;
+            }
+
+            .ai-chatbot-window.active {
+                right: 0;
+            }
+
+            .ai-chatbot-toggle {
+                width: 60px;
+                height: 60px;
+            }
+
+            .ai-chatbot-toggle i {
+                font-size: 28px;
+            }
+
+            .ai-chatbot-notification {
+                width: 18px;
+                height: 18px;
+                font-size: 10px;
+            }
+
+            .ai-chatbot-suggestions {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-action-btn {
+                min-width: 100px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .ai-chatbot-window {
+                width: calc(100vw - 40px);
+                right: 20px;
+                left: 20px;
+                bottom: 80px;
+            }
+
+            .ai-chatbot-container {
+                right: 20px;
+            }
+
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                font-size: 32px;
+                line-height: 60px;
+                bottom: 85px;
+            }
+
+            .ai-suggestion-item {
+                padding: 12px;
+            }
+
+            .ai-action-btn {
+                min-width: calc(50% - 5px);
+            }
+        }
+
+        /* Existing Gallery Styles Continue Below */
+        /* ... (All existing gallery styles remain exactly the same) ... */
         /* ================= ENHANCED GALLERY SECTION ================= */
         .gallery-container {
             padding: 80px 0;
@@ -688,7 +1687,6 @@
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="./index.html" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
-                <!-- <img src="img/logo.png" alt="Logo"> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -699,7 +1697,6 @@
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="services.html" class="nav-item nav-link">Services</a>
                     <a href="packages.html" class="nav-item nav-link">Packages</a>
-                    <a href="gallery.html" class="nav-item nav-link active">Gallery</a>
                     <a href="blog.html" class="nav-item nav-link">Blog</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
@@ -730,6 +1727,7 @@
             </div>
 
             <div class="gallery-grid">
+                <!-- Gallery Items (same as before) -->
                 <!-- Gallery Item 1 -->
                 <div class="gallery-item" data-index="1">
                     <div class="image-counter">01</div>
@@ -1033,6 +2031,75 @@
         </div>
     </section>
 
+    <!-- AI Powered Chat Bot -->
+    <div class="ai-chatbot-container">
+        <div class="ai-chatbot-window" id="aiChatbotWindow">
+            <div class="ai-chatbot-header">
+                <div class="ai-chatbot-title">
+                    <div class="ai-chatbot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h3>AI Travel Assistant</h3>
+                        <div class="ai-chatbot-status">
+                            <div class="ai-status-dot"></div>
+                            <span>AI Online • Instant Replies</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="ai-chatbot-close" id="aiChatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="ai-chatbot-messages" id="aiChatMessages">
+                <div class="ai-welcome-message">
+                    <h4><i class="fas fa-magic"></i> Welcome! I'm Your AI Travel Assistant</h4>
+                    <p>Ready to create your dream Sri Lanka adventure? Let's make it magical! ✨</p>
+                </div>
+                <div class="ai-message ai-bot-message">
+                    <div class="ai-message-header">
+                        <i class="fas fa-gem"></i>
+                        <h4>Your Personal Travel Planner</h4>
+                    </div>
+                    <div class="ai-message-content ai-typing-text">
+                        <p>Hi! I'm <strong>Ari</strong>, your AI-powered travel wizard! 🌟</p>
+                        
+                        <div class="ai-highlight-box">
+                            I can help you discover <strong>hidden gems</strong>, plan <strong>perfect itineraries</strong>, 
+                            and find the <strong>best deals</strong> for your Sri Lanka adventure!
+                        </div>
+                    </div>
+                    <div class="ai-quick-suggestions">
+                        <div class="ai-quick-suggestion" data-suggestion="plan">Plan my trip</div>
+                        <div class="ai-quick-suggestion" data-suggestion="best">Best places to visit</div>
+                        <div class="ai-quick-suggestion" data-suggestion="budget">Budget planning</div>
+                        <div class="ai-quick-suggestion" data-suggestion="book">Book now</div>
+                    </div>
+                    <div class="ai-smart-hint">
+                        <div class="ai-hint-title">💡 Pro Tip</div>
+                        <div class="ai-hint-text">Try asking me about specific destinations or activities you saw in the gallery!</div>
+                        <div class="ai-hint-suggestions">
+                            <div class="ai-hint-suggestion" data-hint="kandy">Tell me about Kandy</div>
+                            <div class="ai-hint-suggestion" data-hint="beach">Best beaches</div>
+                            <div class="ai-hint-suggestion" data-hint="cultural">Cultural experiences</div>
+                        </div>
+                    </div>
+                    <div class="ai-message-time">Just now</div>
+                </div>
+            </div>
+            <div class="ai-chatbot-input">
+                <input type="text" id="aiChatInput" placeholder="Ask me anything about Sri Lanka travel..." autocomplete="off">
+                <button class="ai-chatbot-send" id="aiChatSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <button class="ai-chatbot-toggle" id="aiChatbotToggle">
+            <i class="fas fa-robot"></i>
+            <div class="ai-chatbot-notification" id="aiChatNotification">AI</div>
+        </button>
+    </div>
+
     <!-- Lightbox Modal -->
     <div class="lightbox-modal" id="lightboxModal">
         <div class="lightbox-spinner" id="lightboxSpinner"></div>
@@ -1059,6 +2126,11 @@
             </div>
         </div>
     </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <!-- Subscribe Start -->
     <div class="container-fluid subscribe py-5">
@@ -1090,11 +2162,6 @@
     </div>
     <!-- Copyright End -->
 
-    <!-- whatsapp button -->
-    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F" class="whatsapp-float" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1104,269 +2171,1451 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
+    <!-- Enhanced AI Chat Bot Integration -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Image data array
-            const galleryImages = [
-                {
-                    src: 'img/kandy lake round.jpeg',
-                    title: 'Kandy Lake',
-                    location: 'Kandy, Sri Lanka'
-                },
-                {
-                    src: 'img/dalada-maligawa.jpeg',
-                    title: 'Temple of the Tooth',
-                    location: 'Kandy, Sri Lanka'
-                },
-                {
-                    src: 'img/botanical-garden.jpeg',
-                    title: 'Royal Botanical Garden',
-                    location: 'Peradeniya, Sri Lanka'
-                },
-                {
-                    src: 'img/ambuluwawa.jpg',
-                    title: 'Ambuluwawa Tower',
-                    location: 'Gampola, Sri Lanka'
-                },
-                {
-                    src: 'img/Nelligala-International-Buddhist-Center.jpg',
-                    title: 'Nelligala Temple',
-                    location: 'Kandy, Sri Lanka'
-                },
-                {
-                    src: 'img/nine-arch-bridge-demodara-sri-lanka-945x630.jpg',
-                    title: 'Nine Arch Bridge',
-                    location: 'Ella, Sri Lanka'
-                },
-                {
-                    src: 'img/hirikatiya.JPG',
-                    title: 'Hirikatiya Beach',
-                    location: 'Dikwella, Sri Lanka'
-                },
-                {
-                    src: 'img/horton-plains-national-park.webp',
-                    title: 'Horton Plains National Park',
-                    location: 'Nuwara Eliya, Sri Lanka'
-                },
-                {
-                    src: 'img/Nuwara_Eliya_Gregory_Lake.jpg',
-                    title: 'Gregory Lake',
-                    location: 'Nuwara Eliya, Sri Lanka'
-                },
-                {
-                    src: 'img/yala-slider1.jpg',
-                    title: 'Yala National Park',
-                    location: 'Southern Province, Sri Lanka'
-                },
-                {
-                    src: 'img/sigiriya-attractions.jpg',
-                    title: 'Sigiriya Rock Fortress',
-                    location: 'Dambulla, Sri Lanka'
-                },
-                {
-                    src: 'img/405dbcb1-a2d1-4bf0-9e67-36cdd8d70270_hot-air-ballooning-day-tour.png',
-                    title: 'Hot Air Balloon Ride',
-                    location: 'Dambulla, Sri Lanka'
-                },
-                {
-                    src: 'img/travel-hakgala-botanical-garden.webp',
-                    title: 'Hakgala Botanical Garden',
-                    location: 'Nuwara Eliya, Sri Lanka'
-                },
-                {
-                    src: 'img/hirikatiya.JPG',
-                    title: 'Hirikatiya Beach',
-                    location: 'Dikwella, Sri Lanka'
-                },
-                {
-                    src: 'img/Main-point-arugam-bay-surfing.jpg',
-                    title: 'Arugam Bay Surfing',
-                    location: 'Eastern Province, Sri Lanka'
+            // ================= ENHANCED AI POWERED CHAT BOT =================
+            const aiChatbotToggle = document.getElementById('aiChatbotToggle');
+            const aiChatbotWindow = document.getElementById('aiChatbotWindow');
+            const aiChatbotClose = document.getElementById('aiChatbotClose');
+            const aiChatMessages = document.getElementById('aiChatMessages');
+            const aiChatInput = document.getElementById('aiChatInput');
+            const aiChatSend = document.getElementById('aiChatSend');
+            const aiChatNotification = document.getElementById('aiChatNotification');
+            const aiSuggestionItems = document.querySelectorAll('.ai-suggestion-item, .ai-quick-suggestion, .ai-hint-suggestion');
+
+            let isAiChatOpen = false;
+            let conversationHistory = [];
+            let userContext = {
+                name: null,
+                travelDates: null,
+                budget: null,
+                interests: [],
+                travelStyle: null,
+                groupSize: null,
+                viewedDestinations: []
+            };
+
+            // Enhanced AI Personality Configuration
+            const aiPersonality = {
+                name: "Ari",
+                role: "AI Travel Wizard",
+                traits: ["creative", "knowledgeable", "enthusiastic", "helpful"],
+                style: "visual_attractive",
+                expertise: [
+                    "Sri Lanka hidden gems",
+                    "Luxury travel planning",
+                    "Budget optimization",
+                    "Cultural experiences",
+                    "Adventure activities"
+                ],
+                emojis: ["✨", "🌟", "🎯", "💎", "🔥", "🎉", "🚀", "🌈"]
+            };
+
+            // Enhanced Attractive Response Generator
+            class EnhancedAITravelAssistant {
+                constructor() {
+                    this.knowledgeBase = this.initializeEnhancedKnowledgeBase();
+                    this.context = {};
+                    this.responseTemplates = this.initializeResponseTemplates();
                 }
-            ];
 
-            // DOM Elements
-            const lightboxModal = document.getElementById('lightboxModal');
-            const lightboxImage = document.getElementById('lightboxImage');
-            const lightboxTitle = document.getElementById('lightboxTitle');
-            const lightboxLocation = document.getElementById('lightboxLocation').querySelector('span');
-            const lightboxCounter = document.getElementById('lightboxCounter');
-            const lightboxSpinner = document.getElementById('lightboxSpinner');
-            const lightboxClose = document.getElementById('lightboxClose');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            const viewMoreBtns = document.querySelectorAll('.view-more-btn');
-            const galleryImgs = document.querySelectorAll('.gallery-img');
+                initializeEnhancedKnowledgeBase() {
+                    return {
+                        destinations: {
+                            kandy: {
+                                name: "Kandy",
+                                type: "cultural",
+                                description: "Sacred city surrounded by misty hills, home to the Temple of the Sacred Tooth Relic",
+                                highlights: ["Temple of the Tooth", "Kandy Lake", "Royal Botanical Gardens", "Cultural Dance Show"],
+                                bestFor: ["Culture lovers", "History enthusiasts", "Family travelers"],
+                                bestTime: "December to April",
+                                budget: "$$",
+                                duration: "2-3 days",
+                                icon: "🏛️",
+                                color: "#8B4513",
+                                galleryImages: ["kandy lake round.jpeg", "dalada-maligawa.jpeg"]
+                            },
+                            ella: {
+                                name: "Ella",
+                                type: "nature",
+                                description: "Charming hill station with breathtaking views, waterfalls, and tea plantations",
+                                highlights: ["Nine Arch Bridge", "Ella Rock", "Ravana Falls", "Tea Factory Tour"],
+                                bestFor: ["Hikers", "Nature lovers", "Photography enthusiasts"],
+                                bestTime: "January to April",
+                                budget: "$$",
+                                duration: "2-3 days",
+                                icon: "⛰️",
+                                color: "#228B22",
+                                galleryImages: ["nine-arch-bridge-demodara-sri-lanka-945x630.jpg"]
+                            },
+                            galle: {
+                                name: "Galle",
+                                type: "beach_cultural",
+                                description: "Historic Dutch fort city with beautiful beaches and colonial architecture",
+                                highlights: ["Galle Fort", "Lighthouse", "Beaches", "Boutique Shopping"],
+                                bestFor: ["History buffs", "Beach lovers", "Romantic getaways"],
+                                bestTime: "November to April",
+                                budget: "$$$",
+                                duration: "1-2 days",
+                                icon: "🏰",
+                                color: "#1E90FF",
+                                galleryImages: []
+                            },
+                            sigiriya: {
+                                name: "Sigiriya",
+                                type: "adventure_cultural",
+                                description: "Ancient rock fortress and UNESCO World Heritage Site",
+                                highlights: ["Sigiriya Rock", "Frescoes", "Mirror Wall", "Water Gardens"],
+                                bestFor: ["Adventure seekers", "History lovers", "Photography"],
+                                bestTime: "January to April",
+                                budget: "$$",
+                                duration: "1 day",
+                                icon: "🗿",
+                                color: "#DC143C",
+                                galleryImages: ["sigiriya-attractions.jpg"]
+                            },
+                            nuwaraEliya: {
+                                name: "Nuwara Eliya",
+                                type: "nature",
+                                description: "Little England with cool climate, tea estates, and colonial charm",
+                                highlights: ["Tea Plantations", "Gregory Lake", "Waterfalls", "Golf Course"],
+                                bestFor: ["Tea lovers", "Cool climate seekers", "Romantic escapes"],
+                                bestTime: "February to May",
+                                budget: "$$",
+                                duration: "1-2 days",
+                                icon: "☕",
+                                color: "#32CD32",
+                                galleryImages: ["Nuwara_Eliya_Gregory_Lake.jpg", "travel-hakgala-botanical-garden.webp"]
+                            },
+                            yala: {
+                                name: "Yala National Park",
+                                type: "wildlife",
+                                description: "Sri Lanka's most famous wildlife sanctuary, home to leopards and elephants",
+                                highlights: ["Leopard Spotting", "Elephant Herds", "Bird Watching", "Safari Experience"],
+                                bestFor: ["Wildlife enthusiasts", "Photography", "Adventure lovers"],
+                                bestTime: "February to July",
+                                budget: "$$$",
+                                duration: "1-2 days",
+                                icon: "🐆",
+                                color: "#FF8C00",
+                                galleryImages: ["yala-slider1.jpg"]
+                            },
+                            mirissa: {
+                                name: "Mirissa",
+                                type: "beach",
+                                description: "Whale watching capital with beautiful beaches and surfing spots",
+                                highlights: ["Whale Watching", "Secret Beach", "Surfing", "Beach Parties"],
+                                bestFor: ["Beach lovers", "Surfers", "Nightlife seekers"],
+                                bestTime: "November to April",
+                                budget: "$$",
+                                duration: "2-3 days",
+                                icon: "🐋",
+                                color: "#00CED1",
+                                galleryImages: []
+                            },
+                            arugamBay: {
+                                name: "Arugam Bay",
+                                type: "beach_adventure",
+                                description: "World-class surfing destination with laid-back vibe",
+                                highlights: ["Surfing", "Lagoon Safari", "Beach Parties", "Local Culture"],
+                                bestFor: ["Surfers", "Adventure seekers", "Backpackers"],
+                                bestTime: "May to October",
+                                budget: "$$",
+                                duration: "3-5 days",
+                                icon: "🏄",
+                                color: "#4169E1",
+                                galleryImages: ["Main-point-arugam-bay-surfing.jpg"]
+                            }
+                        },
+                        packages: {
+                            culturalDelight: {
+                                name: "Cultural Delight Tour",
+                                duration: "7 days",
+                                price: "$899 - $1299",
+                                destinations: ["Colombo", "Sigiriya", "Kandy", "Nuwara Eliya"],
+                                highlights: ["UNESCO Sites", "Cultural Shows", "Tea Plantations", "Ancient Cities"],
+                                bestFor: "First-time visitors & culture enthusiasts",
+                                icon: "🎎",
+                                page: "packages.html#cultural"
+                            },
+                            adventureExplorer: {
+                                name: "Adventure Explorer",
+                                duration: "10 days",
+                                price: "$1299 - $1899",
+                                destinations: ["Kandy", "Ella", "Yala", "Arugam Bay"],
+                                highlights: ["Hiking", "Wildlife Safari", "Surfing", "Scenic Trains"],
+                                bestFor: "Adventure seekers & nature lovers",
+                                icon: "🧗",
+                                page: "packages.html#adventure"
+                            },
+                            beachParadise: {
+                                name: "Beach Paradise",
+                                duration: "8 days",
+                                price: "$999 - $1499",
+                                destinations: ["Colombo", "Galle", "Mirissa", "Tangalle"],
+                                highlights: ["Beach Relaxation", "Whale Watching", "Water Sports", "Luxury Resorts"],
+                                bestFor: "Beach lovers & relaxation seekers",
+                                icon: "🏖️",
+                                page: "packages.html#beach"
+                            },
+                            luxuryEscape: {
+                                name: "Luxury Sri Lanka",
+                                duration: "12 days",
+                                price: "$2499 - $3999",
+                                destinations: ["Colombo", "Sigiriya", "Kandy", "Galle", "Tangalle"],
+                                highlights: ["5-Star Hotels", "Private Guides", "Helicopter Tours", "Fine Dining"],
+                                bestFor: "Luxury travelers & special occasions",
+                                icon: "✨",
+                                page: "packages.html#luxury"
+                            }
+                        },
+                        services: {
+                            customPlanning: {
+                                name: "Custom Itinerary Planning",
+                                description: "Tailor-made travel plans based on your preferences",
+                                icon: "📝",
+                                page: "services.html#planning"
+                            },
+                            privateGuides: {
+                                name: "Private Tour Guides",
+                                description: "Expert local guides for personalized experiences",
+                                icon: "👨‍🏫",
+                                page: "services.html#guides"
+                            },
+                            transportation: {
+                                name: "Private Transportation",
+                                description: "Comfortable vehicles with experienced drivers",
+                                icon: "🚗",
+                                page: "services.html#transport"
+                            },
+                            accommodation: {
+                                name: "Hotel & Villa Booking",
+                                description: "Best accommodation options for every budget",
+                                icon: "🏨",
+                                page: "services.html#accommodation"
+                            },
+                            activities: {
+                                name: "Activity Booking",
+                                description: "Safaris, cooking classes, and unique experiences",
+                                icon: "🎯",
+                                page: "services.html#activities"
+                            }
+                        }
+                    };
+                }
 
-            let currentIndex = 0;
-            let isLightboxOpen = false;
+                initializeResponseTemplates() {
+                    return {
+                        greeting: [
+                            `✨ <strong>Hello! I'm ${aiPersonality.name}, your AI Travel Wizard! 🌟</strong>
+                            
+                            <div class="ai-highlight-box">
+                                Ready to create your <strong>dream Sri Lanka adventure</strong>? 
+                                I'm here to make it <strong>magical, easy, and unforgettable</strong>! 🎉
+                            </div>
+                            
+                            <div class="ai-smart-hint">
+                                <div class="ai-hint-title">💡 Try asking me:</div>
+                                <div class="ai-hint-suggestions">
+                                    <div class="ai-hint-suggestion" data-hint="plan">Plan a 7-day trip</div>
+                                    <div class="ai-hint-suggestion" data-hint="best">Best places to visit</div>
+                                    <div class="ai-hint-suggestion" data-hint="budget">Budget options</div>
+                                </div>
+                            </div>`,
+                            
+                            `🌟 <strong>Welcome to Ayubowan Tours! I'm ${aiPersonality.name} 🧞‍♂️</strong>
+                            
+                            <div class="ai-highlight-box">
+                                Your <strong>personal travel genie</strong> for Sri Lanka! 
+                                Let me grant your travel wishes and create the <strong>perfect itinerary</strong>! ✨
+                            </div>
+                            
+                            <div class="ai-tip-box">
+                                <strong>Pro Tip:</strong> Looking at our gallery? Ask me about any destination you see! 
+                                I'll give you <strong>insider tips and best times to visit</strong>!
+                            </div>`,
+                            
+                            `🎯 <strong>Namaste! I'm ${aiPersonality.name}, your AI Travel Assistant 🌴</strong>
+                            
+                            <div class="ai-highlight-box">
+                                Think of me as your <strong>personal travel concierge</strong> for Sri Lanka!
+                                From <strong>hidden gems</strong> to <strong>luxury experiences</strong>, I've got you covered! 💎
+                            </div>
+                            
+                            <div class="ai-quick-actions">
+                                <button class="ai-action-btn" data-action="packages">
+                                    <i class="fas fa-suitcase"></i> View Packages
+                                </button>
+                                <button class="ai-action-btn secondary" data-action="plan">
+                                    <i class="fas fa-calendar-alt"></i> Plan My Trip
+                                </button>
+                            </div>`
+                        ],
+                        
+                        destinationInfo: (destination) => `
+                            <div class="ai-message-header">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h4>${destination.icon} ${destination.name}</h4>
+                            </div>
+                            
+                            <div class="ai-message-content">
+                                <p><strong>${destination.description}</strong></p>
+                                
+                                <div class="ai-feature-card" data-destination="${destination.name.toLowerCase()}">
+                                    <div class="ai-feature-header">
+                                        <div class="ai-feature-icon">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="ai-feature-title">Highlights</div>
+                                    </div>
+                                    <div class="ai-feature-desc">
+                                        ${destination.highlights.map(h => `• ${h}`).join('<br>')}
+                                    </div>
+                                </div>
+                                
+                                <div class="ai-attractive-list">
+                                    <div class="ai-list-item">
+                                        <div class="ai-list-icon">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="ai-list-content">
+                                            <div class="ai-list-title">Best Time to Visit</div>
+                                            <div class="ai-list-desc">${destination.bestTime}</div>
+                                        </div>
+                                    </div>
+                                    <div class="ai-list-item">
+                                        <div class="ai-list-icon">
+                                            <i class="fas fa-coins"></i>
+                                        </div>
+                                        <div class="ai-list-content">
+                                            <div class="ai-list-title">Budget Level</div>
+                                            <div class="ai-list-desc">${destination.budget}</div>
+                                        </div>
+                                    </div>
+                                    <div class="ai-list-item">
+                                        <div class="ai-list-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="ai-list-content">
+                                            <div class="ai-list-title">Perfect For</div>
+                                            <div class="ai-list-desc">${destination.bestFor.join(', ')}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                ${destination.galleryImages.length > 0 ? `
+                                <div class="ai-smart-hint">
+                                    <div class="ai-hint-title">🎨 Gallery Connection</div>
+                                    <div class="ai-hint-text">
+                                        You can see ${destination.name} in our gallery! 
+                                        <button class="ai-quick-reply" data-action="view-gallery" data-destination="${destination.name.toLowerCase()}">
+                                            Click here to view images
+                                        </button>
+                                    </div>
+                                </div>
+                                ` : ''}
+                                
+                                <div class="ai-quick-actions">
+                                    <button class="ai-action-btn" data-action="add-to-itinerary" data-destination="${destination.name}">
+                                        <i class="fas fa-plus"></i> Add to My Itinerary
+                                    </button>
+                                    <button class="ai-action-btn secondary" data-action="packages" data-type="${destination.type}">
+                                        <i class="fas fa-suitcase"></i> View Related Packages
+                                    </button>
+                                </div>
+                            </div>`,
+                        
+                        packageInfo: (pkg) => `
+                            <div class="ai-redirect-card" data-redirect="${pkg.page}">
+                                <div class="ai-redirect-content">
+                                    <div class="ai-redirect-icon">
+                                        ${pkg.icon}
+                                    </div>
+                                    <div class="ai-redirect-text">
+                                        <div class="ai-redirect-title">${pkg.name}</div>
+                                        <div class="ai-redirect-desc">
+                                            <strong>${pkg.duration}</strong> • ${pkg.price} per person<br>
+                                            ${pkg.destinations.join(' → ')}
+                                        </div>
+                                    </div>
+                                    <div class="ai-redirect-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ai-highlight-box">
+                                <strong>Highlights:</strong> ${pkg.highlights.join(' • ')}
+                            </div>
+                            
+                            <div class="ai-tip-box">
+                                <strong>Perfect For:</strong> ${pkg.bestFor}
+                            </div>
+                            
+                            <div class="ai-quick-actions">
+                                <button class="ai-action-btn" data-action="view-package" data-package="${pkg.name.toLowerCase()}">
+                                    <i class="fas fa-external-link-alt"></i> View Full Details
+                                </button>
+                                <button class="ai-action-btn secondary" data-action="customize" data-package="${pkg.name}">
+                                    <i class="fas fa-pencil-alt"></i> Customize This Package
+                                </button>
+                            </div>`,
+                        
+                        serviceInfo: (service) => `
+                            <div class="ai-redirect-card" data-redirect="${service.page}">
+                                <div class="ai-redirect-content">
+                                    <div class="ai-redirect-icon">
+                                        ${service.icon}
+                                    </div>
+                                    <div class="ai-redirect-text">
+                                        <div class="ai-redirect-title">${service.name}</div>
+                                        <div class="ai-redirect-desc">${service.description}</div>
+                                    </div>
+                                    <div class="ai-redirect-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>`,
+                        
+                        itineraryPlan: (days, type, context) => {
+                            const itinerary = this.generateEnhancedItinerary(days, type, context);
+                            return `
+                                <div class="ai-message-header">
+                                    <i class="fas fa-route"></i>
+                                    <h4>🚀 Your ${days}-Day ${type.charAt(0).toUpperCase() + type.slice(1)} Sri Lanka Itinerary</h4>
+                                </div>
+                                
+                                ${itinerary}
+                                
+                                <div class="ai-progress-container">
+                                    <div class="ai-progress-label">
+                                        <span>Itinerary Planning</span>
+                                        <span>100% Complete</span>
+                                    </div>
+                                    <div class="ai-progress-bar">
+                                        <div class="ai-progress-fill" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="ai-smart-hint">
+                                    <div class="ai-hint-title">🎯 Ready to Book?</div>
+                                    <div class="ai-hint-text">
+                                        This itinerary can be customized and booked directly! 
+                                        <button class="ai-action-btn" data-action="book-now" data-itinerary="${type}-${days}days">
+                                            <i class="fas fa-calendar-check"></i> Book This Itinerary
+                                        </button>
+                                    </div>
+                                </div>`;
+                        },
+                        
+                        budgetInfo: (days, budget) => {
+                            const estimates = this.generateBudgetEstimates(days, budget);
+                            return `
+                                <div class="ai-message-header">
+                                    <i class="fas fa-calculator"></i>
+                                    <h4>💰 ${days}-Day Budget Breakdown</h4>
+                                </div>
+                                
+                                <div class="ai-highlight-box">
+                                    Based on <strong>${budget} travel style</strong> for ${days} days in Sri Lanka
+                                </div>
+                                
+                                ${estimates}
+                                
+                                <div class="ai-tip-box">
+                                    <strong>Money-Saving Tips:</strong>
+                                    • Travel during shoulder season (Apr-May, Sep-Oct)
+                                    • Use local transport for short distances
+                                    • Eat at local "rice and curry" restaurants
+                                    • Book activities directly with local operators
+                                </div>
+                                
+                                <div class="ai-quick-actions">
+                                    <button class="ai-action-btn" data-action="packages" data-budget="${budget}">
+                                        <i class="fas fa-search-dollar"></i> Find ${budget} Packages
+                                    </button>
+                                </div>`;
+                        }
+                    };
+                }
 
-            // Initialize image loading
-            galleryImgs.forEach(img => {
-                // Simulate loading effect
-                setTimeout(() => {
-                    img.classList.remove('loading');
-                }, Math.random() * 1000 + 500);
+                generateEnhancedItinerary(days, type, context) {
+                    const itineraries = {
+                        cultural: {
+                            7: `🎎 <strong>7-Day Cultural Heritage Tour</strong>
+                            
+                            <div class="ai-destination-card">
+                                <div class="ai-destination-image">
+                                    <div class="ai-destination-overlay">
+                                        <i class="fas fa-landmark"></i>
+                                    </div>
+                                </div>
+                                <div class="ai-destination-content">
+                                    <div class="ai-destination-title">Days 1-2: Ancient Capitals</div>
+                                    <div class="ai-destination-desc">
+                                        Explore Anuradhapura and Polonnaruwa - Sri Lanka's ancient kingdoms
+                                    </div>
+                                    <div class="ai-destination-tags">
+                                        <span class="ai-tag">UNESCO Sites</span>
+                                        <span class="ai-tag">Historical</span>
+                                        <span class="ai-tag">Photography</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ai-destination-card">
+                                <div class="ai-destination-image">
+                                    <div class="ai-destination-overlay">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                </div>
+                                <div class="ai-destination-content">
+                                    <div class="ai-destination-title">Days 3-4: Sigiriya & Dambulla</div>
+                                    <div class="ai-destination-desc">
+                                        Climb Sigiriya Rock Fortress and visit Dambulla Cave Temples
+                                    </div>
+                                    <div class="ai-destination-tags">
+                                        <span class="ai-tag">Adventure</span>
+                                        <span class="ai-tag">Cultural</span>
+                                        <span class="ai-tag">UNESCO</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ai-destination-card">
+                                <div class="ai-destination-image">
+                                    <div class="ai-destination-overlay">
+                                        <i class="fas fa-temple"></i>
+                                    </div>
+                                </div>
+                                <div class="ai-destination-content">
+                                    <div class="ai-destination-title">Days 5-7: Kandy & Departure</div>
+                                    <div class="ai-destination-desc">
+                                        Experience Kandy's cultural heritage and traditional dance shows
+                                    </div>
+                                    <div class="ai-destination-tags">
+                                        <span class="ai-tag">Culture</span>
+                                        <span class="ai-tag">Nature</span>
+                                        <span class="ai-tag">Religious</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ai-highlight-box">
+                                <strong>Estimated Cost:</strong> $899-$1299 per person<br>
+                                <strong>Best For:</strong> History buffs, culture enthusiasts, first-time visitors
+                            </div>`,
+                            
+                            10: `🎎 <strong>10-Day Complete Cultural Experience</strong>
+                            
+                            <div class="ai-attractive-list">
+                                <div class="ai-list-item">
+                                    <div class="ai-list-icon">
+                                        <i class="fas fa-1"></i>
+                                    </div>
+                                    <div class="ai-list-content">
+                                        <div class="ai-list-title">Days 1-3: Colombo & Negombo</div>
+                                        <div class="ai-list-desc">City tour, shopping, beach relaxation</div>
+                                    </div>
+                                </div>
+                                <div class="ai-list-item">
+                                    <div class="ai-list-icon">
+                                        <i class="fas fa-2"></i>
+                                    </div>
+                                    <div class="ai-list-content">
+                                        <div class="ai-list-title">Days 4-6: Cultural Triangle</div>
+                                        <div class="ai-list-desc">Sigiriya, Polonnaruwa, Dambulla</div>
+                                    </div>
+                                </div>
+                                <div class="ai-list-item">
+                                    <div class="ai-list-icon">
+                                        <i class="fas fa-3"></i>
+                                    </div>
+                                    <div class="ai-list-content">
+                                        <div class="ai-list-title">Days 7-8: Hill Country</div>
+                                        <div class="ai-list-desc">Kandy, tea plantations, cultural shows</div>
+                                    </div>
+                                </div>
+                                <div class="ai-list-item">
+                                    <div class="ai-list-icon">
+                                        <i class="fas fa-4"></i>
+                                    </div>
+                                    <div class="ai-list-content">
+                                        <div class="ai-list-title">Days 9-10: Galle & Departure</div>
+                                        <div class="ai-list-desc">Dutch fort, beaches, shopping</div>
+                                    </div>
+                                </div>
+                            </div>`
+                        },
+                        // Add more itinerary types...
+                    };
+                    
+                    return itineraries[type]?.[days] || itineraries.cultural[7];
+                }
+
+                generateBudgetEstimates(days, budgetType) {
+                    const budgets = {
+                        budget: `
+                            <div class="ai-feature-card">
+                                <div class="ai-feature-header">
+                                    <div class="ai-feature-icon">
+                                        <i class="fas fa-wallet"></i>
+                                    </div>
+                                    <div class="ai-feature-title">Budget Traveler (${days} days)</div>
+                                </div>
+                                <div class="ai-feature-desc">
+                                    • Accommodation: $${15*days}-$${25*days} (guesthouses)<br>
+                                    • Food: $${10*days}-$${15*days} (local eateries)<br>
+                                    • Transport: $${15*days} (bus/train)<br>
+                                    • Activities: $${10*days}<br>
+                                    <strong>Total: $${(50*days).toLocaleString()}-$${(65*days).toLocaleString()}</strong>
+                                </div>
+                            </div>`,
+                        midrange: `
+                            <div class="ai-feature-card">
+                                <div class="ai-feature-header">
+                                    <div class="ai-feature-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="ai-feature-title">Mid-Range Traveler (${days} days)</div>
+                                </div>
+                                <div class="ai-feature-desc">
+                                    • Accommodation: $${40*days}-$${60*days} (3-4 star hotels)<br>
+                                    • Food: $${25*days}-$${35*days} (mix local & restaurants)<br>
+                                    • Transport: $${30*days} (private car)<br>
+                                    • Activities: $${25*days}<br>
+                                    <strong>Total: $${(120*days).toLocaleString()}-$${(150*days).toLocaleString()}</strong>
+                                </div>
+                            </div>`,
+                        luxury: `
+                            <div class="ai-feature-card">
+                                <div class="ai-feature-header">
+                                    <div class="ai-feature-icon">
+                                        <i class="fas fa-crown"></i>
+                                    </div>
+                                    <div class="ai-feature-title">Luxury Traveler (${days} days)</div>
+                                </div>
+                                <div class="ai-feature-desc">
+                                    • Accommodation: $${100*days}+ (5-star/boutique)<br>
+                                    • Food: $${50*days}+ (fine dining)<br>
+                                    • Transport: $${50*days} (private driver+guide)<br>
+                                    • Activities: $${50*days}+<br>
+                                    <strong>Total: $${(250*days).toLocaleString()}+</strong>
+                                </div>
+                            </div>`
+                    };
+                    
+                    return budgets[budgetType] || budgets.midrange;
+                }
+
+                processEnhancedQuery(query, context) {
+                    const normalizedQuery = query.toLowerCase();
+                    this.updateUserContext(normalizedQuery, context);
+                    
+                    const intent = this.detectEnhancedIntent(normalizedQuery);
+                    
+                    return this.generateEnhancedResponse(intent, normalizedQuery, context);
+                }
+
+                detectEnhancedIntent(query) {
+                    if (query.includes('itinerary') || query.includes('plan') || query.includes('schedule')) {
+                        return 'itinerary';
+                    } else if (query.includes('package') || query.includes('tour')) {
+                        return 'packages';
+                    } else if (query.includes('service')) {
+                        return 'services';
+                    } else if (query.includes('cost') || query.includes('price') || query.includes('budget')) {
+                        return 'budget';
+                    } else if (query.includes('kandy') || query.includes('ella') || query.includes('galle') || 
+                             query.includes('sigiriya') || query.includes('nuwara eliya') || query.includes('yala') ||
+                             query.includes('mirissa') || query.includes('arugam bay')) {
+                        return 'destination';
+                    } else if (this.isGreeting(query)) {
+                        return 'greeting';
+                    } else if (query.includes('book') || query.includes('reserve')) {
+                        return 'booking';
+                    } else {
+                        return 'general';
+                    }
+                }
+
+                updateUserContext(query, context) {
+                    // Extract destination mentions
+                    const destinations = Object.keys(this.knowledgeBase.destinations);
+                    destinations.forEach(dest => {
+                        if (query.includes(dest.toLowerCase()) && !context.viewedDestinations.includes(dest)) {
+                            context.viewedDestinations.push(dest);
+                        }
+                    });
+                    
+                    return context;
+                }
+
+                generateEnhancedResponse(intent, query, context) {
+                    switch(intent) {
+                        case 'greeting':
+                            return this.responseTemplates.greeting[Math.floor(Math.random() * this.responseTemplates.greeting.length)];
+                        
+                        case 'destination':
+                            const destinationName = this.extractDestinationName(query);
+                            const destination = this.knowledgeBase.destinations[destinationName];
+                            if (destination) {
+                                return this.responseTemplates.destinationInfo(destination);
+                            }
+                            break;
+                        
+                        case 'packages':
+                            return this.generatePackageResponse(query);
+                        
+                        case 'services':
+                            return this.generateServiceResponse(query);
+                        
+                        case 'itinerary':
+                            return this.generateItineraryResponse(query, context);
+                        
+                        case 'budget':
+                            return this.generateBudgetResponse(query);
+                        
+                        case 'booking':
+                            return this.generateBookingResponse();
+                        
+                        default:
+                            return this.generateSmartHintResponse(query);
+                    }
+                    
+                    return this.generateFallbackResponse();
+                }
+
+                extractDestinationName(query) {
+                    const destinations = Object.keys(this.knowledgeBase.destinations);
+                    for (let dest of destinations) {
+                        if (query.includes(dest.toLowerCase())) {
+                            return dest;
+                        }
+                    }
+                    return 'kandy'; // Default
+                }
+
+                generatePackageResponse(query) {
+                    const packages = Object.values(this.knowledgeBase.packages);
+                    let response = `<div class="ai-message-header">
+                        <i class="fas fa-suitcase"></i>
+                        <h4>🎒 Our Popular Tour Packages</h4>
+                    </div>
+                    
+                    <div class="ai-highlight-box">
+                        Choose from our carefully curated packages or let me customize one for you!
+                    </div>`;
+                    
+                    packages.forEach(pkg => {
+                        response += this.responseTemplates.packageInfo(pkg);
+                    });
+                    
+                    response += `<div class="ai-smart-hint">
+                        <div class="ai-hint-title">💡 Want to customize?</div>
+                        <div class="ai-hint-text">
+                            Tell me your preferences and I'll create a personalized package just for you!
+                            <button class="ai-action-btn" data-action="custom-package">
+                                <i class="fas fa-magic"></i> Create Custom Package
+                            </button>
+                        </div>
+                    </div>`;
+                    
+                    return response;
+                }
+
+                generateServiceResponse(query) {
+                    const services = Object.values(this.knowledgeBase.services);
+                    let response = `<div class="ai-message-header">
+                        <i class="fas fa-concierge-bell"></i>
+                        <h4>🛎️ Our Premium Services</h4>
+                    </div>
+                    
+                    <div class="ai-highlight-box">
+                        We offer comprehensive travel services to make your Sri Lanka trip perfect!
+                    </div>`;
+                    
+                    services.forEach(service => {
+                        response += this.responseTemplates.serviceInfo(service);
+                    });
+                    
+                    return response;
+                }
+
+                generateItineraryResponse(query, context) {
+                    const daysMatch = query.match(/\b(\d+)\s*(?:day|days)\b/i);
+                    const days = daysMatch ? parseInt(daysMatch[1]) : 7;
+                    
+                    let type = 'cultural';
+                    if (query.includes('beach')) type = 'beach';
+                    else if (query.includes('adventure')) type = 'adventure';
+                    else if (query.includes('luxury')) type = 'luxury';
+                    
+                    return this.responseTemplates.itineraryPlan(days, type, context);
+                }
+
+                generateBudgetResponse(query) {
+                    const daysMatch = query.match(/\b(\d+)\s*(?:day|days)\b/i);
+                    const days = daysMatch ? parseInt(daysMatch[1]) : 7;
+                    
+                    let budget = 'midrange';
+                    if (query.includes('budget') || query.includes('cheap')) budget = 'budget';
+                    else if (query.includes('luxury') || query.includes('premium')) budget = 'luxury';
+                    
+                    return this.responseTemplates.budgetInfo(days, budget);
+                }
+
+                generateBookingResponse() {
+                    return `<div class="ai-redirect-card" data-redirect="booking.html">
+                        <div class="ai-redirect-content">
+                            <div class="ai-redirect-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="ai-redirect-text">
+                                <div class="ai-redirect-title">Ready to Book Your Adventure?</div>
+                                <div class="ai-redirect-desc">
+                                    Click here to proceed to our secure booking page
+                                </div>
+                            </div>
+                            <div class="ai-redirect-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-smart-hint">
+                        <div class="ai-hint-title">🎯 Need Help Booking?</div>
+                        <div class="ai-hint-text">
+                            Our human travel consultants are available on WhatsApp to assist you!
+                            <button class="ai-action-btn" data-action="whatsapp">
+                                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                            </button>
+                        </div>
+                    </div>`;
+                }
+
+                generateSmartHintResponse(query) {
+                    const hints = [
+                        `🎯 <strong>Looking for something specific?</strong>
+                        
+                        <div class="ai-smart-hint">
+                            <div class="ai-hint-title">💡 Try asking me about:</div>
+                            <div class="ai-hint-suggestions">
+                                <div class="ai-hint-suggestion" data-hint="kandy">Kandy attractions</div>
+                                <div class="ai-hint-suggestion" data-hint="best time">Best time to visit</div>
+                                <div class="ai-hint-suggestion" data-hint="food">Local food to try</div>
+                                <div class="ai-hint-suggestion" data-hint="family">Family activities</div>
+                            </div>
+                        </div>`,
+                        
+                        `✨ <strong>Let me help you discover Sri Lanka!</strong>
+                        
+                        <div class="ai-quick-actions">
+                            <button class="ai-action-btn" data-action="packages">
+                                <i class="fas fa-suitcase"></i> View Packages
+                            </button>
+                            <button class="ai-action-btn secondary" data-action="services">
+                                <i class="fas fa-concierge-bell"></i> Our Services
+                            </button>
+                            <button class="ai-action-btn" data-action="destinations">
+                                <i class="fas fa-map-marked-alt"></i> Top Destinations
+                            </button>
+                        </div>
+                        
+                        <div class="ai-tip-box">
+                            <strong>Pro Tip:</strong> You can also ask about specific destinations you saw in our gallery!
+                        </div>`
+                    ];
+                    
+                    return hints[Math.floor(Math.random() * hints.length)];
+                }
+
+                generateFallbackResponse() {
+                    return `<div class="ai-message-header">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>🤔 Let me help you better!</h4>
+                    </div>
+                    
+                    <div class="ai-message-content">
+                        <p>I want to make sure I give you the best advice! Could you tell me more about what you're looking for?</p>
+                        
+                        <div class="ai-quick-suggestions">
+                            <div class="ai-quick-suggestion" data-suggestion="packages">Tour packages</div>
+                            <div class="ai-quick-suggestion" data-suggestion="destinations">Destinations</div>
+                            <div class="ai-quick-suggestion" data-suggestion="budget">Budget planning</div>
+                            <div class="ai-quick-suggestion" data-suggestion="booking">How to book</div>
+                        </div>
+                    </div>`;
+                }
+
+                isGreeting(query) {
+                    const greetings = ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'namaste'];
+                    return greetings.some(greeting => query.includes(greeting));
+                }
+            }
+
+            // Initialize Enhanced AI Assistant
+            const enhancedAI = new EnhancedAITravelAssistant();
+
+            // Initialize AI Chat
+            function initAIChat() {
+                aiChatNotification.style.display = 'flex';
+            }
+
+            // Toggle AI Chat Window
+            aiChatbotToggle.addEventListener('click', () => {
+                isAiChatOpen = !isAiChatOpen;
+                aiChatbotWindow.classList.toggle('active', isAiChatOpen);
+                
+                if (isAiChatOpen) {
+                    aiChatNotification.style.display = 'none';
+                    aiChatInput.focus();
+                    
+                    // Add welcome message if first time
+                    if (conversationHistory.length === 0) {
+                        const welcomeMessage = enhancedAI.responseTemplates.greeting[0];
+                        sendEnhancedAIMessage(welcomeMessage, false);
+                        conversationHistory.push({ role: 'assistant', content: welcomeMessage });
+                    }
+                }
             });
 
-            // Open lightbox function
-            function openLightbox(index) {
-                currentIndex = index;
-                isLightboxOpen = true;
-                document.body.style.overflow = 'hidden';
+            // Close AI Chat Window
+            aiChatbotClose.addEventListener('click', () => {
+                isAiChatOpen = false;
+                aiChatbotWindow.classList.remove('active');
+            });
+
+            // Send Enhanced AI Message
+            function sendEnhancedAIMessage(message, isUser = true) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `ai-message ${isUser ? 'ai-user-message' : 'ai-bot-message'}`;
                 
-                // Show loading spinner
-                lightboxSpinner.style.display = 'block';
-                lightboxImage.classList.remove('loaded');
+                const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
                 
-                // Update lightbox content
-                const imageData = galleryImages[index];
-                lightboxImage.src = imageData.src;
-                lightboxTitle.textContent = imageData.title;
-                lightboxLocation.textContent = imageData.location;
-                lightboxCounter.textContent = `${index + 1} / ${galleryImages.length}`;
+                if (isUser) {
+                    messageDiv.innerHTML = `
+                        ${message}
+                        <div class="ai-message-time">${time}</div>
+                    `;
+                } else {
+                    messageDiv.innerHTML = `
+                        <div class="ai-typing-text">${message}</div>
+                        <div class="ai-message-time">${time}</div>
+                    `;
+                }
                 
-                // Show lightbox with animation
-                setTimeout(() => {
-                    lightboxModal.classList.add('active');
-                }, 10);
+                aiChatMessages.appendChild(messageDiv);
+                aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
                 
-                // Preload next and previous images
-                preloadAdjacentImages(index);
+                // Trigger typing animation
+                if (!isUser) {
+                    setTimeout(() => {
+                        const typingText = messageDiv.querySelector('.ai-typing-text');
+                        if (typingText) {
+                            typingText.style.animation = 'aiTypewriter 0.5s steps(40, end) forwards';
+                            
+                            // Add event listeners to interactive elements
+                            addEventListenersToMessage(messageDiv);
+                        }
+                    }, 100);
+                }
             }
 
-            // Close lightbox function
-            function closeLightbox() {
-                isLightboxOpen = false;
-                document.body.style.overflow = '';
-                lightboxModal.classList.remove('active');
-            }
-
-            // Navigate to next image
-            function nextImage() {
-                currentIndex = (currentIndex + 1) % galleryImages.length;
-                openLightbox(currentIndex);
-            }
-
-            // Navigate to previous image
-            function prevImage() {
-                currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-                openLightbox(currentIndex);
-            }
-
-            // Preload adjacent images for smoother navigation
-            function preloadAdjacentImages(index) {
-                const nextIndex = (index + 1) % galleryImages.length;
-                const prevIndex = (index - 1 + galleryImages.length) % galleryImages.length;
+            // Add event listeners to interactive elements
+            function addEventListenersToMessage(messageDiv) {
+                // Quick actions
+                messageDiv.querySelectorAll('.ai-action-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const action = btn.getAttribute('data-action');
+                        handleAIAction(action, btn);
+                    });
+                });
                 
-                const preloadImages = [];
-                preloadImages.push(galleryImages[nextIndex].src);
-                preloadImages.push(galleryImages[prevIndex].src);
+                // Quick suggestions
+                messageDiv.querySelectorAll('.ai-quick-suggestion, .ai-hint-suggestion').forEach(suggestion => {
+                    suggestion.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const suggestionText = suggestion.getAttribute('data-suggestion') || 
+                                              suggestion.getAttribute('data-hint') ||
+                                              suggestion.textContent;
+                        handleAISuggestion(suggestionText);
+                    });
+                });
                 
-                preloadImages.forEach(src => {
-                    const img = new Image();
-                    img.src = src;
+                // Redirect cards
+                messageDiv.querySelectorAll('.ai-redirect-card').forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const redirectPage = card.getAttribute('data-redirect');
+                        if (redirectPage) {
+                            window.location.href = redirectPage;
+                        }
+                    });
+                });
+                
+                // Feature cards
+                messageDiv.querySelectorAll('.ai-feature-card').forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const destination = card.getAttribute('data-destination');
+                        if (destination) {
+                            handleAISuggestion(`Tell me about ${destination}`);
+                        }
+                    });
                 });
             }
 
-            // Event Listeners
-            // Gallery item click
-            galleryItems.forEach((item, index) => {
+            // Handle AI Actions
+            function handleAIAction(action, element) {
+                switch(action) {
+                    case 'packages':
+                        sendEnhancedAIMessage("Show me your tour packages", true);
+                        setTimeout(() => {
+                            const response = enhancedAI.generatePackageResponse();
+                            sendEnhancedAIMessage(response, false);
+                        }, 800);
+                        break;
+                    
+                    case 'services':
+                        sendEnhancedAIMessage("What services do you offer?", true);
+                        setTimeout(() => {
+                            const response = enhancedAI.generateServiceResponse();
+                            sendEnhancedAIMessage(response, false);
+                        }, 800);
+                        break;
+                    
+                    case 'book-now':
+                        const itinerary = element.getAttribute('data-itinerary');
+                        window.location.href = `booking.html?itinerary=${itinerary}`;
+                        break;
+                    
+                    case 'whatsapp':
+                        window.open('https://wa.me/94763661600', '_blank');
+                        break;
+                    
+                    case 'view-package':
+                        const pkg = element.getAttribute('data-package');
+                        window.location.href = `packages.html#${pkg}`;
+                        break;
+                    
+                    case 'custom-package':
+                        sendEnhancedAIMessage("I want a custom package", true);
+                        setTimeout(() => {
+                            const response = `<div class="ai-redirect-card" data-redirect="contact.html">
+                                <div class="ai-redirect-content">
+                                    <div class="ai-redirect-icon">
+                                        <i class="fas fa-magic"></i>
+                                    </div>
+                                    <div class="ai-redirect-text">
+                                        <div class="ai-redirect-title">Custom Package Request</div>
+                                        <div class="ai-redirect-desc">
+                                            Our travel experts will create a personalized itinerary just for you!
+                                        </div>
+                                    </div>
+                                    <div class="ai-redirect-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ai-tip-box">
+                                <strong>Next Steps:</strong> 
+                                Fill out our contact form with your preferences, and our team will get back to you within 24 hours!
+                            </div>`;
+                            sendEnhancedAIMessage(response, false);
+                        }, 800);
+                        break;
+                    
+                    case 'view-gallery':
+                        const destination = element.getAttribute('data-destination');
+                        // Scroll to gallery section
+                        document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth' });
+                        break;
+                    
+                    default:
+                        console.log('Action:', action);
+                }
+            }
+
+            // Handle AI Suggestions
+            function handleAISuggestion(suggestion) {
+                sendEnhancedAIMessage(suggestion, true);
+                conversationHistory.push({ role: 'user', content: suggestion });
+                
+                // Show typing indicator
+                const typingIndicator = document.createElement('div');
+                typingIndicator.className = 'ai-typing-indicator';
+                typingIndicator.innerHTML = `
+                    <div class="ai-typing-dot"></div>
+                    <div class="ai-typing-dot"></div>
+                    <div class="ai-typing-dot"></div>
+                `;
+                aiChatMessages.appendChild(typingIndicator);
+                aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+
+                setTimeout(() => {
+                    typingIndicator.remove();
+                    
+                    const aiResponse = enhancedAI.processEnhancedQuery(suggestion, userContext);
+                    sendEnhancedAIMessage(aiResponse, false);
+                    
+                    conversationHistory.push({ role: 'assistant', content: aiResponse });
+                    userContext = enhancedAI.updateUserContext(suggestion, userContext);
+                    
+                    saveConversation();
+                }, 800 + Math.random() * 1200);
+            }
+
+            // Handle User Message
+            function handleAIUserMessage() {
+                const message = aiChatInput.value.trim();
+                if (!message) return;
+
+                sendEnhancedAIMessage(message, true);
+                conversationHistory.push({ role: 'user', content: message });
+                aiChatInput.value = '';
+                
+                // Show AI typing indicator
+                const typingIndicator = document.createElement('div');
+                typingIndicator.className = 'ai-typing-indicator';
+                typingIndicator.innerHTML = `
+                    <div class="ai-typing-dot"></div>
+                    <div class="ai-typing-dot"></div>
+                    <div class="ai-typing-dot"></div>
+                `;
+                aiChatMessages.appendChild(typingIndicator);
+                aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+
+                setTimeout(() => {
+                    typingIndicator.remove();
+                    
+                    const aiResponse = enhancedAI.processEnhancedQuery(message, userContext);
+                    sendEnhancedAIMessage(aiResponse, false);
+                    
+                    conversationHistory.push({ role: 'assistant', content: aiResponse });
+                    userContext = enhancedAI.updateUserContext(message, userContext);
+                    
+                    saveConversation();
+                }, 800 + Math.random() * 1200);
+            }
+
+            // Save conversation
+            function saveConversation() {
+                localStorage.setItem('enhancedAIConversation', JSON.stringify({
+                    history: conversationHistory.slice(-10), // Keep last 10 messages
+                    context: userContext,
+                    timestamp: new Date().toISOString()
+                }));
+            }
+
+            // Load conversation
+            function loadConversation() {
+                const saved = localStorage.getItem('enhancedAIConversation');
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    conversationHistory = data.history || [];
+                    userContext = data.context || {};
+                    
+                    // Restore conversation
+                    conversationHistory.forEach(msg => {
+                        sendEnhancedAIMessage(msg.content, msg.role === 'user');
+                    });
+                }
+            }
+
+            // Send button click
+            aiChatSend.addEventListener('click', handleAIUserMessage);
+
+            // Enter key in input
+            aiChatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    handleAIUserMessage();
+                }
+            });
+
+            // Handle suggestion clicks
+            aiSuggestionItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const suggestion = item.getAttribute('data-suggestion') || 
+                                      item.getAttribute('data-hint') ||
+                                      item.textContent;
+                    handleAISuggestion(suggestion);
+                });
+            });
+
+            // ================= GALLERY INTEGRATION =================
+            // When user views gallery items, suggest asking AI about them
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const title = this.querySelector('.gallery-item-title').textContent;
+                    
+                    // Track viewed destination
+                    const destination = enhancedAI.extractDestinationName(title.toLowerCase());
+                    if (destination && !userContext.viewedDestinations.includes(destination)) {
+                        userContext.viewedDestinations.push(destination);
+                    }
+                    
+                    // Suggest asking about this destination
+                    setTimeout(() => {
+                        if (isAiChatOpen) {
+                            const suggestion = `<div class="ai-smart-hint">
+                                <div class="ai-hint-title">✨ Just Viewed: ${title}</div>
+                                <div class="ai-hint-text">
+                                    Want to know more about visiting ${title}?
+                                    <button class="ai-action-btn" data-action="destination-info" data-destination="${destination}">
+                                        <i class="fas fa-info-circle"></i> Tell me about ${title}
+                                    </button>
+                                </div>
+                            </div>`;
+                            sendEnhancedAIMessage(suggestion, false);
+                        }
+                    }, 3000);
+                });
+            });
+
+            // ================= GALLERY FUNCTIONALITY =================
+            const lightboxModal = document.getElementById('lightboxModal');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxTitle = document.getElementById('lightboxTitle');
+            const lightboxLocation = document.getElementById('lightboxLocation');
+            const lightboxCounter = document.getElementById('lightboxCounter');
+            const lightboxClose = document.getElementById('lightboxClose');
+            const lightboxSpinner = document.getElementById('lightboxSpinner');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const viewMoreButtons = document.querySelectorAll('.view-more-btn');
+
+            let currentImageIndex = 0;
+            const totalImages = galleryItems.length;
+            const imagesData = [];
+
+            // Preload images data
+            galleryItems.forEach(item => {
+                const img = item.querySelector('img');
+                imagesData.push({
+                    src: img.src,
+                    alt: img.alt,
+                    title: img.dataset.title,
+                    location: img.dataset.location,
+                    index: parseInt(item.dataset.index)
+                });
+            });
+
+            // Remove loading class once images are loaded
+            document.querySelectorAll('.gallery-img').forEach(img => {
+                if (img.complete) {
+                    img.classList.remove('loading');
+                } else {
+                    img.addEventListener('load', function() {
+                        this.classList.remove('loading');
+                    });
+                    img.addEventListener('error', function() {
+                        this.classList.remove('loading');
+                        this.src = 'img/placeholder.jpg';
+                    });
+                }
+            });
+
+            // Gallery item click handler
+            galleryItems.forEach(item => {
                 item.addEventListener('click', (e) => {
                     if (!e.target.closest('.view-more-btn')) {
-                        openLightbox(index);
+                        openLightbox(parseInt(item.dataset.index) - 1);
                     }
                 });
             });
 
-            // View more button click
-            viewMoreBtns.forEach((btn, index) => {
+            // View more button click handler
+            viewMoreButtons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    openLightbox(index);
+                    openLightbox(parseInt(btn.dataset.index) - 1);
                 });
             });
 
-            // Lightbox controls
-            lightboxClose.addEventListener('click', closeLightbox);
-            prevBtn.addEventListener('click', prevImage);
-            nextBtn.addEventListener('click', nextImage);
+            // Open lightbox with specific image
+            function openLightbox(index) {
+                currentImageIndex = index;
+                updateLightboxContent();
+                lightboxModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                document.addEventListener('keydown', handleKeyboardNavigation);
+            }
+
+            // Update lightbox content
+            function updateLightboxContent() {
+                const data = imagesData[currentImageIndex];
+                
+                lightboxSpinner.style.display = 'block';
+                lightboxImage.classList.remove('loaded');
+                
+                lightboxImage.src = data.src;
+                lightboxImage.alt = data.alt;
+                
+                lightboxTitle.textContent = data.title;
+                lightboxLocation.querySelector('span').textContent = data.location;
+                lightboxCounter.textContent = `${currentImageIndex + 1} / ${totalImages}`;
+                
+                lightboxImage.onload = function() {
+                    lightboxSpinner.style.display = 'none';
+                    this.classList.add('loaded');
+                };
+                
+                lightboxImage.onerror = function() {
+                    lightboxSpinner.style.display = 'none';
+                    this.src = 'img/placeholder.jpg';
+                    this.classList.add('loaded');
+                };
+            }
+
+            // Close lightbox
+            function closeLightbox() {
+                lightboxModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                document.removeEventListener('keydown', handleKeyboardNavigation);
+            }
+
+            // Navigate to previous image
+            function showPreviousImage() {
+                currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+                updateLightboxContent();
+            }
+
+            // Navigate to next image
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % totalImages;
+                updateLightboxContent();
+            }
 
             // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (!isLightboxOpen) return;
-                
+            function handleKeyboardNavigation(e) {
                 switch(e.key) {
                     case 'Escape':
                         closeLightbox();
                         break;
                     case 'ArrowLeft':
-                        prevImage();
+                        showPreviousImage();
                         break;
                     case 'ArrowRight':
-                        nextImage();
+                        showNextImage();
                         break;
                 }
-            });
+            }
 
-            // Lightbox image load event
-            lightboxImage.addEventListener('load', () => {
-                lightboxSpinner.style.display = 'none';
-                setTimeout(() => {
-                    lightboxImage.classList.add('loaded');
-                }, 100);
-            });
+            // Event listeners for lightbox controls
+            lightboxClose.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', showPreviousImage);
+            nextBtn.addEventListener('click', showNextImage);
 
-            // Lightbox image error handling
-            lightboxImage.addEventListener('error', () => {
-                lightboxSpinner.style.display = 'none';
-                lightboxImage.src = 'img/placeholder.jpg';
-                lightboxImage.alt = 'Image not available';
-            });
-
-            // Close lightbox when clicking outside image
+            // Close lightbox when clicking outside the image
             lightboxModal.addEventListener('click', (e) => {
                 if (e.target === lightboxModal) {
                     closeLightbox();
                 }
             });
 
-            // Initialize gallery items with hover effects
-            galleryItems.forEach(item => {
-                item.addEventListener('mouseenter', () => {
-                    item.style.zIndex = '10';
-                });
+            // Initialize AI Chat
+            initAIChat();
+            loadConversation();
+
+            // Auto-open AI chat after 3 seconds
+            setTimeout(() => {
+                if (!isAiChatOpen && !sessionStorage.getItem('aiChatShown')) {
+                    aiChatbotToggle.click();
+                    sessionStorage.setItem('aiChatShown', 'true');
+                }
+            }, 3000);
+
+            // Spinner functionality
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    document.getElementById('spinner').style.display = 'none';
+                }, 500);
+            });
+
+            // Subscribe form functionality
+            document.querySelector('.subscribe button').addEventListener('click', function() {
+                const emailInput = document.querySelector('.subscribe input');
+                const email = emailInput.value.trim();
                 
-                item.addEventListener('mouseleave', () => {
-                    item.style.zIndex = '1';
-                });
+                if (email && validateEmail(email)) {
+                    this.textContent = 'Subscribed!';
+                    this.style.background = '#28a745';
+                    
+                    setTimeout(() => {
+                        this.textContent = 'Subscribe';
+                        this.style.background = '';
+                        emailInput.value = '';
+                    }, 2000);
+                    
+                    console.log('Subscribed email:', email);
+                } else {
+                    emailInput.style.borderColor = '#dc3545';
+                    setTimeout(() => {
+                        emailInput.style.borderColor = '';
+                    }, 2000);
+                }
             });
 
-            // Preload all gallery images
-            galleryImages.forEach(imageData => {
-                const img = new Image();
-                img.src = imageData.src;
-            });
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
 
-            // Smooth scroll for gallery items
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'perspective(1000px) rotateY(0) scale(1)';
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
                     }
                 });
-            }, observerOptions);
+            });
 
-            galleryItems.forEach(item => observer.observe(item));
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    navbar.style.background = '';
+                    navbar.style.boxShadow = '';
+                }
+            });
+
+            // AI Chat auto-suggest based on page content
+            setTimeout(() => {
+                if (!sessionStorage.getItem('aiGalleryHintShown')) {
+                    const galleryHint = `<div class="ai-smart-hint">
+                        <div class="ai-hint-title">🎨 Gallery Explorer</div>
+                        <div class="ai-hint-text">
+                            I see you're exploring our Sri Lanka gallery! 
+                            Ask me about any destination you see for detailed information and travel tips!
+                        </div>
+                        <div class="ai-hint-suggestions">
+                            <div class="ai-hint-suggestion" data-hint="kandy">Tell me about Kandy</div>
+                            <div class="ai-hint-suggestion" data-hint="ella">What's in Ella?</div>
+                            <div class="ai-hint-suggestion" data-hint="best">Best photo spots</div>
+                        </div>
+                    </div>`;
+                    
+                    if (isAiChatOpen) {
+                        sendEnhancedAIMessage(galleryHint, false);
+                    }
+                    sessionStorage.setItem('aiGalleryHintShown', 'true');
+                }
+            }, 5000);
         });
     </script>
-</body>
 
+</body>
 </html>
