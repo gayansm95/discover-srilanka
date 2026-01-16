@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Discover Sri Lanka</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+<head>
+    <meta charset="utf-8">
+    <title>Discover Sri Lanka</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-        
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <style>
-            /* WhatsApp Floating Button with Pulse Animation */
-            .whatsapp-float {
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* WhatsApp Floating Button with Pulse Animation */
+        .whatsapp-float {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -42,29 +42,31 @@
             z-index: 1000;
             animation: whatsapp-pulse 1.8s infinite;
             text-decoration: none;
-            }
+        }
 
-            /* Hover effect */
-            .whatsapp-float:hover {
+        /* Hover effect */
+        .whatsapp-float:hover {
             transform: scale(1.1);
             transition: 0.3s ease;
-            }
+        }
 
-            /* Pulse animation */
-            @keyframes whatsapp-pulse {
+        /* Pulse animation */
+        @keyframes whatsapp-pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
+
             70% {
                 box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
             }
+
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
-            }
+        }
 
-            /* Mobile responsive */
-            @media (max-width: 768px) {
+        /* Mobile responsive */
+        @media (max-width: 768px) {
             .whatsapp-float {
                 width: 70px;
                 height: 70px;
@@ -73,1202 +75,1961 @@
                 bottom: 15px;
                 right: 15px;
             }
+        }
+
+        /* ================= ENHANCED SERVICES SECTION ================= */
+        .services-premium-section {
+            background: linear-gradient(135deg, #ffffff 100%, #ffffff 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-premium-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(67, 97, 238, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(76, 201, 240, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(247, 37, 133, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .section-title-wrapper {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #1c047b;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #1c047b, #1c047b);
+            border-radius: 2px;
+        }
+
+        .section-main-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ffffff, #1c047b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: #1c047b;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Service Showcase Container */
+        .service-showcase-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Featured Main Service */
+        .service-featured-main {
+            position: relative;
+            height: 500px;
+            border-radius: 25px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transform: perspective(1000px) rotateX(15deg) translateY(100px);
+            animation: featuredCardEntry 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes featuredCardEntry {
+            to {
+                opacity: 1;
+                transform: perspective(1000px) rotateX(0) translateY(0);
+            }
+        }
+
+        .service-featured-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('./img/pkg-cultural-tringle-sigiriya.jpg');
+            background-size: cover;
+            background-position: center;
+            transition: transform 1.5s ease;
+        }
+
+        .service-featured-main:hover .service-featured-bg {
+            transform: scale(1.1);
+        }
+
+        .service-featured-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 50px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            z-index: 2;
+            clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUpContent 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+        }
+
+        @keyframes slideUpContent {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .featured-service-tag {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(90deg, #4361ee, #4cc9f0);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            transform: scale(0);
+            animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.9s forwards;
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
             }
 
-            /* ================= ENHANCED SERVICES SECTION ================= */
-            .services-premium-section {
-                background: linear-gradient(135deg, #ffffff 100%, #ffffff 100%);
-                padding: 100px 0;
-                position: relative;
-                overflow: hidden;
-            }
-
-            .services-premium-section::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: 
-                    radial-gradient(circle at 20% 30%, rgba(67, 97, 238, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 70%, rgba(76, 201, 240, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 40% 80%, rgba(247, 37, 133, 0.1) 0%, transparent 50%);
-                pointer-events: none;
-            }
-
-            .section-title-wrapper {
-                text-align: center;
-                margin-bottom: 70px;
-                position: relative;
-                z-index: 2;
-            }
-
-            .section-subtitle {
-                font-size: 18px;
-                color: #1c047b;
-                font-weight: 500;
-                letter-spacing: 2px;
-                margin-bottom: 15px;
-                text-transform: uppercase;
-                position: relative;
-                display: inline-block;
-            }
-
-            .section-subtitle::after {
-                content: '';
-                position: absolute;
-                bottom: -8px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 60px;
-                height: 3px;
-                background: linear-gradient(90deg, #1c047b, #1c047b);
-                border-radius: 2px;
-            }
-
-            .section-main-title {
-                font-size: 48px;
-                font-weight: 700;
-                color: white;
-                margin-bottom: 20px;
-                background: linear-gradient(90deg, #ffffff, #1c047b);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-
-            .section-description {
-                font-size: 18px;
-                color: #1c047b;
-                max-width: 700px;
-                margin: 0 auto;
-                line-height: 1.6;
-            }
-
-            /* Service Showcase Container */
-            .service-showcase-container {
-                position: relative;
-                z-index: 2;
-            }
-
-            /* Featured Main Service */
-            .service-featured-main {
-                position: relative;
-                height: 500px;
-                border-radius: 25px;
-                overflow: hidden;
-                margin-bottom: 50px;
-                box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-            }
-
-            .service-featured-bg {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('./img/pkg-cultural-tringle-sigiriya.jpg');
-                background-size: cover;
-                background-position: center;
-                transition: transform 1.5s ease;
-            }
-
-            .service-featured-main:hover .service-featured-bg {
-                transform: scale(1.1);
-            }
-
-            .service-featured-content {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                padding: 50px;
-                background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-                z-index: 2;
-            }
-
-            .featured-service-tag {
-                display: inline-block;
-                padding: 10px 25px;
-                background: linear-gradient(90deg, #4361ee, #4cc9f0);
-                color: white;
-                border-radius: 50px;
-                font-weight: 600;
-                font-size: 14px;
-                letter-spacing: 1px;
-                margin-bottom: 20px;
-            }
-
-            .featured-service-title {
-                font-size: 42px;
-                font-weight: 700;
-                color: white;
-                margin-bottom: 15px;
-                line-height: 1.2;
-            }
-
-            .featured-service-desc {
-                font-size: 18px;
-                color: #b8c1ec;
-                margin-bottom: 25px;
-                max-width: 600px;
-                line-height: 1.6;
-            }
-
-            .featured-service-cta {
-                display: inline-flex;
-                align-items: center;
-                gap: 10px;
-                padding: 15px 35px;
-                background: linear-gradient(90deg, #f72585, #b5179e);
-                color: white;
-                border-radius: 50px;
-                font-weight: 600;
-                font-size: 16px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                box-shadow: 0 10px 30px rgba(247, 37, 133, 0.3);
-            }
-
-            .featured-service-cta:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 15px 40px rgba(247, 37, 133, 0.4);
-                color: white;
-            }
-
-            /* FIXED SERVICE CARDS */
-            .services-grid-container {
-                position: relative;
-                z-index: 2;
-                margin: 60px 0;
-            }
-
-            .services-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
-            }
-
-            @media (max-width: 992px) {
-                .services-grid {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-            }
-
-            @media (max-width: 768px) {
-                .services-grid {
-                    grid-template-columns: 1fr;
-                }
-            }
-
-            .service-card {
-                position: relative;
-                height: 380px;
-                border-radius: 20px;
-                overflow: hidden;
-                background: #000;
-                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                cursor: pointer;
-                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            }
-
-            .service-card:hover {
-                transform: translateY(-15px) scale(1.02);
-                box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
-            }
-
-            .service-card-bg {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background-size: cover;
-                background-position: center;
-                transition: transform 1.2s ease;
-                filter: brightness(0.8);
-            }
-
-            .service-card:hover .service-card-bg {
-                transform: scale(1.15);
-                filter: brightness(1);
-            }
-
-            /* Different background images for each card */
-            .service-card:nth-child(1) .service-card-bg {
-                background-image: linear-gradient(rgba(10, 36, 114, 0.7), rgba(10, 36, 114, 0.7)), url('./img/blog-card-daladamaligawa.jpg');
-            }
-            
-            .service-card:nth-child(2) .service-card-bg {
-                background-image: linear-gradient(rgba(67, 97, 238, 0.7), rgba(67, 97, 238, 0.7)), url('./img/14-day-tour-srilanka.jpg');
-            }
-            
-            .service-card:nth-child(3) .service-card-bg {
-                background-image: linear-gradient(rgba(247, 37, 133, 0.7), rgba(247, 37, 133, 0.7)), url('./img/kandy-package-card.jpeg');
-            }
-            
-            .service-card:nth-child(4) .service-card-bg {
-                background-image: linear-gradient(rgba(0, 180, 216, 0.7), rgba(0, 180, 216, 0.7)), url('./img/anuradhapura.jpg');
-            }
-            
-            .service-card:nth-child(5) .service-card-bg {
-                background-image: linear-gradient(rgba(255, 89, 94, 0.7), rgba(255, 89, 94, 0.7)), url('./img/14-day-tour-srilanka-ella.jpg');
-            }
-            
-            .service-card:nth-child(6) .service-card-bg {
-                background-image: linear-gradient(rgba(118, 209, 105, 0.7), rgba(118, 209, 105, 0.7)), url('./img/sigiriya.jpeg');
-            }
-
-            .service-card-content {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                padding: 30px;
-                background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-                z-index: 2;
-            }
-
-            .service-icon {
-                font-size: 40px;
-                color: white;
-                margin-bottom: 15px;
-                text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-                transition: transform 0.3s ease;
-            }
-
-            .service-card:hover .service-icon {
+            50% {
                 transform: scale(1.2);
             }
 
-            .service-card-title {
-                font-size: 24px;
-                font-weight: 700;
-                color: white;
-                margin-bottom: 10px;
-                line-height: 1.3;
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .featured-service-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            animation: typewriterTitle 1.5s steps(40) 1.1s forwards, blinkCursor 0.75s step-end infinite 2.6s;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #4cc9f0;
+        }
+
+        @keyframes typewriterTitle {
+            to {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        @keyframes blinkCursor {
+
+            from,
+            to {
+                border-color: transparent;
             }
 
-            .service-card-desc {
-                font-size: 14px;
-                color: rgba(255, 255, 255, 0.9);
-                margin-bottom: 20px;
-                line-height: 1.5;
+            50% {
+                border-color: #4cc9f0;
+            }
+        }
+
+        .featured-service-desc {
+            font-size: 18px;
+            color: #b8c1ec;
+            margin-bottom: 25px;
+            max-width: 600px;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideInParagraph 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1.6s forwards;
+        }
+
+        @keyframes slideInParagraph {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .featured-service-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: linear-gradient(90deg, #f72585, #b5179e);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(247, 37, 133, 0.3);
+            transform: translateY(30px) rotateX(-90deg);
+            opacity: 0;
+            animation: flipInButton 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1.8s forwards;
+        }
+
+        @keyframes flipInButton {
+            to {
+                transform: translateY(0) rotateX(0);
+                opacity: 1;
+            }
+        }
+
+        .featured-service-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(247, 37, 133, 0.4);
+            color: white;
+            animation: pulseButton 0.5s ease;
+        }
+
+        @keyframes pulseButton {
+            0% {
+                transform: translateY(-3px) scale(1.05);
             }
 
-            .service-card-features {
-                list-style: none;
-                padding: 0;
-                margin: 0 0 15px 0;
+            50% {
+                transform: translateY(-3px) scale(1.1);
             }
 
-            .service-card-features li {
-                color: rgba(255, 255, 255, 0.85);
-                font-size: 13px;
-                margin-bottom: 6px;
-                display: flex;
-                align-items: center;
-                gap: 6px;
+            100% {
+                transform: translateY(-3px) scale(1.05);
+            }
+        }
+
+        /* FIXED SERVICE CARDS */
+        .services-grid-container {
+            position: relative;
+            z-index: 2;
+            margin: 60px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-card {
+            position: relative;
+            height: 380px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: perspective(1000px) rotateY(90deg) scale(0.8);
+            animation: cardFlipIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes cardFlipIn {
+            to {
+                opacity: 1;
+                transform: perspective(1000px) rotateY(0) scale(1);
+            }
+        }
+
+        .service-card:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        .service-card:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .service-card:nth-child(5) {
+            animation-delay: 0.7s;
+        }
+
+        .service-card:nth-child(6) {
+            animation-delay: 0.8s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) rotateX(5deg) scale(1.05);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-card-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 1.2s ease;
+            filter: brightness(0.8);
+        }
+
+        .service-card:hover .service-card-bg {
+            transform: scale(1.15);
+            filter: brightness(1);
+        }
+
+        /* Different background images for each card */
+        .service-card:nth-child(1) .service-card-bg {
+            background-image: linear-gradient(rgba(10, 36, 114, 0.7), rgba(10, 36, 114, 0.7)), url('./img/blog-card-daladamaligawa.jpg');
+        }
+
+        .service-card:nth-child(2) .service-card-bg {
+            background-image: linear-gradient(rgba(67, 97, 238, 0.7), rgba(67, 97, 238, 0.7)), url('./img/14-day-tour-srilanka.jpg');
+        }
+
+        .service-card:nth-child(3) .service-card-bg {
+            background-image: linear-gradient(rgba(247, 37, 133, 0.7), rgba(247, 37, 133, 0.7)), url('./img/kandy-package-card.jpeg');
+        }
+
+        .service-card:nth-child(4) .service-card-bg {
+            background-image: linear-gradient(rgba(0, 180, 216, 0.7), rgba(0, 180, 216, 0.7)), url('./img/anuradhapura.jpg');
+        }
+
+        .service-card:nth-child(5) .service-card-bg {
+            background-image: linear-gradient(rgba(255, 89, 94, 0.7), rgba(255, 89, 94, 0.7)), url('./img/14-day-tour-srilanka-ella.jpg');
+        }
+
+        .service-card:nth-child(6) .service-card-bg {
+            background-image: linear-gradient(rgba(118, 209, 105, 0.7), rgba(118, 209, 105, 0.7)), url('./img/sigiriya.jpeg');
+        }
+
+        /* FIXED: Card content always visible */
+        .service-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+            z-index: 2;
+            /* Removed transform: translateY(100%) to keep content always visible */
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: white;
+            margin-bottom: 15px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            transform: scale(0);
+            animation: iconBounce 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1s forwards;
+        }
+
+        .service-card:nth-child(1) .service-icon {
+            animation-delay: 0.9s;
+        }
+
+        .service-card:nth-child(2) .service-icon {
+            animation-delay: 1.0s;
+        }
+
+        .service-card:nth-child(3) .service-icon {
+            animation-delay: 1.1s;
+        }
+
+        .service-card:nth-child(4) .service-icon {
+            animation-delay: 1.2s;
+        }
+
+        .service-card:nth-child(5) .service-icon {
+            animation-delay: 1.3s;
+        }
+
+        .service-card:nth-child(6) .service-icon {
+            animation-delay: 1.4s;
+        }
+
+        @keyframes iconBounce {
+            0% {
+                transform: scale(0);
             }
 
-            .service-card-features li i {
-                color: #4cc9f0;
-                font-size: 12px;
+            50% {
+                transform: scale(1.3);
             }
 
-            .service-card-bottom {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding-top: 15px;
-                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            70% {
+                transform: scale(0.9);
             }
 
-            .service-card-price {
-                font-size: 22px;
-                font-weight: 700;
-                color: white;
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .service-card:hover .service-icon {
+            animation: iconSpin 0.5s ease;
+        }
+
+        @keyframes iconSpin {
+            0% {
+                transform: scale(1) rotate(0);
             }
 
-            .service-card-price span {
-                font-size: 13px;
-                color: rgba(255, 255, 255, 0.7);
-                font-weight: normal;
+            100% {
+                transform: scale(1.2) rotate(360deg);
             }
+        }
 
-            .service-card-cta {
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                padding: 10px 20px;
-                background: linear-gradient(90deg, #f72585, #b5179e);
-                color: white;
-                border-radius: 50px;
-                font-weight: 600;
-                font-size: 13px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                box-shadow: 0 5px 15px rgba(247, 37, 133, 0.3);
+        .service-card-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideInTitle 0.5s ease forwards;
+        }
+
+        .service-card:nth-child(1) .service-card-title {
+            animation-delay: 1.5s;
+        }
+
+        .service-card:nth-child(2) .service-card-title {
+            animation-delay: 1.6s;
+        }
+
+        .service-card:nth-child(3) .service-card-title {
+            animation-delay: 1.7s;
+        }
+
+        .service-card:nth-child(4) .service-card-title {
+            animation-delay: 1.8s;
+        }
+
+        .service-card:nth-child(5) .service-card-title {
+            animation-delay: 1.9s;
+        }
+
+        .service-card:nth-child(6) .service-card-title {
+            animation-delay: 2.0s;
+        }
+
+        @keyframes slideInTitle {
+            to {
+                opacity: 1;
+                transform: translateX(0);
             }
+        }
 
-            .service-card-cta:hover {
-                transform: translateX(5px);
+        .service-card-desc {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+            line-height: 1.5;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInUpDesc 0.5s ease forwards;
+        }
+
+        .service-card:nth-child(1) .service-card-desc {
+            animation-delay: 2.1s;
+        }
+
+        .service-card:nth-child(2) .service-card-desc {
+            animation-delay: 2.2s;
+        }
+
+        .service-card:nth-child(3) .service-card-desc {
+            animation-delay: 2.3s;
+        }
+
+        .service-card:nth-child(4) .service-card-desc {
+            animation-delay: 2.4s;
+        }
+
+        .service-card:nth-child(5) .service-card-desc {
+            animation-delay: 2.5s;
+        }
+
+        .service-card:nth-child(6) .service-card-desc {
+            animation-delay: 2.6s;
+        }
+
+        @keyframes fadeInUpDesc {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+
+        .service-card-features li {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideInFeature 0.3s ease forwards;
+        }
+
+        .service-card-features li:nth-child(1) {
+            animation-delay: 2.7s;
+        }
+
+        .service-card-features li:nth-child(2) {
+            animation-delay: 2.8s;
+        }
+
+        .service-card-features li:nth-child(3) {
+            animation-delay: 2.9s;
+        }
+
+        @keyframes slideInFeature {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .service-card-features li i {
+            color: #4cc9f0;
+            font-size: 12px;
+        }
+
+        .service-card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInBottom 0.5s ease forwards;
+        }
+
+        .service-card:nth-child(1) .service-card-bottom {
+            animation-delay: 3.0s;
+        }
+
+        .service-card:nth-child(2) .service-card-bottom {
+            animation-delay: 3.1s;
+        }
+
+        .service-card:nth-child(3) .service-card-bottom {
+            animation-delay: 3.2s;
+        }
+
+        .service-card:nth-child(4) .service-card-bottom {
+            animation-delay: 3.3s;
+        }
+
+        .service-card:nth-child(5) .service-card-bottom {
+            animation-delay: 3.4s;
+        }
+
+        .service-card:nth-child(6) .service-card-bottom {
+            animation-delay: 3.5s;
+        }
+
+        @keyframes fadeInBottom {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .service-card-price span {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: normal;
+        }
+
+        .service-card-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #f72585, #b5179e);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .service-card-cta:hover::before {
+            left: 100%;
+        }
+
+        .service-card-cta:hover {
+            transform: translateX(5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(247, 37, 133, 0.4);
+            color: white;
+            animation: ctaGlow 0.5s ease;
+        }
+
+        @keyframes ctaGlow {
+            0% {
                 box-shadow: 0 8px 20px rgba(247, 37, 133, 0.4);
-                color: white;
             }
 
-            /* Statistics Section */
+            50% {
+                box-shadow: 0 8px 30px rgba(247, 37, 133, 0.8);
+            }
+
+            100% {
+                box-shadow: 0 8px 20px rgba(247, 37, 133, 0.4);
+            }
+        }
+
+        /* Statistics Section */
+        .services-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 80px auto 0;
+            max-width: 1000px;
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            animation: statsReveal 1s cubic-bezier(0.4, 0, 0.2, 1) 3.5s forwards;
+        }
+
+        @keyframes statsReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-item {
+            text-align: center;
+            position: relative;
+            padding: 0 20px;
+            opacity: 0;
+            transform: scale(0);
+            animation: statItemPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+
+        .stat-item:nth-child(1) {
+            animation-delay: 4.0s;
+        }
+
+        .stat-item:nth-child(2) {
+            animation-delay: 4.1s;
+        }
+
+        .stat-item:nth-child(3) {
+            animation-delay: 4.2s;
+        }
+
+        .stat-item:nth-child(4) {
+            animation-delay: 4.3s;
+        }
+
+        @keyframes statItemPop {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(transparent, rgba(255, 255, 255, 0.3), transparent);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #4cc9f0;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(76, 201, 240, 0.3);
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #b8c1ec;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* CTA Button */
+        .services-cta-wrapper {
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 4.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .premium-cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 50px;
+            background: linear-gradient(90deg, #f72585 0%, #7209b7 100%);
+            color: white;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 20px 40px rgba(247, 37, 133, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: buttonFloat 3s ease-in-out infinite 5s;
+        }
+
+        @keyframes buttonFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .premium-cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .premium-cta-button:hover::before {
+            left: 100%;
+        }
+
+        .premium-cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(247, 37, 133, 0.4);
+            animation: none;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(76, 201, 240, 0.1), transparent);
+            z-index: 1;
+        }
+
+        .floating-element-1 {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            right: -150px;
+        }
+
+        .floating-element-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            left: -100px;
+        }
+
+        /* ================= ENHANCED BLOG SECTION ================= */
+        .blog-cinematic {
+            background: #ffffff;
+            position: relative;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .blog-cinematic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 48%, rgba(13, 110, 253, 0.05) 50%, transparent 52%);
+            background-size: 10px 10px;
+            opacity: 0;
+            animation: diagonalGrid 20s linear infinite;
+        }
+
+        @keyframes diagonalGrid {
+            0% {
+                background-position: 0 0;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                background-position: 100px 100px;
+                opacity: 0;
+            }
+        }
+
+        .blog-cinematic .text-center {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .blog-cinematic .text-center h5 {
+            display: inline-block;
+            padding: 10px 30px;
+            background: linear-gradient(90deg, #0d6efd, #00b4ff);
+            color: white;
+            border-radius: 50px;
+            animation: tagBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes tagBounce {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .blog-cinematic .text-center h1 {
+            font-size: 48px;
+            margin: 20px 0;
+            background: linear-gradient(90deg, #0d6efd, #00b4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: titleSlideIn 0.8s ease 0.3s forwards;
+        }
+
+        @keyframes titleSlideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog-cinematic .text-center p {
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease 0.5s forwards;
+        }
+
+        .blog-editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            perspective: 1000px;
+        }
+
+        .blog-editorial-card {
+            position: relative;
+            height: 420px;
+            border-radius: 22px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, .12);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: perspective(1000px) rotateY(90deg) translateX(100px) scale(0.8);
+            animation: blogCardFlipIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes blogCardFlipIn {
+            to {
+                opacity: 1;
+                transform: perspective(1000px) rotateY(0) translateX(0) scale(1);
+            }
+        }
+
+        .blog-editorial-card:nth-child(1) {
+            animation-delay: 0.7s;
+        }
+
+        .blog-editorial-card:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .blog-editorial-card:nth-child(3) {
+            animation-delay: 0.9s;
+        }
+
+        .blog-editorial-card:nth-child(4) {
+            animation-delay: 1.0s;
+        }
+
+        .blog-editorial-card:nth-child(5) {
+            animation-delay: 1.1s;
+        }
+
+        .blog-editorial-card:nth-child(6) {
+            animation-delay: 1.2s;
+        }
+
+        .blog-editorial-card:nth-child(7) {
+            animation-delay: 1.3s;
+        }
+
+        .blog-editorial-card:nth-child(8) {
+            animation-delay: 1.4s;
+        }
+
+        .blog-editorial-card:nth-child(9) {
+            animation-delay: 1.5s;
+        }
+
+        .blog-editorial-card:hover {
+            transform: translateY(-15px) rotateX(5deg) scale(1.05);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, .2);
+        }
+
+        .blog-editorial-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.1);
+            transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: brightness(0.9);
+        }
+
+        .blog-editorial-card:hover img {
+            transform: scale(1.3) rotate(2deg);
+            filter: brightness(1);
+        }
+
+        /* FIXED: Blog content always visible */
+        .blog-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 90%);
+            z-index: 1;
+            /* Removed opacity: 0 to keep gradient always visible */
+        }
+
+        .blog-glass {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 22px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 2;
+            /* Removed transform: translateY(100%) to keep content always visible */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .blog-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            font-size: 12px;
+            border-radius: 40px;
+            background: linear-gradient(135deg, #0d6efd, #00b4ff);
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: blogTagSlide 0.5s ease 1.6s forwards;
+        }
+
+        .blog-editorial-card:nth-child(1) .blog-tag {
+            animation-delay: 1.6s;
+        }
+
+        .blog-editorial-card:nth-child(2) .blog-tag {
+            animation-delay: 1.7s;
+        }
+
+        .blog-editorial-card:nth-child(3) .blog-tag {
+            animation-delay: 1.8s;
+        }
+
+        .blog-editorial-card:nth-child(4) .blog-tag {
+            animation-delay: 1.9s;
+        }
+
+        .blog-editorial-card:nth-child(5) .blog-tag {
+            animation-delay: 2.0s;
+        }
+
+        .blog-editorial-card:nth-child(6) .blog-tag {
+            animation-delay: 2.1s;
+        }
+
+        .blog-editorial-card:nth-child(7) .blog-tag {
+            animation-delay: 2.2s;
+        }
+
+        .blog-editorial-card:nth-child(8) .blog-tag {
+            animation-delay: 2.3s;
+        }
+
+        .blog-editorial-card:nth-child(9) .blog-tag {
+            animation-delay: 2.4s;
+        }
+
+        @keyframes blogTagSlide {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog-glass h4 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #000;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: blogTitleSlide 0.5s ease 1.8s forwards;
+        }
+
+        .blog-editorial-card:nth-child(1) .blog-glass h4 {
+            animation-delay: 1.8s;
+        }
+
+        .blog-editorial-card:nth-child(2) .blog-glass h4 {
+            animation-delay: 1.9s;
+        }
+
+        .blog-editorial-card:nth-child(3) .blog-glass h4 {
+            animation-delay: 2.0s;
+        }
+
+        .blog-editorial-card:nth-child(4) .blog-glass h4 {
+            animation-delay: 2.1s;
+        }
+
+        .blog-editorial-card:nth-child(5) .blog-glass h4 {
+            animation-delay: 2.2s;
+        }
+
+        .blog-editorial-card:nth-child(6) .blog-glass h4 {
+            animation-delay: 2.3s;
+        }
+
+        .blog-editorial-card:nth-child(7) .blog-glass h4 {
+            animation-delay: 2.4s;
+        }
+
+        .blog-editorial-card:nth-child(8) .blog-glass h4 {
+            animation-delay: 2.5s;
+        }
+
+        .blog-editorial-card:nth-child(9) .blog-glass h4 {
+            animation-delay: 2.6s;
+        }
+
+        @keyframes blogTitleSlide {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .blog-meta {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 12px;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: blogMetaFade 0.5s ease 2.0s forwards;
+        }
+
+        .blog-editorial-card:nth-child(1) .blog-meta {
+            animation-delay: 2.0s;
+        }
+
+        .blog-editorial-card:nth-child(2) .blog-meta {
+            animation-delay: 2.1s;
+        }
+
+        .blog-editorial-card:nth-child(3) .blog-meta {
+            animation-delay: 2.2s;
+        }
+
+        .blog-editorial-card:nth-child(4) .blog-meta {
+            animation-delay: 2.3s;
+        }
+
+        .blog-editorial-card:nth-child(5) .blog-meta {
+            animation-delay: 2.4s;
+        }
+
+        .blog-editorial-card:nth-child(6) .blog-meta {
+            animation-delay: 2.5s;
+        }
+
+        .blog-editorial-card:nth-child(7) .blog-meta {
+            animation-delay: 2.6s;
+        }
+
+        .blog-editorial-card:nth-child(8) .blog-meta {
+            animation-delay: 2.7s;
+        }
+
+        .blog-editorial-card:nth-child(9) .blog-meta {
+            animation-delay: 2.8s;
+        }
+
+        @keyframes blogMetaFade {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog-read-more {
+            color: #0d6efd;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: .4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(20px);
+            animation: blogReadMoreSlide 0.5s ease 2.2s forwards;
+        }
+
+        .blog-editorial-card:nth-child(1) .blog-read-more {
+            animation-delay: 2.2s;
+        }
+
+        .blog-editorial-card:nth-child(2) .blog-read-more {
+            animation-delay: 2.3s;
+        }
+
+        .blog-editorial-card:nth-child(3) .blog-read-more {
+            animation-delay: 2.4s;
+        }
+
+        .blog-editorial-card:nth-child(4) .blog-read-more {
+            animation-delay: 2.5s;
+        }
+
+        .blog-editorial-card:nth-child(5) .blog-read-more {
+            animation-delay: 2.6s;
+        }
+
+        .blog-editorial-card:nth-child(6) .blog-read-more {
+            animation-delay: 2.7s;
+        }
+
+        .blog-editorial-card:nth-child(7) .blog-read-more {
+            animation-delay: 2.8s;
+        }
+
+        .blog-editorial-card:nth-child(8) .blog-read-more {
+            animation-delay: 2.9s;
+        }
+
+        .blog-editorial-card:nth-child(9) .blog-read-more {
+            animation-delay: 3.0s;
+        }
+
+        @keyframes blogReadMoreSlide {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .blog-read-more:hover {
+            gap: 10px;
+        }
+
+        .blog-read-more i {
+            transition: transform .3s ease;
+            animation: arrowPulse 1s ease-in-out infinite;
+        }
+
+        @keyframes arrowPulse {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(3px);
+            }
+        }
+
+        .blog-read-more:hover i {
+            transform: translateX(6px);
+            animation: none;
+        }
+
+        .blog-featured {
+            grid-column: span 2;
+            height: 480px;
+        }
+
+        @media (max-width: 991px) {
+            .blog-featured {
+                grid-column: span 1;
+            }
+
             .services-stats {
-                display: flex;
-                justify-content: space-around;
-                margin: 80px auto 0;
-                max-width: 1000px;
-                position: relative;
-                z-index: 2;
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(10px);
-                border-radius: 20px;
-                padding: 40px;
-                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .stat-item {
-                text-align: center;
-                position: relative;
-                padding: 0 20px;
+                flex-direction: column;
+                gap: 30px;
+                padding: 30px 20px;
             }
 
             .stat-item:not(:last-child)::after {
-                content: '';
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 1px;
-                height: 60px;
-                background: linear-gradient(transparent, rgba(255, 255, 255, 0.3), transparent);
+                display: none;
             }
 
-            .stat-number {
-                font-size: 48px;
-                font-weight: 700;
-                color: #4cc9f0;
-                margin-bottom: 10px;
-                text-shadow: 0 0 20px rgba(76, 201, 240, 0.3);
+            .stat-item {
+                padding: 20px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-premium-section {
+                padding: 60px 0;
             }
 
-            .stat-label {
-                font-size: 16px;
-                color: #b8c1ec;
-                font-weight: 500;
-                letter-spacing: 1px;
+            .section-main-title {
+                font-size: 36px;
             }
 
-            /* CTA Button */
-            .services-cta-wrapper {
-                text-align: center;
-                margin-top: 70px;
-                position: relative;
-                z-index: 2;
+            .service-featured-main {
+                height: 400px;
             }
 
-            .premium-cta-button {
-                display: inline-flex;
-                align-items: center;
-                gap: 15px;
-                padding: 20px 50px;
-                background: linear-gradient(90deg, #f72585 0%, #7209b7 100%);
-                color: white;
-                border-radius: 50px;
-                font-weight: 700;
-                font-size: 18px;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                box-shadow: 0 20px 40px rgba(247, 37, 133, 0.3);
-                position: relative;
-                overflow: hidden;
+            .featured-service-title {
+                font-size: 32px;
             }
 
-            .premium-cta-button::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-                transition: 0.5s;
+            .service-featured-content {
+                padding: 30px;
             }
 
-            .premium-cta-button:hover::before {
-                left: 100%;
+            .blog-cinematic .text-center h1 {
+                font-size: 36px;
             }
+        }
+    </style>
+</head>
 
-            .premium-cta-button:hover {
-                transform: translateY(-5px) scale(1.05);
-                box-shadow: 0 25px 50px rgba(247, 37, 133, 0.4);
-            }
+<body>
 
-            /* Floating Elements */
-            .floating-element {
-                position: absolute;
-                border-radius: 50%;
-                background: radial-gradient(circle, rgba(76, 201, 240, 0.1), transparent);
-                z-index: 1;
-            }
-
-            .floating-element-1 {
-                width: 300px;
-                height: 300px;
-                top: -150px;
-                right: -150px;
-            }
-
-            .floating-element-2 {
-                width: 200px;
-                height: 200px;
-                bottom: -100px;
-                left: -100px;
-            }
-
-            /* ================= BLOG SECTION ================= */
-            .blog-cinematic {
-                background: #ffffff;
-                position: relative;
-                padding: 80px 0;
-            }
-
-            .blog-editorial-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 32px;
-            }
-
-            .blog-editorial-card {
-                position: relative;
-                height: 420px;
-                border-radius: 22px;
-                overflow: hidden;
-                background: #000;
-                box-shadow: 0 30px 60px rgba(0,0,0,.12);
-                transition: transform 0.6s ease;
-            }
-
-            .blog-editorial-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 40px 80px rgba(0,0,0,.15);
-            }
-
-            .blog-editorial-card img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transform: scale(1.15);
-                transition: transform 1.8s ease;
-            }
-
-            .blog-editorial-card:hover img {
-                transform: scale(1.28);
-            }
-
-            .blog-gradient {
-                position: absolute;
-                inset: 0;
-                background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.75) 70%);
-                z-index: 1;
-            }
-
-            .blog-glass {
-                position: absolute;
-                bottom: 0;
-                margin: 20px;
-                padding: 22px;
-                border-radius: 18px;
-                background: rgba(255,255,255,0.88);
-                backdrop-filter: blur(14px);
-                z-index: 2;
-            }
-
-            .blog-tag {
-                display: inline-block;
-                padding: 6px 14px;
-                font-size: 12px;
-                border-radius: 40px;
-                background: linear-gradient(135deg, #0d6efd, #00b4ff);
-                color: #fff;
-                font-weight: 500;
-                margin-bottom: 10px;
-            }
-
-            .blog-glass h4 {
-                font-size: 22px;
-                font-weight: 700;
-                margin-bottom: 6px;
-                color: #000;
-            }
-
-            .blog-meta {
-                font-size: 13px;
-                color: #555;
-                margin-bottom: 12px;
-            }
-
-            .blog-read-more {
-                color: #0d6efd;
-                font-weight: 600;
-                text-decoration: none;
-                letter-spacing: .4px;
-                display: inline-flex;
-                align-items: center;
-                gap: 5px;
-                transition: all 0.3s ease;
-            }
-
-            .blog-read-more:hover {
-                gap: 10px;
-            }
-
-            .blog-read-more i {
-                transition: transform .3s ease;
-            }
-
-            .blog-read-more:hover i {
-                transform: translateX(6px);
-            }
-
-            .blog-featured {
-                grid-column: span 2;
-                height: 480px;
-            }
-
-            @media (max-width: 991px) {
-                .blog-featured {
-                    grid-column: span 1;
-                }
-                
-                .services-stats {
-                    flex-direction: column;
-                    gap: 30px;
-                    padding: 30px 20px;
-                }
-                
-                .stat-item:not(:last-child)::after {
-                    display: none;
-                }
-                
-                .stat-item {
-                    padding: 20px 0;
-                }
-            }
-
-            @media (max-width: 768px) {
-                .services-premium-section {
-                    padding: 60px 0;
-                }
-                
-                .section-main-title {
-                    font-size: 36px;
-                }
-                
-                .service-featured-main {
-                    height: 400px;
-                }
-                
-                .featured-service-title {
-                    font-size: 32px;
-                }
-                
-                .service-featured-content {
-                    padding: 30px;
-                }
-            }
-        </style>
-    </head>
-
-    <body>
-
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        <!-- Spinner End -->
+    </div>
+    <!-- Spinner End -->
 
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="./index.html" class="navbar-brand p-0">
-                    <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Discover Sri Lanka</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="./index.html" class="navbar-brand p-0">
+                <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Discover Sri Lanka</h1>
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="services.html" class="nav-item nav-link">Services</a>
+                    <a href="packages.html" class="nav-item nav-link">Packages</a>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
+            </div>
+        </nav>
+
+        <!-- Carousel Start -->
+        <div class="carousel-header">
+            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="img/carousel-1.jpg" class="img-fluid" alt="Image">
+                        <div class="carousel-caption">
+                            <div class="p-3" style="max-width: 1000px;">
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Ayubowan Sri Lanka!</h4>
+                                <h2 class="display-2 text-capitalize text-white mb-4">Your Perfect Tour Awaits in the Wonder of Asia</h2>
+                                <p class="mb-5 fs-5">A small island with a thousand unforgettable journeys, framed by golden beaches.</p>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="./gallery.html">Discover Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carousel-2.jpg" class="img-fluid" alt="Image">
+                        <div class="carousel-caption">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore Sri Lanka Beyond Borders!</h4>
+                                <h1 class="display-2 text-capitalize text-white mb-4">Find Your Perfect Journey with US</h1>
+                                <p class="mb-5 fs-5">Discover our best packages, premium services, and facilities for unforgettable travel experiences</p>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="./services.html">Discover Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carousel-3.jpg" class="img-fluid" alt="Image">
+                        <div class="carousel-caption">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 2px;">Discover Sri Lanka's rich culture and ancient history</h4>
+                                <h1 class="display-2 text-capitalize text-white mb-4">Answer the Call of Sri Lanka's Magic!</h1>
+                                <p class="mb-5 fs-5">Explore our blog and discover amazing destinations, tips, and unforgettable Sri Lanka experiences</p>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="./blog.html">Discover Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
+                    <span class="visually-hidden">Previous</span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="services.html" class="nav-item nav-link">Services</a>
-                        <a href="packages.html" class="nav-item nav-link">Packages</a>
-                        <a href="blog.html" class="nav-item nav-link">Blog</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
-                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
-                </div>
-            </nav>
-
-            <!-- Carousel Start -->
-            <div class="carousel-header">
-                <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <img src="img/carousel-1.jpg" class="img-fluid" alt="Image">
-                            <div class="carousel-caption">
-                                <div class="p-3" style="max-width: 1000px;">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Ayubowan Sri Lanka!</h4>
-                                    <h2 class="display-2 text-capitalize text-white mb-4">Your Perfect Tour Awaits in the Wonder of Asia</h2>
-                                    <p class="mb-5 fs-5">A small island with a thousand unforgettable journeys, framed by golden beaches.</p>
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="./gallery.html">Discover Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/carousel-2.jpg" class="img-fluid" alt="Image">
-                            <div class="carousel-caption">
-                                <div class="p-3" style="max-width: 900px;">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore Sri Lanka Beyond Borders!</h4>
-                                    <h1 class="display-2 text-capitalize text-white mb-4">Find Your Perfect Journey with US</h1>
-                                    <p class="mb-5 fs-5">Discover our best packages, premium services, and facilities for unforgettable travel experiences</p>
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="./services.html">Discover Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/carousel-3.jpg" class="img-fluid" alt="Image">
-                            <div class="carousel-caption">
-                                <div class="p-3" style="max-width: 900px;">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 2px;">Discover Sri Lanka's rich culture and ancient history</h4>
-                                    <h1 class="display-2 text-capitalize text-white mb-4">Answer the Call of Sri Lanka's Magic!</h1>
-                                    <p class="mb-5 fs-5">Explore our blog and discover amazing destinations, tips, and unforgettable Sri Lanka experiences</p>
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="./blog.html">Discover Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-                        <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-            <!-- Carousel End -->
-        </div>
-        <!-- Navbar & Hero End -->
-
-        <!-- About Start -->
-        <div class="container-fluid about py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/sri-lankan-travel-map.png" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
-                        <h1 class="mb-4">Welcome to <span class="text-primary">Ayubowan Tours</span></h1>
-
-                        <h5 class="section-about-title pe-3">About Us</h5>
-                        <p class="mb-4">Ayubowan Tours is a trusted, family-run Sri Lanka tour operator creating authentic, 
-                            personalized journeys across the island. From golden beaches and lush hill country to wildlife 
-                            safaris and ancient heritage sites, we design unforgettable experiences rooted in local culture, 
-                            sustainability, and genuine Sri Lankan hospitality.</p>
-
-                        <h5 class="section-about-title pe-3">Our Vision</h5>
-                        <p class="mb-4">Our vision is to be a globally recognized Sri Lanka tour operator, delivering authentic 
-                            and sustainable travel experiences. We aim to protect nature, celebrate culture, empower local communities, 
-                            and inspire responsible travel while creating unforgettable journeys across Sri Lanka.</p>
-
-                        <h5 class="section-about-title pe-3">Our Mission</h5>    
-                        <p class="mb-4">Our mission is to deliver high-quality, responsible travel experiences in Sri Lanka through ethical, 
-                            eco-friendly tours that support local communities, protect nature, and celebrate culture—while providing 
-                            personalized service and unforgettable journeys for every traveler.</p>
-                    </div>
-                    
-                </div>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                    <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
-        <!-- About End -->
+        <!-- Carousel End -->
+    </div>
+    <!-- Navbar & Hero End -->
 
-        <!-- Enhanced Services Section with Fixed Cards -->
-        <section class="services-premium-section">
-            <!-- Floating Elements -->
-            <div class="floating-element floating-element-1"></div>
-            <div class="floating-element floating-element-2"></div>
-            
-            <div class="container">
-                <div class="section-title-wrapper">
-                    <div class="section-subtitle">Premium Experiences</div>
-                    <h2 class="section-main-title">Exclusive Sri Lanka Tours</h2>
-                    <p class="section-description">
-                        Discover our handcrafted journeys that blend luxury, culture, and adventure. 
-                        Each experience is meticulously designed to create unforgettable memories in the Pearl of the Indian Ocean.
-                    </p>
+    <!-- About Start -->
+    <div class="container-fluid about py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <div class="h-100">
+                        <img src="img/sri-lankan-travel-map.png" class="img-fluid w-100 h-100" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
+                    <h1 class="mb-4">Welcome to <span class="text-primary">Ayubowan Tours</span></h1>
+
+                    <h5 class="section-about-title pe-3">About Us</h5>
+                    <p class="mb-4">Ayubowan Tours is a trusted, family-run Sri Lanka tour operator creating authentic,
+                        personalized journeys across the island. From golden beaches and lush hill country to wildlife
+                        safaris and ancient heritage sites, we design unforgettable experiences rooted in local culture,
+                        sustainability, and genuine Sri Lankan hospitality.</p>
+
+                    <h5 class="section-about-title pe-3">Our Vision</h5>
+                    <p class="mb-4">Our vision is to be a globally recognized Sri Lanka tour operator, delivering authentic
+                        and sustainable travel experiences. We aim to protect nature, celebrate culture, empower local communities,
+                        and inspire responsible travel while creating unforgettable journeys across Sri Lanka.</p>
+
+                    <h5 class="section-about-title pe-3">Our Mission</h5>
+                    <p class="mb-4">Our mission is to deliver high-quality, responsible travel experiences in Sri Lanka through ethical,
+                        eco-friendly tours that support local communities, protect nature, and celebrate culture—while providing
+                        personalized service and unforgettable journeys for every traveler.</p>
                 </div>
 
-                <!-- Featured Service Showcase -->
-                <div class="service-showcase-container">
-                    <div class="service-featured-main">
-                        <div class="service-featured-bg"></div>
-                        <div class="service-featured-content">
-                            <span class="featured-service-tag">Featured Experience</span>
-                            <h3 class="featured-service-title">Signature Cultural Triangle Journey</h3>
-                            <p class="featured-service-desc">
-                                Immerse yourself in Sri Lanka's rich heritage with our exclusive 5-day tour covering 
-                                ancient kingdoms, UNESCO World Heritage sites, and cultural marvels. Includes private 
-                                guides, luxury accommodation, and authentic culinary experiences.
-                            </p>
-                            <a href="./pkg-sri-lanka-cultural-trangle.html" class="featured-service-cta">
-                                Explore This Journey
-                                <i class="fas fa-arrow-right-long"></i>
-                            </a>
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
 
-                    <!-- Fixed Service Cards Grid -->
-                    <div class="services-grid-container">
-                        <div class="services-grid">
-                            <!-- Card 1 - Custom Tour -->
-                            <a href="./pkg-own-tour.html" class="service-card">
-                                <div class="service-card-bg"></div>
-                                <div class="service-card-content">
-                                    <i class="fas fa-globe-americas service-icon"></i>
-                                    <h3 class="service-card-title">Design Your Sri Lanka Journey</h3>
-                                    <p class="service-card-desc">Create your perfect itinerary with our expert guidance. Tailor-made experiences just for you.</p>
-                                    <ul class="service-card-features">
-                                        <li><i class="fas fa-check"></i> Personalized itinerary</li>
-                                        <li><i class="fas fa-check"></i> Local expert guidance</li>
-                                        <li><i class="fas fa-check"></i> Flexible scheduling</li>
-                                    </ul>
-                                    <div class="service-card-bottom">
-                                        <div class="service-card-price">Custom <span>Starting from</span></div>
-                                        <span class="service-card-cta">Design Now <i class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
+    <!-- Enhanced Services Section with Fixed Cards -->
+    <section class="services-premium-section">
+        <!-- Floating Elements -->
+        <div class="floating-element floating-element-1"></div>
+        <div class="floating-element floating-element-2"></div>
 
-                            <!-- Card 2 - 14 Day Tour -->
-                            <a href="./pkg-14-day-tour.html" class="service-card">
-                                <div class="service-card-bg"></div>
-                                <div class="service-card-content">
-                                    <i class="fas fa-calendar-alt service-icon"></i>
-                                    <h3 class="service-card-title">Complete Sri Lanka Experience</h3>
-                                    <p class="service-card-desc">Perfectly paced tour covering beaches, wildlife, culture, and hill country in two weeks.</p>
-                                    <ul class="service-card-features">
-                                        <li><i class="fas fa-check"></i> All major attractions</li>
-                                        <li><i class="fas fa-check"></i> Wildlife safari included</li>
-                                        <li><i class="fas fa-check"></i> Luxury accommodation</li>
-                                    </ul>
-                                    <div class="service-card-bottom">
-                                        <div class="service-card-price">$2,499 <span>Per person</span></div>
-                                        <span class="service-card-cta">View Details <i class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
+        <div class="container">
+            <div class="section-title-wrapper">
+                <div class="section-subtitle">Premium Experiences</div>
+                <h2 class="section-main-title">Exclusive Sri Lanka Tours</h2>
+                <p class="section-description">
+                    Discover our handcrafted journeys that blend luxury, culture, and adventure.
+                    Each experience is meticulously designed to create unforgettable memories in the Pearl of the Indian Ocean.
+                </p>
+            </div>
 
-                            <!-- Card 3 - Kandy Tour -->
-                            <a href="./pkg-kandy-day-tour.html" class="service-card">
-                                <div class="service-card-bg"></div>
-                                <div class="service-card-content">
-                                    <i class="fas fa-university service-icon"></i>
-                                    <h3 class="service-card-title">Kandy Cultural Day Tour</h3>
-                                    <p class="service-card-desc">Discover Sri Lanka's last kingdom with temple visits, cultural shows, and scenic beauty.</p>
-                                    <ul class="service-card-features">
-                                        <li><i class="fas fa-check"></i> Temple of the Tooth</li>
-                                        <li><i class="fas fa-check"></i> Cultural show</li>
-                                        <li><i class="fas fa-check"></i> Botanical gardens</li>
-                                    </ul>
-                                    <div class="service-card-bottom">
-                                        <div class="service-card-price">$129 <span>Per person</span></div>
-                                        <span class="service-card-cta">Explore Kandy <i class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Card 4 - Cultural Triangle -->
-                            <a href="./pkg-sri-lanka-cultural-trangle.html" class="service-card">
-                                <div class="service-card-bg"></div>
-                                <div class="service-card-content">
-                                    <i class="fas fa-landmark service-icon"></i>
-                                    <h3 class="service-card-title">Ancient Heritage Exploration</h3>
-                                    <p class="service-card-desc">Journey through time visiting ancient kingdoms and UNESCO World Heritage sites.</p>
-                                    <ul class="service-card-features">
-                                        <li><i class="fas fa-check"></i> Sigiriya Rock Fortress</li>
-                                        <li><i class="fas fa-check"></i> Ancient cities</li>
-                                        <li><i class="fas fa-check"></i> Expert guides</li>
-                                    </ul>
-                                    <div class="service-card-bottom">
-                                        <div class="service-card-price">$899 <span>Per person</span></div>
-                                        <span class="service-card-cta">Discover Heritage <i class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Card 5 - Highlights Tour -->
-                            <a href="./pkg-11-day-tour.html" class="service-card">
-                                <div class="service-card-bg"></div>
-                                <div class="service-card-content">
-                                    <i class="fas fa-star service-icon"></i>
-                                    <h3 class="service-card-title">Sri Lanka Highlights Tour</h3>
-                                    <p class="service-card-desc">Perfect for first-time visitors covering all must-see destinations in Sri Lanka.</p>
-                                    <ul class="service-card-features">
-                                        <li><i class="fas fa-check"></i> Tea plantations</li>
-                                        <li><i class="fas fa-check"></i> Wildlife safari</li>
-                                        <li><i class="fas fa-check"></i> Beach relaxation</li>
-                                    </ul>
-                                    <div class="service-card-bottom">
-                                        <div class="service-card-price">$1,799 <span>Per person</span></div>
-                                        <span class="service-card-cta">See Highlights <i class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Card 6 - Sigiriya Tour -->
-                            <a href="./pkg-kandy-sigiriya-dambulla-tour.html" class="service-card">
-                                <div class="service-card-bg"></div>
-                                <div class="service-card-content">
-                                    <i class="fas fa-mountain service-icon"></i>
-                                    <h3 class="service-card-title">Sigiriya Rock & Caves Tour</h3>
-                                    <p class="service-card-desc">Conquer the Lion Rock and explore ancient cave temples in this breathtaking adventure.</p>
-                                    <ul class="service-card-features">
-                                        <li><i class="fas fa-check"></i> Sigiriya climb</li>
-                                        <li><i class="fas fa-check"></i> Dambulla caves</li>
-                                        <li><i class="fas fa-check"></i> Scenic views</li>
-                                    </ul>
-                                    <div class="service-card-bottom">
-                                        <div class="service-card-price">$499 <span>Per person</span></div>
-                                        <span class="service-card-cta">Start Adventure <i class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+            <!-- Featured Service Showcase -->
+            <div class="service-showcase-container">
+                <div class="service-featured-main">
+                    <div class="service-featured-bg"></div>
+                    <div class="service-featured-content">
+                        <span class="featured-service-tag">Featured Experience</span>
+                        <h3 class="featured-service-title">Signature Cultural Triangle Journey</h3>
+                        <p class="featured-service-desc">
+                            Immerse yourself in Sri Lanka's rich heritage with our exclusive 5-day tour covering
+                            ancient kingdoms, UNESCO World Heritage sites, and cultural marvels. Includes private
+                            guides, luxury accommodation, and authentic culinary experiences.
+                        </p>
+                        <a href="./pkg-sri-lanka-cultural-trangle.html" class="featured-service-cta">
+                            Explore This Journey
+                            <i class="fas fa-arrow-right-long"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Statistics -->
-                <div class="services-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">5000+</div>
-                        <div class="stat-label">Happy Travelers</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Satisfaction Rate</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Support</div>
-                    </div>
-                </div>
+                <!-- Fixed Service Cards Grid -->
+                <div class="services-grid-container">
+                    <div class="services-grid">
+                        <!-- Card 1 - Custom Tour -->
+                        <a href="./pkg-own-tour.html" class="service-card">
+                            <div class="service-card-bg"></div>
+                            <div class="service-card-content">
+                                <i class="fas fa-globe-americas service-icon"></i>
+                                <h3 class="service-card-title">Design Your Sri Lanka Journey</h3>
+                                <p class="service-card-desc">Create your perfect itinerary with our expert guidance. Tailor-made experiences just for you.</p>
+                                <ul class="service-card-features">
+                                    <li><i class="fas fa-check"></i> Personalized itinerary</li>
+                                    <li><i class="fas fa-check"></i> Local expert guidance</li>
+                                    <li><i class="fas fa-check"></i> Flexible scheduling</li>
+                                </ul>
+                                <div class="service-card-bottom">
+                                    <div class="service-card-price">Custom <span>Starting from</span></div>
+                                    <span class="service-card-cta">Design Now <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </a>
 
-                <!-- CTA Button -->
-                <div class="services-cta-wrapper">
-                    <a href="./packages.html" class="premium-cta-button">
-                        <i class="fas fa-gem"></i>
-                        View All Premium Packages
-                        <i class="fas fa-arrow-right-long"></i>
-                    </a>
+                        <!-- Card 2 - 14 Day Tour -->
+                        <a href="./pkg-14-day-tour.html" class="service-card">
+                            <div class="service-card-bg"></div>
+                            <div class="service-card-content">
+                                <i class="fas fa-calendar-alt service-icon"></i>
+                                <h3 class="service-card-title">Complete Sri Lanka Experience</h3>
+                                <p class="service-card-desc">Perfectly paced tour covering beaches, wildlife, culture, and hill country in two weeks.</p>
+                                <ul class="service-card-features">
+                                    <li><i class="fas fa-check"></i> All major attractions</li>
+                                    <li><i class="fas fa-check"></i> Wildlife safari included</li>
+                                    <li><i class="fas fa-check"></i> Luxury accommodation</li>
+                                </ul>
+                                <div class="service-card-bottom">
+                                    <div class="service-card-price">$2,499 <span>Per person</span></div>
+                                    <span class="service-card-cta">View Details <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 3 - Kandy Tour -->
+                        <a href="./pkg-kandy-day-tour.html" class="service-card">
+                            <div class="service-card-bg"></div>
+                            <div class="service-card-content">
+                                <i class="fas fa-university service-icon"></i>
+                                <h3 class="service-card-title">Kandy Cultural Day Tour</h3>
+                                <p class="service-card-desc">Discover Sri Lanka's last kingdom with temple visits, cultural shows, and scenic beauty.</p>
+                                <ul class="service-card-features">
+                                    <li><i class="fas fa-check"></i> Temple of the Tooth</li>
+                                    <li><i class="fas fa-check"></i> Cultural show</li>
+                                    <li><i class="fas fa-check"></i> Botanical gardens</li>
+                                </ul>
+                                <div class="service-card-bottom">
+                                    <div class="service-card-price">$129 <span>Per person</span></div>
+                                    <span class="service-card-cta">Explore Kandy <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 4 - Cultural Triangle -->
+                        <a href="./pkg-sri-lanka-cultural-trangle.html" class="service-card">
+                            <div class="service-card-bg"></div>
+                            <div class="service-card-content">
+                                <i class="fas fa-landmark service-icon"></i>
+                                <h3 class="service-card-title">Ancient Heritage Exploration</h3>
+                                <p class="service-card-desc">Journey through time visiting ancient kingdoms and UNESCO World Heritage sites.</p>
+                                <ul class="service-card-features">
+                                    <li><i class="fas fa-check"></i> Sigiriya Rock Fortress</li>
+                                    <li><i class="fas fa-check"></i> Ancient cities</li>
+                                    <li><i class="fas fa-check"></i> Expert guides</li>
+                                </ul>
+                                <div class="service-card-bottom">
+                                    <div class="service-card-price">$899 <span>Per person</span></div>
+                                    <span class="service-card-cta">Discover Heritage <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 5 - Highlights Tour -->
+                        <a href="./pkg-11-day-tour.html" class="service-card">
+                            <div class="service-card-bg"></div>
+                            <div class="service-card-content">
+                                <i class="fas fa-star service-icon"></i>
+                                <h3 class="service-card-title">Sri Lanka Highlights Tour</h3>
+                                <p class="service-card-desc">Perfect for first-time visitors covering all must-see destinations in Sri Lanka.</p>
+                                <ul class="service-card-features">
+                                    <li><i class="fas fa-check"></i> Tea plantations</li>
+                                    <li><i class="fas fa-check"></i> Wildlife safari</li>
+                                    <li><i class="fas fa-check"></i> Beach relaxation</li>
+                                </ul>
+                                <div class="service-card-bottom">
+                                    <div class="service-card-price">$1,799 <span>Per person</span></div>
+                                    <span class="service-card-cta">See Highlights <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 6 - Sigiriya Tour -->
+                        <a href="./pkg-kandy-sigiriya-dambulla-tour.html" class="service-card">
+                            <div class="service-card-bg"></div>
+                            <div class="service-card-content">
+                                <i class="fas fa-mountain service-icon"></i>
+                                <h3 class="service-card-title">Sigiriya Rock & Caves Tour</h3>
+                                <p class="service-card-desc">Conquer the Lion Rock and explore ancient cave temples in this breathtaking adventure.</p>
+                                <ul class="service-card-features">
+                                    <li><i class="fas fa-check"></i> Sigiriya climb</li>
+                                    <li><i class="fas fa-check"></i> Dambulla caves</li>
+                                    <li><i class="fas fa-check"></i> Scenic views</li>
+                                </ul>
+                                <div class="service-card-bottom">
+                                    <div class="service-card-price">$499 <span>Per person</span></div>
+                                    <span class="service-card-cta">Start Adventure <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Blog Section -->
-        <section class="container-fluid blog-cinematic py-5">
-            <div class="container py-5">
-                <div class="text-center mb-5">
-                    <h5 class="text-primary">Travel Journal</h5>
-                    <h1 class="mb-3">Stories That Move You</h1>
-                    <p class="text-muted">
-                        Culture, nature, wildlife & unforgettable journeys across Sri Lanka
-                    </p>
+            <!-- Statistics -->
+            <div class="services-stats">
+                <div class="stat-item">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Happy Travelers</div>
                 </div>
-
-                <div class="blog-editorial-grid">
-                    <a href="./blog-cultural-triangle.html" class="blog-editorial-card blog-featured">
-                        <img src="img/anuradhapura-polonnaruwa-sigiriya-1024x576.jpg" alt="Cultural Triangle">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Heritage</span>
-                            <h4>Sri Lanka's Cultural Triangle</h4>
-                            <div class="blog-meta">Ancient kingdoms & UNESCO wonders</div>
-                            <span class="blog-read-more">Explore Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-
-                    <a href="./blog-kandy.html" class="blog-editorial-card">
-                        <img src="img/blog-card-daladamaligawa.jpg" alt="Kandy">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Culture</span>
-                            <h4>Kandy</h4>
-                            <div class="blog-meta">Sacred city of traditions</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-
-                    <a href="./blog-dambulla.html" class="blog-editorial-card">
-                        <img src="img/blog-card-sigiriya.jpg" alt="Dambulla">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">History</span>
-                            <h4>Dambulla</h4>
-                            <div class="blog-meta">Cave temples & ancient art</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-
-                    <a href="./blog-ella.html" class="blog-editorial-card">
-                        <img src="img/blog-2.jpg" alt="Ella">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Nature</span>
-                            <h4>Ella</h4>
-                            <div class="blog-meta">Tea hills & misty peaks</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-
-                    <a href="./blog-down-south.html" class="blog-editorial-card">
-                        <img src="img/blog-card-beach.webp" alt="Golden Beaches">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Beach</span>
-                            <h4>Golden Beaches</h4>
-                            <div class="blog-meta">Sun, sand & turquoise seas</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-
-                    <a href="./blog-safari.html" class="blog-editorial-card">
-                        <img src="img/blog-card-safari.jpg" alt="Wild Safaris">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Wildlife</span>
-                            <h4>Wild Safaris</h4>
-                            <div class="blog-meta">Leopards & elephants</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-
-                    <a href="./blog-nuwara-eliya.html" class="blog-editorial-card">
-                        <img src="img/blog-card-nuwaraeliya.jpg" alt="Nuwara Eliya">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Hill Country</span>
-                            <h4>Nuwara Eliya</h4>
-                            <div class="blog-meta">Tea estates & cool climate</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-
-                    <a href="./blog-north-sri-lanka.html" class="blog-editorial-card">
-                        <img src="img/jafna-blog-post.jpg" alt="Northern Sri Lanka">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Culture</span>
-                            <h4>Northern Sri Lanka</h4>
-                            <div class="blog-meta">Jaffna & heritage</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-
-                    <a href="./blog-eastern-beauty.html" class="blog-editorial-card">
-                        <img src="img/Arugam-Bay.jpg" alt="Eastern Sri Lanka">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Adventure</span>
-                            <h4>Eastern Sri Lanka</h4>
-                            <div class="blog-meta">Surf & untouched beaches</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support</div>
                 </div>
             </div>
-        </section>
 
-        <!-- Contact Start -->
-        <div class="container-fluid contact bg-light py-5">
-            <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Contact Us</h5>
+            <!-- CTA Button -->
+            <div class="services-cta-wrapper">
+                <a href="./packages.html" class="premium-cta-button">
+                    <i class="fas fa-gem"></i>
+                    View All Premium Packages
+                    <i class="fas fa-arrow-right-long"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="container-fluid blog-cinematic py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary">Travel Journal</h5>
+                <h1 class="mb-3">Stories That Move You</h1>
+                <p class="text-muted">
+                    Culture, nature, wildlife & unforgettable journeys across Sri Lanka
+                </p>
+            </div>
+
+            <div class="blog-editorial-grid">
+                <a href="./blog-cultural-triangle.html" class="blog-editorial-card blog-featured">
+                    <img src="img/anuradhapura-polonnaruwa-sigiriya-1024x576.jpg" alt="Cultural Triangle">
+                    <div class="blog-gradient"></div>
+                    <div class="blog-glass">
+                        <span class="blog-tag">Heritage</span>
+                        <h4>Sri Lanka's Cultural Triangle</h4>
+                        <div class="blog-meta">Ancient kingdoms & UNESCO wonders</div>
+                        <span class="blog-read-more">Explore Story <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="./blog-kandy.html" class="blog-editorial-card">
+                    <img src="img/blog-card-daladamaligawa.jpg" alt="Kandy">
+                    <div class="blog-gradient"></div>
+                    <div class="blog-glass">
+                        <span class="blog-tag">Culture</span>
+                        <h4>Kandy</h4>
+                        <div class="blog-meta">Sacred city of traditions</div>
+                        <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="./blog-dambulla.html" class="blog-editorial-card">
+                    <img src="img/blog-card-sigiriya.jpg" alt="Dambulla">
+                    <div class="blog-gradient"></div>
+                    <div class="blog-glass">
+                        <span class="blog-tag">History</span>
+                        <h4>Dambulla</h4>
+                        <div class="blog-meta">Cave temples & ancient art</div>
+                        <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="./blog-ella.html" class="blog-editorial-card">
+                    <img src="img/blog-2.jpg" alt="Ella">
+                    <div class="blog-gradient"></div>
+                    <div class="blog-glass">
+                        <span class="blog-tag">Nature</span>
+                        <h4>Ella</h4>
+                        <div class="blog-meta">Tea hills & misty peaks</div>
+                        <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="./blog-down-south.html" class="blog-editorial-card">
+                    <img src="img/blog-card-beach.webp" alt="Golden Beaches">
+                    <div class="blog-gradient"></div>
+                    <div class="blog-glass">
+                        <span class="blog-tag">Beach</span>
+                        <h4>Golden Beaches</h4>
+                        <div class="blog-meta">Sun, sand & turquoise seas</div>
+                        <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="./blog-safari.html" class="blog-editorial-card">
+                    <img src="img/blog-card-safari.jpg" alt="Wild Safaris">
+                    <div class="blog-gradient"></div>
+                    <div class="blog-glass">
+                        <span class="blog-tag">Wildlife</span>
+                        <h4>Wild Safaris</h4>
+                        <div class="blog-meta">Leopards & elephants</div>
+                        <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="./blog-nuwara-eliya.html" class="blog-editorial-card">
+                    <img src="img/blog-card-nuwaraeliya.jpg" alt="Nuwara Eliya">
+                    <div class="blog-gradient"></div>
+                    <div class="blog-glass">
+                        <span class="blog-tag">Hill Country</span>
+                        <h4>Nuwara Eliya</h4>
+                        <div class="blog-meta">Tea estates & cool climate</div>
+                        <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="./blog-north-sri-lanka.html" class="blog-editorial-card">
+                    <img src="img/jafna-blog-post.jpg" alt="Northern Sri Lanka">
+                    <div class="blog-gradient"></div>
+                    <div class="blog-glass">
+                        <span class="blog-tag">Culture</span>
+                        <h4>Northern Sri Lanka</h4>
+                        <div class="blog-meta">Jaffna & heritage</div>
+                        <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="./blog-eastern-beauty.html" class="blog-editorial-card">
+                    <img src="img/Arugam-Bay.jpg" alt="Eastern Sri Lanka">
+                    <div class="blog-gradient"></div>
+                    <div class="blog-glass">
+                        <span class="blog-tag">Adventure</span>
+                        <h4>Eastern Sri Lanka</h4>
+                        <div class="blog-meta">Surf & untouched beaches</div>
+                        <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Start -->
+    <div class="container-fluid contact bg-light py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                <h5 class="section-title px-3">Contact Us</h5>
+            </div>
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-4">
+                    <div class="bg-white rounded p-4">
+                        <div class="text-center mb-4">
+                            <i class="fa fa-map-marker-alt fa-3x text-primary"></i>
+                            <h4 class="text-primary">Address</h4>
+                            <p class="mb-0">Peradeniya, <br> Kandy, Sri Lanka</p>
+                        </div>
+                        <div class="text-center mb-4">
+                            <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
+                            <h4 class="text-primary">Mobile</h4>
+                            <p class="mb-0">(+94)76 366 1600</p>
+                        </div>
+
+                        <div class="text-center">
+                            <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
+                            <h4 class="text-primary">Email</h4>
+                            <p class="mb-0">info.ayubowantours.lk@gmail.com</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-4">
-                        <div class="bg-white rounded p-4">
-                            <div class="text-center mb-4">
-                                <i class="fa fa-map-marker-alt fa-3x text-primary"></i>
-                                <h4 class="text-primary">Address</h4>
-                                <p class="mb-0">Peradeniya, <br> Kandy, Sri Lanka</p>
+                <div class="col-lg-8">
+                    <h2 class="mb-3">Contact For Any Inquiries</h2>
+                    <p class="mb-4">We're here to help you design your dream holiday in Sri Lanka.
+                        Whether you're exploring our tours, creating a custom itinerary, or simply sharing your
+                        travel ideas, our friendly team is ready to guide you every step of the way.
+                        Let's start with a conversation, reach out and begin your journey.</p>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control border-0" id="name" placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
                             </div>
-                            <div class="text-center mb-4">
-                                <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
-                                <h4 class="text-primary">Mobile</h4>
-                                <p class="mb-0">(+94)76 366 1600</p>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control border-0" id="email" placeholder="Your Email">
+                                    <label for="email">Your Email</label>
+                                </div>
                             </div>
-                           
-                            <div class="text-center">
-                                <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
-                                <h4 class="text-primary">Email</h4>
-                                <p class="mb-0">info.ayubowantours.lk@gmail.com</p>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <h2 class="mb-3">Contact For Any Inquiries</h2>
-                        <p class="mb-4">We're here to help you design your dream holiday in Sri Lanka. 
-                            Whether you're exploring our tours, creating a custom itinerary, or simply sharing your 
-                            travel ideas, our friendly team is ready to guide you every step of the way. 
-                            Let's start with a conversation, reach out and begin your journey.</p>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control border-0" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
-                                        <label for="subject">Subject</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
-                                        <label for="message">Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-12">
-                        <div class="rounded">
-                            <iframe class="rounded w-100" 
-                            style="height: 450px;" src="https://www.google.com/maps?q=Peradeniya,+Sri+Lanka&z=14&output=embed" 
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
+                    </form>
+                </div>
+                <div class="col-12">
+                    <div class="rounded">
+                        <iframe class="rounded w-100" style="height: 450px;" src="https://www.google.com/maps?q=Peradeniya,+Sri+Lanka&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Contact End -->
+    </div>
+    <!-- Contact End -->
 
-        <!-- Subscribe Start -->
-        <div class="container-fluid subscribe py-5">
-            <div class="container text-center py-5">
-                <div class="mx-auto text-center" style="max-width: 900px;">
-                    <h5 class="subscribe-title px-3">Subscribe</h5>
-                    <h1 class="text-white mb-4">Our Newsletter</h1>
-                    <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, 
-                        insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
-                    </p>
-                    <div class="position-relative mx-auto">
-                        <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
-                    </div>
+    <!-- Subscribe Start -->
+    <div class="container-fluid subscribe py-5">
+        <div class="container text-center py-5">
+            <div class="mx-auto text-center" style="max-width: 900px;">
+                <h5 class="subscribe-title px-3">Subscribe</h5>
+                <h1 class="text-white mb-4">Our Newsletter</h1>
+                <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals,
+                    insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
+                </p>
+                <div class="position-relative mx-auto">
+                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                    <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
                 </div>
             </div>
         </div>
-        <!-- Subscribe End -->
-        
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright text-body py-4">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6 text-center text-md-end mb-md-0">
-                        <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Ayubowan Tours</a>, All right reserved.
-                    </div>
+    </div>
+    <!-- Subscribe End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Ayubowan Tours</a>, All right reserved.
                 </div>
             </div>
         </div>
-        <!-- Copyright End -->
+    </div>
+    <!-- Copyright End -->
 
-        <!-- whatsapp button -->
-        <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
-            class="whatsapp-float"
-            target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+    <!-- whatsapp button -->
+    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-        <script>
-            // Simple counter animation for stats
-            document.addEventListener('DOMContentLoaded', function() {
-                const statNumbers = document.querySelectorAll('.stat-number');
-                
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const statNumber = entry.target;
-                            const finalValue = parseInt(statNumber.textContent);
-                            const duration = 2000;
-                            const step = finalValue / (duration / 16);
-                            let currentValue = 0;
-                            
-                            const timer = setInterval(() => {
-                                currentValue += step;
-                                if (currentValue >= finalValue) {
-                                    currentValue = finalValue;
-                                    clearInterval(timer);
-                                }
-                                statNumber.textContent = Math.floor(currentValue) + (statNumber.textContent.includes('%') ? '%' : '+');
-                            }, 16);
-                            
-                            observer.unobserve(statNumber);
-                        }
-                    });
-                }, {
-                    threshold: 0.5,
-                    rootMargin: '0px 0px -100px 0px'
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        // Simple counter animation for stats
+        document.addEventListener('DOMContentLoaded', function() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statNumber = entry.target;
+                        const finalValue = parseInt(statNumber.textContent);
+                        const duration = 2000;
+                        const step = finalValue / (duration / 16);
+                        let currentValue = 0;
+
+                        const timer = setInterval(() => {
+                            currentValue += step;
+                            if (currentValue >= finalValue) {
+                                currentValue = finalValue;
+                                clearInterval(timer);
+                            }
+                            statNumber.textContent = Math.floor(currentValue) + (statNumber.textContent.includes('%') ? '%' : '+');
+                        }, 16);
+
+                        observer.unobserve(statNumber);
+                    }
                 });
-                
-                statNumbers.forEach(stat => observer.observe(stat));
+            }, {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
             });
-        </script>
-    </body>
+
+            statNumbers.forEach(stat => observer.observe(stat));
+        });
+    </script>
+</body>
+
 </html>
