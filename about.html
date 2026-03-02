@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Ayubowan Tours</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+<head>
+    <meta charset="utf-8">
+    <title>Ceyloan Travellers - About Us</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <style>
-            /* WhatsApp Floating Button with Pulse Animation */
-            .whatsapp-float {
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* WhatsApp Floating Button with Pulse Animation */
+        .whatsapp-float {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -41,29 +41,31 @@
             z-index: 1000;
             animation: whatsapp-pulse 1.8s infinite;
             text-decoration: none;
-            }
+        }
 
-            /* Hover effect */
-            .whatsapp-float:hover {
+        /* Hover effect */
+        .whatsapp-float:hover {
             transform: scale(1.1);
             transition: 0.3s ease;
-            }
+        }
 
-            /* Pulse animation */
-            @keyframes whatsapp-pulse {
+        /* Pulse animation */
+        @keyframes whatsapp-pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
+
             70% {
                 box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
             }
+
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
-            }
+        }
 
-            /* Mobile responsive */
-            @media (max-width: 768px) {
+        /* Mobile responsive */
+        @media (max-width: 768px) {
             .whatsapp-float {
                 width: 70px;
                 height: 70px;
@@ -72,268 +74,641 @@
                 bottom: 15px;
                 right: 15px;
             }
+        }
+
+        /* ========== ABOUT HERO SECTION - MATCHING BLOG/GALLERY STYLE ========== */
+        .about-hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/14-day-tour-srilanka-galle.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0;
+            margin-bottom: 60px;
+            color: white;
+            position: relative;
+        }
+        
+        .about-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-hero-subtitle {
+            font-size: 1.2rem;
+            color: #ffd700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .about-hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(243, 252, 5, 0.5);
+        }
+        
+        .about-hero-description {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        .about-hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .hero-stat {
+            text-align: center;
+        }
+        
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffd700;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .hero-stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(13, 110, 253, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(13, 110, 253, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .about-image-wrapper:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(13, 110, 253, 0.2);
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.6s ease;
+        }
+
+        .about-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(13, 110, 253, 0.1);
+        }
+
+        .about-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .about-content h1 span {
+            color: #0d6efd;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            color: #0d6efd;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #0d6efd, #00b4ff);
+            border-radius: 2px;
+        }
+
+        .about-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .offer-list {
+            margin: 30px 0;
+        }
+
+        .offer-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.05) 0%, rgba(0, 180, 255, 0.05) 100%);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .offer-item:hover {
+            transform: translateX(10px);
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(0, 180, 255, 0.1) 100%);
+        }
+
+        .offer-item i {
+            color: #0d6efd;
+            font-size: 1rem;
+            margin-right: 15px;
+            width: 20px;
+        }
+
+        .offer-item span {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .btn-more-services {
+            background: linear-gradient(135deg, #0d6efd, #00b4ff);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-more-services:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.3);
+            color: white;
+        }
+
+        /* ========== SUBSCRIBE SECTION ========== */
+        .subscribe {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/carousel-2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 80px 0;
+        }
+
+        .subscribe-title {
+            display: inline-block;
+            padding: 8px 25px;
+            background: #ffd700;
+            color: #2c3e50;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .subscribe h1 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .subscribe p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .subscribe .form-control {
+            border: 2px solid transparent;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .subscribe .form-control:focus {
+            border-color: #ffd700;
+            box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+            outline: none;
+        }
+
+        .subscribe button {
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .subscribe button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        /* ========== COPYRIGHT ========== */
+        .copyright {
+            background: #1a1a1a;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 20px 0;
+        }
+
+        .copyright a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .copyright a:hover {
+            color: #ffa500;
+        }
+
+        /* ========== FADE IN ANIMATION ========== */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 1200px) {
+            .about-hero-title {
+                font-size: 3rem;
             }
-        </style>
-    </head>
+        }
 
-    <body>
+        @media (max-width: 992px) {
+            .about-hero-section {
+                padding: 80px 0;
+            }
+            
+            .about-hero-stats {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+            
+            .about-content {
+                padding: 30px;
+                margin-top: 30px;
+            }
+        }
 
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+        @media (max-width: 768px) {
+            .about-hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .about-hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .about-content h1 {
+                font-size: 2rem;
+            }
+            
+            .subscribe h1 {
+                font-size: 2rem;
+            }
+            
+            .subscribe .position-relative {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .subscribe button {
+                position: relative !important;
+                margin-top: 15px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-hero-section {
+                padding: 60px 0;
+            }
+            
+            .about-hero-title {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                padding: 20px;
+            }
+            
+            .offer-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .offer-item i {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        <!-- Spinner End -->
+    </div>
+    <!-- Spinner End -->
 
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="./index.html" class="navbar-brand p-0">
-                    <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link active">About</a>
-                        <a href="services.html" class="nav-item nav-link">Services</a>
-                        <a href="packages.html" class="nav-item nav-link">Packages</a>
-                        <a href="gallery.html" class="nav-item nav-link">Gallery</a>
-                        <a href="blog.html" class="nav-item nav-link">Blog</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
-                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="./index.html" class="navbar-brand p-0">
+                <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ceyloan Travellers</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link active">About</a>
+                    <a href="services.html" class="nav-item nav-link">Services</a>
+                    <a href="packages.html" class="nav-item nav-link">Packages</a>
+                    <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-            </nav>
-        </div>
-        <!-- Navbar & Hero End -->
+                <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">About Us</h1>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active text-white">About</li>
-                </ol>    
+    <!-- About Hero Section - Matching Blog/Gallery Style -->
+    <div class="about-hero-section">
+        <div class="container">
+            <div class="about-hero-content fade-in-up">
+                <div class="about-hero-subtitle">Discover Our Story</div>
+                <h1 class="about-hero-title">Your Gateway to Sri Lankan Paradise</h1>
+                <p class="about-hero-description">
+                    Experience authentic hospitality and create memories that last a lifetime with our personalized tours
+                </p>
+                
+                <div class="about-hero-stats">
+                    <div class="hero-stat fade-in-up" style="transition-delay: 0.1s">
+                        <span class="hero-stat-number">5+</span>
+                        <span class="hero-stat-label">Years Experience</span>
+                    </div>
+                    <div class="hero-stat fade-in-up" style="transition-delay: 0.2s">
+                        <span class="hero-stat-number">500+</span>
+                        <span class="hero-stat-label">Happy Clients</span>
+                    </div>
+                    <div class="hero-stat fade-in-up" style="transition-delay: 0.3s">
+                        <span class="hero-stat-number">98%</span>
+                        <span class="hero-stat-label">Satisfaction</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Header End -->
+    </div>
+    <!-- About Hero Section End -->
 
-        <!-- About Start -->
-        <div class="container-fluid about py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100">
-                            <img src="img/sri-lankan-travel-map.png" class="img-fluid w-100 h-100" alt="">
-                        </div>
+    <!-- About Section Start -->
+    <div class="about-section">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <div class="about-image-wrapper fade-in-up">
+                        <img src="img/sri-lankan-travel-map.png" class="img-fluid w-100" alt="Sri Lanka Travel Map">
                     </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
-                        <h1 class="mb-4">Welcome to <span class="text-primary">Ayubowan Tours</span></h1>
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-content fade-in-up">
+                        <h1>Welcome to <span>Ceyloan Travellers</span></h1>
 
-                        <h5 class="section-about-title pe-3">About Us</h5>    
-                        <p class="mb-4">Ayubowan Tours is a trusted, family-run Sri Lanka travel company dedicated to creating authentic and 
-                            memorable travel experiences across the island. As a local Sri Lanka tour operator, we specialize in carefully 
-                            designed itineraries that showcase the country’s stunning beaches, lush hill country, wildlife safaris, ancient 
-                            heritage sites, and vibrant culture. Our deep local knowledge allows us to offer custom tours in Sri Lanka that 
-                            suit couples, families, solo travelers, and small groups.</p>
-                        <p class="mb-4">We believe travel is more than sightseeing—it is about meaningful connections with people, 
-                            places, and traditions. By working closely with local guides, hotels, and communities, we ensure every 
-                            journey supports the local economy while delivering genuine experiences to our guests. With a strong focus 
-                            on sustainable and responsible tourism in Sri Lanka, Ayubowan Tours is committed to offering safe, personalized, 
-                            and unforgettable journeys that reflect the true spirit of the island.</p>
+                        <div class="section-title">About Us</div>    
+                        <p>Ceyloan Travellers is a trusted, family-run Sri Lanka travel company dedicated to creating authentic and memorable travel experiences across the island. As a local Sri Lanka tour operator, we specialize in carefully designed itineraries that showcase the country's stunning beaches, lush hill country, wildlife safaris, ancient heritage sites, and vibrant culture.</p>
+                        <p>Our deep local knowledge allows us to offer custom tours in Sri Lanka that suit couples, families, solo travelers, and small groups. We believe travel is more than sightseeing—it is about meaningful connections with people, places, and traditions.</p>
 
-                        <h5 class="section-about-title pe-3">Our Vision</h5>   
-                        <p class="mb-4">Our vision is to become a leading Sri Lanka tour operator recognized globally for sustainable, 
-                            authentic, and responsible travel experiences. We envision a tourism industry where travel positively impacts 
-                            local communities, protects the environment, and preserves Sri Lanka’s rich cultural heritage.</p>
-                        <p class="mb-4">Ayubowan Tours aims to set a benchmark for eco-friendly tourism in Sri Lanka, 
-                            inspiring travelers to explore the island thoughtfully and responsibly. 
-                            We see a future where tourism contributes to long-term community development, wildlife conservation, 
-                            and cultural preservation while delivering world-class travel experiences.</p>
-                        <p class="mb-4">By continuously improving our services, embracing innovation, and strengthening 
-                            local partnerships, we aspire to be a trusted Sri Lanka travel company that travelers return to 
-                            and recommend with confidence. Our vision is to help shape a tourism future that is sustainable, 
-                            inclusive, and beneficial for everyone involved.</p>
+                        <div class="section-title">Our Vision</div>   
+                        <p>Our vision is to become a leading Sri Lanka tour operator recognized globally for sustainable, authentic, and responsible travel experiences. We envision a tourism industry where travel positively impacts local communities, protects the environment, and preserves Sri Lanka's rich cultural heritage.</p>
 
+                        <div class="section-title">Our Mission</div> 
+                        <p>Our mission is to provide high-quality, responsible travel services in Sri Lanka while promoting sustainable tourism practices that benefit both travelers and local communities. We are committed to supporting local employment, partnering with community-based businesses, and encouraging cultural exchange through authentic travel experiences.</p>
+
+                        <div class="section-title">What We Offer</div>         
+                        <div class="offer-list">
+                            <div class="offer-item">
+                                <i class="fa fa-arrow-right text-primary me-2"></i>
+                                <span>Customized Tours</span>
+                            </div>
+                            <div class="offer-item">
+                                <i class="fa fa-arrow-right text-primary me-2"></i>
+                                <span>14 Day Tour Package Around Sri Lanka</span>
+                            </div>
+                            <div class="offer-item">
+                                <i class="fa fa-arrow-right text-primary me-2"></i>
+                                <span>Kandy, Sigiriya & Dambulla Tour</span>
+                            </div>
+                            <div class="offer-item">
+                                <i class="fa fa-arrow-right text-primary me-2"></i>
+                                <span>Latest Model Vehicles</span>
+                            </div>
+                            <div class="offer-item">
+                                <i class="fa fa-arrow-right text-primary me-2"></i>
+                                <span>Beach Tours - Untouched Beaches</span>
+                            </div>
+                            <div class="offer-item">
+                                <i class="fa fa-arrow-right text-primary me-2"></i>
+                                <span>Ella Train Tour</span>
+                            </div>
+                        </div>
                         
-                        <h5 class="section-about-title pe-3">Our Mission</h5> 
-                        <p class="mb-4">Our mission at Ayubowan Tours is to provide high-quality, responsible travel services in Sri Lanka while promoting 
-                            sustainable tourism practices that benefit both travelers and local communities. We aim to design ethical and eco-friendly 
-                            tours in Sri Lanka that respect nature, wildlife, and cultural heritage.We are committed to supporting local employment, 
-                            partnering with community-based businesses, and encouraging cultural exchange through authentic travel experiences. By prioritizing responsible tourism,
-                             we help preserve Sri Lanka’s natural beauty for future generations while offering travelers immersive journeys filled with discovery and comfort.</p>
-                        <p class="mb-4">Our mission also includes delivering exceptional customer service, transparent pricing, and personalized travel planning. 
-                            Whether it’s a beach holiday, cultural tour, wildlife safari, or hill-country escape, we strive to exceed expectations and ensure every 
-                            guest experiences Sri Lanka in a meaningful, respectful, and unforgettable way.</p>    
-
-                        <h5 class="section-about-title pe-3">What are we offer for you ?</h5>         
-                            <div class="row gy-2 gx-4 mb-4">
-                                <div class="col-sm-6">
-                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Customized Tours</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>14 Day Tour Package Around Sri Lanka</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Kandy , Sigiriya & Dambulla Tour</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Beach Tour Spcially Untouch Beachers</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Ella Train Tour</p>
-                                </div>
-                            </div>  
-                        <a href="./services.html" class="btn btn-primary rounded-pill py-2 px-4">More Services</a>      
+                        <a href="./services.html" class="btn-more-services">More Services <i class="fas fa-arrow-right ms-2"></i></a>      
                     </div>
                 </div>
             </div>
         </div>
-        <!-- About End -->
+    </div>
+    <!-- About Section End -->
 
-        <!-- Subscribe Start -->
-        <div class="container-fluid subscribe py-5">
-            <div class="container text-center py-5">
-                <div class="mx-auto text-center" style="max-width: 900px;">
-                    <h5 class="subscribe-title px-3">Subscribe</h5>
-                    <h1 class="text-white mb-4">Our Newsletter</h1>
-                    <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, 
-                        insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
-                    </p>
-                    <div class="position-relative mx-auto">
-                        <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
-                    </div>
+    <!-- Subscribe Start -->
+    <div class="container-fluid subscribe py-5">
+        <div class="container text-center py-5">
+            <div class="mx-auto text-center" style="max-width: 900px;">
+                <h5 class="subscribe-title px-3">Subscribe</h5>
+                <h1 class="text-white mb-4">Our Newsletter</h1>
+                <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, 
+                    insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
+                </p>
+                <div class="position-relative mx-auto" style="max-width: 600px;">
+                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address">
+                    <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
                 </div>
             </div>
         </div>
-        <!-- Subscribe End -->
+    </div>
+    <!-- Subscribe End -->
 
-        <!-- Footer Start -->
-        <!--<div class="container-fluid footer py-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Get In Touch</h4>
-                            <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-share fa-2x text-white me-2"></i>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Company</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Support</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Contact</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <div class="row gy-3 gx-2 mb-4">
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">Arabic</option>
-                                                <option value="2">German</option>
-                                                <option value="3">Greek</option>
-                                                <option value="3">New York</option>
-                                            </select>
-                                            <label for="select1">English</label>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">USD</option>
-                                                <option value="2">EUR</option>
-                                                <option value="3">INR</option>
-                                                <option value="3">GBP</option>
-                                            </select>
-                                            <label for="select1">$</label>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <h4 class="text-white mb-3">Payments</h4>
-                            <div class="footer-bank-card">
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
-                                <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
-                                <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Footer End -->
-        
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright text-body py-4">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6 text-center text-md-end mb-md-0">
-                        <i class="fas fa-copyright me-2"></i><a class="text-white" href="./index.html">Ayubowan Tours</a>, All right reserved.
-                    </div>
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="./index.html">Ceyloan Travellers</a>, All right reserved.
                 </div>
             </div>
         </div>
-        <!-- Copyright End -->
+    </div>
+    <!-- Copyright End -->
 
-        <!-- whatsapp button -->
-        <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
-            class="whatsapp-float"
-            target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
+        class="whatsapp-float"
+        target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Spinner functionality
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    document.getElementById('spinner').style.display = 'none';
+                }, 500);
+            });
+
+            // Initialize animations
+            initAnimations();
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    navbar.style.background = '';
+                    navbar.style.boxShadow = '';
+                }
+            });
+
+            // Subscribe form functionality
+            const subscribeBtn = document.querySelector('.subscribe button');
+            if (subscribeBtn) {
+                subscribeBtn.addEventListener('click', function() {
+                    const emailInput = document.querySelector('.subscribe input');
+                    const email = emailInput.value.trim();
+                    
+                    if (email && validateEmail(email)) {
+                        this.textContent = 'Subscribed!';
+                        this.style.background = '#28a745';
+                        
+                        setTimeout(() => {
+                            this.textContent = 'Subscribe';
+                            this.style.background = '';
+                            emailInput.value = '';
+                        }, 2000);
+                    } else {
+                        emailInput.style.borderColor = '#dc3545';
+                        setTimeout(() => {
+                            emailInput.style.borderColor = '';
+                        }, 2000);
+                    }
+                });
+            }
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Animation initialization function
+        function initAnimations() {
+            const animatedElements = document.querySelectorAll('.fade-in-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+    </script>
+</body>
 
 </html>

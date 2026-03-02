@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Ayubowan Tours</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+<head>
+    <meta charset="utf-8">
+    <title>Ceyloan Travellers - Tour Booking</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <style>
-            /* WhatsApp Floating Button with Pulse Animation */
-            .whatsapp-float {
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* WhatsApp Floating Button with Pulse Animation */
+        .whatsapp-float {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -41,16 +41,16 @@
             z-index: 1000;
             animation: whatsapp-pulse 1.8s infinite;
             text-decoration: none;
-            }
+        }
 
-            /* Hover effect */
-            .whatsapp-float:hover {
+        /* Hover effect */
+        .whatsapp-float:hover {
             transform: scale(1.1);
             transition: 0.3s ease;
-            }
+        }
 
-            /* Pulse animation */
-            @keyframes whatsapp-pulse {
+        /* Pulse animation */
+        @keyframes whatsapp-pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
@@ -60,10 +60,10 @@
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
-            }
+        }
 
-            /* Mobile responsive */
-            @media (max-width: 768px) {
+        /* Mobile responsive */
+        @media (max-width: 768px) {
             .whatsapp-float {
                 width: 70px;
                 height: 70px;
@@ -72,135 +72,539 @@
                 bottom: 15px;
                 right: 15px;
             }
+        }
+
+        /* ========== BOOKING HERO SECTION - MATCHING CONTACT STYLE ========== */
+        .booking-hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/14-day-tour-srilanka-jaffna.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0;
+            margin-bottom: 60px;
+            color: white;
+            position: relative;
+        }
+
+        .booking-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .booking-hero-subtitle {
+            font-size: 1.2rem;
+            color: #ffd700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .booking-hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(243, 252, 5, 0.5);
+        }
+
+        .booking-hero-description {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .booking-hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffd700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* ========== BOOKING SECTION ========== */
+        .booking-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booking-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(13, 110, 253, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(13, 110, 253, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .booking-info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(13, 110, 253, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .booking-info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(13, 110, 253, 0.2);
+        }
+
+        .booking-info-item {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.05) 0%, rgba(0, 180, 255, 0.05) 100%);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .booking-info-item:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(0, 180, 255, 0.1) 100%);
+        }
+
+        .booking-info-item i {
+            font-size: 3rem;
+            color: #0d6efd;
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 20px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.2);
+        }
+
+        .booking-info-item h4 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .booking-info-item p {
+            color: #666;
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .booking-form-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(13, 110, 253, 0.1);
+        }
+
+        .booking-form-card h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .booking-form-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #0d6efd, #00b4ff);
+            border-radius: 2px;
+        }
+
+        .booking-form-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .booking-form-card .form-floating {
+            margin-bottom: 20px;
+        }
+
+        .booking-form-card .form-control {
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 15px;
+            height: auto;
+            min-height: 60px;
+            transition: all 0.3s ease;
+        }
+
+        .booking-form-card .form-control:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.1);
+            outline: none;
+        }
+
+        .booking-form-card textarea.form-control {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .booking-form-card button {
+            background: linear-gradient(135deg, #0d6efd, #00b4ff);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .booking-form-card button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.3);
+        }
+
+        /* ========== SUBSCRIBE SECTION ========== */
+        .subscribe {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('img/carousel-2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 80px 0;
+        }
+
+        .subscribe-title {
+            display: inline-block;
+            padding: 8px 25px;
+            background: #ffd700;
+            color: #2c3e50;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .subscribe h1 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .subscribe p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .subscribe .form-control {
+            border: 2px solid transparent;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .subscribe .form-control:focus {
+            border-color: #ffd700;
+            box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+            outline: none;
+        }
+
+        .subscribe button {
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .subscribe button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        /* ========== COPYRIGHT ========== */
+        .copyright {
+            background: #1a1a1a;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 20px 0;
+        }
+
+        .copyright a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .copyright a:hover {
+            color: #ffa500;
+        }
+
+        /* ========== FADE IN ANIMATION ========== */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 1200px) {
+            .booking-hero-title {
+                font-size: 3rem;
             }
-        </style>
-    </head>
+        }
 
-    <body>
+        @media (max-width: 992px) {
+            .booking-hero-section {
+                padding: 80px 0;
+            }
 
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+            .booking-hero-stats {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
+            .booking-info-card {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .booking-hero-title {
+                font-size: 2.5rem;
+            }
+
+            .booking-hero-description {
+                font-size: 1.1rem;
+            }
+
+            .booking-hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .booking-form-card {
+                padding: 30px;
+            }
+
+            .booking-form-card h2 {
+                font-size: 1.8rem;
+            }
+
+            .subscribe h1 {
+                font-size: 2rem;
+            }
+
+            .subscribe .position-relative {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .subscribe button {
+                position: relative !important;
+                margin-top: 15px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .booking-hero-section {
+                padding: 60px 0;
+            }
+
+            .booking-hero-title {
+                font-size: 2rem;
+            }
+
+            .booking-info-card {
+                padding: 30px 20px;
+            }
+
+            .booking-info-item {
+                padding: 20px 15px;
+            }
+
+            .booking-info-item i {
+                font-size: 2.5rem;
+                padding: 15px;
+            }
+
+            .booking-form-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        <!-- Spinner End -->
+    </div>
+    <!-- Spinner End -->
 
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="./index.html" class="navbar-brand p-0">
-                    <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="services.html" class="nav-item nav-link">Services</a>
-                        <a href="packages.html" class="nav-item nav-link">Packages</a>
-                        <a href="gallery.html" class="nav-item nav-link">Gallery</a>
-                        <a href="blog.html" class="nav-item nav-link">Blog</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="./index.html" class="navbar-brand p-0">
+                <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ceyloan Travellers</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="services.html" class="nav-item nav-link">Services</a>
+                    <a href="packages.html" class="nav-item nav-link">Packages</a>
+                    <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Booking Hero Section - Matching Contact Style -->
+    <div class="booking-hero-section">
+        <div class="container">
+            <div class="booking-hero-content fade-in-up">
+                <div class="booking-hero-subtitle">Reserve Your Adventure</div>
+                <h1 class="booking-hero-title">Book Your Dream Tour</h1>
+                <p class="booking-hero-description">
+                    Start planning your unforgettable Sri Lankan journey today. Fill in the form below and our team will handle everything for you.
+                </p>
+
+                <div class="booking-hero-stats">
+                    <div class="hero-stat fade-in-up" style="transition-delay: 0.1s">
+                        <span class="hero-stat-number">50+</span>
+                        <span class="hero-stat-label">Tour Packages</span>
                     </div>
-                    <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
+                    <div class="hero-stat fade-in-up" style="transition-delay: 0.2s">
+                        <span class="hero-stat-number">24/7</span>
+                        <span class="hero-stat-label">Support</span>
+                    </div>
+                    <div class="hero-stat fade-in-up" style="transition-delay: 0.3s">
+                        <span class="hero-stat-number">100%</span>
+                        <span class="hero-stat-label">Personalized</span>
+                    </div>
                 </div>
-            </nav>
-        </div>
-        <!-- Navbar & Hero End -->
-
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">Tour Booking</h1>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active text-white">Tour Booking</li>
-                </ol>    
             </div>
         </div>
-        <!-- Header End -->
+    </div>
+    <!-- Booking Hero Section End -->
 
-        <!-- Contact Start -->
-        <div class="container-fluid contact bg-light py-5">
-            <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Tour Booking</h5>
-                </div>
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-4">
-                        <div class="bg-white rounded p-4">
-                            <div class="text-center mb-4">
-                                <i class="fa fa-map-marker-alt fa-3x text-primary"></i>
-                                <h4 class="text-primary"><Address></Address></h4>
-                                <p class="mb-0">Peradeniya, <br> Kandy, Sri Lanka</p>
-                            </div>
-                            <div class="text-center mb-4">
-                                <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
-                                <h4 class="text-primary">Mobile</h4>
-                                <p class="mb-0">(+94)76 366 1600</p>
-                            </div>
-                           
-                            <div class="text-center">
-                                <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
-                                <h4 class="text-primary">Email</h4>
-                                <p class="mb-0">info.ayubowantours.lk@gmail.com</p>
-                            </div>
+    <!-- Booking Section Start -->
+    <div class="booking-section">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="booking-info-card fade-in-up">
+                        <div class="booking-info-item">
+                            <i class="fa fa-map-marker-alt"></i>
+                            <h4>Our Location</h4>
+                            <p class="mb-0">Peradeniya,<br>Kandy, Sri Lanka</p>
+                        </div>
+                        <div class="booking-info-item">
+                            <i class="fa fa-phone-alt"></i>
+                            <h4>Call Us</h4>
+                            <p class="mb-0">(+94)76 366 1600</p>
+                        </div>
+                        <div class="booking-info-item">
+                            <i class="fa fa-envelope-open"></i>
+                            <h4>Email Us</h4>
+                            <p class="mb-0">info.ayubowantours.lk@gmail.com</p>
                         </div>
                     </div>
-                    <div class="col-lg-8">
-                        <h2 class="mb-3">Start Exploring! Reserve Your Trip Now!</h2>
-                        <p class="mb-4">Fill in the form below and submit to reserve your unforgettable journey! 
-                            Our team will handle everything for you!</p>
-                        <form>
-                            <div class="row g-3">
+                </div>
+                <div class="col-lg-8">
+                    <div class="booking-form-card fade-in-up">
+                        <h2>Start Exploring! Reserve Your Trip Now!</h2>
+                        <p>Fill in the form below and submit to reserve your unforgettable journey! Our team will handle everything for you!</p>
+                        <form id="bookingForm">
+                            <div class="row g-4">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="fname" placeholder="First Name">
-                                        <label for="name">First Name</label>
+                                        <input type="text" class="form-control" id="fname" placeholder="First Name" required>
+                                        <label for="fname">First Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="lname" placeholder="Last Name">
-                                        <label for="name">Last Name</label>
+                                        <input type="text" class="form-control" id="lname" placeholder="Last Name" required>
+                                        <label for="lname">Last Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control border-0" id="country" placeholder="Country">
-                                        <label for="email">Country</label>
+                                        <input type="text" class="form-control" id="country" placeholder="Country" required>
+                                        <label for="country">Country</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="cnumber" placeholder="Contact Number">
-                                        <label for="name">Contact Number</label>
+                                        <input type="text" class="form-control" id="cnumber" placeholder="Contact Number" required>
+                                        <label for="cnumber">Contact Number</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="lname" placeholder="email">
-                                        <label for="name">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                        <label for="email">Email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject" required>
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 160px" required></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                    <button class="btn w-100 py-3" type="submit">Submit Booking</button>
                                 </div>
                             </div>
                         </form>
@@ -208,7 +612,8 @@
                 </div>
             </div>
         </div>
-        <!-- Contact End -->
+    </div>
+    <!-- Booking Section End -->
 
     <!-- Subscribe Start -->
     <div class="container-fluid subscribe py-5">
@@ -219,8 +624,8 @@
                 <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, 
                     insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
                 </p>
-                <div class="position-relative mx-auto">
-                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                <div class="position-relative mx-auto" style="max-width: 600px;">
+                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address">
                     <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
                 </div>
             </div>
@@ -228,122 +633,196 @@
     </div>
     <!-- Subscribe End -->
 
-    <!-- Footer Start -->
-    <!--<div class="container-fluid footer py-5">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="footer-item d-flex flex-column">
-                        <h4 class="mb-4 text-white">Get In Touch</h4>
-                        <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                        <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                        <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                        <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-share fa-2x text-white me-2"></i>
-                            <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="footer-item d-flex flex-column">
-                        <h4 class="mb-4 text-white">Company</h4>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="footer-item d-flex flex-column">
-                        <h4 class="mb-4 text-white">Support</h4>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Contact</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="footer-item">
-                        <div class="row gy-3 gx-2 mb-4">
-                            <div class="col-xl-6">
-                                <form>
-                                    <div class="form-floating">
-                                        <select class="form-select bg-dark border" id="select1">
-                                            <option value="1">Arabic</option>
-                                            <option value="2">German</option>
-                                            <option value="3">Greek</option>
-                                            <option value="3">New York</option>
-                                        </select>
-                                        <label for="select1">English</label>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-xl-6">
-                                <form>
-                                    <div class="form-floating">
-                                        <select class="form-select bg-dark border" id="select1">
-                                            <option value="1">USD</option>
-                                            <option value="2">EUR</option>
-                                            <option value="3">INR</option>
-                                            <option value="3">GBP</option>
-                                        </select>
-                                        <label for="select1">$</label>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <h4 class="text-white mb-3">Payments</h4>
-                        <div class="footer-bank-card">
-                            <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
-                            <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
-                            <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
-                            <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
-                            <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
-                            <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Footer End -->
-    
     <!-- Copyright Start -->
     <div class="container-fluid copyright text-body py-4">
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-md-6 text-center text-md-end mb-md-0">
-                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="./index.html">Ayubowan Tours</a>, All right reserved.
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="./index.html">Ceyloan Travellers</a>, All right reserved.
                 </div>
             </div>
         </div>
     </div>
     <!-- Copyright End -->
 
-       <!-- whatsapp button -->
-        <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
-            class="whatsapp-float"
-            target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
+        class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Spinner functionality
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    document.getElementById('spinner').style.display = 'none';
+                }, 500);
+            });
+
+            // Initialize animations
+            initAnimations();
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    navbar.style.background = '';
+                    navbar.style.boxShadow = '';
+                }
+            });
+
+            // Booking form submission
+            const bookingForm = document.getElementById('bookingForm');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const fname = document.getElementById('fname');
+                    const lname = document.getElementById('lname');
+                    const country = document.getElementById('country');
+                    const cnumber = document.getElementById('cnumber');
+                    const email = document.getElementById('email');
+                    const subject = document.getElementById('subject');
+                    const message = document.getElementById('message');
+
+                    let isValid = true;
+
+                    [fname, lname, country, cnumber, email, subject, message].forEach(input => {
+                        input.style.borderColor = '';
+                    });
+
+                    if (!fname.value.trim()) {
+                        fname.style.borderColor = '#dc3545';
+                        isValid = false;
+                    }
+
+                    if (!lname.value.trim()) {
+                        lname.style.borderColor = '#dc3545';
+                        isValid = false;
+                    }
+
+                    if (!country.value.trim()) {
+                        country.style.borderColor = '#dc3545';
+                        isValid = false;
+                    }
+
+                    if (!cnumber.value.trim()) {
+                        cnumber.style.borderColor = '#dc3545';
+                        isValid = false;
+                    }
+
+                    if (!email.value.trim() || !validateEmail(email.value)) {
+                        email.style.borderColor = '#dc3545';
+                        isValid = false;
+                    }
+
+                    if (!subject.value.trim()) {
+                        subject.style.borderColor = '#dc3545';
+                        isValid = false;
+                    }
+
+                    if (!message.value.trim()) {
+                        message.style.borderColor = '#dc3545';
+                        isValid = false;
+                    }
+
+                    if (isValid) {
+                        const submitBtn = bookingForm.querySelector('button[type="submit"]');
+                        const originalText = submitBtn.textContent;
+                        submitBtn.textContent = 'Processing...';
+                        submitBtn.disabled = true;
+
+                        setTimeout(() => {
+                            submitBtn.textContent = 'Booking Submitted!';
+                            submitBtn.style.background = '#28a745';
+
+                            bookingForm.reset();
+
+                            setTimeout(() => {
+                                submitBtn.textContent = originalText;
+                                submitBtn.style.background = 'linear-gradient(135deg, #0d6efd, #00b4ff)';
+                                submitBtn.disabled = false;
+                            }, 2000);
+                        }, 1500);
+                    }
+                });
+            }
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+
+            // Subscribe form functionality
+            const subscribeBtn = document.querySelector('.subscribe button');
+            if (subscribeBtn) {
+                subscribeBtn.addEventListener('click', function() {
+                    const emailInput = document.querySelector('.subscribe input');
+                    const email = emailInput.value.trim();
+
+                    if (email && validateEmail(email)) {
+                        this.textContent = 'Subscribed!';
+                        this.style.background = '#28a745';
+
+                        setTimeout(() => {
+                            this.textContent = 'Subscribe';
+                            this.style.background = 'linear-gradient(135deg, #ffd700, #ffa500)';
+                            emailInput.value = '';
+                        }, 2000);
+                    } else {
+                        emailInput.style.borderColor = '#dc3545';
+                        setTimeout(() => {
+                            emailInput.style.borderColor = '';
+                        }, 2000);
+                    }
+                });
+            }
+
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Animation initialization function
+        function initAnimations() {
+            const animatedElements = document.querySelectorAll('.fade-in-up');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+    </script>
+</body>
 
 </html>

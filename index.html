@@ -32,6 +32,10 @@
             box-sizing: border-box;
         }
 
+        body {
+            background-color: #f8f9fa !important;
+        }
+
         img {
             max-width: 100%;
             height: auto;
@@ -103,9 +107,14 @@
             }
         }
 
+        /* About Section Background */
+        .about {
+            background-color: #f8f9fa;
+        }
+
         /* ================= ENHANCED SERVICES SECTION ================= */
         .services-premium-section {
-            background: linear-gradient(135deg, #ffffff 100%, #ffffff 100%);
+            background-color: #f8f9fa !important;
             padding: 100px 0;
             position: relative;
             overflow: hidden;
@@ -158,12 +167,8 @@
         .section-main-title {
             font-size: 48px;
             font-weight: 700;
-            color: white;
+            color: #1c047b;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, #ffffff, #1c047b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .section-description {
@@ -970,7 +975,7 @@
 
         /* ================= ENHANCED BLOG SECTION ================= */
         .blog-cinematic {
-            background: #ffffff;
+            background-color: #f8f9fa !important;
             position: relative;
             padding: 80px 0;
             overflow: hidden;
@@ -1044,10 +1049,7 @@
         .blog-cinematic .text-center h1 {
             font-size: 48px;
             margin: 20px 0;
-            background: linear-gradient(90deg, #0d6efd, #00b4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #1c047b;
             opacity: 0;
             transform: translateY(30px);
             animation: titleSlideIn 0.8s ease 0.3s forwards;
@@ -1063,6 +1065,7 @@
         .blog-cinematic .text-center p {
             max-width: 600px;
             margin: 0 auto;
+            color: #1c047b;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s ease 0.5s forwards;
@@ -1427,6 +1430,19 @@
         .blog-featured {
             grid-column: span 2;
             height: 480px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #f8f9fa !important;
+        }
+
+        /* Subscribe Section */
+        .subscribe {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/carousel-2.jpg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: fixed !important;
         }
 
         /* ================= RESPONSIVE DESIGN ================= */
@@ -2018,10 +2034,7 @@
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="./index.html" class="navbar-brand p-0">
-
-                <img src="./img/main_logo.png" alt="Ceylon Travellers Travel & Tours Logo"
-                    style="width: 90%; max-width: 900px; height: auto; display: block; margin: 20px auto;">
-
+                <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ceyloan Travellers</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -2154,7 +2167,7 @@
     <!-- About End -->
 
     <!-- Enhanced Services Section with Fixed Cards -->
-    <section class="services-premium-section">
+    <section class="container">
         <!-- Floating Elements -->
         <div class="floating-element floating-element-1"></div>
         <div class="floating-element floating-element-2"></div>
@@ -2351,7 +2364,7 @@
     </section>
 
     <!-- Blog Section -->
-    <section class="container-fluid blog-cinematic py-5">
+    <section class="container">
         <div class="container py-5">
             <div class="text-center mb-5">
                 <h5 class="text-primary">Travel Journal</h5>
@@ -2465,7 +2478,7 @@
     </section>
 
     <!-- Contact Start -->
-    <div class="container-fluid contact bg-light py-5">
+    <div class="container-fluid contact py-5">
         <div class="container py-5">
             <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                 <h5 class="section-title px-3">Contact Us</h5>
