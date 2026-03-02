@@ -1,0 +1,3320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ayubowan Tours</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* WhatsApp Floating Button with Pulse Animation */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background-color: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 42px;
+            text-align: center;
+            line-height: 80px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            z-index: 1000;
+            animation: whatsapp-pulse 1.8s infinite;
+            text-decoration: none;
+        }
+
+        /* Hover effect */
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            transition: 0.3s ease;
+        }
+
+        /* Pulse animation */
+        @keyframes whatsapp-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 70px;
+                height: 70px;
+                font-size: 38px;
+                line-height: 70px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        /* ENHANCED TOUR TIMELINE STYLES */
+        .enhanced-tour-section {
+            position: relative;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%);
+        }
+
+        .tour-timeline-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 15px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a365d;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ENHANCED DAY CARD DESIGN */
+        .enhanced-day-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .enhanced-day-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .day-card-header {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 25px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day-card-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+
+        .day-number-circle {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            backdrop-filter: blur(5px);
+        }
+
+        .day-main-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .day-location {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .day-location i {
+            color: #f39c12;
+        }
+
+        .day-highlight {
+            display: inline-block;
+            background: rgba(243, 156, 18, 0.9);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* ENHANCED DAY CONTENT */
+        .day-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .day-image-section {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .day-main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .enhanced-day-card:hover .day-main-image {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 20px;
+            color: white;
+        }
+
+        .image-caption {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .day-schedule-section {
+            padding: 30px;
+        }
+
+        .schedule-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .schedule-title i {
+            color: #3498db;
+        }
+
+        /* ENHANCED TIME SCHEDULE */
+        .enhanced-schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .enhanced-time-slot {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid #eaeaea;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enhanced-time-slot:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: linear-gradient(to bottom, #3498db, #2ecc71);
+        }
+
+        .enhanced-time-slot:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.1);
+            border-color: #3498db;
+        }
+
+        .time-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .time-badge-enhanced {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+        }
+
+        .activity-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #3498db;
+        }
+
+        .slot-title-enhanced {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .slot-desc-enhanced {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .activity-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .highlight-tag {
+            background: #e8f4fc;
+            color: #2980b9;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #d1e8ff;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-tag:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* DAY INFO PANELS */
+        .day-info-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card.accommodation {
+            background: linear-gradient(135deg, #fff9e6, #ffeaa7);
+            border-left: 5px solid #f39c12;
+        }
+
+        .info-card.travel {
+            background: linear-gradient(135deg, #e8f4fc, #d1e8ff);
+            border-left: 5px solid #3498db;
+        }
+
+        .info-card-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card-title i {
+            color: #f39c12;
+        }
+
+        .info-card.travel .info-card-title i {
+            color: #3498db;
+        }
+
+        .info-grid-enhanced {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .info-item-enhanced {
+            text-align: center;
+        }
+
+        .info-icon-circle {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 1.3rem;
+            color: #f39c12;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-card.travel .info-icon-circle {
+            color: #3498db;
+        }
+
+        .info-label-enhanced {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .info-value-enhanced {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+
+        /* QUICK FACTS ENHANCED */
+        .quick-facts-enhanced {
+            background: linear-gradient(135deg, #2c3e50, #1a252f);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .facts-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .fact-item-enhanced {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .fact-icon-circle {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #f39c12;
+        }
+
+        .fact-text {
+            font-size: 0.95rem;
+        }
+
+        /* PRICE SECTION - ENHANCED */
+        .price-section-enhanced {
+            background: linear-gradient(135deg, #1a365d, #2c3e50);
+            color: white;
+            border-radius: 25px;
+            padding: 60px 40px;
+            margin: 70px auto;
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .price-section-enhanced:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: cover;
+        }
+
+        .price-header-enhanced {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .price-title-enhanced {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #fff, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .price-amount-enhanced {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #f39c12;
+            margin: 20px 0;
+            text-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        .price-subtitle-enhanced {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .inclusion-grid-enhanced {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .inclusion-item-enhanced {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .inclusion-item-enhanced:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(243, 156, 18, 0.3);
+        }
+
+        .inclusion-icon-enhanced {
+            font-size: 2.5rem;
+            color: #2ecc71;
+            margin-bottom: 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inclusion-item-enhanced h5 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .inclusion-text-enhanced {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* BOOKING CTA ENHANCED */
+        .booking-cta-enhanced {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 25px;
+            padding: 60px 40px;
+            margin: 70px auto;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            max-width: 1000px;
+        }
+
+        .cta-title-enhanced {
+            font-size: 2.5rem;
+            color: #1a365d;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons-enhanced {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn-cta-enhanced {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            min-width: 220px;
+            justify-content: center;
+        }
+
+        .btn-cta-primary {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-cta-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+            color: white;
+        }
+
+        .btn-cta-secondary {
+            background: white;
+            color: #3498db;
+            border: 2px solid #3498db;
+            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.15);
+        }
+
+        .btn-cta-secondary:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.25);
+        }
+
+        .btn-cta-tertiary {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            border: none;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+        }
+
+        .btn-cta-tertiary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(243, 156, 18, 0.4);
+            color: white;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1200px) {
+            .tour-timeline-container {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.3rem;
+            }
+            
+            .enhanced-schedule-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .info-grid-enhanced {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .day-number-circle {
+                width: 60px;
+                height: 60px;
+                font-size: 1.7rem;
+            }
+            
+            .price-title-enhanced {
+                font-size: 2.3rem;
+            }
+            
+            .price-amount-enhanced {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .enhanced-day-card {
+                margin-bottom: 30px;
+            }
+            
+            .day-card-header {
+                padding: 20px;
+            }
+            
+            .day-main-title {
+                font-size: 1.5rem;
+            }
+            
+            .day-number-circle {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                right: 20px;
+            }
+            
+            .day-image-section {
+                height: 220px;
+            }
+            
+            .day-schedule-section {
+                padding: 20px;
+            }
+            
+            .enhanced-schedule-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .day-info-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .price-section-enhanced {
+                padding: 40px 25px;
+                margin: 50px 0;
+            }
+            
+            .inclusion-grid-enhanced {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .booking-cta-enhanced {
+                padding: 40px 25px;
+                margin: 50px 0;
+            }
+            
+            .cta-title-enhanced {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons-enhanced {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-cta-enhanced {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.9rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .day-image-section {
+                height: 200px;
+            }
+            
+            .time-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .info-grid-enhanced {
+                grid-template-columns: 1fr;
+            }
+            
+            .inclusion-grid-enhanced {
+                grid-template-columns: 1fr;
+            }
+            
+            .price-title-enhanced {
+                font-size: 1.9rem;
+            }
+            
+            .price-amount-enhanced {
+                font-size: 2.8rem;
+            }
+            
+            .btn-cta-enhanced {
+                padding: 16px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .enhanced-day-card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        /* DAY COLOR THEMES */
+        .day-1 .day-card-header { background: linear-gradient(135deg, #3498db, #2c3e50); }
+        .day-2 .day-card-header { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .day-3 .day-card-header { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .day-4 .day-card-header { background: linear-gradient(135deg, #1abc9c, #16a085); }
+        .day-5 .day-card-header { background: linear-gradient(135deg, #f39c12, #e67e22); }
+        .day-6 .day-card-header { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .day-7 .day-card-header { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .day-8 .day-card-header { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .day-9 .day-card-header { background: linear-gradient(135deg, #1abc9c, #16a085); }
+        .day-10 .day-card-header { background: linear-gradient(135deg, #f39c12, #e67e22); }
+        .day-11 .day-card-header { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .day-12 .day-card-header { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .day-13 .day-card-header { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .day-14 .day-card-header { background: linear-gradient(135deg, #95a5a6, #7f8c8d); }
+
+        /* Progress indicator */
+        .day-progress {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 100;
+        }
+        
+        .day-progress-item {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .day-progress-item.active {
+            background: #3498db;
+            transform: scale(1.3);
+        }
+        
+        .day-progress-item:hover:after {
+            content: attr(data-day);
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 768px) {
+            .day-progress {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="./index.html" class="navbar-brand p-0">
+                <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ayubowan Tours</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="services.html" class="nav-item nav-link">Services</a>
+                    <a href="packages.html" class="nav-item nav-link active">Packages</a>
+                    <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="#booking" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h3 class="text-white display-3 mb-4">14 Days Complete Sri Lanka Tour</h1>
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="packages.html">Packages</a></li>
+                    <li class="breadcrumb-item active text-white">14 Days Tour Package</li>
+                </ol>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- ENHANCED Day by Day Plan Start -->
+    <div class="container-fluid enhanced-tour-section">
+        <div class="tour-timeline-container">
+            <!-- Progress Indicator -->
+            <div class="day-progress">
+                <div class="day-progress-item active" data-day="Day 1"></div>
+                <div class="day-progress-item" data-day="Day 2"></div>
+                <div class="day-progress-item" data-day="Day 3"></div>
+                <div class="day-progress-item" data-day="Day 4"></div>
+                <div class="day-progress-item" data-day="Day 5"></div>
+                <div class="day-progress-item" data-day="Day 6"></div>
+                <div class="day-progress-item" data-day="Day 7"></div>
+                <div class="day-progress-item" data-day="Day 8"></div>
+                <div class="day-progress-item" data-day="Day 9"></div>
+                <div class="day-progress-item" data-day="Day 10"></div>
+                <div class="day-progress-item" data-day="Day 11"></div>
+                <div class="day-progress-item" data-day="Day 12"></div>
+                <div class="day-progress-item" data-day="Day 13"></div>
+                <div class="day-progress-item" data-day="Day 14"></div>
+            </div>
+            
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">Your 14-Day Sri Lanka Adventure</h2>
+                <p class="section-subtitle">Experience the complete Sri Lanka journey - from ancient cities to pristine beaches, wildlife safaris to misty tea plantations. Each day is carefully crafted for an unforgettable experience.</p>
+            </div>
+
+            <!-- Day 1 -->
+            <div class="enhanced-day-card day-1" id="day-1">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Arrival & Ancient Wonders Begin</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Colombo → Anuradhapura
+                        </p>
+                        <span class="day-highlight">Ancient City Exploration</span>
+                    </div>
+                    <div class="day-number-circle">01</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/anuradhapura.jpg" class="day-main-image" alt="Anuradhapura Ancient City">
+                        <div class="image-overlay">
+                            <p class="image-caption">Sacred Ruwanweliseya Stupa in Anuradhapura</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-plane-arrival"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Airport Welcome & Transfer</h5>
+                                <p class="slot-desc-enhanced">Meet your personal guide at Bandaranaike International Airport. Enjoy a traditional Sri Lankan welcome with refreshments.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Welcome Ceremony</span>
+                                    <span class="highlight-tag">Private Transfer</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">09:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Scenic Countryside Drive</h5>
+                                <p class="slot-desc-enhanced">3.5-hour journey to Anuradhapura through picturesque Sri Lankan countryside with comfort stops.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Countryside Views</span>
+                                    <span class="highlight-tag">Comfortable Travel</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">01:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Authentic Sri Lankan Lunch</h5>
+                                <p class="slot-desc-enhanced">Enjoy your first taste of authentic Sri Lankan cuisine at a carefully selected local restaurant.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Local Cuisine</span>
+                                    <span class="highlight-tag">Rice & Curry</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">03:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Hotel Check-in & Relaxation</h5>
+                                <p class="slot-desc-enhanced">Check into The Lake Front Hotel Anuradhapura and freshen up after your journey.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-landmark"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Ancient City Temple Tour</h5>
+                                <p class="slot-desc-enhanced">Visit sacred UNESCO sites including Jetavanaramaya, Ruwanweliseya, and the sacred Sri Maha Bodhi tree.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">UNESCO Site</span>
+                                    <span class="highlight-tag">Buddhist Heritage</span>
+                                    <span class="highlight-tag">Photography</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-moon"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Dinner & Rest</h5>
+                                <p class="slot-desc-enhanced">Evening dinner and relaxation at hotel. Overnight stay at The Lake Front Hotel Anuradhapura.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="day-info-container">
+                            <div class="info-card accommodation">
+                                <h5 class="info-card-title"><i class="fas fa-hotel"></i> Accommodation Details</h5>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-bed"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Hotel</div>
+                                        <div class="info-value-enhanced">Lake Front Hotel</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-utensils"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Meals Included</div>
+                                        <div class="info-value-enhanced">Half Board</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Check-in Time</div>
+                                        <div class="info-value-enhanced">03:00 PM</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-card travel">
+                                <h5 class="info-card-title"><i class="fas fa-route"></i> Travel Information</h5>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-road"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Distance</div>
+                                        <div class="info-value-enhanced">169 km</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Travel Time</div>
+                                        <div class="info-value-enhanced">3.5 hours</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-car"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Transport</div>
+                                        <div class="info-value-enhanced">Private A/C Van</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <div class="fact-text">Explore Sri Lanka's first ancient capital city</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-tree"></i>
+                                    </div>
+                                    <div class="fact-text">Visit the world's oldest documented tree</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-camera"></i>
+                                    </div>
+                                    <div class="fact-text">Perfect sunset photography opportunities</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 2 -->
+            <div class="enhanced-day-card day-2" id="day-2">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Journey to Northern Capital</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Anuradhapura → Jaffna
+                        </p>
+                        <span class="day-highlight">Cultural Capital Exploration</span>
+                    </div>
+                    <div class="day-number-circle">02</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/14-day-tour-srilanka-jaffna.jpg" class="day-main-image" alt="Jaffna Cultural Capital">
+                        <div class="image-overlay">
+                            <p class="image-caption">Nallur Kovil - Jaffna's most significant Hindu temple</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Breakfast with Lake View</h5>
+                                <p class="slot-desc-enhanced">Enjoy a hearty Sri Lankan breakfast overlooking the peaceful lake before beginning your journey north.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">09:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Depart for Jaffna</h5>
+                                <p class="slot-desc-enhanced">Begin your scenic journey to Northern Sri Lanka, witnessing changing landscapes and rural life.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">11:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-temple"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Mihinthalaya Sacred Site</h5>
+                                <p class="slot-desc-enhanced">Visit this important Buddhist pilgrimage site enroute, known for its historical significance.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">01:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Jaffna Cuisine Lunch</h5>
+                                <p class="slot-desc-enhanced">Authentic Northern Sri Lankan lunch experience with local specialties.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">03:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Hotel Check-in</h5>
+                                <p class="slot-desc-enhanced">Check into The Fox Resort Jaffna and settle into your accommodation.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-compass"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">City Orientation</h5>
+                                <p class="slot-desc-enhanced">Explore Jaffna town at leisure, experiencing the unique Tamil culture and architecture.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Local Markets</span>
+                                    <span class="highlight-tag">Cultural Sites</span>
+                                    <span class="highlight-tag">Street Food</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="day-info-container">
+                            <div class="info-card accommodation">
+                                <h5 class="info-card-title"><i class="fas fa-hotel"></i> Accommodation Details</h5>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-bed"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Hotel</div>
+                                        <div class="info-value-enhanced">The Fox Resort Jaffna</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-utensils"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Meals Included</div>
+                                        <div class="info-value-enhanced">Half Board</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-card travel">
+                                <h5 class="info-card-title"><i class="fas fa-route"></i> Travel Information</h5>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-road"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Distance</div>
+                                        <div class="info-value-enhanced">196 km</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Travel Time</div>
+                                        <div class="info-value-enhanced">4 hours</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-car"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Transport</div>
+                                        <div class="info-value-enhanced">Private A/C Van</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-road"></i>
+                                    </div>
+                                    <div class="fact-text">Scenic 196 km journey through Northern landscapes</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <div class="fact-text">Experience authentic Jaffna cuisine</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                    <div class="fact-text">Overnight at The Fox Resort Jaffna</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 3 -->
+            <div class="enhanced-day-card day-3" id="day-3">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Jaffna Cultural Exploration</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Jaffna Full Day Tour
+                        </p>
+                        <span class="day-highlight">Full Day Cultural Immersion</span>
+                    </div>
+                    <div class="day-number-circle">03</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/14-day-tour-srilanka-jaffna2.jpg" class="day-main-image" alt="Jaffna Cultural Tour">
+                        <div class="image-overlay">
+                            <p class="image-caption">Delft Island with wild horses and Dutch ruins</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-coffee"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Breakfast at Hotel</h5>
+                                <p class="slot-desc-enhanced">Start your day with a hearty breakfast at the hotel.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">09:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-temple"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Nallur Kovil Visit</h5>
+                                <p class="slot-desc-enhanced">Visit Jaffna's most significant Hindu temple, a center of Tamil culture.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Hindu Temple</span>
+                                    <span class="highlight-tag">Cultural Site</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">11:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Keerimalai Springs</h5>
+                                <p class="slot-desc-enhanced">Visit the natural freshwater springs with healing properties.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">01:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Local Lunch Experience</h5>
+                                <p class="slot-desc-enhanced">Traditional Jaffna cuisine experience at a local restaurant.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">02:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Jaffna Library</h5>
+                                <p class="slot-desc-enhanced">Visit the iconic public library, a symbol of Tamil literary heritage.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-island-tropical"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Delft Island Exploration</h5>
+                                <p class="slot-desc-enhanced">Explore island with wild horses, Dutch colonial ruins, and unique landscapes.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Island Tour</span>
+                                    <span class="highlight-tag">Wild Horses</span>
+                                    <span class="highlight-tag">Dutch Ruins</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="fact-text">Full day exploration of Jaffna's cultural sites</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                    <div class="fact-text">Overnight: The Fox Resort Jaffna</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <div class="fact-text">Authentic Jaffna cuisine experience</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 4 -->
+            <div class="enhanced-day-card day-4" id="day-4">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Journey to East Coast</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Jaffna → Trincomalee
+                        </p>
+                        <span class="day-highlight">Beach Destination</span>
+                    </div>
+                    <div class="day-number-circle">04</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/14-day-tour-srilanka-trinco.jpg" class="day-main-image" alt="Trincomalee Beach">
+                        <div class="image-overlay">
+                            <p class="image-caption">Beautiful Nilaveli Beach in Trincomalee</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Breakfast & Check-out</h5>
+                                <p class="slot-desc-enhanced">Morning breakfast before departure from Jaffna.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">09:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Coastal Drive to Trincomalee</h5>
+                                <p class="slot-desc-enhanced">4.5-hour scenic journey along the beautiful east coast.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">01:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Lunch Enroute</h5>
+                                <p class="slot-desc-enhanced">Seaside restaurant lunch stop with fresh seafood options.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">03:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Beachfront Hotel Check-in</h5>
+                                <p class="slot-desc-enhanced">Check into your beachfront hotel in Trincomalee.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Beach Relaxation Time</h5>
+                                <p class="slot-desc-enhanced">Evening at beautiful Nilaveli Beach - swim, relax, or enjoy sunset views.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Beach Time</span>
+                                    <span class="highlight-tag">Swimming</span>
+                                    <span class="highlight-tag">Sunset Views</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="day-info-container">
+                            <div class="info-card travel">
+                                <h5 class="info-card-title"><i class="fas fa-route"></i> Travel Information</h5>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-road"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Distance</div>
+                                        <div class="info-value-enhanced">240 km</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Travel Time</div>
+                                        <div class="info-value-enhanced">4.5 hours</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-road"></i>
+                                    </div>
+                                    <div class="fact-text">Scenic coastal drive from north to east coast</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                    <div class="fact-text">Beachfront accommodation in Trincomalee</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                    </div>
+                                    <div class="fact-text">Relaxation at beautiful Nilaveli Beach</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 5 -->
+            <div class="enhanced-day-card day-5" id="day-5">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Marine Adventure Day</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Trincomalee Marine Activities
+                        </p>
+                        <span class="day-highlight">Marine Park Exploration</span>
+                    </div>
+                    <div class="day-number-circle">05</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/14-day-tour-srilanka-trinco2.jpg" class="day-main-image" alt="Marine Activities">
+                        <div class="image-overlay">
+                            <p class="image-caption">Snorkeling at Pigeon Island National Marine Park</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-sunrise"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Early Breakfast</h5>
+                                <p class="slot-desc-enhanced">Quick breakfast to prepare for marine activities.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-ship"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Pigeon Island Boat Trip</h5>
+                                <p class="slot-desc-enhanced">Boat ride to Pigeon Island National Marine Park.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">09:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-fish"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Snorkeling Adventure</h5>
+                                <p class="slot-desc-enhanced">Explore coral reefs with provided snorkeling gear.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Snorkeling</span>
+                                    <span class="highlight-tag">Coral Reefs</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">12:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Beachside Lunch</h5>
+                                <p class="slot-desc-enhanced">Fresh seafood lunch by the beach.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">02:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Optional Scuba Diving</h5>
+                                <p class="slot-desc-enhanced">Optional scuba diving experience for certified divers.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-binoculars"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Whale Watching Tour</h5>
+                                <p class="slot-desc-enhanced">Whale and dolphin watching tour in the Indian Ocean.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Whale Spotting</span>
+                                    <span class="highlight-tag">Dolphin Watching</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                    <div class="fact-text">Marine activities at Pigeon Island National Park</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                    <div class="fact-text">Overnight: Beachfront Hotel Trincomalee</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-fish"></i>
+                                    </div>
+                                    <div class="fact-text">Snorkeling in pristine coral reefs</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 6 -->
+            <div class="enhanced-day-card day-6" id="day-6">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Coastal Journey South</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Trincomalee → Passikudha
+                        </p>
+                        <span class="day-highlight">Coastal Drive & Beach Relaxation</span>
+                    </div>
+                    <div class="day-number-circle">06</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/14-day-tour-srilanka-pasikuddha.jpg" class="day-main-image" alt="Passikudha Beach">
+                        <div class="image-overlay">
+                            <p class="image-caption">Pristine Passikudha Beach on East Coast</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Morning Breakfast</h5>
+                                <p class="slot-desc-enhanced">Breakfast with ocean view at hotel.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">09:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Depart for Passikudha</h5>
+                                <p class="slot-desc-enhanced">2.5-hour scenic drive along the beautiful east coast.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">10:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-temple"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Thirukoneshwaram Temple</h5>
+                                <p class="slot-desc-enhanced">Visit ancient Hindu temple overlooking the ocean.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">12:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Lunch in Trincomalee</h5>
+                                <p class="slot-desc-enhanced">Enjoy lunch before continuing your journey.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">02:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Hotel Check-in</h5>
+                                <p class="slot-desc-enhanced">Arrive and check into Passikudha beach resort.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Beach Relaxation</h5>
+                                <p class="slot-desc-enhanced">Enjoy the pristine Passikudha Beach - swimming and relaxation.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Beach Time</span>
+                                    <span class="highlight-tag">Swimming</span>
+                                    <span class="highlight-tag">Relaxation</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="day-info-container">
+                            <div class="info-card travel">
+                                <h5 class="info-card-title"><i class="fas fa-route"></i> Travel Information</h5>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-road"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Distance</div>
+                                        <div class="info-value-enhanced">124 km</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Travel Time</div>
+                                        <div class="info-value-enhanced">2.5 hours</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-road"></i>
+                                    </div>
+                                    <div class="fact-text">Scenic coastal drive to Passikudha</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                    <div class="fact-text">Overnight: Passikudha Beach Resort</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                    </div>
+                                    <div class="fact-text">Relaxation at pristine Passikudha Beach</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 7 -->
+            <div class="enhanced-day-card day-7" id="day-7">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Batticaloa Exploration</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Passikudha → Batticaloa
+                        </p>
+                        <span class="day-highlight">Cultural Day & Lagoon Experience</span>
+                    </div>
+                    <div class="day-number-circle">07</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/14-day-tour-srilanka-baticlo.jpg" class="day-main-image" alt="Batticaloa Lagoon">
+                        <div class="image-overlay">
+                            <p class="image-caption">Scenic Batticaloa Lagoon boat ride</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-coffee"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Breakfast at Resort</h5>
+                                <p class="slot-desc-enhanced">Morning meal at the beach resort.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">09:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Travel to Batticaloa</h5>
+                                <p class="slot-desc-enhanced">Short drive to Batticaloa city.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">10:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-fort"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Batticaloa Fort Visit</h5>
+                                <p class="slot-desc-enhanced">Explore the historic Dutch fort in Batticaloa.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Dutch Fort</span>
+                                    <span class="highlight-tag">History</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">12:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Local Lunch Experience</h5>
+                                <p class="slot-desc-enhanced">Traditional Eastern Sri Lankan cuisine lunch.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">02:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-boat"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Lagoon Boat Ride</h5>
+                                <p class="slot-desc-enhanced">Scenic boat ride in beautiful Batticaloa Lagoon.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Boat Ride</span>
+                                    <span class="highlight-tag">Lagoon Views</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-church"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Cultural Sites Visit</h5>
+                                <p class="slot-desc-enhanced">Visit St. Mary's Cathedral & Gandhi Park.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Cultural Sites</span>
+                                    <span class="highlight-tag">History</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="fact-text">Full day exploration of Batticaloa's cultural heritage</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                    <div class="fact-text">Overnight: Passikudha Beach Resort</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-boat"></i>
+                                    </div>
+                                    <div class="fact-text">Scenic boat ride in Batticaloa Lagoon</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 8 -->
+            <div class="enhanced-day-card day-8" id="day-8">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Cultural Triangle Begins</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Passikudha → Sigiriya
+                        </p>
+                        <span class="day-highlight">Ancient Wonders & Sunset Hike</span>
+                    </div>
+                    <div class="day-number-circle">08</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/14-day-tour-srilanka-sigiriya.jpg" class="day-main-image" alt="Sigiriya Rock Fortress">
+                        <div class="image-overlay">
+                            <p class="image-caption">Majestic Sigiriya Lion Rock at sunset</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Breakfast & Check-out</h5>
+                                <p class="slot-desc-enhanced">Morning meal and departure from Passikudha.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">09:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Journey to Sigiriya</h5>
+                                <p class="slot-desc-enhanced">2.5-hour drive to the Cultural Triangle region.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">11:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-landmark"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Polonnaruwa Ancient City (Optional)</h5>
+                                <p class="slot-desc-enhanced">Optional stop at UNESCO World Heritage Site.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">UNESCO Site</span>
+                                    <span class="highlight-tag">Ancient City</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">01:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Lunch Enroute</h5>
+                                <p class="slot-desc-enhanced">Traditional rice and curry lunch.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">03:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Hotel Check-in</h5>
+                                <p class="slot-desc-enhanced">Check into your Sigiriya hotel.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">05:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Pidurangala Sunset Hike</h5>
+                                <p class="slot-desc-enhanced">Climb Pidurangala Rock for stunning sunset views of Sigiriya.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Hiking</span>
+                                    <span class="highlight-tag">Sunset Views</span>
+                                    <span class="highlight-tag">Photography</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="day-info-container">
+                            <div class="info-card travel">
+                                <h5 class="info-card-title"><i class="fas fa-route"></i> Travel Information</h5>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-road"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Distance</div>
+                                        <div class="info-value-enhanced">125 km</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Travel Time</div>
+                                        <div class="info-value-enhanced">2.5 hours</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-road"></i>
+                                    </div>
+                                    <div class="fact-text">Journey to Sri Lanka's Cultural Triangle</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                    <div class="fact-text">Overnight: Sigiriya Hotel</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                    <div class="fact-text">Sunset hike at Pidurangala Rock</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 9 -->
+            <div class="enhanced-day-card day-9" id="day-9">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Hill Country Journey</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Sigiriya → Kandy
+                        </p>
+                        <span class="day-highlight">Cultural Capital & Sacred Temple</span>
+                    </div>
+                    <div class="day-number-circle">09</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/14-day-tour-srilanka-kandy.jpg" class="day-main-image" alt="Kandy Temple">
+                        <div class="image-overlay">
+                            <p class="image-caption">Sacred Temple of the Tooth in Kandy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Early Breakfast</h5>
+                                <p class="slot-desc-enhanced">Quick breakfast for early start to Sigiriya.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Sigiriya Rock Fortress Climb</h5>
+                                <p class="slot-desc-enhanced">Climb the iconic Lion Rock fortress with ancient frescoes.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">UNESCO Site</span>
+                                    <span class="highlight-tag">Ancient Fortress</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">11:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Depart for Kandy</h5>
+                                <p class="slot-desc-enhanced">2.5-hour scenic drive through hill country.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">01:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Lunch Enroute</h5>
+                                <p class="slot-desc-enhanced">Stop at local restaurant for lunch.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">03:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Hotel Check-in</h5>
+                                <p class="slot-desc-enhanced">Check into your Kandy hotel.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-temple"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Temple of the Tooth Visit</h5>
+                                <p class="slot-desc-enhanced">Visit sacred Sri Dalada Maligawa, home to Buddha's tooth relic.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Sacred Site</span>
+                                    <span class="highlight-tag">Cultural Heritage</span>
+                                    <span class="highlight-tag">UNESCO Site</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="day-info-container">
+                            <div class="info-card travel">
+                                <h5 class="info-card-title"><i class="fas fa-route"></i> Travel Information</h5>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-road"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Distance</div>
+                                        <div class="info-value-enhanced">99 km</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Travel Time</div>
+                                        <div class="info-value-enhanced">2.5 hours</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-road"></i>
+                                    </div>
+                                    <div class="fact-text">Scenic drive through hill country to Kandy</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                    <div class="fact-text">Overnight: Kandy Hotel</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-temple"></i>
+                                    </div>
+                                    <div class="fact-text">Visit sacred Temple of the Tooth</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 10 -->
+            <div class="enhanced-day-card day-10" id="day-10">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Tea Country & Scenic Train</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Kandy → Nuwara Eliya → Ella
+                        </p>
+                        <span class="day-highlight">Hill Country & World's Most Scenic Train Ride</span>
+                    </div>
+                    <div class="day-number-circle">10</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/14-day-tour-srilanka-nuwaraeliya.jpg" class="day-main-image" alt="Scenic Train Ride">
+                        <div class="image-overlay">
+                            <p class="image-caption">World-famous scenic train ride through tea plantations</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-coffee"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Breakfast & Check-out</h5>
+                                <p class="slot-desc-enhanced">Morning meal and departure from Kandy.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Drive to Nanuoya Station</h5>
+                                <p class="slot-desc-enhanced">Scenic journey through tea plantations to train station.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">10:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-train"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Scenic Train Ride</h5>
+                                <p class="slot-desc-enhanced">Famous Nanuoya to Ella train journey through breathtaking landscapes.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Scenic Train</span>
+                                    <span class="highlight-tag">Tea Plantations</span>
+                                    <span class="highlight-tag">Mountain Views</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">01:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Lunch in Ella</h5>
+                                <p class="slot-desc-enhanced">Arrive Ella and enjoy lunch with mountain views.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">03:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Hotel Check-in</h5>
+                                <p class="slot-desc-enhanced">Check into your Ella hotel accommodation.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-hiking"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Little Adam's Peak Hike</h5>
+                                <p class="slot-desc-enhanced">Evening hike to Little Adam's Peak for panoramic views.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Hiking</span>
+                                    <span class="highlight-tag">Scenic Views</span>
+                                    <span class="highlight-tag">Sunset</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-train"></i>
+                                    </div>
+                                    <div class="fact-text">World's most scenic train ride experience</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                    <div class="fact-text">Overnight: Ella Hotel</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                    <div class="fact-text">Hike to Little Adam's Peak for sunset</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 11 -->
+            <div class="enhanced-day-card day-11" id="day-11">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Ella's Natural Wonders</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Ella Full Day Exploration
+                        </p>
+                        <span class="day-highlight">Nature Day & Tea Culture</span>
+                    </div>
+                    <div class="day-number-circle">11</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/14-day-tour-srilanka-ella.jpg" class="day-main-image" alt="Ella Nature">
+                        <div class="image-overlay">
+                            <p class="image-caption">Nine Arch Bridge in Ella's lush green landscape</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Breakfast with Mountain Views</h5>
+                                <p class="slot-desc-enhanced">Morning meal with stunning mountain views.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-bridge"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Nine Arch Bridge Visit</h5>
+                                <p class="slot-desc-enhanced">Visit iconic British-era railway bridge amidst tea plantations.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Iconic Bridge</span>
+                                    <span class="highlight-tag">Photography</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">10:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-leaf"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Tea Plantation Tour</h5>
+                                <p class="slot-desc-enhanced">Tour a working tea factory and learn about tea production.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Tea Factory</span>
+                                    <span class="highlight-tag">Tea Tasting</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">12:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Lunch with Panoramic Views</h5>
+                                <p class="slot-desc-enhanced">Panoramic lunch at hilltop restaurant overlooking valleys.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">02:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-chair"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Lipton's Seat Visit</h5>
+                                <p class="slot-desc-enhanced">Visit Sir Thomas Lipton's favorite viewpoint over tea plantations.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Viewpoint</span>
+                                    <span class="highlight-tag">Tea History</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-waterfall"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Ravana Waterfalls Visit</h5>
+                                <p class="slot-desc-enhanced">Visit one of Sri Lanka's widest waterfalls with mythological significance.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Waterfall</span>
+                                    <span class="highlight-tag">Photography</span>
+                                    <span class="highlight-tag">Mythology</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                    <div class="fact-text">Full day exploring Ella's natural beauty</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                    <div class="fact-text">Overnight: Ella Hotel</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-leaf"></i>
+                                    </div>
+                                    <div class="fact-text">Tea plantation and factory tour</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 12 -->
+            <div class="enhanced-day-card day-12" id="day-12">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Wildlife Safari Adventure</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Ella → Yala National Park
+                        </p>
+                        <span class="day-highlight">Safari Day & Wildlife Experience</span>
+                    </div>
+                    <div class="day-number-circle">12</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/14-day-tour-srilanka-yala.jpg" class="day-main-image" alt="Yala Safari">
+                        <div class="image-overlay">
+                            <p class="image-caption">Wildlife safari in Yala National Park</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Breakfast & Check-out</h5>
+                                <p class="slot-desc-enhanced">Morning meal and departure from Ella.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Journey to Yala</h5>
+                                <p class="slot-desc-enhanced">2-hour scenic drive through hills to Yala.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">10:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-landmark"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Buduruwagala Visit</h5>
+                                <p class="slot-desc-enhanced">Ancient rock-cut Buddha monuments enroute.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Ancient Site</span>
+                                    <span class="highlight-tag">Rock Carvings</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">12:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Lunch Enroute</h5>
+                                <p class="slot-desc-enhanced">Traditional Sri Lankan lunch near Yala.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">02:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Safari Lodge Check-in</h5>
+                                <p class="slot-desc-enhanced">Check into your Yala safari lodge accommodation.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">04:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-paw"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Afternoon Safari</h5>
+                                <p class="slot-desc-enhanced">Wildlife safari in Yala National Park to spot leopards, elephants, and more.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Wildlife</span>
+                                    <span class="highlight-tag">Safari</span>
+                                    <span class="highlight-tag">Photography</span>
+                                    <span class="highlight-tag">Leopard Spotting</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-paw"></i>
+                                    </div>
+                                    <div class="fact-text">Chance to see leopards, elephants, and diverse wildlife</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                    <div class="fact-text">Overnight: Yala Safari Lodge</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-camera"></i>
+                                    </div>
+                                    <div class="fact-text">Wildlife photography opportunities</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 13 -->
+            <div class="enhanced-day-card day-13" id="day-13">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Southern Beaches & Dutch Fort</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Yala → Galle
+                        </p>
+                        <span class="day-highlight">Coastal Day & UNESCO Heritage</span>
+                    </div>
+                    <div class="day-number-circle">13</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/14-day-tour-srilanka-galle.jpg" class="day-main-image" alt="Galle Fort">
+                        <div class="image-overlay">
+                            <p class="image-caption">UNESCO World Heritage Site - Galle Dutch Fort</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-sunrise"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Morning Safari</h5>
+                                <p class="slot-desc-enhanced">Early morning wildlife safari in Yala National Park.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Morning Safari</span>
+                                    <span class="highlight-tag">Wildlife</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">10:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Depart for Galle</h5>
+                                <p class="slot-desc-enhanced">3-hour coastal drive to Southern beaches.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">12:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Mirissa Beach Stop</h5>
+                                <p class="slot-desc-enhanced">Visit beautiful Mirissa Beach for relaxation.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Beach Stop</span>
+                                    <span class="highlight-tag">Relaxation</span>
+                                </div>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">01:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Seafood Lunch</h5>
+                                <p class="slot-desc-enhanced">Fresh seafood lunch by the beach in Mirissa.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">03:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Galle Hotel Check-in</h5>
+                                <p class="slot-desc-enhanced">Check into Galle beachfront hotel.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">05:00 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-fort"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Galle Fort Walk</h5>
+                                <p class="slot-desc-enhanced">Evening walk through UNESCO World Heritage Site - Galle Dutch Fort.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Dutch Fort</span>
+                                    <span class="highlight-tag">UNESCO Site</span>
+                                    <span class="highlight-tag">History</span>
+                                    <span class="highlight-tag">Sunset Views</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="day-info-container">
+                            <div class="info-card travel">
+                                <h5 class="info-card-title"><i class="fas fa-route"></i> Travel Information</h5>
+                                <div class="info-grid-enhanced">
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-road"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Distance</div>
+                                        <div class="info-value-enhanced">162 km</div>
+                                    </div>
+                                    <div class="info-item-enhanced">
+                                        <div class="info-icon-circle">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="info-label-enhanced">Travel Time</div>
+                                        <div class="info-value-enhanced">3 hours</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-road"></i>
+                                    </div>
+                                    <div class="fact-text">Coastal drive from Yala to Galle</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                    <div class="fact-text">Overnight: Galle Beachfront Hotel</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-fort"></i>
+                                    </div>
+                                    <div class="fact-text">UNESCO World Heritage Galle Fort visit</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 14 -->
+            <div class="enhanced-day-card day-14" id="day-14">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Departure Day</h3>
+                        <p class="day-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Galle → Colombo Airport
+                        </p>
+                        <span class="day-highlight">Tour Ends & Farewell</span>
+                    </div>
+                    <div class="day-number-circle">14</div>
+                </div>
+                
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/11-day-package-card.jpg" class="day-main-image" alt="Departure">
+                        <div class="image-overlay">
+                            <p class="image-caption">Farewell from beautiful Sri Lanka</p>
+                        </div>
+                    </div>
+                    
+                    <div class="day-schedule-section">
+                        <h4 class="schedule-title"><i class="fas fa-clock"></i> Daily Schedule with Timeframes</h4>
+                        
+                        <div class="enhanced-schedule-grid">
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">07:00 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Final Sri Lankan Breakfast</h5>
+                                <p class="slot-desc-enhanced">Last Sri Lankan breakfast at your Galle hotel.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">08:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-suitcase"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Packing & Check-out</h5>
+                                <p class="slot-desc-enhanced">Final packing and hotel departure from Galle.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">09:30 AM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Airport Transfer</h5>
+                                <p class="slot-desc-enhanced">Comfortable drive to Bandaranaike International Airport.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">12:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-plane-departure"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Airport Arrival</h5>
+                                <p class="slot-desc-enhanced">Arrive at airport 3 hours before your flight departure.</p>
+                            </div>
+                            
+                            <div class="enhanced-time-slot">
+                                <div class="time-header">
+                                    <span class="time-badge-enhanced">01:30 PM</span>
+                                    <div class="activity-icon">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                </div>
+                                <h5 class="slot-title-enhanced">Farewell & Tour Ends</h5>
+                                <p class="slot-desc-enhanced">Bid farewell to your guide and driver. Tour services end at airport check-in.</p>
+                                <div class="activity-highlights">
+                                    <span class="highlight-tag">Check-in</span>
+                                    <span class="highlight-tag">Departure</span>
+                                    <span class="highlight-tag">Farewell</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-facts-enhanced">
+                            <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day Highlights</h5>
+                            <div class="facts-grid">
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="fact-text">Airport arrival: 3 hours before flight departure</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-plane"></i>
+                                    </div>
+                                    <div class="fact-text">Tour services end at airport check-in</div>
+                                </div>
+                                <div class="fact-item-enhanced">
+                                    <div class="fact-icon-circle">
+                                        <i class="fas fa-suitcase"></i>
+                                    </div>
+                                    <div class="fact-text">Safe transfer to international airport</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Price Section -->
+            <div class="price-section-enhanced" id="booking">
+                <div class="price-header-enhanced">
+                    <h2 class="price-title-enhanced">Tour Package Price</h2>
+                    <div class="price-amount-enhanced">USD 2,000</div>
+                    <p class="price-subtitle-enhanced">Per Person • Minimum Two Persons Required • All Inclusive Premium Experience</p>
+                </div>
+
+                <div class="inclusion-grid-enhanced">
+                    <div class="inclusion-item-enhanced">
+                        <div class="inclusion-icon-enhanced"><i class="fas fa-hotel"></i></div>
+                        <h5>Luxury Accommodation</h5>
+                        <p class="inclusion-text-enhanced">13 nights in carefully selected 4-star hotels with breakfast</p>
+                    </div>
+                    <div class="inclusion-item-enhanced">
+                        <div class="inclusion-icon-enhanced"><i class="fas fa-car"></i></div>
+                        <h5>Private Transport</h5>
+                        <p class="inclusion-text-enhanced">Private air-conditioned vehicle with professional driver throughout</p>
+                    </div>
+                    <div class="inclusion-item-enhanced">
+                        <div class="inclusion-icon-enhanced"><i class="fas fa-ticket-alt"></i></div>
+                        <h5>All Entrance Fees</h5>
+                        <p class="inclusion-text-enhanced">All monument, park, and activity entrance tickets included</p>
+                    </div>
+                    <div class="inclusion-item-enhanced">
+                        <div class="inclusion-icon-enhanced"><i class="fas fa-user-tie"></i></div>
+                        <h5>Expert Guide Service</h5>
+                        <p class="inclusion-text-enhanced">English-speaking tour guide throughout your journey</p>
+                    </div>
+                    <div class="inclusion-item-enhanced">
+                        <div class="inclusion-icon-enhanced"><i class="fas fa-utensils"></i></div>
+                        <h5>Gourmet Meals</h5>
+                        <p class="inclusion-text-enhanced">Half board basis with authentic Sri Lankan dining experiences</p>
+                    </div>
+                    <div class="inclusion-item-enhanced">
+                        <div class="inclusion-icon-enhanced"><i class="fas fa-shield-alt"></i></div>
+                        <h5>24/7 Support</h5>
+                        <p class="inclusion-text-enhanced">Round-the-clock customer support during your entire tour</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <a href="https://wa.me/94763661600?text=Hi!%20I%20would%20like%20to%20book%20the%2014-Day%20Complete%20Sri%20Lanka%20Tour%20Package%20for%20USD%202000%20per%20person."
+                        target="_blank" class="btn-cta-enhanced btn-cta-primary">
+                        <i class="fab fa-whatsapp me-2"></i>Book Now on WhatsApp
+                    </a>
+                    <p class="mt-4 text-light opacity-85">Limited availability • Free cancellation up to 30 days before departure</p>
+                </div>
+            </div>
+
+            <!-- Booking CTA -->
+            <div class="booking-cta-enhanced">
+                <h2 class="cta-title-enhanced">Ready for Your Sri Lanka Adventure?</h2>
+                <p class="cta-subtitle">Limited spots available for this premium 14-day experience. Book now to secure your preferred travel dates and create unforgettable memories!</p>
+
+                <div class="cta-buttons-enhanced">
+                    <a href="tel:+94763661600" class="btn-cta-enhanced btn-cta-primary">
+                        <i class="fas fa-phone-alt me-2"></i>Call to Book Now
+                    </a>
+                    <a href="mailto:info@ayubowantours.com?subject=14-Day Sri Lanka Tour Inquiry" class="btn-cta-enhanced btn-cta-secondary">
+                        <i class="fas fa-envelope me-2"></i>Send Email Inquiry
+                    </a>
+                    <a href="contact.html" class="btn-cta-enhanced btn-cta-tertiary">
+                        <i class="fas fa-calendar-alt me-2"></i>Request Custom Dates
+                    </a>
+                </div>
+
+                <div class="mt-5 pt-4 border-top">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-primary rounded-circle p-3 me-3">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Best Price Guarantee</h6>
+                                    <p class="small text-muted mb-0">We guarantee the best value for your money</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-success rounded-circle p-3 me-3">
+                                    <i class="fas fa-shield-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Flexible Booking</h6>
+                                    <p class="small text-muted mb-0">Free cancellation & date changes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-warning rounded-circle p-3 me-3">
+                                    <i class="fas fa-headset text-white"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">24/7 Support</h6>
+                                    <p class="small text-muted mb-0">Dedicated support throughout your trip</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ENHANCED Day by Day Plan End -->
+
+    <!-- Subscribe Start -->
+    <div class="container-fluid subscribe py-5">
+        <div class="container text-center py-5">
+            <div class="mx-auto text-center" style="max-width: 900px;">
+                <h5 class="subscribe-title px-3">Subscribe</h5>
+                <h1 class="text-white mb-4">Our Newsletter</h1>
+                <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals,
+                    insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
+                </p>
+                <div class="position-relative mx-auto">
+                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text"
+                        placeholder="Your email">
+                    <button type="button"
+                        class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Subscribe End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="./index.html">Ayubowan Tours</a>,
+                    All right reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- whatsapp button -->
+    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
+        class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        // Hide spinner when page loads
+        window.addEventListener('load', function () {
+            document.getElementById('spinner').style.display = 'none';
+            initializeEnhancedAnimations();
+            initializeDayProgress();
+        });
+
+        // Initialize enhanced animations
+        function initializeEnhancedAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        
+                        // Update progress indicator
+                        const dayId = entry.target.id;
+                        if (dayId) {
+                            const dayNum = parseInt(dayId.split('-')[1]);
+                            updateProgressIndicator(dayNum);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all enhanced day cards
+            document.querySelectorAll('.enhanced-day-card').forEach(card => {
+                observer.observe(card);
+            });
+
+            // Observe price section
+            const priceSection = document.querySelector('.price-section-enhanced');
+            if (priceSection) observer.observe(priceSection);
+
+            // Observe CTA section
+            const ctaSection = document.querySelector('.booking-cta-enhanced');
+            if (ctaSection) observer.observe(ctaSection);
+        }
+
+        // Initialize day progress indicator
+        function initializeDayProgress() {
+            const progressItems = document.querySelectorAll('.day-progress-item');
+            
+            progressItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    const dayId = `day-${index + 1}`;
+                    const targetElement = document.getElementById(dayId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Update progress indicator based on scroll position
+        function updateProgressIndicator(dayNumber) {
+            const progressItems = document.querySelectorAll('.day-progress-item');
+            progressItems.forEach((item, index) => {
+                if (index + 1 === dayNumber) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Enhanced hover effects for time slots
+        document.querySelectorAll('.enhanced-time-slot').forEach(slot => {
+            slot.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-8px)';
+            });
+            slot.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Enhanced hover effects for day cards
+        document.querySelectorAll('.enhanced-day-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-12px)';
+                this.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.15)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.08)';
+            });
+        });
+
+        // WhatsApp booking function
+        function bookOnWhatsApp() {
+            const message = "Hi! I would like to book the 14-Day Complete Sri Lanka Tour Package for USD 2000 per person.";
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/94763661600?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Add click event to WhatsApp booking button
+        document.querySelector('.btn-cta-primary').addEventListener('click', function (e) {
+            if (this.href.includes('whatsapp')) {
+                e.preventDefault();
+                bookOnWhatsApp();
+            }
+        });
+
+        // Initialize all day cards with staggered animation
+        setTimeout(() => {
+            const dayCards = document.querySelectorAll('.enhanced-day-card');
+            dayCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        }, 100);
+
+        // Scroll tracking for progress indicator
+        window.addEventListener('scroll', function() {
+            const dayCards = document.querySelectorAll('.enhanced-day-card');
+            let currentDay = 1;
+            
+            dayCards.forEach((card, index) => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top <= 150 && rect.bottom >= 150) {
+                    currentDay = index + 1;
+                }
+            });
+            
+            updateProgressIndicator(currentDay);
+        });
+    </script>
+</body>
+
+</html>
