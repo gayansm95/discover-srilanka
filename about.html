@@ -147,7 +147,7 @@
         /* ========== ABOUT SECTION ========== */
         .about-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
             position: relative;
             overflow: hidden;
         }
@@ -216,15 +216,10 @@
             display: inline-block;
         }
 
+        /* Remove the after line (underline) completely */
         .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #0d6efd, #00b4ff);
-            border-radius: 2px;
+            display: none !important;
+            content: none !important;
         }
 
         .about-content p {
@@ -523,7 +518,7 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5">
-                    <div class="about-image-wrapper fade-in-up">
+                    <div>
                         <img src="img/sri-lankan-travel-map.png" class="img-fluid w-100" alt="Sri Lanka Travel Map">
                     </div>
                 </div>
