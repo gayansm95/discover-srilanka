@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ceyloan Travellers | Compare Tour Packages</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Sri Lanka tours, travel packages, compare tours, luxury tours, cultural tours" name="keywords">
+    <meta content="Compare all our Sri Lanka tour packages side by side. Find the perfect itinerary for your dream vacation." name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* WhatsApp Floating Button with Pulse Animation */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background-color: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 42px;
+            text-align: center;
+            line-height: 80px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+            z-index: 1000;
+            animation: whatsapp-pulse 1.8s infinite;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            transition: 0.3s ease;
+        }
+
+        @keyframes whatsapp-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 25px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 70px;
+                height: 70px;
+                font-size: 38px;
+                line-height: 70px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        /* Comparison Page Styles */
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .comparison-header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a365d;
+            margin-bottom: 1rem;
+        }
+        .comparison-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .comparison-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #2c3e50;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: linear-gradient(135deg, #0d6efd, #8a2be2);
+            color: white;
+            border-color: transparent;
+        }
+        .package-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.12);
+        }
+        .package-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .package-card:hover .package-image img {
+            transform: scale(1.05);
+        }
+        .package-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        .package-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+        .package-duration {
+            display: inline-block;
+            background: #eef2ff;
+            color: #1a365d;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .package-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #e67e22;
+            margin: 1rem 0;
+        }
+        .package-price small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #666;
+        }
+        .package-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .package-highlights li {
+            padding: 0.4rem 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .package-highlights li i {
+            color: #2ecc71;
+            width: 20px;
+        }
+        .btn-compare {
+            display: inline-block;
+            background: linear-gradient(135deg, #0d6efd, #8a2be2);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .btn-compare:hover {
+            background: linear-gradient(135deg, #0b5ed7, #7a1fcc);
+            transform: translateY(-2px);
+            color: white;
+        }
+        .btn-outline-compare {
+            background: transparent;
+            border: 2px solid #0d6efd;
+            color: #0d6efd;
+        }
+        .btn-outline-compare:hover {
+            background: #0d6efd;
+            color: white;
+        }
+        .feature-tag {
+            display: inline-block;
+            background: #f8f9fa;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            color: #2c3e50;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .comparison-table {
+            margin-top: 60px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+        }
+        .comparison-table th, .comparison-table td {
+            vertical-align: middle;
+            padding: 15px;
+        }
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: 700;
+        }
+        @media (max-width: 768px) {
+            .package-title {
+                font-size: 1.2rem;
+            }
+            .package-price {
+                font-size: 1.3rem;
+            }
+            .comparison-table {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="./index.html" class="navbar-brand p-0">
+                <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ceyloan Travellers</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="services.html" class="nav-item nav-link">Services</a>
+                    <a href="packages.html" class="nav-item nav-link active">Packages</a>
+                    <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="./booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book My Tour</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Header Start (Breadcrumb) -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h3 class="text-white display-3 mb-4">Compare Tour Packages</h3>
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="packages.html">Packages</a></li>
+                <li class="breadcrumb-item active text-white">Compare Tours</li>
+            </ol>    
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- MAIN COMPARISON CONTENT SECTION -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="comparison-header">
+                <h1>Find Your Perfect Sri Lanka Journey</h1>
+                <p>Compare our handcrafted tours side by side. Whether you're looking for culture, wildlife, beaches, or all of the above, we have the ideal itinerary for you.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="comparison-filters">
+                <div class="filter-btn active" data-filter="all">All Tours</div>
+                <div class="filter-btn" data-filter="short">Short Tours (1-5 Days)</div>
+                <div class="filter-btn" data-filter="medium">Medium Tours (6-10 Days)</div>
+                <div class="filter-btn" data-filter="long">Long Tours (11+ Days)</div>
+                <div class="filter-btn" data-filter="custom">Customizable</div>
+            </div>
+
+            <!-- Packages Grid -->
+            <div class="row g-4" id="packagesGrid">
+                <!-- Package data will be populated dynamically from JavaScript -->
+            </div>
+
+            <!-- Comparison Table (Alternative View) -->
+            <div class="comparison-table mt-5">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover align-middle text-center">
+                        <thead class="bg-light">
+                            <tr>
+                                <th>Tour Name</th>
+                                <th>Duration</th>
+                                <th>Price (per person)</th>
+                                <th>Highlights</th>
+                                <th>Best For</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="comparisonTableBody">
+                            <!-- Table rows will be populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="contact.html" class="btn btn-primary rounded-pill py-3 px-5">Need Help Choosing? Contact Our Experts</a>
+            </div>
+        </div>
+    </div>
+    <!-- END COMPARISON CONTENT SECTION -->
+
+    <!-- Subscribe Start (same as original) -->
+    <div class="container-fluid subscribe py-5">
+        <div class="container text-center py-5">
+            <div class="mx-auto text-center" style="max-width: 900px;">
+                <h5 class="subscribe-title px-3">Subscribe</h5>
+                <h1 class="text-white mb-4">Our Newsletter</h1>
+                <p class="text-white mb-5">Subscribe for exclusive Sri Lanka travel deals and inspiration.</p>
+                <div class="position-relative mx-auto">
+                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                    <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Subscribe End -->
+    
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="./index.html">Ceyloan Travellers</a>, All right reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- whatsapp button -->
+    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ceyloan%20Travellers.%20How%20can%20we%20assist%20you%3F" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide spinner
+            document.getElementById('spinner').style.display = 'none';
+            
+            // Package data from the original packages page
+            const packages = [
+                {
+                    name: "Design Your Sri Lanka Journey",
+                    duration: "Flexible",
+                    days: 0,
+                    price: "Custom Quote",
+                    link: "./pkg-own-tour.html",
+                    image: "img/own-tour-package-card.jpg",
+                    highlights: ["Tailor-made itinerary", "Choose your own pace", "Personalized experiences", "Expert local guidance"],
+                    category: "custom",
+                    description: "Create your perfect Sri Lanka itinerary with our customizable tour packages."
+                },
+                {
+                    name: "Dambulla, Sigiriya & Kandy Tour",
+                    duration: "4-5 Days",
+                    days: 4,
+                    price: "USD 649",
+                    link: "./pkg-kandy-sigiriya-dambulla-tour.html",
+                    image: "img/kandy-dambulla-sirigiya-package-card.jpg",
+                    highlights: ["Sigiriya Rock Fortress", "Dambulla Cave Temple", "Temple of the Tooth", "Kandyan Dance Show"],
+                    category: "short",
+                    description: "Explore Sri Lanka's cultural heartland with ancient cave temples, majestic rock fortresses, and the sacred Temple of the Tooth."
+                },
+                {
+                    name: "Kandy Day Tour",
+                    duration: "1 Day",
+                    days: 1,
+                    price: "USD 120",
+                    link: "./pkg-kandy-day-tour.html",
+                    image: "img/kandy-package-card.jpeg",
+                    highlights: ["Temple of the Tooth", "Royal Botanical Gardens", "Kandy Lake", "Cultural Dance Show"],
+                    category: "short",
+                    description: "Experience the cultural capital of Sri Lanka in a single day."
+                },
+                {
+                    name: "Sri Lanka's Cultural Triangle",
+                    duration: "5-6 Days",
+                    days: 5,
+                    price: "USD 749",
+                    link: "./pkg-sri-lanka-cultural-trangle.html",
+                    image: "img/cultural-trangle-package-card.png",
+                    highlights: ["Anuradhapura", "Polonnaruwa", "Sigiriya Rock", "Dambulla Cave Temples"],
+                    category: "short",
+                    description: "Journey through ancient kingdoms with UNESCO World Heritage sites."
+                },
+                {
+                    name: "Northern Sri Lanka Adventure",
+                    duration: "3-5 Days",
+                    days: 4,
+                    price: "USD 599",
+                    link: "./pkg-northern-sri-lanka.html",
+                    image: "img/14-day-tour-srilanka-jaffna.jpg",
+                    highlights: ["Jaffna Fort", "Nallur Kandaswamy Temple", "Nagadeepa Temple", "Casuarina Beach"],
+                    category: "short",
+                    description: "Explore the lesser-known northern regions of Sri Lanka."
+                },
+                {
+                    name: "Heritage & Horizon Tour",
+                    duration: "3-5 Days",
+                    days: 4,
+                    price: "USD 589",
+                    link: "./pkg-heritage-horizon-tour.html",
+                    image: "img/14-day-tour-srilanka-trinco2.jpg",
+                    highlights: ["Ancient temples", "Pristine beaches", "Traditional villages", "Coastal scenery"],
+                    category: "short",
+                    description: "Experience the rich cultural heritage and scenic beauty of Sri Lanka's northern coast."
+                },
+                {
+                    name: "Sunny Eastern Beach Escape",
+                    duration: "3-5 Days",
+                    days: 4,
+                    price: "USD 599",
+                    link: "./pkg-eastern-beach-escape.html",
+                    image: "img/easten-beachers.jpg",
+                    highlights: ["Pasikudah Beach", "Batticaloa Lagoon", "Hidden coves", "Local seafood"],
+                    category: "short",
+                    description: "Discover the pristine beaches and vibrant coastal culture of Sri Lanka's eastern region."
+                },
+                {
+                    name: "4 Nights & 5 Days Tour",
+                    duration: "5 Days",
+                    days: 5,
+                    price: "USD 699",
+                    link: "./pkg-5-day-tour.html",
+                    image: "img/unawatuna.jpg",
+                    highlights: ["Anuradhapura", "Polonnaruwa", "Sigiriya", "Dambulla"],
+                    category: "short",
+                    description: "Discover ancient kingdoms and cultural heritage in 5 days."
+                },
+                {
+                    name: "5 Nights & 6 Days Tour",
+                    duration: "6 Days",
+                    days: 6,
+                    price: "USD 799",
+                    link: "./pkg-6-day-tour.html",
+                    image: "img/udawalawa safari.jpg",
+                    highlights: ["Anuradhapura", "Polonnaruwa", "Sigiriya", "Kandy"],
+                    category: "medium",
+                    description: "Explore the cultural triangle and hill country."
+                },
+                {
+                    name: "6 Nights & 7 Days Tour",
+                    duration: "7 Days",
+                    days: 7,
+                    price: "USD 899",
+                    link: "./pkg-7-day-tour.html",
+                    image: "img/blog-card-nuwaraeliya.jpg",
+                    highlights: ["Cultural Triangle", "Kandy", "Nuwara Eliya", "Tea Plantations"],
+                    category: "medium",
+                    description: "A perfect blend of culture and hill country scenery."
+                },
+                {
+                    name: "7 Nights & 8 Days Tour",
+                    duration: "8 Days",
+                    days: 8,
+                    price: "USD 999",
+                    link: "./pkg-8-day-tour.html",
+                    image: "img/botanical-garden.jpeg",
+                    highlights: ["Anuradhapura", "Sigiriya", "Kandy", "Ella"],
+                    category: "medium",
+                    description: "Experience the best of Sri Lanka's cultural and natural wonders."
+                },
+                {
+                    name: "8 Nights & 9 Days Tour",
+                    duration: "9 Days",
+                    days: 9,
+                    price: "USD 1099",
+                    link: "./pkg-9-day-tour.html",
+                    image: "img/blog-card-daladamaligawa.jpg",
+                    highlights: ["Cultural Triangle", "Hill Country", "Wildlife Safari", "Beach Relaxation"],
+                    category: "medium",
+                    description: "A comprehensive journey through Sri Lanka's highlights."
+                },
+                {
+                    name: "9 Nights & 10 Days Tour",
+                    duration: "10 Days",
+                    days: 10,
+                    price: "USD 1199",
+                    link: "./pkg-10-day-tour.html",
+                    image: "img/ella-train-tour.jpg",
+                    highlights: ["Sigiriya", "Kandy", "Ella Train Ride", "Yala Safari"],
+                    category: "medium",
+                    description: "Combine culture, scenery, and wildlife in one journey."
+                },
+                {
+                    name: "10 Nights & 11 Days Tour",
+                    duration: "11 Days",
+                    days: 11,
+                    price: "USD 1299",
+                    link: "./pkg-11-day-tour.html",
+                    image: "img/Nuwara_Eliya_Gregory_Lake.jpg",
+                    highlights: ["Cultural Triangle", "Hill Country", "Ella", "Mirissa Beach"],
+                    category: "long",
+                    description: "A perfect balance of heritage, nature, and coast."
+                },
+                {
+                    name: "11 Nights & 12 Days Tour",
+                    duration: "12 Days",
+                    days: 12,
+                    price: "USD 1399",
+                    link: "./pkg-12-day-tour.html",
+                    image: "img/blog-card-safari.jpg",
+                    highlights: ["Full Cultural Circuit", "Yala Safari", "Galle Fort", "Bentota Beach"],
+                    category: "long",
+                    description: "An immersive journey covering the entire island."
+                },
+                {
+                    name: "12 Nights & 13 Days Tour",
+                    duration: "13 Days",
+                    days: 13,
+                    price: "USD 1499",
+                    link: "./pkg-13-day-tour.html",
+                    image: "img/esala perahata.jpeg",
+                    highlights: ["North to South", "Jaffna", "Trincomalee", "Kandy", "Colombo"],
+                    category: "long",
+                    description: "The ultimate Sri Lankan experience from north to south."
+                },
+                {
+                    name: "The Ultimate Sri Lanka Journey",
+                    duration: "14 Days",
+                    days: 14,
+                    price: "USD 1699",
+                    link: "./pkg-11-day-tour.html", // placeholder, adjust if needed
+                    image: "img/carousel-2.jpg",
+                    highlights: ["Complete Island Tour", "Cultural Triangle", "Hill Country", "Wildlife", "Beaches"],
+                    category: "long",
+                    description: "Experience the very best of Sri Lanka in this comprehensive 14-day journey."
+                }
+            ];
+
+            // Render cards and table
+            function renderPackages(filter = "all") {
+                const grid = document.getElementById('packagesGrid');
+                const tableBody = document.getElementById('comparisonTableBody');
+                grid.innerHTML = '';
+                tableBody.innerHTML = '';
+                
+                let filtered = packages;
+                if (filter === "short") {
+                    filtered = packages.filter(p => p.days > 0 && p.days <= 5);
+                } else if (filter === "medium") {
+                    filtered = packages.filter(p => p.days >= 6 && p.days <= 10);
+                } else if (filter === "long") {
+                    filtered = packages.filter(p => p.days >= 11);
+                } else if (filter === "custom") {
+                    filtered = packages.filter(p => p.category === "custom");
+                }
+                
+                // Render cards
+                filtered.forEach(pkg => {
+                    const col = document.createElement('div');
+                    col.className = 'col-lg-4 col-md-6';
+                    col.innerHTML = `
+                        <div class="package-card">
+                            <div class="package-image">
+                                <img src="${pkg.image}" alt="${pkg.name}" onerror="this.src='img/default-package.jpg'">
+                            </div>
+                            <div class="package-content">
+                                <h3 class="package-title">${pkg.name}</h3>
+                                <span class="package-duration"><i class="far fa-calendar-alt me-1"></i> ${pkg.duration}</span>
+                                <div class="package-price">${pkg.price} <small>per person</small></div>
+                                <ul class="package-highlights">
+                                    ${pkg.highlights.slice(0,4).map(h => `<li><i class="fas fa-check-circle"></i> ${h}</li>`).join('')}
+                                </ul>
+                                <a href="${pkg.link}" class="btn-compare">View Details →</a>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(col);
+                });
+                
+                // Render table rows
+                filtered.forEach(pkg => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><strong>${pkg.name}</strong></td>
+                        <td>${pkg.duration}</td>
+                        <td>${pkg.price}</td>
+                        <td class="text-start">${pkg.highlights.slice(0,3).join(', ')}</td>
+                        <td>${pkg.category === 'custom' ? 'Customizable' : (pkg.days <= 5 ? 'Short Tour' : (pkg.days <= 10 ? 'Medium Tour' : 'Long Tour'))}</td>
+                        <td><a href="${pkg.link}" class="btn btn-sm btn-outline-primary rounded-pill px-3">View</a></td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+            
+            renderPackages('all');
+            
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    renderPackages(this.getAttribute('data-filter'));
+                });
+            });
+        });
+    </script>
+</body>
+</html>
