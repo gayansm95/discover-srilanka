@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Ceyloan Travellers | Compare Tour Packages</title>
+    <title>Ceyloan Travellers | Tour Packages</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Sri Lanka tours, travel packages, compare tours, luxury tours, cultural tours" name="keywords">
     <meta content="Compare all our Sri Lanka tour packages side by side. Find the perfect itinerary for your dream vacation." name="description">
@@ -65,7 +65,7 @@
             }
         }
 
-        /* Comparison Page Styles */
+        /* Enhanced Comparison Page Styles - Attractive Cards with Images */
         .comparison-header {
             text-align: center;
             margin-bottom: 3rem;
@@ -73,173 +73,173 @@
         .comparison-header h1 {
             font-size: 2.8rem;
             font-weight: 800;
-            color: #1a365d;
+            background: linear-gradient(135deg, #1a365d, #2c5282);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             margin-bottom: 1rem;
         }
         .comparison-header p {
             font-size: 1.2rem;
-            color: #666;
+            color: #4a5568;
             max-width: 800px;
             margin: 0 auto;
         }
-        .comparison-filters {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        .filter-btn {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            padding: 8px 24px;
-            border-radius: 40px;
-            font-weight: 600;
-            color: #2c3e50;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        .filter-btn.active, .filter-btn:hover {
-            background: linear-gradient(135deg, #0d6efd, #8a2be2);
-            color: white;
-            border-color: transparent;
-        }
-        .package-card {
+        
+        /* Duration Cards with Images */
+        .duration-card {
             background: #fff;
-            border-radius: 20px;
+            border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
             height: 100%;
             display: flex;
             flex-direction: column;
             position: relative;
+            border: 1px solid rgba(52, 152, 219, 0.15);
         }
-        .package-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 45px rgba(0,0,0,0.12);
+        .duration-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 45px -12px rgba(0, 0, 0, 0.25);
+            border-color: #3498db;
+        }
+        /* Image Container */
+        .package-image-container {
+            position: relative;
+            overflow: hidden;
+            height: 220px;
+            background: #f0f4f8;
         }
         .package-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        .package-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.7s ease;
         }
-        .package-card:hover .package-image img {
-            transform: scale(1.05);
+        .duration-card:hover .package-image {
+            transform: scale(1.08);
         }
-        .package-content {
-            padding: 1.5rem;
+        /* Badge for popular tours */
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 5px 12px;
+            border-radius: 30px;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .card-content {
+            padding: 1.8rem 1.5rem 2rem;
+            text-align: center;
             flex-grow: 1;
+            position: relative;
         }
-        .package-title {
-            font-size: 1.3rem;
-            font-weight: 700;
+        .duration {
+            font-size: 2rem;
+            font-weight: 800;
             color: #1a365d;
             margin-bottom: 0.5rem;
         }
-        .package-duration {
-            display: inline-block;
-            background: #eef2ff;
-            color: #1a365d;
-            padding: 4px 12px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+        .duration span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #4a5568;
         }
-        .package-price {
-            font-size: 1.5rem;
+        .starting-price {
+            font-size: 1.8rem;
             font-weight: 800;
             color: #e67e22;
-            margin: 1rem 0;
+            margin: 1rem 0 0.5rem;
+            transition: all 0.3s;
         }
-        .package-price small {
+        .duration-card:hover .starting-price {
+            transform: scale(1.02);
+            color: #d35400;
+        }
+        .starting-price small {
             font-size: 0.9rem;
-            font-weight: 400;
-            color: #666;
+            font-weight: 500;
+            color: #718096;
         }
-        .package-highlights {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0;
-        }
-        .package-highlights li {
-            padding: 0.4rem 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-            color: #555;
-        }
-        .package-highlights li i {
-            color: #2ecc71;
-            width: 20px;
-        }
-        .btn-compare {
+        .itinerary-count {
+            background: #f8f9fa;
             display: inline-block;
-            background: linear-gradient(135deg, #0d6efd, #8a2be2);
-            color: white;
-            padding: 12px 20px;
+            padding: 5px 15px;
             border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0.8rem 0;
+        }
+        .itinerary-count i {
+            margin-right: 6px;
+            color: #27ae60;
+        }
+        .card-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s;
-            text-align: center;
-            margin-top: 1rem;
+            transition: all 0.3s ease;
+            margin-top: 0.8rem;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
         }
-        .btn-compare:hover {
-            background: linear-gradient(135deg, #0b5ed7, #7a1fcc);
-            transform: translateY(-2px);
+        .card-btn:hover {
+            background: linear-gradient(135deg, #2980b9, #1c5d8a);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
             color: white;
         }
-        .btn-outline-compare {
-            background: transparent;
-            border: 2px solid #0d6efd;
-            color: #0d6efd;
+        /* Charm animations */
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .btn-outline-compare:hover {
-            background: #0d6efd;
-            color: white;
+        .duration-card {
+            animation: fadeSlideUp 0.6s ease forwards;
+            opacity: 0;
         }
-        .feature-tag {
-            display: inline-block;
-            background: #f8f9fa;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            color: #2c3e50;
-            margin-right: 5px;
-            margin-bottom: 5px;
+        .duration-card:nth-child(1) { animation-delay: 0.05s; }
+        .duration-card:nth-child(2) { animation-delay: 0.1s; }
+        .duration-card:nth-child(3) { animation-delay: 0.15s; }
+        .duration-card:nth-child(4) { animation-delay: 0.2s; }
+        .duration-card:nth-child(5) { animation-delay: 0.25s; }
+        .duration-card:nth-child(6) { animation-delay: 0.3s; }
+        .duration-card:nth-child(7) { animation-delay: 0.35s; }
+        .duration-card:nth-child(8) { animation-delay: 0.4s; }
+        .duration-card:nth-child(9) { animation-delay: 0.45s; }
+
+        /* Floating effect on price */
+        @keyframes softPulse {
+            0% { text-shadow: 0 0 0px rgba(230,126,34,0); }
+            50% { text-shadow: 0 0 8px rgba(230,126,34,0.4); }
+            100% { text-shadow: 0 0 0px rgba(230,126,34,0); }
         }
-        .comparison-table {
-            margin-top: 60px;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+        .starting-price {
+            animation: softPulse 2s infinite;
         }
-        .comparison-table th, .comparison-table td {
-            vertical-align: middle;
-            padding: 15px;
+        .duration-card:hover .starting-price {
+            animation: none;
         }
-        .comparison-table th {
-            background: #f8f9fa;
-            font-weight: 700;
-        }
+
         @media (max-width: 768px) {
-            .package-title {
-                font-size: 1.2rem;
+            .duration {
+                font-size: 1.6rem;
             }
-            .package-price {
-                font-size: 1.3rem;
+            .starting-price {
+                font-size: 1.5rem;
             }
-            .comparison-table {
-                font-size: 0.85rem;
+            .package-image-container {
+                height: 180px;
             }
         }
     </style>
@@ -283,7 +283,7 @@
     <!-- Header Start (Breadcrumb) -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h3 class="text-white display-3 mb-4">Compare Tour Packages</h3>
+            <h3 class="text-white display-3 mb-4">Our Tour Packages</h3>
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                 <li class="breadcrumb-item"><a href="packages.html">Packages</a></li>
@@ -293,51 +293,161 @@
     </div>
     <!-- Header End -->
 
-    <!-- MAIN COMPARISON CONTENT SECTION -->
+    <!-- MAIN COMPARISON CONTENT SECTION - Attractive Duration Cards with Original Images -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="comparison-header">
                 <h1>Find Your Perfect Sri Lanka Journey</h1>
-                <p>Compare our handcrafted tours side by side. Whether you're looking for culture, wildlife, beaches, or all of the above, we have the ideal itinerary for you.</p>
+                <p>Choose from our handcrafted tour durations. Each package includes multiple itinerary options designed for every travel style — culture, nature, wildlife, or beach bliss.</p>
             </div>
 
-            <!-- Filter Buttons -->
-            <div class="comparison-filters">
-                <div class="filter-btn active" data-filter="all">All Tours</div>
-                <div class="filter-btn" data-filter="short">Short Tours (1-5 Days)</div>
-                <div class="filter-btn" data-filter="medium">Medium Tours (6-10 Days)</div>
-                <div class="filter-btn" data-filter="long">Long Tours (11+ Days)</div>
-                <div class="filter-btn" data-filter="custom">Customizable</div>
-            </div>
-
-            <!-- Packages Grid -->
-            <div class="row g-4" id="packagesGrid">
-                <!-- Package data will be populated dynamically from JavaScript -->
-            </div>
-
-            <!-- Comparison Table (Alternative View) -->
-            <div class="comparison-table mt-5">
-                <div class="table-responsive">
-                    <table class="table table-bordered table-hover align-middle text-center">
-                        <thead class="bg-light">
-                            <tr>
-                                <th>Tour Name</th>
-                                <th>Duration</th>
-                                <th>Price (per person)</th>
-                                <th>Highlights</th>
-                                <th>Best For</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="comparisonTableBody">
-                            <!-- Table rows will be populated by JS -->
-                        </tbody>
-                    </table>
+            <!-- Duration Cards Grid (with images from original packages) -->
+            <div class="row g-4">
+                <!-- 5 Days -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="duration-card">
+                        <div class="package-image-container">
+                            <img src="img/kandy-dambulla-sirigiya-package-card.jpg" alt="5 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                            <span class="popular-badge"><i class="fas fa-fire"></i> Best Seller</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="duration">5 Days <span> / 4 Nights</span></div>
+                            <div class="starting-price">From $524 <small>per person</small></div>
+                            <div class="itinerary-count"><i class="fas fa-map-marked-alt"></i> 3 Unique Itineraries</div>
+                            <p class="text-muted mt-2">Perfect for a short cultural escape or quick beach getaway.</p>
+                            <a href="./pkg-5-day-tour.html" class="card-btn">Explore 5-Day Tours <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 6 Days -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="duration-card">
+                        <div class="package-image-container">
+                            <img src="img/udawalawa safari.jpg" alt="6 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                        </div>
+                        <div class="card-content">
+                            <div class="duration">6 Days <span> / 5 Nights</span></div>
+                            <div class="starting-price">From $629 <small>per person</small></div>
+                            <div class="itinerary-count"><i class="fas fa-map-marked-alt"></i> 5 Unique Itineraries</div>
+                            <p class="text-muted mt-2">Ideal blend of heritage, hills, and coastal relaxation.</p>
+                            <a href="./pkg-6-day-tour.html" class="card-btn">Explore 6-Day Tours <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 7 Days -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="duration-card">
+                        <div class="package-image-container">
+                            <img src="img/blog-card-nuwaraeliya.jpg" alt="7 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                            <span class="popular-badge"><i class="fas fa-star"></i> Popular</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="duration">7 Days <span> / 6 Nights</span></div>
+                            <div class="starting-price">From $789 <small>per person</small></div>
+                            <div class="itinerary-count"><i class="fas fa-map-marked-alt"></i> 5 Unique Itineraries</div>
+                            <p class="text-muted mt-2">Discover hill country, wildlife, and cultural gems.</p>
+                            <a href="./pkg-7-day-tour.html" class="card-btn">Explore 7-Day Tours <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 8 Days -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="duration-card">
+                        <div class="package-image-container">
+                            <img src="img/botanical-garden.jpeg" alt="8 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                        </div>
+                        <div class="card-content">
+                            <div class="duration">8 Days <span> / 7 Nights</span></div>
+                            <div class="starting-price">From $852 <small>per person</small></div>
+                            <div class="itinerary-count"><i class="fas fa-map-marked-alt"></i> 4 Unique Itineraries</div>
+                            <p class="text-muted mt-2">Extended exploration of ancient cities and pristine beaches.</p>
+                            <a href="./pkg-8-day-tour.html" class="card-btn">Explore 8-Day Tours <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 10 Days -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="duration-card">
+                        <div class="package-image-container">
+                            <img src="img/ella-train-tour.jpg" alt="10 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                            <span class="popular-badge"><i class="fas fa-crown"></i> Top Rated</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="duration">10 Days <span> / 9 Nights</span></div>
+                            <div class="starting-price">From $824 <small>per person</small></div>
+                            <div class="itinerary-count"><i class="fas fa-map-marked-alt"></i> 5 Unique Itineraries</div>
+                            <p class="text-muted mt-2">Iconic train journeys, wildlife safaris, and coastal bliss.</p>
+                            <a href="./pkg-10-day-tour.html" class="card-btn">Explore 10-Day Tours <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 11 Days -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="duration-card">
+                        <div class="package-image-container">
+                            <img src="img/Nuwara_Eliya_Gregory_Lake.jpg" alt="11 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                        </div>
+                        <div class="card-content">
+                            <div class="duration">11 Days <span> / 10 Nights</span></div>
+                            <div class="starting-price">From $1,649 <small>per person</small></div>
+                            <div class="itinerary-count"><i class="fas fa-map-marked-alt"></i> 4 Unique Itineraries</div>
+                            <p class="text-muted mt-2">Comprehensive cultural circuit with hill country highlights.</p>
+                            <a href="./pkg-11-day-tour.html" class="card-btn">Explore 11-Day Tours <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 12 Days -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="duration-card">
+                        <div class="package-image-container">
+                            <img src="img/blog-card-safari.jpg" alt="12 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                        </div>
+                        <div class="card-content">
+                            <div class="duration">12 Days <span> / 11 Nights</span></div>
+                            <div class="starting-price">From $1,912 <small>per person</small></div>
+                            <div class="itinerary-count"><i class="fas fa-map-marked-alt"></i> 4 Unique Itineraries</div>
+                            <p class="text-muted mt-2">Deep dive into northern heritage and eastern shores.</p>
+                            <a href="./pkg-12-day-tour.html" class="card-btn">Explore 12-Day Tours <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 13 Days -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="duration-card">
+                        <div class="package-image-container">
+                            <img src="img/esala perahata.jpeg" alt="13 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                        </div>
+                        <div class="card-content">
+                            <div class="duration">13 Days <span> / 12 Nights</span></div>
+                            <div class="starting-price">From $1,687 <small>per person</small></div>
+                            <div class="itinerary-count"><i class="fas fa-map-marked-alt"></i> 4 Unique Itineraries</div>
+                            <p class="text-muted mt-2">Ultimate wildlife and cultural immersion across the island.</p>
+                            <a href="./pkg-13-day-tour.html" class="card-btn">Explore 13-Day Tours <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 14 Days -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="duration-card">
+                        <div class="package-image-container">
+                            <img src="img/carousel-2.jpg" alt="14 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                            <span class="popular-badge"><i class="fas fa-gem"></i> Ultimate</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="duration">14 Days <span> / 13 Nights</span></div>
+                            <div class="starting-price">From $1,499 <small>per person</small></div>
+                            <div class="itinerary-count"><i class="fas fa-map-marked-alt"></i> 4 Unique Itineraries</div>
+                            <p class="text-muted mt-2">The complete Sri Lanka experience — north to south.</p>
+                            <a href="./pkg-14-day-tour-itinerary1.html" class="card-btn">Explore 14-Day Tours <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="text-center mt-5">
-                <a href="contact.html" class="btn btn-primary rounded-pill py-3 px-5">Need Help Choosing? Contact Our Experts</a>
+            <!-- Note: 9-day tour not listed due to missing price data -->
+            <div class="text-center mt-5 pt-3">
+                <p class="text-muted"><i class="fas fa-info-circle me-2"></i> All packages include accommodation, private transport, meals as per itinerary, and expert guides. Upgrade options available.</p>
+                <a href="contact.html" class="btn btn-primary rounded-pill py-3 px-5 mt-3">Need Help Choosing? Talk to an Expert</a>
             </div>
         </div>
     </div>
@@ -386,261 +496,12 @@
             // Hide spinner
             document.getElementById('spinner').style.display = 'none';
             
-            // Package data from the original packages page
-            const packages = [
-                {
-                    name: "Design Your Sri Lanka Journey",
-                    duration: "Flexible",
-                    days: 0,
-                    price: "Custom Quote",
-                    link: "./pkg-own-tour.html",
-                    image: "img/own-tour-package-card.jpg",
-                    highlights: ["Tailor-made itinerary", "Choose your own pace", "Personalized experiences", "Expert local guidance"],
-                    category: "custom",
-                    description: "Create your perfect Sri Lanka itinerary with our customizable tour packages."
-                },
-                {
-                    name: "Dambulla, Sigiriya & Kandy Tour",
-                    duration: "4-5 Days",
-                    days: 4,
-                    price: "USD 649",
-                    link: "./pkg-kandy-sigiriya-dambulla-tour.html",
-                    image: "img/kandy-dambulla-sirigiya-package-card.jpg",
-                    highlights: ["Sigiriya Rock Fortress", "Dambulla Cave Temple", "Temple of the Tooth", "Kandyan Dance Show"],
-                    category: "short",
-                    description: "Explore Sri Lanka's cultural heartland with ancient cave temples, majestic rock fortresses, and the sacred Temple of the Tooth."
-                },
-                {
-                    name: "Kandy Day Tour",
-                    duration: "1 Day",
-                    days: 1,
-                    price: "USD 120",
-                    link: "./pkg-kandy-day-tour.html",
-                    image: "img/kandy-package-card.jpeg",
-                    highlights: ["Temple of the Tooth", "Royal Botanical Gardens", "Kandy Lake", "Cultural Dance Show"],
-                    category: "short",
-                    description: "Experience the cultural capital of Sri Lanka in a single day."
-                },
-                {
-                    name: "Sri Lanka's Cultural Triangle",
-                    duration: "5-6 Days",
-                    days: 5,
-                    price: "USD 749",
-                    link: "./pkg-sri-lanka-cultural-trangle.html",
-                    image: "img/cultural-trangle-package-card.png",
-                    highlights: ["Anuradhapura", "Polonnaruwa", "Sigiriya Rock", "Dambulla Cave Temples"],
-                    category: "short",
-                    description: "Journey through ancient kingdoms with UNESCO World Heritage sites."
-                },
-                {
-                    name: "Northern Sri Lanka Adventure",
-                    duration: "3-5 Days",
-                    days: 4,
-                    price: "USD 599",
-                    link: "./pkg-northern-sri-lanka.html",
-                    image: "img/14-day-tour-srilanka-jaffna.jpg",
-                    highlights: ["Jaffna Fort", "Nallur Kandaswamy Temple", "Nagadeepa Temple", "Casuarina Beach"],
-                    category: "short",
-                    description: "Explore the lesser-known northern regions of Sri Lanka."
-                },
-                {
-                    name: "Heritage & Horizon Tour",
-                    duration: "3-5 Days",
-                    days: 4,
-                    price: "USD 589",
-                    link: "./pkg-heritage-horizon-tour.html",
-                    image: "img/14-day-tour-srilanka-trinco2.jpg",
-                    highlights: ["Ancient temples", "Pristine beaches", "Traditional villages", "Coastal scenery"],
-                    category: "short",
-                    description: "Experience the rich cultural heritage and scenic beauty of Sri Lanka's northern coast."
-                },
-                {
-                    name: "Sunny Eastern Beach Escape",
-                    duration: "3-5 Days",
-                    days: 4,
-                    price: "USD 599",
-                    link: "./pkg-eastern-beach-escape.html",
-                    image: "img/easten-beachers.jpg",
-                    highlights: ["Pasikudah Beach", "Batticaloa Lagoon", "Hidden coves", "Local seafood"],
-                    category: "short",
-                    description: "Discover the pristine beaches and vibrant coastal culture of Sri Lanka's eastern region."
-                },
-                {
-                    name: "4 Nights & 5 Days Tour",
-                    duration: "5 Days",
-                    days: 5,
-                    price: "USD 699",
-                    link: "./pkg-5-day-tour.html",
-                    image: "img/unawatuna.jpg",
-                    highlights: ["Anuradhapura", "Polonnaruwa", "Sigiriya", "Dambulla"],
-                    category: "short",
-                    description: "Discover ancient kingdoms and cultural heritage in 5 days."
-                },
-                {
-                    name: "5 Nights & 6 Days Tour",
-                    duration: "6 Days",
-                    days: 6,
-                    price: "USD 799",
-                    link: "./pkg-6-day-tour.html",
-                    image: "img/udawalawa safari.jpg",
-                    highlights: ["Anuradhapura", "Polonnaruwa", "Sigiriya", "Kandy"],
-                    category: "medium",
-                    description: "Explore the cultural triangle and hill country."
-                },
-                {
-                    name: "6 Nights & 7 Days Tour",
-                    duration: "7 Days",
-                    days: 7,
-                    price: "USD 899",
-                    link: "./pkg-7-day-tour.html",
-                    image: "img/blog-card-nuwaraeliya.jpg",
-                    highlights: ["Cultural Triangle", "Kandy", "Nuwara Eliya", "Tea Plantations"],
-                    category: "medium",
-                    description: "A perfect blend of culture and hill country scenery."
-                },
-                {
-                    name: "7 Nights & 8 Days Tour",
-                    duration: "8 Days",
-                    days: 8,
-                    price: "USD 999",
-                    link: "./pkg-8-day-tour.html",
-                    image: "img/botanical-garden.jpeg",
-                    highlights: ["Anuradhapura", "Sigiriya", "Kandy", "Ella"],
-                    category: "medium",
-                    description: "Experience the best of Sri Lanka's cultural and natural wonders."
-                },
-                {
-                    name: "8 Nights & 9 Days Tour",
-                    duration: "9 Days",
-                    days: 9,
-                    price: "USD 1099",
-                    link: "./pkg-9-day-tour.html",
-                    image: "img/blog-card-daladamaligawa.jpg",
-                    highlights: ["Cultural Triangle", "Hill Country", "Wildlife Safari", "Beach Relaxation"],
-                    category: "medium",
-                    description: "A comprehensive journey through Sri Lanka's highlights."
-                },
-                {
-                    name: "9 Nights & 10 Days Tour",
-                    duration: "10 Days",
-                    days: 10,
-                    price: "USD 1199",
-                    link: "./pkg-10-day-tour.html",
-                    image: "img/ella-train-tour.jpg",
-                    highlights: ["Sigiriya", "Kandy", "Ella Train Ride", "Yala Safari"],
-                    category: "medium",
-                    description: "Combine culture, scenery, and wildlife in one journey."
-                },
-                {
-                    name: "10 Nights & 11 Days Tour",
-                    duration: "11 Days",
-                    days: 11,
-                    price: "USD 1299",
-                    link: "./pkg-11-day-tour.html",
-                    image: "img/Nuwara_Eliya_Gregory_Lake.jpg",
-                    highlights: ["Cultural Triangle", "Hill Country", "Ella", "Mirissa Beach"],
-                    category: "long",
-                    description: "A perfect balance of heritage, nature, and coast."
-                },
-                {
-                    name: "11 Nights & 12 Days Tour",
-                    duration: "12 Days",
-                    days: 12,
-                    price: "USD 1399",
-                    link: "./pkg-12-day-tour.html",
-                    image: "img/blog-card-safari.jpg",
-                    highlights: ["Full Cultural Circuit", "Yala Safari", "Galle Fort", "Bentota Beach"],
-                    category: "long",
-                    description: "An immersive journey covering the entire island."
-                },
-                {
-                    name: "12 Nights & 13 Days Tour",
-                    duration: "13 Days",
-                    days: 13,
-                    price: "USD 1499",
-                    link: "./pkg-13-day-tour.html",
-                    image: "img/esala perahata.jpeg",
-                    highlights: ["North to South", "Jaffna", "Trincomalee", "Kandy", "Colombo"],
-                    category: "long",
-                    description: "The ultimate Sri Lankan experience from north to south."
-                },
-                {
-                    name: "The Ultimate Sri Lanka Journey",
-                    duration: "14 Days",
-                    days: 14,
-                    price: "USD 1699",
-                    link: "./pkg-14-day-tour.html", // placeholder, adjust if needed
-                    image: "img/carousel-2.jpg",
-                    highlights: ["Complete Island Tour", "Cultural Triangle", "Hill Country", "Wildlife", "Beaches"],
-                    category: "long",
-                    description: "Experience the very best of Sri Lanka in this comprehensive 14-day journey."
-                }
-            ];
-
-            // Render cards and table
-            function renderPackages(filter = "all") {
-                const grid = document.getElementById('packagesGrid');
-                const tableBody = document.getElementById('comparisonTableBody');
-                grid.innerHTML = '';
-                tableBody.innerHTML = '';
-                
-                let filtered = packages;
-                if (filter === "short") {
-                    filtered = packages.filter(p => p.days > 0 && p.days <= 5);
-                } else if (filter === "medium") {
-                    filtered = packages.filter(p => p.days >= 6 && p.days <= 10);
-                } else if (filter === "long") {
-                    filtered = packages.filter(p => p.days >= 11);
-                } else if (filter === "custom") {
-                    filtered = packages.filter(p => p.category === "custom");
-                }
-                
-                // Render cards
-                filtered.forEach(pkg => {
-                    const col = document.createElement('div');
-                    col.className = 'col-lg-4 col-md-6';
-                    col.innerHTML = `
-                        <div class="package-card">
-                            <div class="package-image">
-                                <img src="${pkg.image}" alt="${pkg.name}" onerror="this.src='img/default-package.jpg'">
-                            </div>
-                            <div class="package-content">
-                                <h3 class="package-title">${pkg.name}</h3>
-                                <span class="package-duration"><i class="far fa-calendar-alt me-1"></i> ${pkg.duration}</span>
-                                <div class="package-price">${pkg.price} <small>per person</small></div>
-                                <ul class="package-highlights">
-                                    ${pkg.highlights.slice(0,4).map(h => `<li><i class="fas fa-check-circle"></i> ${h}</li>`).join('')}
-                                </ul>
-                                <a href="${pkg.link}" class="btn-compare">View Details →</a>
-                            </div>
-                        </div>
-                    `;
-                    grid.appendChild(col);
-                });
-                
-                // Render table rows
-                filtered.forEach(pkg => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td><strong>${pkg.name}</strong></td>
-                        <td>${pkg.duration}</td>
-                        <td>${pkg.price}</td>
-                        <td class="text-start">${pkg.highlights.slice(0,3).join(', ')}</td>
-                        <td>${pkg.category === 'custom' ? 'Customizable' : (pkg.days <= 5 ? 'Short Tour' : (pkg.days <= 10 ? 'Medium Tour' : 'Long Tour'))}</td>
-                        <td><a href="${pkg.link}" class="btn btn-sm btn-outline-primary rounded-pill px-3">View</a></td>
-                    `;
-                    tableBody.appendChild(row);
-                });
-            }
-            
-            renderPackages('all');
-            
-            // Filter buttons
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    renderPackages(this.getAttribute('data-filter'));
+            // Additional charm: fade in on scroll (already animated with CSS)
+            // Ensure images have fallback
+            const images = document.querySelectorAll('.package-image');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    this.src = 'img/default-package.jpg';
                 });
             });
         });
