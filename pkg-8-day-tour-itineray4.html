@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Ceyloan Travellers - Itinerary 1: Cultural Coastline Journey </title>
+    <title>Ceyloan Travellers - Itinerary 4: Train Through Peaks & Paradise (3‑Tier Pricing)</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -529,6 +528,7 @@
             font-size: 0.95rem;
         }
 
+        /* Original price section base styles (preserved) */
         .price-section-enhanced {
             background: linear-gradient(135deg, #1a365d, #2c3e50);
             color: white;
@@ -537,10 +537,9 @@
             margin: 70px auto;
             position: relative;
             overflow: hidden;
-            max-width: 1000px;
+            max-width: 1200px;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
         }
-
         .price-section-enhanced:before {
             content: '';
             position: absolute;
@@ -551,16 +550,14 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
             background-size: cover;
         }
-
         .price-header-enhanced {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             position: relative;
             z-index: 2;
         }
-
         .price-title-enhanced {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 15px;
             background: linear-gradient(135deg, #fff, #f39c12);
@@ -568,20 +565,114 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        .price-amount-enhanced {
-            font-size: 4rem;
+        .price-subtitle-enhanced {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        /* New price comparison grid styles */
+        .price-comparison-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin: 50px 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+        .price-tier-card {
+            flex: 1;
+            min-width: 250px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .price-tier-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #f39c12;
+        }
+        .price-tier-card.recommended {
+            border: 2px solid #f39c12;
+            background: rgba(255, 255, 255, 0.12);
+            transform: scale(1.02);
+            box-shadow: 0 25px 45px rgba(243,156,18,0.2);
+        }
+        .tier-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        .tier-price {
+            font-size: 2.8rem;
             font-weight: 900;
             color: #f39c12;
             margin: 20px 0;
-            text-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+            line-height: 1.2;
         }
-
-        .price-subtitle-enhanced {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
+        .tier-price small {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .tier-features {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+            text-align: left;
+            display: inline-block;
+        }
+        .tier-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+        .tier-features li i {
+            width: 24px;
+            color: #2ecc71;
+        }
+        .btn-tier {
+            background: white;
+            color: #1a365d;
+            padding: 12px 25px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-top: 15px;
+            border: none;
+        }
+        .btn-tier:hover {
+            background: #f39c12;
+            color: white;
+            transform: translateY(-3px);
+        }
+        .badge-hot {
+            background: #e74c3c;
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 992px) {
+            .price-comparison-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .price-tier-card {
+                width: 100%;
+                max-width: 400px;
+            }
         }
 
         .inclusion-grid-enhanced {
@@ -592,7 +683,6 @@
             position: relative;
             z-index: 2;
         }
-
         .inclusion-item-enhanced {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
@@ -602,13 +692,11 @@
             transition: all 0.4s ease;
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
-
         .inclusion-item-enhanced:hover {
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.12);
             border-color: rgba(243, 156, 18, 0.3);
         }
-
         .inclusion-icon-enhanced {
             font-size: 2.5rem;
             color: #2ecc71;
@@ -618,19 +706,16 @@
             align-items: center;
             justify-content: center;
         }
-
         .inclusion-item-enhanced h5 {
             font-size: 1.2rem;
             margin-bottom: 10px;
             color: white;
         }
-
         .inclusion-text-enhanced {
             font-size: 0.95rem;
             opacity: 0.9;
             line-height: 1.5;
         }
-
         .booking-cta-enhanced {
             background: linear-gradient(135deg, #ffffff, #f8f9fa);
             border-radius: 25px;
@@ -641,14 +726,12 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
             max-width: 1000px;
         }
-
         .cta-title-enhanced {
             font-size: 2.5rem;
             color: #1a365d;
             margin-bottom: 20px;
             font-weight: 800;
         }
-
         .cta-subtitle {
             font-size: 1.2rem;
             color: #666;
@@ -656,7 +739,6 @@
             margin: 0 auto 40px;
             line-height: 1.6;
         }
-
         .cta-buttons-enhanced {
             display: flex;
             gap: 20px;
@@ -664,7 +746,6 @@
             flex-wrap: wrap;
             margin-top: 30px;
         }
-
         .btn-cta-enhanced {
             padding: 18px 40px;
             font-size: 1.1rem;
@@ -678,41 +759,35 @@
             min-width: 220px;
             justify-content: center;
         }
-
         .btn-cta-primary {
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             border: none;
             box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
         }
-
         .btn-cta-primary:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
             color: white;
         }
-
         .btn-cta-secondary {
             background: white;
             color: #3498db;
             border: 2px solid #3498db;
             box-shadow: 0 5px 20px rgba(52, 152, 219, 0.15);
         }
-
         .btn-cta-secondary:hover {
             background: #3498db;
             color: white;
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(52, 152, 219, 0.25);
         }
-
         .btn-cta-tertiary {
             background: linear-gradient(135deg, #f39c12, #e67e22);
             color: white;
             border: none;
             box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
         }
-
         .btn-cta-tertiary:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(243, 156, 18, 0.4);
@@ -837,11 +912,11 @@
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h3 class="text-white display-3 mb-4">Itinerary 1 – Cultural Coastline Journey </h3>
+            <h3 class="text-white display-3 mb-4">Itinerary 4 – Train Through Peaks & Paradise </h3>
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                 <li class="breadcrumb-item"><a href="packages.html">Packages</a></li>
-                <li class="breadcrumb-item active text-white">Itinerary 1 – Cultural Coastline Journey</li>
+                <li class="breadcrumb-item active text-white">Itinerary 4 – Train Through Peaks & Paradise</li>
             </ol>    
         </div>
     </div>
@@ -864,14 +939,14 @@
             
             <!-- Section Header -->
             <div class="section-header">
-                <p class="section-subtitle">Negombo's shores, Anuradhapura's sacred city, Trincomalee's temples, Pasikudah's beaches, Polonnaruwa's ruins, Sigiriya's rock, Kandy's culture, and Colombo's Gangaramaya – an 8-day cultural coastline journey.</p>
+                <p class="section-subtitle">Negombo's shores, Sigiriya's rock, Kandy's culture, the iconic train to Ella, Yala's wildlife, Mirissa's beaches, Galle's fort, and Colombo's Gangaramaya – a journey through peaks and paradise.</p>
             </div>
 
-            <!-- Overview Section -->
+            <!-- Overview Section (unchanged) -->
             <div class="overview-section">
                 <div class="overview-header">
-                    <h3 class="overview-main-title">Negombo · Anuradhapura · Trincomalee · Pasikudah · Polonnaruwa · Sigiriya · Kandy · Colombo</h3>
-                    <span class="tour-highlight">8 Days · Heritage & Eastern Coast</span>
+                    <h3 class="overview-main-title">Negombo · Sigiriya · Kandy · Ella · Yala · Mirissa · Galle · Colombo</h3>
+                    <span class="tour-highlight">8 Days · Scenic Train, Wildlife & Coast</span>
                 </div>
                 <div class="overview-content">
                     <!-- FLEXIBILITY NOTE -->
@@ -880,16 +955,16 @@
                         <strong>Flexible scheduling:</strong> Times and visiting places can be negotiated based on your requirements and flight schedule. This itinerary is fully customizable.
                     </div>
                     <div class="overview-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="overview-main-image" alt="Koneswaram Temple">
+                        <img src="img/sigiriya-attractions.jpg" class="overview-main-image" alt="Train in Ella">
                         <div class="image-overlay">
-                            <p class="image-caption">Koneswaram Temple, Trincomalee</p>
+                            <p class="image-caption">Scenic train through the hills</p>
                         </div>
                     </div>
-                    <p class="mb-4">This 8‑day tour takes you on a comprehensive journey through Sri Lanka's cultural heart and eastern coastline. Begin with a relaxing evening at Negombo beach, then explore the ancient capital Anuradhapura. Discover Trincomalee's temples and harbour, relax on Pasikudah's pristine beaches, uncover the ruins of Polonnaruwa, climb the iconic Sigiriya rock, experience Kandy's sacred tooth relic and cultural show, and finally visit Colombo's Gangaramaya Temple before departure. Half‑board accommodation and seamless transfers throughout.</p>
+                    <p class="mb-4">This 8‑day tour takes you on a breathtaking journey through Sri Lanka's most scenic landscapes. Begin with a relaxing evening at Negombo beach, then explore the ancient rock fortress of Sigiriya and cave temples of Dambulla. Experience Kandy's sacred culture, then embark on the iconic train ride to Ella through misty mountains. Enjoy a thrilling safari in Yala National Park, unwind on Mirissa's golden shores, explore Galle's colonial charm, and finally visit Colombo's Gangaramaya Temple before departure. Half‑board accommodation and seamless transfers throughout.</p>
                 </div>
             </div>
 
-            <!-- DAY 1: Airport → Negombo -->
+            <!-- DAY 1: Airport → Negombo (unchanged) -->
             <div class="day-card-section day-1" id="day-1">
                 <div class="day-card-header">
                     <div>
@@ -953,199 +1028,199 @@
                 </div>
             </div>
 
-            <!-- DAY 2: Negombo → Anuradhapura -->
+            <!-- DAY 2: Negombo → Sigiriya / Dambulla (unchanged) -->
             <div class="day-card-section day-2" id="day-2">
                 <div class="day-card-header">
                     <div>
-                        <h3 class="day-main-title">Sacred Anuradhapura</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Negombo → Anuradhapura</p>
-                        <span class="day-highlight">Sri Maha Bodhi · Ruwanwelisaya · Jetavanaramaya · Abhayagiri · Kuttam Pokuna</span>
-                    </div>
-                    <div class="day-number-circle">02</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/dambulla-cave-temple.jpg" class="day-main-image" alt="Ruwanwelisaya">
-                        <div class="image-overlay"><p class="image-caption">Ruwanwelisaya Stupa</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 2 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Negombo hotel, then depart for Anuradhapura.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30–11:30</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Anuradhapura</h5><p>Approx 3 hrs, arrive by late morning.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:00–16:00</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Anuradhapura site seeing</h5><p>Sri Maha Bodhi, Ruwanwelisaya, Jetavanaramaya, Abhayagiri Dagoba, Kuttam Pokuna (Twin Ponds).</p><div class="activity-highlights"><span class="highlight-tag">UNESCO</span></div></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Anuradhapura</h5><p>Local restaurant.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Lake Front Hotel</h5><p>Relax, dinner at hotel (half‑board).</p></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 2 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-tree"></i></div><div class="fact-text">Sri Maha Bodhi</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-water"></i></div><div class="fact-text">Kuttam Pokuna</div></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DAY 3: Anuradhapura → Trincomalee -->
-            <div class="day-card-section day-3" id="day-3">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Temples & Harbour of Trincomalee</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Anuradhapura → Trincomalee</p>
-                        <span class="day-highlight">Koneswaram · Harbour · Nilaveli Beach</span>
-                    </div>
-                    <div class="day-number-circle">03</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/kandy-package-card.jpeg" class="day-main-image" alt="Koneswaram Temple">
-                        <div class="image-overlay"><p class="image-caption">Koneswaram Kovil</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 3 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Anuradhapura hotel.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–12:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Trincomalee</h5><p>Approx 3 hrs.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-fish"></i></div></div><h5>Seafood Lunch</h5><p>At a Trincomalee restaurant.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:00</span><div class="activity-icon"><i class="fas fa-hindu"></i></div></div><h5>Koneswaram Temple</h5><p>Ancient Hindu shrine on Swami Rock.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:30</span><div class="activity-icon"><i class="fas fa-ship"></i></div></div><h5>Trincomalee Harbour Visit</h5><p>One of the world's finest natural harbours.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:00</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Nilaveli / Marble Beach</h5><p>Relax on the pristine sands.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">18:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Beach Front Hotel</h5><p>Dinner at hotel (half‑board).</p></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 3 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Koneswaram</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-ship"></i></div><div class="fact-text">Harbour</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-water"></i></div><div class="fact-text">Nilaveli Beach</div></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DAY 4: Trincomalee → Pasikudah -->
-            <div class="day-card-section day-4" id="day-4">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Pasikudah & Batticaloa</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Trincomalee → Pasikudah</p>
-                        <span class="day-highlight">Batticaloa Lagoon · Fort · Pasikudah Beach</span>
-                    </div>
-                    <div class="day-number-circle">04</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Batticaloa Lagoon">
-                        <div class="image-overlay"><p class="image-caption">Batticaloa Lagoon</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 4 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Trincomalee hotel.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–11:30</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Pasikudah via Batticaloa</h5><p>Scenic coastal drive (approx 2.5 hrs).</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">11:30</span><div class="activity-icon"><i class="fas fa-water"></i></div></div><h5>Batticaloa Lagoon & Fort</h5><p>Visit the scenic lagoon and historic Dutch fort.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Pasikudah</h5><p>Sri Lankan lunch at a local restaurant.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30–17:30</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Relaxation at Pasikudah Beach</h5><p>Enjoy the shallow, calm waters of Pasikudah.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">18:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Beach Front Hotel</h5><p>Dinner at hotel (half‑board).</p></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 4 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-water"></i></div><div class="fact-text">Batticaloa Lagoon</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-fort"></i></div><div class="fact-text">Batticaloa Fort</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Pasikudah Beach</div></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DAY 5: Pasikudah → Polonnaruwa -->
-            <div class="day-card-section day-5" id="day-5">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Ancient Polonnaruwa</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Pasikudah → Polonnaruwa</p>
-                        <span class="day-highlight">Polonnaruwa Ancient City · Gal Vihara · Parakrama Samudra</span>
-                    </div>
-                    <div class="day-number-circle">05</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Polonnaruwa">
-                        <div class="image-overlay"><p class="image-caption">Gal Vihara, Polonnaruwa</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 5 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Pasikudah hotel.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–11:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Polonnaruwa</h5><p>Approx 2 hrs.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">11:30–16:00</span><div class="activity-icon"><i class="fas fa-archway"></i></div></div><h5>Polonnaruwa Ancient City</h5><p>Explore the ruins, Gal Vihara, and Parakrama Samudra.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Polonnaruwa</h5><p>Traditional meal.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Polonnaruwa Hotel</h5><p>Dinner at hotel (half‑board).</p></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 5 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-archway"></i></div><div class="fact-text">Ancient City</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-water"></i></div><div class="fact-text">Parakrama Samudra</div></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DAY 6: Polonnaruwa → Sigiriya / Dambulla -->
-            <div class="day-card-section day-6" id="day-6">
-                <div class="day-card-header">
-                    <div>
                         <h3 class="day-main-title">Rock Fortress & Cave Temples</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Polonnaruwa → Sigiriya</p>
+                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Negombo → Sigiriya</p>
                         <span class="day-highlight">Sigiriya · Dambulla · Nalanda Gedige</span>
                     </div>
-                    <div class="day-number-circle">06</div>
+                    <div class="day-number-circle">02</div>
                 </div>
                 <div class="day-content-wrapper">
                     <div class="day-image-section">
                         <img src="img/sigiriya.jpeg" class="day-main-image" alt="Sigiriya Rock">
                         <div class="image-overlay"><p class="image-caption">Sigiriya Lion Rock</p></div>
                     </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 6 Schedule</h4>
+                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 2 Schedule</h4>
                     <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Polonnaruwa hotel.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–10:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Sigiriya</h5><p>Approx 1 hr.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">10:30–13:00</span><div class="activity-icon"><i class="fas fa-mountain"></i></div></div><h5>Sigiriya Rock Fortress</h5><p>Climb the iconic rock, admire frescoes, lion gate, and panoramic views.</p><div class="activity-highlights"><span class="highlight-tag">UNESCO</span></div></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Sigiriya</h5><p>Local restaurant.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30–16:30</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Dambulla Cave Temple & Nalanda Gedige</h5><p>Explore the golden temple and cave shrines, then visit the unique Nalanda Gedige.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Negombo hotel, then depart for Sigiriya.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30–11:30</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Sigiriya</h5><p>Approx 3 hrs.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">11:30–14:00</span><div class="activity-icon"><i class="fas fa-mountain"></i></div></div><h5>Sigiriya Rock Fortress</h5><p>Climb the iconic rock, admire frescoes, lion gate, and panoramic views.</p><div class="activity-highlights"><span class="highlight-tag">UNESCO</span></div></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Sigiriya</h5><p>Local restaurant.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:00–16:30</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Dambulla Cave Temple & Nalanda Gedige</h5><p>Explore the golden temple and cave shrines, then visit the unique Nalanda Gedige.</p></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Sigiriya/Dambulla Hotel</h5><p>Dinner at hotel (half‑board).</p></div>
                     </div>
                     <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 6 Highlights</h5>
+                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 2 Highlights</h5>
                         <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-mountain"></i></div><div class="fact-text">Sigiriya</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Dambulla</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-archway"></i></div><div class="fact-text">Nalanda Gedige</div></div></div>
                     </div>
                 </div>
             </div>
 
-            <!-- DAY 7: Sigiriya → Kandy -->
-            <div class="day-card-section day-7" id="day-7">
+            <!-- DAY 3: Sigiriya → Kandy (unchanged) -->
+            <div class="day-card-section day-3" id="day-3">
                 <div class="day-card-header">
                     <div>
                         <h3 class="day-main-title">Sacred Kandy & Cultural Show</h3>
                         <p class="day-location"><i class="fas fa-map-marker-alt"></i> Sigiriya → Kandy</p>
-                        <span class="day-highlight">Temple of Tooth · Kandy Lake · Dance Show · View Point</span>
+                        <span class="day-highlight">Temple of Tooth · Kandy Lake · View Point · Dance Show</span>
                     </div>
-                    <div class="day-number-circle">07</div>
+                    <div class="day-number-circle">03</div>
                 </div>
                 <div class="day-content-wrapper">
                     <div class="day-image-section">
                         <img src="img/kandy-package-card.jpeg" class="day-main-image" alt="Temple of the Tooth">
                         <div class="image-overlay"><p class="image-caption">Sri Dalada Maligawa</p></div>
                     </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 7 Schedule</h4>
+                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 3 Schedule</h4>
                     <div class="enhanced-schedule-grid">
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Sigiriya/Dambulla hotel.</p></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–12:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Kandy</h5><p>Scenic route via Matale (approx 3 hrs).</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Kandy</h5><p>Local restaurant.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Kandy</h5><p>Authentic Sri Lankan lunch.</p></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:00</span><div class="activity-icon"><i class="fas fa-pray"></i></div></div><h5>Temple of the Sacred Tooth Relic</h5><p>Visit the most sacred Buddhist shrine.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:30</span><div class="activity-icon"><i class="fas fa-water"></i></div></div><h5>Kandy Lake</h5><p>Leisurely walk around the lake.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:30</span><div class="activity-icon"><i class="fas fa-eye"></i></div></div><h5>Kandy View Point</h5><p>Panoramic view of Kandy city and lake.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:30</span><div class="activity-icon"><i class="fas fa-music"></i></div></div><h5>Kandyan Cultural Dance Show</h5><p>Traditional performance with fire walking.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Kandy Hotel</h5><p>Dinner at hotel (half‑board).</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:30</span><div class="activity-icon"><i class="fas fa-water"></i></div></div><h5>Kandy Lake & View Point</h5><p>Stroll around the lake and enjoy panoramic city views.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:00</span><div class="activity-icon"><i class="fas fa-music"></i></div></div><h5>Kandyan Cultural Dance Show</h5><p>Traditional dance performance with fire walking.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Kandy Hotel</h5><p>Dinner at hotel (half‑board).</p></div>
                     </div>
                     <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 7 Highlights</h5>
+                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 3 Highlights</h5>
                         <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-pray"></i></div><div class="fact-text">Temple of Tooth</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-music"></i></div><div class="fact-text">Dance Show</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-eye"></i></div><div class="fact-text">View Point</div></div></div>
                     </div>
                 </div>
             </div>
 
-            <!-- DAY 8: Kandy → Colombo (Gangaramaya, Lotus Tower) → Airport -->
+            <!-- DAY 4: Kandy → Peradeniya → Train to Ella (unchanged) -->
+            <div class="day-card-section day-4" id="day-4">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Scenic Train to Ella</h3>
+                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Kandy → Peradeniya → Ella</p>
+                        <span class="day-highlight">Train Journey · Nine Arches · Rawana Falls</span>
+                    </div>
+                    <div class="day-number-circle">04</div>
+                </div>
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Nine Arches Bridge">
+                        <div class="image-overlay"><p class="image-caption">Nine Arches Bridge, Ella</p></div>
+                    </div>
+                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 4 Schedule</h4>
+                    <div class="enhanced-schedule-grid">
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">06:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Early breakfast & check‑out</h5><p>Breakfast at Kandy hotel, then transfer to Peradeniya railway station.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30–13:00</span><div class="activity-icon"><i class="fas fa-train"></i></div></div><h5>Scenic Train to Ella</h5><p>Board the famous Kandy–Ella train (Peradeniya to Ella). Enjoy breathtaking views of tea plantations, misty mountains, and waterfalls.</p><div class="activity-highlights"><span class="highlight-tag">World's most scenic train</span></div></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Ella restaurant</h5><p>Local cuisine with a view.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-bridge"></i></div></div><h5>Nine Arches Bridge</h5><p>Walk to the famous colonial‑era bridge amidst tea hills.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:00</span><div class="activity-icon"><i class="fas fa-waterfall"></i></div></div><h5>Rawana Falls</h5><p>Visit the magnificent Rawana Falls.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Ella hotel</h5><p>Dinner at hotel (half‑board).</p></div>
+                    </div>
+                    <div class="quick-facts-enhanced">
+                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 4 Highlights</h5>
+                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-train"></i></div><div class="fact-text">Scenic train</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-bridge"></i></div><div class="fact-text">Nine Arches</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-water"></i></div><div class="fact-text">Rawana Falls</div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 5: Ella → Yala (Safari) (unchanged) -->
+            <div class="day-card-section day-5" id="day-5">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Wild Safari in Yala</h3>
+                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Ella → Yala</p>
+                        <span class="day-highlight">Leopard · Elephant · Jeep Safari</span>
+                    </div>
+                    <div class="day-number-circle">05</div>
+                </div>
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/dambulla-cave-temple.jpg" class="day-main-image" alt="Yala National Park">
+                        <div class="image-overlay"><p class="image-caption">Yala's famous leopards & elephants</p></div>
+                    </div>
+                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 5 Schedule</h4>
+                    <div class="enhanced-schedule-grid">
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Ella hotel, then depart for Yala.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00–11:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Yala / Tissamaharama</h5><p>Scenic drive to the southern wildlife zone.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Tissamaharama</h5><p>Authentic south coast cuisine at a local restaurant.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30–18:00</span><div class="activity-icon"><i class="fas fa-paw"></i></div></div><h5>Yala National Park Safari</h5><p>Evening jeep safari to spot leopards, elephants, sloth bears, and exotic birds.</p><div class="activity-highlights"><span class="highlight-tag">Wildlife</span><span class="highlight-tag">Jeep</span></div></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">18:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Yala Hotel</h5><p>Relax after safari. Dinner at hotel (half‑board).</p></div>
+                    </div>
+                    <div class="quick-facts-enhanced">
+                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 5 Highlights</h5>
+                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-paw"></i></div><div class="fact-text">Yala safari</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-elephant"></i></div><div class="fact-text">Leopards & elephants</div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 6: Yala → Mirissa (unchanged) -->
+            <div class="day-card-section day-6" id="day-6">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Coastal Serenity at Mirissa</h3>
+                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Yala → Mirissa</p>
+                        <span class="day-highlight">Coconut Tree Hills · Beach Relaxation</span>
+                    </div>
+                    <div class="day-number-circle">06</div>
+                </div>
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Mirissa Beach">
+                        <div class="image-overlay"><p class="image-caption">Mirissa Beach</p></div>
+                    </div>
+                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 6 Schedule</h4>
+                    <div class="enhanced-schedule-grid">
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Yala hotel.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–12:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Mirissa</h5><p>Coastal drive (approx 3 hrs).</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Mirissa</h5><p>Local restaurant.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:00</span><div class="activity-icon"><i class="fas fa-tree"></i></div></div><h5>Mirissa Coconut Tree Hills</h5><p>Visit the famous viewpoint.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:30</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Relax at preferred beach</h5><p>Unwind on the golden sands.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">18:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Beach Front Hotel</h5><p>Dinner at hotel (half‑board).</p></div>
+                    </div>
+                    <div class="quick-facts-enhanced">
+                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 6 Highlights</h5>
+                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-tree"></i></div><div class="fact-text">Coconut Tree Hills</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Mirissa Beach</div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 7: Mirissa → Galle (unchanged) -->
+            <div class="day-card-section day-7" id="day-7">
+                <div class="day-card-header">
+                    <div>
+                        <h3 class="day-main-title">Colonial Galle & Unawatuna</h3>
+                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Mirissa → Galle</p>
+                        <span class="day-highlight">Galle Fort · Lighthouse · Unawatuna Beach</span>
+                    </div>
+                    <div class="day-number-circle">07</div>
+                </div>
+                <div class="day-content-wrapper">
+                    <div class="day-image-section">
+                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Galle Fort">
+                        <div class="image-overlay"><p class="image-caption">Galle Fort</p></div>
+                    </div>
+                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 7 Schedule</h4>
+                    <div class="enhanced-schedule-grid">
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Mirissa hotel.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–10:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Galle</h5><p>Short drive along the coast.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">10:30</span><div class="activity-icon"><i class="fas fa-fort"></i></div></div><h5>Galle Fort</h5><p>Explore the UNESCO-listed fort.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:00</span><div class="activity-icon"><i class="fas fa-lightbulb"></i></div></div><h5>Galle Lighthouse</h5><p>Visit the iconic lighthouse.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Galle</h5><p>Local restaurant.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Unawatuna Jungle Beach</h5><p>Relax at this serene cove.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">18:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Galle Beach Front Hotel</h5><p>Dinner at hotel (half‑board).</p></div>
+                    </div>
+                    <div class="quick-facts-enhanced">
+                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 7 Highlights</h5>
+                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-fort"></i></div><div class="fact-text">Galle Fort</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-lightbulb"></i></div><div class="fact-text">Lighthouse</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Unawatuna</div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 8: Galle → Colombo (Gangaramaya, Lotus Tower) → Airport (unchanged) -->
             <div class="day-card-section day-8" id="day-8">
                 <div class="day-card-header">
                     <div>
                         <h3 class="day-main-title">Colombo Sights & Departure</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Kandy → Colombo → Airport</p>
+                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Galle → Colombo → Airport</p>
                         <span class="day-highlight">Gangaramaya Temple · Lotus Tower</span>
                     </div>
                     <div class="day-number-circle">08</div>
@@ -1157,11 +1232,11 @@
                     </div>
                     <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 8 Schedule</h4>
                     <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Kandy hotel.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–12:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Colombo</h5><p>Scenic drive to Colombo (approx 3 hrs).</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Gangaramaya Temple</h5><p>Visit one of Colombo's most vibrant temples.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Lotus Tower restaurant</h5><p>Enjoy a meal with a view from the iconic tower.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:00</span><div class="activity-icon"><i class="fas fa-plane-departure"></i></div></div><h5>Arrival at Airport</h5><p>Drop off in time for your flight. Farewell!</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Galle hotel.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–10:30</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Colombo</h5><p>Expressway drive (approx 1.5 hrs).</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">11:00</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Gangaramaya Temple</h5><p>Visit one of Colombo's most vibrant temples.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Lotus Tower restaurant</h5><p>Enjoy a meal with a view from the iconic tower.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-plane-departure"></i></div></div><h5>Arrival at Airport</h5><p>Drop off in time for your flight. Farewell!</p></div>
                     </div>
                     <div class="quick-facts-enhanced">
                         <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 8 Highlights</h5>
@@ -1170,32 +1245,82 @@
                 </div>
             </div>
 
-            <!-- Price Section -->
+            <!-- ========== MODIFIED PAYMENT SECTION: 3-TIER PRICING ========== -->
             <div class="price-section-enhanced" id="booking">
                 <div class="price-header-enhanced">
-                    <h2 class="price-title-enhanced">8 Days · Cultural Coastline Journey</h2>
-                    <div class="price-amount-enhanced">USD 1199</div>
-                    <p class="price-subtitle-enhanced">Per person (based on 2 pax) · Half‑board accommodation, all entry fees, transport & driver/guide</p>
+                    <h2 class="price-title-enhanced">8 Days · Train Through Peaks & Paradise</h2>
+                    <p class="price-subtitle-enhanced">Choose the package that fits your style – all include the same itinerary, private transport, and expert guidance.</p>
                 </div>
+
+                <!-- Price Comparison Cards -->
+                <div class="price-comparison-grid">
+                    <!-- Budget Card -->
+                    <div class="price-tier-card">
+                        <div class="badge-hot">BEST VALUE</div>
+                        <div class="tier-name">Budget</div>
+                        <div class="tier-price">$852 <small>per person</small></div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check-circle"></i> Standard 3★ hotels</li>
+                            <li><i class="fas fa-check-circle"></i> Half‑board (breakfast & dinner)</li>
+                            <li><i class="fas fa-check-circle"></i> Private A/C vehicle</li>
+                            <li><i class="fas fa-check-circle"></i> All entrance fees included</li>
+                            <li><i class="fas fa-check-circle"></i> English‑speaking driver/guide</li>
+                        </ul>
+                        <a href="https://wa.me/94763661600?text=Hi!%20I%20want%20to%20book%20the%20BUDGET%20package%20for%20Train%20Through%20Peaks%20&%20Paradise%208%20Days%20($852)." target="_blank" class="btn-tier">Book Budget →</a>
+                    </div>
+
+                    <!-- Mid-Range Card (Recommended) -->
+                    <div class="price-tier-card recommended">
+                        <div class="badge-hot">⭐ MOST POPULAR</div>
+                        <div class="tier-name">Mid-Range</div>
+                        <div class="tier-price">$1,136 <small>per person</small></div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check-circle"></i> Comfort 4★ hotels</li>
+                            <li><i class="fas fa-check-circle"></i> Half‑board (breakfast & dinner)</li>
+                            <li><i class="fas fa-check-circle"></i> Private A/C vehicle</li>
+                            <li><i class="fas fa-check-circle"></i> All entrance fees + water bottles</li>
+                            <li><i class="fas fa-check-circle"></i> Professional driver/guide + welcome gift</li>
+                        </ul>
+                        <a href="https://wa.me/94763661600?text=Hi!%20I%20want%20to%20book%20the%20MID-RANGE%20package%20for%20Train%20Through%20Peaks%20&%20Paradise%208%20Days%20($1136)." target="_blank" class="btn-tier">Book Mid-Range →</a>
+                    </div>
+
+                    <!-- Luxury Card -->
+                    <div class="price-tier-card">
+                        <div class="badge-hot">LUXURY</div>
+                        <div class="tier-name">Luxury</div>
+                        <div class="tier-price">$1,647 <small>per person</small></div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check-circle"></i> Premium 5★ hotels</li>
+                            <li><i class="fas fa-check-circle"></i> Half‑board (upgraded meals)</li>
+                            <li><i class="fas fa-check-circle"></i> Private luxury vehicle</li>
+                            <li><i class="fas fa-check-circle"></i> All entrance fees + guided tours</li>
+                            <li><i class="fas fa-check-circle"></i> Spa voucher & airport assistance</li>
+                        </ul>
+                        <a href="https://wa.me/94763661600?text=Hi!%20I%20want%20to%20book%20the%20LUXURY%20package%20for%20Train%20Through%20Peaks%20&%20Paradise%208%20Days%20($1647)." target="_blank" class="btn-tier">Book Luxury →</a>
+                    </div>
+                </div>
+
+                <!-- Common Inclusions (original list preserved) -->
                 <div class="inclusion-grid-enhanced">
-                    <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-hotel"></i></div><h5>7 Nights Half‑Board</h5><p class="inclusion-text-enhanced">Negombo, Anuradhapura, Trincomalee, Pasikudah, Polonnaruwa, Sigiriya, Kandy</p></div>
-                    <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-ticket-alt"></i></div><h5>All Entrance Fees</h5><p class="inclusion-text-enhanced">Anuradhapura sites, Koneswaram, Batticaloa Fort, Polonnaruwa, Sigiriya, Dambulla, Nalanda Gedige, Temple of Tooth, dance show, Gangaramaya</p></div>
+                    <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-hotel"></i></div><h5>7 Nights Half‑Board</h5><p class="inclusion-text-enhanced">Negombo, Sigiriya, Kandy, Ella, Yala, Mirissa, Galle</p></div>
+                    <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-ticket-alt"></i></div><h5>All Entrance Fees</h5><p class="inclusion-text-enhanced">Sigiriya, Dambulla, Nalanda Gedige, Temple of Tooth, dance show, train ticket, Yala safari, Galle Fort, Gangaramaya</p></div>
                     <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-car"></i></div><h5>Private A/C Vehicle</h5><p class="inclusion-text-enhanced">Professional English‑speaking driver, fuel, parking, tolls</p></div>
-                    <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-umbrella-beach"></i></div><h5>Beach & Heritage Combo</h5><p class="inclusion-text-enhanced">Negombo, Nilaveli, Pasikudah, east coast temples</p></div>
+                    <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-train"></i></div><h5>Scenic Train & Safari</h5><p class="inclusion-text-enhanced">Iconic train ride, Yala jeep safari, coastal beaches</p></div>
                 </div>
-                <div class="text-center mt-5">
-                    <a href="https://wa.me/94763661600?text=Hi!%20I%20would%20like%20to%20book%20the%208%20Days%20Cultural%20Coastline%20Journey%20Tour%20for%20USD%201199%20per%20person." target="_blank" class="btn-cta-enhanced btn-cta-primary"><i class="fab fa-whatsapp me-2"></i>Book Now on WhatsApp</a>
-                    <p class="mt-4 text-light opacity-85">Flexible booking · Free cancellation up to 7 days before</p>
+
+                <div class="text-center mt-4">
+                    <p class="text-light opacity-85"><i class="fas fa-info-circle"></i> All prices are per person based on double occupancy. Single supplement applies. Contact us for group discounts.</p>
+                    <a href="https://wa.me/94763661600" target="_blank" class="btn-cta-enhanced btn-cta-primary" style="display: inline-block; margin-top: 15px;"><i class="fab fa-whatsapp me-2"></i>Chat with us to customize your package</a>
                 </div>
             </div>
 
-            <!-- Booking CTA -->
+            <!-- Booking CTA (unchanged) -->
             <div class="booking-cta-enhanced">
-                <h2 class="cta-title-enhanced">Ready for a cultural coastline journey?</h2>
-                <p class="cta-subtitle">From Anuradhapura to Pasikudah and Kandy, this 8‑day tour captures the best of Sri Lanka's heritage and eastern shores. Limited spots available.</p>
+                <h2 class="cta-title-enhanced">Ready for a train through peaks & paradise?</h2>
+                <p class="cta-subtitle">From Sigiriya's heights to Ella's scenic train and Mirissa's shores, this 8‑day tour captures Sri Lanka's magic. Limited spots available.</p>
                 <div class="cta-buttons-enhanced">
                     <a href="tel:+94763661600" class="btn-cta-enhanced btn-cta-primary"><i class="fas fa-phone-alt me-2"></i>Call to Book</a>
-                    <a href="mailto:info@ceyloantravellers.com?subject=Cultural%20Coastline%20Journey%20Inquiry" class="btn-cta-enhanced btn-cta-secondary"><i class="fas fa-envelope me-2"></i>Email Inquiry</a>
+                    <a href="mailto:info@ceyloantravellers.com?subject=Train%20Through%20Peaks%20%26%20Paradise%20Inquiry" class="btn-cta-enhanced btn-cta-secondary"><i class="fas fa-envelope me-2"></i>Email Inquiry</a>
                     <a href="./booking.html" class="btn-cta-enhanced btn-cta-tertiary"><i class="fas fa-calendar-alt me-2"></i>Online Booking</a>
                 </div>
             </div>
@@ -1299,4 +1424,3 @@
     </script>
 </body>
 </html>
-```

@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Ceyloan Travellers - Itinerary: Heritage, Hills & Horizons </title>
+    <title>Ceyloan Travellers - Itinerary: Heritage, Hills & Horizons (3‑Tier Pricing)</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -529,6 +528,7 @@
             font-size: 0.95rem;
         }
 
+        /* ---------- NEW PRICING SECTION STYLES (3-TIER CARDS) ---------- */
         .price-section-enhanced {
             background: linear-gradient(135deg, #1a365d, #2c3e50);
             color: white;
@@ -537,10 +537,9 @@
             margin: 70px auto;
             position: relative;
             overflow: hidden;
-            max-width: 1000px;
+            max-width: 1200px;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
         }
-
         .price-section-enhanced:before {
             content: '';
             position: absolute;
@@ -551,16 +550,14 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
             background-size: cover;
         }
-
         .price-header-enhanced {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             position: relative;
             z-index: 2;
         }
-
         .price-title-enhanced {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 15px;
             background: linear-gradient(135deg, #fff, #f39c12);
@@ -568,20 +565,114 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        .price-amount-enhanced {
-            font-size: 4rem;
+        .price-subtitle-enhanced {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        /* Price comparison grid */
+        .price-comparison-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin: 50px 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+        .price-tier-card {
+            flex: 1;
+            min-width: 250px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .price-tier-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #f39c12;
+        }
+        .price-tier-card.recommended {
+            border: 2px solid #f39c12;
+            background: rgba(255, 255, 255, 0.12);
+            transform: scale(1.02);
+            box-shadow: 0 25px 45px rgba(243,156,18,0.2);
+        }
+        .tier-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        .tier-price {
+            font-size: 2.8rem;
             font-weight: 900;
             color: #f39c12;
             margin: 20px 0;
-            text-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+            line-height: 1.2;
         }
-
-        .price-subtitle-enhanced {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
+        .tier-price small {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .tier-features {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+            text-align: left;
+            display: inline-block;
+        }
+        .tier-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+        .tier-features li i {
+            width: 24px;
+            color: #2ecc71;
+        }
+        .btn-tier {
+            background: white;
+            color: #1a365d;
+            padding: 12px 25px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-top: 15px;
+            border: none;
+        }
+        .btn-tier:hover {
+            background: #f39c12;
+            color: white;
+            transform: translateY(-3px);
+        }
+        .badge-hot {
+            background: #e74c3c;
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 992px) {
+            .price-comparison-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .price-tier-card {
+                width: 100%;
+                max-width: 400px;
+            }
         }
 
         .inclusion-grid-enhanced {
@@ -592,7 +683,6 @@
             position: relative;
             z-index: 2;
         }
-
         .inclusion-item-enhanced {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
@@ -602,13 +692,11 @@
             transition: all 0.4s ease;
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
-
         .inclusion-item-enhanced:hover {
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.12);
             border-color: rgba(243, 156, 18, 0.3);
         }
-
         .inclusion-icon-enhanced {
             font-size: 2.5rem;
             color: #2ecc71;
@@ -618,19 +706,16 @@
             align-items: center;
             justify-content: center;
         }
-
         .inclusion-item-enhanced h5 {
             font-size: 1.2rem;
             margin-bottom: 10px;
             color: white;
         }
-
         .inclusion-text-enhanced {
             font-size: 0.95rem;
             opacity: 0.9;
             line-height: 1.5;
         }
-
         .booking-cta-enhanced {
             background: linear-gradient(135deg, #ffffff, #f8f9fa);
             border-radius: 25px;
@@ -641,14 +726,12 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
             max-width: 1000px;
         }
-
         .cta-title-enhanced {
             font-size: 2.5rem;
             color: #1a365d;
             margin-bottom: 20px;
             font-weight: 800;
         }
-
         .cta-subtitle {
             font-size: 1.2rem;
             color: #666;
@@ -656,7 +739,6 @@
             margin: 0 auto 40px;
             line-height: 1.6;
         }
-
         .cta-buttons-enhanced {
             display: flex;
             gap: 20px;
@@ -664,7 +746,6 @@
             flex-wrap: wrap;
             margin-top: 30px;
         }
-
         .btn-cta-enhanced {
             padding: 18px 40px;
             font-size: 1.1rem;
@@ -678,41 +759,35 @@
             min-width: 220px;
             justify-content: center;
         }
-
         .btn-cta-primary {
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             border: none;
             box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
         }
-
         .btn-cta-primary:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
             color: white;
         }
-
         .btn-cta-secondary {
             background: white;
             color: #3498db;
             border: 2px solid #3498db;
             box-shadow: 0 5px 20px rgba(52, 152, 219, 0.15);
         }
-
         .btn-cta-secondary:hover {
             background: #3498db;
             color: white;
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(52, 152, 219, 0.25);
         }
-
         .btn-cta-tertiary {
             background: linear-gradient(135deg, #f39c12, #e67e22);
             color: white;
             border: none;
             box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
         }
-
         .btn-cta-tertiary:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(243, 156, 18, 0.4);
@@ -893,7 +968,7 @@
                 </div>
             </div>
 
-            <!-- DAY 1: Airport → Negombo -->
+            <!-- DAY 1: Airport → Negombo (unchanged) -->
             <div class="day-card-section day-1" id="day-1">
                 <div class="day-card-header">
                     <div>
@@ -962,7 +1037,7 @@
                 </div>
             </div>
 
-            <!-- DAY 2: Negombo → Anuradhapura -->
+            <!-- DAY 2: Negombo → Anuradhapura (unchanged) -->
             <div class="day-card-section day-2" id="day-2">
                 <div class="day-card-header">
                     <div>
@@ -992,7 +1067,7 @@
                 </div>
             </div>
 
-            <!-- DAY 3: Anuradhapura → Jaffna -->
+            <!-- DAY 3: Anuradhapura → Jaffna (unchanged) -->
             <div class="day-card-section day-3" id="day-3">
                 <div class="day-card-header">
                     <div>
@@ -1024,7 +1099,7 @@
                 </div>
             </div>
 
-            <!-- DAY 4: Jaffna Peninsula & Island Culture -->
+            <!-- DAY 4: Jaffna Peninsula & Island Culture (unchanged) -->
             <div class="day-card-section day-4" id="day-4">
                 <div class="day-card-header">
                     <div>
@@ -1056,7 +1131,7 @@
                 </div>
             </div>
 
-            <!-- DAY 5: Jaffna → Trincomalee -->
+            <!-- DAY 5: Jaffna → Trincomalee (unchanged) -->
             <div class="day-card-section day-5" id="day-5">
                 <div class="day-card-header">
                     <div>
@@ -1088,7 +1163,7 @@
                 </div>
             </div>
 
-            <!-- DAY 6: Trincomalee → Sigiriya -->
+            <!-- DAY 6: Trincomalee → Sigiriya (unchanged) -->
             <div class="day-card-section day-6" id="day-6">
                 <div class="day-card-header">
                     <div>
@@ -1119,7 +1194,7 @@
                 </div>
             </div>
 
-            <!-- DAY 7: Sigiriya → Dambulla → Kandy -->
+            <!-- DAY 7: Sigiriya → Dambulla → Kandy (unchanged) -->
             <div class="day-card-section day-7" id="day-7">
                 <div class="day-card-header">
                     <div>
@@ -1151,7 +1226,7 @@
                 </div>
             </div>
 
-            <!-- DAY 8: Kandy Cultural Exploration -->
+            <!-- DAY 8: Kandy Cultural Exploration (unchanged) -->
             <div class="day-card-section day-8" id="day-8">
                 <div class="day-card-header">
                     <div>
@@ -1183,7 +1258,7 @@
                 </div>
             </div>
 
-            <!-- DAY 9: Kandy → Pinnawala → Colombo -->
+            <!-- DAY 9: Kandy → Pinnawala → Colombo (unchanged) -->
             <div class="day-card-section day-9" id="day-9">
                 <div class="day-card-header">
                     <div>
@@ -1216,7 +1291,7 @@
                 </div>
             </div>
 
-            <!-- DAY 10: Colombo → Airport -->
+            <!-- DAY 10: Colombo → Airport (unchanged) -->
             <div class="day-card-section day-10" id="day-10">
                 <div class="day-card-header">
                     <div>
@@ -1244,26 +1319,76 @@
                 </div>
             </div>
 
-            <!-- Price Section -->
+            <!-- ========== MODIFIED PAYMENT SECTION: 3-TIER PRICING ========== -->
             <div class="price-section-enhanced" id="booking">
                 <div class="price-header-enhanced">
                     <h2 class="price-title-enhanced">10 Days · Heritage, Hills & Horizons</h2>
-                    <div class="price-amount-enhanced">USD 1399</div>
-                    <p class="price-subtitle-enhanced">Per person (based on 2 pax) · Half‑board accommodation, all entry fees, transport & driver/guide</p>
+                    <p class="price-subtitle-enhanced">Choose the package that fits your style – all include the same itinerary, private transport, and expert guidance.</p>
                 </div>
+
+                <!-- Price Comparison Cards -->
+                <div class="price-comparison-grid">
+                    <!-- Budget Card -->
+                    <div class="price-tier-card">
+                        <div class="badge-hot">BEST VALUE</div>
+                        <div class="tier-name">Budget</div>
+                        <div class="tier-price">$1,104 <small>per person</small></div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check-circle"></i> Standard 3★ hotels</li>
+                            <li><i class="fas fa-check-circle"></i> Half‑board (breakfast & dinner)</li>
+                            <li><i class="fas fa-check-circle"></i> Private A/C vehicle</li>
+                            <li><i class="fas fa-check-circle"></i> All entrance fees included</li>
+                            <li><i class="fas fa-check-circle"></i> English‑speaking driver/guide</li>
+                        </ul>
+                        <a href="https://wa.me/94763661600?text=Hi!%20I%20want%20to%20book%20the%20BUDGET%20package%20for%20Heritage%2C%20Hills%20%26%20Horizons%2010%20Days%20($1104)." target="_blank" class="btn-tier">Book Budget →</a>
+                    </div>
+
+                    <!-- Mid-Range Card (Recommended) -->
+                    <div class="price-tier-card recommended">
+                        <div class="badge-hot">⭐ MOST POPULAR</div>
+                        <div class="tier-name">Mid-Range</div>
+                        <div class="tier-price">$1,472 <small>per person</small></div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check-circle"></i> Comfort 4★ hotels</li>
+                            <li><i class="fas fa-check-circle"></i> Half‑board (breakfast & dinner)</li>
+                            <li><i class="fas fa-check-circle"></i> Private A/C vehicle</li>
+                            <li><i class="fas fa-check-circle"></i> All entrance fees + water bottles</li>
+                            <li><i class="fas fa-check-circle"></i> Professional driver/guide + welcome gift</li>
+                        </ul>
+                        <a href="https://wa.me/94763661600?text=Hi!%20I%20want%20to%20book%20the%20MID-RANGE%20package%20for%20Heritage%2C%20Hills%20%26%20Horizons%2010%20Days%20($1472)." target="_blank" class="btn-tier">Book Mid-Range →</a>
+                    </div>
+
+                    <!-- Luxury Card -->
+                    <div class="price-tier-card">
+                        <div class="badge-hot">LUXURY</div>
+                        <div class="tier-name">Luxury</div>
+                        <div class="tier-price">$2,134 <small>per person</small></div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check-circle"></i> Premium 5★ hotels</li>
+                            <li><i class="fas fa-check-circle"></i> Half‑board (upgraded meals)</li>
+                            <li><i class="fas fa-check-circle"></i> Private luxury vehicle</li>
+                            <li><i class="fas fa-check-circle"></i> All entrance fees + guided tours</li>
+                            <li><i class="fas fa-check-circle"></i> Spa voucher & airport assistance</li>
+                        </ul>
+                        <a href="https://wa.me/94763661600?text=Hi!%20I%20want%20to%20book%20the%20LUXURY%20package%20for%20Heritage%2C%20Hills%20%26%20Horizons%2010%20Days%20($2134)." target="_blank" class="btn-tier">Book Luxury →</a>
+                    </div>
+                </div>
+
+                <!-- Common Inclusions (original list preserved) -->
                 <div class="inclusion-grid-enhanced">
                     <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-hotel"></i></div><h5>9 Nights Half‑Board</h5><p class="inclusion-text-enhanced">Negombo, Anuradhapura, Jaffna, Trincomalee, Sigiriya, Kandy, Colombo</p></div>
                     <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-ticket-alt"></i></div><h5>All Entrance Fees</h5><p class="inclusion-text-enhanced">Anuradhapura sites, Jaffna attractions, Koneswaram, Sigiriya, Dambulla, Temple of Tooth, dance show, Peradeniya, Pinnawala, Gangaramaya, Lotus Tower</p></div>
                     <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-car"></i></div><h5>Private A/C Vehicle</h5><p class="inclusion-text-enhanced">Professional English‑speaking driver, fuel, parking, tolls</p></div>
                     <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-umbrella-beach"></i></div><h5>North to South Journey</h5><p class="inclusion-text-enhanced">Negombo, Jaffna, Trincomalee, Colombo</p></div>
                 </div>
-                <div class="text-center mt-5">
-                    <a href="https://wa.me/94763661600?text=Hi!%20I%20would%20like%20to%20book%20the%2010%20Days%20Heritage%2C%20Hills%20%26%20Horizons%20Tour%20for%20USD%201399%20per%20person." target="_blank" class="btn-cta-enhanced btn-cta-primary"><i class="fab fa-whatsapp me-2"></i>Book Now on WhatsApp</a>
-                    <p class="mt-4 text-light opacity-85">Flexible booking · Free cancellation up to 7 days before</p>
+
+                <div class="text-center mt-4">
+                    <p class="text-light opacity-85"><i class="fas fa-info-circle"></i> All prices are per person based on double occupancy. Single supplement applies. Contact us for group discounts.</p>
+                    <a href="https://wa.me/94763661600" target="_blank" class="btn-cta-enhanced btn-cta-primary" style="display: inline-block; margin-top: 15px;"><i class="fab fa-whatsapp me-2"></i>Chat with us to customize your package</a>
                 </div>
             </div>
 
-            <!-- Booking CTA -->
+            <!-- Booking CTA (unchanged) -->
             <div class="booking-cta-enhanced">
                 <h2 class="cta-title-enhanced">Ready for a journey through heritage, hills & horizons?</h2>
                 <p class="cta-subtitle">From Jaffna's culture to Sigiriya's heights and Colombo's skyline, this 10‑day tour captures the essence of Sri Lanka. Limited spots available.</p>
@@ -1373,4 +1498,3 @@
     </script>
 </body>
 </html>
-```
