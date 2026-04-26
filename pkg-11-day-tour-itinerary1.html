@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Ceyloan Travellers - Itinerary 1: Northern & Eastern Odyssey (11 Days)</title>
+    <title>Ceyloan Travellers - Itinerary 1: Northern & Eastern Odyssey (11 Days) - 3 Tier Pricing</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -65,7 +65,7 @@
             }
         }
 
-        /* ENHANCED TOUR SECTION STYLES */
+        /* ENHANCED TOUR SECTION STYLES (unchanged) */
         .enhanced-tour-section {
             position: relative;
             padding: 60px 0;
@@ -528,6 +528,7 @@
             font-size: 0.95rem;
         }
 
+        /* ========== NEW PRICING SECTION STYLES (3-TIER CARDS) ========== */
         .price-section-enhanced {
             background: linear-gradient(135deg, #1a365d, #2c3e50);
             color: white;
@@ -536,10 +537,9 @@
             margin: 70px auto;
             position: relative;
             overflow: hidden;
-            max-width: 1000px;
+            max-width: 1200px;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
         }
-
         .price-section-enhanced:before {
             content: '';
             position: absolute;
@@ -550,16 +550,14 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
             background-size: cover;
         }
-
         .price-header-enhanced {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             position: relative;
             z-index: 2;
         }
-
         .price-title-enhanced {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 15px;
             background: linear-gradient(135deg, #fff, #f39c12);
@@ -567,20 +565,114 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        .price-amount-enhanced {
-            font-size: 4rem;
+        .price-subtitle-enhanced {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        /* Price comparison grid */
+        .price-comparison-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin: 50px 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+        .price-tier-card {
+            flex: 1;
+            min-width: 250px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .price-tier-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #f39c12;
+        }
+        .price-tier-card.recommended {
+            border: 2px solid #f39c12;
+            background: rgba(255, 255, 255, 0.12);
+            transform: scale(1.02);
+            box-shadow: 0 25px 45px rgba(243,156,18,0.2);
+        }
+        .tier-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        .tier-price {
+            font-size: 2.8rem;
             font-weight: 900;
             color: #f39c12;
             margin: 20px 0;
-            text-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+            line-height: 1.2;
         }
-
-        .price-subtitle-enhanced {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
+        .tier-price small {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .tier-features {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+            text-align: left;
+            display: inline-block;
+        }
+        .tier-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+        .tier-features li i {
+            width: 24px;
+            color: #2ecc71;
+        }
+        .btn-tier {
+            background: white;
+            color: #1a365d;
+            padding: 12px 25px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-top: 15px;
+            border: none;
+        }
+        .btn-tier:hover {
+            background: #f39c12;
+            color: white;
+            transform: translateY(-3px);
+        }
+        .badge-hot {
+            background: #e74c3c;
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 992px) {
+            .price-comparison-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .price-tier-card {
+                width: 100%;
+                max-width: 400px;
+            }
         }
 
         .inclusion-grid-enhanced {
@@ -591,7 +683,6 @@
             position: relative;
             z-index: 2;
         }
-
         .inclusion-item-enhanced {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
@@ -601,13 +692,11 @@
             transition: all 0.4s ease;
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
-
         .inclusion-item-enhanced:hover {
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.12);
             border-color: rgba(243, 156, 18, 0.3);
         }
-
         .inclusion-icon-enhanced {
             font-size: 2.5rem;
             color: #2ecc71;
@@ -617,19 +706,16 @@
             align-items: center;
             justify-content: center;
         }
-
         .inclusion-item-enhanced h5 {
             font-size: 1.2rem;
             margin-bottom: 10px;
             color: white;
         }
-
         .inclusion-text-enhanced {
             font-size: 0.95rem;
             opacity: 0.9;
             line-height: 1.5;
         }
-
         .booking-cta-enhanced {
             background: linear-gradient(135deg, #ffffff, #f8f9fa);
             border-radius: 25px;
@@ -640,14 +726,12 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
             max-width: 1000px;
         }
-
         .cta-title-enhanced {
             font-size: 2.5rem;
             color: #1a365d;
             margin-bottom: 20px;
             font-weight: 800;
         }
-
         .cta-subtitle {
             font-size: 1.2rem;
             color: #666;
@@ -655,7 +739,6 @@
             margin: 0 auto 40px;
             line-height: 1.6;
         }
-
         .cta-buttons-enhanced {
             display: flex;
             gap: 20px;
@@ -663,7 +746,6 @@
             flex-wrap: wrap;
             margin-top: 30px;
         }
-
         .btn-cta-enhanced {
             padding: 18px 40px;
             font-size: 1.1rem;
@@ -677,41 +759,35 @@
             min-width: 220px;
             justify-content: center;
         }
-
         .btn-cta-primary {
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             border: none;
             box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
         }
-
         .btn-cta-primary:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
             color: white;
         }
-
         .btn-cta-secondary {
             background: white;
             color: #3498db;
             border: 2px solid #3498db;
             box-shadow: 0 5px 20px rgba(52, 152, 219, 0.15);
         }
-
         .btn-cta-secondary:hover {
             background: #3498db;
             color: white;
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(52, 152, 219, 0.25);
         }
-
         .btn-cta-tertiary {
             background: linear-gradient(135deg, #f39c12, #e67e22);
             color: white;
             border: none;
             box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
         }
-
         .btn-cta-tertiary:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(243, 156, 18, 0.4);
@@ -811,7 +887,7 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar & Hero Start -->
+    <!-- Navbar & Hero Start (unchanged) -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="./index.html" class="navbar-brand p-0">
@@ -872,29 +948,28 @@
                 <p class="section-subtitle">Negombo's shores, Anuradhapura's sacred city, Jaffna's culture, Trincomalee's beaches, Sigiriya's rock, Kandy's hills, Bentota's coast, and Colombo's skyline – an 11‑day journey through the north and east.</p>
             </div>
 
-            <!-- Overview Section -->
+            <!-- Overview Section (unchanged) -->
             <div class="overview-section">
                 <div class="overview-header">
                     <h3 class="overview-main-title">Negombo · Anuradhapura · Jaffna · Trincomalee · Sigiriya · Kandy · Bentota · Colombo</h3>
                     <span class="tour-highlight">11 Days · North & East Explorer</span>
                 </div>
                 <div class="overview-content">
-                    <!-- FLEXIBILITY NOTE -->
                     <div class="alert alert-info border-0" style="background-color: #e1f5fe; color: #01579b;">
                         <i class="fas fa-clock me-2"></i>
                         <strong>Flexible scheduling:</strong> Times and visiting places can be negotiated based on your requirements and flight schedule. This itinerary is fully customizable.
                     </div>
                     <div class="overview-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="overview-main-image" alt="Jaffna">
+                        <img src="img/9N_10D_PKG/itinerary1/cover.jpg" class="overview-main-image" alt="Jaffna">
                         <div class="image-overlay">
-                            <p class="image-caption">Nallur Kandaswamy Temple, Jaffna</p>
+                            <p class="image-caption"></p>
                         </div>
                     </div>
                     <p class="mb-4">This 11‑day tour takes you on an epic journey from the coastal town of Negombo to the ancient capital Anuradhapura, then to the culturally rich Jaffna peninsula, the eastern beaches of Trincomalee, the iconic rock fortress of Sigiriya, the hill capital Kandy, the southern coast of Bentota, and finally Colombo. Experience sacred temples, pristine beaches, ancient ruins, village life, and vibrant city sights – all with comfortable half‑board accommodation and seamless transfers.</p>
                 </div>
             </div>
 
-            <!-- DAY 1: Airport → Negombo -->
+            <!-- DAY 1 to DAY 11 (unchanged, same as original) -->
             <div class="day-card-section day-1" id="day-1">
                 <div class="day-card-header">
                     <div>
@@ -906,390 +981,175 @@
                 </div>
                 <div class="day-content-wrapper">
                     <div class="day-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Negombo beach">
+                        <img src="img/9N_10D_PKG/itinerary1/negombo.jpg" class="day-main-image" alt="Negombo beach">
                         <div class="image-overlay"><p class="image-caption">Negombo Beach</p></div>
                     </div>
                     <h4 class="mb-4" style="color:#2c3e50;"><i class="fas fa-clock text-primary"></i> Day 1 Schedule (flexible based on flight)</h4>
                     <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot">
-                            <div class="time-header"><span class="time-badge-enhanced">Arrival</span><div class="activity-icon"><i class="fas fa-plane-arrival"></i></div></div>
-                            <h5 class="slot-title-enhanced">Airport Pickup</h5>
-                            <p class="slot-desc-enhanced">Warm welcome at Bandaranaike International Airport, then transfer to Negombo.</p>
-                        </div>
-                        <div class="enhanced-time-slot">
-                            <div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div>
-                            <h5 class="slot-title-enhanced">Check‑in & Relax</h5>
-                            <p class="slot-desc-enhanced">Settle into your beachfront hotel, freshen up.</p>
-                        </div>
-                        <div class="enhanced-time-slot">
-                            <div class="time-header"><span class="time-badge-enhanced">16:30</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div>
-                            <h5 class="slot-title-enhanced">Negombo Beach Sunset</h5>
-                            <p class="slot-desc-enhanced">Stroll along the sandy beach and enjoy the sunset.</p>
-                            <div class="activity-highlights"><span class="highlight-tag">Sunset</span></div>
-                        </div>
-                        <div class="enhanced-time-slot">
-                            <div class="time-header"><span class="time-badge-enhanced">Evening</span><div class="activity-icon"><i class="fas fa-ship"></i></div></div>
-                            <h5 class="slot-title-enhanced">Optional Lagoon Walk / Seafood Experience</h5>
-                            <p class="slot-desc-enhanced">Explore Negombo Lagoon or enjoy fresh seafood dinner.</p>
-                        </div>
-                        <div class="enhanced-time-slot">
-                            <div class="time-header"><span class="time-badge-enhanced">20:00</span><div class="activity-icon"><i class="fas fa-moon"></i></div></div>
-                            <h5 class="slot-title-enhanced">Overnight at Hotel</h5>
-                            <p class="slot-desc-enhanced">Half‑board (breakfast & dinner).</p>
-                        </div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Arrival</span><div class="activity-icon"><i class="fas fa-plane-arrival"></i></div></div><h5 class="slot-title-enhanced">Airport Pickup</h5><p class="slot-desc-enhanced">Warm welcome at Bandaranaike International Airport, then transfer to Negombo.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5 class="slot-title-enhanced">Check‑in & Relax</h5><p class="slot-desc-enhanced">Settle into your beachfront hotel, freshen up.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:30</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5 class="slot-title-enhanced">Negombo Beach Sunset</h5><p class="slot-desc-enhanced">Stroll along the sandy beach and enjoy the sunset.</p><div class="activity-highlights"><span class="highlight-tag">Sunset</span></div></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Evening</span><div class="activity-icon"><i class="fas fa-ship"></i></div></div><h5 class="slot-title-enhanced">Optional Lagoon Walk / Seafood Experience</h5><p class="slot-desc-enhanced">Explore Negombo Lagoon or enjoy fresh seafood dinner.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">20:00</span><div class="activity-icon"><i class="fas fa-moon"></i></div></div><h5 class="slot-title-enhanced">Overnight at Hotel</h5><p class="slot-desc-enhanced">Half‑board (breakfast & dinner).</p></div>
                     </div>
                     <div class="day-info-container">
-                        <div class="info-card accommodation">
-                            <h5 class="info-card-title"><i class="fas fa-hotel"></i> Accommodation</h5>
-                            <div><p>Beachfront hotel, Negombo · Half Board</p></div>
-                        </div>
-                        <div class="info-card travel">
-                            <h5 class="info-card-title"><i class="fas fa-route"></i> Transfer</h5>
-                            <div><p>Airport → Negombo: ~20-30 min</p></div>
-                        </div>
+                        <div class="info-card accommodation"><h5 class="info-card-title"><i class="fas fa-hotel"></i> Accommodation</h5><div><p>Beachfront hotel, Negombo · Half Board</p></div></div>
+                        <div class="info-card travel"><h5 class="info-card-title"><i class="fas fa-route"></i> Transfer</h5><div><p>Airport → Negombo: ~20-30 min</p></div></div>
                     </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 1 Highlights</h5>
-                        <div class="facts-grid">
-                            <div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Negombo Beach sunset</div></div>
-                            <div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-ship"></i></div><div class="fact-text">Lagoon/seafood option</div></div>
-                        </div>
-                    </div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 1 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Negombo Beach sunset</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-ship"></i></div><div class="fact-text">Lagoon/seafood option</div></div></div></div>
                 </div>
             </div>
 
-            <!-- DAY 2: Negombo → Anuradhapura -->
             <div class="day-card-section day-2" id="day-2">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Ancient Kingdom of Anuradhapura</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Negombo → Anuradhapura</p>
-                        <span class="day-highlight">Sri Maha Bodhi · Ruwanwelisaya · Jetavanaramaya · Abhayagiri · Kuttam Pokuna</span>
-                    </div>
-                    <div class="day-number-circle">02</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/dambulla-cave-temple.jpg" class="day-main-image" alt="Ruwanwelisaya">
-                        <div class="image-overlay"><p class="image-caption">Ruwanwelisaya Stupa</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 2 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Negombo hotel.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00–11:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Early departure to Anuradhapura</h5><p>Smooth highway route (approx 3 hrs).</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">11:30–17:00</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>UNESCO Highlights Tour</h5><p>Sri Maha Bodhi, Ruwanwelisaya, Jetavanaramaya, Abhayagiri Monastery, Kuttam Pokuna.</p><div class="activity-highlights"><span class="highlight-tag">UNESCO</span></div></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at local restaurant</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in lakefront hotel</h5><p>Peaceful lakeside relaxation. Dinner at hotel (half‑board).</p></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 2 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-tree"></i></div><div class="fact-text">Sri Maha Bodhi</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-water"></i></div><div class="fact-text">Kuttam Pokuna</div></div></div>
-                    </div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Ancient Kingdom of Anuradhapura</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Negombo → Anuradhapura</p><span class="day-highlight">Sri Maha Bodhi · Ruwanwelisaya · Jetavanaramaya · Abhayagiri · Kuttam Pokuna</span></div><div class="day-number-circle">02</div></div>
+                <div class="day-content-wrapper"><div class="day-image-section"><img src="img/9N_10D_PKG/itinerary1/anuradhapura.jpg" class="day-main-image" alt="Ruwanwelisaya"><div class="image-overlay"><p class="image-caption">Ruwanwelisaya Stupa</p></div></div>
+                <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 2 Schedule</h4>
+                <div class="enhanced-schedule-grid"><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5><p>Breakfast at Negombo hotel.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00–11:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Early departure to Anuradhapura</h5><p>Smooth highway route (approx 3 hrs).</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">11:30–17:00</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>UNESCO Highlights Tour</h5><p>Sri Maha Bodhi, Ruwanwelisaya, Jetavanaramaya, Abhayagiri Monastery, Kuttam Pokuna.</p><div class="activity-highlights"><span class="highlight-tag">UNESCO</span></div></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at local restaurant</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in lakefront hotel</h5><p>Peaceful lakeside relaxation. Dinner at hotel (half‑board).</p></div></div>
+                <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 2 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-tree"></i></div><div class="fact-text">Sri Maha Bodhi</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-water"></i></div><div class="fact-text">Kuttam Pokuna</div></div></div></div></div>
             </div>
 
-            <!-- DAY 3: Anuradhapura → Jaffna -->
             <div class="day-card-section day-3" id="day-3">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Journey to the Cultural North (Jaffna)</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Anuradhapura → Jaffna</p>
-                        <span class="day-highlight">Jaffna Fort · Nallur Kandaswamy · Local Markets</span>
-                    </div>
-                    <div class="day-number-circle">03</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/kandy-package-card.jpeg" class="day-main-image" alt="Nallur Kandaswamy">
-                        <div class="image-overlay"><p class="image-caption">Nallur Kandaswamy Temple</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 3 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–13:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Scenic drive to Jaffna</h5><p>Less traffic route, approx 4‑5 hrs.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Authentic Tamil Cuisine Lunch</h5><p>Experience local street food and flavors.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:00</span><div class="activity-icon"><i class="fas fa-fort"></i></div></div><h5>Jaffna Fort</h5><p>Historic Dutch fort.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:30</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Nallur Kandaswamy Temple</h5><p>Visit the most significant Hindu temple.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">18:00</span><div class="activity-icon"><i class="fas fa-shopping-bag"></i></div></div><h5>Local markets & street food</h5><p>Explore vibrant markets.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">20:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Jaffna hotel</h5><p>Dinner at hotel (half‑board).</p></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 3 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-fort"></i></div><div class="fact-text">Jaffna Fort</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Nallur Temple</div></div></div>
-                    </div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Journey to the Cultural North (Jaffna)</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Anuradhapura → Jaffna</p><span class="day-highlight">Jaffna Fort · Nallur Kandaswamy · Local Markets</span></div><div class="day-number-circle">03</div></div>
+                <div class="day-content-wrapper"><div class="day-image-section"><img src="img/9N_10D_PKG/itinerary1/nallur.jpg" class="day-main-image" alt="Nallur Kandaswamy"><div class="image-overlay"><p class="image-caption">Nallur Kandaswamy Temple</p></div></div>
+                <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 3 Schedule</h4>
+                <div class="enhanced-schedule-grid"><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–13:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Scenic drive to Jaffna</h5><p>Less traffic route, approx 4‑5 hrs.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Authentic Tamil Cuisine Lunch</h5><p>Experience local street food and flavors.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:00</span><div class="activity-icon"><i class="fas fa-fort"></i></div></div><h5>Jaffna Fort</h5><p>Historic Dutch fort.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:30</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Nallur Kandaswamy Temple</h5><p>Visit the most significant Hindu temple.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">18:00</span><div class="activity-icon"><i class="fas fa-shopping-bag"></i></div></div><h5>Local markets & street food</h5><p>Explore vibrant markets.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">20:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Jaffna hotel</h5><p>Dinner at hotel (half‑board).</p></div></div>
+                <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 3 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-fort"></i></div><div class="fact-text">Jaffna Fort</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Nallur Temple</div></div></div></div></div>
             </div>
 
-            <!-- DAY 4: Jaffna Peninsula Exploration -->
             <div class="day-card-section day-4" id="day-4">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Northern Islands & Hidden Gems</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Jaffna</p>
-                        <span class="day-highlight">Nagadeepa · Keerimalai · Casuarina Beach · Delft Island (optional)</span>
-                    </div>
-                    <div class="day-number-circle">04</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Casuarina Beach">
-                        <div class="image-overlay"><p class="image-caption">Casuarina Beach</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 4 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast at hotel</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Nagadeepa Temple</h5><p>Sacred Buddhist site on Nagadeepa Island (short boat ride).</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">11:30</span><div class="activity-icon"><i class="fas fa-water"></i></div></div><h5>Keerimalai Springs</h5><p>Natural freshwater springs by the sea.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Casuarina Beach</h5><p>Relax on one of Sri Lanka's most beautiful beaches.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Optional</span><div class="activity-icon"><i class="fas fa-island"></i></div></div><h5>Delft Island Excursion</h5><p>For premium clients: wild ponies & unique landscapes.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Return to hotel, dinner</h5></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 4 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-water"></i></div><div class="fact-text">Keerimalai</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Casuarina Beach</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-horse"></i></div><div class="fact-text">Delft (optional)</div></div></div>
-                    </div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Northern Islands & Hidden Gems</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Jaffna</p><span class="day-highlight">Nagadeepa · Keerimalai · Casuarina Beach · Delft Island (optional)</span></div><div class="day-number-circle">04</div></div>
+                <div class="day-content-wrapper"><div class="day-image-section"><img src="img/9N_10D_PKG/itinerary1/jaffna beach.jpg"day-main-image" alt="Casuarina Beach"><div class="image-overlay"><p class="image-caption">Casuarina Beach</p></div></div>
+                <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 4 Schedule</h4>
+                <div class="enhanced-schedule-grid"><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast at hotel</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Nagadeepa Temple</h5><p>Sacred Buddhist site on Nagadeepa Island (short boat ride).</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">11:30</span><div class="activity-icon"><i class="fas fa-water"></i></div></div><h5>Keerimalai Springs</h5><p>Natural freshwater springs by the sea.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Casuarina Beach</h5><p>Relax on one of Sri Lanka's most beautiful beaches.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Optional</span><div class="activity-icon"><i class="fas fa-island"></i></div></div><h5>Delft Island Excursion</h5><p>For premium clients: wild ponies & unique landscapes.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Return to hotel, dinner</h5></div></div>
+                <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 4 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-water"></i></div><div class="fact-text">Keerimalai</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Casuarina Beach</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-horse"></i></div><div class="fact-text">Delft (optional)</div></div></div></div></div>
             </div>
 
-            <!-- DAY 5: Jaffna → Trincomalee -->
             <div class="day-card-section day-5" id="day-5">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">East Coast Escape (Trincomalee)</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Jaffna → Trincomalee</p>
-                        <span class="day-highlight">Koneswaram Temple · Nilaveli Beach</span>
-                    </div>
-                    <div class="day-number-circle">05</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/kandy-package-card.jpeg" class="day-main-image" alt="Koneswaram">
-                        <div class="image-overlay"><p class="image-caption">Koneswaram Temple</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 5 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30–12:30</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Optimized coastal route to Trincomalee</h5><p>Approx 4 hrs.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Trincomalee</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-hindu"></i></div></div><h5>Koneswaram Temple</h5><p>Ancient Hindu shrine on Swami Rock.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:30</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Nilaveli Beach</h5><p>Relax on pristine sands.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">18:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in beachfront hotel</h5><p>Dinner at hotel (half‑board).</p></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 5 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Koneswaram</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-water"></i></div><div class="fact-text">Nilaveli Beach</div></div></div>
-                    </div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">East Coast Escape (Trincomalee)</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Jaffna → Trincomalee</p><span class="day-highlight">Koneswaram Temple · Nilaveli Beach</span></div><div class="day-number-circle">05</div></div>
+                <div class="day-content-wrapper"><div class="day-image-section"><img src="img/9N_10D_PKG/itinerary1/koneswaram-temple-territory-ancient-hindu-footage-088714496_iconl.webp" class="day-main-image" alt="Koneswaram"><div class="image-overlay"><p class="image-caption">Koneswaram Temple</p></div></div>
+                <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 5 Schedule</h4>
+                <div class="enhanced-schedule-grid"><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30–12:30</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Optimized coastal route to Trincomalee</h5><p>Approx 4 hrs.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Trincomalee</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-hindu"></i></div></div><h5>Koneswaram Temple</h5><p>Ancient Hindu shrine on Swami Rock.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:30</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Nilaveli Beach</h5><p>Relax on pristine sands.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">18:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in beachfront hotel</h5><p>Dinner at hotel (half‑board).</p></div></div>
+                <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 5 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Koneswaram</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-water"></i></div><div class="fact-text">Nilaveli Beach</div></div></div></div></div>
             </div>
 
-            <!-- DAY 6: Trincomalee → Sigiriya -->
             <div class="day-card-section day-6" id="day-6">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Sigiriya Rock Fortress Adventure</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Trincomalee → Sigiriya</p>
-                        <span class="day-highlight">Sigiriya Rock · Frescoes · Pidurangala (optional)</span>
-                    </div>
-                    <div class="day-number-circle">06</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya.jpeg" class="day-main-image" alt="Sigiriya">
-                        <div class="image-overlay"><p class="image-caption">Sigiriya Lion Rock</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 6 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–12:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Travel inland to Sigiriya</h5><p>Approx 3 hrs.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Sigiriya</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:00–17:00</span><div class="activity-icon"><i class="fas fa-mountain"></i></div></div><h5>Climb Sigiriya Rock Fortress</h5><p>Explore frescoes, mirror wall, and panoramic views.</p><div class="activity-highlights"><span class="highlight-tag">UNESCO</span></div></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Sigiriya hotel</h5><p>Dinner at hotel (half‑board).</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Optional</span><div class="activity-icon"><i class="fas fa-sunset"></i></div></div><h5>Pidurangala Rock Sunset</h5><p>Stunning sunset views.</p></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 6 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-mountain"></i></div><div class="fact-text">Sigiriya</div></div></div>
-                    </div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Sigiriya Rock Fortress Adventure</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Trincomalee → Sigiriya</p><span class="day-highlight">Sigiriya Rock · Frescoes · Pidurangala (optional)</span></div><div class="day-number-circle">06</div></div>
+                <div class="day-content-wrapper"><div class="day-image-section"><img src="img/9N_10D_PKG/itinerary1/sigiriya.jpg" class="day-main-image" alt="Sigiriya"><div class="image-overlay"><p class="image-caption">Sigiriya Lion Rock</p></div></div>
+                <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 6 Schedule</h4>
+                <div class="enhanced-schedule-grid"><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–12:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Travel inland to Sigiriya</h5><p>Approx 3 hrs.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Sigiriya</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:00–17:00</span><div class="activity-icon"><i class="fas fa-mountain"></i></div></div><h5>Climb Sigiriya Rock Fortress</h5><p>Explore frescoes, mirror wall, and panoramic views.</p><div class="activity-highlights"><span class="highlight-tag">UNESCO</span></div></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Sigiriya hotel</h5><p>Dinner at hotel (half‑board).</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Optional</span><div class="activity-icon"><i class="fas fa-sunset"></i></div></div><h5>Pidurangala Rock Sunset</h5><p>Stunning sunset views.</p></div></div>
+                <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 6 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-mountain"></i></div><div class="fact-text">Sigiriya</div></div></div></div></div>
             </div>
 
-            <!-- DAY 7: Village Life & Dambulla Heritage -->
             <div class="day-card-section day-7" id="day-7">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Village Life & Dambulla Heritage</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Sigiriya / Dambulla</p>
-                        <span class="day-highlight">Village Tour · Bullock Cart · Local Lunch · Dambulla Cave Temple</span>
-                    </div>
-                    <div class="day-number-circle">07</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/dambulla-cave-temple.jpg" class="day-main-image" alt="Dambulla">
-                        <div class="image-overlay"><p class="image-caption">Dambulla Cave Temple</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 7 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Relaxed morning at hotel</h5><p>Slow start, enjoy the resort.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">10:00–13:00</span><div class="activity-icon"><i class="fas fa-tractor"></i></div></div><h5>Authentic Sigiriya Village Tour</h5><p>Bullock cart ride, visit local homes, and enjoy a traditional Sri Lankan lunch.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:00</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Dambulla Cave Temple</h5><p>Explore the golden temple and five cave shrines.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Return to hotel, free evening</h5><p>Dinner at hotel.</p></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 7 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-home"></i></div><div class="fact-text">Village experience</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Dambulla</div></div></div>
-                    </div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Village Life & Dambulla Heritage</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Sigiriya / Dambulla</p><span class="day-highlight">Village Tour · Bullock Cart · Local Lunch · Dambulla Cave Temple</span></div><div class="day-number-circle">07</div></div>
+                <div class="day-content-wrapper"><div class="day-image-section"><img src="img/9N_10D_PKG/itinerary1/dambulla.jpg" class="day-main-image" alt="Dambulla"><div class="image-overlay"><p class="image-caption">Dambulla Cave Temple</p></div></div>
+                <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 7 Schedule</h4>
+                <div class="enhanced-schedule-grid"><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Relaxed morning at hotel</h5><p>Slow start, enjoy the resort.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">10:00–13:00</span><div class="activity-icon"><i class="fas fa-tractor"></i></div></div><h5>Authentic Sigiriya Village Tour</h5><p>Bullock cart ride, visit local homes, and enjoy a traditional Sri Lankan lunch.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:00</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Dambulla Cave Temple</h5><p>Explore the golden temple and five cave shrines.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Return to hotel, free evening</h5><p>Dinner at hotel.</p></div></div>
+                <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 7 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-home"></i></div><div class="fact-text">Village experience</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Dambulla</div></div></div></div></div>
             </div>
 
-            <!-- DAY 8: Sigiriya → Kandy -->
             <div class="day-card-section day-8" id="day-8">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Cultural Capital Kandy</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Sigiriya → Kandy</p>
-                        <span class="day-highlight">Nalanda Gedige · Spice Garden · Temple of Tooth · Dance Show</span>
-                    </div>
-                    <div class="day-number-circle">08</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/kandy-package-card.jpeg" class="day-main-image" alt="Temple of Tooth">
-                        <div class="image-overlay"><p class="image-caption">Sri Dalada Maligawa</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 8 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00</span><div class="activity-icon"><i class="fas fa-archway"></i></div></div><h5>Nalanda Gedige</h5><p>Unique temple en route.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">10:30</span><div class="activity-icon"><i class="fas fa-leaf"></i></div></div><h5>Spice Garden Experience</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Kandy</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:00</span><div class="activity-icon"><i class="fas fa-pray"></i></div></div><h5>Temple of the Tooth</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:00</span><div class="activity-icon"><i class="fas fa-music"></i></div></div><h5>Evening Cultural Dance Show</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Kandy hotel</h5><p>Dinner at hotel.</p></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 8 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-pray"></i></div><div class="fact-text">Temple of Tooth</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-music"></i></div><div class="fact-text">Dance Show</div></div></div>
-                    </div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Cultural Capital Kandy</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Sigiriya → Kandy</p><span class="day-highlight">Nalanda Gedige · Spice Garden · Temple of Tooth · Dance Show</span></div><div class="day-number-circle">08</div></div>
+                <div class="day-content-wrapper"><div class="day-image-section"><img src="img/9N_10D_PKG/itinerary1/tooth-relic-temple-kandy-sri-lanka-5.jpg" class="day-main-image" alt="Temple of Tooth"><div class="image-overlay"><p class="image-caption">Sri Dalada Maligawa</p></div></div>
+                <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 8 Schedule</h4>
+                <div class="enhanced-schedule-grid"><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00</span><div class="activity-icon"><i class="fas fa-archway"></i></div></div><h5>Nalanda Gedige</h5><p>Unique temple en route.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">10:30</span><div class="activity-icon"><i class="fas fa-leaf"></i></div></div><h5>Spice Garden Experience</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Kandy</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:00</span><div class="activity-icon"><i class="fas fa-pray"></i></div></div><h5>Temple of the Tooth</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:00</span><div class="activity-icon"><i class="fas fa-music"></i></div></div><h5>Evening Cultural Dance Show</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Kandy hotel</h5><p>Dinner at hotel.</p></div></div>
+                <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 8 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-pray"></i></div><div class="fact-text">Temple of Tooth</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-music"></i></div><div class="fact-text">Dance Show</div></div></div></div></div>
             </div>
 
-            <!-- DAY 9: Kandy Nature & City Experience -->
             <div class="day-card-section day-9" id="day-9">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Kandy Nature & City Experience</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Kandy</p>
-                        <span class="day-highlight">Kandy Lake · Peradeniya Gardens · View Point</span>
-                    </div>
-                    <div class="day-number-circle">09</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Peradeniya">
-                        <div class="image-overlay"><p class="image-caption">Peradeniya Botanical Gardens</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 9 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast at hotel</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:30</span><div class="activity-icon"><i class="fas fa-water"></i></div></div><h5>Kandy Lake walk</h5><p>Leisurely stroll.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">10:30–12:30</span><div class="activity-icon"><i class="fas fa-leaf"></i></div></div><h5>Royal Botanical Gardens Peradeniya</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-eye"></i></div></div><h5>Kandy View Point</h5><p>Panoramic city views.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Evening</span><div class="activity-icon"><i class="fas fa-shopping"></i></div></div><h5>Free time for shopping</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Dinner at hotel</h5></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 9 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-leaf"></i></div><div class="fact-text">Peradeniya</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-eye"></i></div><div class="fact-text">View Point</div></div></div>
-                    </div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Kandy Nature & City Experience</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Kandy</p><span class="day-highlight">Kandy Lake · Peradeniya Gardens · View Point</span></div><div class="day-number-circle">09</div></div>
+                <div class="day-content-wrapper"><div class="day-image-section"><img src="img/9N_10D_PKG/itinerary1/peradeniya botanical garden.jpg" class="day-main-image" alt="Peradeniya"><div class="image-overlay"><p class="image-caption">Peradeniya Botanical Gardens</p></div></div>
+                <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 9 Schedule</h4>
+                <div class="enhanced-schedule-grid"><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast at hotel</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:30</span><div class="activity-icon"><i class="fas fa-water"></i></div></div><h5>Kandy Lake walk</h5><p>Leisurely stroll.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">10:30–12:30</span><div class="activity-icon"><i class="fas fa-leaf"></i></div></div><h5>Royal Botanical Gardens Peradeniya</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-eye"></i></div></div><h5>Kandy View Point</h5><p>Panoramic city views.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Evening</span><div class="activity-icon"><i class="fas fa-shopping"></i></div></div><h5>Free time for shopping</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Dinner at hotel</h5></div></div>
+                <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 9 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-leaf"></i></div><div class="fact-text">Peradeniya</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-eye"></i></div><div class="fact-text">View Point</div></div></div></div></div>
             </div>
 
-            <!-- DAY 10: Kandy → Bentota via Pinnawala -->
             <div class="day-card-section day-10" id="day-10">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Elephants & South Coast Beach (Bentota)</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Kandy → Pinnawala → Bentota</p>
-                        <span class="day-highlight">Pinnawala Elephant Orphanage · Beach Relaxation · River Safari</span>
-                    </div>
-                    <div class="day-number-circle">10</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/kandy-package-card.jpeg" class="day-main-image" alt="Pinnawala">
-                        <div class="image-overlay"><p class="image-caption">Pinnawala Elephant Orphanage</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 10 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30–10:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Pinnawala</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">10:00–12:00</span><div class="activity-icon"><i class="fas fa-elephant"></i></div></div><h5>Pinnawala Elephant Orphanage</h5><p>Watch feeding and bathing.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch en route</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Bentota Beach Resort</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:00</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Beach relaxation / River safari option</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Dinner at hotel</h5></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 10 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-elephant"></i></div><div class="fact-text">Pinnawala</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Bentota Beach</div></div></div>
-                    </div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Elephants & South Coast Beach (Bentota)</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Kandy → Pinnawala → Bentota</p><span class="day-highlight">Pinnawala Elephant Orphanage · Beach Relaxation · River Safari</span></div><div class="day-number-circle">10</div></div>
+                <div class="day-content-wrapper"><div class="day-image-section"><img src="img/9N_10D_PKG/itinerary1/Pinnawala-Elephant-Orphanage.jpg" class="day-main-image" alt="Pinnawala"><div class="image-overlay"><p class="image-caption">Pinnawala Elephant Orphanage</p></div></div>
+                <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 10 Schedule</h4>
+                <div class="enhanced-schedule-grid"><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30–10:00</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Drive to Pinnawala</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">10:00–12:00</span><div class="activity-icon"><i class="fas fa-elephant"></i></div></div><h5>Pinnawala Elephant Orphanage</h5><p>Watch feeding and bathing.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch en route</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Bentota Beach Resort</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:00</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Beach relaxation / River safari option</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Dinner at hotel</h5></div></div>
+                <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 10 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-elephant"></i></div><div class="fact-text">Pinnawala</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Bentota Beach</div></div></div></div></div>
             </div>
 
-            <!-- DAY 11: Bentota → Colombo → Airport -->
             <div class="day-card-section day-11" id="day-11">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Departure via Colombo</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Bentota → Colombo → Airport</p>
-                        <span class="day-highlight">Gangaramaya Temple · Lotus Tower · Farewell</span>
-                    </div>
-                    <div class="day-number-circle">11</div>
-                </div>
-                <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/kandy-package-card.jpeg" class="day-main-image" alt="Gangaramaya">
-                        <div class="image-overlay"><p class="image-caption">Gangaramaya Temple</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 11 Schedule</h4>
-                    <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–10:30</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Transfer to Colombo</h5><p>Expressway drive.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Optional</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Gangaramaya Temple (time permitting)</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Optional</span><div class="activity-icon"><i class="fas fa-building"></i></div></div><h5>Lotus Tower visit</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Colombo</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-plane-departure"></i></div></div><h5>Transfer to Airport</h5><p>Arrive in time for departure.</p></div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 11 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Gangaramaya</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-building"></i></div><div class="fact-text">Lotus Tower</div></div></div>
-                    </div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Departure via Colombo</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Bentota → Colombo → Airport</p><span class="day-highlight">Gangaramaya Temple · Lotus Tower · Farewell</span></div><div class="day-number-circle">11</div></div>
+                <div class="day-content-wrapper"><div class="day-image-section"><img src="img/9N_10D_PKG/itinerary1/gangarama temple.jpg" class="day-main-image" alt="Gangaramaya"><div class="image-overlay"><p class="image-caption">Gangaramaya Temple</p></div></div>
+                <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 11 Schedule</h4>
+                <div class="enhanced-schedule-grid"><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–10:30</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Transfer to Colombo</h5><p>Expressway drive.</p></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Optional</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Gangaramaya Temple (time permitting)</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Optional</span><div class="activity-icon"><i class="fas fa-building"></i></div></div><h5>Lotus Tower visit</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at Colombo</h5></div><div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-plane-departure"></i></div></div><h5>Transfer to Airport</h5><p>Arrive in time for departure.</p></div></div>
+                <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 11 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Gangaramaya</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-building"></i></div><div class="fact-text">Lotus Tower</div></div></div></div></div>
             </div>
 
-            <!-- Price Section -->
+            <!-- ========== MODIFIED PAYMENT SECTION: 3-TIER PRICING ========== -->
             <div class="price-section-enhanced" id="booking">
                 <div class="price-header-enhanced">
                     <h2 class="price-title-enhanced">11 Days · Northern & Eastern Odyssey</h2>
-                    <div class="price-amount-enhanced">USD 1599</div>
-                    <p class="price-subtitle-enhanced">Per person (based on 2 pax) · Half‑board accommodation, all entry fees, transport & driver/guide</p>
+                    <p class="price-subtitle-enhanced">Choose the package that fits your style – all include the same itinerary, private transport, and expert guidance.</p>
                 </div>
+
+                <!-- Price Comparison Cards -->
+                <div class="price-comparison-grid">
+                    <!-- Budget Card -->
+                    <div class="price-tier-card">
+                        <div class="badge-hot">BEST VALUE</div>
+                        <div class="tier-name">Budget</div>
+                        <div class="tier-price">$1,649 <small>per person</small></div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check-circle"></i> Standard 3★ hotels</li>
+                            <li><i class="fas fa-check-circle"></i> Half‑board (breakfast & dinner)</li>
+                            <li><i class="fas fa-check-circle"></i> Private A/C vehicle</li>
+                            <li><i class="fas fa-check-circle"></i> All entrance fees included</li>
+                            <li><i class="fas fa-check-circle"></i> English‑speaking driver/guide</li>
+                        </ul>
+                        <a href="https://wa.me/94763661600?text=Hi!%20I%20want%20to%20book%20the%20BUDGET%20package%20for%20Northern%20%26%20Eastern%20Odyssey%2011%20Days%20($1649)." target="_blank" class="btn-tier">Book Budget →</a>
+                    </div>
+
+                    <!-- Mid-Range Card (Recommended) -->
+                    <div class="price-tier-card recommended">
+                        <div class="badge-hot">⭐ MOST POPULAR</div>
+                        <div class="tier-name">Mid-Range</div>
+                        <div class="tier-price">$2,199 <small>per person</small></div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check-circle"></i> Comfort 4★ hotels</li>
+                            <li><i class="fas fa-check-circle"></i> Half‑board (breakfast & dinner)</li>
+                            <li><i class="fas fa-check-circle"></i> Private A/C vehicle</li>
+                            <li><i class="fas fa-check-circle"></i> All entrance fees + water bottles</li>
+                            <li><i class="fas fa-check-circle"></i> Professional driver/guide + welcome gift</li>
+                        </ul>
+                        <a href="https://wa.me/94763661600?text=Hi!%20I%20want%20to%20book%20the%20MID-RANGE%20package%20for%20Northern%20%26%20Eastern%20Odyssey%2011%20Days%20($2199)." target="_blank" class="btn-tier">Book Mid-Range →</a>
+                    </div>
+
+                    <!-- Luxury Card -->
+                    <div class="price-tier-card">
+                        <div class="badge-hot">LUXURY</div>
+                        <div class="tier-name">Luxury</div>
+                        <div class="tier-price">$3,189 <small>per person</small></div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check-circle"></i> Premium 5★ hotels</li>
+                            <li><i class="fas fa-check-circle"></i> Half‑board (upgraded meals)</li>
+                            <li><i class="fas fa-check-circle"></i> Private luxury vehicle</li>
+                            <li><i class="fas fa-check-circle"></i> All entrance fees + guided tours</li>
+                            <li><i class="fas fa-check-circle"></i> Spa voucher & airport assistance</li>
+                        </ul>
+                        <a href="https://wa.me/94763661600?text=Hi!%20I%20want%20to%20book%20the%20LUXURY%20package%20for%20Northern%20%26%20Eastern%20Odyssey%2011%20Days%20($3189)." target="_blank" class="btn-tier">Book Luxury →</a>
+                    </div>
+                </div>
+
+                <!-- Common Inclusions (original list preserved) -->
                 <div class="inclusion-grid-enhanced">
                     <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-hotel"></i></div><h5>10 Nights Half‑Board</h5><p class="inclusion-text-enhanced">Negombo, Anuradhapura, Jaffna, Trincomalee, Sigiriya, Kandy, Bentota</p></div>
                     <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-ticket-alt"></i></div><h5>All Entrance Fees</h5><p class="inclusion-text-enhanced">Anuradhapura sites, Jaffna attractions, Koneswaram, Sigiriya, Dambulla, Nalanda Gedige, Temple of Tooth, dance show, Peradeniya, Pinnawala, Gangaramaya</p></div>
                     <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-car"></i></div><h5>Private A/C Vehicle</h5><p class="inclusion-text-enhanced">Professional English‑speaking driver, fuel, parking, tolls</p></div>
                     <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-umbrella-beach"></i></div><h5>North to South Journey</h5><p class="inclusion-text-enhanced">Jaffna, Trincomalee, Bentota, Colombo</p></div>
                 </div>
-                <div class="text-center mt-5">
-                    <a href="https://wa.me/94763661600?text=Hi!%20I%20would%20like%20to%20book%20the%2011%20Days%20Northern%20%26%20Eastern%20Odyssey%20Tour%20for%20USD%201599%20per%20person." target="_blank" class="btn-cta-enhanced btn-cta-primary"><i class="fab fa-whatsapp me-2"></i>Book Now on WhatsApp</a>
-                    <p class="mt-4 text-light opacity-85">Flexible booking · Free cancellation up to 7 days before</p>
+
+                <div class="text-center mt-4">
+                    <p class="text-light opacity-85"><i class="fas fa-info-circle"></i> All prices are per person based on double occupancy. Single supplement applies. Contact us for group discounts.</p>
+                    <a href="https://wa.me/94763661600" target="_blank" class="btn-cta-enhanced btn-cta-primary" style="display: inline-block; margin-top: 15px;"><i class="fab fa-whatsapp me-2"></i>Chat with us to customize your package</a>
                 </div>
             </div>
 
-            <!-- Booking CTA -->
+            <!-- Booking CTA (unchanged) -->
             <div class="booking-cta-enhanced">
                 <h2 class="cta-title-enhanced">Ready for a northern & eastern odyssey?</h2>
                 <p class="cta-subtitle">From Jaffna's culture to Sigiriya's heights and Bentota's shores, this 11‑day tour captures the essence of Sri Lanka. Limited spots available.</p>

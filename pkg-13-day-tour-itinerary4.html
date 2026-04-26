@@ -528,6 +528,7 @@
             font-size: 0.95rem;
         }
 
+        /* ========== PRICING SECTION STYLES (EXACT MATCH FROM SAMPLE) ========== */
         .price-section-enhanced {
             background: linear-gradient(135deg, #1a365d, #2c3e50);
             color: white;
@@ -536,10 +537,9 @@
             margin: 70px auto;
             position: relative;
             overflow: hidden;
-            max-width: 1000px;
+            max-width: 1200px;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
         }
-
         .price-section-enhanced:before {
             content: '';
             position: absolute;
@@ -550,16 +550,14 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
             background-size: cover;
         }
-
         .price-header-enhanced {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             position: relative;
             z-index: 2;
         }
-
         .price-title-enhanced {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 15px;
             background: linear-gradient(135deg, #fff, #f39c12);
@@ -567,20 +565,113 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        .price-amount-enhanced {
-            font-size: 4rem;
+        .price-subtitle-enhanced {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .price-comparison-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin: 50px 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+        .price-tier-card {
+            flex: 1;
+            min-width: 250px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .price-tier-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #f39c12;
+        }
+        .price-tier-card.recommended {
+            border: 2px solid #f39c12;
+            background: rgba(255, 255, 255, 0.12);
+            transform: scale(1.02);
+            box-shadow: 0 25px 45px rgba(243,156,18,0.2);
+        }
+        .tier-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        .tier-price {
+            font-size: 2.8rem;
             font-weight: 900;
             color: #f39c12;
             margin: 20px 0;
-            text-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+            line-height: 1.2;
         }
-
-        .price-subtitle-enhanced {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
+        .tier-price small {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .tier-features {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+            text-align: left;
+            display: inline-block;
+        }
+        .tier-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+        .tier-features li i {
+            width: 24px;
+            color: #2ecc71;
+        }
+        .btn-tier {
+            background: white;
+            color: #1a365d;
+            padding: 12px 25px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-top: 15px;
+            border: none;
+        }
+        .btn-tier:hover {
+            background: #f39c12;
+            color: white;
+            transform: translateY(-3px);
+        }
+        .badge-hot {
+            background: #e74c3c;
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 992px) {
+            .price-comparison-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .price-tier-card {
+                width: 100%;
+                max-width: 400px;
+            }
         }
 
         .inclusion-grid-enhanced {
@@ -591,7 +682,6 @@
             position: relative;
             z-index: 2;
         }
-
         .inclusion-item-enhanced {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
@@ -601,13 +691,11 @@
             transition: all 0.4s ease;
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
-
         .inclusion-item-enhanced:hover {
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.12);
             border-color: rgba(243, 156, 18, 0.3);
         }
-
         .inclusion-icon-enhanced {
             font-size: 2.5rem;
             color: #2ecc71;
@@ -617,19 +705,16 @@
             align-items: center;
             justify-content: center;
         }
-
         .inclusion-item-enhanced h5 {
             font-size: 1.2rem;
             margin-bottom: 10px;
             color: white;
         }
-
         .inclusion-text-enhanced {
             font-size: 0.95rem;
             opacity: 0.9;
             line-height: 1.5;
         }
-
         .booking-cta-enhanced {
             background: linear-gradient(135deg, #ffffff, #f8f9fa);
             border-radius: 25px;
@@ -640,14 +725,12 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
             max-width: 1000px;
         }
-
         .cta-title-enhanced {
             font-size: 2.5rem;
             color: #1a365d;
             margin-bottom: 20px;
             font-weight: 800;
         }
-
         .cta-subtitle {
             font-size: 1.2rem;
             color: #666;
@@ -655,7 +738,6 @@
             margin: 0 auto 40px;
             line-height: 1.6;
         }
-
         .cta-buttons-enhanced {
             display: flex;
             gap: 20px;
@@ -663,7 +745,6 @@
             flex-wrap: wrap;
             margin-top: 30px;
         }
-
         .btn-cta-enhanced {
             padding: 18px 40px;
             font-size: 1.1rem;
@@ -677,48 +758,42 @@
             min-width: 220px;
             justify-content: center;
         }
-
         .btn-cta-primary {
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             border: none;
             box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
         }
-
         .btn-cta-primary:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
             color: white;
         }
-
         .btn-cta-secondary {
             background: white;
             color: #3498db;
             border: 2px solid #3498db;
             box-shadow: 0 5px 20px rgba(52, 152, 219, 0.15);
         }
-
         .btn-cta-secondary:hover {
             background: #3498db;
             color: white;
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(52, 152, 219, 0.25);
         }
-
         .btn-cta-tertiary {
             background: linear-gradient(135deg, #f39c12, #e67e22);
             color: white;
             border: none;
             box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
         }
-
         .btn-cta-tertiary:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(243, 156, 18, 0.4);
             color: white;
         }
 
-        /* Day color themes extended */
+        /* Day color themes */
         .day-1 .day-card-header { background: linear-gradient(135deg, #3498db, #2980b9); }
         .day-2 .day-card-header { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
         .day-3 .day-card-header { background: linear-gradient(135deg, #e74c3c, #c0392b); }
@@ -733,7 +808,7 @@
         .day-12 .day-card-header { background: linear-gradient(135deg, #f39c12, #e74c3c); }
         .day-13 .day-card-header { background: linear-gradient(135deg, #2980b9, #3498db); }
 
-        /* Responsive & animation same as original */
+        /* Responsive */
         @media (max-width: 1200px) { .tour-timeline-container { padding: 0 20px; } }
         @media (max-width: 992px) {
             .section-title { font-size: 2.3rem; }
@@ -750,7 +825,6 @@
         }
         @media (max-width: 576px) {
             .section-title { font-size: 1.9rem; }
-            .price-amount-enhanced { font-size: 2.8rem; }
         }
 
         .overview-section, .day-card-section {
@@ -854,7 +928,7 @@
     <!-- ENHANCED TOUR SECTION START -->
     <div class="container-fluid enhanced-tour-section">
         <div class="tour-timeline-container">
-            <!-- Progress Indicator (13 days) -->
+            <!-- Progress Indicator -->
             <div class="day-progress">
                 <div class="day-progress-item active" data-day="Day 1"></div>
                 <div class="day-progress-item" data-day="Day 2"></div>
@@ -883,162 +957,77 @@
                     <span class="tour-highlight">13 Days · Legacy & Coastal Gems</span>
                 </div>
                 <div class="overview-content">
-                    <!-- FLEXIBILITY NOTE -->
                     <div class="alert alert-info border-0" style="background-color: #e1f5fe; color: #01579b;">
                         <i class="fas fa-clock me-2"></i>
                         <strong>Flexible scheduling:</strong> Times and visiting places can be negotiated based on your requirements and flight schedule. This itinerary is fully customizable.
                     </div>
                     <div class="overview-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="overview-main-image" alt="Hiriketiya Beach">
-                        <div class="image-overlay">
-                            <p class="image-caption">Hiriketiya – hidden coastal gem</p>
-                        </div>
+                        <img src="img/12N_13D_PKG/itinerary4/cover.jpg" class="overview-main-image" alt="Hiriketiya Beach">
+                        <div class="image-overlay"><p class="image-caption"></p></div>
                     </div>
                     <p class="mb-4">This 13‑day grand expedition takes you from the coastal sands of Negombo to the iconic rock fortress of Sigiriya, the cultural capital Kandy, the world‑famous train to Ella, thrilling wildlife safaris in Yala, the hidden gem of Hiriketiya Beach, a dedicated relaxation day on the Weligama coast, the tropical shores of Mirissa, the colonial charm of Galle, and finally Colombo's vibrant cityscape. Experience ancient kingdoms, pristine beaches, and unforgettable landscapes – all with comfortable half‑board accommodation and seamless transfers.</p>
                 </div>
             </div>
 
-            <!-- DAY 1: Airport → Negombo -->
+            <!-- DAY 1 -->
             <div class="day-card-section day-1" id="day-1">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Arrival & Coastal Relaxation | Negombo</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Airport → Negombo</p>
-                        <span class="day-highlight">Negombo Beach · Sunset</span>
-                    </div>
-                    <div class="day-number-circle">01</div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Arrival & Coastal Relaxation | Negombo</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Airport → Negombo</p><span class="day-highlight">Negombo Beach · Sunset</span></div><div class="day-number-circle">01</div></div>
                 <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Negombo beach">
-                        <div class="image-overlay"><p class="image-caption">Negombo Beach</p></div>
-                    </div>
-                    <h4 class="mb-4" style="color:#2c3e50;"><i class="fas fa-clock text-primary"></i> Day 1 Schedule (flexible based on flight)</h4>
+                    <div class="day-image-section"><img src="img/12N_13D_PKG/itinerary4/browns beach.avif" class="day-main-image" alt="Negombo beach"><div class="image-overlay"><p class="image-caption">Negombo Beach</p></div></div>
+                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 1 Schedule (flexible)</h4>
                     <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot">
-                            <div class="time-header"><span class="time-badge-enhanced">Arrival</span><div class="activity-icon"><i class="fas fa-plane-arrival"></i></div></div>
-                            <h5 class="slot-title-enhanced">Airport Pickup</h5>
-                            <p class="slot-desc-enhanced">Meet & greet at Bandaranaike International Airport, then transfer to Negombo.</p>
-                        </div>
-                        <div class="enhanced-time-slot">
-                            <div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div>
-                            <h5 class="slot-title-enhanced">Authentic Sri Lankan Lunch</h5>
-                            <p class="slot-desc-enhanced">Enjoy a traditional rice & curry meal.</p>
-                        </div>
-                        <div class="enhanced-time-slot">
-                            <div class="time-header"><span class="time-badge-enhanced">15:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div>
-                            <h5 class="slot-title-enhanced">Hotel Check‑in & Rest</h5>
-                            <p class="slot-desc-enhanced">Settle into your beach hotel, rest after flight.</p>
-                        </div>
-                        <div class="enhanced-time-slot">
-                            <div class="time-header"><span class="time-badge-enhanced">16:30</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div>
-                            <h5 class="slot-title-enhanced">Evening Walk at Negombo Beach</h5>
-                            <p class="slot-desc-enhanced">Stroll along the golden sands, enjoy sunset views.</p>
-                            <div class="activity-highlights"><span class="highlight-tag">Sunset</span></div>
-                        </div>
-                        <div class="enhanced-time-slot">
-                            <div class="time-header"><span class="time-badge-enhanced">19:30</span><div class="activity-icon"><i class="fas fa-moon"></i></div></div>
-                            <h5 class="slot-title-enhanced">Dinner at Hotel</h5>
-                            <p class="slot-desc-enhanced">Half‑board overnight in Negombo.</p>
-                        </div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Arrival</span><div class="activity-icon"><i class="fas fa-plane-arrival"></i></div></div><h5 class="slot-title-enhanced">Airport Pickup</h5><p class="slot-desc-enhanced">Meet & greet, transfer to Negombo.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Authentic Sri Lankan Lunch</h5><p>Traditional rice & curry.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Hotel Check‑in & Rest</h5></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:30</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Evening Walk at Negombo Beach</h5><div class="activity-highlights"><span class="highlight-tag">Sunset</span></div></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:30</span><div class="activity-icon"><i class="fas fa-moon"></i></div></div><h5>Dinner at Hotel</h5></div>
                     </div>
-                    <div class="day-info-container">
-                        <div class="info-card accommodation">
-                            <h5 class="info-card-title"><i class="fas fa-hotel"></i> Accommodation</h5>
-                            <div><p>Beach hotel, Negombo · Half Board</p></div>
-                        </div>
-                        <div class="info-card travel">
-                            <h5 class="info-card-title"><i class="fas fa-route"></i> Transfer</h5>
-                            <div><p>Airport → Negombo: ~20-30 min</p></div>
-                        </div>
-                    </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 1 Highlights</h5>
-                        <div class="facts-grid">
-                            <div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Negombo Beach sunset</div></div>
-                            <div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-utensils"></i></div><div class="fact-text">Authentic lunch</div></div>
-                        </div>
-                    </div>
+                    <div class="day-info-container"><div class="info-card accommodation"><h5 class="info-card-title"><i class="fas fa-hotel"></i> Accommodation</h5><div><p>Beach hotel, Negombo · Half Board</p></div></div><div class="info-card travel"><h5 class="info-card-title"><i class="fas fa-route"></i> Transfer</h5><div><p>Airport → Negombo: ~20-30 min</p></div></div></div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 1 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Negombo Beach sunset</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-utensils"></i></div><div class="fact-text">Authentic lunch</div></div></div></div>
                 </div>
             </div>
 
-            <!-- DAY 2: Negombo → Sigiriya -->
+            <!-- DAY 2: Sigiriya -->
             <div class="day-card-section day-2" id="day-2">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Sigiriya Rock Fortress</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Negombo → Sigiriya</p>
-                        <span class="day-highlight">Sigiriya Rock · Frescoes · Pidurangala (optional)</span>
-                    </div>
-                    <div class="day-number-circle">02</div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Sigiriya Rock Fortress</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Negombo → Sigiriya</p><span class="day-highlight">Sigiriya Rock · Frescoes · Pidurangala (optional)</span></div><div class="day-number-circle">02</div></div>
                 <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya.jpeg" class="day-main-image" alt="Sigiriya">
-                        <div class="image-overlay"><p class="image-caption">Sigiriya Lion Rock</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 2 Schedule (early departure – direct move avoids unnecessary stops)</h4>
+                    <div class="day-image-section"><img src="img/12N_13D_PKG/itinerary4/sigiriya.jpg" class="day-main-image" alt="Sigiriya"><div class="image-overlay"><p class="image-caption">Sigiriya Lion Rock</p></div></div>
+                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 2 Schedule</h4>
                     <div class="enhanced-schedule-grid">
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Early Breakfast & Check‑out</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:30–11:30</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Travel to Sigiriya</h5><p>Approx 4 hrs.</p></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:00–15:00</span><div class="activity-icon"><i class="fas fa-mountain"></i></div></div><h5>Sigiriya Rock Fortress</h5><p>Ancient frescoes, Mirror Wall, panoramic views. UNESCO World Heritage Site.</p><div class="activity-highlights"><span class="highlight-tag">UNESCO</span></div></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:00–15:00</span><div class="activity-icon"><i class="fas fa-mountain"></i></div></div><h5>Sigiriya Rock Fortress</h5><p>UNESCO World Heritage Site.</p><div class="activity-highlights"><span class="highlight-tag">UNESCO</span></div></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch in Sigiriya</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Sigiriya hotel</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Optional</span><div class="activity-icon"><i class="fas fa-sunset"></i></div></div><h5>Pidurangala Rock sunset hike</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Dinner at hotel</h5></div>
                     </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 2 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-mountain"></i></div><div class="fact-text">Sigiriya Rock</div></div></div>
-                    </div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 2 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-mountain"></i></div><div class="fact-text">Sigiriya Rock</div></div></div></div>
                 </div>
             </div>
 
-            <!-- DAY 3: Village Life & Dambulla Heritage -->
+            <!-- DAY 3: Village & Dambulla -->
             <div class="day-card-section day-3" id="day-3">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Village Life & Dambulla Heritage</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Sigiriya / Dambulla</p>
-                        <span class="day-highlight">Village Tour · Dambulla Cave Temple</span>
-                    </div>
-                    <div class="day-number-circle">03</div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Village Life & Dambulla Heritage</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Sigiriya / Dambulla</p><span class="day-highlight">Village Tour · Dambulla Cave Temple</span></div><div class="day-number-circle">03</div></div>
                 <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/dambulla-cave-temple.jpg" class="day-main-image" alt="Dambulla">
-                        <div class="image-overlay"><p class="image-caption">Dambulla Cave Temple</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 3 Schedule (no hotel switching = better comfort)</h4>
+                    <div class="day-image-section"><img src="img/12N_13D_PKG/itinerary4/Dambulla-Cave-Temple-1920x700-1.jpg" class="day-main-image" alt="Dambulla"><div class="image-overlay"><p class="image-caption">Dambulla Cave Temple</p></div></div>
+                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 3 Schedule</h4>
                     <div class="enhanced-schedule-grid">
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast at hotel (same hotel)</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:30–13:00</span><div class="activity-icon"><i class="fas fa-home"></i></div></div><h5>Sigiriya Village Tour</h5><p>Authentic rural experience: bullock cart, cooking demo, traditional lunch.</p></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast at hotel</h5></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:30–13:00</span><div class="activity-icon"><i class="fas fa-home"></i></div></div><h5>Sigiriya Village Tour</h5><p>Bullock cart, cooking demo, traditional lunch.</p></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30–16:00</span><div class="activity-icon"><i class="fas fa-temple"></i></div></div><h5>Dambulla Cave Temple</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:30–18:00</span><div class="activity-icon"><i class="fas fa-spa"></i></div></div><h5>Relaxed evening at hotel (pool / nature)</h5></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:30–18:00</span><div class="activity-icon"><i class="fas fa-spa"></i></div></div><h5>Relaxed evening at hotel</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Dinner at hotel</h5></div>
                     </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 3 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-home"></i></div><div class="fact-text">Village life</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Dambulla</div></div></div>
-                    </div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 3 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-home"></i></div><div class="fact-text">Village life</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Dambulla</div></div></div></div>
                 </div>
             </div>
 
-            <!-- DAY 4: Sigiriya → Kandy via Nalanda Gedige & Spice Garden -->
+            <!-- DAY 4: Sigiriya → Kandy -->
             <div class="day-card-section day-4" id="day-4">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Cultural Journey to Kandy</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Sigiriya → Kandy</p>
-                        <span class="day-highlight">Nalanda Gedige · Spice Garden · Temple of Tooth · Dance Show</span>
-                    </div>
-                    <div class="day-number-circle">04</div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Cultural Journey to Kandy</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Sigiriya → Kandy</p><span class="day-highlight">Nalanda Gedige · Spice Garden · Temple of Tooth · Dance Show</span></div><div class="day-number-circle">04</div></div>
                 <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/kandy-package-card.jpeg" class="day-main-image" alt="Temple of Tooth">
-                        <div class="image-overlay"><p class="image-caption">Sri Dalada Maligawa</p></div>
-                    </div>
+                    <div class="day-image-section"><img src="img/12N_13D_PKG/itinerary4/dalada maligawa.jpg" class="day-main-image" alt="Temple of Tooth"><div class="image-overlay"><p class="image-caption">Sri Dalada Maligawa</p></div></div>
                     <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 4 Schedule</h4>
                     <div class="enhanced-schedule-grid">
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
@@ -1049,28 +1038,15 @@
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:00</span><div class="activity-icon"><i class="fas fa-music"></i></div></div><h5>Kandyan cultural dance show</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:00</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Kandy hotel</h5><p>Dinner at hotel.</p></div>
                     </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 4 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-pray"></i></div><div class="fact-text">Temple of Tooth</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-music"></i></div><div class="fact-text">Dance Show</div></div></div>
-                    </div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 4 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-pray"></i></div><div class="fact-text">Temple of Tooth</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-music"></i></div><div class="fact-text">Dance Show</div></div></div></div>
                 </div>
             </div>
 
             <!-- DAY 5: Explore Kandy -->
             <div class="day-card-section day-5" id="day-5">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Explore Kandy</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Kandy</p>
-                        <span class="day-highlight">Peradeniya Gardens · Kandy Lake · View Point</span>
-                    </div>
-                    <div class="day-number-circle">05</div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Explore Kandy</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Kandy</p><span class="day-highlight">Peradeniya Gardens · Kandy Lake · View Point</span></div><div class="day-number-circle">05</div></div>
                 <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Peradeniya">
-                        <div class="image-overlay"><p class="image-caption">Peradeniya Botanical Gardens</p></div>
-                    </div>
+                    <div class="day-image-section"><img src="img/12N_13D_PKG/itinerary4/peradeniya botanical garden.jpg" class="day-main-image" alt="Peradeniya"><div class="image-overlay"><p class="image-caption">Peradeniya Botanical Gardens</p></div></div>
                     <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 5 Schedule</h4>
                     <div class="enhanced-schedule-grid">
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast at hotel</h5></div>
@@ -1080,60 +1056,34 @@
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:30</span><div class="activity-icon"><i class="fas fa-water"></i></div></div><h5>Kandy Lake walk</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Evening</span><div class="activity-icon"><i class="fas fa-shopping"></i></div></div><h5>Free time, dinner at hotel</h5></div>
                     </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 5 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-leaf"></i></div><div class="fact-text">Peradeniya</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-eye"></i></div><div class="fact-text">View Point</div></div></div>
-                    </div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 5 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-leaf"></i></div><div class="fact-text">Peradeniya</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-eye"></i></div><div class="fact-text">View Point</div></div></div></div>
                 </div>
             </div>
 
-            <!-- DAY 6: Scenic Train to Ella (World-Class Experience) -->
+            <!-- DAY 6: Scenic Train to Ella -->
             <div class="day-card-section day-6" id="day-6">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Scenic Train to Ella 🚆</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Peradeniya/Kandy → Ella</p>
-                        <span class="day-highlight">World‑Class Train Ride · Nine Arches · Ravana Falls</span>
-                    </div>
-                    <div class="day-number-circle">06</div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Scenic Train to Ella 🚆</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Peradeniya/Kandy → Ella</p><span class="day-highlight">World‑Class Train Ride · Nine Arches · Ravana Falls</span></div><div class="day-number-circle">06</div></div>
                 <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Train">
-                        <div class="image-overlay"><p class="image-caption">Sri Lanka Railway Scenic Train</p></div>
-                    </div>
+                    <div class="day-image-section"><img src="img/12N_13D_PKG/itinerary4/train.jpg" class="day-main-image" alt="Train"><div class="image-overlay"><p class="image-caption">Sri Lanka Railway Scenic Train</p></div></div>
                     <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 6 Schedule</h4>
                     <div class="enhanced-schedule-grid">
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">06:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:30</span><div class="activity-icon"><i class="fas fa-train"></i></div></div><h5>Board train from Peradeniya/Kandy to Ella</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30–13:00</span><div class="activity-icon"><i class="fas fa-train"></i></div></div><h5>Scenic train ride to Ella</h5><p>One of the world's most beautiful train journeys through tea country.</p><div class="activity-highlights"><span class="highlight-tag">World's most scenic train</span></div></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:30</span><div class="activity-icon"><i class="fas fa-train"></i></div></div><h5>Board train to Ella</h5></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30–13:00</span><div class="activity-icon"><i class="fas fa-train"></i></div></div><h5>Scenic train ride to Ella</h5><p>One of the world's most beautiful train journeys.</p><div class="activity-highlights"><span class="highlight-tag">World's most scenic train</span></div></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch in Ella</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-bridge"></i></div></div><h5>Nine Arches Bridge</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">16:00</span><div class="activity-icon"><i class="fas fa-waterfall"></i></div></div><h5>Ravana Falls</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">17:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Ella hotel</h5><p>Dinner at hotel.</p></div>
                     </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 6 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-train"></i></div><div class="fact-text">Scenic train</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-bridge"></i></div><div class="fact-text">Nine Arches</div></div></div>
-                    </div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 6 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-train"></i></div><div class="fact-text">Scenic train</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-bridge"></i></div><div class="fact-text">Nine Arches</div></div></div></div>
                 </div>
             </div>
 
             <!-- DAY 7: Adventure & Views in Ella -->
             <div class="day-card-section day-7" id="day-7">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Adventure & Views in Ella</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Ella</p>
-                        <span class="day-highlight">Little Adam's Peak · Zipline · Ella Gap</span>
-                    </div>
-                    <div class="day-number-circle">07</div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Adventure & Views in Ella</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Ella</p><span class="day-highlight">Little Adam's Peak · Zipline · Ella Gap</span></div><div class="day-number-circle">07</div></div>
                 <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Ella">
-                        <div class="image-overlay"><p class="image-caption">Little Adam's Peak</p></div>
-                    </div>
+                    <div class="day-image-section"><img src="img/12N_13D_PKG/itinerary4/ella rock.jpg" class="day-main-image" alt="Ella"><div class="image-overlay"><p class="image-caption">Little Adam's Peak</p></div></div>
                     <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 7 Schedule</h4>
                     <div class="enhanced-schedule-grid">
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast at hotel</h5></div>
@@ -1143,28 +1093,15 @@
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-parachute-box"></i></div></div><h5>Flying Ravana Zipline</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Evening</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Free time, dinner at hotel</h5></div>
                     </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 7 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-hiking"></i></div><div class="fact-text">Ella hike</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-parachute-box"></i></div><div class="fact-text">Zipline</div></div></div>
-                    </div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 7 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-hiking"></i></div><div class="fact-text">Ella hike</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-parachute-box"></i></div><div class="fact-text">Zipline</div></div></div></div>
                 </div>
             </div>
 
-            <!-- DAY 8: Ella → Yala Safari -->
+            <!-- DAY 8: Yala Safari -->
             <div class="day-card-section day-8" id="day-8">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Yala Safari Adventure</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Ella → Yala</p>
-                        <span class="day-highlight">Afternoon Jeep Safari · Leopards · Elephants</span>
-                    </div>
-                    <div class="day-number-circle">08</div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Yala Safari Adventure</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Ella → Yala</p><span class="day-highlight">Afternoon Jeep Safari · Leopards · Elephants</span></div><div class="day-number-circle">08</div></div>
                 <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/dambulla-cave-temple.jpg" class="day-main-image" alt="Yala">
-                        <div class="image-overlay"><p class="image-caption">Yala National Park</p></div>
-                    </div>
+                    <div class="day-image-section"><img src="img/12N_13D_PKG/itinerary4/kumana-national-park-sri-lanka-2.jpg" class="day-main-image" alt="Yala"><div class="image-overlay"><p class="image-caption">Yala National Park</p></div></div>
                     <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 8 Schedule</h4>
                     <div class="enhanced-schedule-grid">
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">07:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
@@ -1174,28 +1111,15 @@
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:30–18:30</span><div class="activity-icon"><i class="fas fa-paw"></i></div></div><h5>Afternoon Jeep Safari at Yala National Park</h5><p>Spot leopards, elephants, and wildlife.</p><div class="activity-highlights"><span class="highlight-tag">Wildlife</span></div></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Dinner at hotel</h5></div>
                     </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 8 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-paw"></i></div><div class="fact-text">Yala Safari</div></div></div>
-                    </div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 8 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-paw"></i></div><div class="fact-text">Yala Safari</div></div></div></div>
                 </div>
             </div>
 
-            <!-- DAY 9: Yala → Hiriketiya (Hidden Gem Beach) -->
+            <!-- DAY 9: Hiriketiya -->
             <div class="day-card-section day-9" id="day-9">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Hidden Gem Beach: Hiriketiya</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Yala → Hiriketiya</p>
-                        <span class="day-highlight">Relax · Swim · Surf Atmosphere</span>
-                    </div>
-                    <div class="day-number-circle">09</div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Hidden Gem Beach: Hiriketiya</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Yala → Hiriketiya</p><span class="day-highlight">Relax · Swim · Surf Atmosphere</span></div><div class="day-number-circle">09</div></div>
                 <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Hiriketiya">
-                        <div class="image-overlay"><p class="image-caption">Hiriketiya Beach</p></div>
-                    </div>
+                    <div class="day-image-section"><img src="img/12N_13D_PKG/itinerary4/catching-those-big-waves (1).jpg" class="day-main-image" alt="Hiriketiya"><div class="image-overlay"><p class="image-caption">Hiriketiya Beach</p></div></div>
                     <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 9 Schedule</h4>
                     <div class="enhanced-schedule-grid">
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
@@ -1204,59 +1128,33 @@
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:00–18:00</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Relax, swim, surf atmosphere at Hiriketiya</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">18:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Dikwella hotel</h5><p>Dinner at hotel.</p></div>
                     </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 9 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Hiriketiya Beach</div></div></div>
-                    </div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 9 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Hiriketiya Beach</div></div></div></div>
                 </div>
             </div>
 
-            <!-- DAY 10: Leisure Day (Weligama Coast) -->
+            <!-- DAY 10: Leisure Day Weligama -->
             <div class="day-card-section day-10" id="day-10">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Leisure Day | Weligama Coast</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Dikwella → Weligama</p>
-                        <span class="day-highlight">Full Relaxation · Beach · Surfing · Spa</span>
-                    </div>
-                    <div class="day-number-circle">10</div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Leisure Day | Weligama Coast</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Dikwella → Weligama</p><span class="day-highlight">Full Relaxation · Beach · Surfing · Spa</span></div><div class="day-number-circle">10</div></div>
                 <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Weligama">
-                        <div class="image-overlay"><p class="image-caption">Weligama Coast</p></div>
-                    </div>
-                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 10 Schedule (added proper relaxation day – high tourist satisfaction)</h4>
+                    <div class="day-image-section"><img src="img/12N_13D_PKG/itinerary4/Weligama_3d34bebf-ece2-4fd1-a8e0-016502f16872.webp" class="day-main-image" alt="Weligama"><div class="image-overlay"><p class="image-caption">Weligama Coast</p></div></div>
+                    <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 10 Schedule</h4>
                     <div class="enhanced-schedule-grid">
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">09:00–09:30</span><div class="activity-icon"><i class="fas fa-road"></i></div></div><h5>Short drive to Weligama</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">10:00</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Full relaxation day</h5><p>Beach time, surfing, spa, or simply unwind.</p></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">13:00</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch at hotel or beach café</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">Afternoon</span><div class="activity-icon"><i class="fas fa-spa"></i></div></div><h5>Continue relaxation</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Dinner at hotel (Full Board optional)</h5></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">19:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Dinner at hotel</h5></div>
                     </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 10 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Weligama coast</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-spa"></i></div><div class="fact-text">Spa/surf</div></div></div>
-                    </div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 10 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Weligama coast</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-spa"></i></div><div class="fact-text">Spa/surf</div></div></div></div>
                 </div>
             </div>
 
-            <!-- DAY 11: Weligama → Mirissa -->
+            <!-- DAY 11: Mirissa -->
             <div class="day-card-section day-11" id="day-11">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Mirissa Tropical Experience</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Weligama → Mirissa</p>
-                        <span class="day-highlight">Coconut Tree Hill · Beach · Whale Watching</span>
-                    </div>
-                    <div class="day-number-circle">11</div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Mirissa Tropical Experience</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Weligama → Mirissa</p><span class="day-highlight">Coconut Tree Hill · Beach · Whale Watching</span></div><div class="day-number-circle">11</div></div>
                 <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Mirissa">
-                        <div class="image-overlay"><p class="image-caption">Mirissa Beach</p></div>
-                    </div>
+                    <div class="day-image-section"><img src="img/12N_13D_PKG/itinerary4/Mirissa_Beach_Photos_By_360viewlk-1-of-2-1-scaled-1.jpg" class="day-main-image" alt="Mirissa"><div class="image-overlay"><p class="image-caption">Mirissa Beach</p></div></div>
                     <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 11 Schedule</h4>
                     <div class="enhanced-schedule-grid">
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:30</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
@@ -1264,31 +1162,18 @@
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">10:00</span><div class="activity-icon"><i class="fas fa-tree"></i></div></div><h5>Visit Coconut Tree Hill</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">11:30</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Beach relaxation</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Lunch in Mirissa</h5></div>
-                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:00</span><div class="activity-icon"><i class="fas fa-ship"></i></div></div><h5>Optional whale watching (seasonal)</h5></div>
+                        <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:00</span><div class="activity-icon"><i class="fas fa-ship"></i></div></div><h5>Optional whale watching</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">18:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in beach hotel</h5><p>Dinner at hotel.</p></div>
                     </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 11 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-tree"></i></div><div class="fact-text">Coconut Tree Hill</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Mirissa Beach</div></div></div>
-                    </div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 11 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-tree"></i></div><div class="fact-text">Coconut Tree Hill</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Mirissa Beach</div></div></div></div>
                 </div>
             </div>
 
-            <!-- DAY 12: Mirissa → Galle -->
+            <!-- DAY 12: Galle -->
             <div class="day-card-section day-12" id="day-12">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Galle Heritage & Coastal Beauty</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Mirissa → Galle</p>
-                        <span class="day-highlight">Galle Fort · Lighthouse · Unawatuna Jungle Beach</span>
-                    </div>
-                    <div class="day-number-circle">12</div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Galle Heritage & Coastal Beauty</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Mirissa → Galle</p><span class="day-highlight">Galle Fort · Lighthouse · Unawatuna Jungle Beach</span></div><div class="day-number-circle">12</div></div>
                 <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/sigiriya-attractions.jpg" class="day-main-image" alt="Galle">
-                        <div class="image-overlay"><p class="image-caption">Galle Fort</p></div>
-                    </div>
+                    <div class="day-image-section"><img src="img/12N_13D_PKG/itinerary4/galle.jpg" class="day-main-image" alt="Galle"><div class="image-overlay"><p class="image-caption">Galle Fort</p></div></div>
                     <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 12 Schedule</h4>
                     <div class="enhanced-schedule-grid">
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
@@ -1299,28 +1184,15 @@
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">15:30</span><div class="activity-icon"><i class="fas fa-umbrella-beach"></i></div></div><h5>Unawatuna Jungle Beach</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">18:30</span><div class="activity-icon"><i class="fas fa-hotel"></i></div></div><h5>Check‑in Galle hotel</h5><p>Dinner at hotel.</p></div>
                     </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 12 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-fort"></i></div><div class="fact-text">Galle Fort</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Unawatuna</div></div></div>
-                    </div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 12 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-fort"></i></div><div class="fact-text">Galle Fort</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-umbrella-beach"></i></div><div class="fact-text">Unawatuna</div></div></div></div>
                 </div>
             </div>
 
-            <!-- DAY 13: Galle → Colombo → Airport -->
+            <!-- DAY 13: Colombo & Departure -->
             <div class="day-card-section day-13" id="day-13">
-                <div class="day-card-header">
-                    <div>
-                        <h3 class="day-main-title">Colombo & Departure</h3>
-                        <p class="day-location"><i class="fas fa-map-marker-alt"></i> Galle → Colombo → Airport</p>
-                        <span class="day-highlight">Gangaramaya Temple · Lotus Tower · Farewell</span>
-                    </div>
-                    <div class="day-number-circle">13</div>
-                </div>
+                <div class="day-card-header"><div><h3 class="day-main-title">Colombo & Departure</h3><p class="day-location"><i class="fas fa-map-marker-alt"></i> Galle → Colombo → Airport</p><span class="day-highlight">Gangaramaya Temple · Lotus Tower · Farewell</span></div><div class="day-number-circle">13</div></div>
                 <div class="day-content-wrapper">
-                    <div class="day-image-section">
-                        <img src="img/kandy-package-card.jpeg" class="day-main-image" alt="Gangaramaya">
-                        <div class="image-overlay"><p class="image-caption">Gangaramaya Temple</p></div>
-                    </div>
+                    <div class="day-image-section"><img src="img/12N_13D_PKG/itinerary4/gangaramaya.jpg" class="day-main-image" alt="Gangaramaya"><div class="image-overlay"><p class="image-caption">Gangaramaya Temple</p></div></div>
                     <h4 class="mb-4"><i class="fas fa-clock text-primary"></i> Day 13 Schedule</h4>
                     <div class="enhanced-schedule-grid">
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">08:00</span><div class="activity-icon"><i class="fas fa-sun"></i></div></div><h5>Breakfast & check‑out</h5></div>
@@ -1329,29 +1201,74 @@
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">12:30</span><div class="activity-icon"><i class="fas fa-utensils"></i></div></div><h5>Final Sri Lankan lunch</h5></div>
                         <div class="enhanced-time-slot"><div class="time-header"><span class="time-badge-enhanced">14:30</span><div class="activity-icon"><i class="fas fa-plane-departure"></i></div></div><h5>Airport transfer & farewell</h5></div>
                     </div>
-                    <div class="quick-facts-enhanced">
-                        <h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 13 Highlights</h5>
-                        <div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Gangaramaya (optional)</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-building"></i></div><div class="fact-text">Lotus Tower</div></div></div>
-                    </div>
+                    <div class="quick-facts-enhanced"><h5 class="facts-title"><i class="fas fa-lightbulb"></i> Day 13 Highlights</h5><div class="facts-grid"><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-temple"></i></div><div class="fact-text">Gangaramaya (optional)</div></div><div class="fact-item-enhanced"><div class="fact-icon-circle"><i class="fas fa-building"></i></div><div class="fact-text">Lotus Tower</div></div></div></div>
                 </div>
             </div>
 
-            <!-- Price Section -->
+            <!-- ========== PAYMENT SECTION EXACTLY LIKE SAMPLE ========== -->
             <div class="price-section-enhanced" id="booking">
                 <div class="price-header-enhanced">
                     <h2 class="price-title-enhanced">13 Days · Island Legacy Explorer</h2>
-                    <div class="price-amount-enhanced">USD 1999</div>
-                    <p class="price-subtitle-enhanced">Per person (based on 2 pax) · Half‑board accommodation (Day 10 Full Board optional), all entry fees, train ticket, safari jeep, transport & driver/guide</p>
+                    <p class="price-subtitle-enhanced">Choose the package that fits your style – all include the same itinerary, private transport, and expert guidance.</p>
                 </div>
+
+                <div class="price-comparison-grid">
+                    <!-- Budget Card -->
+                    <div class="price-tier-card">
+                        <div class="badge-hot">BEST VALUE</div>
+                        <div class="tier-name">Budget</div>
+                        <div class="tier-price">$1,724 <small>per person</small></div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check-circle"></i> Standard 3★ hotels</li>
+                            <li><i class="fas fa-check-circle"></i> Half‑board (breakfast & dinner)</li>
+                            <li><i class="fas fa-check-circle"></i> Private A/C vehicle</li>
+                            <li><i class="fas fa-check-circle"></i> All entrance fees included</li>
+                            <li><i class="fas fa-check-circle"></i> English‑speaking driver/guide</li>
+                        </ul>
+                        <a href="https://wa.me/94763661600?text=Hi!%20I%20want%20to%20book%20the%20BUDGET%20package%20for%20Island%20Legacy%20Explorer%2013%20Days%20($1724)." target="_blank" class="btn-tier">Book Budget →</a>
+                    </div>
+
+                    <!-- Mid-Range Card (Recommended) -->
+                    <div class="price-tier-card recommended">
+                        <div class="badge-hot">⭐ MOST POPULAR</div>
+                        <div class="tier-name">Mid-Range</div>
+                        <div class="tier-price">$2,299 <small>per person</small></div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check-circle"></i> Comfort 4★ hotels</li>
+                            <li><i class="fas fa-check-circle"></i> Half‑board + 1 special dinner</li>
+                            <li><i class="fas fa-check-circle"></i> Private A/C vehicle</li>
+                            <li><i class="fas fa-check-circle"></i> All entrance fees + water bottles</li>
+                            <li><i class="fas fa-check-circle"></i> Professional driver/guide + welcome gift</li>
+                        </ul>
+                        <a href="https://wa.me/94763661600?text=Hi!%20I%20want%20to%20book%20the%20MID-RANGE%20package%20for%20Island%20Legacy%20Explorer%2013%20Days%20($2299)." target="_blank" class="btn-tier">Book Mid-Range →</a>
+                    </div>
+
+                    <!-- Luxury Card -->
+                    <div class="price-tier-card">
+                        <div class="badge-hot">LUXURY</div>
+                        <div class="tier-name">Luxury</div>
+                        <div class="tier-price">$3,334 <small>per person</small></div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check-circle"></i> Premium 5★ hotels</li>
+                            <li><i class="fas fa-check-circle"></i> Half‑board (upgraded meals)</li>
+                            <li><i class="fas fa-check-circle"></i> Private luxury vehicle</li>
+                            <li><i class="fas fa-check-circle"></i> All entrance fees + guided tours</li>
+                            <li><i class="fas fa-check-circle"></i> Spa voucher & airport assistance</li>
+                        </ul>
+                        <a href="https://wa.me/94763661600?text=Hi!%20I%20want%20to%20book%20the%20LUXURY%20package%20for%20Island%20Legacy%20Explorer%2013%20Days%20($3334)." target="_blank" class="btn-tier">Book Luxury →</a>
+                    </div>
+                </div>
+
                 <div class="inclusion-grid-enhanced">
-                    <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-hotel"></i></div><h5>12 Nights</h5><p class="inclusion-text-enhanced">Negombo, Sigiriya, Kandy, Ella, Yala, Dikwella, Weligama, Mirissa, Galle</p></div>
+                    <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-hotel"></i></div><h5>12 Nights Half‑Board</h5><p class="inclusion-text-enhanced">Negombo, Sigiriya, Kandy, Ella, Yala, Dikwella, Weligama, Mirissa, Galle</p></div>
                     <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-ticket-alt"></i></div><h5>All Entrance Fees</h5><p class="inclusion-text-enhanced">Sigiriya, Dambulla, village tour, Nalanda Gedige, Temple of Tooth, dance show, Peradeniya, train ticket, Yala safari, Galle Fort, Gangaramaya</p></div>
                     <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-car"></i></div><h5>Private A/C Vehicle</h5><p class="inclusion-text-enhanced">Professional English‑speaking driver, fuel, parking, tolls</p></div>
                     <div class="inclusion-item-enhanced"><div class="inclusion-icon-enhanced"><i class="fas fa-train"></i></div><h5>Scenic Train & Safari</h5><p class="inclusion-text-enhanced">World‑famous train ride, Yala jeep safari, hidden beaches</p></div>
                 </div>
-                <div class="text-center mt-5">
-                    <a href="https://wa.me/94763661600?text=Hi!%20I%20would%20like%20to%20book%20the%2013%20Days%20Island%20Legacy%20Explorer%20Tour%20for%20USD%201999%20per%20person." target="_blank" class="btn-cta-enhanced btn-cta-primary"><i class="fab fa-whatsapp me-2"></i>Book Now on WhatsApp</a>
-                    <p class="mt-4 text-light opacity-85">Flexible booking · Free cancellation up to 7 days before</p>
+
+                <div class="text-center mt-4">
+                    <p class="text-light opacity-85"><i class="fas fa-info-circle"></i> All prices are per person based on double occupancy. Single supplement applies. Contact us for group discounts.</p>
+                    <a href="https://wa.me/94763661600" target="_blank" class="btn-cta-enhanced btn-cta-primary" style="display: inline-block; margin-top: 15px;"><i class="fab fa-whatsapp me-2"></i>Chat with us to customize your package</a>
                 </div>
             </div>
 
