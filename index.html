@@ -25,13 +25,13 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Responsive Styles (matched with sample) -->
+    <!-- Responsive Styles (with services & testimonials) -->
     <style>
         * { box-sizing: border-box; }
         body { background-color: #ffffff !important; font-family: 'Jost', sans-serif; }
         img { max-width: 100%; height: auto; }
 
-        /* WhatsApp Floating Button (same as sample) */
+        /* WhatsApp Floating Button */
         .whatsapp-float {
             position: fixed; bottom: 20px; right: 20px; width: 80px; height: 80px;
             background-color: #25D366; color: #fff; border-radius: 50%; font-size: 42px;
@@ -39,15 +39,12 @@
             z-index: 1000; animation: whatsapp-pulse 1.8s infinite; text-decoration: none;
             display: flex; align-items: center; justify-content: center;
         }
-        .whatsapp-float:hover { transform: scale(1.1); transition: 0.3s ease; }
         @keyframes whatsapp-pulse {
             0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
             70% { box-shadow: 0 0 0 25px rgba(37,211,102,0); }
             100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
         }
-        @media (max-width: 768px) {
-            .whatsapp-float { width: 70px; height: 70px; font-size: 38px; line-height: 70px; bottom: 15px; right: 15px; }
-        }
+        @media (max-width: 768px) { .whatsapp-float { width: 70px; height: 70px; font-size: 38px; line-height: 70px; bottom: 15px; right: 15px; } }
 
         /* Sections */
         .about-section { background: #ffffff; padding: 100px 0; position: relative; }
@@ -55,16 +52,13 @@
         .contact-section { background: linear-gradient(145deg, #f0f5ff 0%, #e6edfa 100%); padding: 100px 0; position: relative; overflow: hidden; }
         .blog-section { background: #ffffff; padding: 100px 0; position: relative; }
 
-        /* Packages particles (keep animations) */
+        /* Packages particles */
         .packages-particle { position: absolute; border-radius: 50%; background: rgba(153,102,255,0.1); pointer-events: none; z-index: 1; }
         .packages-particle-1 { width: 100px; height: 100px; top: 20%; left: 15%; animation: floatParticle 12s ease-in-out infinite; }
         .packages-particle-2 { width: 150px; height: 150px; bottom: 15%; right: 20%; background: rgba(204,102,255,0.08); animation: floatParticle 15s ease-in-out infinite reverse; }
         .packages-particle-3 { width: 80px; height: 80px; top: 60%; left: 70%; background: rgba(102,51,204,0.07); animation: floatParticle 10s ease-in-out infinite 2s; }
         .packages-particle-4 { width: 200px; height: 200px; top: 10%; right: 5%; background: rgba(153,51,255,0.05); animation: floatParticle 18s ease-in-out infinite 1s; }
-        @keyframes floatParticle {
-            0%,100% { transform: translate(0,0) scale(1); } 25% { transform: translate(30px,-30px) scale(1.1); }
-            50% { transform: translate(50px,20px) scale(0.9); } 75% { transform: translate(-20px,40px) scale(1.05); }
-        }
+        @keyframes floatParticle { 0%,100% { transform: translate(0,0) scale(1); } 25% { transform: translate(30px,-30px) scale(1.1); } 50% { transform: translate(50px,20px) scale(0.9); } 75% { transform: translate(-20px,40px) scale(1.05); } }
 
         /* Contact particles */
         .contact-particle { position: absolute; border-radius: 50%; pointer-events: none; z-index: 1; }
@@ -72,8 +66,7 @@
         .contact-particle-2 { width: 180px; height: 180px; bottom: 10%; left: 15%; background: rgba(0,200,255,0.06); animation: floatParticle 16s ease-in-out infinite reverse; }
         .contact-particle-3 { width: 90px; height: 90px; top: 40%; left: 60%; background: rgba(0,150,255,0.07); animation: floatParticle 12s ease-in-out infinite 1s; }
 
-        /* Services section styles (preserved) */
-        .services-premium-section { background: transparent !important; padding: 0; position: relative; overflow: hidden; }
+        /* Package services section styles (renamed) */
         .section-title-wrapper { text-align: center; margin-bottom: 70px; position: relative; z-index: 2; }
         .section-subtitle { font-size: 18px; color: #1c047b; font-weight: 500; letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase; position: relative; display: inline-block; }
         .section-subtitle::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: linear-gradient(90deg, #1c047b, #1c047b); border-radius: 2px; }
@@ -94,11 +87,11 @@
         @keyframes blinkCursor { from,to { border-color: transparent; } 50% { border-color: #4cc9f0; } }
         .featured-service-desc { font-size: 18px; color: #b8c1ec; margin-bottom: 25px; max-width: 600px; line-height: 1.6; opacity: 0; transform: translateX(-30px); animation: slideInParagraph 0.8s cubic-bezier(0.4,0,0.2,1) 1.6s forwards; }
         @keyframes slideInParagraph { to { opacity: 1; transform: translateX(0); } }
-        .featured-service-cta { display: inline-flex; align-items: center; gap: 10px; padding: 15px 35px; background: linear-gradient(90deg, #f72585, #b5179e); color: white; border-radius: 50px; font-weight: 600; font-size: 16px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(247,37,133,0.3); transform: translateY(30px) rotateX(-90deg); opacity: 0; animation: flipInButton 0.8s cubic-bezier(0.4,0,0.2,1) 1.8s forwards; }
+        .featured-service-cta { display: inline-flex; align-items: center; gap: 10px; padding: 15px 35px; background: linear-gradient(90deg, #2711a3, #1724b5); color: white; border-radius: 50px; font-weight: 600; font-size: 16px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(247,37,133,0.3); transform: translateY(30px) rotateX(-90deg); opacity: 0; animation: flipInButton 0.8s cubic-bezier(0.4,0,0.2,1) 1.8s forwards; }
         @keyframes flipInButton { to { transform: translateY(0) rotateX(0); opacity: 1; } }
-        .featured-service-cta:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 15px 40px rgba(247,37,133,0.4); color: white; }
+        .featured-service-cta:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 15px 40px rgba(37, 58, 247, 0.4); color: white; }
 
-        /* Service cards (preserved) */
+        /* Package service cards */
         .services-grid-container { position: relative; z-index: 2; margin: 60px 0; }
         .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .service-card { position: relative; height: 380px; border-radius: 20px; overflow: hidden; background: #000; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); cursor: pointer; box-shadow: 0 20px 50px rgba(0,0,0,0.3); opacity: 0; transform: perspective(1000px) rotateY(90deg) scale(0.8); animation: cardFlipIn 0.8s cubic-bezier(0.4,0,0.2,1) forwards; }
@@ -162,12 +155,12 @@
         @keyframes fadeInBottom { to { opacity: 1; transform: translateY(0); } }
         .service-card-price { font-size: 22px; font-weight: 700; color: white; }
         .service-card-price span { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: normal; }
-        .service-card-cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: linear-gradient(90deg, #f72585, #b5179e); color: white; border-radius: 50px; font-weight: 600; font-size: 13px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(247,37,133,0.3); position: relative; overflow: hidden; }
+        .service-card-cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: linear-gradient(90deg, #2530f7, #1f17b5); color: white; border-radius: 50px; font-weight: 600; font-size: 13px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(76, 37, 247, 0.3); position: relative; overflow: hidden; }
         .service-card-cta::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: 0.5s; }
         .service-card-cta:hover::before { left: 100%; }
         .service-card-cta:hover { transform: translateX(5px) scale(1.1); box-shadow: 0 8px 20px rgba(247,37,133,0.4); }
 
-        /* Statistics (preserved) */
+        /* Statistics */
         .services-stats { display: flex; justify-content: space-around; margin: 80px auto 0; max-width: 1000px; position: relative; z-index: 2; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); opacity: 0; transform: translateY(50px); animation: statsReveal 1s cubic-bezier(0.4,0,0.2,1) 3.5s forwards; }
         @keyframes statsReveal { to { opacity: 1; transform: translateY(0); } }
         .stat-item { text-align: center; position: relative; padding: 0 20px; opacity: 0; transform: scale(0); animation: statItemPop 0.6s cubic-bezier(0.68,-0.55,0.265,1.55) forwards; }
@@ -180,14 +173,14 @@
         .stat-number { font-size: 48px; font-weight: 700; color: #4cc9f0; margin-bottom: 10px; text-shadow: 0 0 20px rgba(76,201,240,0.3); }
         .stat-label { font-size: 16px; color: #b8c1ec; font-weight: 500; letter-spacing: 1px; }
 
-        /* CTA (preserved) */
+        /* CTA */
         .services-cta-wrapper { text-align: center; margin-top: 70px; position: relative; z-index: 2; opacity: 0; animation: fadeIn 0.8s ease 4.5s forwards; }
         @keyframes fadeIn { to { opacity: 1; } }
-        .premium-cta-button { display: inline-flex; align-items: center; gap: 15px; padding: 20px 50px; background: linear-gradient(90deg, #f72585 0%, #7209b7 100%); color: white; border-radius: 50px; font-weight: 700; font-size: 18px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 20px 40px rgba(247,37,133,0.3); position: relative; overflow: hidden; animation: buttonFloat 3s ease-in-out infinite 5s; }
+        .premium-cta-button { display: inline-flex; align-items: center; gap: 15px; padding: 20px 50px; background: linear-gradient(90deg, #2545f7 0%, #0946b7 100%); color: white; border-radius: 50px; font-weight: 700; font-size: 18px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 20px 40px rgba(59, 43, 237, 0.3); position: relative; overflow: hidden; animation: buttonFloat 3s ease-in-out infinite 5s; }
         @keyframes buttonFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         .premium-cta-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: 0.5s; }
         .premium-cta-button:hover::before { left: 100%; }
-        .premium-cta-button:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 25px 50px rgba(247,37,133,0.4); animation: none; }
+        .premium-cta-button:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 25px 50px rgba(43, 53, 244, 0.4); animation: none; }
 
         /* Floating elements */
         .floating-element { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(76,201,240,0.1), transparent); z-index: 1; }
@@ -269,21 +262,17 @@
         .blog-read-more:hover { gap: 10px; }
         .blog-featured { grid-column: span 2; height: 480px; }
 
-        /* Subscribe Section (same as sample) */
-        .subscribe-section {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/carousel-2.jpg') !important;
-            background-size: cover !important; background-position: center !important; background-attachment: fixed !important;
-            padding: 80px 0;
-        }
-        .subscribe-title { display: inline-block; padding: 8px 25px; background: #ffd700; color: #2c3e50; border-radius: 50px; font-weight: 600; font-size: 1rem; margin-bottom: 20px; }
+        /* Subscribe */
+        .subscribe-section { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/carousel-2.jpg') !important; background-size: cover !important; background-position: center !important; background-attachment: fixed !important; padding: 80px 0; }
+        .subscribe-title { display: inline-block; padding: 8px 25px; background: #0400ff; color: #2c3e50; border-radius: 50px; font-weight: 600; font-size: 1rem; margin-bottom: 20px; }
         .subscribe-section h1 { color: white; font-size: 2.5rem; font-weight: 700; }
         .subscribe-section p { color: rgba(255,255,255,0.9); font-size: 1.1rem; }
         .subscribe-section .form-control { border: 2px solid transparent; padding: 15px 25px; border-radius: 50px; font-size: 1rem; transition: all 0.3s ease; }
-        .subscribe-section .form-control:focus { border-color: #ffd700; box-shadow: 0 0 0 0.2rem rgba(255,215,0,0.25); outline: none; }
-        .subscribe-section button { background: #ffd700; border: none; padding: 12px 30px; border-radius: 50px; color: #2c3e50; font-weight: 600; transition: all 0.3s ease; }
-        .subscribe-section button:hover { background: #ffa500; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,215,0,0.3); }
+        .subscribe-section .form-control:focus { border-color: #0400ff; box-shadow: 0 0 0 0.2rem rgba(255,215,0,0.25); outline: none; }
+        .subscribe-section button { background: #1100ff; border: none; padding: 12px 30px; border-radius: 50px; color: #2c3e50; font-weight: 600; transition: all 0.3s ease; }
+        .subscribe-section button:hover { background: #001aff; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,215,0,0.3); }
 
-        /* ===== TRANSPARENT SEARCH BAR (moved a bit above) ===== */
+        /* ===== TRANSPARENT SEARCH BAR ===== */
         .carousel-header { position: relative; }
         .hero-search-bar {
             position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); z-index: 10;
@@ -304,20 +293,79 @@
         .hero-search-bar .form-control:focus,
         .hero-search-bar .form-select:focus { background: rgba(255,255,255,0.3); border-color: #ffd700; box-shadow: 0 0 10px rgba(255,215,0,0.3); outline: none; }
         .hero-search-bar .btn-hero-search {
-            background: linear-gradient(135deg, #2533f7, #1731b5); color: white; border: none;
+            background: linear-gradient(135deg, #2530f7, #171fb5); color: white; border: none;
             padding: 12px 35px; border-radius: 30px; font-weight: 700; font-size: 1rem;
             white-space: nowrap; transition: all 0.3s ease; height: 44px; display: flex;
             align-items: center; gap: 8px; cursor: pointer;
         }
-        .hero-search-bar .btn-hero-search:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(79, 37, 247, 0.5); }
+        .hero-search-bar .btn-hero-search:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(37, 37, 247, 0.5); }
         @media (max-width: 768px) {
             .hero-search-bar { bottom: 50px; padding: 12px; gap: 6px; }
             .hero-search-bar .form-group { flex: 1 1 100%; }
             .hero-search-bar .btn-hero-search { width: 100%; justify-content: center; margin-top: 6px; }
         }
 
-        /* ===== MOBILE FRIENDLY RESPONSIVE (matching sample) ===== */
-        @media (max-width: 1200px) { .services-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; } .blog-editorial-grid { grid-template-columns: repeat(3, 1fr); } }
+        /* ===== NEW SERVICES & TESTIMONIALS SECTION ===== */
+        .svc-services-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .svc-section-title { text-align: center; margin-bottom: 60px; }
+        .svc-section-title h2 { font-size: 2.8rem; color: #2c3e50; margin-bottom: 15px; position: relative; display: inline-block; padding-bottom: 15px; }
+        .svc-section-title h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 4px; background: linear-gradient(135deg, #0d6efd, #8a2be2); border-radius: 2px; }
+        .svc-section-title p { color: #666; max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
+        .svc-services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .svc-service-card {
+            background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            transition: all 0.4s ease; position: relative; border: 1px solid rgba(0,0,0,0.05);
+        }
+        .svc-service-card:hover { transform: translateY(-15px); box-shadow: 0 30px 70px rgba(0,0,0,0.12); }
+        .svc-service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(135deg, #0d6efd, #8a2be2); z-index: 2; }
+        .svc-card-header { padding: 45px 35px 25px; background: linear-gradient(135deg, #0d6efd, #8a2be2); color: white; text-align: center; }
+        .svc-icon-container { width: 85px; height: 85px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 2.2rem; backdrop-filter: blur(5px); border: 2px solid rgba(255,255,255,0.3); }
+        .svc-card-content { padding: 35px; }
+        .svc-card-title { font-size: 1.6rem; margin-bottom: 15px; color: white; text-align: center; }
+        .svc-card-description { color: #666; line-height: 1.6; margin-bottom: 20px; }
+        .svc-features { list-style: none; padding: 0; margin: 0 0 25px 0; }
+        .svc-features li { padding: 8px 0; color: #555; padding-left: 30px; position: relative; }
+        .svc-features li::before { content: '✓'; position: absolute; left: 0; color: #0d6efd; font-weight: bold; }
+        .svc-card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.08); }
+        .svc-price { font-size: 1.3rem; font-weight: 700; color: #2c3e50; }
+        .svc-price span { font-size: 0.9rem; color: #888; font-weight: 500; display: block; }
+        .svc-button {
+            background: linear-gradient(135deg, #0d6efd, #8a2be2); color: white; border: none;
+            padding: 10px 25px; border-radius: 30px; font-weight: 600; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(13,110,253,0.2);
+        }
+        .svc-button:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(13,110,253,0.3); color: white; }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: linear-gradient(135deg, #0d6efd, #8a2be2);
+            padding: 80px 0; border-radius: 25px; margin-top: 60px; color: white; position: relative; overflow: hidden;
+        }
+        .testimonials-section::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 40px 40px; animation: rotate 20s linear infinite; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .testimonials-title { text-align: center; margin-bottom: 50px; position: relative; z-index: 2; }
+        .testimonials-title h3 { font-size: 2.5rem; margin-bottom: 15px; color: white; }
+        .testimonial-card {
+            background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px;
+            padding: 35px; height: 100%; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; position: relative; z-index: 2;
+        }
+        .testimonial-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); }
+        .testimonial-rating { color: #ffd700; font-size: 1.1rem; margin-bottom: 20px; }
+        .testimonial-text { font-size: 1.05rem; line-height: 1.6; margin-bottom: 25px; font-style: italic; position: relative; padding-left: 25px; }
+        .testimonial-text::before { content: '"'; position: absolute; left: 0; top: -10px; font-size: 3.5rem; color: #ffd700; opacity: 0.3; font-family: 'Jost', sans-serif; }
+        .testimonial-author { display: flex; align-items: center; gap: 15px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); }
+        .author-avatar { width: 55px; height: 55px; background: #ffd700; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #0d6efd; font-size: 1.3rem; font-weight: 600; }
+        .author-info h4 { font-size: 1.2rem; margin-bottom: 5px; color: white; }
+        .author-info p { opacity: 0.8; font-size: 0.9rem; }
+
+        /* Responsive Grid */
+        @media (min-width: 1200px) { .services-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; } .blog-editorial-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (min-width: 992px) and (max-width: 1199px) { .services-grid { grid-template-columns: repeat(3, 1fr); gap: 25px; } .blog-editorial-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (min-width: 768px) and (max-width: 991px) {
             .services-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; } .blog-editorial-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
@@ -336,9 +384,10 @@
             .section-main-title { font-size: 28px; } .featured-service-main { height: 350px; }
             .featured-service-title { font-size: 24px; white-space: normal; overflow: visible; animation: none; border-right: none; }
             .premium-cta-button { padding: 15px 30px; font-size: 16px; flex-direction: column; gap: 8px; }
+            .svc-services-grid { grid-template-columns: 1fr; }
         }
 
-        /* --- MOBILE NAVIGATION (white background, same as sample) --- */
+        /* Mobile navigation white background */
         @media (max-width: 991.98px) {
             .navbar-collapse { background: rgba(255,255,255,0.98); padding: 20px; border-radius: 10px; margin-top: 10px; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
             .navbar-nav .nav-link { color: #333 !important; padding: 12px 0; font-size: 1.1rem; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.1); }
@@ -442,8 +491,7 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-
-            <!-- Transparent Search Bar -->
+            <!-- Search Bar -->
             <div class="hero-search-bar">
                 <div class="form-group">
                     <label><i class="fas fa-calendar-alt"></i> Trip Duration (days) *</label>
@@ -597,6 +645,136 @@
         </div>
     </div>
 
+    <!-- ========== NEW SERVICES & TESTIMONIALS SECTION (after packages) ========== -->
+    <div class="svc-services-section">
+        <div class="container">
+            <div class="svc-section-title">
+                <h2>Our Premium Travel Services</h2>
+                <p>We design extraordinary Sri Lanka experiences for discerning travelers</p>
+            </div>
+            <div class="svc-services-grid">
+                <!-- Service 1: Design Your Journey -->
+                <div class="svc-service-card">
+                    <div class="svc-card-header">
+                        <div class="svc-icon-container"><i class="fas fa-pen-nib"></i></div>
+                        <div class="svc-card-title">Design Your Journey</div>
+                    </div>
+                    <div class="svc-card-content">
+                        <p class="svc-card-description">Every traveler is unique. We design personalized Sri Lanka journeys that match your style, interests, and dreams.</p>
+                        <ul class="svc-features">
+                            <li>Bespoke itineraries</li>
+                            <li>Flexible scheduling</li>
+                            <li>Expert local guides</li>
+                        </ul>
+                        <div class="svc-card-footer">
+                            <div class="svc-price">Custom <span>Starting from</span></div>
+                            <a href="./pkg-own-tour.html" class="svc-button"><i class="fas fa-pen"></i> Plan Tour</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2: Ultimate Sri Lanka -->
+                <div class="svc-service-card">
+                    <div class="svc-card-header">
+                        <div class="svc-icon-container"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="svc-card-title">The Ultimate Sri Lanka Journey</div>
+                    </div>
+                    <div class="svc-card-content">
+                        <p class="svc-card-description">A perfectly paced 14-day tour covering culture, wildlife, hill country, and beaches in luxury.</p>
+                        <ul class="svc-features">
+                            <li>Premium accommodations</li>
+                            <li>Private guide & transport</li>
+                            <li>Exclusive experiences</li>
+                        </ul>
+                        <div class="svc-card-footer">
+                            <div class="svc-price">From <span>$2,800</span></div>
+                            <a href="./pkg-14-day-tour.html" class="svc-button"><i class="fas fa-map-marked-alt"></i> View Tour</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3: Cultural Triangle -->
+                <div class="svc-service-card">
+                    <div class="svc-card-header">
+                        <div class="svc-icon-container"><i class="fas fa-landmark"></i></div>
+                        <div class="svc-card-title">Cultural Triangle</div>
+                    </div>
+                    <div class="svc-card-content">
+                        <p class="svc-card-description">Step into Sri Lanka's UNESCO heritage with private temple visits, expert guides, and luxury stays.</p>
+                        <ul class="svc-features">
+                            <li>Private UNESCO access</li>
+                            <li>Archaeologist guides</li>
+                            <li>Traditional performances</li>
+                        </ul>
+                        <div class="svc-card-footer">
+                            <div class="svc-price">From <span>$1,200</span></div>
+                            <a href="./pkg-sri-lanka-cultural-trangle.html" class="svc-button"><i class="fas fa-history"></i> Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 4: Highlights Tour -->
+                <div class="svc-service-card">
+                    <div class="svc-card-header">
+                        <div class="svc-icon-container"><i class="fas fa-star"></i></div>
+                        <div class="svc-card-title">Sri Lanka Highlights</div>
+                    </div>
+                    <div class="svc-card-content">
+                        <p class="svc-card-description">The best of Sri Lanka in 11 days – from ancient kingdoms to pristine beaches, all in comfort.</p>
+                        <ul class="svc-features">
+                            <li>Top attractions included</li>
+                            <li>Small group luxury</li>
+                            <li>Beachfront stays</li>
+                        </ul>
+                        <div class="svc-card-footer">
+                            <div class="svc-price">From <span>$2,200</span></div>
+                            <a href="./pkg-11-day-tour.html" class="svc-button"><i class="fas fa-compass"></i> Discover</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="testimonials-section">
+                <div class="container">
+                    <div class="testimonials-title">
+                        <h3>What Our Travelers Say</h3>
+                        <p>Genuine feedback from international guests</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="testimonial-card">
+                                <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="testimonial-text">Ceyloan Travellers handled everything smoothly, from bookings to last minute changes. The team was professional, responsive, and genuinely caring. My trip was stress free, well organized, and exceeded expectations. Highly recommended!</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">SR</div>
+                                    <div class="author-info"><h4>Sarah & Robert</h4><p>London, UK</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="testimonial-card">
+                                <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="testimonial-text">The 14-day luxury tour exceeded all expectations. From heritage sites to beach retreats, every moment was curated to perfection. The team's attention to detail was remarkable.</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">MT</div>
+                                    <div class="author-info"><h4>Michael Thompson</h4><p>New York, USA</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="testimonial-card">
+                                <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="testimonial-text">Ceyloan Travellers transformed our Sri Lanka visit into an unforgettable cultural immersion. Expert guides and luxury accommodations made this our best travel experience yet.</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">EC</div>
+                                    <div class="author-info"><h4>Emma Chen</h4><p>Singapore</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Blog Section -->
     <div class="blog-section">
         <section class="blog-cinematic">
@@ -654,11 +832,10 @@
         </div>
     </div>
 
-    <!-- Subscribe Section (same as sample) -->
+    <!-- Subscribe -->
     <div class="subscribe-section">
         <div class="container text-center py-5">
             <div class="mx-auto text-center" style="max-width: 900px;">
-                <h5 class="subscribe-title px-3">Subscribe</h5>
                 <h1 class="text-white mb-4">Our Newsletter</h1>
                 <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, insider tips, and inspiring Sri Lanka travel stories straight to your inbox.</p>
                 <div class="position-relative mx-auto" style="max-width: 600px;">
@@ -680,9 +857,8 @@
         </div>
     </div>
 
-    <!-- WhatsApp Button (same as sample) -->
-    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ceylon%20Travellers%20Travel%20&%20Tours.%20How%20can%20we%20assist?%20you%3F"
-        class="whatsapp-float" target="_blank">
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ceylon%20Travellers%20Travel%20&%20Tours.%20How%20can%20we%20assist?%20you%3F" class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
