@@ -43,28 +43,23 @@
             text-decoration: none;
         }
 
-        /* Hover effect */
         .whatsapp-float:hover {
             transform: scale(1.1);
             transition: 0.3s ease;
         }
 
-        /* Pulse animation */
         @keyframes whatsapp-pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
-
             70% {
                 box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
             }
-
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
         }
 
-        /* Mobile responsive */
         @media (max-width: 768px) {
             .whatsapp-float {
                 width: 70px;
@@ -76,7 +71,7 @@
             }
         }
 
-        /* ========== GALLERY HERO SECTION - MATCHING BLOG STYLE ========== */
+        /* ========== GALLERY HERO SECTION ========== */
         .gallery-hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/14-day-tour-srilanka-sigiriya.jpg');
             background-size: cover;
@@ -182,12 +177,9 @@
         }
 
         @keyframes titleFloat {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: translateY(0);
             }
-
             50% {
                 transform: translateY(-10px);
             }
@@ -200,7 +192,6 @@
             margin: 0 auto;
         }
 
-        /* Masonry Gallery Grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -208,7 +199,6 @@
             padding: 20px;
         }
 
-        /* Gallery Items */
         .gallery-item {
             position: relative;
             border-radius: 20px;
@@ -222,69 +212,7 @@
         }
 
         @keyframes galleryItemEntry {
-            to {
-                opacity: 1;
-            }
-        }
-
-        .gallery-item:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .gallery-item:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .gallery-item:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .gallery-item:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        .gallery-item:nth-child(5) {
-            animation-delay: 0.5s;
-        }
-
-        .gallery-item:nth-child(6) {
-            animation-delay: 0.6s;
-        }
-
-        .gallery-item:nth-child(7) {
-            animation-delay: 0.7s;
-        }
-
-        .gallery-item:nth-child(8) {
-            animation-delay: 0.8s;
-        }
-
-        .gallery-item:nth-child(9) {
-            animation-delay: 0.9s;
-        }
-
-        .gallery-item:nth-child(10) {
-            animation-delay: 1.0s;
-        }
-
-        .gallery-item:nth-child(11) {
-            animation-delay: 1.1s;
-        }
-
-        .gallery-item:nth-child(12) {
-            animation-delay: 1.2s;
-        }
-
-        .gallery-item:nth-child(13) {
-            animation-delay: 1.3s;
-        }
-
-        .gallery-item:nth-child(14) {
-            animation-delay: 1.4s;
-        }
-
-        .gallery-item:nth-child(15) {
-            animation-delay: 1.5s;
+            to { opacity: 1; }
         }
 
         .gallery-item:hover {
@@ -323,7 +251,6 @@
             filter: brightness(1);
         }
 
-        /* Image Loading Animation */
         .gallery-img.loading {
             background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
             background-size: 200% 100%;
@@ -331,16 +258,10 @@
         }
 
         @keyframes loadingShimmer {
-            0% {
-                background-position: -200% 0;
-            }
-
-            100% {
-                background-position: 200% 0;
-            }
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
 
-        /* Gallery Overlay */
         .gallery-overlay {
             position: absolute;
             top: 0;
@@ -379,7 +300,6 @@
             gap: 8px;
         }
 
-        /* View More Button */
         .view-more-btn {
             position: absolute;
             top: 15px;
@@ -443,15 +363,8 @@
         }
 
         @keyframes lightboxEntry {
-            from {
-                transform: scale(0.8) rotateX(15deg);
-                opacity: 0;
-            }
-
-            to {
-                transform: scale(1) rotateX(0);
-                opacity: 1;
-            }
+            from { transform: scale(0.8) rotateX(15deg); opacity: 0; }
+            to { transform: scale(1) rotateX(0); opacity: 1; }
         }
 
         .lightbox-img {
@@ -464,9 +377,7 @@
             transition: transform 0.3s ease;
         }
 
-        .lightbox-img.loaded {
-            transform: scale(1);
-        }
+        .lightbox-img.loaded { transform: scale(1); }
 
         .lightbox-nav {
             position: absolute;
@@ -495,27 +406,11 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .lightbox-btn:hover {
-            background: #0d6efd;
-            color: white;
-            transform: scale(1.1);
-        }
-
-        .lightbox-btn.prev-btn {
-            transform: translateX(-20px);
-        }
-
-        .lightbox-btn.next-btn {
-            transform: translateX(20px);
-        }
-
-        .lightbox-btn:hover.prev-btn {
-            transform: translateX(-20px) scale(1.1);
-        }
-
-        .lightbox-btn:hover.next-btn {
-            transform: translateX(20px) scale(1.1);
-        }
+        .lightbox-btn:hover { background: #0d6efd; color: white; transform: scale(1.1); }
+        .lightbox-btn.prev-btn { transform: translateX(-20px); }
+        .lightbox-btn.next-btn { transform: translateX(20px); }
+        .lightbox-btn:hover.prev-btn { transform: translateX(-20px) scale(1.1); }
+        .lightbox-btn:hover.next-btn { transform: translateX(20px) scale(1.1); }
 
         .lightbox-close {
             position: absolute;
@@ -537,11 +432,7 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .lightbox-close:hover {
-            background: #dc3545;
-            color: white;
-            transform: rotate(90deg);
-        }
+        .lightbox-close:hover { background: #dc3545; color: white; transform: rotate(90deg); }
 
         .lightbox-info {
             position: absolute;
@@ -559,26 +450,11 @@
         }
 
         @keyframes infoSlideUp {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            to { transform: translateY(0); opacity: 1; }
         }
 
-        .lightbox-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .lightbox-location {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
+        .lightbox-title { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+        .lightbox-location { font-size: 16px; color: rgba(255, 255, 255, 0.9); display: flex; align-items: center; justify-content: center; gap: 8px; }
 
         .lightbox-counter {
             position: absolute;
@@ -593,7 +469,6 @@
             z-index: 3;
         }
 
-        /* Loading Spinner for Lightbox */
         .lightbox-spinner {
             position: absolute;
             top: 50%;
@@ -609,16 +484,10 @@
         }
 
         @keyframes lightboxSpin {
-            0% {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-
-            100% {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
-        /* Image Counter */
         .image-counter {
             position: absolute;
             top: 15px;
@@ -635,177 +504,59 @@
             z-index: 2;
         }
 
-        .gallery-item:hover .image-counter {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .gallery-item:hover .image-counter { opacity: 1; transform: translateY(0); }
 
         /* Responsive Design */
         @media (max-width: 1200px) {
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-            
-            .gallery-hero-title {
-                font-size: 3rem;
-            }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+            .gallery-hero-title { font-size: 3rem; }
         }
 
         @media (max-width: 992px) {
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-                gap: 20px;
-            }
-
-            .gallery-title h1 {
-                font-size: 36px;
-            }
-
-            .lightbox-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-            
-            .gallery-hero-section {
-                padding: 80px 0;
-            }
-            
-            .gallery-hero-stats {
-                flex-wrap: wrap;
-                gap: 30px;
-            }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+            .gallery-title h1 { font-size: 36px; }
+            .lightbox-btn { width: 50px; height: 50px; font-size: 20px; }
+            .gallery-hero-section { padding: 80px 0; }
+            .gallery-hero-stats { flex-wrap: wrap; gap: 30px; }
         }
 
         @media (max-width: 768px) {
-            .gallery-container {
-                padding: 50px 0;
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-                gap: 15px;
-                padding: 10px;
-            }
-
-            .gallery-image-wrapper {
-                height: 220px;
-            }
-
-            .gallery-title {
-                margin-bottom: 40px;
-            }
-
-            .gallery-title h1 {
-                font-size: 32px;
-            }
-
-            .gallery-title p {
-                font-size: 16px;
-            }
-
-            .lightbox-modal {
-                padding: 10px;
-            }
-
-            .lightbox-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 18px;
-                padding: 0 15px;
-            }
-
-            .lightbox-close {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
-            }
-
-            .lightbox-title {
-                font-size: 20px;
-            }
-
-            .lightbox-location {
-                font-size: 14px;
-            }
-            
-            .gallery-hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .gallery-hero-description {
-                font-size: 1.1rem;
-            }
-            
-            .gallery-hero-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
+            .gallery-container { padding: 50px 0; }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; padding: 10px; }
+            .gallery-image-wrapper { height: 220px; }
+            .gallery-title { margin-bottom: 40px; }
+            .gallery-title h1 { font-size: 32px; }
+            .gallery-title p { font-size: 16px; }
+            .lightbox-modal { padding: 10px; }
+            .lightbox-btn { width: 40px; height: 40px; font-size: 18px; padding: 0 15px; }
+            .lightbox-close { width: 40px; height: 40px; font-size: 20px; }
+            .lightbox-title { font-size: 20px; }
+            .lightbox-location { font-size: 14px; }
+            .gallery-hero-title { font-size: 2.5rem; }
+            .gallery-hero-description { font-size: 1.1rem; }
+            .gallery-hero-stats { flex-direction: column; gap: 20px; }
         }
 
         @media (max-width: 576px) {
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-
-            .gallery-image-wrapper {
-                height: 180px;
-            }
-
-            .gallery-overlay-content {
-                padding: 15px;
-            }
-
-            .gallery-item-title {
-                font-size: 16px;
-            }
-
-            .gallery-item-location {
-                font-size: 12px;
-            }
-            
-            .gallery-hero-section {
-                padding: 60px 0;
-            }
-            
-            .gallery-hero-title {
-                font-size: 2rem;
-            }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+            .gallery-image-wrapper { height: 180px; }
+            .gallery-overlay-content { padding: 15px; }
+            .gallery-item-title { font-size: 16px; }
+            .gallery-item-location { font-size: 12px; }
+            .gallery-hero-section { padding: 60px 0; }
+            .gallery-hero-title { font-size: 2rem; }
         }
 
-        /* Loading State */
-        .gallery-loading {
-            text-align: center;
-            padding: 50px;
-            font-size: 18px;
-            color: #666;
-        }
+        .gallery-loading { text-align: center; padding: 50px; font-size: 18px; color: #666; }
+        .gallery-error { text-align: center; padding: 50px; font-size: 18px; color: #dc3545; }
+        .no-images { text-align: center; padding: 50px; font-size: 18px; color: #666; }
 
-        .gallery-error {
-            text-align: center;
-            padding: 50px;
-            font-size: 18px;
-            color: #dc3545;
-        }
-
-        .no-images {
-            text-align: center;
-            padding: 50px;
-            font-size: 18px;
-            color: #666;
-        }
-
-        /* Fade In Animation */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 
@@ -844,7 +595,7 @@
     </div>
     <!-- Navbar & Hero End -->
 
-    <!-- Gallery Hero Section - Matching Blog Style -->
+    <!-- Gallery Hero Section -->
     <div class="gallery-hero-section">
         <div class="container">
             <div class="gallery-hero-content fade-in-up">
@@ -853,7 +604,6 @@
                 <p class="gallery-hero-description">
                     Explore breathtaking destinations, cultural landmarks, and natural wonders of Sri Lanka through our curated collection of stunning photographs.
                 </p>
-                
                 <div class="gallery-hero-stats">
                     <div class="hero-stat fade-in-up" style="transition-delay: 0.1s">
                         <span class="hero-stat-number" id="statImages">33+</span>
@@ -880,9 +630,7 @@
                 <h1>Beautiful Sri Lanka Gallery</h1>
                 <p>Explore breathtaking destinations, cultural landmarks, and natural wonders of Sri Lanka</p>
             </div>
-
             <div class="gallery-grid" id="galleryGrid">
-                <!-- Gallery items will be dynamically loaded here -->
                 <div class="gallery-loading">Loading amazing images...</div>
             </div>
         </div>
@@ -891,25 +639,18 @@
     <!-- Lightbox Modal -->
     <div class="lightbox-modal" id="lightboxModal">
         <div class="lightbox-spinner" id="lightboxSpinner"></div>
-        <div class="lightbox-close" id="lightboxClose">
-            <i class="fas fa-times"></i>
-        </div>
+        <div class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></div>
         <div class="lightbox-counter" id="lightboxCounter">1 / 15</div>
         <div class="lightbox-nav">
-            <button class="lightbox-btn prev-btn" id="prevBtn">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="lightbox-btn next-btn" id="nextBtn">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+            <button class="lightbox-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
         </div>
         <div class="lightbox-content">
             <img id="lightboxImage" class="lightbox-img" src="" alt="">
             <div class="lightbox-info">
                 <h2 id="lightboxTitle" class="lightbox-title"></h2>
                 <p id="lightboxLocation" class="lightbox-location">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span></span>
+                    <i class="fas fa-map-marker-alt"></i><span></span>
                 </p>
             </div>
         </div>
@@ -926,9 +667,7 @@
             <div class="mx-auto text-center" style="max-width: 900px;">
                 <h5 class="subscribe-title px-3">Subscribe</h5>
                 <h1 class="text-white mb-4">Our Newsletter</h1>
-                <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals,
-                    insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
-                </p>
+                <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, insider tips, and inspiring Sri Lanka travel stories straight to your inbox.</p>
                 <div class="position-relative mx-auto">
                     <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                     <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
@@ -955,271 +694,212 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize animations
             initAnimations();
-            
-            // Gallery images array - Automatically load all images from /img folder
+
+            // Gallery images array – All images from /img/gallery folder
             const galleryImages = [
-                {
-                    src: 'img/kandy lake round.jpeg',
-                    title: 'Kandy Lake',
-                    location: 'Kandy, Sri Lanka',
-                    alt: 'Beautiful Kandy Lake with surrounding hills'
-                },
-                {
-                    src: 'img/dalada-maligawa.jpeg',
-                    title: 'Temple of the Tooth',
-                    location: 'Kandy, Sri Lanka',
-                    alt: 'Sacred Temple of the Tooth Relic'
-                },
-                {
-                    src: 'img/botanical-garden.jpeg',
-                    title: 'Royal Botanical Garden',
-                    location: 'Peradeniya, Sri Lanka',
-                    alt: 'Lush Royal Botanical Gardens in Peradeniya'
-                },
-                {
-                    src: 'img/ambuluwawa.jpg',
-                    title: 'Ambuluwawa Tower',
-                    location: 'Gampola, Sri Lanka',
-                    alt: 'Ambuluwawa Tower with panoramic views'
-                },
-                {
-                    src: 'img/Nelligala-International-Buddhist-Center.jpg',
-                    title: 'Nelligala Temple',
-                    location: 'Kandy, Sri Lanka',
-                    alt: 'Nelligala International Buddhist Center'
-                },
-                {
-                    src: 'img/nine-arch-bridge-demodara-sri-lanka-945x630.jpg',
-                    title: 'Nine Arch Bridge',
-                    location: 'Ella, Sri Lanka',
-                    alt: 'Iconic Nine Arch Bridge in Ella'
-                },
-                {
-                    src: 'img/hirikatiya.JPG',
-                    title: 'Hirikatiya Beach',
-                    location: 'Dikwella, Sri Lanka',
-                    alt: 'Beautiful Hirikatiya Beach'
-                },
-                {
-                    src: 'img/horton-plains-national-park.webp',
-                    title: 'Horton Plains National Park',
-                    location: 'Nuwara Eliya, Sri Lanka',
-                    alt: 'Breathtaking Horton Plains National Park'
-                },
-                {
-                    src: 'img/Nuwara_Eliya_Gregory_Lake.jpg',
-                    title: 'Gregory Lake',
-                    location: 'Nuwara Eliya, Sri Lanka',
-                    alt: 'Serene Gregory Lake in Nuwara Eliya'
-                },
-                {
-                    src: 'img/yala-slider1.jpg',
-                    title: 'Yala National Park',
-                    location: 'Southern Province, Sri Lanka',
-                    alt: 'Wildlife safari in Yala National Park'
-                },
-                {
-                    src: 'img/sigiriya-attractions.jpg',
-                    title: 'Sigiriya Rock Fortress',
-                    location: 'Dambulla, Sri Lanka',
-                    alt: 'Ancient Sigiriya Rock Fortress'
-                },
-                {
-                    src: 'img/405dbcb1-a2d1-4bf0-9e67-36cdd8d70270_hot-air-ballooning-day-tour.png',
-                    title: 'Hot Air Balloon Ride',
-                    location: 'Dambulla, Sri Lanka',
-                    alt: 'Hot air balloon ride over Sri Lanka'
-                },
-                {
-                    src: 'img/travel-hakgala-botanical-garden.webp',
-                    title: 'Hakgala Botanical Garden',
-                    location: 'Nuwara Eliya, Sri Lanka',
-                    alt: 'Beautiful Hakgala Botanical Garden'
-                },
-                {
-                    src: 'img/hirikatiya.JPG',
-                    title: 'Hirikatiya Beach Sunset',
-                    location: 'Dikwella, Sri Lanka',
-                    alt: 'Sunset at Hirikatiya Beach'
-                },
-                {
-                    src: 'img/Main-point-arugam-bay-surfing.jpg',
-                    title: 'Arugam Bay Surfing',
-                    location: 'Eastern Province, Sri Lanka',
-                    alt: 'Surfing at Arugam Bay'
-                },
-                {
-                    src: 'img/anuradhapura.jpg',
-                    title: 'Anuradhapura Ancient City',
-                    location: 'Anuradhapura, Sri Lanka',
-                    alt: 'Ancient Buddhist ruins in Anuradhapura'
-                },
-                {
-                    src: 'img/blog-2.jpg',
-                    title: 'Sri Lankan Tea Plantations',
-                    location: 'Nuwara Eliya, Sri Lanka',
-                    alt: 'Lush tea plantations in hill country'
-                },
-                {
-                    src: 'img/blog-card-beach.webp',
-                    title: 'Sri Lankan Beach Paradise',
-                    location: 'Southern Coast, Sri Lanka',
-                    alt: 'Beautiful tropical beach in Sri Lanka'
-                },
-                {
-                    src: 'img/blog-card-daladamaligawa.jpg',
-                    title: 'Temple of the Tooth',
-                    location: 'Kandy, Sri Lanka',
-                    alt: 'Sacred Temple of the Tooth Relic'
-                },
-                {
-                    src: 'img/blog-card-nuwaraeliya.jpg',
-                    title: 'Nuwara Eliya Town',
-                    location: 'Nuwara Eliya, Sri Lanka',
-                    alt: 'Little England in Sri Lanka'
-                },
-                {
-                    src: 'img/blog-card-safari.jpg',
-                    title: 'Sri Lankan Safari',
-                    location: 'Yala National Park',
-                    alt: 'Wildlife safari experience'
-                },
-                {
-                    src: 'img/blog-card-sigiriya.jpg',
-                    title: 'Sigiriya Rock',
-                    location: 'Sigiriya, Sri Lanka',
-                    alt: 'Ancient rock fortress'
-                },
-                {
-                    src: 'img/carousel-1.jpg',
-                    title: 'Sri Lankan Coastline',
-                    location: 'Southern Coast, Sri Lanka',
-                    alt: 'Beautiful coastal views'
-                },
-                {
-                    src: 'img/carousel-2.jpg',
-                    title: 'Hill Country Train',
-                    location: 'Ella, Sri Lanka',
-                    alt: 'Scenic train ride through tea plantations'
-                },
-                {
-                    src: 'img/carousel-3.jpg',
-                    title: 'Sri Lankan Wildlife',
-                    location: 'Minneriya National Park',
-                    alt: 'Elephants in the wild'
-                },
-                {
-                    src: 'img/jafna-blog-post.jpg',
-                    title: 'Jaffna Temple',
-                    location: 'Jaffna, Sri Lanka',
-                    alt: 'Hindu temple in Northern Sri Lanka'
-                },
-                {
-                    src: 'img/kandy-package-card.jpeg',
-                    title: 'Kandy Lake View',
-                    location: 'Kandy, Sri Lanka',
-                    alt: 'Beautiful view of Kandy Lake'
-                },
-                {
-                    src: 'img/pkg-cultural-tringle-sigiriya.jpg',
-                    title: 'Sigiriya Rock',
-                    location: 'Cultural Triangle',
-                    alt: 'Ancient rock fortress'
-                },
-                {
-                    src: 'img/sri-lankan-travel-map.png',
-                    title: 'Sri Lanka Travel Map',
-                    location: 'Sri Lanka',
-                    alt: 'Travel map of Sri Lanka'
-                },
-                {
-                    src: 'img/14-day-tour-srilanka.jpg',
-                    title: '14 Day Sri Lanka Tour',
-                    location: 'Various Locations',
-                    alt: 'Complete Sri Lanka tour package'
-                },
-                {
-                    src: 'img/14-day-tour-srilanka-ella.jpg',
-                    title: 'Ella Gap View',
-                    location: 'Ella, Sri Lanka',
-                    alt: 'Beautiful view of Ella Gap'
-                },
-                {
-                    src: 'img/about-img-1.png',
-                    title: 'Sri Lankan Culture',
-                    location: 'Sri Lanka',
-                    alt: 'Traditional Sri Lankan culture'
-                },
-                {
-                    src: 'img/Arugam-Bay.jpg',
-                    title: 'Arugam Bay',
-                    location: 'Eastern Province',
-                    alt: 'Famous surfing destination'
-                }
+                { src: 'img/gallery/Abayagiriya Sthupa.jpg', title: 'Abayagiriya Stupa', location: 'Anuradhapura, Sri Lanka' },
+                { src: 'img/gallery/Abayagiriya.jpg', title: 'Abayagiriya Monastery', location: 'Anuradhapura, Sri Lanka' },
+                { src: 'img/gallery/Adventure , Kandalama Lake.avif', title: 'Adventure at Kandalama Lake', location: 'Dambulla, Sri Lanka' },
+                { src: 'img/gallery/aerial_view_weligama_beach.jpg', title: 'Aerial View of Weligama Beach', location: 'Weligama, Sri Lanka' },
+                { src: 'img/gallery/allure-of-hakgala-botanical-garden.webp', title: 'Hakgala Botanical Garden', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/Ambewela-New-Zealand-Farm.jpg', title: 'Ambewela New Zealand Farm', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/Ambuluwa Tower View.jpg', title: 'Ambuluwawa Tower View', location: 'Gampola, Sri Lanka' },
+                { src: 'img/gallery/Ambuluwawa-Tower-00015.jpg', title: 'Ambuluwawa Tower', location: 'Gampola, Sri Lanka' },
+                { src: 'img/gallery/Ambuluwawa-tower-kandy-Sri-Lanka.webp', title: 'Ambuluwawa Tower Kandy', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/ambuluwawa-tower-view.webp', title: 'Ambuluwawa Tower Panorama', location: 'Gampola, Sri Lanka' },
+                { src: 'img/gallery/Ancient City Tour , Polonnaruwa.avif', title: 'Ancient City Tour', location: 'Polonnaruwa, Sri Lanka' },
+                { src: 'img/gallery/Anuradhapura Sacred City.webp', title: 'Anuradhapura Sacred City', location: 'Anuradhapura, Sri Lanka' },
+                { src: 'img/gallery/Anuradhapura.jpg', title: 'Anuradhapura Ancient City', location: 'Anuradhapura, Sri Lanka' },
+                { src: 'img/gallery/Arugam-Bay.jpg', title: 'Arugam Bay Beach', location: 'Arugam Bay, Sri Lanka' },
+                { src: 'img/gallery/Basilur Tea Plantation.webp', title: 'Basilur Tea Plantation', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/Beach View , Trincomalee.webp', title: 'Beach View Trincomalee', location: 'Trincomalee, Sri Lanka' },
+                { src: 'img/gallery/Best-Beginner-Surf-Spots-in-Hiriketiya.webp', title: 'Beginner Surf Spots', location: 'Hiriketiya, Sri Lanka' },
+                { src: 'img/gallery/Birds in Wilpattu.jpg', title: 'Birds in Wilpattu', location: 'Wilpattu National Park, Sri Lanka' },
+                { src: 'img/gallery/Boat Ride , Anuradhapura.avif', title: 'Boat Ride in Anuradhapura', location: 'Anuradhapura, Sri Lanka' },
+                { src: 'img/gallery/Boat Ride , Arugam bay.jpg', title: 'Boat Ride at Arugam Bay', location: 'Arugam Bay, Sri Lanka' },
+                { src: 'img/gallery/Boat Ride , Kandalama Lake.avif', title: 'Boat Ride on Kandalama Lake', location: 'Dambulla, Sri Lanka' },
+                { src: 'img/gallery/Boat Ride , Nagadeepa Temple.webp', title: 'Boat Ride to Nagadeepa Temple', location: 'Jaffna, Sri Lanka' },
+                { src: 'img/gallery/Boat Ride , Negombo Lagoon..webp', title: 'Boat Ride on Negombo Lagoon', location: 'Negombo, Sri Lanka' },
+                { src: 'img/gallery/Boat Ride , Pasikudah.jpg', title: 'Boat Ride at Pasikudah', location: 'Pasikudah, Sri Lanka' },
+                { src: 'img/gallery/Botanical garden peradeniya.jpg', title: 'Peradeniya Botanical Garden', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/Botanical Garden.webp', title: 'Royal Botanical Garden', location: 'Peradeniya, Sri Lanka' },
+                { src: 'img/gallery/Browns Beach,Negombo..jpg', title: 'Browns Beach Negombo', location: 'Negombo, Sri Lanka' },
+                { src: 'img/gallery/bullock-cart-riding.jpg', title: 'Bullock Cart Riding', location: 'Sigiriya, Sri Lanka' },
+                { src: 'img/gallery/City Cycling , Anuradhapura.jpg', title: 'City Cycling in Anuradhapura', location: 'Anuradhapura, Sri Lanka' },
+                { src: 'img/gallery/Climb Sigiriya.webp', title: 'Climbing Sigiriya Rock', location: 'Sigiriya, Sri Lanka' },
+                { src: 'img/gallery/coconut-hill_berit-and-martin2-Kopie.jpg', title: 'Coconut Tree Hill', location: 'Mirissa, Sri Lanka' },
+                { src: 'img/gallery/Cows in Abewela.webp', title: 'Cows at Ambewela Farm', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/Dalada Maligawa , Kandy.jpg', title: 'Temple of the Tooth', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/Dalada Maligawa.jpg', title: 'Dalada Maligawa', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/Dalada_Maligawa.jpg', title: 'Sri Dalada Maligawa', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/Dambulla Cave Temple, Inside.jpg', title: 'Dambulla Cave Temple Interior', location: 'Dambulla, Sri Lanka' },
+                { src: 'img/gallery/Dambulla Cave Temple.webp', title: 'Dambulla Cave Temple', location: 'Dambulla, Sri Lanka' },
+                { src: 'img/gallery/Dambulla Golden temple.jpg', title: 'Dambulla Golden Temple', location: 'Dambulla, Sri Lanka' },
+                { src: 'img/gallery/Dambulla-Second-Cave-Deities-819x1024.webp', title: 'Dambulla Cave Deities', location: 'Dambulla, Sri Lanka' },
+                { src: 'img/gallery/Damro tea Plantation.JPG', title: 'Damro Tea Plantation', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/damro-tea-estate.jpg', title: 'Damro Tea Estate', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/Diving into Nilaveli Beach.jpg', title: 'Diving at Nilaveli Beach', location: 'Trincomalee, Sri Lanka' },
+                { src: 'img/gallery/edengardentours_Pinnawala-Elephant-Orphanage-1.webp', title: 'Pinnawala Elephant Orphanage', location: 'Pinnawala, Sri Lanka' },
+                { src: 'img/gallery/Elephant-Rock-beach-Arugam-Bay.webp', title: 'Elephant Rock Beach', location: 'Arugam Bay, Sri Lanka' },
+                { src: 'img/gallery/Elephant-Safari-Sigiriya-Shan-Travel-Trip-500x360.jpg', title: 'Elephant Safari Sigiriya', location: 'Sigiriya, Sri Lanka' },
+                { src: 'img/gallery/Elephant-Safari-Sigiriya-Shan-Travels.jpg', title: 'Elephant Safari Experience', location: 'Sigiriya, Sri Lanka' },
+                { src: 'img/gallery/elephnt Bathing.jpg', title: 'Elephant Bathing', location: 'Pinnawala, Sri Lanka' },
+                { src: 'img/gallery/Elephnt Feeding.jpg', title: 'Elephant Feeding', location: 'Pinnawala, Sri Lanka' },
+                { src: 'img/gallery/Elephnts.jpeg', title: 'Elephants in Sri Lanka', location: 'Pinnawala, Sri Lanka' },
+                { src: 'img/gallery/Ella Swing.webp', title: 'Ella Swing', location: 'Ella, Sri Lanka' },
+                { src: 'img/gallery/Ella Swining.webp', title: 'Ella Swinging', location: 'Ella, Sri Lanka' },
+                { src: 'img/gallery/Ella train ride.jpg', title: 'Ella Train Ride', location: 'Ella, Sri Lanka' },
+                { src: 'img/gallery/Evening Sunset , Pasikudha.jpg', title: 'Evening Sunset at Pasikudah', location: 'Pasikudah, Sri Lanka' },
+                { src: 'img/gallery/family-fun-at-lake-gregory.webp', title: 'Family Fun at Gregory Lake', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/Fishing At Pasikudha.jpg', title: 'Fishing at Pasikudah', location: 'Pasikudah, Sri Lanka' },
+                { src: 'img/gallery/Flying Rawana.jpg', title: 'Flying Ravana Zipline', location: 'Ella, Sri Lanka' },
+                { src: 'img/gallery/flying-ravana-mega-zipline (1).jpg', title: 'Flying Ravana Mega Zipline', location: 'Ella, Sri Lanka' },
+                { src: 'img/gallery/foreign-tourists-look-turtles-sea-hikkaduwa-120-440nw-9307187j.jpg', title: 'Turtles at Hikkaduwa', location: 'Hikkaduwa, Sri Lanka' },
+                { src: 'img/gallery/Galle Lighthouse.jpg', title: 'Galle Lighthouse', location: 'Galle, Sri Lanka' },
+                { src: 'img/gallery/galle-fort-lighthouse-couple-768x1024.jpg', title: 'Galle Fort Lighthouse', location: 'Galle, Sri Lanka' },
+                { src: 'img/gallery/Galle-Lighthouse-Fort-Sri-Lanka.jpg', title: 'Galle Fort Lighthouse View', location: 'Galle, Sri Lanka' },
+                { src: 'img/gallery/Gegory Lake Drone View.jpg', title: 'Gregory Lake Drone View', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/Gregory-Lake-1200x630-1.jpg', title: 'Gregory Lake', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/Hakgala Garden.jpg', title: 'Hakgala Botanical Garden', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/Heritage Site , Polonnaruwa.jpg', title: 'Heritage Site Polonnaruwa', location: 'Polonnaruwa, Sri Lanka' },
+                { src: 'img/gallery/Hikkaduwa Beach.jpg', title: 'Hikkaduwa Beach', location: 'Hikkaduwa, Sri Lanka' },
+                { src: 'img/gallery/Hikkaduwa Fisshing.jpg', title: 'Fishing at Hikkaduwa', location: 'Hikkaduwa, Sri Lanka' },
+                { src: 'img/gallery/hikkaduwa-beach-r2qeop92lo5jas0enovjtqeljgbpdm6de1xhrxso60.jpg', title: 'Hikkaduwa Beach Scene', location: 'Hikkaduwa, Sri Lanka' },
+                { src: 'img/gallery/Hiriketiya Serfing 1.jpg', title: 'Surfing at Hiriketiya', location: 'Hiriketiya, Sri Lanka' },
+                { src: 'img/gallery/Hiriketiya Serfing 2.jpg', title: 'Hiriketiya Surf', location: 'Hiriketiya, Sri Lanka' },
+                { src: 'img/gallery/Hiriketiya.webp', title: 'Hiriketiya Beach', location: 'Dikwella, Sri Lanka' },
+                { src: 'img/gallery/Hot Air Blooming, Dambulla.webp', title: 'Hot Air Balloon Dambulla', location: 'Dambulla, Sri Lanka' },
+                { src: 'img/gallery/Hot Air Blooming.jpg', title: 'Hot Air Balloon Ride', location: 'Dambulla, Sri Lanka' },
+                { src: 'img/gallery/Jaffna Foods.jpg', title: 'Jaffna Foods', location: 'Jaffna, Sri Lanka' },
+                { src: 'img/gallery/Jaffna Market.webp', title: 'Jaffna Market', location: 'Jaffna, Sri Lanka' },
+                { src: 'img/gallery/Jungle Beach , Unawatuna.jpg', title: 'Jungle Beach Unawatuna', location: 'Unawatuna, Sri Lanka' },
+                { src: 'img/gallery/jungle-beach-unawatuna-00-1024x768.webp', title: 'Jungle Beach Unawatuna', location: 'Unawatuna, Sri Lanka' },
+                { src: 'img/gallery/Kandy City View.jpg', title: 'Kandy City View', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/Kandy Lake round.webp', title: 'Kandy Lake', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/kandy_tour.jpg', title: 'Kandy City Tour', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/Kandy-Botanical-Garden-sri-lanka.jpg', title: 'Botanical Garden Kandy', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/kandy-view-point.webp', title: 'Kandy View Point', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/Kayts Causeway.jpg', title: 'Kayts Causeway', location: 'Jaffna, Sri Lanka' },
+                { src: 'img/gallery/Keerimalai Natural Hot Springs.jpg', title: 'Keerimalai Hot Springs', location: 'Jaffna, Sri Lanka' },
+                { src: 'img/gallery/Koneshwaram Kovil Statue.webp', title: 'Koneswaram Kovil Statue', location: 'Trincomalee, Sri Lanka' },
+                { src: 'img/gallery/Koneshwaram Kovil.jpg', title: 'Koneswaram Kovil', location: 'Trincomalee, Sri Lanka' },
+                { src: 'img/gallery/Koneshwaram.webp', title: 'Koneswaram Temple', location: 'Trincomalee, Sri Lanka' },
+                { src: 'img/gallery/lake-gregory-park-activities.webp', title: 'Lake Gregory Park Activities', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/Laped Drinking Water.webp', title: 'Leopard Drinking Water', location: 'Yala National Park, Sri Lanka' },
+                { src: 'img/gallery/Lapeds  Fighting , Yala.jpg', title: 'Leopards Fighting', location: 'Yala National Park, Sri Lanka' },
+                { src: 'img/gallery/Lapeds , Yala.jpg', title: 'Leopards in Yala', location: 'Yala National Park, Sri Lanka' },
+                { src: 'img/gallery/Lapeds.jpg', title: 'Leopard in Yala', location: 'Yala National Park, Sri Lanka' },
+                { src: 'img/gallery/Leaf Picking.jpg', title: 'Tea Leaf Picking', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/Light-House_Galle_Sri-Lanka.jpg', title: 'Galle Lighthouse View', location: 'Galle, Sri Lanka' },
+                { src: 'img/gallery/lion-paw-gate , Sigiriya.jpg', title: 'Lion Paw Gate Sigiriya', location: 'Sigiriya, Sri Lanka' },
+                { src: 'img/gallery/Matale-Hindu-Temple.jpg', title: 'Matale Hindu Temple', location: 'Matale, Sri Lanka' },
+                { src: 'img/gallery/Mirissa 1.jpg', title: 'Mirissa Beach', location: 'Mirissa, Sri Lanka' },
+                { src: 'img/gallery/Mirissa Coconet Hills 2.jpeg', title: 'Coconut Hills Mirissa', location: 'Mirissa, Sri Lanka' },
+                { src: 'img/gallery/Mirissa Coconet Hills.jpg', title: 'Mirissa Coconut Tree Hill', location: 'Mirissa, Sri Lanka' },
+                { src: 'img/gallery/Monkey Excursion In Polonnaruwa.jpg', title: 'Monkey Excursion', location: 'Polonnaruwa, Sri Lanka' },
+                { src: 'img/gallery/Nagadeepa Temple.webp', title: 'Nagadeepa Temple', location: 'Jaffna, Sri Lanka' },
+                { src: 'img/gallery/Nalanda Gedige Central.webp', title: 'Nalanda Gedige', location: 'Matale, Sri Lanka' },
+                { src: 'img/gallery/Nalanda Gedige.jpg', title: 'Nalanda Gedige Ancient Temple', location: 'Matale, Sri Lanka' },
+                { src: 'img/gallery/National-parks-Sri-Lanka-tourists-L.jpg', title: 'Sri Lanka National Parks', location: 'Yala National Park, Sri Lanka' },
+                { src: 'img/gallery/Negombo Beach.jpg', title: 'Negombo Beach', location: 'Negombo, Sri Lanka' },
+                { src: 'img/gallery/Negombo Lagoon Relaxation.png', title: 'Negombo Lagoon Relaxation', location: 'Negombo, Sri Lanka' },
+                { src: 'img/gallery/Negombo Lagoon.jpg', title: 'Negombo Lagoon', location: 'Negombo, Sri Lanka' },
+                { src: 'img/gallery/nelligala-dscf1966-1200panoramic.jpg', title: 'Nelligala Panoramic View', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/Nelligala-International-Buddhist-Center.jpg', title: 'Nelligala Buddhist Center', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/Nine Arch Bridge.jpg', title: 'Nine Arch Bridge', location: 'Ella, Sri Lanka' },
+                { src: 'img/gallery/Pasikudha Beach Diving.jpg', title: 'Pasikudah Beach Diving', location: 'Pasikudah, Sri Lanka' },
+                { src: 'img/gallery/Pasikudha Beach Fishing.jpg', title: 'Pasikudah Beach Fishing', location: 'Pasikudah, Sri Lanka' },
+                { src: 'img/gallery/Pasikudha Beach View.jpg', title: 'Pasikudah Beach View', location: 'Pasikudah, Sri Lanka' },
+                { src: 'img/gallery/Peradeniya Botanical Garden.jpg', title: 'Peradeniya Botanical Garden', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/perfect-place-for-a-sit.jpg', title: 'Perfect Place to Relax', location: 'Ella, Sri Lanka' },
+                { src: 'img/gallery/Pidurangala Hike.jpg', title: 'Pidurangala Rock Hike', location: 'Sigiriya, Sri Lanka' },
+                { src: 'img/gallery/Pigen Islend.jpg', title: 'Pigeon Island', location: 'Trincomalee, Sri Lanka' },
+                { src: 'img/gallery/Polonnaruwa Ancient City.jpg', title: 'Polonnaruwa Ancient City', location: 'Polonnaruwa, Sri Lanka' },
+                { src: 'img/gallery/Polonnaruwa-Vejayanta-Pasada-Royal-Palace-of-the-King.webp', title: 'Royal Palace Polonnaruwa', location: 'Polonnaruwa, Sri Lanka' },
+                { src: 'img/gallery/pottuvil-lagoon-safari.webp', title: 'Pottuvil Lagoon Safari', location: 'Arugam Bay, Sri Lanka' },
+                { src: 'img/gallery/Queen_s_Hotel_Kandy_5f7dfa59b5.jpg', title: 'Queens Hotel Kandy', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/ravana-falls-ella-uva-sri-lanka-2019-3.jpg', title: 'Ravana Falls', location: 'Ella, Sri Lanka' },
+                { src: 'img/gallery/Ravana-Falls-Waterfall.webp', title: 'Ravana Falls Waterfall', location: 'Ella, Sri Lanka' },
+                { src: 'img/gallery/Rawana Ella.webp', title: 'Rawana Ella Waterfall', location: 'Ella, Sri Lanka' },
+                { src: 'img/gallery/Relaxing At Pasikudha.jpg', title: 'Relaxing at Pasikudah', location: 'Pasikudah, Sri Lanka' },
+                { src: 'img/gallery/secret-beach-mirissa.jpg', title: 'Secret Beach Mirissa', location: 'Mirissa, Sri Lanka' },
+                { src: 'img/gallery/Secret-Beach-Mirissa.jpg.webp', title: 'Secret Beach Mirissa', location: 'Mirissa, Sri Lanka' },
+                { src: 'img/gallery/Sigiriya-Rock-Fortress-Tour.jpg', title: 'Sigiriya Rock Fortress', location: 'Sigiriya, Sri Lanka' },
+                { src: 'img/gallery/Sigiriya.webp', title: 'Sigiriya Rock', location: 'Sigiriya, Sri Lanka' },
+                { src: 'img/gallery/Sigiriya_Village_Tour.jpg', title: 'Sigiriya Village Tour', location: 'Sigiriya, Sri Lanka' },
+                { src: 'img/gallery/Sri Lankan Traditional Lunch.png', title: 'Sri Lankan Traditional Lunch', location: 'Sigiriya, Sri Lanka' },
+                { src: 'img/gallery/Sri Lankan Village Tour.jpg', title: 'Sri Lankan Village Tour', location: 'Sigiriya, Sri Lanka' },
+                { src: 'img/gallery/Sri-Lanka-train-14-scaled.jpg', title: 'Scenic Train Sri Lanka', location: 'Ella, Sri Lanka' },
+                { src: 'img/gallery/Sunset , Sigiriya.jpg', title: 'Sunset at Sigiriya', location: 'Sigiriya, Sri Lanka' },
+                { src: 'img/gallery/Surfing , Arugam Bay.jpeg', title: 'Surfing at Arugam Bay', location: 'Arugam Bay, Sri Lanka' },
+                { src: 'img/gallery/TAL-header-surfing-hiriketiya-sri-lanka-SURFSRILANKA0225-d53a7360601d415bbf9dfa1bd52a17bc.jpg', title: 'Surfing Hiriketiya', location: 'Hiriketiya, Sri Lanka' },
+                { src: 'img/gallery/tamil-hindu-devotee-performs-para-kavadi-ritual-where-440nw-12164243b.jpg', title: 'Tamil Hindu Kavadi Ritual', location: 'Kandy, Sri Lanka' },
+                { src: 'img/gallery/Tea Leef Picking.jpg', title: 'Tea Leaf Picking', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/Thai Pongal Festival , Jaffna.jpg', title: 'Thai Pongal Festival', location: 'Jaffna, Sri Lanka' },
+                { src: 'img/gallery/Top Of Sigiriay.jpg', title: 'Top of Sigiriya', location: 'Sigiriya, Sri Lanka' },
+                { src: 'img/gallery/Train Ride To Ell.webp', title: 'Train Ride to Ella', location: 'Ella, Sri Lanka' },
+                { src: 'img/gallery/train-on-9-arch-bridge-768x1024.jpeg', title: 'Train on Nine Arch Bridge', location: 'Ella, Sri Lanka' },
+                { src: 'img/gallery/travel-hakgala-botanical-garden.webp', title: 'Hakgala Botanical Garden', location: 'Nuwara Eliya, Sri Lanka' },
+                { src: 'img/gallery/Trincomalee Beach.JPG', title: 'Trincomalee Beach', location: 'Trincomalee, Sri Lanka' },
+                { src: 'img/gallery/Unawatuna Jungle Beach.webp', title: 'Unawatuna Jungle Beach', location: 'Unawatuna, Sri Lanka' },
+                { src: 'img/gallery/Unawatuna.jpg', title: 'Unawatuna Beach', location: 'Unawatuna, Sri Lanka' },
+                { src: 'img/gallery/visit-jungle-beach.webp', title: 'Visit Jungle Beach', location: 'Unawatuna, Sri Lanka' },
+                { src: 'img/gallery/visit-kandalama-lake.webp', title: 'Visit Kandalama Lake', location: 'Dambulla, Sri Lanka' },
+                { src: 'img/gallery/Waligama beach 1.jpeg', title: 'Weligama Beach', location: 'Weligama, Sri Lanka' },
+                { src: 'img/gallery/Waligama beach.jpg', title: 'Weligama Beach View', location: 'Weligama, Sri Lanka' },
+                { src: 'img/gallery/Watadageya, polonnaruwa.jpg', title: 'Watadageya Polonnaruwa', location: 'Polonnaruwa, Sri Lanka' },
+                { src: 'img/gallery/Weligama Beach Serfing.webp', title: 'Weligama Beach Surfing', location: 'Weligama, Sri Lanka' },
+                { src: 'img/gallery/weligama_beach_area__visitweligam_org.jpg', title: 'Weligama Beach Area', location: 'Weligama, Sri Lanka' },
+                { src: 'img/gallery/Wilpaththu Natinal Park.webp', title: 'Wilpattu National Park', location: 'Wilpattu, Sri Lanka' },
+                { src: 'img/gallery/Wilpaththu Safari.jpg', title: 'Wilpattu Safari', location: 'Wilpattu, Sri Lanka' },
+                { src: 'img/gallery/wilpattu elephnts.jpg', title: 'Elephants in Wilpattu', location: 'Wilpattu, Sri Lanka' },
+                { src: 'img/gallery/Yala Safari.jpg', title: 'Yala Safari', location: 'Yala National Park, Sri Lanka' },
+                { src: 'img/gallery/Yala-Sri-Lanka10-819x1024.jpg', title: 'Yala National Park', location: 'Yala, Sri Lanka' }
             ];
 
-            // Update stat numbers
             document.getElementById('statImages').textContent = galleryImages.length + '+';
-            
-            // Calculate unique destinations (simplified)
             const uniqueDestinations = [...new Set(galleryImages.map(img => img.location.split(',')[0].trim()))];
             document.getElementById('statDestinations').textContent = uniqueDestinations.length + '+';
 
-            // Get the gallery grid element
             const galleryGrid = document.getElementById('galleryGrid');
-            
-            // Function to create gallery item HTML
+
             function createGalleryItem(image, index) {
                 const paddedIndex = (index + 1).toString().padStart(2, '0');
-                
                 return `
                     <div class="gallery-item" data-index="${index + 1}">
                         <div class="image-counter">${paddedIndex}</div>
                         <div class="gallery-image-wrapper">
-                            <img src="${image.src}" alt="${image.alt || image.title}" class="gallery-img loading"
+                            <img src="${image.src}" alt="${image.title}" class="gallery-img loading"
                                 data-title="${image.title}" data-location="${image.location}">
                             <div class="gallery-overlay"></div>
                             <div class="gallery-overlay-content">
                                 <h3 class="gallery-item-title">${image.title}</h3>
                                 <p class="gallery-item-location">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    ${image.location}
+                                    <i class="fas fa-map-marker-alt"></i>${image.location}
                                 </p>
                             </div>
                         </div>
                         <button class="view-more-btn" data-index="${index + 1}">
                             <i class="fas fa-expand"></i>
                         </button>
-                    </div>
-                `;
+                    </div>`;
             }
 
-            // Render all gallery items
             function renderGallery() {
-                // Clear loading message
                 galleryGrid.innerHTML = '';
-                
-                // Create and append all gallery items
                 galleryImages.forEach((image, index) => {
                     const itemHTML = createGalleryItem(image, index);
                     galleryGrid.insertAdjacentHTML('beforeend', itemHTML);
                 });
-
-                // Initialize gallery functionality after rendering
                 initializeGallery();
             }
 
-            // Initialize gallery functionality
             function initializeGallery() {
-                // DOM Elements
                 const lightboxModal = document.getElementById('lightboxModal');
                 const lightboxImage = document.getElementById('lightboxImage');
                 const lightboxTitle = document.getElementById('lightboxTitle');
@@ -1236,90 +916,60 @@
                 let currentIndex = 0;
                 let isLightboxOpen = false;
 
-                // Initialize image loading
                 galleryImgs.forEach(img => {
-                    img.addEventListener('load', function() {
-                        this.classList.remove('loading');
-                    });
-                    
+                    img.addEventListener('load', function() { this.classList.remove('loading'); });
                     img.addEventListener('error', function() {
                         this.classList.remove('loading');
                         this.src = 'img/placeholder.jpg';
-                        this.alt = 'Image not available';
                     });
                 });
 
-                // Open lightbox function
                 function openLightbox(index) {
                     currentIndex = index;
                     isLightboxOpen = true;
                     document.body.style.overflow = 'hidden';
-                    
-                    // Show loading spinner
                     lightboxSpinner.style.display = 'block';
                     lightboxImage.classList.remove('loaded');
-                    
-                    // Update lightbox content
                     const imageData = galleryImages[index];
                     lightboxImage.src = imageData.src;
                     lightboxTitle.textContent = imageData.title;
                     lightboxLocation.textContent = imageData.location;
                     lightboxCounter.textContent = `${index + 1} / ${galleryImages.length}`;
-                    
-                    // Show lightbox with animation
-                    setTimeout(() => {
-                        lightboxModal.classList.add('active');
-                    }, 10);
-                    
-                    // Preload next and previous images
+                    setTimeout(() => { lightboxModal.classList.add('active'); }, 10);
                     preloadAdjacentImages(index);
                 }
 
-                // Close lightbox function
                 function closeLightbox() {
                     isLightboxOpen = false;
                     document.body.style.overflow = '';
                     lightboxModal.classList.remove('active');
                 }
 
-                // Navigate to next image
                 function nextImage() {
                     currentIndex = (currentIndex + 1) % galleryImages.length;
                     openLightbox(currentIndex);
                 }
 
-                // Navigate to previous image
                 function prevImage() {
                     currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
                     openLightbox(currentIndex);
                 }
 
-                // Preload adjacent images for smoother navigation
                 function preloadAdjacentImages(index) {
                     const nextIndex = (index + 1) % galleryImages.length;
                     const prevIndex = (index - 1 + galleryImages.length) % galleryImages.length;
-                    
-                    const preloadImages = [];
-                    preloadImages.push(galleryImages[nextIndex].src);
-                    preloadImages.push(galleryImages[prevIndex].src);
-                    
-                    preloadImages.forEach(src => {
+                    [galleryImages[nextIndex].src, galleryImages[prevIndex].src].forEach(src => {
                         const img = new Image();
                         img.src = src;
                     });
                 }
 
-                // Event Listeners
-                // Gallery item click
                 galleryItems.forEach((item, index) => {
                     item.addEventListener('click', (e) => {
-                        if (!e.target.closest('.view-more-btn')) {
-                            openLightbox(index);
-                        }
+                        if (!e.target.closest('.view-more-btn')) openLightbox(index);
                     });
                 });
 
-                // View more button click
                 viewMoreBtns.forEach((btn, index) => {
                     btn.addEventListener('click', (e) => {
                         e.stopPropagation();
@@ -1327,83 +977,54 @@
                     });
                 });
 
-                // Lightbox controls
                 lightboxClose.addEventListener('click', closeLightbox);
                 prevBtn.addEventListener('click', prevImage);
                 nextBtn.addEventListener('click', nextImage);
 
-                // Keyboard navigation
                 document.addEventListener('keydown', (e) => {
                     if (!isLightboxOpen) return;
-                    
                     switch(e.key) {
-                        case 'Escape':
-                            closeLightbox();
-                            break;
-                        case 'ArrowLeft':
-                            prevImage();
-                            break;
-                        case 'ArrowRight':
-                            nextImage();
-                            break;
+                        case 'Escape': closeLightbox(); break;
+                        case 'ArrowLeft': prevImage(); break;
+                        case 'ArrowRight': nextImage(); break;
                     }
                 });
 
-                // Lightbox image load event
                 lightboxImage.addEventListener('load', () => {
                     lightboxSpinner.style.display = 'none';
-                    setTimeout(() => {
-                        lightboxImage.classList.add('loaded');
-                    }, 100);
+                    setTimeout(() => { lightboxImage.classList.add('loaded'); }, 100);
                 });
 
-                // Lightbox image error handling
                 lightboxImage.addEventListener('error', () => {
                     lightboxSpinner.style.display = 'none';
                     lightboxImage.src = 'img/placeholder.jpg';
                     lightboxTitle.textContent = 'Image not available';
                 });
 
-                // Close lightbox when clicking outside image
                 lightboxModal.addEventListener('click', (e) => {
-                    if (e.target === lightboxModal) {
-                        closeLightbox();
-                    }
+                    if (e.target === lightboxModal) closeLightbox();
                 });
 
-                // Initialize gallery items with hover effects
                 galleryItems.forEach(item => {
-                    item.addEventListener('mouseenter', () => {
-                        item.style.zIndex = '10';
-                    });
-                    
-                    item.addEventListener('mouseleave', () => {
-                        item.style.zIndex = '1';
-                    });
+                    item.addEventListener('mouseenter', () => { item.style.zIndex = '10'; });
+                    item.addEventListener('mouseleave', () => { item.style.zIndex = '1'; });
                 });
             }
 
-            // Start rendering the gallery
             renderGallery();
 
-            // Spinner functionality
             window.addEventListener('load', function() {
-                setTimeout(function() {
-                    document.getElementById('spinner').style.display = 'none';
-                }, 500);
+                setTimeout(function() { document.getElementById('spinner').style.display = 'none'; }, 500);
             });
 
-            // Subscribe form functionality
             const subscribeBtn = document.querySelector('.subscribe button');
             if (subscribeBtn) {
                 subscribeBtn.addEventListener('click', function() {
                     const emailInput = document.querySelector('.subscribe input');
                     const email = emailInput.value.trim();
-                    
-                    if (email && validateEmail(email)) {
+                    if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                         this.textContent = 'Subscribed!';
                         this.style.background = '#28a745';
-                        
                         setTimeout(() => {
                             this.textContent = 'Subscribe';
                             this.style.background = '';
@@ -1411,19 +1032,11 @@
                         }, 2000);
                     } else {
                         emailInput.style.borderColor = '#dc3545';
-                        setTimeout(() => {
-                            emailInput.style.borderColor = '';
-                        }, 2000);
+                        setTimeout(() => { emailInput.style.borderColor = ''; }, 2000);
                     }
                 });
             }
 
-            function validateEmail(email) {
-                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return re.test(email);
-            }
-
-            // Navbar scroll effect
             window.addEventListener('scroll', function() {
                 const navbar = document.querySelector('.navbar');
                 if (window.scrollY > 100) {
@@ -1435,38 +1048,24 @@
                 }
             });
 
-            // Smooth scroll for navigation
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
         });
 
-        // Animation initialization function
         function initAnimations() {
             const animatedElements = document.querySelectorAll('.fade-in-up');
-            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
                 });
             }, { threshold: 0.1 });
-            
-            animatedElements.forEach(element => {
-                observer.observe(element);
-            });
+            animatedElements.forEach(element => observer.observe(element));
         }
     </script>
 </body>
-
 </html>
