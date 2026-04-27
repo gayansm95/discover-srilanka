@@ -27,2205 +27,341 @@
 
     <!-- Responsive Styles -->
     <style>
-        /* Base Responsive Styles */
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
+        body { background-color: #ffffff !important; font-family: 'Jost', sans-serif; }
+        img { max-width: 100%; height: auto; }
 
-        body {
-            background-color: #ffffff !important;
-            font-family: 'Jost', sans-serif;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* WhatsApp Floating Button with Pulse Animation */
+        /* WhatsApp Floating Button */
         .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 80px;
-            height: 80px;
-            background-color: #25D366;
-            color: #fff;
-            border-radius: 50%;
-            font-size: 42px;
-            text-align: center;
-            line-height: 80px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-            z-index: 1000;
-            animation: whatsapp-pulse 1.8s infinite;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: fixed; bottom: 20px; right: 20px; width: 80px; height: 80px;
+            background-color: #25D366; color: #fff; border-radius: 50%; font-size: 42px;
+            text-align: center; line-height: 80px; box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+            z-index: 1000; animation: whatsapp-pulse 1.8s infinite; text-decoration: none;
+            display: flex; align-items: center; justify-content: center;
         }
-
-        /* Hover effect */
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            transition: 0.3s ease;
-        }
-
-        /* Pulse animation */
         @keyframes whatsapp-pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+            70% { box-shadow: 0 0 0 25px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
         }
+        @media (max-width: 768px) { .whatsapp-float { width: 60px; height: 60px; font-size: 28px; line-height: 60px; bottom: 15px; right: 15px; } }
+        @media (max-width: 576px) { .whatsapp-float { width: 50px; height: 50px; font-size: 24px; line-height: 50px; bottom: 10px; right: 10px; } }
 
-        /* Mobile responsive */
+        /* Sections */
+        .about-section { background: #ffffff; padding: 100px 0; position: relative; }
+        .packages-section { background: linear-gradient(145deg, #f5f0ff 0%, #ede6ff 100%); padding: 100px 0; position: relative; overflow: hidden; }
+        .contact-section { background: linear-gradient(145deg, #f0f5ff 0%, #e6edfa 100%); padding: 100px 0; position: relative; overflow: hidden; }
+        .blog-section { background: #ffffff; padding: 100px 0; position: relative; }
+
+        /* Packages particles */
+        .packages-particle { position: absolute; border-radius: 50%; background: rgba(153,102,255,0.1); pointer-events: none; z-index: 1; }
+        .packages-particle-1 { width: 100px; height: 100px; top: 20%; left: 15%; animation: floatParticle 12s ease-in-out infinite; }
+        .packages-particle-2 { width: 150px; height: 150px; bottom: 15%; right: 20%; background: rgba(204,102,255,0.08); animation: floatParticle 15s ease-in-out infinite reverse; }
+        .packages-particle-3 { width: 80px; height: 80px; top: 60%; left: 70%; background: rgba(102,51,204,0.07); animation: floatParticle 10s ease-in-out infinite 2s; }
+        .packages-particle-4 { width: 200px; height: 200px; top: 10%; right: 5%; background: rgba(153,51,255,0.05); animation: floatParticle 18s ease-in-out infinite 1s; }
+        @keyframes floatParticle { 0%,100% { transform: translate(0,0) scale(1); } 25% { transform: translate(30px,-30px) scale(1.1); } 50% { transform: translate(50px,20px) scale(0.9); } 75% { transform: translate(-20px,40px) scale(1.05); } }
+
+        /* Contact particles */
+        .contact-particle { position: absolute; border-radius: 50%; pointer-events: none; z-index: 1; }
+        .contact-particle-1 { width: 120px; height: 120px; top: 15%; right: 10%; background: rgba(0,123,255,0.08); animation: floatParticle 14s ease-in-out infinite; }
+        .contact-particle-2 { width: 180px; height: 180px; bottom: 10%; left: 15%; background: rgba(0,200,255,0.06); animation: floatParticle 16s ease-in-out infinite reverse; }
+        .contact-particle-3 { width: 90px; height: 90px; top: 40%; left: 60%; background: rgba(0,150,255,0.07); animation: floatParticle 12s ease-in-out infinite 1s; }
+
+        /* Services section styles */
+        .services-premium-section { background: transparent !important; padding: 0; position: relative; overflow: hidden; }
+        .section-title-wrapper { text-align: center; margin-bottom: 70px; position: relative; z-index: 2; }
+        .section-subtitle { font-size: 18px; color: #1c047b; font-weight: 500; letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase; position: relative; display: inline-block; }
+        .section-subtitle::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: linear-gradient(90deg, #1c047b, #1c047b); border-radius: 2px; }
+        .section-main-title { font-size: 48px; font-weight: 700; color: #1c047b; margin-bottom: 20px; }
+        .section-description { font-size: 18px; color: #1c047b; max-width: 700px; margin: 0 auto; line-height: 1.6; }
+
+        .service-showcase-container { position: relative; z-index: 2; }
+        .service-featured-main { position: relative; height: 500px; border-radius: 25px; overflow: hidden; margin-bottom: 50px; box-shadow: 0 40px 80px rgba(0,0,0,0.4); opacity: 0; transform: perspective(1000px) rotateX(15deg) translateY(100px); animation: featuredCardEntry 1.2s cubic-bezier(0.4,0,0.2,1) forwards; }
+        @keyframes featuredCardEntry { to { opacity: 1; transform: perspective(1000px) rotateX(0) translateY(0); } }
+        .service-featured-bg { position: absolute; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('./img/pkg-cultural-tringle-sigiriya.jpg'); background-size: cover; background-position: center; transition: transform 1.5s ease; }
+        .service-featured-main:hover .service-featured-bg { transform: scale(1.1); }
+        .service-featured-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 50px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); z-index: 2; clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%); transform: translateY(50px); opacity: 0; animation: slideUpContent 0.8s cubic-bezier(0.4,0,0.2,1) 0.6s forwards; }
+        @keyframes slideUpContent { to { transform: translateY(0); opacity: 1; } }
+        .featured-service-tag { display: inline-block; padding: 10px 25px; background: linear-gradient(90deg, #4361ee, #4cc9f0); color: white; border-radius: 50px; font-weight: 600; font-size: 14px; letter-spacing: 1px; margin-bottom: 20px; transform: scale(0); animation: popIn 0.5s cubic-bezier(0.68,-0.55,0.265,1.55) 0.9s forwards; }
+        @keyframes popIn { 0% { transform: scale(0); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+        .featured-service-title { font-size: 42px; font-weight: 700; color: white; margin-bottom: 15px; line-height: 1.2; clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); animation: typewriterTitle 1.5s steps(40) 1.1s forwards, blinkCursor 0.75s step-end infinite 2.6s; white-space: nowrap; overflow: hidden; border-right: 3px solid #4cc9f0; }
+        @keyframes typewriterTitle { to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } }
+        @keyframes blinkCursor { from,to { border-color: transparent; } 50% { border-color: #4cc9f0; } }
+        .featured-service-desc { font-size: 18px; color: #b8c1ec; margin-bottom: 25px; max-width: 600px; line-height: 1.6; opacity: 0; transform: translateX(-30px); animation: slideInParagraph 0.8s cubic-bezier(0.4,0,0.2,1) 1.6s forwards; }
+        @keyframes slideInParagraph { to { opacity: 1; transform: translateX(0); } }
+        .featured-service-cta { display: inline-flex; align-items: center; gap: 10px; padding: 15px 35px; background: linear-gradient(90deg, #f72585, #b5179e); color: white; border-radius: 50px; font-weight: 600; font-size: 16px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(247,37,133,0.3); transform: translateY(30px) rotateX(-90deg); opacity: 0; animation: flipInButton 0.8s cubic-bezier(0.4,0,0.2,1) 1.8s forwards; }
+        @keyframes flipInButton { to { transform: translateY(0) rotateX(0); opacity: 1; } }
+        .featured-service-cta:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 15px 40px rgba(247,37,133,0.4); color: white; }
+
+        /* Service cards */
+        .services-grid-container { position: relative; z-index: 2; margin: 60px 0; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .service-card { position: relative; height: 380px; border-radius: 20px; overflow: hidden; background: #000; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); cursor: pointer; box-shadow: 0 20px 50px rgba(0,0,0,0.3); opacity: 0; transform: perspective(1000px) rotateY(90deg) scale(0.8); animation: cardFlipIn 0.8s cubic-bezier(0.4,0,0.2,1) forwards; }
+        @keyframes cardFlipIn { to { opacity: 1; transform: perspective(1000px) rotateY(0) scale(1); } }
+        .service-card:nth-child(1) { animation-delay: 0.3s; }
+        .service-card:nth-child(2) { animation-delay: 0.4s; }
+        .service-card:nth-child(3) { animation-delay: 0.5s; }
+        .service-card:nth-child(4) { animation-delay: 0.6s; }
+        .service-card:nth-child(5) { animation-delay: 0.7s; }
+        .service-card:nth-child(6) { animation-delay: 0.8s; }
+        .service-card:hover { transform: translateY(-15px) rotateX(5deg) scale(1.05); box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
+        .service-card-bg { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 1.2s ease; filter: brightness(0.8); }
+        .service-card:hover .service-card-bg { transform: scale(1.15); filter: brightness(1); }
+        .service-card:nth-child(1) .service-card-bg { background-image: linear-gradient(rgba(10,36,114,0.7), rgba(10,36,114,0.7)), url('./img/blog-card-daladamaligawa.jpg'); }
+        .service-card:nth-child(2) .service-card-bg { background-image: linear-gradient(rgba(67,97,238,0.7), rgba(67,97,238,0.7)), url('./img/14-day-tour-srilanka.jpg'); }
+        .service-card:nth-child(3) .service-card-bg { background-image: linear-gradient(rgba(247,37,133,0.7), rgba(247,37,133,0.7)), url('./img/kandy-package-card.jpeg'); }
+        .service-card:nth-child(4) .service-card-bg { background-image: linear-gradient(rgba(0,180,216,0.7), rgba(0,180,216,0.7)), url('./img/anuradhapura.jpg'); }
+        .service-card:nth-child(5) .service-card-bg { background-image: linear-gradient(rgba(255,89,94,0.7), rgba(255,89,94,0.7)), url('./img/14-day-tour-srilanka-ella.jpg'); }
+        .service-card:nth-child(6) .service-card-bg { background-image: linear-gradient(rgba(118,209,105,0.7), rgba(118,209,105,0.7)), url('./img/sigiriya.jpeg'); }
+        .service-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 30px; background: linear-gradient(transparent, rgba(0,0,0,0.95)); z-index: 2; }
+        .service-icon { font-size: 40px; color: white; margin-bottom: 15px; text-shadow: 0 5px 15px rgba(0,0,0,0.3); display: inline-flex; align-items: center; justify-content: center; transform: scale(0); animation: iconBounce 0.5s cubic-bezier(0.68,-0.55,0.265,1.55) 1s forwards; position: relative; z-index: 3; background: rgba(0,0,0,0.3); border-radius: 50%; width: 60px; height: 60px; }
+        .service-card:nth-child(1) .service-icon { animation-delay: 0.9s; }
+        .service-card:nth-child(2) .service-icon { animation-delay: 1.0s; }
+        .service-card:nth-child(3) .service-icon { animation-delay: 1.1s; }
+        .service-card:nth-child(4) .service-icon { animation-delay: 1.2s; }
+        .service-card:nth-child(5) .service-icon { animation-delay: 1.3s; }
+        .service-card:nth-child(6) .service-icon { animation-delay: 1.4s; }
+        @keyframes iconBounce { 0% { transform: scale(0); } 50% { transform: scale(1.3); } 70% { transform: scale(0.9); } 100% { transform: scale(1); } }
+        .service-card:hover .service-icon { animation: iconSpin 0.5s ease; }
+        @keyframes iconSpin { 0% { transform: scale(1) rotate(0); } 100% { transform: scale(1.2) rotate(360deg); } }
+        .service-card-title { font-size: 24px; font-weight: 700; color: white; margin-bottom: 10px; line-height: 1.3; opacity: 0; transform: translateX(-30px); animation: slideInTitle 0.5s ease forwards; }
+        .service-card:nth-child(1) .service-card-title { animation-delay: 1.5s; }
+        .service-card:nth-child(2) .service-card-title { animation-delay: 1.6s; }
+        .service-card:nth-child(3) .service-card-title { animation-delay: 1.7s; }
+        .service-card:nth-child(4) .service-card-title { animation-delay: 1.8s; }
+        .service-card:nth-child(5) .service-card-title { animation-delay: 1.9s; }
+        .service-card:nth-child(6) .service-card-title { animation-delay: 2.0s; }
+        @keyframes slideInTitle { to { opacity: 1; transform: translateX(0); } }
+        .service-card-desc { font-size: 14px; color: rgba(255,255,255,0.9); margin-bottom: 20px; line-height: 1.5; opacity: 0; transform: translateY(10px); animation: fadeInUpDesc 0.5s ease forwards; }
+        .service-card:nth-child(1) .service-card-desc { animation-delay: 2.1s; }
+        .service-card:nth-child(2) .service-card-desc { animation-delay: 2.2s; }
+        .service-card:nth-child(3) .service-card-desc { animation-delay: 2.3s; }
+        .service-card:nth-child(4) .service-card-desc { animation-delay: 2.4s; }
+        .service-card:nth-child(5) .service-card-desc { animation-delay: 2.5s; }
+        .service-card:nth-child(6) .service-card-desc { animation-delay: 2.6s; }
+        @keyframes fadeInUpDesc { to { opacity: 1; transform: translateY(0); } }
+        .service-card-features { list-style: none; padding: 0; margin: 0 0 15px 0; }
+        .service-card-features li { color: rgba(255,255,255,0.85); font-size: 13px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; opacity: 0; transform: translateX(-20px); animation: slideInFeature 0.3s ease forwards; }
+        .service-card-features li:nth-child(1) { animation-delay: 2.7s; }
+        .service-card-features li:nth-child(2) { animation-delay: 2.8s; }
+        .service-card-features li:nth-child(3) { animation-delay: 2.9s; }
+        @keyframes slideInFeature { to { opacity: 1; transform: translateX(0); } }
+        .service-card-features li i { color: #4cc9f0; font-size: 12px; }
+        .service-card-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.2); opacity: 0; transform: translateY(10px); animation: fadeInBottom 0.5s ease forwards; }
+        .service-card:nth-child(1) .service-card-bottom { animation-delay: 3.0s; }
+        .service-card:nth-child(2) .service-card-bottom { animation-delay: 3.1s; }
+        .service-card:nth-child(3) .service-card-bottom { animation-delay: 3.2s; }
+        .service-card:nth-child(4) .service-card-bottom { animation-delay: 3.3s; }
+        .service-card:nth-child(5) .service-card-bottom { animation-delay: 3.4s; }
+        .service-card:nth-child(6) .service-card-bottom { animation-delay: 3.5s; }
+        @keyframes fadeInBottom { to { opacity: 1; transform: translateY(0); } }
+        .service-card-price { font-size: 22px; font-weight: 700; color: white; }
+        .service-card-price span { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: normal; }
+        .service-card-cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: linear-gradient(90deg, #f72585, #b5179e); color: white; border-radius: 50px; font-weight: 600; font-size: 13px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(247,37,133,0.3); position: relative; overflow: hidden; }
+        .service-card-cta::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: 0.5s; }
+        .service-card-cta:hover::before { left: 100%; }
+        .service-card-cta:hover { transform: translateX(5px) scale(1.1); box-shadow: 0 8px 20px rgba(247,37,133,0.4); }
+
+        /* Statistics */
+        .services-stats { display: flex; justify-content: space-around; margin: 80px auto 0; max-width: 1000px; position: relative; z-index: 2; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); opacity: 0; transform: translateY(50px); animation: statsReveal 1s cubic-bezier(0.4,0,0.2,1) 3.5s forwards; }
+        @keyframes statsReveal { to { opacity: 1; transform: translateY(0); } }
+        .stat-item { text-align: center; position: relative; padding: 0 20px; opacity: 0; transform: scale(0); animation: statItemPop 0.6s cubic-bezier(0.68,-0.55,0.265,1.55) forwards; }
+        .stat-item:nth-child(1) { animation-delay: 4.0s; }
+        .stat-item:nth-child(2) { animation-delay: 4.1s; }
+        .stat-item:nth-child(3) { animation-delay: 4.2s; }
+        .stat-item:nth-child(4) { animation-delay: 4.3s; }
+        @keyframes statItemPop { 0% { opacity: 0; transform: scale(0); } 50% { transform: scale(1.2); } 70% { transform: scale(0.9); } 100% { opacity: 1; transform: scale(1); } }
+        .stat-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 60px; background: linear-gradient(transparent, rgba(255,255,255,0.3), transparent); }
+        .stat-number { font-size: 48px; font-weight: 700; color: #4cc9f0; margin-bottom: 10px; text-shadow: 0 0 20px rgba(76,201,240,0.3); }
+        .stat-label { font-size: 16px; color: #b8c1ec; font-weight: 500; letter-spacing: 1px; }
+
+        /* CTA */
+        .services-cta-wrapper { text-align: center; margin-top: 70px; position: relative; z-index: 2; opacity: 0; animation: fadeIn 0.8s ease 4.5s forwards; }
+        @keyframes fadeIn { to { opacity: 1; } }
+        .premium-cta-button { display: inline-flex; align-items: center; gap: 15px; padding: 20px 50px; background: linear-gradient(90deg, #f72585 0%, #7209b7 100%); color: white; border-radius: 50px; font-weight: 700; font-size: 18px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 20px 40px rgba(247,37,133,0.3); position: relative; overflow: hidden; animation: buttonFloat 3s ease-in-out infinite 5s; }
+        @keyframes buttonFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .premium-cta-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: 0.5s; }
+        .premium-cta-button:hover::before { left: 100%; }
+        .premium-cta-button:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 25px 50px rgba(247,37,133,0.4); animation: none; }
+
+        /* Floating elements */
+        .floating-element { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(76,201,240,0.1), transparent); z-index: 1; }
+        .floating-element-1 { width: 300px; height: 300px; top: -150px; right: -150px; }
+        .floating-element-2 { width: 200px; height: 200px; bottom: -100px; left: -100px; }
+
+        /* Blog */
+        .blog-cinematic { background: #ffffff; position: relative; padding: 0; overflow: hidden; }
+        .blog-cinematic::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent 48%, rgba(13,110,253,0.05) 50%, transparent 52%); background-size: 10px 10px; opacity: 0; animation: diagonalGrid 20s linear infinite; }
+        @keyframes diagonalGrid { 0% { background-position: 0 0; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { background-position: 100px 100px; opacity: 0; } }
+        .blog-cinematic .text-center { margin-bottom: 50px; position: relative; }
+        .blog-cinematic .text-center h5 { display: inline-block; padding: 10px 30px; background: linear-gradient(90deg, #0d6efd, #00b4ff); color: white; border-radius: 50px; animation: tagBounce 0.6s cubic-bezier(0.68,-0.55,0.265,1.55); }
+        @keyframes tagBounce { 0% { transform: scale(0); } 50% { transform: scale(1.2); } 70% { transform: scale(0.9); } 100% { transform: scale(1); } }
+        .blog-cinematic .text-center h1 { font-size: 48px; margin: 20px 0; color: #1c047b; opacity: 0; transform: translateY(30px); animation: titleSlideIn 0.8s ease 0.3s forwards; }
+        @keyframes titleSlideIn { to { opacity: 1; transform: translateY(0); } }
+        .blog-cinematic .text-center p { max-width: 600px; margin: 0 auto; color: #1c047b; opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s ease 0.5s forwards; }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        .blog-editorial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; perspective: 1000px; }
+        .blog-editorial-card { position: relative; height: 420px; border-radius: 22px; overflow: hidden; background: #000; box-shadow: 0 30px 60px rgba(0,0,0,.12); transition: all 0.6s cubic-bezier(0.4,0,0.2,1); opacity: 0; transform: perspective(1000px) rotateY(90deg) translateX(100px) scale(0.8); animation: blogCardFlipIn 0.8s cubic-bezier(0.4,0,0.2,1) forwards; }
+        @keyframes blogCardFlipIn { to { opacity: 1; transform: perspective(1000px) rotateY(0) translateX(0) scale(1); } }
+        .blog-editorial-card:nth-child(1) { animation-delay: 0.7s; }
+        .blog-editorial-card:nth-child(2) { animation-delay: 0.8s; }
+        .blog-editorial-card:nth-child(3) { animation-delay: 0.9s; }
+        .blog-editorial-card:nth-child(4) { animation-delay: 1.0s; }
+        .blog-editorial-card:nth-child(5) { animation-delay: 1.1s; }
+        .blog-editorial-card:nth-child(6) { animation-delay: 1.2s; }
+        .blog-editorial-card:nth-child(7) { animation-delay: 1.3s; }
+        .blog-editorial-card:nth-child(8) { animation-delay: 1.4s; }
+        .blog-editorial-card:nth-child(9) { animation-delay: 1.5s; }
+        .blog-editorial-card:hover { transform: translateY(-15px) rotateX(5deg) scale(1.05); box-shadow: 0 50px 100px rgba(0,0,0,.2); }
+        .blog-editorial-card img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.1); transition: transform 2s cubic-bezier(0.4,0,0.2,1); filter: brightness(0.9); }
+        .blog-editorial-card:hover img { transform: scale(1.3) rotate(2deg); filter: brightness(1); }
+        .blog-gradient { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 90%); z-index: 1; }
+        .blog-glass { position: absolute; bottom: 20px; left: 20px; right: 20px; padding: 22px; border-radius: 18px; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); z-index: 2; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .blog-tag { display: inline-block; padding: 6px 14px; font-size: 12px; border-radius: 40px; background: linear-gradient(135deg, #0d6efd, #00b4ff); color: #fff; font-weight: 500; margin-bottom: 10px; opacity: 0; transform: translateY(20px); animation: blogTagSlide 0.5s ease 1.6s forwards; }
+        .blog-editorial-card:nth-child(1) .blog-tag { animation-delay: 1.6s; }
+        .blog-editorial-card:nth-child(2) .blog-tag { animation-delay: 1.7s; }
+        .blog-editorial-card:nth-child(3) .blog-tag { animation-delay: 1.8s; }
+        .blog-editorial-card:nth-child(4) .blog-tag { animation-delay: 1.9s; }
+        .blog-editorial-card:nth-child(5) .blog-tag { animation-delay: 2.0s; }
+        .blog-editorial-card:nth-child(6) .blog-tag { animation-delay: 2.1s; }
+        .blog-editorial-card:nth-child(7) .blog-tag { animation-delay: 2.2s; }
+        .blog-editorial-card:nth-child(8) .blog-tag { animation-delay: 2.3s; }
+        .blog-editorial-card:nth-child(9) .blog-tag { animation-delay: 2.4s; }
+        @keyframes blogTagSlide { to { opacity: 1; transform: translateY(0); } }
+        .blog-glass h4 { font-size: 22px; font-weight: 700; margin-bottom: 6px; color: #000; opacity: 0; transform: translateX(-30px); animation: blogTitleSlide 0.5s ease 1.8s forwards; }
+        .blog-editorial-card:nth-child(1) .blog-glass h4 { animation-delay: 1.8s; }
+        .blog-editorial-card:nth-child(2) .blog-glass h4 { animation-delay: 1.9s; }
+        .blog-editorial-card:nth-child(3) .blog-glass h4 { animation-delay: 2.0s; }
+        .blog-editorial-card:nth-child(4) .blog-glass h4 { animation-delay: 2.1s; }
+        .blog-editorial-card:nth-child(5) .blog-glass h4 { animation-delay: 2.2s; }
+        .blog-editorial-card:nth-child(6) .blog-glass h4 { animation-delay: 2.3s; }
+        .blog-editorial-card:nth-child(7) .blog-glass h4 { animation-delay: 2.4s; }
+        .blog-editorial-card:nth-child(8) .blog-glass h4 { animation-delay: 2.5s; }
+        .blog-editorial-card:nth-child(9) .blog-glass h4 { animation-delay: 2.6s; }
+        @keyframes blogTitleSlide { to { opacity: 1; transform: translateX(0); } }
+        .blog-meta { font-size: 13px; color: #555; margin-bottom: 12px; opacity: 0; transform: translateY(10px); animation: blogMetaFade 0.5s ease 2.0s forwards; }
+        .blog-editorial-card:nth-child(1) .blog-meta { animation-delay: 2.0s; }
+        .blog-editorial-card:nth-child(2) .blog-meta { animation-delay: 2.1s; }
+        .blog-editorial-card:nth-child(3) .blog-meta { animation-delay: 2.2s; }
+        .blog-editorial-card:nth-child(4) .blog-meta { animation-delay: 2.3s; }
+        .blog-editorial-card:nth-child(5) .blog-meta { animation-delay: 2.4s; }
+        .blog-editorial-card:nth-child(6) .blog-meta { animation-delay: 2.5s; }
+        .blog-editorial-card:nth-child(7) .blog-meta { animation-delay: 2.6s; }
+        .blog-editorial-card:nth-child(8) .blog-meta { animation-delay: 2.7s; }
+        .blog-editorial-card:nth-child(9) .blog-meta { animation-delay: 2.8s; }
+        @keyframes blogMetaFade { to { opacity: 1; transform: translateY(0); } }
+        .blog-read-more { color: #0d6efd; font-weight: 600; text-decoration: none; letter-spacing: .4px; display: inline-flex; align-items: center; gap: 5px; transition: all 0.3s ease; opacity: 0; transform: translateX(20px); animation: blogReadMoreSlide 0.5s ease 2.2s forwards; }
+        .blog-editorial-card:nth-child(1) .blog-read-more { animation-delay: 2.2s; }
+        .blog-editorial-card:nth-child(2) .blog-read-more { animation-delay: 2.3s; }
+        .blog-editorial-card:nth-child(3) .blog-read-more { animation-delay: 2.4s; }
+        .blog-editorial-card:nth-child(4) .blog-read-more { animation-delay: 2.5s; }
+        .blog-editorial-card:nth-child(5) .blog-read-more { animation-delay: 2.6s; }
+        .blog-editorial-card:nth-child(6) .blog-read-more { animation-delay: 2.7s; }
+        .blog-editorial-card:nth-child(7) .blog-read-more { animation-delay: 2.8s; }
+        .blog-editorial-card:nth-child(8) .blog-read-more { animation-delay: 2.9s; }
+        .blog-editorial-card:nth-child(9) .blog-read-more { animation-delay: 3.0s; }
+        @keyframes blogReadMoreSlide { to { opacity: 1; transform: translateX(0); } }
+        .blog-read-more:hover { gap: 10px; }
+        .blog-featured { grid-column: span 2; height: 480px; }
+
+        /* Subscribe */
+        .subscribe-section { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/carousel-2.jpg') !important; background-size: cover !important; background-position: center !important; background-attachment: fixed !important; padding: 80px 0; }
+        .subscribe-title { display: inline-block; padding: 8px 25px; background: #ffd700; color: #2c3e50; border-radius: 50px; font-weight: 600; font-size: 1rem; margin-bottom: 20px; }
+        .subscribe-section h1 { color: white; font-size: 2.5rem; font-weight: 700; }
+        .subscribe-section p { color: rgba(255,255,255,0.9); font-size: 1.1rem; }
+        .subscribe-section .form-control { border: 2px solid transparent; padding: 15px 25px; border-radius: 50px; font-size: 1rem; transition: all 0.3s ease; }
+        .subscribe-section .form-control:focus { border-color: #ffd700; box-shadow: 0 0 0 0.2rem rgba(255,215,0,0.25); outline: none; }
+        .subscribe-section button { background: #ffd700; border: none; padding: 12px 30px; border-radius: 50px; color: #2c3e50; font-weight: 600; transition: all 0.3s ease; }
+        .subscribe-section button:hover { background: #ffa500; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,215,0,0.3); }
+
+        /* ===== PERFECT TRANSPARENT SEARCH BAR (bottom of carousel) ===== */
+        .carousel-header { position: relative; }
+        .hero-search-bar {
+            position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); z-index: 10;
+            width: 90%; max-width: 1000px; background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px; padding: 15px 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.4); display: flex; align-items: flex-end;
+            gap: 10px; flex-wrap: wrap; justify-content: center;
+        }
+        .hero-search-bar .form-group { flex: 1 1 150px; margin: 0; text-align: left; }
+        .hero-search-bar label { font-size: 0.8rem; font-weight: 600; color: #fff; margin-bottom: 4px; display: block; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+        .hero-search-bar .form-control,
+        .hero-search-bar .form-select {
+            border-radius: 12px; border: 1px solid rgba(255,255,255,0.5); background: rgba(255,255,255,0.15);
+            color: #fff; padding: 10px 14px; font-size: 0.9rem; height: 44px; backdrop-filter: blur(5px);
+        }
+        .hero-search-bar .form-control::placeholder { color: rgba(255,255,255,0.9); }
+        .hero-search-bar .form-control:focus,
+        .hero-search-bar .form-select:focus { background: rgba(255,255,255,0.3); border-color: #ffd700; box-shadow: 0 0 10px rgba(255,215,0,0.3); outline: none; }
+        .hero-search-bar .btn-hero-search {
+            background: linear-gradient(135deg, #3725f7, #1734b5); color: white; border: none;
+            padding: 12px 35px; border-radius: 30px; font-weight: 700; font-size: 1rem;
+            white-space: nowrap; transition: all 0.3s ease; height: 44px; display: flex;
+            align-items: center; gap: 8px; cursor: pointer;
+        }
+        .hero-search-bar .btn-hero-search:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(19, 57, 183, 0.5); }
         @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 60px;
-                height: 60px;
-                font-size: 28px;
-                line-height: 60px;
-                bottom: 15px;
-                right: 15px;
-            }
+            .hero-search-bar { bottom: 50px; padding: 12px; gap: 6px; }
+            .hero-search-bar .form-group { flex: 1 1 100%; }
+            .hero-search-bar .btn-hero-search { width: 100%; justify-content: center; margin-top: 6px; }
         }
 
-        @media (max-width: 576px) {
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-                line-height: 50px;
-                bottom: 10px;
-                right: 10px;
-            }
-        }
-
-        /* About Section - White Background */
-        .about-section {
-            background: #ffffff;
-            padding: 100px 0;
-            position: relative;
-        }
-
-        /* Services Section - White Background */
-        .services-section {
-            background: #ffffff;
-            padding: 100px 0;
-            position: relative;
-        }
-
-        /* Packages Section - With Animated Background */
-        .packages-section {
-            background: linear-gradient(145deg, #f5f0ff 0%, #ede6ff 100%);
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Floating particles for packages section */
-        .packages-particle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(153, 102, 255, 0.1);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .packages-particle-1 {
-            width: 100px;
-            height: 100px;
-            top: 20%;
-            left: 15%;
-            animation: floatParticle 12s ease-in-out infinite;
-        }
-
-        .packages-particle-2 {
-            width: 150px;
-            height: 150px;
-            bottom: 15%;
-            right: 20%;
-            background: rgba(204, 102, 255, 0.08);
-            animation: floatParticle 15s ease-in-out infinite reverse;
-        }
-
-        .packages-particle-3 {
-            width: 80px;
-            height: 80px;
-            top: 60%;
-            left: 70%;
-            background: rgba(102, 51, 204, 0.07);
-            animation: floatParticle 10s ease-in-out infinite 2s;
-        }
-
-        .packages-particle-4 {
-            width: 200px;
-            height: 200px;
-            top: 10%;
-            right: 5%;
-            background: rgba(153, 51, 255, 0.05);
-            animation: floatParticle 18s ease-in-out infinite 1s;
-        }
-
-        @keyframes floatParticle {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-            }
-            25% {
-                transform: translate(30px, -30px) scale(1.1);
-            }
-            50% {
-                transform: translate(50px, 20px) scale(0.9);
-            }
-            75% {
-                transform: translate(-20px, 40px) scale(1.05);
-            }
-        }
-
-        /* Contact Section - With Animated Background */
-        .contact-section {
-            background: linear-gradient(145deg, #f0f5ff 0%, #e6edfa 100%);
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Floating particles for contact section */
-        .contact-particle {
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .contact-particle-1 {
-            width: 120px;
-            height: 120px;
-            top: 15%;
-            right: 10%;
-            background: rgba(0, 123, 255, 0.08);
-            animation: floatParticle 14s ease-in-out infinite;
-        }
-
-        .contact-particle-2 {
-            width: 180px;
-            height: 180px;
-            bottom: 10%;
-            left: 15%;
-            background: rgba(0, 200, 255, 0.06);
-            animation: floatParticle 16s ease-in-out infinite reverse;
-        }
-
-        .contact-particle-3 {
-            width: 90px;
-            height: 90px;
-            top: 40%;
-            left: 60%;
-            background: rgba(0, 150, 255, 0.07);
-            animation: floatParticle 12s ease-in-out infinite 1s;
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% {
-                opacity: 0.5;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.8;
-                transform: scale(1.1);
-            }
-        }
-
-        @keyframes floatSlow {
-            0%, 100% {
-                transform: translate(0, 0);
-            }
-            50% {
-                transform: translate(30px, -30px);
-            }
-        }
-
-        /* Blog Section - White Background */
-        .blog-section {
-            background: #ffffff;
-            padding: 100px 0;
-            position: relative;
-        }
-
-        /* ================= ENHANCED SERVICES SECTION ================= */
-        .services-premium-section {
-            background: transparent !important;
-            padding: 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .services-premium-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 30%, rgba(67, 97, 238, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(76, 201, 240, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(247, 37, 133, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .section-title-wrapper {
-            text-align: center;
-            margin-bottom: 70px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-subtitle {
-            font-size: 18px;
-            color: #1c047b;
-            font-weight: 500;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-subtitle::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #1c047b, #1c047b);
-            border-radius: 2px;
-        }
-
-        .section-main-title {
-            font-size: 48px;
-            font-weight: 700;
-            color: #1c047b;
-            margin-bottom: 20px;
-        }
-
-        .section-description {
-            font-size: 18px;
-            color: #1c047b;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Service Showcase Container */
-        .service-showcase-container {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Featured Main Service */
-        .service-featured-main {
-            position: relative;
-            height: 500px;
-            border-radius: 25px;
-            overflow: hidden;
-            margin-bottom: 50px;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-            opacity: 0;
-            transform: perspective(1000px) rotateX(15deg) translateY(100px);
-            animation: featuredCardEntry 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        @keyframes featuredCardEntry {
-            to {
-                opacity: 1;
-                transform: perspective(1000px) rotateX(0) translateY(0);
-            }
-        }
-
-        .service-featured-bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('./img/pkg-cultural-tringle-sigiriya.jpg');
-            background-size: cover;
-            background-position: center;
-            transition: transform 1.5s ease;
-        }
-
-        .service-featured-main:hover .service-featured-bg {
-            transform: scale(1.1);
-        }
-
-        .service-featured-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 50px;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-            z-index: 2;
-            clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
-            transform: translateY(50px);
-            opacity: 0;
-            animation: slideUpContent 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
-        }
-
-        @keyframes slideUpContent {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .featured-service-tag {
-            display: inline-block;
-            padding: 10px 25px;
-            background: linear-gradient(90deg, #4361ee, #4cc9f0);
-            color: white;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            transform: scale(0);
-            animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.9s forwards;
-        }
-
-        @keyframes popIn {
-            0% {
-                transform: scale(0);
-            }
-
-            50% {
-                transform: scale(1.2);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .featured-service-title {
-            font-size: 42px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 15px;
-            line-height: 1.2;
-            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-            animation: typewriterTitle 1.5s steps(40) 1.1s forwards, blinkCursor 0.75s step-end infinite 2.6s;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid #4cc9f0;
-        }
-
-        @keyframes typewriterTitle {
-            to {
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            }
-        }
-
-        @keyframes blinkCursor {
-
-            from,
-            to {
-                border-color: transparent;
-            }
-
-            50% {
-                border-color: #4cc9f0;
-            }
-        }
-
-        .featured-service-desc {
-            font-size: 18px;
-            color: #b8c1ec;
-            margin-bottom: 25px;
-            max-width: 600px;
-            line-height: 1.6;
-            opacity: 0;
-            transform: translateX(-30px);
-            animation: slideInParagraph 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1.6s forwards;
-        }
-
-        @keyframes slideInParagraph {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .featured-service-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 35px;
-            background: linear-gradient(90deg, #f72585, #b5179e);
-            color: white;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 16px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(247, 37, 133, 0.3);
-            transform: translateY(30px) rotateX(-90deg);
-            opacity: 0;
-            animation: flipInButton 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1.8s forwards;
-        }
-
-        @keyframes flipInButton {
-            to {
-                transform: translateY(0) rotateX(0);
-                opacity: 1;
-            }
-        }
-
-        .featured-service-cta:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(247, 37, 133, 0.4);
-            color: white;
-            animation: pulseButton 0.5s ease;
-        }
-
-        @keyframes pulseButton {
-            0% {
-                transform: translateY(-3px) scale(1.05);
-            }
-
-            50% {
-                transform: translateY(-3px) scale(1.1);
-            }
-
-            100% {
-                transform: translateY(-3px) scale(1.05);
-            }
-        }
-
-        /* FIXED SERVICE CARDS */
-        .services-grid-container {
-            position: relative;
-            z-index: 2;
-            margin: 60px 0;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .service-card {
-            position: relative;
-            height: 380px;
-            border-radius: 20px;
-            overflow: hidden;
-            background: #000;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            transform: perspective(1000px) rotateY(90deg) scale(0.8);
-            animation: cardFlipIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        @keyframes cardFlipIn {
-            to {
-                opacity: 1;
-                transform: perspective(1000px) rotateY(0) scale(1);
-            }
-        }
-
-        .service-card:nth-child(1) {
-            animation-delay: 0.3s;
-        }
-
-        .service-card:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        .service-card:nth-child(3) {
-            animation-delay: 0.5s;
-        }
-
-        .service-card:nth-child(4) {
-            animation-delay: 0.6s;
-        }
-
-        .service-card:nth-child(5) {
-            animation-delay: 0.7s;
-        }
-
-        .service-card:nth-child(6) {
-            animation-delay: 0.8s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-15px) rotateX(5deg) scale(1.05);
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
-        }
-
-        .service-card-bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            transition: transform 1.2s ease;
-            filter: brightness(0.8);
-        }
-
-        .service-card:hover .service-card-bg {
-            transform: scale(1.15);
-            filter: brightness(1);
-        }
-
-        /* Different background images for each card */
-        .service-card:nth-child(1) .service-card-bg {
-            background-image: linear-gradient(rgba(10, 36, 114, 0.7), rgba(10, 36, 114, 0.7)), url('./img/blog-card-daladamaligawa.jpg');
-        }
-
-        .service-card:nth-child(2) .service-card-bg {
-            background-image: linear-gradient(rgba(67, 97, 238, 0.7), rgba(67, 97, 238, 0.7)), url('./img/14-day-tour-srilanka.jpg');
-        }
-
-        .service-card:nth-child(3) .service-card-bg {
-            background-image: linear-gradient(rgba(247, 37, 133, 0.7), rgba(247, 37, 133, 0.7)), url('./img/kandy-package-card.jpeg');
-        }
-
-        .service-card:nth-child(4) .service-card-bg {
-            background-image: linear-gradient(rgba(0, 180, 216, 0.7), rgba(0, 180, 216, 0.7)), url('./img/anuradhapura.jpg');
-        }
-
-        .service-card:nth-child(5) .service-card-bg {
-            background-image: linear-gradient(rgba(255, 89, 94, 0.7), rgba(255, 89, 94, 0.7)), url('./img/14-day-tour-srilanka-ella.jpg');
-        }
-
-        .service-card:nth-child(6) .service-card-bg {
-            background-image: linear-gradient(rgba(118, 209, 105, 0.7), rgba(118, 209, 105, 0.7)), url('./img/sigiriya.jpeg');
-        }
-
-        /* FIXED: Card content always visible */
-        .service-card-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 30px;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
-            z-index: 2;
-        }
-
-        /* OPTIMIZED SERVICE ICONS FOR ALL DEVICES */
-        .service-icon {
-            font-size: 40px;
-            color: white;
-            margin-bottom: 15px;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            display: inline-block;
-            transform: scale(0);
-            animation: iconBounce 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1s forwards;
-            /* Ensure icons are properly visible */
-            position: relative;
-            z-index: 3;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 10px;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .service-card:nth-child(1) .service-icon {
-            animation-delay: 0.9s;
-        }
-
-        .service-card:nth-child(2) .service-icon {
-            animation-delay: 1.0s;
-        }
-
-        .service-card:nth-child(3) .service-icon {
-            animation-delay: 1.1s;
-        }
-
-        .service-card:nth-child(4) .service-icon {
-            animation-delay: 1.2s;
-        }
-
-        .service-card:nth-child(5) .service-icon {
-            animation-delay: 1.3s;
-        }
-
-        .service-card:nth-child(6) .service-icon {
-            animation-delay: 1.4s;
-        }
-
-        @keyframes iconBounce {
-            0% {
-                transform: scale(0);
-            }
-
-            50% {
-                transform: scale(1.3);
-            }
-
-            70% {
-                transform: scale(0.9);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .service-card:hover .service-icon {
-            animation: iconSpin 0.5s ease;
-        }
-
-        @keyframes iconSpin {
-            0% {
-                transform: scale(1) rotate(0);
-            }
-
-            100% {
-                transform: scale(1.2) rotate(360deg);
-            }
-        }
-
-        .service-card-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 10px;
-            line-height: 1.3;
-            opacity: 0;
-            transform: translateX(-30px);
-            animation: slideInTitle 0.5s ease forwards;
-        }
-
-        .service-card:nth-child(1) .service-card-title {
-            animation-delay: 1.5s;
-        }
-
-        .service-card:nth-child(2) .service-card-title {
-            animation-delay: 1.6s;
-        }
-
-        .service-card:nth-child(3) .service-card-title {
-            animation-delay: 1.7s;
-        }
-
-        .service-card:nth-child(4) .service-card-title {
-            animation-delay: 1.8s;
-        }
-
-        .service-card:nth-child(5) .service-card-title {
-            animation-delay: 1.9s;
-        }
-
-        .service-card:nth-child(6) .service-card-title {
-            animation-delay: 2.0s;
-        }
-
-        @keyframes slideInTitle {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .service-card-desc {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 20px;
-            line-height: 1.5;
-            opacity: 0;
-            transform: translateY(10px);
-            animation: fadeInUpDesc 0.5s ease forwards;
-        }
-
-        .service-card:nth-child(1) .service-card-desc {
-            animation-delay: 2.1s;
-        }
-
-        .service-card:nth-child(2) .service-card-desc {
-            animation-delay: 2.2s;
-        }
-
-        .service-card:nth-child(3) .service-card-desc {
-            animation-delay: 2.3s;
-        }
-
-        .service-card:nth-child(4) .service-card-desc {
-            animation-delay: 2.4s;
-        }
-
-        .service-card:nth-child(5) .service-card-desc {
-            animation-delay: 2.5s;
-        }
-
-        .service-card:nth-child(6) .service-card-desc {
-            animation-delay: 2.6s;
-        }
-
-        @keyframes fadeInUpDesc {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .service-card-features {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 15px 0;
-        }
-
-        .service-card-features li {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 13px;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            opacity: 0;
-            transform: translateX(-20px);
-            animation: slideInFeature 0.3s ease forwards;
-        }
-
-        .service-card-features li:nth-child(1) {
-            animation-delay: 2.7s;
-        }
-
-        .service-card-features li:nth-child(2) {
-            animation-delay: 2.8s;
-        }
-
-        .service-card-features li:nth-child(3) {
-            animation-delay: 2.9s;
-        }
-
-        @keyframes slideInFeature {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .service-card-features li i {
-            color: #4cc9f0;
-            font-size: 12px;
-        }
-
-        .service-card-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            opacity: 0;
-            transform: translateY(10px);
-            animation: fadeInBottom 0.5s ease forwards;
-        }
-
-        .service-card:nth-child(1) .service-card-bottom {
-            animation-delay: 3.0s;
-        }
-
-        .service-card:nth-child(2) .service-card-bottom {
-            animation-delay: 3.1s;
-        }
-
-        .service-card:nth-child(3) .service-card-bottom {
-            animation-delay: 3.2s;
-        }
-
-        .service-card:nth-child(4) .service-card-bottom {
-            animation-delay: 3.3s;
-        }
-
-        .service-card:nth-child(5) .service-card-bottom {
-            animation-delay: 3.4s;
-        }
-
-        .service-card:nth-child(6) .service-card-bottom {
-            animation-delay: 3.5s;
-        }
-
-        @keyframes fadeInBottom {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .service-card-price {
-            font-size: 22px;
-            font-weight: 700;
-            color: white;
-        }
-
-        .service-card-price span {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: normal;
-        }
-
-        .service-card-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background: linear-gradient(90deg, #f72585, #b5179e);
-            color: white;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 13px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .service-card-cta:hover::before {
-            left: 100%;
-        }
-
-        .service-card-cta:hover {
-            transform: translateX(5px) scale(1.1);
-            box-shadow: 0 8px 20px rgba(247, 37, 133, 0.4);
-            color: white;
-            animation: ctaGlow 0.5s ease;
-        }
-
-        @keyframes ctaGlow {
-            0% {
-                box-shadow: 0 8px 20px rgba(247, 37, 133, 0.4);
-            }
-
-            50% {
-                box-shadow: 0 8px 30px rgba(247, 37, 133, 0.8);
-            }
-
-            100% {
-                box-shadow: 0 8px 20px rgba(247, 37, 133, 0.4);
-            }
-        }
-
-        /* Statistics Section */
-        .services-stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 80px auto 0;
-            max-width: 1000px;
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0;
-            transform: translateY(50px);
-            animation: statsReveal 1s cubic-bezier(0.4, 0, 0.2, 1) 3.5s forwards;
-        }
-
-        @keyframes statsReveal {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .stat-item {
-            text-align: center;
-            position: relative;
-            padding: 0 20px;
-            opacity: 0;
-            transform: scale(0);
-            animation: statItemPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-        }
-
-        .stat-item:nth-child(1) {
-            animation-delay: 4.0s;
-        }
-
-        .stat-item:nth-child(2) {
-            animation-delay: 4.1s;
-        }
-
-        .stat-item:nth-child(3) {
-            animation-delay: 4.2s;
-        }
-
-        .stat-item:nth-child(4) {
-            animation-delay: 4.3s;
-        }
-
-        @keyframes statItemPop {
-            0% {
-                opacity: 0;
-                transform: scale(0);
-            }
-
-            50% {
-                transform: scale(1.2);
-            }
-
-            70% {
-                transform: scale(0.9);
-            }
-
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .stat-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 1px;
-            height: 60px;
-            background: linear-gradient(transparent, rgba(255, 255, 255, 0.3), transparent);
-        }
-
-        .stat-number {
-            font-size: 48px;
-            font-weight: 700;
-            color: #4cc9f0;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(76, 201, 240, 0.3);
-        }
-
-        .stat-label {
-            font-size: 16px;
-            color: #b8c1ec;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        /* CTA Button */
-        .services-cta-wrapper {
-            text-align: center;
-            margin-top: 70px;
-            position: relative;
-            z-index: 2;
-            opacity: 0;
-            animation: fadeIn 0.8s ease 4.5s forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        .premium-cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px 50px;
-            background: linear-gradient(90deg, #f72585 0%, #7209b7 100%);
-            color: white;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 18px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 20px 40px rgba(247, 37, 133, 0.3);
-            position: relative;
-            overflow: hidden;
-            animation: buttonFloat 3s ease-in-out infinite 5s;
-        }
-
-        @keyframes buttonFloat {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .premium-cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .premium-cta-button:hover::before {
-            left: 100%;
-        }
-
-        .premium-cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 25px 50px rgba(247, 37, 133, 0.4);
-            animation: none;
-        }
-
-        /* Floating Elements */
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(76, 201, 240, 0.1), transparent);
-            z-index: 1;
-        }
-
-        .floating-element-1 {
-            width: 300px;
-            height: 300px;
-            top: -150px;
-            right: -150px;
-        }
-
-        .floating-element-2 {
-            width: 200px;
-            height: 200px;
-            bottom: -100px;
-            left: -100px;
-        }
-
-        /* ================= ENHANCED BLOG SECTION ================= */
-        .blog-cinematic {
-            background: #ffffff;
-            position: relative;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        .blog-cinematic::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 48%, rgba(13, 110, 253, 0.05) 50%, transparent 52%);
-            background-size: 10px 10px;
-            opacity: 0;
-            animation: diagonalGrid 20s linear infinite;
-        }
-
-        @keyframes diagonalGrid {
-            0% {
-                background-position: 0 0;
-                opacity: 0;
-            }
-
-            10% {
-                opacity: 1;
-            }
-
-            90% {
-                opacity: 1;
-            }
-
-            100% {
-                background-position: 100px 100px;
-                opacity: 0;
-            }
-        }
-
-        .blog-cinematic .text-center {
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .blog-cinematic .text-center h5 {
-            display: inline-block;
-            padding: 10px 30px;
-            background: linear-gradient(90deg, #0d6efd, #00b4ff);
-            color: white;
-            border-radius: 50px;
-            animation: tagBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        @keyframes tagBounce {
-            0% {
-                transform: scale(0);
-            }
-
-            50% {
-                transform: scale(1.2);
-            }
-
-            70% {
-                transform: scale(0.9);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .blog-cinematic .text-center h1 {
-            font-size: 48px;
-            margin: 20px 0;
-            color: #1c047b;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: titleSlideIn 0.8s ease 0.3s forwards;
-        }
-
-        @keyframes titleSlideIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .blog-cinematic .text-center p {
-            max-width: 600px;
-            margin: 0 auto;
-            color: #1c047b;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease 0.5s forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .blog-editorial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            perspective: 1000px;
-        }
-
-        .blog-editorial-card {
-            position: relative;
-            height: 420px;
-            border-radius: 22px;
-            overflow: hidden;
-            background: #000;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, .12);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0;
-            transform: perspective(1000px) rotateY(90deg) translateX(100px) scale(0.8);
-            animation: blogCardFlipIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        @keyframes blogCardFlipIn {
-            to {
-                opacity: 1;
-                transform: perspective(1000px) rotateY(0) translateX(0) scale(1);
-            }
-        }
-
-        .blog-editorial-card:nth-child(1) {
-            animation-delay: 0.7s;
-        }
-
-        .blog-editorial-card:nth-child(2) {
-            animation-delay: 0.8s;
-        }
-
-        .blog-editorial-card:nth-child(3) {
-            animation-delay: 0.9s;
-        }
-
-        .blog-editorial-card:nth-child(4) {
-            animation-delay: 1.0s;
-        }
-
-        .blog-editorial-card:nth-child(5) {
-            animation-delay: 1.1s;
-        }
-
-        .blog-editorial-card:nth-child(6) {
-            animation-delay: 1.2s;
-        }
-
-        .blog-editorial-card:nth-child(7) {
-            animation-delay: 1.3s;
-        }
-
-        .blog-editorial-card:nth-child(8) {
-            animation-delay: 1.4s;
-        }
-
-        .blog-editorial-card:nth-child(9) {
-            animation-delay: 1.5s;
-        }
-
-        .blog-editorial-card:hover {
-            transform: translateY(-15px) rotateX(5deg) scale(1.05);
-            box-shadow: 0 50px 100px rgba(0, 0, 0, .2);
-        }
-
-        .blog-editorial-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: scale(1.1);
-            transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
-            filter: brightness(0.9);
-        }
-
-        .blog-editorial-card:hover img {
-            transform: scale(1.3) rotate(2deg);
-            filter: brightness(1);
-        }
-
-        /* FIXED: Blog content always visible */
-        .blog-gradient {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 90%);
-            z-index: 1;
-        }
-
-        .blog-glass {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            padding: 22px;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 2;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .blog-tag {
-            display: inline-block;
-            padding: 6px 14px;
-            font-size: 12px;
-            border-radius: 40px;
-            background: linear-gradient(135deg, #0d6efd, #00b4ff);
-            color: #fff;
-            font-weight: 500;
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: blogTagSlide 0.5s ease 1.6s forwards;
-        }
-
-        .blog-editorial-card:nth-child(1) .blog-tag {
-            animation-delay: 1.6s;
-        }
-
-        .blog-editorial-card:nth-child(2) .blog-tag {
-            animation-delay: 1.7s;
-        }
-
-        .blog-editorial-card:nth-child(3) .blog-tag {
-            animation-delay: 1.8s;
-        }
-
-        .blog-editorial-card:nth-child(4) .blog-tag {
-            animation-delay: 1.9s;
-        }
-
-        .blog-editorial-card:nth-child(5) .blog-tag {
-            animation-delay: 2.0s;
-        }
-
-        .blog-editorial-card:nth-child(6) .blog-tag {
-            animation-delay: 2.1s;
-        }
-
-        .blog-editorial-card:nth-child(7) .blog-tag {
-            animation-delay: 2.2s;
-        }
-
-        .blog-editorial-card:nth-child(8) .blog-tag {
-            animation-delay: 2.3s;
-        }
-
-        .blog-editorial-card:nth-child(9) .blog-tag {
-            animation-delay: 2.4s;
-        }
-
-        @keyframes blogTagSlide {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .blog-glass h4 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: #000;
-            opacity: 0;
-            transform: translateX(-30px);
-            animation: blogTitleSlide 0.5s ease 1.8s forwards;
-        }
-
-        .blog-editorial-card:nth-child(1) .blog-glass h4 {
-            animation-delay: 1.8s;
-        }
-
-        .blog-editorial-card:nth-child(2) .blog-glass h4 {
-            animation-delay: 1.9s;
-        }
-
-        .blog-editorial-card:nth-child(3) .blog-glass h4 {
-            animation-delay: 2.0s;
-        }
-
-        .blog-editorial-card:nth-child(4) .blog-glass h4 {
-            animation-delay: 2.1s;
-        }
-
-        .blog-editorial-card:nth-child(5) .blog-glass h4 {
-            animation-delay: 2.2s;
-        }
-
-        .blog-editorial-card:nth-child(6) .blog-glass h4 {
-            animation-delay: 2.3s;
-        }
-
-        .blog-editorial-card:nth-child(7) .blog-glass h4 {
-            animation-delay: 2.4s;
-        }
-
-        .blog-editorial-card:nth-child(8) .blog-glass h4 {
-            animation-delay: 2.5s;
-        }
-
-        .blog-editorial-card:nth-child(9) .blog-glass h4 {
-            animation-delay: 2.6s;
-        }
-
-        @keyframes blogTitleSlide {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .blog-meta {
-            font-size: 13px;
-            color: #555;
-            margin-bottom: 12px;
-            opacity: 0;
-            transform: translateY(10px);
-            animation: blogMetaFade 0.5s ease 2.0s forwards;
-        }
-
-        .blog-editorial-card:nth-child(1) .blog-meta {
-            animation-delay: 2.0s;
-        }
-
-        .blog-editorial-card:nth-child(2) .blog-meta {
-            animation-delay: 2.1s;
-        }
-
-        .blog-editorial-card:nth-child(3) .blog-meta {
-            animation-delay: 2.2s;
-        }
-
-        .blog-editorial-card:nth-child(4) .blog-meta {
-            animation-delay: 2.3s;
-        }
-
-        .blog-editorial-card:nth-child(5) .blog-meta {
-            animation-delay: 2.4s;
-        }
-
-        .blog-editorial-card:nth-child(6) .blog-meta {
-            animation-delay: 2.5s;
-        }
-
-        .blog-editorial-card:nth-child(7) .blog-meta {
-            animation-delay: 2.6s;
-        }
-
-        .blog-editorial-card:nth-child(8) .blog-meta {
-            animation-delay: 2.7s;
-        }
-
-        .blog-editorial-card:nth-child(9) .blog-meta {
-            animation-delay: 2.8s;
-        }
-
-        @keyframes blogMetaFade {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .blog-read-more {
-            color: #0d6efd;
-            font-weight: 600;
-            text-decoration: none;
-            letter-spacing: .4px;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateX(20px);
-            animation: blogReadMoreSlide 0.5s ease 2.2s forwards;
-        }
-
-        .blog-editorial-card:nth-child(1) .blog-read-more {
-            animation-delay: 2.2s;
-        }
-
-        .blog-editorial-card:nth-child(2) .blog-read-more {
-            animation-delay: 2.3s;
-        }
-
-        .blog-editorial-card:nth-child(3) .blog-read-more {
-            animation-delay: 2.4s;
-        }
-
-        .blog-editorial-card:nth-child(4) .blog-read-more {
-            animation-delay: 2.5s;
-        }
-
-        .blog-editorial-card:nth-child(5) .blog-read-more {
-            animation-delay: 2.6s;
-        }
-
-        .blog-editorial-card:nth-child(6) .blog-read-more {
-            animation-delay: 2.7s;
-        }
-
-        .blog-editorial-card:nth-child(7) .blog-read-more {
-            animation-delay: 2.8s;
-        }
-
-        .blog-editorial-card:nth-child(8) .blog-read-more {
-            animation-delay: 2.9s;
-        }
-
-        .blog-editorial-card:nth-child(9) .blog-read-more {
-            animation-delay: 3.0s;
-        }
-
-        @keyframes blogReadMoreSlide {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .blog-read-more:hover {
-            gap: 10px;
-        }
-
-        .blog-read-more i {
-            transition: transform .3s ease;
-            animation: arrowPulse 1s ease-in-out infinite;
-        }
-
-        @keyframes arrowPulse {
-
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-
-            50% {
-                transform: translateX(3px);
-            }
-        }
-
-        .blog-read-more:hover i {
-            transform: translateX(6px);
-            animation: none;
-        }
-
-        .blog-featured {
-            grid-column: span 2;
-            height: 480px;
-        }
-
-        /* Subscribe Section - Original Style */
-        .subscribe-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/carousel-2.jpg') !important;
-            background-size: cover !important;
-            background-position: center !important;
-            background-attachment: fixed !important;
-            padding: 80px 0;
-        }
-
-        .subscribe-title {
-            display: inline-block;
-            padding: 8px 25px;
-            background: #ffd700;
-            color: #2c3e50;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-
-        .subscribe-section h1 {
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        .subscribe-section p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-        }
-
-        .subscribe-section .form-control {
-            border: 2px solid transparent;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .subscribe-section .form-control:focus {
-            border-color: #ffd700;
-            box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
-            outline: none;
-        }
-
-        .subscribe-section button {
-            background: #ffd700;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            color: #2c3e50;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .subscribe-section button:hover {
-            background: #ffa500;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-        }
-
-        /* ================= RESPONSIVE DESIGN ================= */
-        /* Large Desktop (1200px and above) */
-        @media (min-width: 1200px) {
-            .services-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
-            }
-
-            .blog-editorial-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .service-card {
-                height: 380px;
-            }
-
-            .service-icon {
-                font-size: 40px;
-                width: 60px;
-                height: 60px;
-            }
-        }
-
-        /* Desktop (992px to 1199px) */
-        @media (min-width: 992px) and (max-width: 1199px) {
-            .services-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 25px;
-            }
-
-            .blog-editorial-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .service-card {
-                height: 360px;
-            }
-
-            .service-icon {
-                font-size: 38px;
-                width: 55px;
-                height: 55px;
-            }
-
-            .section-main-title {
-                font-size: 42px;
-            }
-        }
-
-        /* Tablet Landscape (768px to 991px) */
+        /* Responsive Grid */
+        @media (min-width: 1200px) { .services-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; } .blog-editorial-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 992px) and (max-width: 1199px) { .services-grid { grid-template-columns: repeat(3, 1fr); gap: 25px; } .blog-editorial-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (min-width: 768px) and (max-width: 991px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
-            }
-
-            .blog-editorial-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
-            }
-
-            .blog-featured {
-                grid-column: span 1;
-                height: 420px;
-            }
-
-            .service-card {
-                height: 350px;
-            }
-
-            .service-icon {
-                font-size: 36px;
-                width: 50px;
-                height: 50px;
-                padding: 8px;
-            }
-
-            .service-card-title {
-                font-size: 22px;
-            }
-
-            .service-card-desc {
-                font-size: 13px;
-            }
-
-            .section-main-title {
-                font-size: 36px;
-            }
-
-            .featured-service-title {
-                font-size: 32px;
-            }
-
-            .featured-service-desc {
-                font-size: 16px;
-            }
-
-            .services-stats {
-                flex-direction: column;
-                gap: 30px;
-                padding: 30px 20px;
-                margin: 40px auto 0;
-            }
-
-            .stat-item:not(:last-child)::after {
-                display: none;
-            }
-
-            .stat-item {
-                padding: 20px 0;
-            }
-
-            .stat-number {
-                font-size: 36px;
-            }
-
-            .blog-cinematic .text-center h1 {
-                font-size: 36px;
-            }
+            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; } .blog-editorial-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+            .blog-featured { grid-column: span 1; height: 420px; } .service-card { height: 350px; }
+            .section-main-title { font-size: 36px; } .services-stats { flex-direction: column; gap: 30px; padding: 30px 20px; margin: 40px auto 0; }
+            .stat-item:not(:last-child)::after { display: none; } .stat-item { padding: 20px 0; }
         }
-
-        /* Tablet Portrait (576px to 767px) */
         @media (min-width: 576px) and (max-width: 767px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .blog-editorial-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .service-card {
-                height: 320px;
-            }
-
-            .service-card-content {
-                padding: 20px;
-            }
-
-            .service-icon {
-                font-size: 32px;
-                width: 48px;
-                height: 48px;
-                padding: 8px;
-                margin-bottom: 12px;
-            }
-
-            .service-card-title {
-                font-size: 20px;
-                margin-bottom: 8px;
-            }
-
-            .service-card-desc {
-                font-size: 13px;
-                margin-bottom: 15px;
-            }
-
-            .service-card-price {
-                font-size: 20px;
-            }
-
-            .service-card-cta {
-                padding: 8px 16px;
-                font-size: 12px;
-            }
-
-            .section-main-title {
-                font-size: 32px;
-            }
-
-            .section-description {
-                font-size: 16px;
-                padding: 0 15px;
-            }
-
-            .featured-service-main {
-                height: 400px;
-                margin-bottom: 30px;
-            }
-
-            .featured-service-content {
-                padding: 30px;
-            }
-
-            .featured-service-title {
-                font-size: 28px;
-                white-space: normal;
-                overflow: visible;
-                animation: none;
-                border-right: none;
-            }
-
-            .featured-service-desc {
-                font-size: 15px;
-            }
-
-            .featured-service-cta {
-                padding: 12px 25px;
-                font-size: 14px;
-            }
-
-            .services-premium-section {
-                padding: 60px 0;
-            }
-
-            .blog-cinematic .text-center h1 {
-                font-size: 32px;
-            }
-
-            .blog-editorial-card {
-                height: 350px;
-            }
-
-            .blog-glass {
-                padding: 15px;
-                bottom: 15px;
-                left: 15px;
-                right: 15px;
-            }
-
-            .blog-glass h4 {
-                font-size: 18px;
-            }
-
-            .blog-tag {
-                font-size: 11px;
-                padding: 5px 10px;
-            }
+            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } .blog-editorial-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .service-card { height: 320px; } .section-main-title { font-size: 32px; }
+            .featured-service-main { height: 400px; } .featured-service-title { font-size: 28px; white-space: normal; overflow: visible; animation: none; border-right: none; }
         }
-
-        /* Mobile (up to 575px) */
         @media (max-width: 575px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .blog-editorial-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .blog-featured {
-                grid-column: span 1;
-                height: 300px;
-            }
-
-            .service-card {
-                height: 300px;
-            }
-
-            .service-card-content {
-                padding: 15px;
-            }
-
-            .service-icon {
-                font-size: 30px;
-                width: 45px;
-                height: 45px;
-                padding: 7px;
-                margin-bottom: 10px;
-            }
-
-            .service-card-title {
-                font-size: 18px;
-                margin-bottom: 8px;
-            }
-
-            .service-card-desc {
-                font-size: 12px;
-                margin-bottom: 12px;
-            }
-
-            .service-card-features li {
-                font-size: 11px;
-            }
-
-            .service-card-price {
-                font-size: 18px;
-            }
-
-            .service-card-price span {
-                font-size: 11px;
-            }
-
-            .service-card-cta {
-                padding: 7px 14px;
-                font-size: 11px;
-            }
-
-            .service-card-bottom {
-                padding-top: 12px;
-            }
-
-            .section-main-title {
-                font-size: 28px;
-            }
-
-            .section-subtitle {
-                font-size: 16px;
-            }
-
-            .section-description {
-                font-size: 15px;
-                padding: 0 15px;
-            }
-
-            .featured-service-main {
-                height: 350px;
-                margin-bottom: 25px;
-            }
-
-            .featured-service-content {
-                padding: 20px;
-            }
-
-            .featured-service-tag {
-                padding: 8px 20px;
-                font-size: 12px;
-            }
-
-            .featured-service-title {
-                font-size: 24px;
-                white-space: normal;
-                overflow: visible;
-                animation: none;
-                border-right: none;
-            }
-
-            .featured-service-desc {
-                font-size: 14px;
-            }
-
-            .featured-service-cta {
-                padding: 10px 20px;
-                font-size: 13px;
-            }
-
-            .services-premium-section {
-                padding: 50px 0;
-            }
-
-            .services-stats {
-                padding: 20px 15px;
-                gap: 25px;
-            }
-
-            .stat-number {
-                font-size: 28px;
-            }
-
-            .stat-label {
-                font-size: 14px;
-            }
-
-            .premium-cta-button {
-                padding: 15px 30px;
-                font-size: 16px;
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .blog-cinematic .text-center h1 {
-                font-size: 28px;
-            }
-
-            .blog-cinematic .text-center h5 {
-                padding: 8px 20px;
-                font-size: 14px;
-            }
-
-            .blog-cinematic .text-center p {
-                padding: 0 15px;
-            }
-
-            .blog-editorial-card {
-                height: 300px;
-            }
-
-            .blog-glass {
-                padding: 12px;
-                bottom: 12px;
-                left: 12px;
-                right: 12px;
-            }
-
-            .blog-glass h4 {
-                font-size: 16px;
-            }
-
-            .blog-tag {
-                font-size: 10px;
-                padding: 4px 8px;
-            }
-
-            .blog-meta {
-                font-size: 12px;
-            }
-
-            .blog-read-more {
-                font-size: 13px;
-            }
+            .services-grid { grid-template-columns: 1fr; gap: 20px; } .blog-editorial-grid { grid-template-columns: 1fr; gap: 20px; }
+            .blog-featured { grid-column: span 1; height: 300px; } .service-card { height: 300px; }
+            .section-main-title { font-size: 28px; } .featured-service-main { height: 350px; }
+            .featured-service-title { font-size: 24px; white-space: normal; overflow: visible; animation: none; border-right: none; }
+            .premium-cta-button { padding: 15px 30px; font-size: 16px; flex-direction: column; gap: 8px; }
         }
 
-        /* Extra Small Mobile (up to 375px) */
-        @media (max-width: 375px) {
-            .service-card {
-                height: 280px;
-            }
-
-            .service-card-content {
-                padding: 12px;
-            }
-
-            .service-icon {
-                font-size: 28px;
-                width: 40px;
-                height: 40px;
-                padding: 6px;
-            }
-
-            .service-card-title {
-                font-size: 16px;
-            }
-
-            .service-card-desc {
-                font-size: 11px;
-            }
-
-            .featured-service-title {
-                font-size: 22px;
-            }
-
-            .blog-editorial-card {
-                height: 280px;
-            }
-
-            .section-main-title {
-                font-size: 24px;
-            }
-        }
-
-        /* Navigation Responsive */
+        /* Mobile navigation white background */
         @media (max-width: 991.98px) {
-            .navbar-collapse {
-                background: rgba(0, 0, 0, 0.95);
-                padding: 20px;
-                border-radius: 10px;
-                margin-top: 10px;
-                backdrop-filter: blur(10px);
-            }
-
-            .navbar-nav .nav-link {
-                padding: 12px 0;
-                font-size: 1.1rem;
-                text-align: center;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .navbar-nav .nav-link:last-child {
-                border-bottom: none;
-            }
-
-            .navbar .btn-primary {
-                margin: 15px auto;
-                display: block;
-                width: 80%;
-                max-width: 250px;
-            }
+            .navbar-collapse { background: rgba(255,255,255,0.98); padding: 20px; border-radius: 10px; margin-top: 10px; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            .navbar-nav .nav-link { color: #333 !important; padding: 12px 0; font-size: 1.1rem; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.1); }
+            .navbar-nav .nav-link:last-child { border-bottom: none; }
+            .navbar .btn-primary { margin: 15px auto; display: block; width: 80%; max-width: 250px; }
+            .navbar-toggler { border: 1px solid rgba(0,0,0,0.2); color: #333; }
         }
-
-        /* Carousel Responsive */
         @media (max-width: 768px) {
-            .carousel-caption h1.display-2 {
-                font-size: 2.5rem !important;
-                line-height: 1.2;
-            }
-
-            .carousel-caption h4 {
-                font-size: 1.2rem !important;
-            }
-
-            .carousel-caption p {
-                font-size: 1rem !important;
-            }
-
-            .carousel-caption .btn {
-                padding: 10px 25px !important;
-                font-size: 14px;
-            }
+            .carousel-caption h1.display-2 { font-size: 2.5rem !important; line-height: 1.2; }
+            .carousel-caption h4 { font-size: 1.2rem !important; }
+            .carousel-caption p { font-size: 1rem !important; }
         }
-
         @media (max-width: 576px) {
-            .carousel-caption h1.display-2 {
-                font-size: 1.8rem !important;
-            }
-
-            .carousel-caption h4 {
-                font-size: 1rem !important;
-            }
-
-            .carousel-caption .btn {
-                padding: 8px 20px !important;
-                font-size: 13px;
-            }
+            .carousel-caption h1.display-2 { font-size: 1.8rem !important; }
+            .carousel-caption h4 { font-size: 1rem !important; }
         }
-
-        /* About Section Responsive */
-        @media (max-width: 992px) {
-            .about-section .row {
-                text-align: center;
-            }
-
-            .about-section .col-lg-5 {
-                margin-bottom: 30px;
-            }
-
-            .section-about-title {
-                text-align: left;
-            }
-
-            .about-section h1 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Contact Section Responsive */
-        @media (max-width: 768px) {
-            .contact-section .col-lg-4 {
-                margin-bottom: 30px;
-            }
-
-            .contact-section form {
-                padding: 0 15px;
-            }
-
-            .contact-section h2 {
-                font-size: 1.8rem;
-                text-align: center;
-            }
-
-            .contact-section p {
-                text-align: center;
-            }
-        }
-
-        /* Subscribe Section Responsive */
-        @media (max-width: 768px) {
-            .subscribe-section .form-control {
-                font-size: 14px;
-                padding: 10px 20px;
-            }
-
-            .subscribe-section button {
-                position: relative !important;
-                margin-top: 15px;
-                width: 100%;
-                display: block;
-            }
-
-            .subscribe-section .position-relative {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .subscribe-section h1 {
-                font-size: 1.8rem;
-            }
-        }
+        @media (max-width: 992px) { .about-section .row { text-align: center; } .about-section .col-lg-5 { margin-bottom: 30px; } .about-section h1 { font-size: 2rem; } }
+        @media (max-width: 768px) { .contact-section .col-lg-4 { margin-bottom: 30px; } .contact-section h2 { font-size: 1.8rem; text-align: center; } .contact-section p { text-align: center; } }
+        @media (max-width: 768px) { .subscribe-section .form-control { font-size: 14px; padding: 10px 20px; } .subscribe-section button { position: relative !important; margin-top: 15px; width: 100%; display: block; } .subscribe-section .position-relative { display: flex; flex-direction: column; } .subscribe-section h1 { font-size: 1.8rem; } }
     </style>
 </head>
 
 <body>
 
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <!-- Spinner -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <!-- Spinner End -->
 
-    <!-- Navbar & Hero Start -->
+    <!-- Navbar & Hero -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="./index.html" class="navbar-brand p-0">
@@ -2248,7 +384,7 @@
             </div>
         </nav>
 
-        <!-- Carousel Start -->
+        <!-- Carousel -->
         <div class="carousel-header">
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
                 <ol class="carousel-indicators">
@@ -2262,14 +398,8 @@
                         <div class="carousel-caption">
                             <div class="p-3" style="max-width: 1000px;">
                                 <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Welcome To World's Paradise!</h4>
-                                <h2 class="display-2 text-capitalize text-white mb-4">Your Perfect Tour Awaits in the
-                                    Wonder of Asia</h2>
-                                <p class="mb-5 fs-5">A small island with a thousand unforgettable journeys, framed by
-                                    golden beaches.</p>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5"
-                                        href="./gallery.html">Discover Now</a>
-                                </div>
+                                <h2 class="display-2 text-capitalize text-white mb-4">Your Perfect Tour Awaits in the Wonder of Asia</h2>
+                                <p class="mb-5 fs-5">A small island with a thousand unforgettable journeys, framed by golden beaches.</p>
                             </div>
                         </div>
                     </div>
@@ -2277,16 +407,9 @@
                         <img src="img/carousel-2.jpg" class="img-fluid" alt="Image">
                         <div class="carousel-caption">
                             <div class="p-3" style="max-width: 900px;">
-                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore
-                                    Sri Lanka Beyond Borders!</h4>
-                                <h1 class="display-2 text-capitalize text-white mb-4">Find Your Perfect Journey with US
-                                </h1>
-                                <p class="mb-5 fs-5">Discover our best packages, premium services, and facilities for
-                                    unforgettable travel experiences</p>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5"
-                                        href="./services.html">Discover Now</a>
-                                </div>
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore Sri Lanka Beyond Borders!</h4>
+                                <h1 class="display-2 text-capitalize text-white mb-4">Find Your Perfect Journey with US</h1>
+                                <p class="mb-5 fs-5">Discover our best packages, premium services, and facilities for unforgettable travel experiences</p>
                             </div>
                         </div>
                     </div>
@@ -2294,16 +417,9 @@
                         <img src="img/carousel-3.jpg" class="img-fluid" alt="Image">
                         <div class="carousel-caption">
                             <div class="p-3" style="max-width: 900px;">
-                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 2px;">Discover
-                                    Sri Lanka's rich culture and ancient history</h4>
-                                <h1 class="display-2 text-capitalize text-white mb-4">Answer the Call of Sri Lanka's
-                                    Magic!</h1>
-                                <p class="mb-5 fs-5">Explore our blog and discover amazing destinations, tips, and
-                                    unforgettable Sri Lanka experiences</p>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5"
-                                        href="./blog.html">Discover Now</a>
-                                </div>
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 2px;">Discover Sri Lanka's rich culture and ancient history</h4>
+                                <h1 class="display-2 text-capitalize text-white mb-4">Answer the Call of Sri Lanka's Magic!</h1>
+                                <p class="mb-5 fs-5">Explore our blog and discover amazing destinations, tips, and unforgettable Sri Lanka experiences</p>
                             </div>
                         </div>
                     </div>
@@ -2317,382 +433,248 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-        </div>
-        <!-- Carousel End -->
-    </div>
-    <!-- Navbar & Hero End -->
 
-    <!-- About Section Start -->
+            <!-- Perfect Transparent Search Bar (Moved a bit above) -->
+            <div class="hero-search-bar">
+                <div class="form-group">
+                    <label><i class="fas fa-calendar-alt"></i> Trip Duration (days) *</label>
+                    <input type="number" id="durationInput" class="form-control" placeholder="e.g. 7" min="1" max="30">
+                </div>
+                <div class="form-group">
+                    <label><i class="far fa-calendar"></i> Traveling Date</label>
+                    <input type="date" class="form-control" id="travelDate">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Adults</label>
+                    <input type="number" class="form-control" id="adults" value="2" min="1" max="10">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-child"></i> Children</label>
+                    <input type="number" class="form-control" id="children" value="0" min="0" max="10">
+                </div>
+                <button class="btn-hero-search" onclick="searchRedirect()">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
     <div class="about-section">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5">
-                    <div class="h-100">
-                        <img src="img/sri-lankan-travel-map.png" class="img-fluid w-100 h-100" alt="">
-                    </div>
+                    <div class="h-100"><img src="img/sri-lankan-travel-map.png" class="img-fluid w-100 h-100" alt=""></div>
                 </div>
-                <div class="col-lg-7"
-                    style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8));">
+                <div class="col-lg-7" style="background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8));">
                     <h1 class="mb-4">Welcome to <span class="text-primary">Ceylon Travellers Travel & Tours</span></h1>
-
                     <h5 class="section-about-title pe-3">About Us</h5>
-                    <p class="mb-4">Ceylon Travellers Travel & Tours is a trusted, family-run Sri Lanka tour operator
-                        creating authentic,
-                        personalized journeys across the island. From golden beaches and lush hill country to wildlife
-                        safaris and ancient heritage sites, we design unforgettable experiences rooted in local culture,
-                        sustainability, and genuine Sri Lankan hospitality.</p>
-
+                    <p class="mb-4">Ceylon Travellers Travel & Tours is a trusted, family-run Sri Lanka tour operator creating authentic, personalized journeys across the island. From golden beaches and lush hill country to wildlife safaris and ancient heritage sites, we design unforgettable experiences rooted in local culture, sustainability, and genuine Sri Lankan hospitality.</p>
                     <h5 class="section-about-title pe-3">Our Vision</h5>
-                    <p class="mb-4">Our vision is to be a globally recognized Sri Lanka tour operator, delivering
-                        authentic
-                        and sustainable travel experiences. We aim to protect nature, celebrate culture, empower local
-                        communities,
-                        and inspire responsible travel while creating unforgettable journeys across Sri Lanka.</p>
-
+                    <p class="mb-4">Our vision is to be a globally recognized Sri Lanka tour operator, delivering authentic and sustainable travel experiences. We aim to protect nature, celebrate culture, empower local communities, and inspire responsible travel while creating unforgettable journeys across Sri Lanka.</p>
                     <h5 class="section-about-title pe-3">Our Mission</h5>
-                    <p class="mb-4">Our mission is to deliver high-quality, responsible travel experiences in Sri Lanka
-                        through ethical,
-                        eco-friendly tours that support local communities, protect nature, and celebrate culture—while
-                        providing
-                        personalized service and unforgettable journeys for every traveler.</p>
+                    <p class="mb-4">Our mission is to deliver high-quality, responsible travel experiences in Sri Lanka through ethical, eco-friendly tours that support local communities, protect nature, and celebrate culture—while providing personalized service and unforgettable journeys for every traveler.</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- About Section End -->
 
-    <!-- Packages Section Start - With Charming Animated Background -->
-    <div class="packages-section">
+    <!-- Packages Section -->
+    <div class="packages-section" id="packagesSection">
         <div class="packages-particle packages-particle-1"></div>
         <div class="packages-particle packages-particle-2"></div>
         <div class="packages-particle packages-particle-3"></div>
         <div class="packages-particle packages-particle-4"></div>
         <div class="container">
-            <!-- Services Section Start -->
-    <div >
-        <section>
-            <!-- Floating Elements -->
-            <div class="floating-element floating-element-1"></div>
-            <div class="floating-element floating-element-2"></div>
-
-            <div class="container">
-                <div class="section-title-wrapper">
-                    <div class="section-subtitle">Premium Experiences</div>
-                    <h2 class="section-main-title">Exclusive Sri Lanka Tours</h2>
-                    <p class="section-description">
-                        Discover our handcrafted journeys that blend luxury, culture, and adventure.
-                        Each experience is meticulously designed to create unforgettable memories in the Pearl of the Indian
-                        Ocean.
-                    </p>
-                </div>
-
-                <!-- Featured Service Showcase -->
-                <div class="service-showcase-container">
-                    <div class="service-featured-main">
-                        <div class="service-featured-bg"></div>
-                        <div class="service-featured-content">
-                            <span class="featured-service-tag">Featured Experience</span>
-                            <h3 class="featured-service-title">Signature Cultural Triangle Journey</h3>
-                            <p class="featured-service-desc">
-                                Immerse yourself in Sri Lanka's rich heritage with our exclusive 5-day tour covering
-                                ancient kingdoms, UNESCO World Heritage sites, and cultural marvels. Includes private
-                                guides, luxury accommodation, and authentic culinary experiences.
-                            </p>
-                            <a href="./pkg-sri-lanka-cultural-trangle.html" class="featured-service-cta">
-                                <span class="service-card-cta">Explore This Journey<i class="fas fa-arrow-right"></i></span>
-                            </a>
+            <section>
+                <div class="floating-element floating-element-1"></div>
+                <div class="floating-element floating-element-2"></div>
+                <div class="container">
+                    <div class="section-title-wrapper">
+                        <div class="section-subtitle">Premium Experiences</div>
+                        <h2 class="section-main-title">Exclusive Sri Lanka Tours</h2>
+                        <p class="section-description">Discover our handcrafted journeys that blend luxury, culture, and adventure. Each experience is meticulously designed to create unforgettable memories in the Pearl of the Indian Ocean.</p>
+                    </div>
+                    <div class="service-showcase-container">
+                        <div class="service-featured-main">
+                            <div class="service-featured-bg"></div>
+                            <div class="service-featured-content">
+                                <span class="featured-service-tag">Featured Experience</span>
+                                <h3 class="featured-service-title">Signature Cultural Triangle Journey</h3>
+                                <p class="featured-service-desc">Immerse yourself in Sri Lanka's rich heritage with our exclusive 5-day tour covering ancient kingdoms, UNESCO World Heritage sites, and cultural marvels.</p>
+                                <a href="./pkg-sri-lanka-cultural-trangle.html" class="featured-service-cta">
+                                    <span class="service-card-cta">Explore This Journey<i class="fas fa-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="services-grid-container">
+                            <div class="services-grid" id="packagesGrid">
+                                <a href="./pkg-own-tour.html" class="service-card" data-duration="custom">
+                                    <div class="service-card-bg"></div>
+                                    <div class="service-card-content">
+                                        <i class="fas fa-globe-americas service-icon"></i>
+                                        <h3 class="service-card-title">Design Your Sri Lanka Journey</h3>
+                                        <p class="service-card-desc">Create your perfect itinerary with our expert guidance. Tailor-made experiences just for you.</p>
+                                        <ul class="service-card-features">
+                                            <li><i class="fas fa-check"></i> Personalized itinerary</li>
+                                            <li><i class="fas fa-check"></i> Local expert guidance</li>
+                                            <li><i class="fas fa-check"></i> Flexible scheduling</li>
+                                        </ul>
+                                        <div class="service-card-bottom">
+                                            <div class="service-card-price">Custom <span>Starting from</span></div>
+                                            <span class="service-card-cta">Design Now <i class="fas fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="./pkg-14-day-tour.html" class="service-card" data-duration="14">
+                                    <div class="service-card-bg"></div>
+                                    <div class="service-card-content">
+                                        <i class="fas fa-calendar-alt service-icon"></i>
+                                        <h3 class="service-card-title">Complete Sri Lanka Experience</h3>
+                                        <p class="service-card-desc">Perfectly paced tour covering beaches, wildlife, culture, and hill country in two weeks.</p>
+                                        <ul class="service-card-features">
+                                            <li><i class="fas fa-check"></i> All major attractions</li>
+                                            <li><i class="fas fa-check"></i> Wildlife safari included</li>
+                                            <li><i class="fas fa-check"></i> Luxury accommodation</li>
+                                        </ul>
+                                        <div class="service-card-bottom">
+                                            <div class="service-card-price">$2,499 <span>Per person</span></div>
+                                            <span class="service-card-cta">View Details <i class="fas fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="./pkg-kandy-day-tour.html" class="service-card" data-duration="1">
+                                    <div class="service-card-bg"></div>
+                                    <div class="service-card-content">
+                                        <i class="fas fa-university service-icon"></i>
+                                        <h3 class="service-card-title">Kandy Cultural Day Tour</h3>
+                                        <p class="service-card-desc">Discover Sri Lanka's last kingdom with temple visits, cultural shows, and scenic beauty.</p>
+                                        <ul class="service-card-features">
+                                            <li><i class="fas fa-check"></i> Temple of the Tooth</li>
+                                            <li><i class="fas fa-check"></i> Cultural show</li>
+                                            <li><i class="fas fa-check"></i> Botanical gardens</li>
+                                        </ul>
+                                        <div class="service-card-bottom">
+                                            <div class="service-card-price">$129 <span>Per person</span></div>
+                                            <span class="service-card-cta">Explore Kandy <i class="fas fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="./pkg-sri-lanka-cultural-trangle.html" class="service-card" data-duration="5">
+                                    <div class="service-card-bg"></div>
+                                    <div class="service-card-content">
+                                        <i class="fas fa-landmark service-icon"></i>
+                                        <h3 class="service-card-title">Ancient Heritage Exploration</h3>
+                                        <p class="service-card-desc">Journey through time visiting ancient kingdoms and UNESCO World Heritage sites.</p>
+                                        <ul class="service-card-features">
+                                            <li><i class="fas fa-check"></i> Sigiriya Rock Fortress</li>
+                                            <li><i class="fas fa-check"></i> Ancient cities</li>
+                                            <li><i class="fas fa-check"></i> Expert guides</li>
+                                        </ul>
+                                        <div class="service-card-bottom">
+                                            <div class="service-card-price">$899 <span>Per person</span></div>
+                                            <span class="service-card-cta">Discover Heritage <i class="fas fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="./pkg-11-day-tour.html" class="service-card" data-duration="11">
+                                    <div class="service-card-bg"></div>
+                                    <div class="service-card-content">
+                                        <i class="fas fa-star service-icon"></i>
+                                        <h3 class="service-card-title">Sri Lanka Highlights Tour</h3>
+                                        <p class="service-card-desc">Perfect for first-time visitors covering all must-see destinations in Sri Lanka.</p>
+                                        <ul class="service-card-features">
+                                            <li><i class="fas fa-check"></i> Tea plantations</li>
+                                            <li><i class="fas fa-check"></i> Wildlife safari</li>
+                                            <li><i class="fas fa-check"></i> Beach relaxation</li>
+                                        </ul>
+                                        <div class="service-card-bottom">
+                                            <div class="service-card-price">$1,799 <span>Per person</span></div>
+                                            <span class="service-card-cta">See Highlights <i class="fas fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="./pkg-kandy-sigiriya-dambulla-tour.html" class="service-card" data-duration="3">
+                                    <div class="service-card-bg"></div>
+                                    <div class="service-card-content">
+                                        <i class="fas fa-mountain service-icon"></i>
+                                        <h3 class="service-card-title">Sigiriya Rock & Caves Tour</h3>
+                                        <p class="service-card-desc">Conquer the Lion Rock and explore ancient cave temples in this breathtaking adventure.</p>
+                                        <ul class="service-card-features">
+                                            <li><i class="fas fa-check"></i> Sigiriya climb</li>
+                                            <li><i class="fas fa-check"></i> Dambulla caves</li>
+                                            <li><i class="fas fa-check"></i> Scenic views</li>
+                                        </ul>
+                                        <div class="service-card-bottom">
+                                            <div class="service-card-price">$499 <span>Per person</span></div>
+                                            <span class="service-card-cta">Start Adventure <i class="fas fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- Fixed Service Cards Grid -->
-                    <div class="services-grid-container">
-                        <div class="services-grid">
-                            <!-- Card 1 - Custom Tour -->
-                            <a href="./pkg-own-tour.html" class="service-card">
-                                <div class="service-card-bg"></div>
-                                <div class="service-card-content">
-                                    <i class="fas fa-globe-americas service-icon"></i>
-                                    <h3 class="service-card-title">Design Your Sri Lanka Journey</h3>
-                                    <p class="service-card-desc">Create your perfect itinerary with our expert guidance.
-                                        Tailor-made experiences just for you.</p>
-                                    <ul class="service-card-features">
-                                        <li><i class="fas fa-check"></i> Personalized itinerary</li>
-                                        <li><i class="fas fa-check"></i> Local expert guidance</li>
-                                        <li><i class="fas fa-check"></i> Flexible scheduling</li>
-                                    </ul>
-                                    <div class="service-card-bottom">
-                                        <div class="service-card-price">Custom <span>Starting from</span></div>
-                                        <span class="service-card-cta">Design Now <i class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Card 2 - 14 Day Tour -->
-                            <a href="./pkg-14-day-tour.html" class="service-card">
-                                <div class="service-card-bg"></div>
-                                <div class="service-card-content">
-                                    <i class="fas fa-calendar-alt service-icon"></i>
-                                    <h3 class="service-card-title">Complete Sri Lanka Experience</h3>
-                                    <p class="service-card-desc">Perfectly paced tour covering beaches, wildlife, culture,
-                                        and hill country in two weeks.</p>
-                                    <ul class="service-card-features">
-                                        <li><i class="fas fa-check"></i> All major attractions</li>
-                                        <li><i class="fas fa-check"></i> Wildlife safari included</li>
-                                        <li><i class="fas fa-check"></i> Luxury accommodation</li>
-                                    </ul>
-                                    <div class="service-card-bottom">
-                                        <div class="service-card-price">$2,499 <span>Per person</span></div>
-                                        <span class="service-card-cta">View Details <i
-                                                class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Card 3 - Kandy Tour -->
-                            <a href="./pkg-kandy-day-tour.html" class="service-card">
-                                <div class="service-card-bg"></div>
-                                <div class="service-card-content">
-                                    <i class="fas fa-university service-icon"></i>
-                                    <h3 class="service-card-title">Kandy Cultural Day Tour</h3>
-                                    <p class="service-card-desc">Discover Sri Lanka's last kingdom with temple visits,
-                                        cultural shows, and scenic beauty.</p>
-                                    <ul class="service-card-features">
-                                        <li><i class="fas fa-check"></i> Temple of the Tooth</li>
-                                        <li><i class="fas fa-check"></i> Cultural show</li>
-                                        <li><i class="fas fa-check"></i> Botanical gardens</li>
-                                    </ul>
-                                    <div class="service-card-bottom">
-                                        <div class="service-card-price">$129 <span>Per person</span></div>
-                                        <span class="service-card-cta">Explore Kandy <i
-                                                class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Card 4 - Cultural Triangle -->
-                            <a href="./pkg-sri-lanka-cultural-trangle.html" class="service-card">
-                                <div class="service-card-bg"></div>
-                                <div class="service-card-content">
-                                    <i class="fas fa-landmark service-icon"></i>
-                                    <h3 class="service-card-title">Ancient Heritage Exploration</h3>
-                                    <p class="service-card-desc">Journey through time visiting ancient kingdoms and UNESCO
-                                        World Heritage sites.</p>
-                                    <ul class="service-card-features">
-                                        <li><i class="fas fa-check"></i> Sigiriya Rock Fortress</li>
-                                        <li><i class="fas fa-check"></i> Ancient cities</li>
-                                        <li><i class="fas fa-check"></i> Expert guides</li>
-                                    </ul>
-                                    <div class="service-card-bottom">
-                                        <div class="service-card-price">$899 <span>Per person</span></div>
-                                        <span class="service-card-cta">Discover Heritage <i
-                                                class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Card 5 - Highlights Tour -->
-                            <a href="./pkg-11-day-tour.html" class="service-card">
-                                <div class="service-card-bg"></div>
-                                <div class="service-card-content">
-                                    <i class="fas fa-star service-icon"></i>
-                                    <h3 class="service-card-title">Sri Lanka Highlights Tour</h3>
-                                    <p class="service-card-desc">Perfect for first-time visitors covering all must-see
-                                        destinations in Sri Lanka.</p>
-                                    <ul class="service-card-features">
-                                        <li><i class="fas fa-check"></i> Tea plantations</li>
-                                        <li><i class="fas fa-check"></i> Wildlife safari</li>
-                                        <li><i class="fas fa-check"></i> Beach relaxation</li>
-                                    </ul>
-                                    <div class="service-card-bottom">
-                                        <div class="service-card-price">$1,799 <span>Per person</span></div>
-                                        <span class="service-card-cta">See Highlights <i
-                                                class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Card 6 - Sigiriya Tour -->
-                            <a href="./pkg-kandy-sigiriya-dambulla-tour.html" class="service-card">
-                                <div class="service-card-bg"></div>
-                                <div class="service-card-content">
-                                    <i class="fas fa-mountain service-icon"></i>
-                                    <h3 class="service-card-title">Sigiriya Rock & Caves Tour</h3>
-                                    <p class="service-card-desc">Conquer the Lion Rock and explore ancient cave temples in
-                                        this breathtaking adventure.</p>
-                                    <ul class="service-card-features">
-                                        <li><i class="fas fa-check"></i> Sigiriya climb</li>
-                                        <li><i class="fas fa-check"></i> Dambulla caves</li>
-                                        <li><i class="fas fa-check"></i> Scenic views</li>
-                                    </ul>
-                                    <div class="service-card-bottom">
-                                        <div class="service-card-price">$499 <span>Per person</span></div>
-                                        <span class="service-card-cta">Start Adventure <i
-                                                class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                    <div class="services-stats">
+                        <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">Happy Travelers</div></div>
+                        <div class="stat-item"><div class="stat-number">98%</div><div class="stat-label">Satisfaction Rate</div></div>
+                        <div class="stat-item"><div class="stat-number">5+</div><div class="stat-label">Years Experience</div></div>
+                        <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Support</div></div>
+                    </div>
+                    <div class="services-cta-wrapper">
+                        <a href="./package-comparison.html" class="premium-cta-button" id="viewAllBtn">
+                            <i class="fas fa-gem"></i> View All Premium Packages <i class="fas fa-arrow-right-long"></i>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Statistics -->
-                <div class="services-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">100+</div>
-                        <div class="stat-label">Happy Travelers</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Satisfaction Rate</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Support</div>
-                    </div>
-                </div>
-
-                <!-- CTA Button -->
-                <div class="services-cta-wrapper">
-                    <a href="./package-comparison.html" class="premium-cta-button">
-                        <i class="fas fa-gem"></i>
-                        View All Premium Packages
-                        <i class="fas fa-arrow-right-long"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
-    <!-- Services Section End -->
+            </section>
         </div>
     </div>
-    <!-- Packages Section End -->
 
-    <!-- Blog Section Start - White Background -->
+    <!-- Blog Section -->
     <div class="blog-section">
         <section class="blog-cinematic">
             <div class="container">
                 <div class="text-center mb-5">
                     <h5 class="text-primary">Travel Journal</h5>
                     <h1 class="mb-3">Stories That Move You</h1>
-                    <p class="text-muted">
-                        Culture, nature, wildlife & unforgettable journeys across Sri Lanka
-                    </p>
+                    <p class="text-muted">Culture, nature, wildlife & unforgettable journeys across Sri Lanka</p>
                 </div>
-
                 <div class="blog-editorial-grid">
                     <a href="./blog-cultural-triangle.html" class="blog-editorial-card blog-featured">
-                        <img src="img/anuradhapura-polonnaruwa-sigiriya-1024x576.jpg" alt="Cultural Triangle">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Heritage</span>
-                            <h4>Sri Lanka's Cultural Triangle</h4>
-                            <div class="blog-meta">Ancient kingdoms & UNESCO wonders</div>
-                            <span class="blog-read-more">Explore Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
+                        <img src="img/anuradhapura-polonnaruwa-sigiriya-1024x576.jpg" alt="Cultural Triangle"><div class="blog-gradient"></div><div class="blog-glass"><span class="blog-tag">Heritage</span><h4>Sri Lanka's Cultural Triangle</h4><div class="blog-meta">Ancient kingdoms & UNESCO wonders</div><span class="blog-read-more">Explore Story <i class="fas fa-arrow-right"></i></span></div>
                     </a>
-
                     <a href="./blog-kandy.html" class="blog-editorial-card">
-                        <img src="img/blog-card-daladamaligawa.jpg" alt="Kandy">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Culture</span>
-                            <h4>Kandy</h4>
-                            <div class="blog-meta">Sacred city of traditions</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
+                        <img src="img/blog-card-daladamaligawa.jpg" alt="Kandy"><div class="blog-gradient"></div><div class="blog-glass"><span class="blog-tag">Culture</span><h4>Kandy</h4><div class="blog-meta">Sacred city of traditions</div><span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span></div>
                     </a>
-
                     <a href="./blog-dambulla.html" class="blog-editorial-card">
-                        <img src="img/blog-card-sigiriya.jpg" alt="Dambulla">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">History</span>
-                            <h4>Dambulla</h4>
-                            <div class="blog-meta">Cave temples & ancient art</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
+                        <img src="img/blog-card-sigiriya.jpg" alt="Dambulla"><div class="blog-gradient"></div><div class="blog-glass"><span class="blog-tag">History</span><h4>Dambulla</h4><div class="blog-meta">Cave temples & ancient art</div><span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span></div>
                     </a>
-
                     <a href="./blog-ella.html" class="blog-editorial-card">
-                        <img src="img/blog-2.jpg" alt="Ella">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Nature</span>
-                            <h4>Ella</h4>
-                            <div class="blog-meta">Tea hills & misty peaks</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
+                        <img src="img/blog-2.jpg" alt="Ella"><div class="blog-gradient"></div><div class="blog-glass"><span class="blog-tag">Nature</span><h4>Ella</h4><div class="blog-meta">Tea hills & misty peaks</div><span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span></div>
                     </a>
-
                     <a href="./blog-down-south.html" class="blog-editorial-card">
-                        <img src="img/blog-card-beach.webp" alt="Golden Beaches">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Beach</span>
-                            <h4>Golden Beaches</h4>
-                            <div class="blog-meta">Sun, sand & turquoise seas</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
+                        <img src="img/blog-card-beach.webp" alt="Golden Beaches"><div class="blog-gradient"></div><div class="blog-glass"><span class="blog-tag">Beach</span><h4>Golden Beaches</h4><div class="blog-meta">Sun, sand & turquoise seas</div><span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span></div>
                     </a>
-
                     <a href="./blog-safari.html" class="blog-editorial-card">
-                        <img src="img/blog-card-safari.jpg" alt="Wild Safaris">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Wildlife</span>
-                            <h4>Wild Safaris</h4>
-                            <div class="blog-meta">Leopards & elephants</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
+                        <img src="img/blog-card-safari.jpg" alt="Wild Safaris"><div class="blog-gradient"></div><div class="blog-glass"><span class="blog-tag">Wildlife</span><h4>Wild Safaris</h4><div class="blog-meta">Leopards & elephants</div><span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span></div>
                     </a>
-
                     <a href="./blog-nuwara-eliya.html" class="blog-editorial-card">
-                        <img src="img/blog-card-nuwaraeliya.jpg" alt="Nuwara Eliya">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Hill Country</span>
-                            <h4>Nuwara Eliya</h4>
-                            <div class="blog-meta">Tea estates & cool climate</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
+                        <img src="img/blog-card-nuwaraeliya.jpg" alt="Nuwara Eliya"><div class="blog-gradient"></div><div class="blog-glass"><span class="blog-tag">Hill Country</span><h4>Nuwara Eliya</h4><div class="blog-meta">Tea estates & cool climate</div><span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span></div>
                     </a>
-
                     <a href="./blog-north-sri-lanka.html" class="blog-editorial-card">
-                        <img src="img/jafna-blog-post.jpg" alt="Northern Sri Lanka">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Culture</span>
-                            <h4>Northern Sri Lanka</h4>
-                            <div class="blog-meta">Jaffna & heritage</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
+                        <img src="img/jafna-blog-post.jpg" alt="Northern Sri Lanka"><div class="blog-gradient"></div><div class="blog-glass"><span class="blog-tag">Culture</span><h4>Northern Sri Lanka</h4><div class="blog-meta">Jaffna & heritage</div><span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span></div>
                     </a>
-
                     <a href="./blog-eastern-beauty.html" class="blog-editorial-card">
-                        <img src="img/Arugam-Bay.jpg" alt="Eastern Sri Lanka">
-                        <div class="blog-gradient"></div>
-                        <div class="blog-glass">
-                            <span class="blog-tag">Adventure</span>
-                            <h4>Eastern Sri Lanka</h4>
-                            <div class="blog-meta">Surf & untouched beaches</div>
-                            <span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span>
-                        </div>
+                        <img src="img/Arugam-Bay.jpg" alt="Eastern Sri Lanka"><div class="blog-gradient"></div><div class="blog-glass"><span class="blog-tag">Adventure</span><h4>Eastern Sri Lanka</h4><div class="blog-meta">Surf & untouched beaches</div><span class="blog-read-more">Read Story <i class="fas fa-arrow-right"></i></span></div>
                     </a>
                 </div>
             </div>
         </section>
     </div>
-    <!-- Blog Section End -->
 
-    <!-- Contact Section Start - With Animated Background -->
+    <!-- Contact Section -->
     <div class="contact-section">
-        <div class="contact-particle contact-particle-1"></div>
-        <div class="contact-particle contact-particle-2"></div>
-        <div class="contact-particle contact-particle-3"></div>
+        <div class="contact-particle contact-particle-1"></div><div class="contact-particle contact-particle-2"></div><div class="contact-particle contact-particle-3"></div>
         <div class="container py-5">
             <div class="mx-auto text-center mb-5" style="max-width: 900px; position: relative; z-index: 2;">
                 <h5 class="section-title px-3">Contact Us</h5>
@@ -2700,310 +682,180 @@
             <div class="row g-5 align-items-center" style="position: relative; z-index: 2;">
                 <div class="col-lg-4">
                     <div class="bg-white rounded p-4">
-                        <div class="text-center mb-4">
-                            <i class="fa fa-map-marker-alt fa-3x text-primary"></i>
-                            <h4 class="text-primary">Address</h4>
-                            <p class="mb-0">Peradeniya, <br> Kandy, Sri Lanka</p>
-                        </div>
-                        <div class="text-center mb-4">
-                            <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
-                            <h4 class="text-primary">Mobile</h4>
-                            <p class="mb-0">(+94)76 366 1600</p>
-                        </div>
-
-                        <div class="text-center">
-                            <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
-                            <h4 class="text-primary">Email</h4>
-                            <p class="mb-0">info.CeylonTravellers@gmail.com</p>
-                        </div>
+                        <div class="text-center mb-4"><i class="fa fa-map-marker-alt fa-3x text-primary"></i><h4 class="text-primary">Address</h4><p class="mb-0">Peradeniya, <br> Kandy, Sri Lanka</p></div>
+                        <div class="text-center mb-4"><i class="fa fa-phone-alt fa-3x text-primary mb-3"></i><h4 class="text-primary">Mobile</h4><p class="mb-0">(+94)76 366 1600</p></div>
+                        <div class="text-center"><i class="fa fa-envelope-open fa-3x text-primary mb-3"></i><h4 class="text-primary">Email</h4><p class="mb-0">info.CeylonTravellers@gmail.com</p></div>
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <h2 class="mb-3">Contact For Any Inquiries</h2>
-                    <p class="mb-4">We're here to help you design your dream holiday in Sri Lanka.
-                        Whether you're exploring our tours, creating a custom itinerary, or simply sharing your
-                        travel ideas, our friendly team is ready to guide you every step of the way.
-                        Let's start with a conversation, reach out and begin your journey.</p>
+                    <p class="mb-4">We're here to help you design your dream holiday in Sri Lanka. Whether you're exploring our tours, creating a custom itinerary, or simply sharing your travel ideas, our friendly team is ready to guide you every step of the way.</p>
                     <form>
                         <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control border-0" id="email"
-                                        placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control border-0" placeholder="Leave a message here"
-                                        id="message" style="height: 160px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                            </div>
+                            <div class="col-md-6"><div class="form-floating"><input type="text" class="form-control border-0" id="name" placeholder="Your Name"><label for="name">Your Name</label></div></div>
+                            <div class="col-md-6"><div class="form-floating"><input type="email" class="form-control border-0" id="email" placeholder="Your Email"><label for="email">Your Email</label></div></div>
+                            <div class="col-12"><div class="form-floating"><input type="text" class="form-control border-0" id="subject" placeholder="Subject"><label for="subject">Subject</label></div></div>
+                            <div class="col-12"><div class="form-floating"><textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 160px"></textarea><label for="message">Message</label></div></div>
+                            <div class="col-12"><button class="btn btn-primary w-100 py-3" type="submit">Send Message</button></div>
                         </div>
                     </form>
                 </div>
-                <div class="col-12">
-                    <div class="rounded">
-                        <iframe class="rounded w-100" style="height: 450px;"
-                            src="https://www.google.com/maps?q=Peradeniya,+Sri+Lanka&z=14&output=embed" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
+                <div class="col-12"><div class="rounded"><iframe class="rounded w-100" style="height: 450px;" src="https://www.google.com/maps?q=Peradeniya,+Sri+Lanka&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div>
             </div>
         </div>
     </div>
-    <!-- Contact Section End -->
 
-    <!-- Subscribe Section Start - Original Style -->
+    <!-- Subscribe -->
     <div class="subscribe-section">
         <div class="container text-center py-5">
             <div class="mx-auto text-center" style="max-width: 900px;">
                 <h5 class="subscribe-title px-3">Subscribe</h5>
                 <h1 class="text-white mb-4">Our Newsletter</h1>
-                <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals,
-                    insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
-                </p>
+                <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, insider tips, and inspiring Sri Lanka travel stories straight to your inbox.</p>
                 <div class="position-relative mx-auto" style="max-width: 600px;">
-                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text"
-                        placeholder="Your email">
-                    <button type="button"
-                        class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
+                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                    <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Subscribe Section End -->
 
-    <!-- Copyright Start -->
+    <!-- Copyright -->
     <div class="container-fluid copyright text-body py-4">
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-md-6 text-center text-md-end mb-md-0">
-                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Ceylon Travellers Travel &
-                        Tours</a>, All right reserved.
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Ceylon Travellers Travel & Tours</a>, All right reserved.
                 </div>
             </div>
         </div>
     </div>
-    <!-- Copyright End -->
 
-    <!-- whatsapp button -->
-    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ceylon%20Travellers%20Travel%20&%20Tours.%20How%20can%20we%20assist?%20you%3F"
-        class="whatsapp-float" target="_blank">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ceylon%20Travellers%20Travel%20&%20Tours.%20How%20can%20we%20assist?%20you%3F" class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- JavaScript Libraries -->
+    <!-- JS Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
     <script>
-        // Simple counter animation for stats
+        // *** OPTIMIZED SEARCH FUNCTION: redirect to specific package page based on days ***
+        function searchRedirect() {
+            const durationInput = document.getElementById('durationInput');
+            const days = parseInt(durationInput.value.trim(), 10);
+            if (!days || isNaN(days) || days < 1) {
+                alert("Please enter a valid number of days to find your perfect tour.");
+                return;
+            }
+            if (days === 1) {
+                window.location.href = 'pkg-kandy-day-tour.html';
+            } else if (days >= 2 && days <= 4) {
+                window.location.href = 'pkg-own-tour.html';
+            } else if (days > 14) {
+                window.location.href = 'pkg-own-tour.html';
+            } else {
+                window.location.href = `pkg-${days}-day-tour.html`;
+            }
+        }
+
+        document.getElementById('viewAllBtn').addEventListener('click', function() {
+            document.getElementById('durationInput').value = '';
+            document.querySelectorAll('.service-card').forEach(c => c.style.display = '');
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             const statNumbers = document.querySelectorAll('.stat-number');
-
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const statNumber = entry.target;
                         const finalValue = parseInt(statNumber.textContent);
-                        const duration = 2000;
-                        const step = finalValue / (duration / 16);
+                        const duration = 2000, step = finalValue / (duration / 16);
                         let currentValue = 0;
-
                         const timer = setInterval(() => {
                             currentValue += step;
-                            if (currentValue >= finalValue) {
-                                currentValue = finalValue;
-                                clearInterval(timer);
-                            }
+                            if (currentValue >= finalValue) { currentValue = finalValue; clearInterval(timer); }
                             statNumber.textContent = Math.floor(currentValue) + (statNumber.textContent.includes('%') ? '%' : '+');
                         }, 16);
-
                         observer.unobserve(statNumber);
                     }
                 });
-            }, {
-                threshold: 0.5,
-                rootMargin: '0px 0px -100px 0px'
-            });
-
+            }, { threshold: 0.5, rootMargin: '0px 0px -100px 0px' });
             statNumbers.forEach(stat => observer.observe(stat));
 
-            // Remove spinner after page load
             window.addEventListener('load', function () {
-                setTimeout(function () {
-                    document.getElementById('spinner').style.display = 'none';
-                }, 500);
+                setTimeout(function () { document.getElementById('spinner').style.display = 'none'; }, 500);
             });
 
-            // Mobile menu toggle enhancement
             const navbarToggler = document.querySelector('.navbar-toggler');
             const navbarCollapse = document.querySelector('.navbar-collapse');
-
             if (navbarToggler && navbarCollapse) {
-                navbarToggler.addEventListener('click', function () {
-                    this.classList.toggle('active');
-                });
+                navbarToggler.addEventListener('click', function () { this.classList.toggle('active'); });
             }
 
-            // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
 
-            // Form submission handling
             const contactForm = document.querySelector('form');
             if (contactForm) {
                 contactForm.addEventListener('submit', function (e) {
                     e.preventDefault();
-
-                    // Simple form validation
-                    const name = document.getElementById('name');
-                    const email = document.getElementById('email');
-                    const subject = document.getElementById('subject');
-                    const message = document.getElementById('message');
-
+                    const name = document.getElementById('name'), email = document.getElementById('email');
                     let isValid = true;
-
-                    // Reset previous error states
-                    [name, email, subject, message].forEach(input => {
-                        input.style.borderColor = '';
-                    });
-
-                    // Validate required fields
-                    if (!name.value.trim()) {
-                        name.style.borderColor = 'red';
-                        isValid = false;
-                    }
-
-                    if (!email.value.trim() || !isValidEmail(email.value)) {
-                        email.style.borderColor = 'red';
-                        isValid = false;
-                    }
-
+                    [name, email].forEach(input => { if (input) input.style.borderColor = ''; });
+                    if (name && !name.value.trim()) { name.style.borderColor = 'red'; isValid = false; }
+                    if (email && (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value))) { email.style.borderColor = 'red'; isValid = false; }
                     if (isValid) {
-                        // Show success message
                         const submitBtn = contactForm.querySelector('button[type="submit"]');
                         const originalText = submitBtn.textContent;
-                        submitBtn.textContent = 'Sending...';
-                        submitBtn.disabled = true;
-
+                        submitBtn.textContent = 'Sending...'; submitBtn.disabled = true;
                         setTimeout(() => {
-                            submitBtn.textContent = 'Message Sent!';
-                            submitBtn.style.background = '#28a745';
-
-                            // Reset form
+                            submitBtn.textContent = 'Message Sent!'; submitBtn.style.background = '#28a745';
                             contactForm.reset();
-
-                            // Reset button after 3 seconds
-                            setTimeout(() => {
-                                submitBtn.textContent = originalText;
-                                submitBtn.style.background = '';
-                                submitBtn.disabled = false;
-                            }, 3000);
+                            setTimeout(() => { submitBtn.textContent = originalText; submitBtn.style.background = ''; submitBtn.disabled = false; }, 3000);
                         }, 1500);
                     }
                 });
             }
 
-            function isValidEmail(email) {
-                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return re.test(email);
-            }
-
-            // Subscribe form handling
             const subscribeBtn = document.querySelector('.subscribe-section button');
             if (subscribeBtn) {
                 subscribeBtn.addEventListener('click', function () {
                     const emailInput = document.querySelector('.subscribe-section input');
                     const email = emailInput.value.trim();
-
-                    if (email && isValidEmail(email)) {
-                        this.textContent = 'Subscribed!';
-                        this.style.background = '#28a745';
-
-                        setTimeout(() => {
-                            this.textContent = 'Subscribe';
-                            this.style.background = '#ffd700';
-                            emailInput.value = '';
-                        }, 2000);
+                    if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                        this.textContent = 'Subscribed!'; this.style.background = '#28a745';
+                        setTimeout(() => { this.textContent = 'Subscribe'; this.style.background = '#ffd700'; emailInput.value = ''; }, 2000);
                     } else {
                         emailInput.style.borderColor = '#dc3545';
-                        setTimeout(() => {
-                            emailInput.style.borderColor = '';
-                        }, 2000);
+                        setTimeout(() => { emailInput.style.borderColor = ''; }, 2000);
                     }
                 });
             }
 
-            // Navbar scroll effect
             window.addEventListener('scroll', function () {
                 const navbar = document.querySelector('.navbar');
                 if (window.scrollY > 100) {
-                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                    navbar.style.background = 'rgba(255,255,255,0.95)'; navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
                 } else {
-                    navbar.style.background = '';
-                    navbar.style.boxShadow = '';
+                    navbar.style.background = ''; navbar.style.boxShadow = '';
                 }
             });
 
-            // Touch-friendly hover states for mobile
             if ('ontouchstart' in window) {
                 document.querySelectorAll('.service-card, .blog-editorial-card').forEach(card => {
-                    card.addEventListener('touchstart', function () {
-                        this.classList.add('hover');
-                    });
-
-                    card.addEventListener('touchend', function () {
-                        setTimeout(() => {
-                            this.classList.remove('hover');
-                        }, 300);
-                    });
-                });
-            }
-
-            // Service card hover effect for desktop
-            if (!('ontouchstart' in window)) {
-                document.querySelectorAll('.service-card').forEach(card => {
-                    card.addEventListener('mouseenter', function () {
-                        this.classList.add('hover');
-                    });
-
-                    card.addEventListener('mouseleave', function () {
-                        this.classList.remove('hover');
-                    });
+                    card.addEventListener('touchstart', function () { this.classList.add('hover'); });
+                    card.addEventListener('touchend', function () { setTimeout(() => { this.classList.remove('hover'); }, 300); });
                 });
             }
         });
