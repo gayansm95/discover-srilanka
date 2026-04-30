@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Ceylon Travellers Travels & Tours</title>
+    <title>Ceylon Travellers Travel & Tours</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -236,7 +236,7 @@
         .subscribe-section button { background: #ffd700; border: none; padding: 12px 30px; border-radius: 50px; color: #2c3e50; font-weight: 600; transition: all 0.3s ease; }
         .subscribe-section button:hover { background: #ffa500; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,215,0,0.3); }
 
-        /* ===== VIDEO HERO & SEARCH BAR (single row, blue button) ===== */
+        /* ===== VIDEO HERO & SEARCH BAR (single row, blue button, aligned) ===== */
         .video-hero {
             position: relative;
             height: 100vh;
@@ -274,9 +274,9 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
             border: 1px solid rgba(255,255,255,0.4);
             display: flex;
-            align-items: center;        /* vertically center single row */
+            align-items: flex-end;   /* Aligns button to bottom of form groups (matching input baseline) */
             gap: 12px;
-            flex-wrap: nowrap;           /* single row, no wrap */
+            flex-wrap: nowrap;
             justify-content: center;
         }
         .hero-search-bar .form-group {
@@ -326,7 +326,7 @@
             align-items: center;
             gap: 8px;
             cursor: pointer;
-            flex-shrink: 0;                  /* prevent shrinking */
+            flex-shrink: 0;
         }
         .hero-search-bar .btn-hero-search:hover {
             background: #0b5ed7;
@@ -335,7 +335,7 @@
         }
         @media (max-width: 768px) {
             .hero-search-bar {
-                flex-wrap: wrap;           /* allow wrap on small screens */
+                flex-wrap: wrap;
                 padding: 20px;
                 gap: 8px;
             }
@@ -423,7 +423,7 @@
                 <source src="videos/header-video.mp4" type="video/mp4">
             </video>
             <div class="video-overlay"></div>
-            <!-- Centered Single Row Search Bar with Blue Button -->
+            <!-- Centered Single Row Search Bar with Blue Button (now aligned to bottom) -->
             <div class="hero-search-bar">
                 <div class="form-group">
                     <label><i class="fas fa-calendar-alt"></i> Trip Duration (days) *</label>
@@ -456,9 +456,9 @@
                     <div class="h-100"><img src="img/sri-lankan-travel-map.png" class="img-fluid w-100 h-100" alt=""></div>
                 </div>
                 <div class="col-lg-7" style="background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8));">
-                    <h1 class="mb-4">Welcome to <span class="text-primary">Ceylon Travellers Travels & Tours</span></h1>
+                    <h1 class="mb-4">Welcome to <span class="text-primary">Ceylon Travellers Travel & Tours</span></h1>
                     <h5 class="section-about-title pe-3">About Us</h5>
-                    <p class="mb-4">Ceylon Travellers Travels & Tours is a trusted, family-run Sri Lanka tour operator creating authentic, personalized journeys across the island. From golden beaches and lush hill country to wildlife safaris and ancient heritage sites, we design unforgettable experiences rooted in local culture, sustainability, and genuine Sri Lankan hospitality.</p>
+                    <p class="mb-4">Ceylon Travellers Travel & Tours is a trusted, family-run Sri Lanka tour operator creating authentic, personalized journeys across the island. From golden beaches and lush hill country to wildlife safaris and ancient heritage sites, we design unforgettable experiences rooted in local culture, sustainability, and genuine Sri Lankan hospitality.</p>
                     <h5 class="section-about-title pe-3">Our Vision</h5>
                     <p class="mb-4">Our vision is to be a globally recognized Sri Lanka tour operator, delivering authentic and sustainable travel experiences. We aim to protect nature, celebrate culture, empower local communities, and inspire responsible travel while creating unforgettable journeys across Sri Lanka.</p>
                     <h5 class="section-about-title pe-3">Our Mission</h5>
