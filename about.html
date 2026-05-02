@@ -43,40 +43,22 @@
             text-decoration: none;
         }
 
-        /* Hover effect */
         .whatsapp-float:hover {
             transform: scale(1.1);
             transition: 0.3s ease;
         }
 
-        /* Pulse animation */
         @keyframes whatsapp-pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 25px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* Mobile responsive */
         @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 70px;
-                height: 70px;
-                font-size: 38px;
-                line-height: 70px;
-                bottom: 15px;
-                right: 15px;
-            }
+            .whatsapp-float { width: 70px; height: 70px; font-size: 38px; line-height: 70px; bottom: 15px; right: 15px; }
         }
 
-        /* ========== ABOUT HERO SECTION - MATCHING BLOG/GALLERY STYLE ========== */
+        /* ========== ABOUT HERO SECTION ========== */
         .about-hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/14-day-tour-srilanka-galle.jpg');
             background-size: cover;
@@ -87,13 +69,9 @@
             color: white;
             position: relative;
         }
-        
-        .about-hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
+
+        .about-hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
+
         .about-hero-subtitle {
             font-size: 1.2rem;
             color: #ffd700;
@@ -102,7 +80,7 @@
             margin-bottom: 20px;
             font-weight: 600;
         }
-        
+
         .about-hero-title {
             font-size: 3.5rem;
             font-weight: 800;
@@ -110,39 +88,13 @@
             line-height: 1.2;
             text-shadow: 2px 2px 4px rgba(243, 252, 5, 0.5);
         }
-        
-        .about-hero-description {
-            font-size: 1.3rem;
-            line-height: 1.6;
-            opacity: 0.9;
-            margin-bottom: 40px;
-        }
-        
-        .about-hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 50px;
-        }
-        
-        .hero-stat {
-            text-align: center;
-        }
-        
-        .hero-stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #ffd700;
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        .hero-stat-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.8;
-        }
+
+        .about-hero-description { font-size: 1.3rem; line-height: 1.6; opacity: 0.9; margin-bottom: 40px; }
+
+        .about-hero-stats { display: flex; justify-content: center; gap: 40px; margin-top: 50px; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 2.5rem; font-weight: 800; color: #ffd700; display: block; margin-bottom: 5px; }
+        .hero-stat-label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
 
         /* ========== ABOUT SECTION ========== */
         .about-section {
@@ -155,36 +107,10 @@
         .about-section::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: radial-gradient(circle at 20% 30%, rgba(13, 110, 253, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(13, 110, 253, 0.05) 0%, transparent 50%);
+                        radial-gradient(circle at 80% 70%, rgba(13, 110, 253, 0.05) 0%, transparent 50%);
             pointer-events: none;
-        }
-
-        .about-image-wrapper {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .about-image-wrapper:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(13, 110, 253, 0.2);
-        }
-
-        .about-image-wrapper img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.6s ease;
-        }
-
-        .about-image-wrapper:hover img {
-            transform: scale(1.05);
         }
 
         .about-content {
@@ -194,16 +120,8 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(13, 110, 253, 0.1);
         }
-
-        .about-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
-
-        .about-content h1 span {
-            color: #0d6efd;
-        }
+        .about-content h1 { font-size: 2.5rem; margin-bottom: 30px; color: #2c3e50; }
+        .about-content h1 span { color: #0d6efd; }
 
         .section-title {
             font-size: 1.2rem;
@@ -215,69 +133,31 @@
             position: relative;
             display: inline-block;
         }
+        .section-title::after { display: none !important; }
 
-        /* Remove the after line (underline) completely */
-        .section-title::after {
-            display: none !important;
-            content: none !important;
-        }
+        .about-content p { color: #666; line-height: 1.8; margin-bottom: 20px; }
 
-        .about-content p {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .offer-list {
-            margin: 30px 0;
-        }
-
+        .offer-list { margin: 30px 0; }
         .offer-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 20px;
-            margin-bottom: 10px;
+            display: flex; align-items: center; padding: 12px 20px; margin-bottom: 10px;
             background: linear-gradient(135deg, rgba(13, 110, 253, 0.05) 0%, rgba(0, 180, 255, 0.05) 100%);
-            border-radius: 10px;
-            transition: all 0.3s ease;
+            border-radius: 10px; transition: all 0.3s ease;
         }
-
         .offer-item:hover {
             transform: translateX(10px);
             background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(0, 180, 255, 0.1) 100%);
         }
-
-        .offer-item i {
-            color: #0d6efd;
-            font-size: 1rem;
-            margin-right: 15px;
-            width: 20px;
-        }
-
-        .offer-item span {
-            color: #2c3e50;
-            font-weight: 500;
-        }
+        .offer-item i { color: #0d6efd; font-size: 1rem; margin-right: 15px; width: 20px; }
+        .offer-item span { color: #2c3e50; font-weight: 500; }
 
         .btn-more-services {
             background: linear-gradient(135deg, #0d6efd, #00b4ff);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
+            color: white; border: none; padding: 12px 30px; border-radius: 50px;
+            font-weight: 600; transition: all 0.3s ease; text-decoration: none; display: inline-block;
         }
+        .btn-more-services:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(13, 110, 253, 0.3); color: white; }
 
-        .btn-more-services:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.3);
-            color: white;
-        }
-
-        /* ========== SUBSCRIBE SECTION ========== */
+        /* ========== SUBSCRIBE SECTION (exactly matching home page) ========== */
         .subscribe {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/carousel-2.jpg');
             background-size: cover;
@@ -285,166 +165,52 @@
             background-attachment: fixed;
             padding: 80px 0;
         }
-
         .subscribe-title {
-            display: inline-block;
-            padding: 8px 25px;
-            background: #ffd700;
-            color: #2c3e50;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 20px;
+            display: inline-block; padding: 8px 25px; background: #ffd700;
+            color: #2c3e50; border-radius: 50px; font-weight: 600; font-size: 1rem; margin-bottom: 20px;
         }
-
-        .subscribe h1 {
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        .subscribe p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-        }
+        .subscribe h1 { color: white; font-size: 2.5rem; font-weight: 700; }
+        .subscribe p { color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; }
 
         .subscribe .form-control {
-            border: 2px solid transparent;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            border: 2px solid transparent; padding: 15px 25px; border-radius: 50px;
+            font-size: 1rem; transition: all 0.3s ease;
         }
-
         .subscribe .form-control:focus {
-            border-color: #ffd700;
-            box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
-            outline: none;
-        }
-
-        .subscribe button {
-            background: linear-gradient(135deg, #ffd700, #ffa500);
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            color: #2c3e50;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .subscribe button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            border-color: #ffd700; box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25); outline: none;
         }
 
         /* ========== COPYRIGHT ========== */
-        .copyright {
-            background: #1a1a1a;
-            color: rgba(255, 255, 255, 0.7);
-            padding: 20px 0;
-        }
-
-        .copyright a {
-            color: #ffd700;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .copyright a:hover {
-            color: #ffa500;
-        }
+        .copyright { background: #1a1a1a; color: rgba(255, 255, 255, 0.7); padding: 20px 0; }
+        .copyright a { color: #ffd700; text-decoration: none; transition: color 0.3s ease; }
+        .copyright a:hover { color: #ffa500; }
 
         /* ========== FADE IN ANIMATION ========== */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
 
         /* ========== RESPONSIVE DESIGN ========== */
-        @media (max-width: 1200px) {
-            .about-hero-title {
-                font-size: 3rem;
-            }
-        }
-
+        @media (max-width: 1200px) { .about-hero-title { font-size: 3rem; } }
         @media (max-width: 992px) {
-            .about-hero-section {
-                padding: 80px 0;
-            }
-            
-            .about-hero-stats {
-                flex-wrap: wrap;
-                gap: 30px;
-            }
-            
-            .about-content {
-                padding: 30px;
-                margin-top: 30px;
-            }
+            .about-hero-section { padding: 80px 0; }
+            .about-hero-stats { flex-wrap: wrap; gap: 30px; }
+            .about-content { padding: 30px; margin-top: 30px; }
         }
-
         @media (max-width: 768px) {
-            .about-hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .about-hero-description {
-                font-size: 1.1rem;
-            }
-            
-            .about-hero-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .about-content h1 {
-                font-size: 2rem;
-            }
-            
-            .subscribe h1 {
-                font-size: 2rem;
-            }
-            
-            .subscribe .position-relative {
-                display: flex;
-                flex-direction: column;
-            }
-            
-            .subscribe button {
-                position: relative !important;
-                margin-top: 15px;
-                width: 100%;
-            }
+            .about-hero-title { font-size: 2.5rem; }
+            .about-hero-description { font-size: 1.1rem; }
+            .about-hero-stats { flex-direction: column; gap: 20px; }
+            .about-content h1 { font-size: 2rem; }
+            .subscribe h1 { font-size: 2rem; }
+            .subscribe .position-relative { display: flex; flex-direction: column; }
+            .subscribe button { position: relative !important; margin-top: 15px; width: 100%; }
         }
-
         @media (max-width: 576px) {
-            .about-hero-section {
-                padding: 60px 0;
-            }
-            
-            .about-hero-title {
-                font-size: 2rem;
-            }
-            
-            .about-content {
-                padding: 20px;
-            }
-            
-            .offer-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .offer-item i {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
+            .about-hero-section { padding: 60px 0; }
+            .about-hero-title { font-size: 2rem; }
+            .about-content { padding: 20px; }
+            .offer-item { flex-direction: column; text-align: center; }
+            .offer-item i { margin-right: 0; margin-bottom: 10px; }
         }
     </style>
 </head>
@@ -484,7 +250,7 @@
     </div>
     <!-- Navbar & Hero End -->
 
-    <!-- About Hero Section - Matching Blog/Gallery Style -->
+    <!-- About Hero Section -->
     <div class="about-hero-section">
         <div class="container">
             <div class="about-hero-content fade-in-up">
@@ -493,7 +259,6 @@
                 <p class="about-hero-description">
                     Experience authentic hospitality and create memories that last a lifetime with our personalized tours
                 </p>
-                
                 <div class="about-hero-stats">
                     <div class="hero-stat fade-in-up" style="transition-delay: 0.1s">
                         <span class="hero-stat-number">5+</span>
@@ -572,17 +337,15 @@
     </div>
     <!-- About Section End -->
 
-    <!-- Subscribe Start -->
+    <!-- Subscribe Start (exactly like home page) -->
     <div class="container-fluid subscribe py-5">
         <div class="container text-center py-5">
             <div class="mx-auto text-center" style="max-width: 900px;">
                 <h5 class="subscribe-title px-3">Subscribe</h5>
                 <h1 class="text-white mb-4">Our Newsletter</h1>
-                <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, 
-                    insider tips, and inspiring Sri Lanka travel stories straight to your inbox.
-                </p>
-                <div class="position-relative mx-auto" style="max-width: 600px;">
-                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address">
+                <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, insider tips, and inspiring Sri Lanka travel stories straight to your inbox.</p>
+                <div class="position-relative mx-auto">
+                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                     <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
                 </div>
             </div>
@@ -604,8 +367,7 @@
 
     <!-- WhatsApp Button -->
     <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F"
-        class="whatsapp-float"
-        target="_blank">
+        class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 

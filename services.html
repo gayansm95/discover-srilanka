@@ -54,28 +54,23 @@
             text-decoration: none;
         }
 
-        /* Hover effect */
         .whatsapp-float:hover {
             transform: scale(1.1);
             transition: 0.3s ease;
         }
 
-        /* Pulse animation */
         @keyframes whatsapp-pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
-
             70% {
                 box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
             }
-
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
         }
 
-        /* Mobile responsive */
         @media (max-width: 768px) {
             .whatsapp-float {
                 width: 70px;
@@ -88,10 +83,9 @@
         }
         
         /* =========================================== */
-        /* PREMIUM SERVICES SECTION DESIGN - Matching Theme */
+        /* PREMIUM SERVICES SECTION DESIGN - Original Theme */
         /* =========================================== */
         
-        /* Services Hero Section */
         .services-hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./img/beachers.jpg');
             background-size: cover;
@@ -283,6 +277,8 @@
             position: relative;
             height: 100%;
             border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
         }
         
         .service-card:hover {
@@ -355,6 +351,10 @@
         .service-card-content {
             padding: 35px;
             position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
         .service-card-description {
@@ -478,194 +478,7 @@
             left: 100%;
         }
         
-        /* Featured Services Showcase */
-        .featured-services-showcase {
-            margin-bottom: 100px;
-            position: relative;
-        }
-        
-        .showcase-title-container {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-        
-        .showcase-title {
-            font-size: 2.8rem;
-            color: var(--dark);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .showcase-subtitle {
-            font-size: 1.1rem;
-            color: var(--primary);
-            max-width: 600px;
-            margin: 0 auto;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-        
-        /* Magazine-Style Service Display */
-        .magazine-service-display {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
-        }
-        
-        @media (max-width: 768px) {
-            .magazine-service-display {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .magazine-service-item {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-            transition: all 0.5s ease;
-            position: relative;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        
-        .magazine-service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
-        }
-        
-        .magazine-service-image {
-            height: 250px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .magazine-service-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.7) 100%);
-            z-index: 1;
-        }
-        
-        .magazine-service-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-        
-        .magazine-service-item:hover .magazine-service-image img {
-            transform: scale(1.1);
-        }
-        
-        .magazine-service-badge {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            background: var(--gradient-primary);
-            color: white;
-            padding: 8px 22px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            z-index: 2;
-            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .magazine-service-content {
-            padding: 40px;
-            position: relative;
-        }
-        
-        .magazine-service-title {
-            font-size: 1.8rem;
-            color: var(--dark);
-            margin-bottom: 20px;
-            line-height: 1.3;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .magazine-service-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--primary);
-        }
-        
-        .magazine-service-description {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: #555;
-            margin-bottom: 25px;
-        }
-        
-        .service-details-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .detail-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px;
-            background: linear-gradient(135deg, #ffffff, #ffffff);
-            border-radius: 12px;
-            transition: transform 0.3s ease;
-        }
-        
-        .detail-item:hover {
-            transform: translateY(-3px);
-            background: white;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .detail-icon {
-            width: 45px;
-            height: 45px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-        
-        .detail-text {
-            flex: 1;
-        }
-        
-        .detail-label {
-            font-size: 0.85rem;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 3px;
-        }
-        
-        .detail-value {
-            font-size: 1rem;
-            color: var(--dark);
-            font-weight: 600;
-        }
+        /* New service icons (no extra classes needed) */
         
         /* Testimonials Section */
         .testimonials-section {
@@ -924,7 +737,7 @@
         .stagger-delay-4 { transition-delay: 0.4s; }
         
         /* Floating Card Animation */
-        .service-card, .magazine-service-item {
+        .service-card {
             animation: floatCard 6s ease-in-out infinite;
         }
         
@@ -933,7 +746,7 @@
             50% { transform: translateY(-10px); }
         }
         
-        .service-card:hover, .magazine-service-item:hover {
+        .service-card:hover {
             animation: none;
         }
         
@@ -942,11 +755,9 @@
             .services-hero-title {
                 font-size: 3rem;
             }
-            
             .services-intro-title {
                 font-size: 2.5rem;
             }
-            
             .premium-services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -956,19 +767,15 @@
             .services-hero-section {
                 padding: 100px 0 60px;
             }
-            
             .services-hero-stats {
                 gap: 40px;
             }
-            
             .service-stat::before {
                 right: -20px;
             }
-            
             .magazine-service-display {
                 grid-template-columns: 1fr;
             }
-            
             .service-details-grid {
                 grid-template-columns: 1fr;
             }
@@ -978,34 +785,27 @@
             .services-hero-title {
                 font-size: 2.5rem;
             }
-            
             .services-hero-description {
                 font-size: 1.1rem;
             }
-            
             .service-stat-number {
                 font-size: 2.5rem;
             }
-            
             .services-intro-title {
                 font-size: 2rem;
             }
-            
             .premium-services-grid {
                 grid-template-columns: 1fr;
             }
-            
             .services-cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
             .services-cta-button {
                 width: 100%;
                 max-width: 300px;
                 justify-content: center;
             }
-            
             .scroll-top-button {
                 bottom: 100px;
                 right: 20px;
@@ -1016,27 +816,18 @@
             .services-hero-section {
                 padding: 80px 0 50px;
             }
-            
             .services-hero-title {
                 font-size: 2rem;
             }
-            
             .services-hero-stats {
                 gap: 30px;
             }
-            
             .service-stat::before {
                 display: none;
             }
-            
-            .magazine-service-content {
-                padding: 30px;
-            }
-            
             .services-cta-section {
                 padding: 50px 20px;
             }
-            
             .services-cta-title {
                 font-size: 2rem;
             }
@@ -1060,7 +851,6 @@
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="./index.html" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ceyloan Travellers</h1>
-                <!-- <img src="img/logo.png" alt="Logo"> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -1098,7 +888,7 @@
                 
                 <div class="services-hero-stats">
                     <div class="service-stat fade-in-up stagger-delay-1">
-                        <span class="service-stat-number" data-count="9">0</span>
+                        <span class="service-stat-number" data-count="6">0</span>
                         <span class="service-stat-label">Premium Services</span>
                     </div>
                     <div class="service-stat fade-in-up stagger-delay-2">
@@ -1106,7 +896,7 @@
                         <span class="service-stat-label">Satisfaction Rate</span>
                     </div>
                     <div class="service-stat fade-in-up stagger-delay-3">
-                        <span class="service-stat-number" data-count="100">0</span>
+                        <span class="service-stat-number" data-count="100">0+</span>
                         <span class="service-stat-label">Happy Travelers</span>
                     </div>
                 </div>
@@ -1114,116 +904,200 @@
         </div>
     </div>
 
-    <!-- Services Content Section -->
+    <!-- Services Content Section (NEW – replaced with the 6 core services) -->
     <div class="container-fluid service py-5">
         <div class="container">
             
             <!-- Services Introduction -->
             <div class="services-intro-section">
                 <div class="services-intro-container fade-in-up">
-                    <h2 class="services-intro-title">Comprehensive Travel Solutions</h2>
+                    <h2 class="services-intro-title">What We Offer for Your Sri Lanka Adventure</h2>
                     <p>
-                        At Ceyloan Traveller Travels & Tours, we offer complete travel solutions tailored to your unique preferences. 
-                        From personalized itinerary design to seamless logistics, our services ensure every aspect 
-                        of your Sri Lankan journey is perfect. Please check out our services and start planning 
-                        your Sri Lanka adventure today.
+                        At Ceyloan Travellers, we provide a seamless travel experience from the moment you land until you depart. 
+                        Our dedicated team handles every detail, so you can focus on creating lifelong memories. 
+                        Explore our six essential services, designed with the international traveler in mind.
                     </p>
                 </div>
             </div>
 
-            <!-- Premium Services Grid -->
+            <!-- Premium Services Grid (6 services) -->
             <div class="premium-services-section fade-in-up">
                 <div class="section-decorative-line"></div>
                 
                 <div class="services-grid-container">
                     <div class="premium-services-grid">
-                        <!-- Design Your Sri Lanka Journey -->
+                        <!-- Service 1: Specialty Package Arrangements -->
+                        <div class="service-card fade-in-up">
+                            <div class="service-card-header">
+                                <div class="service-icon-container">
+                                    <i class="fas fa-suitcase"></i>
+                                </div>
+                                <h3 class="service-card-title">Themed Package Tour Arrangements</h3>
+                            </div>
+                            <div class="service-card-content">
+                                <p class="service-card-description">
+                                    Choose from our expertly curated packages that focus on a specific experience. 
+                                    Beach escapes, wildlife safaris, adrenaline adventures, or deep cultural immersion – 
+                                    we arrange everything.
+                                </p>
+                                <ul class="service-features">
+                                    <li>🌴 Beach Escape Package</li>
+                                    <li>🐘 Wildlife & Nature Package</li>
+                                    <li>🧗 Adventure Package</li>
+                                    <li>🏛️ Cultural Heritage Package</li>
+                                </ul>
+                                <div class="service-card-footer">
+                                    <div class="service-price">
+                                        From <span>Customizable</span>
+                                    </div>
+                                    <a href="./package-comparison.html" class="service-button">
+                                        <i class="fas fa-tags"></i> View Packages
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service 2: Airport Pickup & Drop-off -->
                         <div class="service-card fade-in-up stagger-delay-1">
+                            <div class="service-card-header">
+                                <div class="service-icon-container">
+                                    <i class="fas fa-plane-arrival"></i>
+                                </div>
+                                <h3 class="service-card-title">Airport Pickup & Drop‑off</h3>
+                            </div>
+                            <div class="service-card-content">
+                                <p class="service-card-description">
+                                    Start your journey stress‑free. Our driver will greet you at the airport with a 
+                                    personalized welcome, assist with your luggage, and take you directly to your 
+                                    accommodation in air‑conditioned comfort.
+                                </p>
+                                <ul class="service-features">
+                                    <li>24/7 arrival and departure transfers</li>
+                                    <li>Meet‑and‑greet service with name board</li>
+                                    <li>Spacious, modern vehicles</li>
+                                    <li>Complimentary bottled water & refreshing towels</li>
+                                </ul>
+                                <div class="service-card-footer">
+                                    <div class="service-price">
+                                        From <span>Included in packages</span>
+                                    </div>
+                                    <a href="./contact.html" class="service-button">
+                                        <i class="fas fa-car"></i> Request Transfer
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service 3: Private Vehicle & Driver with Local Guidance -->
+                        <div class="service-card fade-in-up stagger-delay-3">
+                            <div class="service-card-header">
+                                <div class="service-icon-container">
+                                    <i class="fas fa-car-side"></i>
+                                </div>
+                                <h3 class="service-card-title">Private Vehicle, Driver & Local Transport</h3>
+                            </div>
+                            <div class="service-card-content">
+                                <p class="service-card-description">
+                                    Travel at your own pace with a dedicated English‑speaking driver who doubles as a
+                                    knowledgeable local guide. Our modern fleet ensures a smooth, safe ride wherever you go.
+                                </p>
+                                <ul class="service-features">
+                                    <li>Private air‑conditioned car/van with driver</li>
+                                    <li>Flexible daily itineraries – change anytime</li>
+                                    <li>Insider tips on hidden spots & local eateries</li>
+                                    <li>Child seats & wheelchair accessibility on request</li>
+                                </ul>
+                                <div class="service-card-footer">
+                                    <div class="service-price">
+                                        From <span>$55 / day</span>
+                                    </div>
+                                    <a href="./contact.html" class="service-button">
+                                        <i class="fas fa-route"></i> Book Vehicle
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service 4: Personalized & Customizable Itineraries -->
+                        <div class="service-card fade-in-up stagger-delay-4">
                             <div class="service-card-header">
                                 <div class="service-icon-container">
                                     <i class="fas fa-pen-nib"></i>
                                 </div>
-                                <h3 class="service-card-title">Design Your Sri Lanka Journey</h3>
+                                <h3 class="service-card-title">Custom Itinerary Design</h3>
                             </div>
                             <div class="service-card-content">
                                 <p class="service-card-description">
-                                    Every traveler is unique. We design personalized Sri Lanka journeys that match your style, 
-                                    interests, and dreams with bespoke attention to detail.
+                                    Your trip, your rules. Share your interests – be it culture, nature, food, or adventure –
+                                    and we will craft a day‑by‑day itinerary that feels uniquely yours.
                                 </p>
                                 <ul class="service-features">
-                                    <li>Tailored itineraries based on your preferences</li>
-                                    <li>Flexible scheduling and pacing</li>
-                                    <li>Expert local recommendations</li>
-                                    <li>Multiple luxury options</li>
+                                    <li>One‑on‑one consultation via email/WhatsApp</li>
+                                    <li>Insider access to off‑the‑beaten‑path locations</li>
+                                    <li>Flexible pacing – no rigid group schedules</li>
+                                    <li>Draft, revise, and finalize together</li>
                                 </ul>
                                 <div class="service-card-footer">
                                     <div class="service-price">
-                                        From <span>Custom Quote</span>
+                                        From <span>Free design with any booking</span>
                                     </div>
                                     <a href="./pkg-own-tour.html" class="service-button">
-                                        <i class="fas fa-pen-alt me-1"></i>
-                                        Design Tour
+                                        <i class="fas fa-edit"></i> Design My Tour
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- 14 Day Tour Package -->
+                        <!-- Service 5: Hotel Accommodations Planning -->
                         <div class="service-card fade-in-up stagger-delay-2">
                             <div class="service-card-header">
                                 <div class="service-icon-container">
-                                    <i class="fas fa-calendar-alt"></i>
+                                    <i class="fas fa-hotel"></i>
                                 </div>
-                                <h3 class="service-card-title">The Ultimate Sri Lanka Journey</h3>
+                                <h3 class="service-card-title">Luxury Hotel & Villa Planning</h3>
                             </div>
                             <div class="service-card-content">
                                 <p class="service-card-description">
-                                    A perfectly paced 14-day Sri Lanka tour combining timeless culture, breathtaking landscapes, 
-                                    wildlife encounters, and coastal relaxation in ultimate comfort.
+                                    We handpick the finest luxury hotels, boutique resorts, and private villas that match 
+                                    your budget and style. Enjoy exclusive amenities and breathtaking views throughout your stay.
                                 </p>
                                 <ul class="service-features">
-                                    <li>Premium accommodations throughout</li>
-                                    <li>Private transportation with english speeking driver</li>
-                                    <li>Exclusive access to heritage sites</li>
-                                    <li>Gourmet dining experiences</li>
+                                    <li>5‑star hotels, heritage resorts & ocean‑view villas</li>
+                                    <li>Best‑rate guarantees with free cancellations</li>
+                                    <li>Special honeymoon & family suites</li>
+                                    <li>Breakfast and all‑inclusive options</li>
                                 </ul>
                                 <div class="service-card-footer">
                                     <div class="service-price">
-                                        From <span>$1,499</span>
+                                        From <span>Custom arrangement</span>
                                     </div>
-                                    <a href="./pkg-14-day-tour.html" class="service-button">
-                                        <i class="fas fa-map-marked-alt me-1"></i>
-                                        View Itinerary
+                                    <a href="./contact.html" class="service-button">
+                                        <i class="fas fa-bed"></i> Plan Stay
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Sri Lanka Highlights - 11 Day Tour -->
-                        <div class="service-card fade-in-up stagger-delay-4">
+                        <!-- Service 6: Authentic Local Experiences -->
+                        <div class="service-card fade-in-up">
                             <div class="service-card-header">
                                 <div class="service-icon-container">
-                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-leaf"></i>
                                 </div>
-                                <h3 class="service-card-title">Sri Lanka Highlights In 11 Days</h3>
+                                <h3 class="service-card-title">Authentic Local Experiences</h3>
                             </div>
                             <div class="service-card-content">
                                 <p class="service-card-description">
-                                    Experience the very best of Sri Lanka in this comprehensive journey covering 
-                                    cultural wonders, wildlife safaris, hill country, and pristine beaches.
+                                    Go beyond the tourist trail. Cook with a local family, visit a tea plantation,
+                                    learn traditional dance, or explore vibrant markets – real Sri Lanka, not a show.
                                 </p>
                                 <ul class="service-features">
-                                    <li>All major attractions included</li>
-                                    <li>Small group luxury experience</li>
-                                    <li>Expert naturalist guides</li>
-                                    <li>Premium beachfront stays</li>
+                                    <li>Home‑cooked meal experiences</li>
+                                    <li>Tea plucking & factory tours</li>
+                                    <li>Village tuk‑tuk rides & spice gardens</li>
+                                    <li>Artisan workshops (mask making, batik)</li>
                                 </ul>
                                 <div class="service-card-footer">
                                     <div class="service-price">
-                                        From <span>$1,649</span>
+                                        From <span>$30 / person</span>
                                     </div>
-                                    <a href="./pkg-11-day-tour.html" class="service-button">
-                                        <i class="fas fa-compass me-1"></i>
-                                        Discover Tour
+                                    <a href="./contact.html" class="service-button">
+                                        <i class="fas fa-users"></i> Add Experience
                                     </a>
                                 </div>
                             </div>
@@ -1232,219 +1106,7 @@
                 </div>
             </div>
 
-            <!-- Featured Services Showcase -->
-            <div class="featured-services-showcase">
-                <div class="showcase-title-container fade-in-up">
-                    <h2 class="showcase-title">Signature Experiences</h2>
-                    <p class="showcase-subtitle">Our most exclusive services for discerning travelers</p>
-                </div>
-                
-                <div class="magazine-service-display">
-                    <!-- Kandy Day Tour -->
-                    <div class="magazine-service-item fade-in-up stagger-delay-1">
-                        <div class="magazine-service-image">
-                            <img src="img/dalada-maligawa.jpeg" alt="Kandy Day Tour">
-                            <div class="magazine-service-badge">
-                                <i class="fas fa-crown"></i> Day Experience
-                            </div>
-                        </div>
-                        <div class="magazine-service-content">
-                            <h3 class="magazine-service-title">Kandy Day Tour</h3>
-                            <p class="magazine-service-description">
-                                Discover the cultural charm of Kandy in one day, visiting sacred temples, scenic lakes, 
-                                royal heritage sites, and vibrant local markets with expert local guides.
-                            </p>
-                            <div class="service-details-grid">
-                                <div class="detail-item">
-                                    <div class="detail-icon">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                    <div class="detail-text">
-                                        <div class="detail-label">Duration</div>
-                                        <div class="detail-value">Full Day</div>
-                                    </div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-icon">
-                                        <i class="fas fa-user-check"></i>
-                                    </div>
-                                    <div class="detail-text">
-                                        <div class="detail-label">Group Size</div>
-                                        <div class="detail-value">Private</div>
-                                    </div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-icon">
-                                        <i class="fas fa-utensils"></i>
-                                    </div>
-                                    <div class="detail-text">
-                                        <div class="detail-label">Dining</div>
-                                        <div class="detail-value">Sri Lankan Lunch</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="./pkg-kandy-day-tour.html" class="service-button">
-                                <i class="fas fa-map-marker-alt me-1"></i>
-                                Experience Kandy
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Dambulla, Sigiriya & Kandy Tour -->
-                    <div class="magazine-service-item fade-in-up stagger-delay-2">
-                        <div class="magazine-service-image">
-                            <img src="img/sigiriya.jpg" alt="Cultural Triangle Tour">
-                            <div class="magazine-service-badge">
-                                <i class="fas fa-award"></i> Most Popular
-                            </div>
-                        </div>
-                        <div class="magazine-service-content">
-                            <h3 class="magazine-service-title">Dambulla, Sigiriya & Kandy Tour</h3>
-                            <p class="magazine-service-description">
-                                Journey through Sri Lanka's Cultural Triangle, discovering Dambulla's cave temples, 
-                                the majestic Sigiriya Rock, and the historic city of Kandy with expert guidance.
-                            </p>
-                            <div class="service-details-grid">
-                                <div class="detail-item">
-                                    <div class="detail-icon">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                    <div class="detail-text">
-                                        <div class="detail-label">Duration</div>
-                                        <div class="detail-value">4-5 Days</div>
-                                    </div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-icon">
-                                        <i class="fas fa-mountain"></i>
-                                    </div>
-                                    <div class="detail-text">
-                                        <div class="detail-label">UNESCO Sites</div>
-                                        <div class="detail-value">3 Included</div>
-                                    </div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-icon">
-                                        <i class="fas fa-hotel"></i>
-                                    </div>
-                                    <div class="detail-text">
-                                        <div class="detail-label">Accommodation</div>
-                                        <div class="detail-value">Luxury Heritage</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="./pkg-kandy-sigiriya-dambulla-tour.html" class="service-button">
-                                <i class="fas fa-hiking me-1"></i>
-                                Explore Triangle
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- More Premium Services -->
-            <div class="premium-services-section fade-in-up">
-                <div class="section-decorative-line"></div>
-                
-                <div class="services-grid-container">
-                    <div class="premium-services-grid">
-                        <!-- Discover Northern Sri Lanka -->
-                        <div class="service-card fade-in-up stagger-delay-1">
-                            <div class="service-card-header">
-                                <div class="service-icon-container">
-                                    <i class="fas fa-compass"></i>
-                                </div>
-                                <h3 class="service-card-title">Discover Northern Sri Lanka</h3>
-                            </div>
-                            <div class="service-card-content">
-                                <p class="service-card-description">
-                                    Explore the unique cultural heritage, ancient temples, and pristine islands 
-                                    of Northern Sri Lanka with expert local guides and luxury accommodations.
-                                </p>
-                                <ul class="service-features">
-                                    <li>Jaffna cultural immersion</li>
-                                    <li>Island excursions</li>
-                                    <li>Tamil culinary experiences</li>
-                                    <li>Luxury boutique stays</li>
-                                </ul>
-                                <div class="service-card-footer">
-                                    <div class="service-price">
-                                        From <span>$1,500</span>
-                                    </div>
-                                    <a href="./pkg-discover-nothern-srilanka.html" class="service-button">
-                                        <i class="fas fa-map-marked-alt me-1"></i>
-                                        Discover North
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Heritage & Horizon Tour -->
-                        <div class="service-card fade-in-up stagger-delay-2">
-                            <div class="service-card-header">
-                                <div class="service-icon-container">
-                                    <i class="fas fa-sun"></i>
-                                </div>
-                                <h3 class="service-card-title">Heritage & Horizon Tour</h3>
-                            </div>
-                            <div class="service-card-content">
-                                <p class="service-card-description">
-                                    Experience the perfect blend of rich cultural heritage and breathtaking beaches 
-                                    in this premium journey through East Sri Lanka with exclusive coastal retreats.
-                                </p>
-                                <ul class="service-features">
-                                    <li>Private beachfront villas</li>
-                                    <li>Cultural site VIP access</li>
-                                    <li>Seafood culinary journey</li>
-                                    <li>Sunset yacht experiences</li>
-                                </ul>
-                                <div class="service-card-footer">
-                                    <div class="service-price">
-                                        From <span>$1,800</span>
-                                    </div>
-                                    <a href="./pkg-heritage-horizon.html" class="service-button">
-                                        <i class="fas fa-umbrella-beach me-1"></i>
-                                        Beach & Heritage
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Sunny Eastern Beach Escape -->
-                        <div class="service-card fade-in-up stagger-delay-3">
-                            <div class="service-card-header">
-                                <div class="service-icon-container">
-                                    <i class="fas fa-umbrella-beach"></i>
-                                </div>
-                                <h3 class="service-card-title">Sunny Eastern Beach Escape</h3>
-                            </div>
-                            <div class="service-card-content">
-                                <p class="service-card-description">
-                                    Relax on pristine eastern beaches with luxury accommodations, private water sports, 
-                                    and exclusive access to Sri Lanka's most beautiful coastal landscapes.
-                                </p>
-                                <ul class="service-features">
-                                    <li>Luxury beachfront resorts</li>
-                                    <li>Private surfing lessons</li>
-                                    <li>Whale watching expeditions</li>
-                                    <li>Sunset cocktail experiences</li>
-                                </ul>
-                                <div class="service-card-footer">
-                                    <div class="service-price">
-                                        From <span>$1,400</span>
-                                    </div>
-                                    <a href="./pkg-eastern-beach.html" class="service-button">
-                                        <i class="fas fa-water me-1"></i>
-                                        Beach Paradise
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonials Section -->
+            <!-- Testimonials Section (unchanged) -->
             <div class="testimonials-section fade-in-up">
                 <div class="container">
                     <div class="testimonials-title">
@@ -1463,8 +1125,8 @@
                                     <i class="fas fa-star"></i>
                                 </div>
                                 <p class="testimonial-text">
-                                    Outstanding service from Ceyloan Traveller Travels & Tours. 
-                                    Ceyloan Travellers handled everything smoothly, from bookings to last minute changes.
+                                    Outstanding service from Ceyloan Travellers. 
+                                    They handled everything smoothly, from bookings to last minute changes.
                                     The team was professional, responsive, and genuinely caring. My trip was stress free,
                                     well organized, and exceeded expectations. Highly recommended for reliable, efficient, 
                                     and friendly travel assistance every single time overall.
@@ -1528,7 +1190,7 @@
                 </div>
             </div>
 
-            <!-- Services CTA -->
+            <!-- Services CTA (unchanged) -->
             <div class="services-cta-section fade-in-up">
                 <h2 class="services-cta-title">Ready to Begin Your Journey?</h2>
                 <p class="services-cta-description">
@@ -1678,7 +1340,7 @@
             }
             
             // Add hover effect to service cards
-            const serviceCards = document.querySelectorAll('.service-card, .magazine-service-item');
+            const serviceCards = document.querySelectorAll('.service-card');
             
             serviceCards.forEach(card => {
                 card.addEventListener('mouseenter', function() {

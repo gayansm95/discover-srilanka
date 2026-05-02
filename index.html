@@ -77,7 +77,6 @@
         .svc-card:nth-child(4) { animation-delay: 0.4s; }
         .svc-card:nth-child(5) { animation-delay: 0.5s; }
         .svc-card:nth-child(6) { animation-delay: 0.6s; }
-        .svc-card:nth-child(7) { animation-delay: 0.7s; }
         .svc-card:hover { transform: translateY(-15px) rotateX(5deg) scale(1.05); box-shadow: 0 30px 70px rgba(0,0,0,0.12); }
         .svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(135deg, #0d6efd, #8a2be2); z-index: 2; }
         .svc-card-header { padding: 45px 35px 25px; background: linear-gradient(135deg, #0d6efd, #8a2be2); color: white; text-align: center; position: relative; overflow: hidden; }
@@ -103,39 +102,6 @@
         .premium-services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 35px; margin-bottom: 80px; perspective: 1000px; }
         @media (max-width: 768px) { .premium-services-grid { grid-template-columns: 1fr; } .section-main-title { font-size: 36px; } }
 
-        /* Magazine showcase */
-        .magazine-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 40px; margin-bottom: 80px; perspective: 1000px; }
-        @media (max-width: 768px) { .magazine-grid { grid-template-columns: 1fr; } }
-        .magazine-item {
-            background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-            transition: all 0.5s ease; border: 1px solid rgba(0,0,0,0.05);
-            opacity: 0;
-            transform: perspective(1000px) rotateY(90deg) translateX(100px) scale(0.8);
-            animation: svcCardFlipIn 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
-        }
-        .magazine-item:nth-child(1) { animation-delay: 0.1s; }
-        .magazine-item:nth-child(2) { animation-delay: 0.2s; }
-        .magazine-item:nth-child(3) { animation-delay: 0.3s; }
-        .magazine-item:nth-child(4) { animation-delay: 0.4s; }
-        .magazine-item:hover { transform: translateY(-10px) rotateX(5deg) scale(1.05); box-shadow: 0 30px 70px rgba(0,0,0,0.12); }
-        .magazine-img { height: 250px; position: relative; overflow: hidden; }
-        .magazine-img::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.7) 100%); z-index: 1; }
-        .magazine-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
-        .magazine-item:hover .magazine-img img { transform: scale(1.1); }
-        .magazine-badge { position: absolute; top: 25px; left: 25px; background: linear-gradient(135deg, #0d6efd, #8a2be2); color: white; padding: 8px 22px; border-radius: 30px; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; z-index: 2; box-shadow: 0 5px 15px rgba(13,110,253,0.3); display: flex; align-items: center; gap: 8px; }
-        .magazine-content { padding: 40px; }
-        .magazine-title { font-size: 1.8rem; color: #2c3e50; margin-bottom: 20px; position: relative; padding-bottom: 15px; }
-        .magazine-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background: #0d6efd; }
-        .magazine-desc { font-size: 1.05rem; line-height: 1.7; color: #555; margin-bottom: 25px; }
-        .detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 30px; }
-        @media (max-width: 768px) { .detail-grid { grid-template-columns: 1fr; } }
-        .detail-item { display: flex; align-items: center; gap: 12px; padding: 12px; background: #f8f9ff; border-radius: 12px; transition: transform 0.3s ease; }
-        .detail-item:hover { transform: translateY(-3px); background: white; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
-        .detail-icon { width: 45px; height: 45px; background: linear-gradient(135deg, #0d6efd, #8a2be2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.1rem; flex-shrink: 0; }
-        .detail-text { flex: 1; }
-        .detail-label { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
-        .detail-value { font-size: 1rem; color: #2c3e50; font-weight: 600; }
-
         /* Testimonials */
         .testimonials-section {
             background: linear-gradient(135deg, #0d6efd, #8a2be2); padding: 80px 0; border-radius: 25px; margin-top: 60px; color: white; position: relative; overflow: hidden;
@@ -154,7 +120,7 @@
         .author-info h4 { font-size: 1.2rem; margin-bottom: 5px; color: white; }
         .author-info p { opacity: 0.8; font-size: 0.9rem; }
 
-        /* ========== PACKAGE DURATION CARDS (with animation) ========== */
+        /* ========== PACKAGE DURATION CARDS ========== */
         .tour-packages-section {
             background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
             padding: 100px 0;
@@ -227,16 +193,10 @@
         /* Blog, Contact, Subscribe */
         .blog-section { background: #ffffff; padding: 100px 0; position: relative; }
         .contact-section { background: linear-gradient(145deg, #f0f5ff 0%, #e6edfa 100%); padding: 100px 0; position: relative; overflow: hidden; }
-        .subscribe-section { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/carousel-2.jpg') !important; background-size: cover !important; background-position: center !important; background-attachment: fixed !important; padding: 80px 0; }
-        .subscribe-title { display: inline-block; padding: 8px 25px; background: #ffd700; color: #2c3e50; border-radius: 50px; font-weight: 600; font-size: 1rem; margin-bottom: 20px; }
-        .subscribe-section h1 { color: white; font-size: 2.5rem; font-weight: 700; }
-        .subscribe-section p { color: rgba(255,255,255,0.9); font-size: 1.1rem; }
-        .subscribe-section .form-control { border: 2px solid transparent; padding: 15px 25px; border-radius: 50px; font-size: 1rem; transition: all 0.3s ease; }
-        .subscribe-section .form-control:focus { border-color: #ffd700; box-shadow: 0 0 0 0.2rem rgba(255,215,0,0.25); outline: none; }
-        .subscribe-section button { background: #ffd700; border: none; padding: 12px 30px; border-radius: 50px; color: #2c3e50; font-weight: 600; transition: all 0.3s ease; }
-        .subscribe-section button:hover { background: #ffa500; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,215,0,0.3); }
+        
+        /* Removed the old .subscribe-section rule */
 
-        /* ===== VIDEO HERO & SEARCH BAR (single row, blue button, aligned) ===== */
+        /* ===== VIDEO HERO & SEARCH BAR ===== */
         .video-hero {
             position: relative;
             height: 100vh;
@@ -274,7 +234,7 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
             border: 1px solid rgba(255,255,255,0.4);
             display: flex;
-            align-items: flex-end;   /* Aligns button to bottom of form groups (matching input baseline) */
+            align-items: flex-end;
             gap: 12px;
             flex-wrap: nowrap;
             justify-content: center;
@@ -312,7 +272,7 @@
             outline: none;
         }
         .hero-search-bar .btn-hero-search {
-            background: #0d6efd;               /* Blue button */
+            background: #0d6efd;
             color: white;
             border: none;
             padding: 14px 35px;
@@ -423,7 +383,6 @@
                 <source src="videos/header-video.mp4" type="video/mp4">
             </video>
             <div class="video-overlay"></div>
-            <!-- Centered Single Row Search Bar with Blue Button (now aligned to bottom) -->
             <div class="hero-search-bar">
                 <div class="form-group">
                     <label><i class="fas fa-calendar-alt"></i> Trip Duration (days) *</label>
@@ -468,7 +427,7 @@
         </div>
     </div>
 
-    <!-- ========== PREMIUM SERVICES SECTION ========== -->
+    <!-- ========== PREMIUM SERVICES SECTION (6 core services) ========== -->
     <div class="premium-services-full">
         <div class="container">
             <div class="section-title-wrapper">
@@ -479,86 +438,137 @@
             <div class="text-center mb-5">
                 <p style="font-size:1.2rem;color:#555;max-width:800px;margin:0 auto;">We offer complete travel solutions tailored to your unique preferences. Please check out our services and start planning your Sri Lanka adventure today.</p>
             </div>
+
+            <!-- 6 core services grid -->
             <div class="premium-services-grid">
+                <!-- Service 1: Airport Pickup & Drop-off -->
                 <div class="svc-card">
-                    <div class="svc-card-header"><div class="svc-icon-container"><i class="fas fa-pen-nib"></i></div><h3 class="svc-card-title">Design Your Sri Lanka Journey</h3></div>
-                    <div class="svc-card-content">
-                        <p class="svc-card-description">Every traveler is unique. We design personalized Sri Lanka journeys that match your style, interests, and dreams with bespoke attention to detail.</p>
-                        <ul class="svc-features"><li>Tailored itineraries based on your preferences</li><li>Flexible scheduling and pacing</li><li>Expert local recommendations</li><li>Multiple luxury options</li></ul>
-                        <div class="svc-card-footer"><div class="svc-price">From <span>Custom Quote</span></div><a href="./pkg-own-tour.html" class="svc-button"><i class="fas fa-pen-alt me-1"></i>Design Tour</a></div>
+                    <div class="svc-card-header">
+                        <div class="svc-icon-container"><i class="fas fa-plane-arrival"></i></div>
+                        <h3 class="svc-card-title">Airport Pickup & Drop‑off</h3>
                     </div>
-                </div>
-                <div class="svc-card">
-                    <div class="svc-card-header"><div class="svc-icon-container"><i class="fas fa-calendar-alt"></i></div><h3 class="svc-card-title">The Ultimate Sri Lanka Journey</h3></div>
                     <div class="svc-card-content">
-                        <p class="svc-card-description">A perfectly paced 14-day Sri Lanka tour combining timeless culture, breathtaking landscapes, wildlife encounters, and coastal relaxation in ultimate comfort.</p>
-                        <ul class="svc-features"><li>Premium accommodations throughout</li><li>Private transportation with english speeking driver</li><li>Exclusive access to heritage sites</li><li>Gourmet dining experiences</li></ul>
-                        <div class="svc-card-footer"><div class="svc-price">From <span>$1,499</span></div><a href="./pkg-14-day-tour.html" class="svc-button"><i class="fas fa-map-marked-alt me-1"></i>View Itinerary</a></div>
-                    </div>
-                </div>
-                <div class="svc-card">
-                    <div class="svc-card-header"><div class="svc-icon-container"><i class="fas fa-star"></i></div><h3 class="svc-card-title">Sri Lanka Highlights In 11 Days</h3></div>
-                    <div class="svc-card-content">
-                        <p class="svc-card-description">Experience the very best of Sri Lanka in this comprehensive journey covering cultural wonders, wildlife safaris, hill country, and pristine beaches.</p>
-                        <ul class="svc-features"><li>All major attractions included</li><li>Small group luxury experience</li><li>Expert naturalist guides</li><li>Premium beachfront stays</li></ul>
-                        <div class="svc-card-footer"><div class="svc-price">From <span>$1,649</span></div><a href="./pkg-11-day-tour.html" class="svc-button"><i class="fas fa-compass me-1"></i>Discover Tour</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="magazine-grid">
-                <div class="magazine-item">
-                    <div class="magazine-img"><img src="img/dalada-maligawa.jpeg" alt="Kandy Day Tour"><div class="magazine-badge"><i class="fas fa-crown"></i> Day Experience</div></div>
-                    <div class="magazine-content">
-                        <h3 class="magazine-title">Kandy Day Tour</h3>
-                        <p class="magazine-desc">Discover the cultural charm of Kandy in one day, visiting sacred temples, scenic lakes, royal heritage sites, and vibrant local markets with expert local guides.</p>
-                        <div class="detail-grid">
-                            <div class="detail-item"><div class="detail-icon"><i class="fas fa-clock"></i></div><div class="detail-text"><div class="detail-label">Duration</div><div class="detail-value">Full Day</div></div></div>
-                            <div class="detail-item"><div class="detail-icon"><i class="fas fa-user-check"></i></div><div class="detail-text"><div class="detail-label">Group Size</div><div class="detail-value">Private</div></div></div>
-                            <div class="detail-item"><div class="detail-icon"><i class="fas fa-utensils"></i></div><div class="detail-text"><div class="detail-label">Dining</div><div class="detail-value">Sri Lankan Lunch</div></div></div>
+                        <p class="svc-card-description">Start your journey stress‑free. Our driver will greet you at the airport with a personalized welcome, assist with your luggage, and take you directly to your accommodation in air‑conditioned comfort.</p>
+                        <ul class="svc-features">
+                            <li>24/7 arrival and departure transfers</li>
+                            <li>Meet‑and‑greet service with name board</li>
+                            <li>Spacious, modern vehicles</li>
+                            <li>Complimentary bottled water & refreshing towels</li>
+                        </ul>
+                        <div class="svc-card-footer">
+                            <div class="svc-price">From <span>Included in packages</span></div>
+                            <a href="./contact.html" class="svc-button"><i class="fas fa-car"></i> Request Transfer</a>
                         </div>
-                        <a href="./pkg-kandy-day-tour.html" class="svc-button"><i class="fas fa-map-marker-alt me-1"></i>Experience Kandy</a>
                     </div>
                 </div>
-                <div class="magazine-item">
-                    <div class="magazine-img"><img src="img/sigiriya.jpg" alt="Cultural Triangle Tour"><div class="magazine-badge"><i class="fas fa-award"></i> Most Popular</div></div>
-                    <div class="magazine-content">
-                        <h3 class="magazine-title">Dambulla, Sigiriya & Kandy Tour</h3>
-                        <p class="magazine-desc">Journey through Sri Lanka's Cultural Triangle, discovering Dambulla's cave temples, the majestic Sigiriya Rock, and the historic city of Kandy with expert guidance.</p>
-                        <div class="detail-grid">
-                            <div class="detail-item"><div class="detail-icon"><i class="fas fa-clock"></i></div><div class="detail-text"><div class="detail-label">Duration</div><div class="detail-value">4-5 Days</div></div></div>
-                            <div class="detail-item"><div class="detail-icon"><i class="fas fa-mountain"></i></div><div class="detail-text"><div class="detail-label">UNESCO Sites</div><div class="detail-value">3 Included</div></div></div>
-                            <div class="detail-item"><div class="detail-icon"><i class="fas fa-hotel"></i></div><div class="detail-text"><div class="detail-label">Accommodation</div><div class="detail-value">Luxury Heritage</div></div></div>
+
+                <!-- Service 2: Luxury Hotel & Villa Planning -->
+                <div class="svc-card">
+                    <div class="svc-card-header">
+                        <div class="svc-icon-container"><i class="fas fa-hotel"></i></div>
+                        <h3 class="svc-card-title">Luxury Hotel & Villa Planning</h3>
+                    </div>
+                    <div class="svc-card-content">
+                        <p class="svc-card-description">We handpick the finest luxury hotels, boutique resorts, and private villas that match your budget and style. Enjoy exclusive amenities and breathtaking views throughout your stay.</p>
+                        <ul class="svc-features">
+                            <li>5‑star hotels, heritage resorts & ocean‑view villas</li>
+                            <li>Best‑rate guarantees with free cancellations</li>
+                            <li>Special honeymoon & family suites</li>
+                            <li>Breakfast and all‑inclusive options</li>
+                        </ul>
+                        <div class="svc-card-footer">
+                            <div class="svc-price">From <span>Custom arrangement</span></div>
+                            <a href="./contact.html" class="svc-button"><i class="fas fa-bed"></i> Plan Stay</a>
                         </div>
-                        <a href="./pkg-kandy-sigiriya-dambulla-tour.html" class="svc-button"><i class="fas fa-hiking me-1"></i>Explore Triangle</a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Private Vehicle & Driver with Local Guidance -->
+                <div class="svc-card">
+                    <div class="svc-card-header">
+                        <div class="svc-icon-container"><i class="fas fa-car-side"></i></div>
+                        <h3 class="svc-card-title">Private Vehicle, Driver & Local Transport</h3>
+                    </div>
+                    <div class="svc-card-content">
+                        <p class="svc-card-description">Travel at your own pace with a dedicated English‑speaking driver who doubles as a knowledgeable local guide. Our modern fleet ensures a smooth, safe ride wherever you go.</p>
+                        <ul class="svc-features">
+                            <li>Private air‑conditioned car/van with driver</li>
+                            <li>Flexible daily itineraries – change anytime</li>
+                            <li>Insider tips on hidden spots & local eateries</li>
+                            <li>Child seats & wheelchair accessibility on request</li>
+                        </ul>
+                        <div class="svc-card-footer">
+                            <div class="svc-price">From <span>$55 / day</span></div>
+                            <a href="./contact.html" class="svc-button"><i class="fas fa-route"></i> Book Vehicle</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: Personalized & Customizable Itineraries -->
+                <div class="svc-card">
+                    <div class="svc-card-header">
+                        <div class="svc-icon-container"><i class="fas fa-pen-nib"></i></div>
+                        <h3 class="svc-card-title">Custom Itinerary Design</h3>
+                    </div>
+                    <div class="svc-card-content">
+                        <p class="svc-card-description">Your trip, your rules. Share your interests – be it culture, nature, food, or adventure – and we will craft a day‑by‑day itinerary that feels uniquely yours.</p>
+                        <ul class="svc-features">
+                            <li>One‑on‑one consultation via email/WhatsApp</li>
+                            <li>Insider access to off‑the‑beaten‑path locations</li>
+                            <li>Flexible pacing – no rigid group schedules</li>
+                            <li>Draft, revise, and finalize together</li>
+                        </ul>
+                        <div class="svc-card-footer">
+                            <div class="svc-price">From <span>Free design with any booking</span></div>
+                            <a href="./pkg-own-tour.html" class="svc-button"><i class="fas fa-edit"></i> Design My Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5: Authentic Local Experiences -->
+                <div class="svc-card">
+                    <div class="svc-card-header">
+                        <div class="svc-icon-container"><i class="fas fa-leaf"></i></div>
+                        <h3 class="svc-card-title">Authentic Local Experiences</h3>
+                    </div>
+                    <div class="svc-card-content">
+                        <p class="svc-card-description">Go beyond the tourist trail. Cook with a local family, visit a tea plantation, learn traditional dance, or explore vibrant markets – real Sri Lanka, not a show.</p>
+                        <ul class="svc-features">
+                            <li>Home‑cooked meal experiences</li>
+                            <li>Tea plucking & factory tours</li>
+                            <li>Village tuk‑tuk rides & spice gardens</li>
+                            <li>Artisan workshops (mask making, batik)</li>
+                        </ul>
+                        <div class="svc-card-footer">
+                            <div class="svc-price">From <span>$30 / person</span></div>
+                            <a href="./contact.html" class="svc-button"><i class="fas fa-users"></i> Add Experience</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6: Themed Package Tour Arrangements -->
+                <div class="svc-card">
+                    <div class="svc-card-header">
+                        <div class="svc-icon-container"><i class="fas fa-suitcase"></i></div>
+                        <h3 class="svc-card-title">Themed Package Tour Arrangements</h3>
+                    </div>
+                    <div class="svc-card-content">
+                        <p class="svc-card-description">Choose from our expertly curated packages that focus on a specific experience. Beach escapes, wildlife safaris, adrenaline adventures, or deep cultural immersion – we arrange everything.</p>
+                        <ul class="svc-features">
+                            <li>🌴 Beach Escape Package</li>
+                            <li>🐘 Wildlife & Nature Package</li>
+                            <li>🧗 Adventure Package</li>
+                            <li>🏛️ Cultural Heritage Package</li>
+                        </ul>
+                        <div class="svc-card-footer">
+                            <div class="svc-price">From <span>Customizable</span></div>
+                            <a href="./package-comparison.html" class="svc-button"><i class="fas fa-tags"></i> View Packages</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="premium-services-grid">
-                <div class="svc-card">
-                    <div class="svc-card-header"><div class="svc-icon-container"><i class="fas fa-compass"></i></div><h3 class="svc-card-title">Discover Northern Sri Lanka</h3></div>
-                    <div class="svc-card-content">
-                        <p class="svc-card-description">Explore the unique cultural heritage, ancient temples, and pristine islands of Northern Sri Lanka with expert local guides and luxury accommodations.</p>
-                        <ul class="svc-features"><li>Jaffna cultural immersion</li><li>Island excursions</li><li>Tamil culinary experiences</li><li>Luxury boutique stays</li></ul>
-                        <div class="svc-card-footer"><div class="svc-price">From <span>$1,500</span></div><a href="./pkg-discover-nothern-srilanka.html" class="svc-button"><i class="fas fa-map-marked-alt me-1"></i>Discover North</a></div>
-                    </div>
-                </div>
-                <div class="svc-card">
-                    <div class="svc-card-header"><div class="svc-icon-container"><i class="fas fa-sun"></i></div><h3 class="svc-card-title">Heritage & Horizon Tour</h3></div>
-                    <div class="svc-card-content">
-                        <p class="svc-card-description">Experience the perfect blend of rich cultural heritage and breathtaking beaches in this premium journey through East Sri Lanka with exclusive coastal retreats.</p>
-                        <ul class="svc-features"><li>Private beachfront villas</li><li>Cultural site VIP access</li><li>Seafood culinary journey</li><li>Sunset yacht experiences</li></ul>
-                        <div class="svc-card-footer"><div class="svc-price">From <span>$1,800</span></div><a href="./pkg-heritage-horizon.html" class="svc-button"><i class="fas fa-umbrella-beach me-1"></i>Beach & Heritage</a></div>
-                    </div>
-                </div>
-                <div class="svc-card">
-                    <div class="svc-card-header"><div class="svc-icon-container"><i class="fas fa-umbrella-beach"></i></div><h3 class="svc-card-title">Sunny Eastern Beach Escape</h3></div>
-                    <div class="svc-card-content">
-                        <p class="svc-card-description">Relax on pristine eastern beaches with luxury accommodations, private water sports, and exclusive access to Sri Lanka's most beautiful coastal landscapes.</p>
-                        <ul class="svc-features"><li>Luxury beachfront resorts</li><li>Private surfing lessons</li><li>Whale watching expeditions</li><li>Sunset cocktail experiences</li></ul>
-                        <div class="svc-card-footer"><div class="svc-price">From <span>$1,400</span></div><a href="./pkg-eastern-beach.html" class="svc-button"><i class="fas fa-water me-1"></i>Beach Paradise</a></div>
-                    </div>
-                </div>
-            </div>
+
+            <!-- Testimonials -->
             <div class="testimonials-section">
                 <div class="container">
                     <div class="testimonials-title"><h3>What Our Travelers Say</h3><p>Genuine feedback from international guests</p></div>
@@ -584,6 +594,57 @@
                 <p class="section-description">Choose from our handcrafted tour durations. Each package includes multiple itinerary options designed for every travel style — culture, nature, wildlife, or beach bliss.</p>
             </div>
             <div class="row g-4">
+                <!-- 1. Customizable Tour Planning Package -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="pkg-duration-card">
+                        <div class="pkg-image-container">
+                            <img src="img/elephnts.jpg" alt="Customizable Tour Planning" class="pkg-image" onerror="this.src='img/default-package.jpg'">
+                            <span class="pkg-badge"><i class="fas fa-pen-nib"></i> Flexible</span>
+                        </div>
+                        <div class="pkg-card-content">
+                            <div class="pkg-duration">Build Your Own <span>Itinerary</span></div>
+                            <div class="pkg-price">Custom <small>quotes available</small></div>
+                            <div class="pkg-itinerary-count"><i class="fas fa-map-marked-alt"></i> Unlimited possibilities</div>
+                            <p class="text-muted mt-2">Create a fully personalized journey: we design every day around your interests, pace, and style.</p>
+                            <a href="./pkg-own-tour.html" class="pkg-card-btn">Start Planning <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Cultural Triangle Package -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="pkg-duration-card">
+                        <div class="pkg-image-container">
+                            <img src="img/sigiriya.jpg" alt="Cultural Triangle" class="pkg-image" onerror="this.src='img/default-package.jpg'">
+                            <span class="pkg-badge"><i class="fas fa-landmark"></i> Cultural Immersion</span>
+                        </div>
+                        <div class="pkg-card-content">
+                            <div class="pkg-duration">Cultural Triangle <span>Tour</span></div>
+                            <div class="pkg-price">From $1,250 <small>per person</small></div>
+                            <div class="pkg-itinerary-count"><i class="fas fa-map-marked-alt"></i> Signature Heritage Tour</div>
+                            <p class="text-muted mt-2">Ancient kingdoms, sacred temples, and UNESCO wonders – Sigiriya, Dambulla, Kandy, and more.</p>
+                            <a href="./pkg-sri-lanka-cultural-trangle.html" class="pkg-card-btn">Explore Cultural Tour <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Kandy Day Tour Package -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="pkg-duration-card">
+                        <div class="pkg-image-container">
+                            <img src="img/dalada-maligawa.jpeg" alt="Kandy Day Tour" class="pkg-image" onerror="this.src='img/default-package.jpg'">
+                            <span class="pkg-badge"><i class="fas fa-clock"></i> Day Experience</span>
+                        </div>
+                        <div class="pkg-card-content">
+                            <div class="pkg-duration">Full Day <span>Excursion</span></div>
+                            <div class="pkg-price">From $75 <small>per person</small></div>
+                            <div class="pkg-itinerary-count"><i class="fas fa-map-marked-alt"></i> Private guided tour</div>
+                            <p class="text-muted mt-2">Immerse in the cultural heart of Sri Lanka: Temple of the Tooth, botanical gardens, and local crafts.</p>
+                            <a href="./pkg-kandy-day-tour.html" class="pkg-card-btn">Discover Kandy <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 5 Days -->
                 <div class="col-lg-4 col-md-6">
                     <div class="pkg-duration-card">
@@ -600,6 +661,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- 6 Days -->
                 <div class="col-lg-4 col-md-6">
                     <div class="pkg-duration-card">
@@ -615,6 +677,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- 7 Days -->
                 <div class="col-lg-4 col-md-6">
                     <div class="pkg-duration-card">
@@ -631,6 +694,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- 8 Days -->
                 <div class="col-lg-4 col-md-6">
                     <div class="pkg-duration-card">
@@ -646,6 +710,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- 10 Days -->
                 <div class="col-lg-4 col-md-6">
                     <div class="pkg-duration-card">
@@ -662,6 +727,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- 11 Days -->
                 <div class="col-lg-4 col-md-6">
                     <div class="pkg-duration-card">
@@ -677,6 +743,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- 12 Days -->
                 <div class="col-lg-4 col-md-6">
                     <div class="pkg-duration-card">
@@ -692,6 +759,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- 13 Days -->
                 <div class="col-lg-4 col-md-6">
                     <div class="pkg-duration-card">
@@ -707,11 +775,12 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- 14 Days -->
                 <div class="col-lg-4 col-md-6">
                     <div class="pkg-duration-card">
                         <div class="pkg-image-container">
-                            <img src="img/carousel-2.jpg" alt="14 Day Tour" class="pkg-image" onerror="this.src='img/default-package.jpg'">
+                            <img src="img/horton-plains-national-park.webp" alt="14 Day Tour" class="pkg-image" onerror="this.src='img/default-package.jpg'">
                             <span class="pkg-badge"><i class="fas fa-gem"></i> Ultimate</span>
                         </div>
                         <div class="pkg-card-content">
@@ -787,14 +856,14 @@
         </div>
     </div>
 
-    <!-- Subscribe -->
-    <div class="subscribe-section">
+    <!-- Subscribe (now same as gallery page) -->
+    <div class="container-fluid subscribe py-5">
         <div class="container text-center py-5">
             <div class="mx-auto text-center" style="max-width: 900px;">
                 <h5 class="subscribe-title px-3">Subscribe</h5>
                 <h1 class="text-white mb-4">Our Newsletter</h1>
                 <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, insider tips, and inspiring Sri Lanka travel stories straight to your inbox.</p>
-                <div class="position-relative mx-auto" style="max-width: 600px;">
+                <div class="position-relative mx-auto">
                     <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                     <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
                 </div>
@@ -872,14 +941,15 @@
                 });
             }
 
-            const subscribeBtn = document.querySelector('.subscribe-section button');
+            // Updated selector for the subscribe button to match the new class layout
+            const subscribeBtn = document.querySelector('.subscribe button');
             if (subscribeBtn) {
                 subscribeBtn.addEventListener('click', function () {
-                    const emailInput = document.querySelector('.subscribe-section input');
+                    const emailInput = document.querySelector('.subscribe input');
                     const email = emailInput.value.trim();
                     if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                         this.textContent = 'Subscribed!'; this.style.background = '#28a745';
-                        setTimeout(() => { this.textContent = 'Subscribe'; this.style.background = '#ffd700'; emailInput.value = ''; }, 2000);
+                        setTimeout(() => { this.textContent = 'Subscribe'; this.style.background = ''; emailInput.value = ''; }, 2000);
                     } else {
                         emailInput.style.borderColor = '#dc3545';
                         setTimeout(() => emailInput.style.borderColor = '', 2000);
@@ -903,5 +973,4 @@
         });
     </script>
 </body>
-
 </html>

@@ -217,6 +217,9 @@
         .duration-card:nth-child(7) { animation-delay: 0.35s; }
         .duration-card:nth-child(8) { animation-delay: 0.4s; }
         .duration-card:nth-child(9) { animation-delay: 0.45s; }
+        .duration-card:nth-child(10) { animation-delay: 0.5s; }
+        .duration-card:nth-child(11) { animation-delay: 0.55s; }
+        .duration-card:nth-child(12) { animation-delay: 0.6s; }
 
         /* Floating effect on price */
         @keyframes softPulse {
@@ -298,16 +301,67 @@
         <div class="container py-5">
             <div class="comparison-header">
                 <h1>Find Your Perfect Sri Lanka Journey</h1>
-                <p>Choose from our handcrafted tour durations. Each package includes multiple itinerary options designed for every travel style — culture, nature, wildlife, or beach bliss.</p>
+                <p>Choose from our handcrafted tour durations and specialized packages. Each includes multiple itinerary options designed for every travel style — culture, nature, wildlife, or beach bliss.</p>
             </div>
 
-            <!-- Duration Cards Grid (with images from original packages) -->
+            <!-- Duration Cards Grid (with three new packages at top) -->
             <div class="row g-4">
-                <!-- 5 Days -->
+                <!-- 1. Customizable Tour Planning Package -->
                 <div class="col-lg-4 col-md-6">
                     <div class="duration-card">
                         <div class="package-image-container">
-                            <img src="img/kandy-dambulla-sirigiya-package-card.jpg" alt="5 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                            <img src="img/elephnts.jpg" alt="Customizable Tour Planning" class="package-image" >
+                            <span class="popular-badge"><i class="fas fa-pen-nib"></i> Flexible</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="duration">Build Your Own <span> Itinerary</span></div>
+                            <div class="starting-price">Custom <small>quotes available</small></div>
+                            <div class="itinerary-count"><i class="fas fa-map-marked-alt"></i> Unlimited possibilities</div>
+                            <p class="text-muted mt-2">Create a fully personalized journey: we design every day around your interests, pace, and style.</p>
+                            <a href="./pkg-own-tour.html" class="card-btn">Start Planning <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Cultural Triangle Package -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="duration-card">
+                        <div class="package-image-container">
+                            <img src="img/sigiriya.jpg" alt="Cultural Triangle" class="package-image">
+                            <span class="popular-badge"><i class="fas fa-landmark"></i> Cultural Immersion</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="duration">Cultural Trangle Tour</span></div>
+                            <div class="starting-price">From $1,250 <small>per person</small></div>
+                            <div class="itinerary-count"><i class="fas fa-map-marked-alt"></i> Signature Heritage Tour</div>
+                            <p class="text-muted mt-2">Ancient kingdoms, sacred temples, and UNESCO wonders – Sigiriya, Dambulla, Kandy, and more.</p>
+                            <a href="./pkg-sri-lanka-cultural-trangle.html" class="card-btn">Explore Cultural Tour <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Kandy Day Tour Package -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="duration-card">
+                        <div class="package-image-container">
+                            <img src="img/dalada-maligawa.jpeg" alt="Kandy Day Tour" class="package-image" >
+                            <span class="popular-badge"><i class="fas fa-clock"></i> Day Experience</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="duration">Full Day <span> Excursion</span></div>
+                            <div class="starting-price">From $75 <small>per person</small></div>
+                            <div class="itinerary-count"><i class="fas fa-map-marked-alt"></i> Private guided tour</div>
+                            <p class="text-muted mt-2">Immerse in the cultural heart of Sri Lanka: Temple of the Tooth, botanical gardens, and local crafts.</p>
+                            <a href="./pkg-kandy-day-tour.html" class="card-btn">Discover Kandy <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5 Days (original, now 4th card) -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="duration-card">
+                        <div class="package-image-container">
+                            <img src="img/kandy-dambulla-sirigiya-package-card.jpg" alt="5 Day Tour" class="package-image" >
                             <span class="popular-badge"><i class="fas fa-fire"></i> Best Seller</span>
                         </div>
                         <div class="card-content">
@@ -323,7 +377,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="duration-card">
                         <div class="package-image-container">
-                            <img src="img/udawalawa safari.jpg" alt="6 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                            <img src="img/udawalawa safari.jpg" alt="6 Day Tour" class="package-image" >
                         </div>
                         <div class="card-content">
                             <div class="duration">6 Days <span> / 5 Nights</span></div>
@@ -338,7 +392,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="duration-card">
                         <div class="package-image-container">
-                            <img src="img/blog-card-nuwaraeliya.jpg" alt="7 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                            <img src="img/blog-card-nuwaraeliya.jpg" alt="7 Day Tour" class="package-image" >
                             <span class="popular-badge"><i class="fas fa-star"></i> Popular</span>
                         </div>
                         <div class="card-content">
@@ -354,7 +408,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="duration-card">
                         <div class="package-image-container">
-                            <img src="img/botanical-garden.jpeg" alt="8 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                            <img src="img/botanical-garden.jpeg" alt="8 Day Tour" class="package-image" >
                         </div>
                         <div class="card-content">
                             <div class="duration">8 Days <span> / 7 Nights</span></div>
@@ -369,7 +423,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="duration-card">
                         <div class="package-image-container">
-                            <img src="img/ella-train-tour.jpg" alt="10 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                            <img src="img/ella-train-tour.jpg" alt="10 Day Tour" class="package-image" >
                             <span class="popular-badge"><i class="fas fa-crown"></i> Top Rated</span>
                         </div>
                         <div class="card-content">
@@ -385,7 +439,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="duration-card">
                         <div class="package-image-container">
-                            <img src="img/Nuwara_Eliya_Gregory_Lake.jpg" alt="11 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                            <img src="img/Nuwara_Eliya_Gregory_Lake.jpg" alt="11 Day Tour" class="package-image" >
                         </div>
                         <div class="card-content">
                             <div class="duration">11 Days <span> / 10 Nights</span></div>
@@ -400,7 +454,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="duration-card">
                         <div class="package-image-container">
-                            <img src="img/blog-card-safari.jpg" alt="12 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                            <img src="img/blog-card-safari.jpg" alt="12 Day Tour" class="package-image" >
                         </div>
                         <div class="card-content">
                             <div class="duration">12 Days <span> / 11 Nights</span></div>
@@ -415,7 +469,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="duration-card">
                         <div class="package-image-container">
-                            <img src="img/esala perahata.jpeg" alt="13 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                            <img src="img/esala perahata.jpeg" alt="13 Day Tour" class="package-image" >
                         </div>
                         <div class="card-content">
                             <div class="duration">13 Days <span> / 12 Nights</span></div>
@@ -430,7 +484,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="duration-card">
                         <div class="package-image-container">
-                            <img src="img/carousel-2.jpg" alt="14 Day Tour" class="package-image" onerror="this.src='img/default-package.jpg'">
+                            <img src="img/horton-plains-national-park.WEBP" alt="14 Day Tour" class="package-image" >
                             <span class="popular-badge"><i class="fas fa-gem"></i> Ultimate</span>
                         </div>
                         <div class="card-content">
@@ -444,7 +498,6 @@
                 </div>
             </div>
 
-            <!-- Note: 9-day tour not listed due to missing price data -->
             <div class="text-center mt-5 pt-3">
                 <p class="text-muted"><i class="fas fa-info-circle me-2"></i> All packages include accommodation, private transport, meals as per itinerary, and expert guides. Upgrade options available.</p>
                 <a href="contact.html" class="btn btn-primary rounded-pill py-3 px-5 mt-3">Need Help Choosing? Talk to an Expert</a>
@@ -496,7 +549,6 @@
             // Hide spinner
             document.getElementById('spinner').style.display = 'none';
             
-            // Additional charm: fade in on scroll (already animated with CSS)
             // Ensure images have fallback
             const images = document.querySelectorAll('.package-image');
             images.forEach(img => {
