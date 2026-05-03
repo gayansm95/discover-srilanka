@@ -241,18 +241,21 @@
         }
         .modal-close-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 
-        /* Subscribe / Copyright */
+        /* Subscribe Section – only background, title, and mobile rules – no custom button/input overrides */
         .subscribe {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('img/carousel-2.jpg');
-            background-size: cover; background-position: center; background-attachment: fixed; padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/carousel-2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 80px 0;
         }
-        .subscribe-title { display: inline-block; padding: 8px 25px; background: #ffd700; color: #2c3e50; border-radius: 50px; font-weight: 600; font-size: 1rem; margin-bottom: 20px; }
+        .subscribe-title {
+            display: inline-block; padding: 8px 25px; background: #ffd700;
+            color: #2c3e50; border-radius: 50px; font-weight: 600; font-size: 1rem; margin-bottom: 20px;
+        }
         .subscribe h1 { color: white; font-size: 2.5rem; font-weight: 700; }
         .subscribe p { color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; }
-        .subscribe .form-control { border: 2px solid transparent; padding: 15px 25px; border-radius: 50px; font-size: 1rem; }
-        .subscribe .form-control:focus { border-color: #ffd700; box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25); }
-        .subscribe button { background: linear-gradient(135deg, #ffd700, #ffa500); border: none; padding: 12px 30px; border-radius: 50px; color: #2c3e50; font-weight: 600; }
-        .subscribe button:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); }
+
         .copyright { background: #1a1a1a; color: rgba(255, 255, 255, 0.7); padding: 20px 0; }
         .copyright a { color: #ffd700; text-decoration: none; }
         .copyright a:hover { color: #ffa500; }
@@ -260,6 +263,13 @@
         .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-in-up.visible { opacity: 1; transform: translateY(0); }
         .is-invalid { border-color: #dc3545 !important; }
+
+        /* Mobile subscribe rules (exactly like about us page) */
+        @media (max-width: 768px) {
+            .subscribe h1 { font-size: 2rem; }
+            .subscribe .position-relative { display: flex; flex-direction: column; }
+            .subscribe button { position: relative !important; margin-top: 15px; width: 100%; }
+        }
     </style>
 </head>
 
@@ -380,15 +390,15 @@
         </div>
     </div>
 
-    <!-- Subscribe -->
+    <!-- Subscribe Section (identical to about us page) -->
     <div class="container-fluid subscribe py-5">
         <div class="container text-center py-5">
             <div class="mx-auto text-center" style="max-width: 900px;">
                 <h5 class="subscribe-title px-3">Subscribe</h5>
                 <h1 class="text-white mb-4">Our Newsletter</h1>
                 <p class="text-white mb-5">Subscribe to our newsletter and receive exclusive travel deals, insider tips, and inspiring Sri Lanka travel stories straight to your inbox.</p>
-                <div class="position-relative mx-auto" style="max-width: 600px;">
-                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address">
+                <div class="position-relative mx-auto">
+                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                     <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
                 </div>
             </div>
@@ -432,15 +442,16 @@
     <!-- Choices.js for searchable dropdown -->
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        (function () { emailjs.init("fbErb1P05w8JR7RlH") })();
+        (function () { emailjs.init(""); })();
     </script>
     <script src="js/main.js"></script>
 
     <script>
         (function () {
-            // ---------- Country Data (flags + dialing codes) ----------
+            // Country Data (flags + dialing codes)
             const countries = [
                 { name: "Afghanistan", flag: "🇦🇫", code: "+93" },
                 { name: "Albania", flag: "🇦🇱", code: "+355" },
@@ -553,7 +564,6 @@
             ];
             countries.sort((a, b) => a.name.localeCompare(b.name));
 
-            // ---------- Populate Country Dropdown ----------
             function populateCountryDropdown() {
                 const select = document.getElementById('countrySelect');
                 if (!select) return;
@@ -580,16 +590,9 @@
                 }
             }
 
-            // ---------- EmailJS Initialization ----------
-            if (typeof emailjs !== 'undefined') {
-                emailjs.init("fbErb1P05w8JR7RlH");  // 👈 Replace with your actual EmailJS public key
-            }
-
-            // ---------- DOM Ready ----------
             document.addEventListener('DOMContentLoaded', function () {
                 populateCountryDropdown();
 
-                // Spinner
                 window.addEventListener('load', () => {
                     setTimeout(() => {
                         const spinner = document.getElementById('spinner');
@@ -597,7 +600,6 @@
                     }, 500);
                 });
 
-                // Animations
                 const animatedElements = document.querySelectorAll('.fade-in-up');
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
@@ -606,7 +608,6 @@
                 }, { threshold: 0.1 });
                 animatedElements.forEach(el => observer.observe(el));
 
-                // Navbar scroll
                 window.addEventListener('scroll', () => {
                     const navbar = document.querySelector('.navbar');
                     if (!navbar) return;
@@ -619,11 +620,9 @@
                     }
                 });
 
-                // Validators
                 const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
                 const validatePhone = (phone) => /^[+\d][\d\s\-().]{5,}$/.test(phone) && phone.replace(/\D/g, '').length >= 7;
 
-                // Modal helpers
                 function showModal(type, message, whatsappLink = null) {
                     const modal = document.getElementById('customModal');
                     const iconDiv = document.getElementById('modalIcon');
@@ -665,12 +664,10 @@
                 });
                 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-                // ---------- Booking Form Submission ----------
                 const bookingForm = document.getElementById('bookingForm');
                 if (bookingForm) {
                     bookingForm.addEventListener('submit', function (e) {
                         e.preventDefault();
-
                         const fname = document.getElementById('fname');
                         const lname = document.getElementById('lname');
                         const countrySelect = document.getElementById('countrySelect');
@@ -678,7 +675,6 @@
                         const email = document.getElementById('email');
                         const message = document.getElementById('message');
 
-                        // Reset validation
                         [fname, lname, countrySelect, cnumber, email, message].forEach(f => f?.classList.remove('is-invalid'));
 
                         let isValid = true;
@@ -695,7 +691,6 @@
                             return;
                         }
 
-                        // Prepare EmailJS template params
                         const templateParams = {
                             first_name: fname.value.trim(),
                             last_name: lname.value.trim(),
@@ -753,7 +748,6 @@
                     });
                 }
 
-                // Subscribe button (unchanged)
                 const subscribeBtn = document.querySelector('.subscribe button');
                 if (subscribeBtn) {
                     subscribeBtn.addEventListener('click', function () {
@@ -766,7 +760,7 @@
                             emailInput.value = '';
                             setTimeout(() => {
                                 this.textContent = 'Subscribe';
-                                this.style.background = 'linear-gradient(135deg, #ffd700, #ffa500)';
+                                this.style.background = '';
                             }, 2000);
                         } else {
                             emailInput.style.borderColor = '#dc3545';
@@ -776,7 +770,6 @@
                     });
                 }
 
-                // Smooth scroll for anchor links
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     anchor.addEventListener('click', function (e) {
                         const targetId = this.getAttribute('href');

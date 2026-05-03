@@ -76,15 +76,21 @@
         .item img { width: 100%; height: 70px; object-fit: cover; border-radius: 5px; }
 
         .traveler-info {
-            background: #fff; border-radius: 10px; padding: 20px;
-            border: 2px solid #3498db; max-width: 420px; flex: 1 1 400px; min-height: 450px;
+            background: #fff; border-radius: 20px; padding: 30px;
+            border: 2px solid #3498db; max-width: 480px; flex: 1 1 400px; min-height: 450px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08); position: relative;
         }
 
-        .invalid { border-color: red !important; }
-        .valid { border-color: green !important; }
+        /* Validation border – only when invalid */
+        .input-group-icon .form-control.is-invalid,
+        .date-input-wrapper .form-control.is-invalid {
+            border-color: #dc3545 !important;
+        }
 
-        .validation-message { font-size: 0.8rem; color: red; display: none; margin-bottom: 5px; }
-        .validation-message.show { display: block; }
+        .validation-message {
+            font-size: 0.8rem; color: #dc3545; display: none; align-items: center; gap: 5px; margin-bottom: 8px;
+        }
+        .validation-message.show { display: flex; }
 
         #map { width: 100%; height: 350px; margin-top: 10px; border-radius: 8px; z-index: 1; }
         .map-container { position: relative; margin: 10px 0; }
@@ -175,6 +181,62 @@
             color: #666; font-size: 1.2rem; text-align: center; pointer-events: none;
         }
         .empty-message i { font-size: 2rem; margin-bottom: 10px; color: #3498db; }
+
+        /* ===== BOOKING FORM STYLES ===== */
+        .booking-form-title {
+            font-size: 1.8rem; font-weight: 700; color: #2c3e50; margin-bottom: 20px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .booking-form-subtitle {
+            font-size: 0.95rem; color: #555; margin-bottom: 25px; line-height: 1.5;
+        }
+
+        .input-group-icon {
+            position: relative; margin-bottom: 20px;
+        }
+        .input-group-icon .form-control {
+            padding-left: 45px; height: 50px; border-radius: 12px;
+            border: 2px solid #e0e0e0; transition: all 0.3s; font-size: 1rem;
+        }
+        .input-group-icon .form-control:focus {
+            border-color: #3498db; box-shadow: 0 0 0 0.2rem rgba(52,152,219,0.15);
+        }
+        .input-group-icon .icon-left {
+            position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+            color: #aaa; font-size: 1.1rem; z-index: 5;
+        }
+
+        .date-input-wrapper {
+            display: flex; flex-direction: column; margin-bottom: 20px;
+        }
+        .date-input-wrapper label {
+            font-weight: 600; color: #333; margin-bottom: 6px; font-size: 0.9rem;
+        }
+        .date-input-wrapper .form-control {
+            border-radius: 12px; border: 2px solid #e0e0e0; padding: 12px 15px;
+            transition: all 0.3s; font-size: 1rem;
+        }
+        .date-input-wrapper .form-control:focus {
+            border-color: #3498db; box-shadow: 0 0 0 0.2rem rgba(52,152,219,0.15);
+        }
+
+        .booking-button {
+            background: linear-gradient(135deg, #25D366, #128C7E); color: white; border: none;
+            padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 1.1rem;
+            transition: all 0.3s; width: 100%; display: flex; align-items: center; justify-content: center;
+            gap: 10px; margin-top: 10px; box-shadow: 0 8px 20px rgba(37,211,102,0.2);
+        }
+        .booking-button:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(37,211,102,0.3); }
+        .booking-button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        .booking-email-button {
+            background: linear-gradient(135deg, #3498db, #2980b9); color: white; border: none;
+            padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 1.1rem;
+            transition: all 0.3s; width: 100%; display: flex; align-items: center; justify-content: center;
+            gap: 10px; margin-top: 10px; box-shadow: 0 8px 20px rgba(52,152,219,0.2);
+        }
+        .booking-email-button:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(52,152,219,0.3); }
+        .booking-email-button:disabled { opacity: 0.6; cursor: not-allowed; }
     </style>
 </head>
 
@@ -262,36 +324,67 @@
                     </div>
                 </div>
 
-                <!-- Booking Details (unchanged) -->
+                <!-- Booking Details (redesigned, no initial red outlines) -->
                 <div class="traveler-info">
-                    <div class="builder-section text-center"><div class="builder-section-title">Complete Your Booking</div></div>
-                    <p class="mb-4" style="color:#3498db;">Share your details to confirm your journey.</p>
+                    <div class="booking-form-title">
+                        <i class="fas fa-edit"></i> Complete Your Booking
+                    </div>
+                    <p class="booking-form-subtitle">Fill in your details and our experts will contact you within 24 hours.</p>
 
-                    <input class="form-control mb-1" id="name" placeholder="Full Name *">
-                    <div class="validation-message" id="nameMsg">Please enter your full name</div>
-                    <input class="form-control mb-1" id="phone" placeholder="Phone Number *">
-                    <div class="validation-message" id="phoneMsg">Please enter a valid phone number (7-15 digits)</div>
-                    <input class="form-control mb-1" id="email" placeholder="Email Address *">
-                    <div class="validation-message" id="emailMsg">Please enter a valid email address</div>
-                    <input class="form-control mb-1" type="number" id="adults" min="1" placeholder="Number of Adults *">
-                    <div class="validation-message" id="adultsMsg">At least 1 adult is required</div>
-                    <input class="form-control mb-1" type="number" id="children" min="0" value="0" placeholder="Number of Children">
-
-                    <label class="mt-2">Arrival Date *</label>
-                    <input class="form-control mb-1" type="date" id="arrival">
-                    <div class="validation-message" id="arrivalMsg">Please select an arrival date</div>
-
-                    <label>Departure Date *</label>
-                    <input class="form-control mb-1" type="date" id="departure">
-                    <div class="validation-message" id="departureMsg">Departure must be after arrival</div>
+                    <div class="input-group-icon">
+                        <i class="fas fa-user icon-left"></i>
+                        <input class="form-control" id="name" placeholder="Full Name *">
+                        <div class="validation-message" id="nameMsg"><i class="fas fa-exclamation-circle"></i> Please enter your full name</div>
+                    </div>
+                    <div class="input-group-icon">
+                        <i class="fas fa-phone-alt icon-left"></i>
+                        <input class="form-control" id="phone" placeholder="Phone Number *">
+                        <div class="validation-message" id="phoneMsg"><i class="fas fa-exclamation-circle"></i> Enter a valid phone number (7-15 digits)</div>
+                    </div>
+                    <div class="input-group-icon">
+                        <i class="fas fa-envelope icon-left"></i>
+                        <input class="form-control" id="email" placeholder="Email Address *">
+                        <div class="validation-message" id="emailMsg"><i class="fas fa-exclamation-circle"></i> Enter a valid email address</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="input-group-icon">
+                                <i class="fas fa-users icon-left"></i>
+                                <input class="form-control" type="number" id="adults" min="1" placeholder="Adults *">
+                                <div class="validation-message" id="adultsMsg"><i class="fas fa-exclamation-circle"></i> At least 1 adult</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group-icon">
+                                <i class="fas fa-child icon-left"></i>
+                                <input class="form-control" type="number" id="children" min="0" value="0" placeholder="Children">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="date-input-wrapper">
+                                <label><i class="far fa-calendar-alt me-1"></i> Arrival Date *</label>
+                                <input class="form-control" type="date" id="arrival">
+                                <div class="validation-message" id="arrivalMsg"><i class="fas fa-exclamation-circle"></i> Select arrival date</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="date-input-wrapper">
+                                <label><i class="far fa-calendar-check me-1"></i> Departure Date *</label>
+                                <input class="form-control" type="date" id="departure">
+                                <div class="validation-message" id="departureMsg"><i class="fas fa-exclamation-circle"></i> Must be after arrival</div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="map-container"><div id="map"></div></div>
 
-                    <button class="btn btn-success w-100 mt-3" id="sendWhatsApp" disabled>
+                    <button class="booking-button" id="sendWhatsApp" disabled>
                         <i class="fa-brands fa-whatsapp"></i> Send Booking via WhatsApp
                     </button>
-                    <button class="btn btn-primary w-100 mt-2" id="sendEmail" disabled>
-                        <i class="fa fa-envelope"></i> Send Booking via Email
+                    <button class="booking-email-button" id="sendEmail" disabled>
+                        <i class="far fa-envelope"></i> Send Booking via Email
                     </button>
                 </div>
             </div>
@@ -404,7 +497,6 @@
         });
 
         function initializeApp() {
-            // ---------- DESTINATIONS LIST (extended) ----------
             const destinationsData = [
                 { id: 'Kandy', coords: [7.2906, 80.6337], img: 'img/dalada-maligawa.jpeg', blogId: 'blog-kandy' },
                 { id: 'Sigiriya', coords: [7.9570, 80.7603], img: 'img/sigiriya.jpg', blogId: 'blog-sigiriya' },
@@ -461,7 +553,6 @@
             let draggedItem = null;
             let isBookingConfirmed = false;
 
-            // Build cards
             function buildAvailableDestinations() {
                 availableGrid.innerHTML = '';
                 destinationsData.forEach(dest => {
@@ -480,7 +571,6 @@
                 updateEmptyStates();
             }
 
-            // Blog popup – load from hidden containers
             function setupInfoIcons() {
                 document.querySelectorAll('.info-icon').forEach(icon => {
                     icon.addEventListener('mousedown', e => { e.stopPropagation(); e.preventDefault(); });
@@ -499,7 +589,7 @@
                 if (!contentDiv) {
                     blogPopupBody.innerHTML = '<p>Sorry, no detailed information available for this destination.</p>';
                 } else {
-                    blogPopupBody.innerHTML = ''; // clear
+                    blogPopupBody.innerHTML = '';
                     blogPopupBody.appendChild(contentDiv.cloneNode(true));
                 }
                 blogPopupOverlay.style.display = 'flex';
@@ -515,7 +605,6 @@
                 if (e.target === blogPopupOverlay) closeBlogPopup();
             });
 
-            // Map
             function initializeMap() {
                 map = L.map('map').setView(coords['Kandy'], 7);
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -587,8 +676,11 @@
                     }
                 } catch (e) {}
                 updateRouteMap();
-                validateForm();
+                // Do not call validateForm() to avoid initial red borders
                 updateEmptyStates();
+                // But buttons should still be disabled initially, so we'll manually disable them
+                sendWhatsApp.disabled = true;
+                sendEmail.disabled = true;
             }
 
             function clearLocalStorageAndReload() {
@@ -632,12 +724,13 @@
                 }
             }
 
+            // Validation – only adds .is-invalid when called by input/change events
             function validateForm() {
                 let valid = true;
                 valid &= validateField('name', name.value.trim() !== '', 'nameMsg', 'Full name required');
                 valid &= validateField('phone', /^[0-9]{7,15}$/.test(phone.value), 'phoneMsg', 'Valid phone (7-15 digits)');
                 valid &= validateField('email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value), 'emailMsg', 'Valid email required');
-                valid &= validateField('adults', parseInt(adults.value) >= 1, 'adultsMsg', 'At least one adult');
+                valid &= validateField('adults', parseInt(adults.value) >= 2, 'adultsMsg', 'At least two adults');
                 valid &= validateField('arrival', arrival.value !== '', 'arrivalMsg', 'Select arrival date');
                 let depValid = false;
                 if (arrival.value && departure.value) depValid = new Date(departure.value) > new Date(arrival.value);
@@ -652,14 +745,26 @@
             function validateField(fid, cond, msgId, msg) {
                 const field = document.getElementById(fid);
                 if (!field) return cond;
-                if (cond) { field.classList.remove('invalid'); field.classList.add('valid'); showValidationMsg(msgId, false, ''); }
-                else { field.classList.remove('valid'); field.classList.add('invalid'); showValidationMsg(msgId, true, msg); }
+                if (cond) {
+                    field.classList.remove('is-invalid');
+                    showValidationMsg(msgId, false, '');
+                } else {
+                    field.classList.add('is-invalid');
+                    showValidationMsg(msgId, true, msg);
+                }
                 return cond;
             }
 
             function showValidationMsg(id, show, msg) {
                 const el = document.getElementById(id);
-                if (el) { el.textContent = msg; if (show) el.classList.add('show'); else el.classList.remove('show'); }
+                if (el) {
+                    if (show) {
+                        el.textContent = msg;
+                        el.classList.add('show');
+                    } else {
+                        el.classList.remove('show');
+                    }
+                }
             }
 
             function getSelectedDestinations() {
@@ -678,7 +783,7 @@
                 window.location.href = `mailto:info@ayubowantours.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             }
 
-            async function createExportMap() { /* unchanged, same as previous */ }
+            async function createExportMap() { /* same as original */ }
 
             async function generateAttractivePDF(button) {
                 if (button) {
@@ -687,7 +792,7 @@
                 } else await generatePDFContent();
             }
 
-            async function generatePDFContent() { /* unchanged, same as previous */ }
+            async function generatePDFContent() { /* same as original */ }
 
             function showBookingConfirmation() {
                 isBookingConfirmed = true;
@@ -729,9 +834,10 @@
             buildAvailableDestinations();
             loadFromLocalStorage();
             setupEventListeners();
-            validateForm();
+            // Do not call validateForm() on load to prevent initial red outlines
             updateEmptyStates();
         }
     </script>
 </body>
+
 </html>
