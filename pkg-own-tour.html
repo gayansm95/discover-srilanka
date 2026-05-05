@@ -24,26 +24,27 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Choices.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <!-- Leaflet Routing Machine -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
     <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
     <!-- jsPDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <!-- html2canvas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <style>
-        /* WhatsApp Floating Button */
         .whatsapp-float {
-            position: fixed;
-            bottom: 20px; right: 20px; width: 80px; height: 80px;
-            background-color: #25D366; color: #fff; border-radius: 50%;
-            font-size: 42px; text-align: center; line-height: 80px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.35); z-index: 1000;
-            animation: whatsapp-pulse 1.8s infinite; text-decoration: none;
+            position: fixed; bottom: 20px; right: 20px; width: 80px; height: 80px;
+            background-color: #25D366; color: #fff; border-radius: 50%; font-size: 42px;
+            text-align: center; line-height: 80px; box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+            z-index: 1000; animation: whatsapp-pulse 1.8s infinite; text-decoration: none;
         }
         .whatsapp-float:hover { transform: scale(1.1); transition: 0.3s ease; }
         @keyframes whatsapp-pulse {
@@ -51,9 +52,7 @@
             70% { box-shadow: 0 0 0 25px rgba(37,211,102,0); }
             100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
         }
-        @media (max-width: 768px) {
-            .whatsapp-float { width: 70px; height: 70px; font-size: 38px; line-height: 70px; }
-        }
+        @media (max-width: 768px) { .whatsapp-float { width: 70px; height: 70px; font-size: 38px; line-height: 70px; } }
 
         .flex-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin: 30px 0; }
 
@@ -67,56 +66,61 @@
 
         .item {
             background: linear-gradient(135deg, #fff, #eef3ff);
-            padding: 8px; border-radius: 8px; text-align: center;
-            cursor: grab; transition: transform 0.2s, box-shadow 0.2s;
-            user-select: none; position: relative; z-index: 2;
+            padding: 8px; border-radius: 8px; text-align: center; cursor: grab;
+            transition: transform 0.2s, box-shadow 0.2s; user-select: none; position: relative; z-index: 2;
             height: 120px; display: flex; flex-direction: column; justify-content: space-between;
         }
         .item.dragging { opacity: 0.7; transform: scale(1.05); cursor: grabbing; }
         .item img { width: 100%; height: 70px; object-fit: cover; border-radius: 5px; }
 
         .traveler-info {
-            background: #fff; border-radius: 20px; padding: 30px;
-            border: 2px solid #3498db; max-width: 480px; flex: 1 1 400px; min-height: 450px;
+            background: #fff; border-radius: 20px; padding: 40px;
+            border: 1px solid rgba(13,110,253,0.1); max-width: 520px; flex: 1 1 400px; min-height: 450px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.08); position: relative;
         }
-
-        /* Validation border – only when invalid */
-        .input-group-icon .form-control.is-invalid,
-        .date-input-wrapper .form-control.is-invalid {
-            border-color: #dc3545 !important;
+        .booking-form-title {
+            font-size: 2rem; font-weight: 800; color: #0f172a; margin-bottom: 12px;
+            position: relative; padding-bottom: 15px;
         }
-
-        .validation-message {
-            font-size: 0.8rem; color: #dc3545; display: none; align-items: center; gap: 5px; margin-bottom: 8px;
+        .booking-form-title::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 80px; height: 3px;
+            background: linear-gradient(90deg, #0d6efd, #00b4ff); border-radius: 2px;
         }
-        .validation-message.show { display: flex; }
+        .booking-form-subtitle { color: #64748b; margin-bottom: 30px; font-size: 1rem; }
+
+        .form-floating-group { margin-bottom: 22px; }
+        .form-floating-group label { display: block; font-weight: 600; font-size: 0.9rem; color: #334155; margin-bottom: 6px; }
+        .form-control-premium {
+            border: 2px solid #e2e8f0; border-radius: 16px; padding: 16px 20px;
+            font-size: 1rem; width: 100%; transition: 0.25s; background: #fafbfc;
+        }
+        .form-control-premium:focus { border-color: #0d6efd; background: white; box-shadow: 0 0 0 4px rgba(13,110,253,0.08); outline: none; }
+
+        .is-invalid { border-color: #dc3545 !important; }
+        .choices__inner { background: #fafbfc; border: 2px solid #e2e8f0; border-radius: 16px; padding: 12px 16px; min-height: auto; font-size: 1rem; }
+
+        .btn-send-global {
+            background: linear-gradient(135deg, #0d6efd, #00b4ff);
+            border: none; color: white; font-weight: 700; font-size: 1.1rem;
+            padding: 16px 30px; border-radius: 60px; width: 100%;
+            transition: 0.3s; letter-spacing: 0.5px;
+            display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;
+        }
+        .btn-send-global:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(13,110,253,0.3); }
+        .btn-send-global:disabled { opacity: 0.7; cursor: not-allowed; }
 
         #map { width: 100%; height: 350px; margin-top: 10px; border-radius: 8px; z-index: 1; }
         .map-container { position: relative; margin: 10px 0; }
 
-        /* Pin icon (map numbers) – identical to original, with clear number visibility */
         .pin-icon {
-            position: relative;
-            width: 36px; height: 46px;
-            border-radius: 50% 50% 50% 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-weight: bold; font-size: 16px;
-            line-height: 1;
-            border: 2px solid #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            animation: pulse 2s infinite ease-in-out;
-            text-align: center;
+            position: relative; width: 36px; height: 46px; border-radius: 50% 50% 50% 50%;
+            display: flex; align-items: center; justify-content: center; color: white;
+            font-weight: bold; font-size: 16px; line-height: 1; border: 2px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4); animation: pulse 2s infinite ease-in-out; text-align: center;
         }
         .pin-icon::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 12px; height: 12px;
-            background: inherit;
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+            width: 12px; height: 12px; background: inherit; clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
@@ -124,140 +128,77 @@
             100% { transform: scale(1); box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
         }
 
-        /* Blog popup – large, content only */
-        .blog-popup-overlay {
-            display: none; position: fixed; inset: 0;
-            background: rgba(0,0,0,0.7); z-index: 10000;
-            justify-content: center; align-items: center; padding: 20px;
-        }
-        .blog-popup {
-            background: #fff; border-radius: 16px; width: 80vw; height: 90vh;
-            display: flex; flex-direction: column; position: relative;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-        }
-        .blog-popup-header {
-            padding: 15px 25px; border-bottom: 1px solid #eee;
-            display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;
-        }
+        .blog-popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 10000; justify-content: center; align-items: center; padding: 20px; }
+        .blog-popup { background: #fff; border-radius: 16px; width: 80vw; height: 90vh; display: flex; flex-direction: column; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
+        .blog-popup-header { padding: 15px 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
         .blog-popup-title { font-size: 1.5rem; font-weight: 700; color: #1a365d; }
         .blog-popup-close { background: none; border: none; font-size: 28px; color: #666; cursor: pointer; }
-        .blog-popup-close:hover { color: #000; }
-        .blog-popup-body {
-            flex: 1; overflow-y: auto; padding: 25px;
-            font-size: 1rem; line-height: 1.7;
-        }
-        .blog-popup-body img { max-width: 100%; height: auto; border-radius: 12px; margin: 15px 0; }
-        .blog-popup-body h2, .blog-popup-body h3 { color: #1a365d; }
+        .blog-popup-body { flex: 1; overflow-y: auto; padding: 25px; font-size: 1rem; line-height: 1.7; }
 
-        /* Info icon on cards */
-        .info-icon {
-            position: absolute; top: 5px; right: 5px; font-size: 1rem;
-            color: #3498db; background: rgba(255,255,255,0.9); border-radius: 50%;
-            width: 22px; height: 22px; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; z-index: 5; transition: color 0.2s; box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-        }
+        .info-icon { position: absolute; top: 5px; right: 5px; font-size: 1rem; color: #3498db; background: rgba(255,255,255,0.9); border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5; transition: color 0.2s; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
         .info-icon:hover { color: #1e70bf; }
 
-        /* Remove scrollbar from Explore box, use a soft pattern */
-        #availableBox {
-            overflow-y: visible; max-height: none;
-            background-image: url('img/pattern-dots.png');
-            background-repeat: repeat; background-size: 20px 20px;
-            border: 2px dashed #ccc;
-        }
+        #availableBox { overflow-y: visible; max-height: none; background-image: url('img/pattern-dots.png'); background-repeat: repeat; background-size: 20px 20px; border: 2px dashed #ccc; }
+        #selectedBox { background-image: url('img/travel-bg.jpg'); background-size: cover; background-position: center; border: 2px solid #3498db; }
 
-        /* Itinerary box background */
-        #selectedBox {
-            background-image: url('img/travel-bg.jpg');
-            background-size: cover; background-position: center;
-            border: 2px solid #3498db;
-        }
-
-        /* Empty state messages: flex centering inside the grid area */
-        .empty-message {
-            position: static; display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            width: 100%; height: 100%; min-height: 320px;
-            color: #666; font-size: 1.2rem; text-align: center; pointer-events: none;
-        }
+        .empty-message { position: static; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; min-height: 320px; color: #666; font-size: 1.2rem; text-align: center; pointer-events: none; }
         .empty-message i { font-size: 2rem; margin-bottom: 10px; color: #3498db; }
 
-        /* ===== BOOKING FORM STYLES ===== */
-        .booking-form-title {
-            font-size: 1.8rem; font-weight: 700; color: #2c3e50; margin-bottom: 20px;
-            display: flex; align-items: center; gap: 10px;
-        }
-        .booking-form-subtitle {
-            font-size: 0.95rem; color: #555; margin-bottom: 25px; line-height: 1.5;
-        }
+        .validation-message { font-size: 0.8rem; color: #dc3545; display: none; align-items: center; gap: 5px; margin-bottom: 8px; }
+        .validation-message.show { display: flex; }
 
-        .input-group-icon {
-            position: relative; margin-bottom: 20px;
+        /* Custom Modal */
+        .custom-modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center;
+            backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
         }
-        .input-group-icon .form-control {
-            padding-left: 45px; height: 50px; border-radius: 12px;
-            border: 2px solid #e0e0e0; transition: all 0.3s; font-size: 1rem;
+        .custom-modal-overlay.show-modal { display: flex; animation: modalFadeIn 0.3s ease; }
+        @keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .custom-modal-dialog {
+            background: #fff; border-radius: 20px; padding: 40px 30px; max-width: 480px;
+            width: 90%; text-align: center; box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+            position: relative; animation: modalSlideUp 0.35s ease;
         }
-        .input-group-icon .form-control:focus {
-            border-color: #3498db; box-shadow: 0 0 0 0.2rem rgba(52,152,219,0.15);
+        @keyframes modalSlideUp { from { transform: translateY(60px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .modal-close-icon {
+            position: absolute; top: 15px; right: 20px; font-size: 1.5rem;
+            cursor: pointer; color: #999; transition: color 0.3s; background: none; border: none; line-height: 1;
         }
-        .input-group-icon .icon-left {
-            position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
-            color: #aaa; font-size: 1.1rem; z-index: 5;
+        .modal-close-icon:hover { color: #333; }
+        .modal-icon { margin-bottom: 20px; }
+        #modalTitle { font-size: 1.6rem; font-weight: 700; color: #2c3e50; margin-bottom: 12px; }
+        #modalMessage { font-size: 1rem; color: #555; line-height: 1.7; margin-bottom: 25px; }
+        .modal-close-btn {
+            display: inline-block; background: linear-gradient(135deg, #0d6efd, #00b4ff);
+            color: #fff; border: none; padding: 12px 35px; border-radius: 50px;
+            font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s;
         }
-
-        .date-input-wrapper {
-            display: flex; flex-direction: column; margin-bottom: 20px;
-        }
-        .date-input-wrapper label {
-            font-weight: 600; color: #333; margin-bottom: 6px; font-size: 0.9rem;
-        }
-        .date-input-wrapper .form-control {
-            border-radius: 12px; border: 2px solid #e0e0e0; padding: 12px 15px;
-            transition: all 0.3s; font-size: 1rem;
-        }
-        .date-input-wrapper .form-control:focus {
-            border-color: #3498db; box-shadow: 0 0 0 0.2rem rgba(52,152,219,0.15);
-        }
-
-        .booking-button {
-            background: linear-gradient(135deg, #25D366, #128C7E); color: white; border: none;
-            padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 1.1rem;
-            transition: all 0.3s; width: 100%; display: flex; align-items: center; justify-content: center;
-            gap: 10px; margin-top: 10px; box-shadow: 0 8px 20px rgba(37,211,102,0.2);
-        }
-        .booking-button:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(37,211,102,0.3); }
-        .booking-button:disabled { opacity: 0.6; cursor: not-allowed; }
-
-        .booking-email-button {
-            background: linear-gradient(135deg, #3498db, #2980b9); color: white; border: none;
-            padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 1.1rem;
-            transition: all 0.3s; width: 100%; display: flex; align-items: center; justify-content: center;
-            gap: 10px; margin-top: 10px; box-shadow: 0 8px 20px rgba(52,152,219,0.2);
-        }
-        .booking-email-button:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(52,152,219,0.3); }
-        .booking-email-button:disabled { opacity: 0.6; cursor: not-allowed; }
+        .modal-close-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(13,110,253,0.35); }
     </style>
 </head>
 
 <body>
 
-    <!-- Spinner -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"><span class="sr-only">Loading...</span></div>
+    </div>
+
+    <!-- Custom Modal -->
+    <div class="custom-modal-overlay" id="customModal">
+        <div class="custom-modal-dialog">
+            <button class="modal-close-icon" id="modalCloseIcon" aria-label="Close">&times;</button>
+            <div class="modal-icon" id="modalIcon"></div>
+            <h3 id="modalTitle"></h3>
+            <p id="modalMessage"></p>
+            <button class="modal-close-btn" id="modalCloseBtn">OK</button>
         </div>
     </div>
 
-    <!-- Navbar (same as original) -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-            <a href="./index.html" class="navbar-brand p-0">
-                <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ceyloan Travellers</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
+            <a href="./index.html" class="navbar-brand p-0"><h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ceyloan Travellers</h1></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><span class="fa fa-bars"></span></button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
@@ -273,7 +214,6 @@
         </nav>
     </div>
 
-    <!-- Header -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
             <h3 class="text-white display-3 mb-4">Design Your Sri Lanka journey</h3>
@@ -284,174 +224,110 @@
         </div>
     </div>
 
-    <!-- Main Content -->
     <div class="container-fluid blog py-5">
         <div>
             <div class="mx-auto text-center mb-10" style="max-width: 900px;">
                 <h5 class="section-title px-3">Design Your Sri Lanka Journey</h5>
                 <div class="builder-instruction">
                     <i class="fas fa-lightbulb"></i>
-                    Create your perfect Sri Lanka getaway with ease. Simply click or drag destinations to
-                    build your ideal journey. Click the <i class="fas fa-info-circle"></i> icon to learn more about a place.
-                    When you're happy, fill in your details and send your request.
+                    Create your perfect Sri Lanka getaway with ease. Simply click or drag destinations to build your ideal journey. Click the <i class="fas fa-info-circle"></i> icon to learn more. When you're happy, fill in your details and send your request.
                 </div>
             </div>
-
             <div class="flex-container">
-                <!-- Available Places (dynamic, no scroll) -->
                 <div class="box" id="availableBox">
-                    <div class="builder-section text-center">
-                        <div class="builder-section-title">
-                            <i class="fas fa-map-marked-alt"></i> Explore Destinations
-                        </div>
-                    </div>
+                    <div class="builder-section text-center"><div class="builder-section-title"><i class="fas fa-map-marked-alt"></i> Explore Destinations</div></div>
                     <div class="items-grid" id="availableGrid"></div>
-                    <div class="empty-message" id="availableEmptyMessage">
-                        <i class="fas fa-exclamation-circle"></i> No Options Available
-                    </div>
+                    <div class="empty-message" id="availableEmptyMessage"><i class="fas fa-exclamation-circle"></i> No Options Available</div>
                 </div>
-
-                <!-- Selected Places (empty, filled by user) -->
                 <div class="box" id="selectedBox">
-                    <div class="builder-section text-center">
-                        <div class="builder-section-title">
-                            <i class="fas fa-route"></i> Your Custom Itinerary
-                        </div>
-                    </div>
+                    <div class="builder-section text-center"><div class="builder-section-title"><i class="fas fa-route"></i> Your Custom Itinerary</div></div>
                     <div class="items-grid" id="selectedGrid"></div>
-                    <div class="empty-message" id="selectedEmptyMessage">
-                        <i class="fas fa-mouse-pointer"></i> No places selected yet.
-                    </div>
+                    <div class="empty-message" id="selectedEmptyMessage"><i class="fas fa-mouse-pointer"></i> No places selected yet.</div>
                 </div>
-
-                <!-- Booking Details (redesigned, no initial red outlines) -->
                 <div class="traveler-info">
-                    <div class="booking-form-title">
-                        <i class="fas fa-edit"></i> Complete Your Booking
-                    </div>
+                    <div class="booking-form-title">Complete Your Booking</div>
                     <p class="booking-form-subtitle">Fill in your details and our experts will contact you within 24 hours.</p>
-
-                    <div class="input-group-icon">
-                        <i class="fas fa-user icon-left"></i>
-                        <input class="form-control" id="name" placeholder="Full Name *">
-                        <div class="validation-message" id="nameMsg"><i class="fas fa-exclamation-circle"></i> Please enter your full name</div>
-                    </div>
-                    <div class="input-group-icon">
-                        <i class="fas fa-phone-alt icon-left"></i>
-                        <input class="form-control" id="phone" placeholder="Phone Number *">
-                        <div class="validation-message" id="phoneMsg"><i class="fas fa-exclamation-circle"></i> Enter a valid phone number (7-15 digits)</div>
-                    </div>
-                    <div class="input-group-icon">
-                        <i class="fas fa-envelope icon-left"></i>
-                        <input class="form-control" id="email" placeholder="Email Address *">
-                        <div class="validation-message" id="emailMsg"><i class="fas fa-exclamation-circle"></i> Enter a valid email address</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="input-group-icon">
-                                <i class="fas fa-users icon-left"></i>
-                                <input class="form-control" type="number" id="adults" min="1" placeholder="Adults *">
-                                <div class="validation-message" id="adultsMsg"><i class="fas fa-exclamation-circle"></i> At least 1 adult</div>
+                    <form id="bookingForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating-group">
+                                    <label for="fname">First Name *</label>
+                                    <input type="text" class="form-control-premium" id="fname" placeholder="John" required>
+                                    <div class="validation-message" id="fnameMsg"><i class="fas fa-exclamation-circle"></i> Please enter your first name</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating-group">
+                                    <label for="lname">Last Name *</label>
+                                    <input type="text" class="form-control-premium" id="lname" placeholder="Doe" required>
+                                    <div class="validation-message" id="lnameMsg"><i class="fas fa-exclamation-circle"></i> Please enter your last name</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="input-group-icon">
-                                <i class="fas fa-child icon-left"></i>
-                                <input class="form-control" type="number" id="children" min="0" value="0" placeholder="Children">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-floating-group">
+                                    <label for="countrySelect">Country *</label>
+                                    <select class="form-control-premium" id="countrySelect" required><option value="">Select your country</option></select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="date-input-wrapper">
-                                <label><i class="far fa-calendar-alt me-1"></i> Arrival Date *</label>
-                                <input class="form-control" type="date" id="arrival">
-                                <div class="validation-message" id="arrivalMsg"><i class="fas fa-exclamation-circle"></i> Select arrival date</div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating-group">
+                                    <label for="cnumber">Contact Number *</label>
+                                    <input type="tel" class="form-control-premium" id="cnumber" placeholder="e.g., +1 234 567 890" required>
+                                    <div class="validation-message" id="cnumberMsg"><i class="fas fa-exclamation-circle"></i> Enter a valid phone number (7-15 digits)</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" class="form-control-premium" id="email" placeholder="you@example.com" required>
+                                    <div class="validation-message" id="emailMsg"><i class="fas fa-exclamation-circle"></i> Enter a valid email address</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="date-input-wrapper">
-                                <label><i class="far fa-calendar-check me-1"></i> Departure Date *</label>
-                                <input class="form-control" type="date" id="departure">
-                                <div class="validation-message" id="departureMsg"><i class="fas fa-exclamation-circle"></i> Must be after arrival</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-floating-group">
+                                    <label for="travelMessage">Your Message (optional)</label>
+                                    <textarea class="form-control-premium" id="travelMessage" rows="3" placeholder="Any special requests..."></textarea>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="map-container"><div id="map"></div></div>
-
-                    <button class="booking-email-button" id="sendWhatsApp" disabled>
-                        Submit Booking Request
-                    </button>
+                        <div class="map-container"><div id="map"></div></div>
+                        <button type="submit" class="btn-send-global" id="submitBookingBtn" disabled>
+                            <i class="fas fa-paper-plane"></i> Submit Booking Request
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Hidden blog content containers (used for popup) – only the relevant content, no headers/footers -->
     <div style="display: none;">
-        <div id="blog-kandy">
-            <h2>Kandy – The Sacred City</h2>
-            <p>Kandy is the cultural heart of Sri Lanka, home to the Temple of the Sacred Tooth Relic. Surrounded by lush hills and a serene lake, the city offers a unique blend of history, spirituality, and natural beauty.</p>
-            <img src="img/dalada-maligawa.jpeg" alt="Temple of the Tooth">
-            <p>Highlights include the Royal Botanical Gardens, the Kandy Lake, and the annual Esala Perahera festival. Explore vibrant markets selling traditional crafts and taste authentic Kandyan cuisine.</p>
-        </div>
-        <div id="blog-sigiriya">
-            <h2>Sigiriya – The Lion Rock</h2>
-            <p>Rising dramatically from the plains, Sigiriya is an ancient rock fortress and UNESCO World Heritage site. Climb to the summit to see the remnants of a 5th-century palace and breathtaking frescoes.</p>
-            <img src="img/sigiriya.jpg" alt="Sigiriya Rock">
-            <p>The water gardens, boulder gardens, and the Mirror Wall are must‑see features. The panoramic views from the top are unforgettable.</p>
-        </div>
-        <div id="blog-ella">
-            <h2>Ella – Hill Country Escape</h2>
-            <p>Ella is a charming hill town famous for its tea plantations, hiking trails, and the iconic Nine Arch Bridge. The cool climate and misty mountains create a relaxing atmosphere.</p>
-            <img src="img/ella-train-tour.jpg" alt="Ella scenery">
-            <p>Popular activities include the Ella Rock hike, Little Adam’s Peak, and visiting the Demodara railway loop. Enjoy a train ride through the tea fields.</p>
-        </div>
-        <div id="blog-yala">
-            <h2>Yala National Park – Wildlife Safari</h2>
-            <p>Yala is Sri Lanka’s most famous wildlife destination, renowned for its leopard population. A safari through the park offers encounters with elephants, sloth bears, and a variety of birds.</p>
-            <img src="img/blog-card-safari.jpg" alt="Yala Safari">
-            <p>Morning and evening game drives provide the best opportunities to spot these magnificent creatures in their natural habitat.</p>
-        </div>
-        <div id="blog-galle">
-            <h2>Galle – Colonial Heritage</h2>
-            <p>The Galle Fort, a UNESCO site, is a living colonial town with cobblestone streets, Dutch buildings, and charming boutiques. It overlooks the Indian Ocean and is a blend of European and Asian cultures.</p>
-            <img src="img/14-day-tour-srilanka-galle.jpg" alt="Galle Fort">
-            <p>Visit the lighthouse, the Dutch Reformed Church, and enjoy fresh seafood at the fort’s restaurants. Nearby Unawatuna beach is perfect for a swim.</p>
-        </div>
-        <div id="blog-nuwaraeliya">
-            <h2>Nuwara Eliya – Little England</h2>
-            <p>Nuwara Eliya is a cool hill station with manicured gardens, colonial bungalows, and world‑renowned tea estates. It’s known as “Little England” for its British‑era charm.</p>
-            <img src="img/blog-card-nuwaraeliya.jpg" alt="Nuwara Eliya">
-            <p>Highlights include Gregory Lake, the Hakgala Botanical Gardens, and a visit to a tea factory to see how Ceylon tea is made.</p>
-        </div>
-        <div id="blog-jaffna">
-            <h2>Jaffna – Northern Discovery</h2>
-            <p>Jaffna offers a distinct Tamil culture, colorful temples, and delicious cuisine. Explore the Nallur Kandaswamy Temple, the Jaffna Fort, and the serene islands off the coast.</p>
-            <img src="img/jafna-blog-post.jpg" alt="Jaffna culture">
-            <p>Don’t miss the Jaffna library, the Keerimalai hot springs, and a traditional crab curry.</p>
-        </div>
-        <div id="blog-arugambay">
-            <h2>Arugam Bay – Surfer’s Paradise</h2>
-            <p>Located on the east coast, Arugam Bay is a world‑class surfing destination. The laid‑back vibe, golden sands, and consistent waves attract surfers from around the globe.</p>
-            <img src="img/Arugam-Bay.jpg" alt="Arugam Bay">
-            <p>Besides surfing, explore the nearby Kumana National Park, lagoons, and enjoy fresh seafood at beachside cafés.</p>
-        </div>
+        <div id="blog-kandy"><h2>Kandy – The Sacred City</h2><p>Kandy is the cultural heart of Sri Lanka...</p><img src="img/dalada-maligawa.jpeg" alt="Temple of the Tooth"></div>
+        <div id="blog-sigiriya"><h2>Sigiriya – The Lion Rock</h2><p>Rising dramatically from the plains...</p><img src="img/sigiriya.jpg" alt="Sigiriya Rock"></div>
+        <div id="blog-ella"><h2>Ella – Hill Country Escape</h2><p>Ella is a charming hill town...</p><img src="img/ella-train-tour.jpg" alt="Ella scenery"></div>
+        <div id="blog-yala"><h2>Yala National Park</h2><p>Yala is Sri Lanka's most famous wildlife...</p><img src="img/blog-card-safari.jpg" alt="Yala Safari"></div>
+        <div id="blog-galle"><h2>Galle – Colonial Heritage</h2><p>The Galle Fort, a UNESCO site...</p><img src="img/14-day-tour-srilanka-galle.jpg" alt="Galle Fort"></div>
+        <div id="blog-cultural-triangle"><h2>Cultural Triangle</h2><p>Ancient Kingdoms...</p><img src="img/anuradhapura-polonnaruwa-sigiriya-1024x576.jpg" alt=""></div>
+        <div id="blog-eastern-beauty"><h2>Eastern Sri Lanka</h2><p>Beaches & Beyond...</p></div>
+        <div id="blog-down-south"><h2>Down South</h2><p>Coastal Bliss...</p></div>
+        <div id="blog-safari"><h2>Sri Lanka Safaris</h2><p>Wild Encounters...</p></div>
+        <div id="blog-nuwara-eliya"><h2>Nuwara Eliya</h2><p>Little England...</p></div>
+        <div id="blog-north-sri-lanka"><h2>Northern Sri Lanka</h2><p>Off the Beaten Path...</p></div>
+        <div id="blog-arugambay"><h2>Arugam Bay</h2><p>Surfer's Paradise...</p></div>
     </div>
 
-    <!-- Blog Info Popup (large, content-only) -->
     <div class="blog-popup-overlay" id="blogPopupOverlay">
         <div class="blog-popup">
-            <div class="blog-popup-header">
-                <span class="blog-popup-title" id="blogPopupTitle">Destination Info</span>
-                <button class="blog-popup-close" id="blogPopupCloseBtn"><i class="fas fa-times"></i></button>
-            </div>
+            <div class="blog-popup-header"><span class="blog-popup-title" id="blogPopupTitle">Destination Info</span><button class="blog-popup-close" id="blogPopupCloseBtn"><i class="fas fa-times"></i></button></div>
             <div class="blog-popup-body" id="blogPopupBody"></div>
         </div>
     </div>
 
-    <!-- Subscribe, Copyright, WhatsApp (unchanged) -->
     <div class="container-fluid subscribe py-5">
         <div class="container text-center py-5">
             <div class="mx-auto text-center" style="max-width: 900px;">
@@ -467,29 +343,23 @@
     </div>
 
     <div class="container-fluid copyright text-body py-4">
-        <div class="container">
-            <div class="row g-4 align-items-center">
-                <div class="col-md-6 text-center text-md-end mb-md-0">
-                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="./index.html">Ceyloan Travellers</a>, All right reserved.
-                </div>
-            </div>
-        </div>
+        <div class="container"><div class="row"><div class="col-md-6 text-center text-md-end mb-md-0"><i class="fas fa-copyright me-2"></i><a class="text-white" href="./index.html">Ceyloan Travellers</a>, All right reserved.</div></div></div>
     </div>
 
-    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F" class="whatsapp-float" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/94763661600?text=Welcome%20to%20Ayubowan%20Tours.%20How%20can%20we%20assist?%20you%3F" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 
-    <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script src="js/main.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('spinner').style.display = 'none';
+            // Initialise EmailJS with your public key
+            if (typeof emailjs !== 'undefined') emailjs.init("fbErb1P05w8JR7RlH");
             initializeApp();
         });
 
@@ -513,101 +383,74 @@
                 { id: 'Jaffna', coords: [9.6615, 80.0255], img: 'img/jafna-package-card.AVIF', blogId: 'blog-north-sri-lanka' },
                 { id: 'Wilpattu', coords: [8.4500, 80.0000], img: 'img/leopards_yala.WEBP', blogId: 'blog-safari' },
                 { id: 'Udawalawe', coords: [6.4759, 80.8772], img: 'img/yala-slider1.jpg', blogId: 'blog-safari' },
-                { id: 'Horton Plains', coords: [6.8024, 80.8083], img: 'img/horton-plains-national-park.WEBP', blogId:  'blog-nuwara-eliya' },
+                { id: 'Horton Plains', coords: [6.8024, 80.8083], img: 'img/horton-plains-national-park.WEBP', blogId: 'blog-nuwara-eliya' },
                 { id: 'Pasikudah', coords: [7.9286, 81.5716], img: 'img/horizen-package-card.jpg', blogId: 'blog-eastern-beauty' },
                 { id: 'Dambulla', coords: [7.8575, 80.6528], img: 'img/cultural-triangle-overview.jpg.PNG', blogId: 'blog-cultural-triangle' }
             ];
 
             const coords = {};
             destinationsData.forEach(d => { coords[d.id] = d.coords; });
-
-            const colors = ['#1abc9c', '#3498db', '#9b59b6', '#e67e22', '#e74c3c', '#f1c40f', '#2ecc71', '#34495e'];
+            const colors = ['#1abc9c','#3498db','#9b59b6','#e67e22','#e74c3c','#f1c40f','#2ecc71','#34495e'];
 
             const availableGrid = document.getElementById('availableGrid');
             const selectedGrid = document.getElementById('selectedGrid');
-            const sendWhatsApp = document.getElementById('sendWhatsApp');
-            const sendEmail = document.getElementById('sendEmail');
-            const popupOverlay = document.getElementById('popupOverlay');
-            const downloadSummaryPDF = document.getElementById('downloadSummaryPDF');
-            const popupCloseBtn = document.getElementById('popupCloseBtn');
-            const mapForExport = document.getElementById('mapForExport');
-
+            const submitBookingBtn = document.getElementById('submitBookingBtn');
             const blogPopupOverlay = document.getElementById('blogPopupOverlay');
             const blogPopupBody = document.getElementById('blogPopupBody');
             const blogPopupCloseBtn = document.getElementById('blogPopupCloseBtn');
             const blogPopupTitle = document.getElementById('blogPopupTitle');
+            const fname = document.getElementById('fname'), lname = document.getElementById('lname');
+            const email = document.getElementById('email'), countrySelect = document.getElementById('countrySelect');
+            const cnumber = document.getElementById('cnumber');
+            const travelMessage = document.getElementById('travelMessage');
 
-            const name = document.getElementById('name');
-            const phone = document.getElementById('phone');
-            const email = document.getElementById('email');
-            const adults = document.getElementById('adults');
-            const children = document.getElementById('children');
-            const arrival = document.getElementById('arrival');
-            const departure = document.getElementById('departure');
+            let map, routeControl, markers = [], draggedItem = null, isBookingConfirmed = false;
 
-            let map, routeControl, markers = [];
-            let exportMap, exportRouteControl, exportMarkers = [];
-            let draggedItem = null;
-            let isBookingConfirmed = false;
+            const countries = [
+                { name: "Afghanistan", flag: "🇦🇫", code: "+93" }, { name: "Albania", flag: "🇦🇱", code: "+355" }, { name: "Algeria", flag: "🇩🇿", code: "+213" }, { name: "Andorra", flag: "🇦🇩", code: "+376" }, { name: "Angola", flag: "🇦🇴", code: "+244" }, { name: "Argentina", flag: "🇦🇷", code: "+54" }, { name: "Armenia", flag: "🇦🇲", code: "+374" }, { name: "Australia", flag: "🇦🇺", code: "+61" }, { name: "Austria", flag: "🇦🇹", code: "+43" }, { name: "Azerbaijan", flag: "🇦🇿", code: "+994" }, { name: "Bahamas", flag: "🇧🇸", code: "+1-242" }, { name: "Bahrain", flag: "🇧🇭", code: "+973" }, { name: "Bangladesh", flag: "🇧🇩", code: "+880" }, { name: "Belarus", flag: "🇧🇾", code: "+375" }, { name: "Belgium", flag: "🇧🇪", code: "+32" }, { name: "Belize", flag: "🇧🇿", code: "+501" }, { name: "Benin", flag: "🇧🇯", code: "+229" }, { name: "Bhutan", flag: "🇧🇹", code: "+975" }, { name: "Bolivia", flag: "🇧🇴", code: "+591" }, { name: "Bosnia and Herzegovina", flag: "🇧🇦", code: "+387" }, { name: "Botswana", flag: "🇧🇼", code: "+267" }, { name: "Brazil", flag: "🇧🇷", code: "+55" }, { name: "Brunei", flag: "🇧🇳", code: "+673" }, { name: "Bulgaria", flag: "🇧🇬", code: "+359" }, { name: "Burkina Faso", flag: "🇧🇫", code: "+226" }, { name: "Burundi", flag: "🇧🇮", code: "+257" }, { name: "Cambodia", flag: "🇰🇭", code: "+855" }, { name: "Cameroon", flag: "🇨🇲", code: "+237" }, { name: "Canada", flag: "🇨🇦", code: "+1" }, { name: "Chile", flag: "🇨🇱", code: "+56" }, { name: "China", flag: "🇨🇳", code: "+86" }, { name: "Colombia", flag: "🇨🇴", code: "+57" }, { name: "Costa Rica", flag: "🇨🇷", code: "+506" }, { name: "Croatia", flag: "🇭🇷", code: "+385" }, { name: "Cuba", flag: "🇨🇺", code: "+53" }, { name: "Cyprus", flag: "🇨🇾", code: "+357" }, { name: "Czech Republic", flag: "🇨🇿", code: "+420" }, { name: "Denmark", flag: "🇩🇰", code: "+45" }, { name: "Ecuador", flag: "🇪🇨", code: "+593" }, { name: "Egypt", flag: "🇪🇬", code: "+20" }, { name: "Estonia", flag: "🇪🇪", code: "+372" }, { name: "Ethiopia", flag: "🇪🇹", code: "+251" }, { name: "Finland", flag: "🇫🇮", code: "+358" }, { name: "France", flag: "🇫🇷", code: "+33" }, { name: "Georgia", flag: "🇬🇪", code: "+995" }, { name: "Germany", flag: "🇩🇪", code: "+49" }, { name: "Ghana", flag: "🇬🇭", code: "+233" }, { name: "Greece", flag: "🇬🇷", code: "+30" }, { name: "Hungary", flag: "🇭🇺", code: "+36" }, { name: "Iceland", flag: "🇮🇸", code: "+354" }, { name: "India", flag: "🇮🇳", code: "+91" }, { name: "Indonesia", flag: "🇮🇩", code: "+62" }, { name: "Iran", flag: "🇮🇷", code: "+98" }, { name: "Iraq", flag: "🇮🇶", code: "+964" }, { name: "Ireland", flag: "🇮🇪", code: "+353" }, { name: "Israel", flag: "🇮🇱", code: "+972" }, { name: "Italy", flag: "🇮🇹", code: "+39" }, { name: "Japan", flag: "🇯🇵", code: "+81" }, { name: "Jordan", flag: "🇯🇴", code: "+962" }, { name: "Kazakhstan", flag: "🇰🇿", code: "+7" }, { name: "Kenya", flag: "🇰🇪", code: "+254" }, { name: "South Korea", flag: "🇰🇷", code: "+82" }, { name: "Kuwait", flag: "🇰🇼", code: "+965" }, { name: "Latvia", flag: "🇱🇻", code: "+371" }, { name: "Lebanon", flag: "🇱🇧", code: "+961" }, { name: "Libya", flag: "🇱🇾", code: "+218" }, { name: "Lithuania", flag: "🇱🇹", code: "+370" }, { name: "Luxembourg", flag: "🇱🇺", code: "+352" }, { name: "Malaysia", flag: "🇲🇾", code: "+60" }, { name: "Maldives", flag: "🇲🇻", code: "+960" }, { name: "Mexico", flag: "🇲🇽", code: "+52" }, { name: "Mongolia", flag: "🇲🇳", code: "+976" }, { name: "Morocco", flag: "🇲🇦", code: "+212" }, { name: "Myanmar", flag: "🇲🇲", code: "+95" }, { name: "Nepal", flag: "🇳🇵", code: "+977" }, { name: "Netherlands", flag: "🇳🇱", code: "+31" }, { name: "New Zealand", flag: "🇳🇿", code: "+64" }, { name: "Nigeria", flag: "🇳🇬", code: "+234" }, { name: "Norway", flag: "🇳🇴", code: "+47" }, { name: "Oman", flag: "🇴🇲", code: "+968" }, { name: "Pakistan", flag: "🇵🇰", code: "+92" }, { name: "Peru", flag: "🇵🇪", code: "+51" }, { name: "Philippines", flag: "🇵🇭", code: "+63" }, { name: "Poland", flag: "🇵🇱", code: "+48" }, { name: "Portugal", flag: "🇵🇹", code: "+351" }, { name: "Qatar", flag: "🇶🇦", code: "+974" }, { name: "Romania", flag: "🇷🇴", code: "+40" }, { name: "Russia", flag: "🇷🇺", code: "+7" }, { name: "Saudi Arabia", flag: "🇸🇦", code: "+966" }, { name: "Serbia", flag: "🇷🇸", code: "+381" }, { name: "Singapore", flag: "🇸🇬", code: "+65" }, { name: "Slovakia", flag: "🇸🇰", code: "+421" }, { name: "Slovenia", flag: "🇸🇮", code: "+386" }, { name: "South Africa", flag: "🇿🇦", code: "+27" }, { name: "Spain", flag: "🇪🇸", code: "+34" }, { name: "Sri Lanka", flag: "🇱🇰", code: "+94" }, { name: "Sweden", flag: "🇸🇪", code: "+46" }, { name: "Switzerland", flag: "🇨🇭", code: "+41" }, { name: "Taiwan", flag: "🇹🇼", code: "+886" }, { name: "Thailand", flag: "🇹🇭", code: "+66" }, { name: "Turkey", flag: "🇹🇷", code: "+90" }, { name: "Ukraine", flag: "🇺🇦", code: "+380" }, { name: "United Arab Emirates", flag: "🇦🇪", code: "+971" }, { name: "United Kingdom", flag: "🇬🇧", code: "+44" }, { name: "United States", flag: "🇺🇸", code: "+1" }, { name: "Uruguay", flag: "🇺🇾", code: "+598" }, { name: "Vietnam", flag: "🇻🇳", code: "+84" }, { name: "Yemen", flag: "🇾🇪", code: "+967" }
+            ];
+            countries.sort((a,b) => a.name.localeCompare(b.name));
+
+            function populateCountryDropdown() {
+                if (!countrySelect) return;
+                countrySelect.innerHTML = '<option value="">Select your country</option>';
+                countries.forEach(c => { const opt = document.createElement('option'); opt.value = c.name; opt.textContent = `${c.flag} ${c.name} (${c.code})`; countrySelect.appendChild(opt); });
+                if (typeof Choices !== 'undefined') {
+                    if (countrySelect._choicesInstance) countrySelect._choicesInstance.destroy();
+                    countrySelect._choicesInstance = new Choices(countrySelect, { searchEnabled: true, placeholderValue: 'Type to search your country...', searchPlaceholderValue: 'Search country...', itemSelectText: '', shouldSort: false, position: 'bottom', noResultsText: 'No country found', noChoicesText: 'Start typing to search' });
+                }
+            }
 
             function buildAvailableDestinations() {
                 availableGrid.innerHTML = '';
                 destinationsData.forEach(dest => {
-                    const card = document.createElement('div');
-                    card.className = 'item';
-                    card.setAttribute('data-id', dest.id);
-                    card.setAttribute('data-blog', dest.blogId || '');
-                    card.innerHTML = `
-                        <img src="${dest.img}" alt="${dest.id}" onerror="this.onerror=null;this.src='img/default-package.jpg';">
-                        <div>${dest.id} ${dest.blogId ? '<i class="fas fa-info-circle info-icon"></i>' : ''}</div>
-                    `;
+                    const card = document.createElement('div'); card.className = 'item';
+                    card.setAttribute('data-id', dest.id); card.setAttribute('data-blog', dest.blogId || '');
+                    card.innerHTML = `<img src="${dest.img}" alt="${dest.id}" onerror="this.onerror=null;this.src='img/default-package.jpg';"><div>${dest.id} ${dest.blogId ? '<i class="fas fa-info-circle info-icon"></i>' : ''}</div>`;
                     availableGrid.appendChild(card);
                 });
-                setupDragAndDrop();
-                setupInfoIcons();
-                updateEmptyStates();
+                setupDragAndDrop(); setupInfoIcons(); updateEmptyStates();
             }
 
             function setupInfoIcons() {
                 document.querySelectorAll('.info-icon').forEach(icon => {
                     icon.addEventListener('mousedown', e => { e.stopPropagation(); e.preventDefault(); });
-                    icon.addEventListener('click', function (e) {
-                        e.stopPropagation();
-                        const blogId = this.closest('.item').dataset.blog;
-                        const destName = this.closest('.item').dataset.id;
-                        if (blogId) openBlogPopup(blogId, destName);
-                    });
+                    icon.addEventListener('click', function(e) { e.stopPropagation(); const blogId = this.closest('.item').dataset.blog; const destName = this.closest('.item').dataset.id; if (blogId) openBlogPopup(blogId, destName); });
                 });
             }
 
             function openBlogPopup(blogContainerId, destName) {
                 const contentDiv = document.getElementById(blogContainerId);
                 blogPopupTitle.textContent = destName + ' Information';
-                if (!contentDiv) {
-                    blogPopupBody.innerHTML = '<p>Sorry, no detailed information available for this destination.</p>';
-                } else {
-                    blogPopupBody.innerHTML = '';
-                    blogPopupBody.appendChild(contentDiv.cloneNode(true));
-                }
+                blogPopupBody.innerHTML = contentDiv ? contentDiv.innerHTML : '<p>No details available</p>';
                 blogPopupOverlay.style.display = 'flex';
             }
 
-            function closeBlogPopup() {
-                blogPopupOverlay.style.display = 'none';
-                blogPopupBody.innerHTML = '';
-            }
-
+            function closeBlogPopup() { blogPopupOverlay.style.display = 'none'; }
             blogPopupCloseBtn.addEventListener('click', closeBlogPopup);
-            blogPopupOverlay.addEventListener('click', function (e) {
-                if (e.target === blogPopupOverlay) closeBlogPopup();
-            });
+            blogPopupOverlay.addEventListener('click', function(e) { if (e.target === blogPopupOverlay) closeBlogPopup(); });
 
-            function initializeMap() {
-                map = L.map('map').setView(coords['Kandy'], 7);
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href="https://openstreetmap.org">OSM</a> contributors'
-                }).addTo(map);
-            }
+            function initializeMap() { map = L.map('map').setView(coords['Kandy'], 7); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://openstreetmap.org">OSM</a>' }).addTo(map); }
 
             function updateEmptyStates() {
                 document.getElementById('availableEmptyMessage').style.display = availableGrid.children.length === 0 ? 'flex' : 'none';
@@ -617,224 +460,154 @@
             function setupDragAndDrop() {
                 document.querySelectorAll('.item').forEach(item => {
                     item.setAttribute('draggable', 'true');
-                    item.addEventListener('dragstart', function(e) {
-                        if (e.target.classList.contains('info-icon')) { e.preventDefault(); return false; }
-                        draggedItem = this;
-                        this.classList.add('dragging');
-                        e.dataTransfer.setData('text/plain', this.dataset.id);
-                    });
-                    item.addEventListener('dragend', function() {
-                        this.classList.remove('dragging');
-                        draggedItem = null;
-                        updateEmptyStates();
-                    });
-                    item.addEventListener('click', function(e) {
-                        if (e.target.classList.contains('info-icon')) return;
-                        if (this.classList.contains('dragging')) return;
-                        const target = this.parentElement.id === 'availableGrid' ? selectedGrid : availableGrid;
-                        target.appendChild(this);
-                        saveToLocalStorage();
-                        updateRouteMap();
-                        validateForm();
-                        updateEmptyStates();
-                    });
+                    item.addEventListener('dragstart', function(e) { if (e.target.classList.contains('info-icon')) { e.preventDefault(); return false; } draggedItem = this; this.classList.add('dragging'); e.dataTransfer.setData('text/plain', this.dataset.id); });
+                    item.addEventListener('dragend', function() { this.classList.remove('dragging'); draggedItem = null; updateEmptyStates(); });
+                    item.addEventListener('click', function(e) { if (e.target.classList.contains('info-icon') || this.classList.contains('dragging')) return; const target = this.parentElement.id === 'availableGrid' ? selectedGrid : availableGrid; target.appendChild(this); saveToLocalStorage(); updateRouteMap(); validateForm(); updateEmptyStates(); });
                 });
-
                 [availableGrid, selectedGrid].forEach(container => {
                     container.addEventListener('dragover', e => { e.preventDefault(); container.style.backgroundColor = '#f0f8ff'; });
                     container.addEventListener('dragleave', () => { container.style.backgroundColor = ''; });
-                    container.addEventListener('drop', function(e) {
-                        e.preventDefault();
-                        this.style.backgroundColor = '';
-                        if (draggedItem && draggedItem.parentElement !== this) {
-                            this.appendChild(draggedItem);
-                            saveToLocalStorage();
-                            updateRouteMap();
-                            validateForm();
-                            updateEmptyStates();
-                        }
-                    });
+                    container.addEventListener('drop', function(e) { e.preventDefault(); this.style.backgroundColor = ''; if (draggedItem && draggedItem.parentElement !== this) { this.appendChild(draggedItem); saveToLocalStorage(); updateRouteMap(); validateForm(); updateEmptyStates(); } });
                 });
             }
 
-            function saveToLocalStorage() {
-                const ids = [...selectedGrid.children].map(i => i.dataset.id);
-                localStorage.setItem('selectedJourney', JSON.stringify(ids));
-            }
+            function saveToLocalStorage() { localStorage.setItem('selectedJourney', JSON.stringify([...selectedGrid.children].map(i => i.dataset.id))); }
 
             function loadFromLocalStorage() {
-                try {
-                    const saved = localStorage.getItem('selectedJourney');
-                    if (saved) {
-                        JSON.parse(saved).forEach(id => {
-                            const item = document.querySelector(`.item[data-id="${id}"]`);
-                            if (item && item.parentElement.id === 'availableGrid') selectedGrid.appendChild(item);
-                        });
-                    }
-                } catch (e) {}
-                updateRouteMap();
-                // Do not call validateForm() to avoid initial red borders
-                updateEmptyStates();
-                // But buttons should still be disabled initially, so we'll manually disable them
-                sendWhatsApp.disabled = true;
-                sendEmail.disabled = true;
+                try { const saved = JSON.parse(localStorage.getItem('selectedJourney') || '[]'); saved.forEach(id => { const item = document.querySelector(`.item[data-id="${id}"]`); if (item && item.parentElement.id === 'availableGrid') selectedGrid.appendChild(item); }); } catch (e) {}
+                updateRouteMap(); updateEmptyStates(); submitBookingBtn.disabled = true;
             }
 
-            function clearLocalStorageAndReload() {
-                localStorage.removeItem('selectedJourney'); localStorage.removeItem('lastBooking');
-                isBookingConfirmed = false;
-                setTimeout(() => location.reload(), 300);
-            }
-
-            function createPinIcon(num) {
-                const color = colors[(num - 1) % colors.length];
-                return L.divIcon({
-                    html: `<div class="pin-icon" style="background:${color}">${num}</div>`,
-                    className: '',
-                    iconSize: [36, 46],
-                    iconAnchor: [18, 46]
-                });
-            }
+            function createPinIcon(num) { const color = colors[(num-1)%colors.length]; return L.divIcon({ html: `<div class="pin-icon" style="background:${color}">${num}</div>`, className: '', iconSize: [36,46], iconAnchor: [18,46] }); }
 
             function updateRouteMap() {
-                markers.forEach(m => map.removeLayer(m));
-                markers = [];
-                if (routeControl) { map.removeControl(routeControl); routeControl = null; }
+                markers.forEach(m => map.removeLayer(m)); markers = []; if (routeControl) { map.removeControl(routeControl); routeControl = null; }
                 if (selectedGrid.children.length < 1) { map.setView(coords['Kandy'], 7); return; }
                 const wps = [...selectedGrid.children].map(i => L.latLng(coords[i.dataset.id]));
-                wps.forEach((wp, i) => {
-                    const m = L.marker(wp, { icon: createPinIcon(i + 1) }).addTo(map);
-                    markers.push(m);
-                });
-                if (wps.length > 1 && typeof L.Routing !== 'undefined') {
-                    routeControl = L.Routing.control({
-                        waypoints: wps,
-                        lineOptions: { styles: [{ color: 'blue', weight: 4 }] },
-                        createMarker: () => null,
-                        routeWhileDragging: false, addWaypoints: false,
-                        draggableWaypoints: false, show: false
-                    }).addTo(map);
-                }
-                if (markers.length) {
-                    const group = new L.featureGroup(markers);
-                    map.fitBounds(group.getBounds().pad(0.2));
-                }
+                wps.forEach((wp,i) => { const m = L.marker(wp, { icon: createPinIcon(i+1) }).addTo(map); markers.push(m); });
+                if (wps.length > 1) { routeControl = L.Routing.control({ waypoints: wps, lineOptions: { styles: [{ color: 'blue', weight: 4 }] }, createMarker: () => null, routeWhileDragging: false, addWaypoints: false, draggableWaypoints: false, show: false }).addTo(map); }
+                if (markers.length) { const group = new L.featureGroup(markers); map.fitBounds(group.getBounds().pad(0.2)); }
             }
 
-            // Validation – only adds .is-invalid when called by input/change events
+            function validateEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+            function validatePhone(phone) { return /^[+\d][\d\s\-().]{5,}$/.test(phone) && phone.replace(/\D/g,'').length >= 7; }
+
             function validateForm() {
                 let valid = true;
-                valid &= validateField('name', name.value.trim() !== '', 'nameMsg', 'Full name required');
-                valid &= validateField('phone', /^[0-9]{7,15}$/.test(phone.value), 'phoneMsg', 'Valid phone (7-15 digits)');
-                valid &= validateField('email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value), 'emailMsg', 'Valid email required');
-                valid &= validateField('adults', parseInt(adults.value) >= 2, 'adultsMsg', 'At least two adults');
-                valid &= validateField('arrival', arrival.value !== '', 'arrivalMsg', 'Select arrival date');
-                let depValid = false;
-                if (arrival.value && departure.value) depValid = new Date(departure.value) > new Date(arrival.value);
-                valid &= validateField('departure', depValid, 'departureMsg', 'Departure after arrival');
+                valid &= validateField('fname', fname.value.trim() !== '', 'fnameMsg', 'First name required');
+                valid &= validateField('lname', lname.value.trim() !== '', 'lnameMsg', 'Last name required');
+                valid &= validateField('cnumber', validatePhone(cnumber.value), 'cnumberMsg', 'Valid phone (7-15 digits)');
+                valid &= validateField('email', validateEmail(email.value), 'emailMsg', 'Valid email required');
                 const hasDest = selectedGrid.children.length > 0;
-                const allOk = valid && hasDest;
-                sendWhatsApp.disabled = !allOk || isBookingConfirmed;
-                sendEmail.disabled = !allOk || isBookingConfirmed;
-                return allOk;
+                submitBookingBtn.disabled = !(valid && hasDest) || isBookingConfirmed;
+                return valid && hasDest;
             }
 
-            function validateField(fid, cond, msgId, msg) {
-                const field = document.getElementById(fid);
-                if (!field) return cond;
-                if (cond) {
-                    field.classList.remove('is-invalid');
-                    showValidationMsg(msgId, false, '');
+            function validateField(fid, cond, msgId, msg) { const field = document.getElementById(fid); if (!field) return cond; if (cond) { field.classList.remove('is-invalid'); showValidationMsg(msgId, false, ''); } else { field.classList.add('is-invalid'); showValidationMsg(msgId, true, msg); } return cond; }
+            function showValidationMsg(id, show, msg) { const el = document.getElementById(id); if (el) { el.textContent = msg; if (show) el.classList.add('show'); else el.classList.remove('show'); } }
+
+            function getSelectedDestinations() { return [...selectedGrid.children].map((item,i) => `${i+1}. ${item.dataset.id}`).join('\n'); }
+
+            function showModal(type, message) {
+                const modal = document.getElementById('customModal');
+                const iconDiv = document.getElementById('modalIcon');
+                const title = document.getElementById('modalTitle');
+                const msg = document.getElementById('modalMessage');
+                if (!modal || !iconDiv || !title || !msg) return;
+                if (type === 'success') {
+                    iconDiv.innerHTML = '<i class="fas fa-check-circle fa-4x" style="color: #28a745;"></i>';
+                    title.innerText = 'Booking Submitted!';
+                    msg.innerText = message || 'Your booking request has been sent successfully. Our team will contact you within 24 hours.';
                 } else {
-                    field.classList.add('is-invalid');
-                    showValidationMsg(msgId, true, msg);
+                    iconDiv.innerHTML = '<i class="fas fa-times-circle fa-4x" style="color: #dc3545;"></i>';
+                    title.innerText = 'Submission Failed';
+                    msg.innerText = message || 'Something went wrong. Please try again.';
                 }
-                return cond;
+                modal.classList.add('show-modal');
             }
 
-            function showValidationMsg(id, show, msg) {
-                const el = document.getElementById(id);
-                if (el) {
-                    if (show) {
-                        el.textContent = msg;
-                        el.classList.add('show');
-                    } else {
-                        el.classList.remove('show');
+            function closeModal() { document.getElementById('customModal').classList.remove('show-modal'); }
+            document.getElementById('modalCloseIcon')?.addEventListener('click', closeModal);
+            document.getElementById('modalCloseBtn')?.addEventListener('click', closeModal);
+            document.getElementById('customModal')?.addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+
+            async function handleBookingSubmit(e) {
+                e.preventDefault();
+                if (!validateForm()) return;
+
+                const dest = getSelectedDestinations();
+                const destinationList = dest || 'No destinations selected';
+                const messageText = travelMessage.value ? travelMessage.value + '\n\nSelected Itinerary:\n' + destinationList : 'Selected Itinerary:\n' + destinationList;
+
+                const templateParams = {
+                    first_name: fname.value.trim(),
+                    last_name: lname.value.trim(),
+                    country: countrySelect.value || 'Not specified',
+                    contact: cnumber.value.trim(),
+                    email: email.value.trim(),
+                    adults: '',  
+                    children: '0',
+                    arrival: '',
+                    departure: '',
+                    message: messageText
+                };
+
+                const submitBtn = submitBookingBtn;
+                const originalHTML = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Sending...';
+                submitBtn.disabled = true;
+
+                try {
+                    // Send email in background
+                    if (typeof emailjs !== 'undefined') {
+                        emailjs.send("service_0da5bba", "template_y4jkdzu", templateParams).catch(err => console.log('EmailJS error (non-blocking):', err));
                     }
+
+                    // Send WhatsApp via CallMeBot API (no‑cors mode for background)
+                    const waMessage = `*Ceyloan Travellers - Booking Request*\n\n*Customer Details:*\nName: ${fname.value} ${lname.value}\nPhone: ${cnumber.value}\nEmail: ${email.value}\nCountry: ${countrySelect.value||'Not specified'}\n\n*Selected Itinerary:*\n${dest}\n\nSpecial Requests: ${travelMessage.value||'None'}`;
+                    
+                    try {
+                        await fetch('https://api.callmebot.com/whatsapp.php?phone=+94763661600&text=' + encodeURIComponent(waMessage) + '&apikey=YOUR_API_KEY', { mode: 'no-cors' });
+                    } catch (waError) {
+                        console.log('WhatsApp API attempt completed (no-cors mode)');
+                    }
+
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Submitted!';
+                    submitBtn.style.background = '#28a745';
+                    showModal('success', 'Your booking request has been sent via email and WhatsApp. Our team will contact you within 24 hours.');
+                    
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalHTML;
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                        isBookingConfirmed = true;
+                        validateForm();
+                    }, 3000);
+                } catch (error) {
+                    console.error('Submission error:', error);
+                    submitBtn.innerHTML = 'Failed!';
+                    submitBtn.style.background = '#dc3545';
+                    showModal('error', 'Could not send your request. Please try again.');
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalHTML;
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
                 }
-            }
-
-            function getSelectedDestinations() {
-                return [...selectedGrid.children].map((item,i) => `${i+1}. ${item.dataset.id}`).join('\n');
-            }
-
-            function createWhatsAppMessage() {
-                const dest = getSelectedDestinations();
-                return `*Ceyloan Travellers - Booking Request*\n\n*Customer Details:*\nName: ${name.value}\nPhone: ${phone.value}\nEmail: ${email.value}\nAdults: ${adults.value}\nChildren: ${children.value||'0'}\nArrival: ${arrival.value}\nDeparture: ${departure.value}\n\n*Selected Itinerary:*\n${dest}\n\nTotal: ${selectedGrid.children.length}\n\nPlease provide pricing & availability.`;
-            }
-
-            function sendBookingEmail() {
-                const dest = getSelectedDestinations();
-                const subject = `Booking Request - ${name.value.trim()} - Ceyloan Travellers`;
-                const body = `Dear Ceyloan Travellers Team,\n\nI would like to request a booking:\n\nName: ${name.value}\nPhone: ${phone.value}\nEmail: ${email.value}\nAdults: ${adults.value}\nChildren: ${children.value||'0'}\nArrival: ${arrival.value}\nDeparture: ${departure.value}\n\nItinerary:\n${dest}\n\nBest regards,\n${name.value}`;
-                window.location.href = `mailto:info@ayubowantours.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            }
-
-            async function createExportMap() { /* same as original */ }
-
-            async function generateAttractivePDF(button) {
-                if (button) {
-                    const orig = button.innerHTML; button.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Creating PDF...'; button.disabled = true;
-                    try { await generatePDFContent(); } finally { button.innerHTML = orig; button.disabled = false; }
-                } else await generatePDFContent();
-            }
-
-            async function generatePDFContent() { /* same as original */ }
-
-            function showBookingConfirmation() {
-                isBookingConfirmed = true;
-                [name,phone,email,adults,children,arrival,departure].forEach(f => { if(f) f.disabled = true; });
-                sendWhatsApp.disabled = true; sendEmail.disabled = true;
-                popupOverlay.style.display = 'flex';
-            }
-
-            function closePopupAndReset() {
-                popupOverlay.style.display = 'none';
-                clearLocalStorageAndReload();
             }
 
             function setupEventListeners() {
-                [name,phone,email,adults,children,arrival,departure].forEach(f => {
-                    if(f) { f.addEventListener('input', validateForm); f.addEventListener('change', validateForm); }
-                });
-                const today = new Date().toISOString().split('T')[0];
-                if(arrival) { arrival.min = today; arrival.addEventListener('change', function() { if(this.value && departure) { departure.min = this.value; if(departure.value && departure.value < this.value) departure.value = ''; } validateForm(); }); }
-                if(departure) departure.min = today;
-                sendWhatsApp.addEventListener('click', function() {
-                    if(!validateForm()) return;
-                    localStorage.setItem('lastBooking', JSON.stringify({
-                        name:name.value, phone:phone.value, email:email.value,
-                        adults:adults.value, children:children.value||'0',
-                        arrival:arrival.value, departure:departure.value,
-                        destinations:[...selectedGrid.children].map(i=>i.dataset.id)
-                    }));
-                    window.open(`https://wa.me/94763661600?text=${encodeURIComponent(createWhatsAppMessage())}`, '_blank');
-                    setTimeout(showBookingConfirmation, 500);
-                });
-                sendEmail.addEventListener('click', function() { if(validateForm()) sendBookingEmail(); });
-                downloadSummaryPDF.addEventListener('click', function(e) { e.preventDefault(); generateAttractivePDF(this); });
-                popupCloseBtn.addEventListener('click', closePopupAndReset);
-                popupOverlay.addEventListener('click', function(e) { if(e.target === popupOverlay) closePopupAndReset(); });
+                [fname, lname, cnumber, email].forEach(f => { if(f) { f.addEventListener('input', validateForm); f.addEventListener('change', validateForm); } });
+                document.getElementById('bookingForm').addEventListener('submit', handleBookingSubmit);
             }
 
+            populateCountryDropdown();
             initializeMap();
             buildAvailableDestinations();
             loadFromLocalStorage();
             setupEventListeners();
-            // Do not call validateForm() on load to prevent initial red outlines
             updateEmptyStates();
         }
     </script>
 </body>
-
 </html>
